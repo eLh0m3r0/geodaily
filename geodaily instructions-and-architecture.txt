@@ -1,0 +1,359 @@
+# **Kompletní zadání: Automatizovaný Geopolitický Newsletter - MVP**
+
+## **ČÁST 1: Přehled projektu a business požadavky**
+
+### **1.1 Popis projektu**
+Vytvořit plně automatizovaný systém pro generování denního geopolitického newsletteru, který agreguje zprávy z 30-40 světových zdrojů, používá AI pro výběr nejdůležitějších underreported událostí a publikuje je na Substack.
+
+### **1.2 Klíčové funkce**
+- **Automatický sběr zpráv** z RSS feedů a webových stránek
+- **AI analýza** pro identifikaci 3-4 nejdůležitějších underreported stories
+- **Generování newsletteru** s přidanou hodnotou (second-order effects, skryté souvislosti)
+- **Automatická publikace** na Substack každý den v 6:00 UTC
+- **Minimální údržba** - systém musí běžet autonomně
+
+### **1.3 Cílová skupina**
+- Decision makers zajímající se o geopolitiku
+- Analytici a stratégové
+- Lidé hledající hlubší pohled než mainstream média
+
+### **1.4 Unikátní hodnota**
+Newsletter se zaměřuje na:
+- Stories, které mainstream média přehlíží
+- Second-order effects významných událostí  
+- Propojení zdánlivě nesouvisejících událostí
+- Predikce krátkodobého vývoje (48-72 hodin)
+
+## **ČÁST 2: Technická architektura**
+
+### **2.1 High-level architektura**
+
+```
+GitHub Actions (Scheduler)
+    ↓
+Python Application
+    ├── Data Collection Layer
+    │   ├── RSS Scraper (Tier 1)
+    │   └── Web Scraper (Tier 2)
+    ├── Processing Layer
+    │   ├── Deduplication
+    │   ├── Clustering
+    │   └── Relevance Scoring
+    ├── AI Analysis Layer
+    │   └── Claude / Gemini API Integration
+    └── Publishing Layer
+        └── Substack API
+```
+
+### **2.2 Technologický stack**
+
+**Infrastruktura:**
+- GitHub Repository (kód + GitHub Actions)
+- GitHub Actions (orchestrace a runtime)
+
+**Backend:**
+- Python 3.11
+- Hlavní libraries: feedparser, requests, beautifulsoup4, anthropic
+
+**AI:**
+- Claude / Gemini API (cost-effective pro analýzu)
+
+**Publikace:**
+- Substack API
+
+### **2.3 Datový flow**
+
+1. **Trigger** - GitHub Actions cron (denně 6:00 UTC)
+2. **Collection** - Paralelní sběr z 40+ zdrojů
+3. **Processing** - Čištění, deduplikace, normalizace
+4. **Analysis** - Claude API analyzuje a vybírá top stories
+5. **Generation** - Vytvoření HTML newsletteru
+6. **Publishing** - Upload na Substack jako draft nebo publikace
+
+## **ČÁST 3: Detailní komponenty**
+
+### **3.1 Data Collection Layer**
+
+**Tier 1 zdroje (RSS):**
+- 20-25 zdrojů s RSS feedy
+- Kategorie: mainstream news, think tanky, specializované weby
+- Implementace pomocí feedparser library
+
+**Tier 2 zdroje (Web scraping):**
+- 15-20 zdrojů vyžadujících HTML scraping
+- Použití requests + BeautifulSoup
+- Fallback strategie pro různé typy stránek
+
+**Seznam prioritních zdrojů:**
+
+*Tier 1 (RSS):*
+- Reuters World News
+- BBC World
+- Guardian International
+- Al Jazeera English
+- Financial Times (RSS)
+- Foreign Affairs (RSS)
+- War on the Rocks
+- The Diplomat
+- Brookings Institution
+- Council on Foreign Relations
+- CSIS
+- Carnegie Endowment
+- Wilson Center
+- Atlantic Council
+
+*Tier 2 (Scraping):*
+- Foreign Policy (partial paywall)
+- SCMP (South China Morning Post)
+- Nikkei Asia
+- Defense One
+- The National Interest
+- Lawfare Blog
+- 38 North
+- ASPI Strategist
+- ECFR
+- Chatham House
+
+### **3.2 Processing Layer**
+
+**Deduplication:**
+- Odstranění duplicitních stories napříč zdroji
+- Fuzzy matching na základě titulků
+- Seskupení podobných stories do clusterů
+
+**Relevance Scoring:**
+- Váhování podle zdroje (think tanky > mainstream média)
+- Freshness score (novější = lepší)
+- Geographic/topic relevance
+
+**Data Structure:**
+Každý článek musí obsahovat:
+- source (název zdroje)
+- source_category (mainstream/analysis/regional)
+- title
+- url
+- summary (max 200 slov)
+- published_date
+- cluster_id (pro seskupené stories)
+- relevance_score
+
+### **3.3 AI Analysis Layer**
+
+**AI API Integration:**
+- Model: Claude / Gemini ?
+- Max tokens: ?? per request
+- Temperature: ??
+
+**Analýza musí:**
+1. Identifikovat 3-4 nejdůležitější underreported stories
+2. Pro každou story poskytnout:
+   - Proč je důležitá (80 slov)
+   - Co mainstream média přehlížejí (40 slov)
+   - Predikce vývoje (30 slov)
+   - Impact score (1-10)
+
+**Focus oblasti:**
+- China-Taiwan vztahy
+- Energetická bezpečnost
+- Technologická suverenita
+- Obranný průmysl
+- Ekonomické sankce
+- Klimatická geopolitika
+
+### **3.4 Publishing Layer**
+
+**Newsletter struktura:**
+1. Header s datem a úvodním textem
+2. 3-4 hlavní stories seřazené podle impact score
+3. Každá story obsahuje:
+   - Výstižný titulek
+   - "Proč na tom záleží" sekce
+   - "Co ostatní přehlížejí" sekce
+   - "Co sledovat" sekce
+   - Zdroj a odkaz na originál
+
+**Substack integrace:**
+- Použití Substack API pro vytvoření draftu
+- Možnost auto-publikace nebo manuálního review
+- Zachování formátování a struktury
+
+## **ČÁST 4: Implementační plán**
+
+### **4.1 Fáze 1: Základní infrastruktura (3 dny)**
+
+**Den 1: Setup projektu**
+- Vytvořit GitHub repository
+- Nastavit základní strukturu projektu
+- Připravit requirements.txt
+- Vytvořit .env.example pro API keys
+
+**Den 2: GitHub Actions**
+- Vytvořit workflow pro denní spouštění
+- Nastavit secrets (API keys)
+- Implementovat základní error handling a notifikace
+
+**Den 3: Konfigurace a data**
+- Vytvořit sources.json se všemi zdroji
+- Připravit HTML template pro newsletter
+- Nastavit logging systém
+
+### **4.2 Fáze 2: Data collection (4 dny)**
+
+**Den 4-5: RSS Scraper**
+- Implementovat RSS parser pro Tier 1 zdroje
+- Zpracování různých formátů datumů
+- Čištění HTML z summaries
+- Error handling pro nefunkční feedy
+
+**Den 6-7: Web Scraper**
+- Basic HTML scraping pro Tier 2 zdroje
+- Implementace pro každý specifický zdroj
+- Retry logika a timeouty
+- User-agent rotation
+
+### **4.3 Fáze 3: Processing a AI (3 dny)**
+
+**Den 8: Data processing**
+- Deduplication algoritmů
+- Clustering podobných stories
+- Relevance scoring systém
+
+**Den 9-10: AI integrace**
+- Claude API wrapper
+- Prompt engineering pro analýzu
+- Parsing AI odpovědí
+- Fallback pro API výpadky
+
+### **4.4 Fáze 4: Publishing (2 dny)**
+
+**Den 11: Newsletter generátor**
+- HTML generování z AI analýzy
+- Responzivní email template
+- Preview generování
+
+**Den 12: Substack integrace**
+- API integrace
+- Draft creation
+- Error handling
+- Test publikace
+
+### **4.5 Fáze 5: Testing a optimalizace (2 dny)**
+
+**Den 13: End-to-end testing**
+- Test celého pipeline
+- Performance optimalizace
+- Error recovery testing
+
+**Den 14: Produkční nasazení**
+- Finální konfigurace
+- Dokumentace
+- První ostrý běh
+
+## **ČÁST 5: Provozní požadavky**
+
+### **5.1 Monitoring a alerting**
+
+**Základní monitoring:**
+- GitHub Actions status notifications
+- Email alert při selhání
+- Jednoduché health check URL
+
+**Logy:**
+- Strukturované logování všech kroků
+- Ukládání logů do GitHub artifacts
+- Retention 30 dní
+
+### **5.2 Údržba a rozšiřitelnost**
+
+**Pravidelná údržba (30 min/týden):**
+- Kontrola failed runs
+- Přidávání/odebírání zdrojů
+- Úprava AI promptů podle kvality výstupů
+
+**Snadné rozšíření:**
+- Nové zdroje přes sources.json
+- Nové scrapers jako moduly
+- AI prompty v samostatných souborech
+
+### **5.3 Náklady**
+
+**Měsíční odhad:**
+- Claude API: $30-40 (1-1.5M tokens)
+- GitHub Actions: Zdarma (2000 minut)
+- Substack: Zdarma (nebo paid plan)
+- **Celkem: $30-40/měsíc**
+
+## **ČÁST 6: Technické specifikace**
+
+### **6.1 Sources.json struktura**
+
+```
+{
+  "tier1_sources": [
+    {
+      "name": "Reuters World",
+      "url": "RSS_FEED_URL",
+      "category": "mainstream",
+      "weight": 0.8
+    }
+  ],
+  "tier2_sources": [
+    {
+      "name": "Foreign Policy",
+      "url": "WEBSITE_URL",
+      "method": "basic|api",
+      "category": "analysis",
+      "selectors": {
+        "container": "CSS_SELECTOR",
+        "title": "CSS_SELECTOR",
+        "link": "CSS_SELECTOR"
+      }
+    }
+  ]
+}
+```
+
+### **6.2 Error handling strategie**
+
+1. **Network errors:** 3x retry s exponential backoff
+2. **Parse errors:** Skip zdroj, log error, pokračovat
+3. **AI API errors:** Fallback na jednodušší analýzu
+4. **Substack errors:** Uložit lokálně, manuální publikace
+
+### **6.3 Bezpečnost**
+
+- Všechny API keys v GitHub Secrets
+- Žádné credentials v kódu
+- Rate limiting na všech API voláních
+- Sanitizace všech vstupů před publikací
+
+## **ČÁST 7: Akceptační kritéria**
+
+### **7.1 Funkční požadavky**
+- ✓ Systém úspěšně scrapuje min. 30 zdrojů denně
+- ✓ AI vybírá 3-4 relevantní underreported stories
+- ✓ Newsletter je publikován na Substack do 7:00 UTC
+- ✓ Systém běží 5 dní bez zásahu
+
+### **7.2 Kvalitativní požadavky**
+- ✓ Stories jsou skutečně "underreported" (ne mainstream headlines)
+- ✓ AI analýza přidává hodnotu (second-order effects)
+- ✓ Newsletter je čitelný a profesionální
+- ✓ Zdroje jsou řádně citovány
+
+### **7.3 Technické požadavky**
+- ✓ Runtime < 15 minut
+- ✓ Success rate > 90%
+- ✓ Costs < $50/měsíc
+- ✓ Zero maintenance po dobu 1 týdne
+
+## **Závěr**
+
+Tento dokument poskytuje kompletní zadání pro implementaci MVP automatizovaného geopolitického newsletteru. Vývojář by měl být schopen na základě těchto specifikací vytvořit funkční systém během 14 pracovních dní.
+
+Po úspěšném nasazení MVP lze systém postupně rozšiřovat o:
+- Více zdrojů
+- Sofistikovanější AI analýzu
+- A/B testing různých formátů
+- Subscriber analytics
+- Personalizaci obsahu

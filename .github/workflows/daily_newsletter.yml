@@ -1,0 +1,143 @@
+name: Daily Geopolitical Newsletter
+
+on:
+  schedule:
+    # Run daily at 6:00 UTC (8:00 CET)
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Run in dry-run mode (no real API calls)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+
+jobs:
+  generate-newsletter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Create necessary directories
+      run: |
+        mkdir -p logs output
+        
+    - name: Set environment variables
+      run: |
+        echo "ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }}" >> $GITHUB_ENV
+        echo "SUBSTACK_API_KEY=${{ secrets.SUBSTACK_API_KEY }}" >> $GITHUB_ENV
+        echo "SUBSTACK_PUBLICATION_ID=${{ secrets.SUBSTACK_PUBLICATION_ID }}" >> $GITHUB_ENV
+        echo "NEWSLETTER_TITLE=Geopolitical Daily" >> $GITHUB_ENV
+        echo "NEWSLETTER_AUTHOR=Geopolitical Daily Team" >> $GITHUB_ENV
+        echo "LOG_LEVEL=INFO" >> $GITHUB_ENV
+        
+        # Set dry run mode based on input or default to false for scheduled runs
+        if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+          echo "DRY_RUN=true" >> $GITHUB_ENV
+        else
+          echo "DRY_RUN=false" >> $GITHUB_ENV
+        fi
+        
+    - name: Validate configuration
+      run: |
+        python -c "
+        from src.config import Config
+        missing = Config.validate_config()
+        if missing and not Config.DRY_RUN:
+            print(f'❌ Missing configuration: {missing}')
+            exit(1)
+        else:
+            print('✅ Configuration validated successfully')
+        "
+        
+    - name: Test data collection
+      run: |
+        python test_simple_collection.py
+        
+    - name: Run newsletter pipeline
+      run: |
+        python src/main_pipeline.py
+        
+    - name: Check pipeline success
+      run: |
+        if [ $? -eq 0 ]; then
+          echo "✅ Newsletter pipeline completed successfully"
+        else
+          echo "❌ Newsletter pipeline failed"
+          exit 1
+        fi
+        
+    - name: Upload newsletter artifacts
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: newsletter-${{ github.run_number }}
+        path: |
+          output/*.html
+          logs/*.log
+        retention-days: 30
+        
+    - name: Create issue on failure
+      if: failure() && github.event_name == 'schedule'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const title = `Newsletter Pipeline Failed - ${new Date().toISOString().split('T')[0]}`;
+          const body = `
+          The daily newsletter pipeline failed during the scheduled run.
+          
+          **Run Details:**
+          - Run ID: ${{ github.run_id }}
+          - Run Number: ${{ github.run_number }}
+          - Commit: ${{ github.sha }}
+          - Time: ${new Date().toISOString()}
+          
+          **Next Steps:**
+          1. Check the workflow logs for detailed error information
+          2. Review the uploaded artifacts for any generated content
+          3. Verify API keys and external service availability
+          4. Consider running manually with dry-run mode for testing
+          
+          **Logs:** [View workflow run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+          `;
+          
+          github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: title,
+            body: body,
+            labels: ['bug', 'automation', 'newsletter']
+          });
+          
+    - name: Summary
+      if: always()
+      run: |
+        echo "## Newsletter Pipeline Summary" >> $GITHUB_STEP_SUMMARY
+        echo "- **Status**: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Dry Run**: ${{ env.DRY_RUN }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Run ID**: ${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Timestamp**: $(date -u)" >> $GITHUB_STEP_SUMMARY
+        
+        if [ -f "output/newsletter_*.html" ]; then
+          echo "- **Newsletter Generated**: ✅" >> $GITHUB_STEP_SUMMARY
+          echo "- **File**: $(ls output/newsletter_*.html | head -1)" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "- **Newsletter Generated**: ❌" >> $GITHUB_STEP_SUMMARY
+        fi

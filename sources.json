@@ -1,0 +1,160 @@
+{
+  "tier1_sources": [
+    {
+      "name": "Reuters World",
+      "url": "https://feeds.reuters.com/reuters/worldNews",
+      "category": "mainstream",
+      "weight": 0.8
+    },
+    {
+      "name": "BBC World",
+      "url": "http://feeds.bbci.co.uk/news/world/rss.xml",
+      "category": "mainstream",
+      "weight": 0.8
+    },
+    {
+      "name": "Guardian International",
+      "url": "https://www.theguardian.com/world/rss",
+      "category": "mainstream",
+      "weight": 0.8
+    },
+    {
+      "name": "Al Jazeera English",
+      "url": "https://www.aljazeera.com/xml/rss/all.xml",
+      "category": "mainstream",
+      "weight": 0.9
+    },
+    {
+      "name": "Financial Times World",
+      "url": "https://www.ft.com/world?format=rss",
+      "category": "mainstream",
+      "weight": 0.9
+    },
+    {
+      "name": "Foreign Affairs",
+      "url": "https://www.foreignaffairs.com/rss.xml",
+      "category": "analysis",
+      "weight": 1.2
+    },
+    {
+      "name": "War on the Rocks",
+      "url": "https://warontherocks.com/feed/",
+      "category": "analysis",
+      "weight": 1.1
+    },
+    {
+      "name": "The Diplomat",
+      "url": "https://thediplomat.com/feed/",
+      "category": "analysis",
+      "weight": 1.1
+    },
+    {
+      "name": "Brookings Institution",
+      "url": "https://www.brookings.edu/feed/",
+      "category": "think_tank",
+      "weight": 1.3
+    },
+    {
+      "name": "Council on Foreign Relations",
+      "url": "https://www.cfr.org/rss-feeds",
+      "category": "think_tank",
+      "weight": 1.3
+    },
+    {
+      "name": "CSIS",
+      "url": "https://www.csis.org/rss.xml",
+      "category": "think_tank",
+      "weight": 1.2
+    },
+    {
+      "name": "Carnegie Endowment",
+      "url": "https://carnegieendowment.org/rss/",
+      "category": "think_tank",
+      "weight": 1.2
+    },
+    {
+      "name": "Wilson Center",
+      "url": "https://www.wilsoncenter.org/rss.xml",
+      "category": "think_tank",
+      "weight": 1.1
+    },
+    {
+      "name": "Atlantic Council",
+      "url": "https://www.atlanticcouncil.org/feed/",
+      "category": "think_tank",
+      "weight": 1.2
+    }
+  ],
+  "tier2_sources": [
+    {
+      "name": "Foreign Policy",
+      "url": "https://foreignpolicy.com",
+      "method": "basic",
+      "category": "analysis",
+      "weight": 1.2,
+      "selectors": {
+        "container": ".post-block, article",
+        "title": ".hed, h1, h2",
+        "link": "a",
+        "summary": ".dek, .excerpt",
+        "date": "time, .date"
+      }
+    },
+    {
+      "name": "South China Morning Post",
+      "url": "https://www.scmp.com/news/world",
+      "method": "basic",
+      "category": "regional",
+      "weight": 1.0,
+      "selectors": {
+        "container": ".story-block, article",
+        "title": "h3, h2",
+        "link": "a",
+        "summary": ".story-summary",
+        "date": "time"
+      }
+    },
+    {
+      "name": "Nikkei Asia",
+      "url": "https://asia.nikkei.com/Politics",
+      "method": "basic",
+      "category": "regional",
+      "weight": 1.0,
+      "selectors": {
+        "container": ".article-item, article",
+        "title": "h3, h2",
+        "link": "a",
+        "summary": ".article-summary",
+        "date": "time"
+      }
+    },
+    {
+      "name": "Defense One",
+      "url": "https://www.defenseone.com",
+      "method": "basic",
+      "category": "analysis",
+      "weight": 1.1,
+      "selectors": {
+        "container": ".river-well, article",
+        "title": "h3, h2",
+        "link": "a",
+        "summary": ".summary",
+        "date": "time"
+      }
+    },
+    {
+      "name": "The National Interest",
+      "url": "https://nationalinterest.org",
+      "method": "basic",
+      "category": "analysis",
+      "weight": 1.0,
+      "selectors": {
+        "container": ".article-item, article",
+        "title": "h3, h2",
+        "link": "a",
+        "summary": ".excerpt",
+        "date": "time"
+      }
+    }
+  ]
+}
