@@ -10,14 +10,9 @@ import time
 import re
 from urllib.parse import urljoin, urlparse
 
-try:
-    from ..models import Article, NewsSource, SourceCategory
-    from ..config import Config
-    from ..logger import get_logger
-except ImportError:
-    from models import Article, NewsSource, SourceCategory
-    from config import Config
-    from logger import get_logger
+from ..models import Article, NewsSource, SourceCategory
+from ..config import Config
+from ..logger import get_logger
 
 logger = get_logger(__name__)
 

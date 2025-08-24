@@ -8,12 +8,8 @@ from difflib import SequenceMatcher
 from collections import defaultdict
 import hashlib
 
-try:
-    from ..models import Article, ArticleCluster
-    from ..logger import get_logger
-except ImportError:
-    from models import Article, ArticleCluster
-    from logger import get_logger
+from ..models import Article, ArticleCluster
+from ..logger import get_logger
 
 logger = get_logger(__name__)
 

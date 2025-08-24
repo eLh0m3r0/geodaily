@@ -8,10 +8,7 @@ from pathlib import Path
 from typing import Optional
 from datetime import datetime
 
-try:
-    from .config import Config
-except ImportError:
-    from config import Config
+from .config import Config
 
 def setup_logger(
     name: str = "geodaily",

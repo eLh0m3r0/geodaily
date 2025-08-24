@@ -33,9 +33,10 @@ class Config:
     
     # AI Configuration
     AI_PROVIDER = os.getenv("AI_PROVIDER", "anthropic")
-    AI_MODEL = os.getenv("AI_MODEL", "claude-sonnet-4-20250514")
-    AI_MAX_TOKENS = int(os.getenv("AI_MAX_TOKENS", "4000"))
+    AI_MODEL = os.getenv("AI_MODEL", "claude-3-haiku-20240307")  # Use cheaper model by default
+    AI_MAX_TOKENS = int(os.getenv("AI_MAX_TOKENS", "2000"))  # Reduce tokens to control cost
     AI_TEMPERATURE = float(os.getenv("AI_TEMPERATURE", "0.3"))
+    AI_MAX_COST_PER_DAY = float(os.getenv("AI_MAX_COST_PER_DAY", "2.0"))  # $2/day limit
     
     # Scraping Configuration
     REQUEST_TIMEOUT = int(os.getenv("REQUEST_TIMEOUT", "30"))
@@ -46,6 +47,15 @@ class Config:
     # Logging Configuration
     LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
     LOG_FORMAT = os.getenv("LOG_FORMAT", "%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+    
+    # Notification Configuration
+    ADMIN_EMAIL = os.getenv("ADMIN_EMAIL")
+    SMTP_SERVER = os.getenv("SMTP_SERVER")
+    SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))
+    SMTP_USERNAME = os.getenv("SMTP_USERNAME")
+    SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")
+    SMTP_FROM_EMAIL = os.getenv("SMTP_FROM_EMAIL")
+    SMTP_USE_TLS = os.getenv("SMTP_USE_TLS", "true").lower() == "true"
     
     # Development/Testing
     DEBUG = os.getenv("DEBUG", "false").lower() == "true"

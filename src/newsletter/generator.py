@@ -6,14 +6,9 @@ from datetime import datetime
 from typing import List, Optional
 from pathlib import Path
 
-try:
-    from ..models import Newsletter, AIAnalysis
-    from ..config import Config
-    from ..logger import get_logger
-except ImportError:
-    from models import Newsletter, AIAnalysis
-    from config import Config
-    from logger import get_logger
+from ..models import Newsletter, AIAnalysis
+from ..config import Config
+from ..logger import get_logger
 
 logger = get_logger(__name__)
 

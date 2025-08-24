@@ -8,20 +8,15 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-try:
-    from .collectors.main_collector import MainCollector
-    from .processors.main_processor import MainProcessor
-    from .ai.claude_analyzer import ClaudeAnalyzer
-    from .newsletter.generator import NewsletterGenerator
-    from .config import Config
-    from .logger import setup_logger
-except ImportError:
-    from collectors.main_collector import MainCollector
-    from processors.main_processor import MainProcessor
-    from ai.claude_analyzer import ClaudeAnalyzer
-    from newsletter.generator import NewsletterGenerator
-    from config import Config
-    from logger import setup_logger
+from .collectors.main_collector import MainCollector
+from .processors.main_processor import MainProcessor
+from .ai.claude_analyzer import ClaudeAnalyzer
+from .newsletter.generator import NewsletterGenerator
+from .publishers.github_pages_publisher import GitHubPagesPublisher
+from .publishers.substack_exporter import SubstackExporter
+from .notifications.email_notifier import EmailNotifier
+from .config import Config
+from .logger import setup_logger
 
 logger = setup_logger("main_pipeline")
 
@@ -97,22 +92,45 @@ def run_complete_pipeline() -> bool:
         newsletter = generator.generate_newsletter(analyses)
         html_content = generator.generate_html(newsletter)
         
-        # Save newsletter
+        # Save newsletter (legacy format)
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
         filename = f"newsletter_{timestamp}.html"
         file_path = generator.save_html(html_content, filename)
         
         logger.info(f"Newsletter saved to: {file_path}")
         
-        # Step 6: Publishing (placeholder for Substack integration)
-        if Config.DRY_RUN:
-            logger.info("Step 6: Skipping publishing (dry run mode)")
-        else:
-            logger.info("Step 6: Publishing newsletter...")
-            # TODO: Implement Substack publishing
-            logger.info("Publishing not yet implemented - newsletter saved locally")
+        # Step 6: Multi-platform publishing
+        logger.info("Step 6: Publishing newsletter...")
         
-        # Step 7: Generate summary report
+        # GitHub Pages (automatic)
+        github_publisher = GitHubPagesPublisher()
+        github_url = github_publisher.publish_newsletter(newsletter, analyses)
+        logger.info(f"✅ Published to GitHub Pages: {github_url}")
+        
+        # Substack export (for manual publishing)
+        substack_exporter = SubstackExporter()
+        substack_files = substack_exporter.save_substack_files(newsletter, analyses)
+        logger.info(f"✅ Substack exports ready: {substack_files['markdown_file']}")
+        
+        publishing_summary = {
+            "github_pages": github_url,
+            "substack_exports": substack_files,
+            "legacy_file": file_path
+        }
+        
+        # Step 7: Send admin notification
+        logger.info("Step 7: Sending admin notification...")
+        notifier = EmailNotifier()
+        notification_sent = notifier.notify_newsletter_ready(newsletter, analyses, publishing_summary)
+        
+        if notification_sent:
+            logger.info("✅ Admin notification sent")
+        else:
+            logger.info("📧 Admin notification skipped (not configured)")
+        
+        publishing_summary["notification_sent"] = notification_sent
+        
+        # Step 8: Generate summary report
         end_time = datetime.now()
         total_time = (end_time - start_time).total_seconds()
         
@@ -122,7 +140,9 @@ def run_complete_pipeline() -> bool:
         logger.info(f"Articles after processing: {processing_stats.articles_after_deduplication}")
         logger.info(f"Clusters created: {len(clusters)}")
         logger.info(f"Stories selected: {len(analyses)}")
-        logger.info(f"Newsletter file: {file_path}")
+        logger.info(f"GitHub Pages: {publishing_summary['github_pages']}")
+        logger.info(f"Substack files: {publishing_summary['substack_exports']['markdown_file']}")
+        logger.info(f"Legacy file: {publishing_summary['legacy_file']}")
         logger.info(f"Success rate: {processing_stats.success_rate:.2%}")
         
         if collection_stats.errors:
@@ -141,7 +161,7 @@ def run_complete_pipeline() -> bool:
 
 def create_mock_analyses(clusters):
     """Create mock AI analyses for testing/fallback."""
-    from models import AIAnalysis
+    from .models import AIAnalysis
     
     mock_analyses = []
     

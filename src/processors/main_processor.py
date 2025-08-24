@@ -5,14 +5,9 @@ Main processor that coordinates all data processing steps.
 from typing import List
 import time
 
-try:
-    from ..models import Article, ArticleCluster, ProcessingStats
-    from ..logger import get_logger
-    from .deduplicator import ArticleDeduplicator
-except ImportError:
-    from models import Article, ArticleCluster, ProcessingStats
-    from logger import get_logger
-    from processors.deduplicator import ArticleDeduplicator
+from ..models import Article, ArticleCluster, ProcessingStats
+from ..logger import get_logger
+from .deduplicator import ArticleDeduplicator
 
 logger = get_logger(__name__)
 

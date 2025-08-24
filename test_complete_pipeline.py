@@ -13,8 +13,8 @@ sys.path.insert(0, str(Path(__file__).parent / "src"))
 # Set dry run mode for testing
 os.environ['DRY_RUN'] = 'true'
 
-from main_pipeline import run_complete_pipeline
-from logger import setup_logger
+from src.main_pipeline import run_complete_pipeline
+from src.logger import setup_logger
 
 def test_complete_pipeline():
     """Test the complete pipeline end-to-end."""

@@ -9,8 +9,8 @@ from pathlib import Path
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent / "src"))
 
-from collectors.main_collector import MainCollector
-from logger import setup_logger
+from src.collectors import MainCollector
+from src.logger import setup_logger
 
 def test_simple_collection():
     """Test basic collection functionality."""

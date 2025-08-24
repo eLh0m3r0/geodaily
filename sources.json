@@ -1,12 +1,6 @@
 {
   "tier1_sources": [
     {
-      "name": "Reuters World",
-      "url": "https://feeds.reuters.com/reuters/worldNews",
-      "category": "mainstream",
-      "weight": 0.8
-    },
-    {
       "name": "BBC World",
       "url": "http://feeds.bbci.co.uk/news/world/rss.xml",
       "category": "mainstream",
@@ -56,7 +50,7 @@
     },
     {
       "name": "Council on Foreign Relations",
-      "url": "https://www.cfr.org/rss-feeds",
+      "url": "https://www.cfr.org/feed/blog/",
       "category": "think_tank",
       "weight": 1.3
     },
@@ -73,12 +67,6 @@
       "weight": 1.2
     },
     {
-      "name": "Wilson Center",
-      "url": "https://www.wilsoncenter.org/rss.xml",
-      "category": "think_tank",
-      "weight": 1.1
-    },
-    {
       "name": "Atlantic Council",
       "url": "https://www.atlanticcouncil.org/feed/",
       "category": "think_tank",
@@ -88,16 +76,16 @@
   "tier2_sources": [
     {
       "name": "Foreign Policy",
-      "url": "https://foreignpolicy.com",
+      "url": "https://foreignpolicy.com/news/",
       "method": "basic",
       "category": "analysis",
       "weight": 1.2,
       "selectors": {
-        "container": ".post-block, article",
-        "title": ".hed, h1, h2",
+        "container": "article, .fp-post-item",
+        "title": "h2, h3, .fp-headline",
         "link": "a",
-        "summary": ".dek, .excerpt",
-        "date": "time, .date"
+        "summary": ".fp-excerpt, .excerpt",
+        "date": "time, .fp-date"
       }
     },
     {
@@ -107,25 +95,11 @@
       "category": "regional",
       "weight": 1.0,
       "selectors": {
-        "container": ".story-block, article",
-        "title": "h3, h2",
+        "container": ".story-list-item, .listing-item",
+        "title": "h2, h3, .headline",
         "link": "a",
-        "summary": ".story-summary",
-        "date": "time"
-      }
-    },
-    {
-      "name": "Nikkei Asia",
-      "url": "https://asia.nikkei.com/Politics",
-      "method": "basic",
-      "category": "regional",
-      "weight": 1.0,
-      "selectors": {
-        "container": ".article-item, article",
-        "title": "h3, h2",
-        "link": "a",
-        "summary": ".article-summary",
-        "date": "time"
+        "summary": ".story-summary, .kicker",
+        "date": "time, .date"
       }
     },
     {

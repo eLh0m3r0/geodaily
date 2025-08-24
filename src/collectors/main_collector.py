@@ -6,18 +6,11 @@ from typing import List, Dict, Any
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import time
 
-try:
-    from ..models import Article, NewsSource, SourceTier, SourceCategory, ProcessingStats
-    from ..config import Config
-    from ..logger import get_logger
-    from .rss_collector import RSSCollector
-    from .web_scraper import WebScraper
-except ImportError:
-    from models import Article, NewsSource, SourceTier, SourceCategory, ProcessingStats
-    from config import Config
-    from logger import get_logger
-    from collectors.rss_collector import RSSCollector
-    from collectors.web_scraper import WebScraper
+from ..models import Article, NewsSource, SourceTier, SourceCategory, ProcessingStats
+from ..config import Config
+from ..logger import get_logger
+from .rss_collector import RSSCollector
+from .web_scraper import WebScraper
 
 logger = get_logger(__name__)
 

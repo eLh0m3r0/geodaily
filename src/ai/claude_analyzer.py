@@ -7,13 +7,13 @@ import re
 from typing import List, Dict, Optional
 
 try:
-    from ..models import Article, ArticleCluster, AIAnalysis
-    from ..config import Config
-    from ..logger import get_logger
+    import anthropic
 except ImportError:
-    from models import Article, ArticleCluster, AIAnalysis
-    from config import Config
-    from logger import get_logger
+    anthropic = None
+
+from ..models import Article, ArticleCluster, AIAnalysis
+from ..config import Config
+from ..logger import get_logger
 
 logger = get_logger(__name__)
 
@@ -22,9 +22,25 @@ class ClaudeAnalyzer:
     
     def __init__(self):
         """Initialize Claude analyzer."""
-        # For now, we'll use mock analysis since we don't have real API keys in testing
+        self.client = None
         self.mock_mode = True
-        logger.info("Claude analyzer initialized in mock mode")
+        
+        # Try to initialize real Claude client
+        if Config.ANTHROPIC_API_KEY and anthropic:
+            try:
+                self.client = anthropic.Anthropic(
+                    api_key=Config.ANTHROPIC_API_KEY
+                )
+                self.mock_mode = False
+                logger.info("Claude analyzer initialized with real API")
+            except Exception as e:
+                logger.warning(f"Failed to initialize Claude API: {e}")
+                logger.info("Falling back to mock mode")
+        else:
+            if not Config.ANTHROPIC_API_KEY:
+                logger.info("No ANTHROPIC_API_KEY found, using mock mode")
+            if not anthropic:
+                logger.info("anthropic package not available, using mock mode")
     
     def analyze_clusters(self, clusters: List[ArticleCluster], target_stories: int = 4) -> List[AIAnalysis]:
         """
@@ -46,13 +62,142 @@ class ClaudeAnalyzer:
             if self.mock_mode:
                 return self._create_mock_analyses(clusters[:target_stories])
             else:
-                # Real Claude API implementation would go here
-                return self._create_mock_analyses(clusters[:target_stories])
+                return self._analyze_with_claude_api(clusters[:target_stories])
             
         except Exception as e:
             logger.error(f"Error in AI analysis: {e}")
-            return []
+            # Fallback to mock analysis
+            logger.info("Falling back to mock analysis")
+            return self._create_mock_analyses(clusters[:target_stories])
     
+    def _analyze_with_claude_api(self, clusters: List[ArticleCluster]) -> List[AIAnalysis]:
+        """Analyze clusters using real Claude API."""
+        if not self.client:
+            logger.error("Claude client not initialized")
+            return self._create_mock_analyses(clusters)
+        
+        analyses = []
+        
+        for cluster in clusters:
+            try:
+                analysis = self._analyze_single_cluster_with_api(cluster)
+                if analysis:
+                    analyses.append(analysis)
+            except Exception as e:
+                logger.error(f"Error analyzing cluster with API: {e}")
+                # Fallback to mock for this cluster
+                mock_analysis = self._create_mock_analyses([cluster])
+                if mock_analysis:
+                    analyses.extend(mock_analysis)
+        
+        return analyses
+    
+    def _analyze_single_cluster_with_api(self, cluster: ArticleCluster) -> Optional[AIAnalysis]:
+        """Analyze a single cluster using Claude API."""
+        main_article = cluster.main_article
+        
+        # Prepare article content for analysis
+        articles_summary = self._prepare_articles_for_analysis(cluster.articles)
+        
+        prompt = self._build_analysis_prompt(articles_summary, main_article)
+        
+        try:
+            response = self.client.messages.create(
+                model=Config.AI_MODEL,
+                max_tokens=Config.AI_MAX_TOKENS,
+                temperature=Config.AI_TEMPERATURE,
+                messages=[{
+                    "role": "user",
+                    "content": prompt
+                }]
+            )
+            
+            # Parse Claude's response
+            analysis_text = response.content[0].text
+            return self._parse_claude_response(analysis_text, cluster)
+            
+        except Exception as e:
+            logger.error(f"Claude API call failed: {e}")
+            return None
+    
+    def _prepare_articles_for_analysis(self, articles: List[Article]) -> str:
+        """Prepare articles content for Claude analysis."""
+        summaries = []
+        for i, article in enumerate(articles[:5]):  # Limit to 5 articles per cluster
+            summary = f"Article {i+1}:\n"
+            summary += f"Source: {article.source} ({article.source_category.value})\n"
+            summary += f"Title: {article.title}\n"
+            summary += f"Summary: {article.summary[:300]}...\n"
+            summaries.append(summary)
+        
+        return "\n\n".join(summaries)
+    
+    def _build_analysis_prompt(self, articles_summary: str, main_article: Article) -> str:
+        """Build the analysis prompt for Claude."""
+        return f"""You are a geopolitical analyst specializing in identifying underreported stories with strategic significance. 
+
+Analyze the following cluster of articles and provide insights focusing on what mainstream media might be missing:
+
+{articles_summary}
+
+Provide analysis in this exact JSON format:
+{{
+  "story_title": "Concise, engaging title (max 60 characters)",
+  "why_important": "Strategic significance and implications (max 80 words)",
+  "what_overlooked": "What mainstream media is missing (max 40 words)", 
+  "prediction": "Expected developments in next 72 hours (max 30 words)",
+  "impact_score": [1-10 integer],
+  "confidence": [0.0-1.0 float]
+}}
+
+Focus on:
+- Second-order effects and strategic implications
+- Regional power dynamics
+- Economic/technological sovereignty issues
+- Alliance structures and partnerships
+- Information warfare and influence operations
+
+Return only valid JSON, no additional text."""
+    
+    def _parse_claude_response(self, response_text: str, cluster: ArticleCluster) -> Optional[AIAnalysis]:
+        """Parse Claude's JSON response into AIAnalysis object."""
+        try:
+            # Extract JSON from response (in case there's extra text)
+            json_match = re.search(r'{.*}', response_text, re.DOTALL)
+            if not json_match:
+                logger.error("No JSON found in Claude response")
+                return None
+            
+            data = json.loads(json_match.group())
+            
+            # Validate required fields
+            required_fields = ['story_title', 'why_important', 'what_overlooked', 'prediction', 'impact_score']
+            for field in required_fields:
+                if field not in data:
+                    logger.error(f"Missing required field: {field}")
+                    return None
+            
+            # Create AIAnalysis object
+            analysis = AIAnalysis(
+                story_title=data['story_title'][:60],  # Ensure length limit
+                why_important=data['why_important'],
+                what_overlooked=data['what_overlooked'],
+                prediction=data['prediction'],
+                impact_score=int(data['impact_score']),
+                sources=[article.url for article in cluster.articles],
+                confidence=float(data.get('confidence', 0.8))
+            )
+            
+            return analysis
+            
+        except json.JSONDecodeError as e:
+            logger.error(f"Failed to parse Claude response as JSON: {e}")
+            logger.debug(f"Response text: {response_text}")
+            return None
+        except Exception as e:
+            logger.error(f"Error parsing Claude response: {e}")
+            return None
+
     def _create_mock_analyses(self, clusters: List[ArticleCluster]) -> List[AIAnalysis]:
         """Create mock AI analyses for testing."""
         analyses = []
@@ -179,5 +324,30 @@ class ClaudeAnalyzer:
     
     def test_api_connection(self) -> bool:
         """Test if Claude API is working."""
-        logger.info("Testing API connection (mock mode)")
-        return True
+        if self.mock_mode:
+            logger.info("Testing API connection (mock mode)")
+            return True
+        
+        try:
+            # Simple test prompt
+            response = self.client.messages.create(
+                model=Config.AI_MODEL,
+                max_tokens=50,
+                temperature=0.0,
+                messages=[{
+                    "role": "user", 
+                    "content": "Respond with exactly: 'API connection successful'"
+                }]
+            )
+            
+            result = response.content[0].text.strip()
+            if "API connection successful" in result:
+                logger.info("✅ Claude API connection test successful")
+                return True
+            else:
+                logger.warning(f"Unexpected API response: {result}")
+                return False
+                
+        except Exception as e:
+            logger.error(f"❌ Claude API connection test failed: {e}")
+            return False
