@@ -94,8 +94,8 @@ def run_complete_pipeline() -> bool:
                            run_id=run_id,
                            structured_data={
                                'articles_collected': collection_stats.total_articles_collected,
-                               'sources_attempted': len(collection_stats.sources_attempted),
-                               'collection_errors': len(collection_stats.errors) if collection_stats.errors else 0
+                               'sources_attempted': getattr(collection_stats, 'sources_attempted', 0),
+                               'collection_errors': len(collection_stats.errors) if isinstance(collection_stats.errors, list) and collection_stats.errors else 0
                            })
 
                 if collection_stats.total_articles_collected < 10:
@@ -453,8 +453,8 @@ def run_complete_pipeline() -> bool:
                         'substack_markdown': publishing_summary['substack_exports']['markdown_file'],
                         'legacy_file': publishing_summary['legacy_file'],
                         'processing_success_rate': processing_stats.success_rate,
-                        'collection_errors': len(collection_stats.errors) if collection_stats.errors else 0,
-                        'processing_errors': len(processing_stats.errors) if processing_stats.errors else 0
+                        'collection_errors': len(collection_stats.errors) if isinstance(collection_stats.errors, list) and collection_stats.errors else 0,
+                        'processing_errors': len(processing_stats.errors) if isinstance(processing_stats.errors, list) and processing_stats.errors else 0
                     })
 
         # Step 9: Run cleanup (only if enabled and not in dry run mode)

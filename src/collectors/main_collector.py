@@ -44,6 +44,7 @@ class MainCollector:
             
             # Update stats
             self.stats.total_articles_collected = len(all_articles)
+            self.stats.sources_attempted = len(sources)
             self.stats.processing_time_seconds = time.time() - start_time
             
             logger.info(f"Collection completed: {len(all_articles)} articles in {self.stats.processing_time_seconds:.2f}s")

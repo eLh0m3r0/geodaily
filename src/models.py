@@ -124,6 +124,7 @@ class ProcessingStats:
     articles_sent_to_ai: int = 0
     stories_selected: int = 0
     processing_time_seconds: float = 0.0
+    sources_attempted: int = 0
     errors: List[str] = field(default_factory=list)
     
     @property

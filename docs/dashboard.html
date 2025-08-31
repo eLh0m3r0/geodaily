@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Metrics Dashboard - Geopolitical Daily</title>
+    <meta name="description" content="Real-time metrics and analytics for the Geopolitical Daily newsletter pipeline">
+    <link rel="stylesheet" href="assets/style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@2.29.3/index.min.js"></script>
+
+    <style>
+        .dashboard-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .metric-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid #3182ce;
+        }
+
+        .metric-title {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .metric-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+
+        .metric-change {
+            font-size: 12px;
+            color: #38a169;
+        }
+
+        .metric-change.negative {
+            color: #e53e3e;
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .chart-container {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .chart-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #2d3748;
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 300px;
+        }
+
+        .data-table {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .data-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table th {
+            background: #f7fafc;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            color: #4a5568;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .data-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .data-table tr:hover {
+            background: #f7fafc;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .status-success { background: #38a169; }
+        .status-warning { background: #dd6b20; }
+        .status-error { background: #e53e3e; }
+
+        .last-updated {
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-container {
+                padding: 10px;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="site-title">Geopolitical Daily</h1>
+            <p class="tagline">Newsletter Metrics Dashboard</p>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="archive.html">Archive</a>
+                <a href="about.html">About</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="feed.xml">RSS</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="dashboard-container">
+            <h1>Newsletter Pipeline Metrics</h1>
+            <p class="dashboard-intro">Real-time analytics and performance metrics for the Geopolitical Daily newsletter generation pipeline.</p>
+
+            
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-title">Total Articles Collected</div>
+                <div class="metric-value">67</div>
+                <div class="metric-change">Last 30 days average</div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-title">Pipeline Runs</div>
+                <div class="metric-value">7</div>
+                <div class="metric-change">Last 30 days</div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-title">AI Cost</div>
+                <div class="metric-value">$0.00</div>
+                <div class="metric-change">Last 30 days total</div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-title">Source Success Rate</div>
+                <div class="metric-value">100.0%</div>
+                <div class="metric-change">Average across all sources</div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-title">AI Tokens Used</div>
+                <div class="metric-value">1,123</div>
+                <div class="metric-change">Last 30 days total</div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-title">Active Sources</div>
+                <div class="metric-value">16</div>
+                <div class="metric-change">Currently monitored</div>
+            </div>
+        </div>
+
+            
+        <div class="charts-grid">
+            <div class="chart-container">
+                <div class="chart-title">Daily Articles Collected</div>
+                <div class="chart-wrapper">
+                    <canvas id="articlesChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">AI Usage & Cost</div>
+                <div class="chart-wrapper">
+                    <canvas id="aiUsageChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Source Performance</div>
+                <div class="chart-wrapper">
+                    <canvas id="sourcePerformanceChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Processing Time Trends</div>
+                <div class="chart-wrapper">
+                    <canvas id="processingTimeChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+            
+        <div class="data-table">
+            <h3 style="margin: 0 0 15px 0; color: #2d3748;">Recent Pipeline Runs</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Articles</th>
+                        <th>Stories</th>
+                        <th>AI Cost</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="data-table">
+            <h3 style="margin: 0 0 15px 0; color: #2d3748;">Source Performance (Last 30 Days)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Source</th>
+                        <th>Category</th>
+                        <th>Articles</th>
+                        <th>Success Rate</th>
+                        <th>Avg Collection Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Atlantic Council</td>
+                        <td>think_tank</td>
+                        <td>100</td>
+                        <td><span class="status-indicator status-success"></span>100.0%</td>
+                        <td>0.00s</td>
+                    </tr>
+                    <tr>
+                        <td>War on the Rocks</td>
+                        <td>analysis</td>
+                        <td>100</td>
+                        <td><span class="status-indicator status-success"></span>100.0%</td>
+                        <td>0.00s</td>
+                    </tr>
+                    <tr>
+                        <td>The Diplomat</td>
+                        <td>analysis</td>
+                        <td>96</td>
+                        <td><span class="status-indicator status-success"></span>100.0%</td>
+                        <td>0.00s</td>
+                    </tr>
+                    <tr>
+                        <td>BBC World</td>
+                        <td>mainstream</td>
+                        <td>46</td>
+                        <td><span class="status-indicator status-success"></span>100.0%</td>
+                        <td>0.00s</td>
+                    </tr>
+                    <tr>
+                        <td>Guardian International</td>
+                        <td>mainstream</td>
+                        <td>45</td>
+                        <td><span class="status-indicator status-success"></span>100.0%</td>
+                        <td>0.00s</td>
+                    </tr>
+                    <tr>
+                        <td>Al Jazeera English</td>
+                        <td>mainstream</td>
+                        <td>25</td>
+                        <td><span class="status-indicator status-success"></span>100.0%</td>
+                        <td>0.00s</td>
+                    </tr>
+                    <tr>
+                        <td>Financial Times World</td>
+                        <td>mainstream</td>
+                        <td>25</td>
+                        <td><span class="status-indicator status-success"></span>100.0%</td>
+                        <td>0.00s</td>
+                    </tr>
+                    <tr>
+                        <td>Foreign Affairs</td>
+                        <td>analysis</td>
+                        <td>20</td>
+                        <td><span class="status-indicator status-success"></span>100.0%</td>
+                        <td>0.00s</td>
+                    </tr>
+                    <tr>
+                        <td>CSIS</td>
+                        <td>think_tank</td>
+                        <td>10</td>
+                        <td><span class="status-indicator status-success"></span>100.0%</td>
+                        <td>0.00s</td>
+                    </tr>
+                    <tr>
+                        <td>Defense One</td>
+                        <td>analysis</td>
+                        <td>4</td>
+                        <td><span class="status-indicator status-success"></span>100.0%</td>
+                        <td>0.00s</td>
+                    </tr>
+                    <tr>
+                        <td>Brookings Institution</td>
+                        <td>think_tank</td>
+                        <td>0</td>
+                        <td><span class="status-indicator status-success"></span>100.0%</td>
+                        <td>0.00s</td>
+                    </tr>
+                    <tr>
+                        <td>Carnegie Endowment</td>
+                        <td>think_tank</td>
+                        <td>0</td>
+                        <td><span class="status-indicator status-success"></span>100.0%</td>
+                        <td>0.00s</td>
+                    </tr>
+                    <tr>
+                        <td>Council on Foreign Relations</td>
+                        <td>think_tank</td>
+                        <td>0</td>
+                        <td><span class="status-indicator status-success"></span>100.0%</td>
+                        <td>0.00s</td>
+                    </tr>
+                    <tr>
+                        <td>Foreign Policy</td>
+                        <td>analysis</td>
+                        <td>0</td>
+                        <td><span class="status-indicator status-success"></span>100.0%</td>
+                        <td>0.00s</td>
+                    </tr>
+                    <tr>
+                        <td>South China Morning Post</td>
+                        <td>regional</td>
+                        <td>0</td>
+                        <td><span class="status-indicator status-success"></span>100.0%</td>
+                        <td>0.00s</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+            <div class="last-updated">
+                Last updated: 2025-08-31 15:32:06 UTC
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Geopolitical Daily. Strategic analysis beyond the headlines.</p>
+            <p>
+                <a href="feed.xml">RSS Feed</a> |
+                <a href="archive.html">Archive</a> |
+                <a href="https://github.com/yourusername/geodaily">Source Code</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        
+        // Daily Articles Chart
+        const articlesCtx = document.getElementById('articlesChart').getContext('2d');
+        new Chart(articlesCtx, {
+            type: 'line',
+            data: {
+                labels: ["2025-08-31"],
+                datasets: [{
+                    label: 'Articles Collected',
+                    data: [67.28571428571429],
+                    borderColor: '#3182ce',
+                    backgroundColor: 'rgba(49, 130, 206, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Articles'
+                        }
+                    }
+                }
+            }
+        });
+
+        // AI Usage Chart
+        const aiUsageCtx = document.getElementById('aiUsageChart').getContext('2d');
+        new Chart(aiUsageCtx, {
+            type: 'bar',
+            data: {
+                labels: ["2025-08-31"],
+                datasets: [{
+                    label: 'AI Cost ($)',
+                    data: [0.0002252571428571428],
+                    backgroundColor: '#38a169',
+                    borderColor: '#2f855a',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Cost ($)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Source Performance Chart
+        const sourcePerformanceCtx = document.getElementById('sourcePerformanceChart').getContext('2d');
+        new Chart(sourcePerformanceCtx, {
+            type: 'horizontalBar',
+            data: {
+                labels: ["Atlantic Counci...", "War on the Rock...", "The Diplomat", "BBC World", "Guardian Intern...", "Al Jazeera Engl...", "Financial Times...", "Foreign Affairs", "CSIS", "Defense One"],
+                datasets: [{
+                    label: 'Success Rate (%)',
+                    data: [100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0],
+                    backgroundColor: '#dd6b20',
+                    borderColor: '#c05621',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100,
+                        title: {
+                            display: true,
+                            text: 'Success Rate (%)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Processing Time Chart
+        const processingTimeCtx = document.getElementById('processingTimeChart').getContext('2d');
+        new Chart(processingTimeCtx, {
+            type: 'line',
+            data: {
+                labels: ["2025-08-31"],
+                datasets: [{
+                    label: 'Processing Time (s)',
+                    data: [3.8018104285714287],
+                    borderColor: '#805ad5',
+                    backgroundColor: 'rgba(128, 90, 213, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Time (seconds)'
+                        }
+                    }
+                }
+            }
+        });
+        
+    </script>
+</body>
+</html>

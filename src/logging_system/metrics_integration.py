@@ -165,11 +165,12 @@ class MetricsAwareLogger(StructuredLogger):
                          pipeline_stage: Optional[PipelineStage] = None,
                          error_category: Optional[ErrorCategory] = None,
                          structured_data: Optional[Dict[str, Any]] = None,
-                         performance_data: Optional[Dict[str, Any]] = None):
+                         performance_data: Optional[Dict[str, Any]] = None,
+                         run_id: Optional[str] = None):
         """Log message with structured context and metrics integration."""
         # Call parent method
         super()._log_with_context(level, message, pipeline_stage, error_category,
-                                structured_data, performance_data)
+                                structured_data, performance_data, run_id)
 
         # Send to metrics integration if available
         if self.metrics_integration:

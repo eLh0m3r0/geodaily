@@ -3,3 +3,6 @@ Allow: /
 
 # Sitemap
 Sitemap: https://yourusername.github.io/geodaily/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

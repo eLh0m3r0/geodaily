@@ -150,7 +150,8 @@ class StructuredLogger:
                          pipeline_stage: Optional[PipelineStage] = None,
                          error_category: Optional[ErrorCategory] = None,
                          structured_data: Optional[Dict[str, Any]] = None,
-                         performance_data: Optional[Dict[str, Any]] = None):
+                         performance_data: Optional[Dict[str, Any]] = None,
+                         run_id: Optional[str] = None):
         """Log message with structured context."""
         # Add context to log record
         extra = {}
@@ -158,8 +159,10 @@ class StructuredLogger:
             extra['pipeline_stage'] = pipeline_stage.value
         if error_category:
             extra['error_category'] = error_category.value
-        if self.run_id:
-            extra['run_id'] = self.run_id
+        # Use provided run_id or fall back to self.run_id
+        current_run_id = run_id or self.run_id
+        if current_run_id:
+            extra['run_id'] = current_run_id
         if structured_data:
             extra['structured_data'] = structured_data
         if performance_data:

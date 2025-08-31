@@ -10,8 +10,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent / "src"))
 
 try:
-    from metrics.dashboard_generator import DashboardGenerator
-    from metrics.collector import MetricsCollector
+    from src.metrics.dashboard_generator import DashboardGenerator
+    from src.metrics.collector import MetricsCollector
 except ImportError:
     # Try direct execution approach
     import subprocess

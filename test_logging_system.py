@@ -14,7 +14,7 @@ sys.path.insert(0, str(Path(__file__).parent / "src"))
 from src.logging_system import (
     StructuredLogger, ErrorCategory, PipelineStage,
     PerformanceProfiler, PipelineTracker, error_handler,
-    LogAnalyzer, LogDashboard
+    LogAnalysisTools as LogAnalyzer, LogDashboard
 )
 from src.metrics.collector import MetricsCollector
 
