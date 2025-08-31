@@ -85,12 +85,6 @@ class Config:
             elif cls.AI_PROVIDER == "gemini" and not cls.GEMINI_API_KEY:
                 missing.append("GEMINI_API_KEY")
 
-            if not cls.SUBSTACK_API_KEY:
-                missing.append("SUBSTACK_API_KEY")
-
-            if not cls.SUBSTACK_PUBLICATION_ID:
-                missing.append("SUBSTACK_PUBLICATION_ID")
-
         # Check if sources file exists
         if not cls.SOURCES_FILE.exists():
             missing.append(f"Sources file: {cls.SOURCES_FILE}")
