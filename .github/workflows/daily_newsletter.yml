@@ -78,7 +78,7 @@ jobs:
         
     - name: Run newsletter pipeline
       run: |
-        python src/main_pipeline.py
+        python -m src.main_pipeline
         
     - name: Check pipeline success
       run: |
