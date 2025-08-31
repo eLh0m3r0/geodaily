@@ -1,0 +1,36 @@
+SUBSTACK PUBLISHING INSTRUCTIONS
+Geopolitical Daily - August 31, 2025
+
+QUICK CHECKLIST:
+□ Copy content from substack-2025-08-31.html
+□ Set title: "Geopolitical Daily - August 31, 2025"
+□ Add subtitle: "Strategic Intelligence Beyond the Headlines"
+□ Schedule/publish for 6:00 AM your timezone
+□ Add tags: geopolitics, analysis, newsletter, intelligence
+
+STEP-BY-STEP:
+
+1. Go to your Substack dashboard
+2. Click "New post"
+3. Title: "Geopolitical Daily - August 31, 2025"
+4. Subtitle: "Strategic Intelligence Beyond the Headlines"
+5. Copy-paste HTML content from the .html file
+6. Preview to ensure formatting looks good
+7. Add these tags: geopolitics, analysis, newsletter, intelligence
+8. Set publication time (recommend 6:00 AM)
+9. Publish or schedule
+
+CONTENT SUMMARY:
+- 4 strategic stories analyzed
+- Average impact score: 9.8/10
+- Estimated reading time: 1 min read
+
+TOP STORY: Addressing China’s military expansion in West Africa and bey
+
+ENGAGEMENT TIPS:
+- Pin the post for higher visibility
+- Share on Twitter with #geopolitics #strategy hashtags
+- Consider creating a thread with key insights
+- Engage with comments to build community
+
+Generated: 2025-08-31 14:41 UTC

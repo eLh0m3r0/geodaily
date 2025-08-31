@@ -1,0 +1,241 @@
+2025-08-31 14:35:38,913 - main_pipeline - INFO - === Starting Geopolitical Daily Newsletter Pipeline ===
+2025-08-31 14:35:38,913 - main_pipeline - INFO - Pipeline started at: 2025-08-31 14:35:38.913609
+2025-08-31 14:35:38,913 - main_pipeline - INFO - Step 1: Validating configuration...
+2025-08-31 14:35:38,913 - main_pipeline - INFO - Configuration validated successfully
+2025-08-31 14:35:38,913 - main_pipeline - INFO - Step 2: Collecting articles from all sources...
+2025-08-31 14:35:45,780 - main_pipeline - INFO - Collection completed: 471 articles
+2025-08-31 14:35:45,780 - main_pipeline - INFO - Step 3: Processing articles...
+2025-08-31 14:36:05,981 - main_pipeline - INFO - Processing completed: 441 clusters created
+2025-08-31 14:36:05,981 - main_pipeline - INFO - Step 4: Running AI analysis...
+2025-08-31 14:36:05,981 - main_pipeline - INFO - AI analysis completed: 4 stories selected
+2025-08-31 14:36:05,981 - main_pipeline - INFO - DRY RUN - Simulated tokens: 1123, Cost: $0.0016
+2025-08-31 14:36:05,981 - main_pipeline - INFO - Step 5: Generating newsletter...
+2025-08-31 14:36:05,981 - main_pipeline - INFO - Newsletter saved to: /Users/vaclav/Documents/augment-projects/geodaily/output/newsletter_20250831_143605.html
+2025-08-31 14:36:05,981 - main_pipeline - INFO - Step 6: Publishing newsletter...
+2025-08-31 14:36:05,984 - main_pipeline - INFO - ✅ Published to GitHub Pages: newsletters/newsletter-2025-08-31.html
+2025-08-31 14:36:05,984 - main_pipeline - INFO - ✅ Substack exports ready: substack_exports/substack-2025-08-31.md
+2025-08-31 14:36:05,984 - main_pipeline - INFO - Step 7: Sending admin notification...
+2025-08-31 14:36:05,984 - main_pipeline - INFO - 📧 Admin notification skipped (not configured)
+2025-08-31 14:36:05,984 - main_pipeline - INFO - === Pipeline Summary ===
+2025-08-31 14:36:05,984 - main_pipeline - INFO - Total execution time: 27.07 seconds
+2025-08-31 14:36:05,984 - main_pipeline - INFO - Articles collected: 471
+2025-08-31 14:36:05,984 - main_pipeline - INFO - Articles after processing: 466
+2025-08-31 14:36:05,984 - main_pipeline - INFO - Clusters created: 441
+2025-08-31 14:36:05,984 - main_pipeline - INFO - Stories selected: 4
+2025-08-31 14:36:05,984 - main_pipeline - INFO - GitHub Pages: newsletters/newsletter-2025-08-31.html
+2025-08-31 14:36:05,984 - main_pipeline - INFO - Substack files: substack_exports/substack-2025-08-31.md
+2025-08-31 14:36:05,984 - main_pipeline - INFO - Legacy file: /Users/vaclav/Documents/augment-projects/geodaily/output/newsletter_20250831_143605.html
+2025-08-31 14:36:05,984 - main_pipeline - INFO - Success rate: 100.00%
+2025-08-31 14:36:05,984 - main_pipeline - INFO - === Pipeline Completed Successfully ===
+2025-08-31 14:37:33,378 - main_pipeline - INFO - === Starting Geopolitical Daily Newsletter Pipeline ===
+2025-08-31 14:37:33,378 - main_pipeline - INFO - Pipeline started at: 2025-08-31 14:37:33.378517
+2025-08-31 14:37:33,378 - main_pipeline - INFO - Step 1: Validating configuration...
+2025-08-31 14:37:33,378 - main_pipeline - INFO - Configuration validated successfully
+2025-08-31 14:37:33,378 - main_pipeline - INFO - Step 2: Collecting articles from all sources...
+2025-08-31 14:37:40,031 - main_pipeline - INFO - Collection completed: 471 articles
+2025-08-31 14:37:40,032 - main_pipeline - INFO - Step 3: Processing articles...
+2025-08-31 14:38:00,081 - main_pipeline - INFO - Processing completed: 441 clusters created
+2025-08-31 14:38:00,081 - main_pipeline - INFO - Step 4: Running AI analysis...
+2025-08-31 14:38:00,081 - main_pipeline - INFO - AI analysis completed: 4 stories selected
+2025-08-31 14:38:00,081 - main_pipeline - INFO - DRY RUN - Simulated tokens: 1123, Cost: $0.0016
+2025-08-31 14:38:00,081 - main_pipeline - INFO - Step 5: Generating newsletter...
+2025-08-31 14:38:00,082 - main_pipeline - INFO - Newsletter saved to: /Users/vaclav/Documents/augment-projects/geodaily/output/newsletter_20250831_143800.html
+2025-08-31 14:38:00,082 - main_pipeline - INFO - Step 6: Publishing newsletter...
+2025-08-31 14:38:00,083 - main_pipeline - INFO - ✅ Published to GitHub Pages: newsletters/newsletter-2025-08-31.html
+2025-08-31 14:38:00,084 - main_pipeline - INFO - ✅ Substack exports ready: substack_exports/substack-2025-08-31.md
+2025-08-31 14:38:00,084 - main_pipeline - INFO - Step 7: Sending admin notification...
+2025-08-31 14:38:00,084 - main_pipeline - INFO - 📧 Admin notification skipped (not configured)
+2025-08-31 14:38:00,084 - main_pipeline - INFO - === Pipeline Summary ===
+2025-08-31 14:38:00,084 - main_pipeline - INFO - Total execution time: 26.71 seconds
+2025-08-31 14:38:00,084 - main_pipeline - INFO - Articles collected: 471
+2025-08-31 14:38:00,084 - main_pipeline - INFO - Articles after processing: 466
+2025-08-31 14:38:00,084 - main_pipeline - INFO - Clusters created: 441
+2025-08-31 14:38:00,084 - main_pipeline - INFO - Stories selected: 4
+2025-08-31 14:38:00,084 - main_pipeline - INFO - GitHub Pages: newsletters/newsletter-2025-08-31.html
+2025-08-31 14:38:00,084 - main_pipeline - INFO - Substack files: substack_exports/substack-2025-08-31.md
+2025-08-31 14:38:00,084 - main_pipeline - INFO - Legacy file: /Users/vaclav/Documents/augment-projects/geodaily/output/newsletter_20250831_143800.html
+2025-08-31 14:38:00,084 - main_pipeline - INFO - Success rate: 100.00%
+2025-08-31 14:38:00,084 - main_pipeline - INFO - === Pipeline Completed Successfully ===
+2025-08-31 14:38:18,386 - main_pipeline - INFO - === Starting Geopolitical Daily Newsletter Pipeline ===
+2025-08-31 14:38:18,386 - main_pipeline - INFO - Pipeline started at: 2025-08-31 14:38:18.386474
+2025-08-31 14:38:18,386 - main_pipeline - INFO - Step 1: Validating configuration...
+2025-08-31 14:38:18,386 - main_pipeline - INFO - Configuration validated successfully
+2025-08-31 14:38:18,386 - main_pipeline - INFO - Step 2: Collecting articles from all sources...
+2025-08-31 14:38:25,009 - main_pipeline - INFO - Collection completed: 471 articles
+2025-08-31 14:38:25,009 - main_pipeline - INFO - Step 3: Processing articles...
+2025-08-31 14:38:44,767 - main_pipeline - INFO - Processing completed: 441 clusters created
+2025-08-31 14:38:44,767 - main_pipeline - INFO - Step 4: Running AI analysis...
+2025-08-31 14:38:44,767 - main_pipeline - INFO - AI analysis completed: 4 stories selected
+2025-08-31 14:38:44,767 - main_pipeline - INFO - DRY RUN - Simulated tokens: 1123, Cost: $0.0016
+2025-08-31 14:38:44,767 - main_pipeline - INFO - Step 5: Generating newsletter...
+2025-08-31 14:38:44,768 - main_pipeline - INFO - Newsletter saved to: /Users/vaclav/Documents/augment-projects/geodaily/output/newsletter_20250831_143844.html
+2025-08-31 14:38:44,768 - main_pipeline - INFO - Step 6: Publishing newsletter...
+2025-08-31 14:38:44,770 - main_pipeline - INFO - ✅ Published to GitHub Pages: newsletters/newsletter-2025-08-31.html
+2025-08-31 14:38:44,770 - main_pipeline - INFO - ✅ Substack exports ready: substack_exports/substack-2025-08-31.md
+2025-08-31 14:38:44,770 - main_pipeline - INFO - Step 7: Sending admin notification...
+2025-08-31 14:38:44,770 - main_pipeline - INFO - 📧 Admin notification skipped (not configured)
+2025-08-31 14:38:44,770 - main_pipeline - INFO - === Pipeline Summary ===
+2025-08-31 14:38:44,770 - main_pipeline - INFO - Total execution time: 26.38 seconds
+2025-08-31 14:38:44,770 - main_pipeline - INFO - Articles collected: 471
+2025-08-31 14:38:44,770 - main_pipeline - INFO - Articles after processing: 466
+2025-08-31 14:38:44,770 - main_pipeline - INFO - Clusters created: 441
+2025-08-31 14:38:44,770 - main_pipeline - INFO - Stories selected: 4
+2025-08-31 14:38:44,770 - main_pipeline - INFO - GitHub Pages: newsletters/newsletter-2025-08-31.html
+2025-08-31 14:38:44,770 - main_pipeline - INFO - Substack files: substack_exports/substack-2025-08-31.md
+2025-08-31 14:38:44,770 - main_pipeline - INFO - Legacy file: /Users/vaclav/Documents/augment-projects/geodaily/output/newsletter_20250831_143844.html
+2025-08-31 14:38:44,770 - main_pipeline - INFO - Success rate: 100.00%
+2025-08-31 14:38:44,770 - main_pipeline - INFO - === Pipeline Completed Successfully ===
+2025-08-31 14:39:05,886 - main_pipeline - INFO - === Starting Geopolitical Daily Newsletter Pipeline ===
+2025-08-31 14:39:05,886 - main_pipeline - INFO - Pipeline started at: 2025-08-31 14:39:05.886103
+2025-08-31 14:39:05,886 - main_pipeline - INFO - Step 1: Validating configuration...
+2025-08-31 14:39:05,886 - main_pipeline - INFO - Configuration validated successfully
+2025-08-31 14:39:05,886 - main_pipeline - INFO - Step 2: Collecting articles from all sources...
+2025-08-31 14:39:12,556 - main_pipeline - INFO - Collection completed: 471 articles
+2025-08-31 14:39:12,556 - main_pipeline - INFO - Step 3: Processing articles...
+2025-08-31 14:39:32,331 - main_pipeline - INFO - Processing completed: 441 clusters created
+2025-08-31 14:39:32,331 - main_pipeline - INFO - Step 4: Running AI analysis...
+2025-08-31 14:39:32,331 - main_pipeline - INFO - DRY_RUN mode: Using simulated AI analysis
+2025-08-31 14:39:32,331 - main_pipeline - INFO - Analyzing 441 clusters to select 4 stories
+2025-08-31 14:39:32,331 - main_pipeline - INFO - === DRY RUN SIMULATION STATS ===
+2025-08-31 14:39:32,331 - main_pipeline - INFO - Simulated API calls: 4
+2025-08-31 14:39:32,331 - main_pipeline - INFO - Simulated tokens used: 1123
+2025-08-31 14:39:32,331 - main_pipeline - INFO - Simulated cost: $0.0016
+2025-08-31 14:39:32,331 - main_pipeline - INFO - =================================
+2025-08-31 14:39:32,331 - main_pipeline - INFO - Story 1: 'Addressing China’s military expansion in...' (Impact: 9/10, Confidence: 0.85)
+2025-08-31 14:39:32,331 - main_pipeline - INFO - Story 2: 'Is Warfare Becoming More Performative?...' (Impact: 10/10, Confidence: 0.85)
+2025-08-31 14:39:32,331 - main_pipeline - INFO - Story 3: 'Advancing Diplomacy and Approaching Dead...' (Impact: 10/10, Confidence: 0.85)
+2025-08-31 14:39:32,331 - main_pipeline - INFO - Story 4: 'Nuclear Deterrence is NATO’s Best Weapon...' (Impact: 10/10, Confidence: 0.85)
+2025-08-31 14:39:32,331 - main_pipeline - INFO - AI analysis completed: 4 stories selected
+2025-08-31 14:39:32,331 - main_pipeline - INFO - DRY RUN - Simulated tokens: 1123, Cost: $0.0016
+2025-08-31 14:39:32,331 - main_pipeline - INFO - Step 5: Generating newsletter...
+2025-08-31 14:39:32,332 - main_pipeline - INFO - Newsletter saved to: /Users/vaclav/Documents/augment-projects/geodaily/output/newsletter_20250831_143932.html
+2025-08-31 14:39:32,332 - main_pipeline - INFO - Step 6: Publishing newsletter...
+2025-08-31 14:39:32,333 - main_pipeline - INFO - ✅ Published to GitHub Pages: newsletters/newsletter-2025-08-31.html
+2025-08-31 14:39:32,334 - main_pipeline - INFO - ✅ Substack exports ready: substack_exports/substack-2025-08-31.md
+2025-08-31 14:39:32,334 - main_pipeline - INFO - Step 7: Sending admin notification...
+2025-08-31 14:39:32,334 - main_pipeline - INFO - 📧 Admin notification skipped (not configured)
+2025-08-31 14:39:32,334 - main_pipeline - INFO - === Pipeline Summary ===
+2025-08-31 14:39:32,334 - main_pipeline - INFO - Total execution time: 26.45 seconds
+2025-08-31 14:39:32,334 - main_pipeline - INFO - Articles collected: 471
+2025-08-31 14:39:32,334 - main_pipeline - INFO - Articles after processing: 466
+2025-08-31 14:39:32,334 - main_pipeline - INFO - Clusters created: 441
+2025-08-31 14:39:32,334 - main_pipeline - INFO - Stories selected: 4
+2025-08-31 14:39:32,334 - main_pipeline - INFO - GitHub Pages: newsletters/newsletter-2025-08-31.html
+2025-08-31 14:39:32,334 - main_pipeline - INFO - Substack files: substack_exports/substack-2025-08-31.md
+2025-08-31 14:39:32,334 - main_pipeline - INFO - Legacy file: /Users/vaclav/Documents/augment-projects/geodaily/output/newsletter_20250831_143932.html
+2025-08-31 14:39:32,334 - main_pipeline - INFO - Success rate: 100.00%
+2025-08-31 14:39:32,334 - main_pipeline - INFO - === Pipeline Completed Successfully ===
+2025-08-31 14:41:22,118 - main_pipeline - INFO - === Starting Geopolitical Daily Newsletter Pipeline ===
+2025-08-31 14:41:22,118 - main_pipeline - INFO - Pipeline started at: 2025-08-31 14:41:22.117999
+2025-08-31 14:41:22,118 - main_pipeline - INFO - Step 1: Validating configuration...
+2025-08-31 14:41:22,118 - main_pipeline - INFO - Configuration validated successfully
+2025-08-31 14:41:22,118 - main_pipeline - INFO - Step 2: Collecting articles from all sources...
+2025-08-31 14:41:28,800 - main_pipeline - INFO - Collection completed: 471 articles
+2025-08-31 14:41:28,801 - main_pipeline - INFO - Step 3: Processing articles...
+2025-08-31 14:41:48,842 - main_pipeline - INFO - Processing completed: 441 clusters created
+2025-08-31 14:41:48,844 - main_pipeline - INFO - Step 4: Running AI analysis...
+2025-08-31 14:41:48,844 - main_pipeline - INFO - DRY_RUN mode: Using simulated AI analysis
+2025-08-31 14:41:48,844 - main_pipeline - INFO - Analyzing 441 clusters to select 4 stories
+2025-08-31 14:41:48,844 - main_pipeline - INFO - === DRY RUN SIMULATION STATS ===
+2025-08-31 14:41:48,844 - main_pipeline - INFO - Simulated API calls: 4
+2025-08-31 14:41:48,844 - main_pipeline - INFO - Simulated tokens used: 1123
+2025-08-31 14:41:48,844 - main_pipeline - INFO - Simulated cost: $0.0016
+2025-08-31 14:41:48,844 - main_pipeline - INFO - =================================
+2025-08-31 14:41:48,844 - main_pipeline - INFO - Story 1: 'Addressing China’s military expansion in...' (Impact: 9/10, Confidence: 0.85)
+2025-08-31 14:41:48,845 - main_pipeline - INFO - Story 2: 'Is Warfare Becoming More Performative?...' (Impact: 10/10, Confidence: 0.85)
+2025-08-31 14:41:48,845 - main_pipeline - INFO - Story 3: 'Advancing Diplomacy and Approaching Dead...' (Impact: 10/10, Confidence: 0.85)
+2025-08-31 14:41:48,845 - main_pipeline - INFO - Story 4: 'Nuclear Deterrence is NATO’s Best Weapon...' (Impact: 10/10, Confidence: 0.85)
+2025-08-31 14:41:48,845 - main_pipeline - INFO - AI analysis completed: 4 stories selected
+2025-08-31 14:41:48,845 - main_pipeline - INFO - DRY RUN - Simulated tokens: 1123, Cost: $0.0016
+2025-08-31 14:41:48,845 - main_pipeline - INFO - Step 5: Generating newsletter...
+2025-08-31 14:41:48,845 - main_pipeline - INFO - Newsletter saved to: /Users/vaclav/Documents/augment-projects/geodaily/output/newsletter_20250831_144148.html
+2025-08-31 14:41:48,845 - main_pipeline - INFO - Step 6: Publishing newsletter...
+2025-08-31 14:41:48,850 - main_pipeline - INFO - ✅ Published to GitHub Pages: newsletters/newsletter-2025-08-31.html
+2025-08-31 14:41:48,853 - main_pipeline - INFO - ✅ Substack exports ready: substack_exports/substack-2025-08-31.md
+2025-08-31 14:41:48,853 - main_pipeline - INFO - Step 7: Sending admin notification...
+2025-08-31 14:41:48,853 - main_pipeline - INFO - 📧 Admin notification skipped (not configured)
+2025-08-31 14:41:48,853 - main_pipeline - INFO - === Pipeline Summary ===
+2025-08-31 14:41:48,853 - main_pipeline - INFO - Total execution time: 26.74 seconds
+2025-08-31 14:41:48,853 - main_pipeline - INFO - Articles collected: 471
+2025-08-31 14:41:48,853 - main_pipeline - INFO - Articles after processing: 466
+2025-08-31 14:41:48,853 - main_pipeline - INFO - Clusters created: 441
+2025-08-31 14:41:48,854 - main_pipeline - INFO - Stories selected: 4
+2025-08-31 14:41:48,854 - main_pipeline - INFO - GitHub Pages: newsletters/newsletter-2025-08-31.html
+2025-08-31 14:41:48,854 - main_pipeline - INFO - Substack files: substack_exports/substack-2025-08-31.md
+2025-08-31 14:41:48,854 - main_pipeline - INFO - Legacy file: /Users/vaclav/Documents/augment-projects/geodaily/output/newsletter_20250831_144148.html
+2025-08-31 14:41:48,854 - main_pipeline - INFO - Success rate: 100.00%
+2025-08-31 14:41:48,854 - main_pipeline - INFO - === Pipeline Completed Successfully ===
+{"timestamp": "2025-08-31T15:20:16.999107", "level": "INFO", "logger_name": "test_basic", "message": "Starting test pipeline", "pipeline_stage": "initialization", "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {"test_mode": true}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:16.999766", "level": "WARNING", "logger_name": "test_basic", "message": "This is a test warning", "pipeline_stage": "processing", "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {"warning_code": "TEST_001"}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:16.999869", "level": "ERROR", "logger_name": "test_basic", "message": "This is a test error", "pipeline_stage": null, "run_id": null, "error_category": "validation", "performance_data": null, "contextual_data": {"error_code": "TEST_ERR_001"}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:17.100740", "level": "INFO", "logger_name": "test_performance", "message": "Performance profile for test_operation", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": {"operation": "test_operation", "execution_time_seconds": 0.10006189346313477, "memory_delta_mb": 0, "cpu_usage_percent": 0, "psutil_available": false}, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:17.101818", "level": "ERROR", "logger_name": "test_errors", "message": "Caught validation error: Test validation error", "pipeline_stage": null, "run_id": null, "error_category": "validation", "performance_data": null, "contextual_data": {"operation": "test_validation"}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:17.101914", "level": "ERROR", "logger_name": "test_errors", "message": "Caught network error: Test network error", "pipeline_stage": null, "run_id": null, "error_category": "network", "performance_data": null, "contextual_data": {"operation": "test_network"}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:17.151894", "level": "ERROR", "logger_name": "test_decorator", "message": "Error in src.logging_system.error_handler.wrapper: Test error in decorated function", "pipeline_stage": "processing", "run_id": null, "error_category": "rate_limit", "performance_data": null, "contextual_data": {"error_type": "RuntimeError", "error_message": "Test error in decorated function", "function_name": "wrapper", "module_name": "src.logging_system.error_handler", "traceback": "Traceback (most recent call last):\n  File \"/Users/vaclav/Documents/augment-projects/geodaily/src/logging_system/error_handler.py\", line 385, in wrapper\n    return func(*args, **kwargs)\n  File \"/Users/vaclav/Documents/augment-projects/geodaily/test_logging_system.py\", line 110, in test_error_decorator\n    raise RuntimeError(\"Test error in decorated function\")\nRuntimeError: Test error in decorated function\n", "error_count": 1}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:17.167175", "level": "INFO", "logger_name": "test_metrics", "message": "Test metrics event", "pipeline_stage": "collection", "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {"test_data": "integration_test"}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:17.167479", "level": "ERROR", "logger_name": "test_metrics", "message": "Test error for metrics", "pipeline_stage": null, "run_id": null, "error_category": "api", "performance_data": null, "contextual_data": {"test_error": true}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:17.167575", "level": "INFO", "logger_name": "metrics_integration", "message": "Pipeline stage metrics tracked", "pipeline_stage": "cleanup", "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {"tracked_stage": "collection", "log_level": "INFO", "timestamp": "2025-08-31T15:20:17.167447"}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:17.167889", "level": "INFO", "logger_name": "metrics_integration", "message": "Error tracked for metrics", "pipeline_stage": "cleanup", "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {"error_category": "api", "timestamp": "2025-08-31T15:20:17.167825", "logger_name": "test_metrics"}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:21.149408", "level": "INFO", "logger_name": "log_rotator", "message": "Removed old log file: geodaily_20250605.log", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:21.149771", "level": "INFO", "logger_name": "log_rotator", "message": "Removed old log file: geodaily_20250629.log", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:21.150972", "level": "INFO", "logger_name": "geodaily", "message": "=== Testing Complete Newsletter Pipeline ===", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:21.151063", "level": "INFO", "logger_name": "geodaily", "message": "Running in DRY_RUN mode (no real AI API calls)", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:21.152090", "level": "ERROR", "logger_name": "geodaily", "message": "Error in src.logging_system.error_handler.wrapper: _log_with_context() got an unexpected keyword argument 'run_id'", "pipeline_stage": "initialization", "run_id": null, "error_category": "validation", "performance_data": null, "contextual_data": {"error_type": "TypeError", "error_message": "_log_with_context() got an unexpected keyword argument 'run_id'", "function_name": "wrapper", "module_name": "src.logging_system.error_handler", "traceback": "Traceback (most recent call last):\n  File \"/Users/vaclav/Documents/augment-projects/geodaily/src/logging_system/error_handler.py\", line 385, in wrapper\n    return func(*args, **kwargs)\n  File \"/Users/vaclav/Documents/augment-projects/geodaily/src/main_pipeline.py\", line 45, in run_complete_pipeline\n    pipeline_tracker.track_pipeline_start(run_id)\n  File \"/Users/vaclav/Documents/augment-projects/geodaily/src/logging_system/metrics_integration.py\", line 244, in track_pipeline_start\n    self.logger.info(\"Pipeline started\",\n  File \"/Users/vaclav/Documents/augment-projects/geodaily/src/logging_system/structured_logger.py\", line 176, in info\n    self._log_with_context(logging.INFO, message, **context)\nTypeError: _log_with_context() got an unexpected keyword argument 'run_id'\n", "error_count": 1}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:21.152199", "level": "ERROR", "logger_name": "geodaily", "message": "❌ Pipeline test failed with exception: _log_with_context() got an unexpected keyword argument 'run_id'", "pipeline_stage": null, "run_id": null, "error_category": "unknown", "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:21.152268", "level": "ERROR", "logger_name": "geodaily", "message": "Full error traceback:", "pipeline_stage": null, "run_id": null, "error_category": "unknown", "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:35.885290", "level": "INFO", "logger_name": "geodaily", "message": "=== Testing Article Collection ===", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:43.865390", "level": "INFO", "logger_name": "geodaily", "message": "Collection results:", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:43.865746", "level": "INFO", "logger_name": "geodaily", "message": "  - Total articles: 471", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:43.865821", "level": "INFO", "logger_name": "geodaily", "message": "  - Collection time: 7.98s", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:43.865888", "level": "INFO", "logger_name": "geodaily", "message": "  - Errors: 0", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:43.865950", "level": "INFO", "logger_name": "geodaily", "message": "Sample articles:", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:43.866037", "level": "INFO", "logger_name": "geodaily", "message": "  1. The World Cannot Afford to Forget the Human Cost of Nuclear Weapons", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:43.866110", "level": "INFO", "logger_name": "geodaily", "message": "     Source: The Diplomat", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:43.866180", "level": "INFO", "logger_name": "geodaily", "message": "     Category: analysis", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:43.866241", "level": "INFO", "logger_name": "geodaily", "message": "     URL: https://thediplomat.com/2025/08/the-world-cannot-afford-to-forget-the-human-cost-of-nuclear-weapons/", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:43.866315", "level": "INFO", "logger_name": "geodaily", "message": "", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:43.866378", "level": "INFO", "logger_name": "geodaily", "message": "  2. China’s Victory Day Message Points to Struggle Ahead", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:43.866446", "level": "INFO", "logger_name": "geodaily", "message": "     Source: The Diplomat", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:43.866508", "level": "INFO", "logger_name": "geodaily", "message": "     Category: analysis", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:43.866571", "level": "INFO", "logger_name": "geodaily", "message": "     URL: https://thediplomat.com/2025/08/chinas-victory-day-message-points-to-struggle-ahead/", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:43.866955", "level": "INFO", "logger_name": "geodaily", "message": "", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:43.867163", "level": "INFO", "logger_name": "geodaily", "message": "  3. Why Women in Nepal Can’t Afford to Stay in Politics", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:43.867347", "level": "INFO", "logger_name": "geodaily", "message": "     Source: The Diplomat", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:43.867496", "level": "INFO", "logger_name": "geodaily", "message": "     Category: analysis", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:43.867579", "level": "INFO", "logger_name": "geodaily", "message": "     URL: https://thediplomat.com/2025/08/why-women-in-nepal-cant-afford-to-stay-in-politics/", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:20:43.867647", "level": "INFO", "logger_name": "geodaily", "message": "", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:23:23.991094", "level": "ERROR", "logger_name": "test_errors", "message": "Caught validation error: Test validation error", "pipeline_stage": null, "run_id": null, "error_category": "validation", "performance_data": null, "contextual_data": {"operation": "test_validation"}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:23:23.991915", "level": "ERROR", "logger_name": "test_errors", "message": "Caught network error: Test network error", "pipeline_stage": null, "run_id": null, "error_category": "network", "performance_data": null, "contextual_data": {"operation": "test_network"}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:23:29.379073", "level": "INFO", "logger_name": "geodaily", "message": "=== Testing Complete Newsletter Pipeline ===", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:23:29.379273", "level": "INFO", "logger_name": "geodaily", "message": "Running in DRY_RUN mode (no real AI API calls)", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:23:29.380956", "level": "ERROR", "logger_name": "geodaily", "message": "Error in src.logging_system.error_handler.wrapper: _log_with_context() got an unexpected keyword argument 'run_id'", "pipeline_stage": "initialization", "run_id": null, "error_category": "validation", "performance_data": null, "contextual_data": {"error_type": "TypeError", "error_message": "_log_with_context() got an unexpected keyword argument 'run_id'", "function_name": "wrapper", "module_name": "src.logging_system.error_handler", "traceback": "Traceback (most recent call last):\n  File \"/Users/vaclav/Documents/augment-projects/geodaily/src/logging_system/error_handler.py\", line 385, in wrapper\n    return func(*args, **kwargs)\n  File \"/Users/vaclav/Documents/augment-projects/geodaily/src/main_pipeline.py\", line 45, in run_complete_pipeline\n    pipeline_tracker.track_pipeline_start(run_id)\n  File \"/Users/vaclav/Documents/augment-projects/geodaily/src/logging_system/metrics_integration.py\", line 244, in track_pipeline_start\n    self.logger.info(\"Pipeline started\",\n  File \"/Users/vaclav/Documents/augment-projects/geodaily/src/logging_system/structured_logger.py\", line 176, in info\n    self._log_with_context(logging.INFO, message, **context)\nTypeError: _log_with_context() got an unexpected keyword argument 'run_id'\n", "error_count": 1}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:23:29.381152", "level": "ERROR", "logger_name": "geodaily", "message": "❌ Pipeline test failed with exception: _log_with_context() got an unexpected keyword argument 'run_id'", "pipeline_stage": null, "run_id": null, "error_category": "unknown", "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:23:29.381277", "level": "ERROR", "logger_name": "geodaily", "message": "Full error traceback:", "pipeline_stage": null, "run_id": null, "error_category": "unknown", "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:14.049587", "level": "INFO", "logger_name": "geodaily", "message": "=== Testing Complete Newsletter Pipeline ===", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:14.049977", "level": "INFO", "logger_name": "geodaily", "message": "Running in DRY_RUN mode (no real AI API calls)", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:14.051892", "level": "ERROR", "logger_name": "geodaily", "message": "Error in src.logging_system.error_handler.wrapper: _log_with_context() got an unexpected keyword argument 'run_id'", "pipeline_stage": "initialization", "run_id": null, "error_category": "validation", "performance_data": null, "contextual_data": {"error_type": "TypeError", "error_message": "_log_with_context() got an unexpected keyword argument 'run_id'", "function_name": "wrapper", "module_name": "src.logging_system.error_handler", "traceback": "Traceback (most recent call last):\n  File \"/Users/vaclav/Documents/augment-projects/geodaily/src/logging_system/error_handler.py\", line 385, in wrapper\n    return func(*args, **kwargs)\n  File \"/Users/vaclav/Documents/augment-projects/geodaily/src/main_pipeline.py\", line 45, in run_complete_pipeline\n    pipeline_tracker.track_pipeline_start(run_id)\n  File \"/Users/vaclav/Documents/augment-projects/geodaily/src/logging_system/metrics_integration.py\", line 244, in track_pipeline_start\n    self.logger.info(\"Pipeline started\",\n  File \"/Users/vaclav/Documents/augment-projects/geodaily/src/logging_system/structured_logger.py\", line 176, in info\n    self._log_with_context(logging.INFO, message, **context)\nTypeError: _log_with_context() got an unexpected keyword argument 'run_id'\n", "error_count": 1}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:14.052014", "level": "ERROR", "logger_name": "geodaily", "message": "❌ Pipeline test failed with exception: _log_with_context() got an unexpected keyword argument 'run_id'", "pipeline_stage": null, "run_id": null, "error_category": "unknown", "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:14.052083", "level": "ERROR", "logger_name": "geodaily", "message": "Full error traceback:", "pipeline_stage": null, "run_id": null, "error_category": "unknown", "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:14.052664", "level": "ERROR", "logger_name": "test_errors", "message": "Caught validation error: Test validation error", "pipeline_stage": null, "run_id": null, "error_category": "validation", "performance_data": null, "contextual_data": {"operation": "test_validation"}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:14.052745", "level": "ERROR", "logger_name": "test_errors", "message": "Caught network error: Test network error", "pipeline_stage": null, "run_id": null, "error_category": "network", "performance_data": null, "contextual_data": {"operation": "test_network"}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:14.053199", "level": "INFO", "logger_name": "geodaily", "message": "=== Testing Article Collection ===", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:20.872009", "level": "INFO", "logger_name": "geodaily", "message": "Collection results:", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:20.872342", "level": "INFO", "logger_name": "geodaily", "message": "  - Total articles: 471", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:20.872513", "level": "INFO", "logger_name": "geodaily", "message": "  - Collection time: 6.82s", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:20.872673", "level": "INFO", "logger_name": "geodaily", "message": "  - Errors: 0", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:20.872824", "level": "INFO", "logger_name": "geodaily", "message": "Sample articles:", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:20.873001", "level": "INFO", "logger_name": "geodaily", "message": "  1. The World Cannot Afford to Forget the Human Cost of Nuclear Weapons", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:20.873151", "level": "INFO", "logger_name": "geodaily", "message": "     Source: The Diplomat", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:20.873304", "level": "INFO", "logger_name": "geodaily", "message": "     Category: analysis", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:20.873452", "level": "INFO", "logger_name": "geodaily", "message": "     URL: https://thediplomat.com/2025/08/the-world-cannot-afford-to-forget-the-human-cost-of-nuclear-weapons/", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:20.873600", "level": "INFO", "logger_name": "geodaily", "message": "", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:20.873746", "level": "INFO", "logger_name": "geodaily", "message": "  2. China’s Victory Day Message Points to Struggle Ahead", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:20.873906", "level": "INFO", "logger_name": "geodaily", "message": "     Source: The Diplomat", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:20.874052", "level": "INFO", "logger_name": "geodaily", "message": "     Category: analysis", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:20.874195", "level": "INFO", "logger_name": "geodaily", "message": "     URL: https://thediplomat.com/2025/08/chinas-victory-day-message-points-to-struggle-ahead/", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:20.874351", "level": "INFO", "logger_name": "geodaily", "message": "", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:20.874491", "level": "INFO", "logger_name": "geodaily", "message": "  3. Why Women in Nepal Can’t Afford to Stay in Politics", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:20.874621", "level": "INFO", "logger_name": "geodaily", "message": "     Source: The Diplomat", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:20.874744", "level": "INFO", "logger_name": "geodaily", "message": "     Category: analysis", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:20.874866", "level": "INFO", "logger_name": "geodaily", "message": "     URL: https://thediplomat.com/2025/08/why-women-in-nepal-cant-afford-to-stay-in-politics/", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}
+{"timestamp": "2025-08-31T15:24:20.874987", "level": "INFO", "logger_name": "geodaily", "message": "", "pipeline_stage": null, "run_id": null, "error_category": null, "performance_data": null, "contextual_data": {}, "stack_trace": null}

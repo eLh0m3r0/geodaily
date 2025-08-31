@@ -4,7 +4,7 @@ Claude AI analyzer for geopolitical content analysis.
 
 import json
 import re
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Any
 
 try:
     import anthropic
@@ -15,7 +15,7 @@ from ..models import Article, ArticleCluster, AIAnalysis
 from ..config import Config
 from ..logger import get_logger
 
-logger = get_logger(__name__)
+logger = get_logger("main_pipeline")
 
 class ClaudeAnalyzer:
     """Analyzes articles using Claude AI to identify underreported geopolitical stories."""
@@ -24,7 +24,15 @@ class ClaudeAnalyzer:
         """Initialize Claude analyzer."""
         self.client = None
         self.mock_mode = True
-        
+        self.simulated_tokens_used = 0
+        self.simulated_cost = 0.0
+
+        # Force mock mode in DRY_RUN
+        if Config.DRY_RUN:
+            logger.info("DRY_RUN mode: Using simulated AI analysis")
+            self.mock_mode = True
+            return
+
         # Try to initialize real Claude client
         if Config.ANTHROPIC_API_KEY and anthropic:
             try:
@@ -45,30 +53,34 @@ class ClaudeAnalyzer:
     def analyze_clusters(self, clusters: List[ArticleCluster], target_stories: int = 4) -> List[AIAnalysis]:
         """
         Analyze clusters and select the most important underreported stories.
-        
+
         Args:
             clusters: List of article clusters to analyze
             target_stories: Number of stories to select
-            
+
         Returns:
             List of AI analysis results for selected stories
         """
         logger.info(f"Analyzing {len(clusters)} clusters to select {target_stories} stories")
-        
+
         if not clusters:
             return []
-        
+
         try:
             if self.mock_mode:
-                return self._create_mock_analyses(clusters[:target_stories])
+                analyses = self._create_simulated_analyses(clusters[:target_stories])
+                self._log_simulation_stats(analyses)
+                return analyses
             else:
                 return self._analyze_with_claude_api(clusters[:target_stories])
-            
+
         except Exception as e:
             logger.error(f"Error in AI analysis: {e}")
             # Fallback to mock analysis
             logger.info("Falling back to mock analysis")
-            return self._create_mock_analyses(clusters[:target_stories])
+            analyses = self._create_simulated_analyses(clusters[:target_stories])
+            self._log_simulation_stats(analyses)
+            return analyses
     
     def _analyze_with_claude_api(self, clusters: List[ArticleCluster]) -> List[AIAnalysis]:
         """Analyze clusters using real Claude API."""
@@ -321,7 +333,67 @@ Return only valid JSON, no additional text."""
             score += 1
         
         return min(10, max(1, score))
-    
+
+    def _create_simulated_analyses(self, clusters: List[ArticleCluster]) -> List[AIAnalysis]:
+        """Create simulated AI analyses with realistic content and tracking."""
+        analyses = []
+
+        for i, cluster in enumerate(clusters):
+            main_article = cluster.main_article
+
+            # Generate contextual analysis based on article content
+            why_important = self._generate_why_important(main_article)
+            what_overlooked = self._generate_what_overlooked(main_article)
+            prediction = self._generate_prediction(main_article)
+            impact_score = self._calculate_impact_score(cluster)
+
+            # Simulate API call metrics
+            simulated_input_tokens = len(f"{main_article.title} {main_article.summary}".split()) + 100  # Base prompt tokens
+            simulated_output_tokens = len(f"{why_important} {what_overlooked} {prediction}".split()) + 50  # Response tokens
+
+            # Track simulated usage
+            self.simulated_tokens_used += simulated_input_tokens + simulated_output_tokens
+            # Claude pricing: ~$0.0008 per 1K input tokens, ~$0.0024 per 1K output tokens (approximate)
+            simulated_cost_increment = (simulated_input_tokens / 1000 * 0.0008) + (simulated_output_tokens / 1000 * 0.0024)
+            self.simulated_cost += simulated_cost_increment
+
+            analysis = AIAnalysis(
+                story_title=main_article.title[:60],  # Ensure length limit
+                why_important=why_important,
+                what_overlooked=what_overlooked,
+                prediction=prediction,
+                impact_score=impact_score,
+                sources=[article.url for article in cluster.articles],
+                confidence=0.85  # Slightly higher confidence for simulation
+            )
+
+            analyses.append(analysis)
+
+        return analyses
+
+    def _log_simulation_stats(self, analyses: List[AIAnalysis]):
+        """Log simulation statistics and costs."""
+        if not Config.DRY_RUN:
+            return
+
+        logger.info("=== DRY RUN SIMULATION STATS ===")
+        logger.info(f"Simulated API calls: {len(analyses)}")
+        logger.info(f"Simulated tokens used: {self.simulated_tokens_used}")
+        logger.info(f"Simulated cost: ${self.simulated_cost:.4f}")
+        logger.info("=================================")
+
+        # Log individual analysis details
+        for i, analysis in enumerate(analyses, 1):
+            logger.info(f"Story {i}: '{analysis.story_title[:40]}...' (Impact: {analysis.impact_score}/10, Confidence: {analysis.confidence:.2f})")
+
+    def get_simulation_stats(self) -> Dict[str, Any]:
+        """Get current simulation statistics."""
+        return {
+            "simulated_tokens_used": self.simulated_tokens_used,
+            "simulated_cost": self.simulated_cost,
+            "simulated_api_calls": 0  # Would need to track this separately if needed
+        }
+
     def test_api_connection(self) -> bool:
         """Test if Claude API is working."""
         if self.mock_mode:

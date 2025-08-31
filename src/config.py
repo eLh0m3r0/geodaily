@@ -30,6 +30,9 @@ class Config:
     NEWSLETTER_TITLE = os.getenv("NEWSLETTER_TITLE", "Geopolitical Daily")
     NEWSLETTER_AUTHOR = os.getenv("NEWSLETTER_AUTHOR", "Geopolitical Daily Team")
     NEWSLETTER_FROM_EMAIL = os.getenv("NEWSLETTER_FROM_EMAIL")
+
+    # Site Configuration
+    SITE_BASE_URL = os.getenv("SITE_BASE_URL", "https://yourusername.github.io/geodaily")
     
     # AI Configuration
     AI_PROVIDER = os.getenv("AI_PROVIDER", "anthropic")
@@ -60,6 +63,19 @@ class Config:
     # Development/Testing
     DEBUG = os.getenv("DEBUG", "false").lower() == "true"
     DRY_RUN = os.getenv("DRY_RUN", "false").lower() == "true"
+
+    # Cleanup Configuration
+    CLEANUP_ENABLED = os.getenv("CLEANUP_ENABLED", "true").lower() == "true"
+    LOG_RETENTION_DAYS = int(os.getenv("LOG_RETENTION_DAYS", "30"))
+    NEWSLETTER_RETENTION_DAYS = int(os.getenv("NEWSLETTER_RETENTION_DAYS", "90"))
+    OUTPUT_RETENTION_DAYS = int(os.getenv("OUTPUT_RETENTION_DAYS", "7"))
+    METRICS_RETENTION_DAYS = int(os.getenv("METRICS_RETENTION_DAYS", "180"))
+    CLEANUP_DRY_RUN = os.getenv("CLEANUP_DRY_RUN", "false").lower() == "true"
+
+    # Cleanup Directories
+    OUTPUT_DIR = PROJECT_ROOT / "output"
+    NEWSLETTERS_DIR = PROJECT_ROOT / "docs" / "newsletters"
+    METRICS_DB_PATH = PROJECT_ROOT / "data" / "metrics.db"
     
     @classmethod
     def load_sources(cls) -> Dict[str, List[Dict[str, Any]]]:
@@ -96,3 +112,6 @@ class Config:
         """Create necessary directories if they don't exist."""
         cls.LOGS_DIR.mkdir(exist_ok=True)
         cls.TEMPLATES_DIR.mkdir(exist_ok=True)
+        cls.OUTPUT_DIR.mkdir(exist_ok=True)
+        cls.NEWSLETTERS_DIR.mkdir(exist_ok=True, parents=True)
+        cls.METRICS_DB_PATH.parent.mkdir(exist_ok=True, parents=True)
