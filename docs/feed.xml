@@ -1,27 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
-        <title>Geopolitical Daily</title>
+        <title><![CDATA[Geopolitical Daily - Strategic Intelligence Beyond the Headlines]]></title>
         <link>https://yourusername.github.io/geodaily/</link>
-        <description>Strategic Intelligence Beyond the Headlines - AI-powered analysis of underreported geopolitical developments</description>
+        <atom:link href="https://yourusername.github.io/geodaily/feed.xml" rel="self" type="application/rss+xml" />
+        <description><![CDATA[AI-powered analysis of underreported geopolitical developments with strategic significance. Daily insights on international relations, security, and global power dynamics.]]></description>
         <language>en-us</language>
-        <pubDate>Sun, 31 Aug 2025 12:20:06 GMT</pubDate>
-        <lastBuildDate>Sun, 31 Aug 2025 12:20:06 GMT</lastBuildDate>
-        <generator>Geopolitical Daily Newsletter System</generator>
-        
+        <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
+        <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
+        <pubDate>Sun, 31 Aug 2025 20:10:27 GMT</pubDate>
+        <lastBuildDate>Sun, 31 Aug 2025 20:10:27 GMT</lastBuildDate>
+        <generator>Geopolitical Daily Newsletter System v2.0</generator>
+        <docs>https://www.rssboard.org/rss-specification</docs>
+        <ttl>60</ttl>
+
+        <!-- Feed optimization -->
+        <skipHours>
+            <hour>1</hour>
+            <hour>2</hour>
+            <hour>3</hour>
+            <hour>4</hour>
+            <hour>5</hour>
+            <hour>7</hour>
+            <hour>8</hour>
+            <hour>9</hour>
+            <hour>10</hour>
+            <hour>11</hour>
+            <hour>12</hour>
+            <hour>13</hour>
+            <hour>14</hour>
+            <hour>15</hour>
+            <hour>16</hour>
+            <hour>17</hour>
+            <hour>18</hour>
+            <hour>19</hour>
+            <hour>20</hour>
+            <hour>21</hour>
+            <hour>22</hour>
+            <hour>23</hour>
+        </skipHours>
+
+        <skipDays>
+            <day>Saturday</day>
+            <day>Sunday</day>
+        </skipDays>
+
+        <!-- Dublin Core metadata -->
+        <dc:creator>Geopolitical Daily Editorial Team</dc:creator>
+        <dc:publisher>Geopolitical Daily</dc:publisher>
+        <dc:language>en-US</dc:language>
+        <dc:rights>© 2025 Geopolitical Daily. All rights reserved.</dc:rights>
+
+        <!-- Image for feed readers that support it -->
+        <image>
+            <url>https://yourusername.github.io/geodaily/assets/logo.png</url>
+            <title>Geopolitical Daily</title>
+            <link>https://yourusername.github.io/geodaily/</link>
+            <description>Strategic Intelligence Beyond the Headlines</description>
+        </image>
+
         <item>
-            <title>Geopolitical Daily - August 31, 2025</title>
-            <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-08-31.html</link>
-            <description>Daily geopolitical analysis focusing on underreported stories with strategic significance</description>
-            <pubDate>Sun, 31 Aug 2025 06:00:00 GMT</pubDate>
-            <guid>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-08-31.html</guid>
-        </item>
-        <item>
-            <title>Geopolitical Daily - June 29, 2025</title>
-            <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-06-29.html</link>
-            <description>Daily geopolitical analysis focusing on underreported stories with strategic significance</description>
-            <pubDate>Sun, 29 Jun 2025 06:00:00 GMT</pubDate>
-            <guid>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-06-29.html</guid>
+        <title><![CDATA[Geopolitical Daily - August 31, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-08-31.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, August 31, 2025. This edition analyzes 4 underreported geopolitical developments that mainstream media is overlooking or underemphasizing. Each story has been selected for its potential second-order effects and strategic implications for decision-makers. Our focus today spans emerging power dynamics, resource geopolitics, and strategic developments that could reshape international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>China's Military Expansion in West Africa</strong>: China's growing military presence in West Africa could shift the regional balance of power, undermine US influence, and enable Beijing to project power across the African continent.</li><li><strong>Emerging Trends in Modern Warfare</strong>: These military operations showcase the evolving nature of warfare, with increased emphasis on precision strikes, information dominance, and strategic messaging. Understanding these trends is crucial f...</li><li><strong>Shifting Geopolitical Landscape in the Middle East</strong>: The article suggests a potential escalation of tensions between Iran and Israel, with the U.S. playing a supporting role. This could have significant implications for regional stability, energy market...</li></ul><p><em>Published: August 31, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sun, 31 Aug 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20250831</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-08-31.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
+        <title><![CDATA[Geopolitical Daily - June 29, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-06-29.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, June 29, 2025. This edition analyzes 4 underreported geopolitical developments that mainstream media is overlooking or underemphasizing. Each story has been selected for its potential second-order effects and strategic implications for decision-makers. Our focus today spans emerging power dynamics, resource geopolitics, and strategic developments that could reshape international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>China-US Cooperation Could Halt the Next Middle East War</strong>: This story represents a significant development in analysis geopolitics with potential implications for international relations and strategic decision-making.</li><li><strong>Rising Lion, Midnight Hammer, and the Global Response</strong>: This story represents a significant development in analysis geopolitics with potential implications for international relations and strategic decision-making.</li><li><strong>Why Recent Surprise Attacks Against Russia and Iran Should Worry Taiwan</strong>: This story represents a significant development in analysis geopolitics with potential implications for international relations and strategic decision-making.</li></ul><p><em>Published: June 29, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sun, 29 Jun 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20250629</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-06-29.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
 </rss>
