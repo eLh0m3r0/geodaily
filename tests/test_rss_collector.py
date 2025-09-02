@@ -11,8 +11,8 @@ from datetime import datetime, timezone
 # Add src to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-from models import NewsSource, SourceCategory, SourceTier
-from collectors.rss_collector import RSSCollector
+from src.models import NewsSource, SourceCategory, SourceTier
+from src.collectors.rss_collector import RSSCollector
 
 class TestRSSCollector:
     """Test RSS collection functionality."""
@@ -82,30 +82,30 @@ class TestRSSCollector:
         # Should default to current time
         assert abs((datetime.now(timezone.utc) - date).total_seconds()) < 60
     
-    @patch('requests.Session.get')
-    def test_fetch_feed_with_retry_success(self, mock_get):
+    @patch('src.performance.connection_pool.connection_pool_manager.make_request')
+    def test_fetch_feed_with_retry_success(self, mock_make_request):
         """Test successful feed fetching."""
         mock_response = Mock()
         mock_response.content = b'<rss>test</rss>'
         mock_response.raise_for_status.return_value = None
-        mock_get.return_value = mock_response
-        
-        result = self.collector._fetch_feed_with_retry("https://example.com/rss")
-        
+        mock_make_request.return_value = mock_response
+
+        result = self.collector._fetch_feed_with_retry("https://example.com/rss", "Test Source")
+
         assert result == b'<rss>test</rss>'
-        mock_get.assert_called_once()
+        mock_make_request.assert_called_once()
     
-    @patch('requests.Session.get')
-    def test_fetch_feed_with_retry_failure(self, mock_get):
+    @patch('src.performance.connection_pool.connection_pool_manager.make_request')
+    def test_fetch_feed_with_retry_failure(self, mock_make_request):
         """Test feed fetching with network failure."""
         import requests
-        mock_get.side_effect = requests.RequestException("Network error")
+        mock_make_request.side_effect = requests.RequestException("Network error")
 
-        result = self.collector._fetch_feed_with_retry("https://example.com/rss")
+        result = self.collector._fetch_feed_with_retry("https://example.com/rss", "Test Source")
 
         assert result is None
         # Should retry MAX_RETRIES times
-        assert mock_get.call_count >= 1
+        assert mock_make_request.call_count >= 1
     
     def test_parse_rss_entry_success(self):
         """Test successful RSS entry parsing."""

@@ -13,6 +13,8 @@ from urllib.parse import urljoin, urlparse
 from ..models import Article, NewsSource, SourceCategory
 from ..config import Config
 from ..logging_system import get_structured_logger, ErrorCategory, PipelineStage
+from .source_health_monitor import source_health_monitor
+from ..performance.connection_pool import connection_pool_manager
 
 logger = get_structured_logger(__name__)
 
@@ -86,55 +88,88 @@ class WebScraper:
         return articles
     
     def _fetch_page_with_retry(self, url: str, source_name: str) -> Optional[BeautifulSoup]:
-        """Fetch webpage with retry logic."""
+        """Fetch webpage with retry logic, health monitoring, and connection pooling."""
+        start_time = time.time()
+        success = False
+        error_type = None
+
         for attempt in range(Config.MAX_RETRIES):
             try:
-                response = self.session.get(
-                    url,
-                    timeout=Config.REQUEST_TIMEOUT,
-                    allow_redirects=True
+                # Use connection pool manager for better performance
+                response = connection_pool_manager.make_request(
+                    url=url,
+                    method='GET',
+                    headers={
+                        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                        'Accept-Language': 'en-US,en;q=0.5',
+                        'Accept-Encoding': 'gzip, deflate',
+                        'DNT': '1',
+                        'Connection': 'keep-alive',
+                        'Upgrade-Insecure-Requests': '1',
+                        'User-Agent': 'Mozilla/5.0 (compatible; GeopoliticalDaily/1.0)'
+                    }
                 )
                 response.raise_for_status()
 
                 # Parse HTML
                 soup = BeautifulSoup(response.content, 'html.parser')
+
+                # Success - record metrics
+                success = True
+                response_time = time.time() - start_time
+                source_health_monitor.record_request_result(
+                    source_name=source_name,
+                    success=True,
+                    response_time=response_time
+                )
+
+                # Record performance metrics
+                from ..performance.connection_pool import performance_optimizer
+                performance_optimizer.record_request_metrics(True, response_time)
+
                 return soup
 
-            except requests.RequestException as e:
+            except Exception as e:
+                error_type = type(e).__name__.lower()
                 logger.warning(f"Attempt {attempt + 1} failed for {url}: {e}",
-                             pipeline_stage=PipelineStage.COLLECTION,
-                             error_category=ErrorCategory.NETWORK_ERROR,
-                             structured_data={
-                                 'source_name': source_name,
-                                 'url': url,
-                                 'attempt': attempt + 1,
-                                 'max_retries': Config.MAX_RETRIES,
-                                 'error_type': type(e).__name__,
-                                 'error_message': str(e)
-                             })
+                              pipeline_stage=PipelineStage.COLLECTION,
+                              error_category=ErrorCategory.NETWORK_ERROR,
+                              structured_data={
+                                  'source_name': source_name,
+                                  'url': url,
+                                  'attempt': attempt + 1,
+                                  'max_retries': Config.MAX_RETRIES,
+                                  'error_type': error_type,
+                                  'error_message': str(e)
+                              })
+
+                # Record failed request metrics
+                response_time = time.time() - start_time
+                from ..performance.connection_pool import performance_optimizer
+                performance_optimizer.record_request_metrics(False, response_time)
+
                 if attempt < Config.MAX_RETRIES - 1:
                     time.sleep(Config.RETRY_DELAY * (attempt + 1))
                 else:
                     logger.error(f"All retry attempts failed for {url}",
-                               pipeline_stage=PipelineStage.COLLECTION,
-                               error_category=ErrorCategory.NETWORK_ERROR,
-                               structured_data={
-                                   'source_name': source_name,
-                                   'url': url,
-                                   'total_attempts': Config.MAX_RETRIES,
-                                   'final_error': str(e)
-                               })
-            except Exception as e:
-                logger.error(f"Error parsing HTML for {url}: {e}",
-                           pipeline_stage=PipelineStage.COLLECTION,
-                           error_category=ErrorCategory.PARSING_ERROR,
-                           structured_data={
-                               'source_name': source_name,
-                               'url': url,
-                               'error_type': type(e).__name__,
-                               'error_message': str(e)
-                           })
-                break
+                                pipeline_stage=PipelineStage.COLLECTION,
+                                error_category=ErrorCategory.NETWORK_ERROR,
+                                structured_data={
+                                    'source_name': source_name,
+                                    'url': url,
+                                    'total_attempts': Config.MAX_RETRIES,
+                                    'final_error': str(e)
+                                })
+
+        # All attempts failed - record failure
+        if not success:
+            response_time = time.time() - start_time
+            source_health_monitor.record_request_result(
+                source_name=source_name,
+                success=False,
+                response_time=response_time,
+                error_type=error_type or "unknown"
+            )
 
         return None
     

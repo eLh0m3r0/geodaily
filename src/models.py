@@ -7,6 +7,12 @@ from datetime import datetime
 from typing import List, Optional, Dict, Any
 from enum import Enum
 
+class ContentType(Enum):
+    """Content types for stories."""
+    BREAKING_NEWS = "breaking_news"
+    ANALYSIS = "analysis"
+    TREND = "trend"
+
 class SourceCategory(Enum):
     """Source categories for news sources."""
     MAINSTREAM = "mainstream"
@@ -81,8 +87,14 @@ class AIAnalysis:
     why_important: str  # 80 words max
     what_overlooked: str  # 40 words max
     prediction: str  # 30 words max
-    impact_score: int  # 1-10
+    impact_score: int  # 1-10 (legacy score for backward compatibility)
     sources: List[str]
+    content_type: ContentType = ContentType.ANALYSIS
+    urgency_score: int = 1  # 1-10
+    scope_score: int = 1  # 1-10
+    novelty_score: int = 1  # 1-10
+    credibility_score: int = 1  # 1-10
+    impact_dimension_score: int = 1  # 1-10
     confidence: float = 0.0
     
     def __post_init__(self):
@@ -90,17 +102,28 @@ class AIAnalysis:
         if len(self.why_important.split()) > 80:
             words = self.why_important.split()[:80]
             self.why_important = " ".join(words) + "..."
-        
+
         if len(self.what_overlooked.split()) > 40:
             words = self.what_overlooked.split()[:40]
             self.what_overlooked = " ".join(words) + "..."
-        
+
         if len(self.prediction.split()) > 30:
             words = self.prediction.split()[:30]
             self.prediction = " ".join(words) + "..."
-        
+
+        # Handle content_type
+        if isinstance(self.content_type, str):
+            self.content_type = ContentType(self.content_type)
+
         # Validate impact score
         self.impact_score = max(1, min(10, self.impact_score))
+
+        # Validate new multi-dimensional scores
+        self.urgency_score = max(1, min(10, self.urgency_score))
+        self.scope_score = max(1, min(10, self.scope_score))
+        self.novelty_score = max(1, min(10, self.novelty_score))
+        self.credibility_score = max(1, min(10, self.credibility_score))
+        self.impact_dimension_score = max(1, min(10, self.impact_dimension_score))
 
 @dataclass
 class Newsletter:

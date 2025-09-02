@@ -13,6 +13,8 @@ from bs4 import BeautifulSoup
 from ..models import Article, NewsSource, SourceCategory
 from ..config import Config
 from ..logging_system import get_structured_logger, ErrorCategory, PipelineStage
+from .source_health_monitor import source_health_monitor
+from ..performance.connection_pool import connection_pool_manager
 
 logger = get_structured_logger(__name__)
 
@@ -109,41 +111,80 @@ class RSSCollector:
         return articles
     
     def _fetch_feed_with_retry(self, url: str, source_name: str) -> Optional[str]:
-        """Fetch RSS feed with retry logic."""
+        """Fetch RSS feed with retry logic, health monitoring, and connection pooling."""
+        start_time = time.time()
+        success = False
+        error_type = None
+
         for attempt in range(Config.MAX_RETRIES):
             try:
-                response = self.session.get(
-                    url,
-                    timeout=Config.REQUEST_TIMEOUT,
-                    allow_redirects=True
+                # Use connection pool manager for better performance
+                response = connection_pool_manager.make_request(
+                    url=url,
+                    method='GET',
+                    headers={
+                        'User-Agent': 'GeopoliticalDaily/1.0 (RSS Reader)',
+                        'Accept': 'application/rss+xml, application/xml, text/xml'
+                    }
                 )
                 response.raise_for_status()
+
+                # Success - record metrics
+                success = True
+                response_time = time.time() - start_time
+                source_health_monitor.record_request_result(
+                    source_name=source_name,
+                    success=True,
+                    response_time=response_time
+                )
+
+                # Record performance metrics
+                from ..performance.connection_pool import performance_optimizer
+                performance_optimizer.record_request_metrics(True, response_time)
+
                 return response.content
 
-            except requests.RequestException as e:
+            except Exception as e:
+                error_type = type(e).__name__.lower()
                 logger.warning(f"Attempt {attempt + 1} failed for {url}: {e}",
-                             pipeline_stage=PipelineStage.COLLECTION,
-                             error_category=ErrorCategory.NETWORK_ERROR,
-                             structured_data={
-                                 'source_name': source_name,
-                                 'url': url,
-                                 'attempt': attempt + 1,
-                                 'max_retries': Config.MAX_RETRIES,
-                                 'error_type': type(e).__name__,
-                                 'error_message': str(e)
-                             })
+                              pipeline_stage=PipelineStage.COLLECTION,
+                              error_category=ErrorCategory.NETWORK_ERROR,
+                              structured_data={
+                                  'source_name': source_name,
+                                  'url': url,
+                                  'attempt': attempt + 1,
+                                  'max_retries': Config.MAX_RETRIES,
+                                  'error_type': error_type,
+                                  'error_message': str(e)
+                              })
+
+                # Record failed request metrics
+                response_time = time.time() - start_time
+                from ..performance.connection_pool import performance_optimizer
+                performance_optimizer.record_request_metrics(False, response_time)
+
                 if attempt < Config.MAX_RETRIES - 1:
                     time.sleep(Config.RETRY_DELAY * (attempt + 1))
                 else:
                     logger.error(f"All retry attempts failed for {url}",
-                               pipeline_stage=PipelineStage.COLLECTION,
-                               error_category=ErrorCategory.NETWORK_ERROR,
-                               structured_data={
-                                   'source_name': source_name,
-                                   'url': url,
-                                   'total_attempts': Config.MAX_RETRIES,
-                                   'final_error': str(e)
-                               })
+                                pipeline_stage=PipelineStage.COLLECTION,
+                                error_category=ErrorCategory.NETWORK_ERROR,
+                                structured_data={
+                                    'source_name': source_name,
+                                    'url': url,
+                                    'total_attempts': Config.MAX_RETRIES,
+                                    'final_error': str(e)
+                                })
+
+        # All attempts failed - record failure
+        if not success:
+            response_time = time.time() - start_time
+            source_health_monitor.record_request_result(
+                source_name=source_name,
+                success=False,
+                response_time=response_time,
+                error_type=error_type or "unknown"
+            )
 
         return None
     

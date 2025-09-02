@@ -48,11 +48,11 @@ class RecoveryProcedure:
     name: str
     component_name: str
     strategy: RecoveryStrategy
+    recovery_action: Callable
     max_attempts: int = 3
     base_delay: float = 1.0
     max_delay: float = 300.0  # 5 minutes
     backoff_factor: float = 2.0
-    recovery_action: Callable
     validation_action: Optional[Callable] = None
     pre_recovery_checks: List[Callable] = field(default_factory=list)
     post_recovery_checks: List[Callable] = field(default_factory=list)

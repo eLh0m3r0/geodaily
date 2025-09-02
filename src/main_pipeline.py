@@ -11,7 +11,9 @@ from pathlib import Path
 
 from .collectors.main_collector import MainCollector
 from .processors.main_processor import MainProcessor
+from .processors.content_quality_validator import content_quality_validator
 from .ai.claude_analyzer import ClaudeAnalyzer
+from .ai.cost_controller import ai_cost_controller
 from .newsletter.generator import NewsletterGenerator
 from .publishers.github_pages_publisher import GitHubPagesPublisher
 from .publishers.substack_exporter import SubstackExporter
@@ -24,6 +26,9 @@ from .logging_system import (
     PipelineTracker, error_handler, retry_on_error
 )
 from .cleanup import CleanupManager
+from .resilience.graceful_degradation import degradation_manager
+from .resilience.network_resilience import network_manager, rss_manager, scraping_manager
+from .resilience.health_monitoring import health_monitor
 
 # Initialize structured logging with metrics integration
 logger = setup_structured_logging()
@@ -95,6 +100,34 @@ def run_complete_pipeline() -> bool:
                         pipeline_stage=PipelineStage.CONFIGURATION,
                         run_id=run_id,
                         structured_data={'validated_items': ['api_keys', 'sources_file']})
+
+            # Initialize resilience infrastructure
+            with PerformanceProfiler.profile_operation("resilience_init", logger):
+                logger.info("Initializing resilience infrastructure...",
+                           pipeline_stage=PipelineStage.CONFIGURATION,
+                           run_id=run_id)
+
+                # Register system components for graceful degradation
+                degradation_manager.register_component(
+                    "collection_system",
+                    degradation_rules=[
+                        # Will be populated based on actual component failures
+                    ]
+                )
+                degradation_manager.register_component("ai_analyzer")
+                degradation_manager.register_component("newsletter_generator")
+                degradation_manager.register_component("publishing_system")
+
+                # Start health monitoring
+                health_monitor.start_monitoring()
+
+                logger.info("Resilience infrastructure initialized",
+                           pipeline_stage=PipelineStage.CONFIGURATION,
+                           run_id=run_id,
+                           structured_data={
+                               'components_registered': len(degradation_manager.components),
+                               'health_checks_active': len(health_monitor.health_checks)
+                           })
         
         # Step 2: Collect articles
         with PerformanceProfiler.profile_operation("article_collection", logger):
@@ -102,40 +135,52 @@ def run_complete_pipeline() -> bool:
                        pipeline_stage=PipelineStage.COLLECTION,
                        run_id=run_id)
 
-            try:
-                collector = MainCollector()
-                raw_articles = collector.collect_all_articles()
+            # Check if collection should be skipped due to degradation
+            if degradation_manager.should_skip_operation("article_collection", "collection_system"):
+                logger.warning("Skipping article collection due to system degradation",
+                             pipeline_stage=PipelineStage.COLLECTION,
+                             run_id=run_id,
+                             structured_data={
+                                 'degradation_level': degradation_manager.overall_degradation_level.value,
+                                 'reason': 'graceful_degradation'
+                             })
+                # Continue with minimal fallback or skip to next step
+                raw_articles = []
+            else:
+                try:
+                    collector = MainCollector()
+                    raw_articles = collector.collect_all_articles()
 
-                collection_stats = collector.get_stats()
-                logger.info(f"Collection completed: {collection_stats.total_articles_collected} articles",
-                           pipeline_stage=PipelineStage.COLLECTION,
-                           run_id=run_id,
-                           structured_data={
-                               'articles_collected': collection_stats.total_articles_collected,
-                               'sources_attempted': getattr(collection_stats, 'sources_attempted', 0),
-                               'collection_errors': len(collection_stats.errors) if isinstance(collection_stats.errors, list) and collection_stats.errors else 0
-                           })
-
-                if collection_stats.total_articles_collected < 10:
-                    logger.error(f"Insufficient articles collected: {collection_stats.total_articles_collected}",
+                    collection_stats = collector.get_stats()
+                    logger.info(f"Collection completed: {collection_stats.total_articles_collected} articles",
                                pipeline_stage=PipelineStage.COLLECTION,
                                run_id=run_id,
-                               error_category=ErrorCategory.VALIDATION_ERROR,
                                structured_data={
-                                   'threshold': 10,
-                                   'actual': collection_stats.total_articles_collected
+                                   'articles_collected': collection_stats.total_articles_collected,
+                                   'sources_attempted': getattr(collection_stats, 'sources_attempted', 0),
+                                   'collection_errors': len(collection_stats.errors) if isinstance(collection_stats.errors, list) and collection_stats.errors else 0
                                })
-                    pipeline_tracker.track_pipeline_failure(run_id, ValueError("Insufficient articles"), PipelineStage.COLLECTION)
-                    return False
 
-            except Exception as e:
-                logger.error(f"Article collection failed: {e}",
-                           pipeline_stage=PipelineStage.COLLECTION,
-                           run_id=run_id,
-                           error_category=ErrorCategory.API_ERROR,
-                           structured_data={'error_details': str(e)})
-                pipeline_tracker.track_pipeline_failure(run_id, e, PipelineStage.COLLECTION)
-                return False
+                    if collection_stats.total_articles_collected < 10:
+                        logger.error(f"Insufficient articles collected: {collection_stats.total_articles_collected}",
+                                    pipeline_stage=PipelineStage.COLLECTION,
+                                    run_id=run_id,
+                                    error_category=ErrorCategory.VALIDATION_ERROR,
+                                    structured_data={
+                                        'threshold': 10,
+                                        'actual': collection_stats.total_articles_collected
+                                    })
+                        pipeline_tracker.track_pipeline_failure(run_id, ValueError("Insufficient articles"), PipelineStage.COLLECTION)
+                        return False
+
+                except Exception as e:
+                    logger.error(f"Article collection failed: {e}",
+                                pipeline_stage=PipelineStage.COLLECTION,
+                                run_id=run_id,
+                                error_category=ErrorCategory.API_ERROR,
+                                structured_data={'error_details': str(e)})
+                    pipeline_tracker.track_pipeline_failure(run_id, e, PipelineStage.COLLECTION)
+                    return False
 
         # Collect collection metrics
         sources_config = Config.load_sources()
@@ -156,7 +201,56 @@ def run_complete_pipeline() -> bool:
                 logger.warning(f"Could not create source object for metrics: {e}")
 
         metrics_collector.collect_collection_metrics(sources, raw_articles)
-        
+
+        # Step 2.5: Content Quality Validation
+        with PerformanceProfiler.profile_operation("content_quality_validation", logger):
+            logger.info("Step 2.5: Validating content quality...",
+                       pipeline_stage=PipelineStage.PROCESSING,
+                       run_id=run_id,
+                       structured_data={'articles_to_validate': len(raw_articles)})
+
+            try:
+                # Validate article quality
+                validation_results = content_quality_validator.validate_articles(raw_articles)
+
+                # Filter to high-quality articles only
+                high_quality_articles = [result.article for result in validation_results if result.is_valid]
+
+                logger.info("Content quality validation completed",
+                           pipeline_stage=PipelineStage.PROCESSING,
+                           run_id=run_id,
+                           structured_data={
+                               'original_articles': len(raw_articles),
+                               'high_quality_articles': len(high_quality_articles),
+                               'filtered_articles': len(raw_articles) - len(high_quality_articles),
+                               'quality_retention_rate': len(high_quality_articles) / len(raw_articles) if raw_articles else 0
+                           })
+
+                # Use only high-quality articles for further processing
+                if len(high_quality_articles) < 5:
+                    logger.warning("Low number of high-quality articles available",
+                                 pipeline_stage=PipelineStage.PROCESSING,
+                                 run_id=run_id,
+                                 structured_data={
+                                     'high_quality_count': len(high_quality_articles),
+                                     'threshold': 5,
+                                     'recommendation': 'Consider relaxing quality thresholds or expanding sources'
+                                 })
+
+                # Update raw_articles to only include high-quality ones
+                raw_articles = high_quality_articles
+
+            except Exception as e:
+                logger.error(f"Content quality validation failed: {e}",
+                            pipeline_stage=PipelineStage.PROCESSING,
+                            run_id=run_id,
+                            error_category=ErrorCategory.VALIDATION_ERROR,
+                            structured_data={'error_details': str(e)})
+                # Continue with original articles if validation fails
+                logger.info("Continuing with original articles due to validation failure",
+                           pipeline_stage=PipelineStage.PROCESSING,
+                           run_id=run_id)
+
         # Step 3: Process articles (deduplication, clustering, scoring)
         with PerformanceProfiler.profile_operation("article_processing", logger):
             logger.info("Step 3: Processing articles...",
@@ -167,7 +261,10 @@ def run_complete_pipeline() -> bool:
             processing_start = time.time()
             try:
                 processor = MainProcessor()
-                clusters = processor.process_articles(raw_articles)
+                initial_clusters = processor.process_articles(raw_articles)
+
+                # Apply content quality validation to clusters
+                clusters = content_quality_validator.validate_article_clusters(initial_clusters)
                 processing_time = time.time() - processing_start
 
                 processing_stats = processor.get_stats()
@@ -225,84 +322,96 @@ def run_complete_pipeline() -> bool:
                            'clusters_input': len(clusters)
                        })
 
-            ai_start = time.time()
-            try:
-                analyzer = ClaudeAnalyzer()
-                analyses = analyzer.analyze_clusters(clusters, target_stories=4)
-                ai_time = time.time() - ai_start
-
-                if len(analyses) < 3:
-                    logger.error(f"Insufficient AI analyses: {len(analyses)}",
-                               pipeline_stage=PipelineStage.AI_ANALYSIS,
-                               run_id=run_id,
-                               error_category=ErrorCategory.VALIDATION_ERROR,
-                               structured_data={
-                                   'threshold': 3,
-                                   'actual': len(analyses)
-                               })
-                    pipeline_tracker.track_pipeline_failure(run_id, ValueError("Insufficient AI analyses"), PipelineStage.AI_ANALYSIS)
-                    return False
-
-                logger.info(f"AI analysis completed: {len(analyses)} stories selected",
-                           pipeline_stage=PipelineStage.AI_ANALYSIS,
-                           run_id=run_id,
-                           performance_data={
-                               'operation': 'ai_analysis',
-                               'execution_time_seconds': ai_time,
-                               'stories_analyzed': len(analyses)
-                           },
-                           structured_data={
-                               'stories_selected': len(analyses),
-                               'analysis_time_seconds': ai_time
-                           })
-
-                # Collect AI metrics with enhanced logging
-                tokens_used = 0
-                cost = 0.0
-                mock_mode = analyzer.mock_mode
-
-                if Config.DRY_RUN and hasattr(analyzer, 'get_simulation_stats'):
-                    sim_stats = analyzer.get_simulation_stats()
-                    tokens_used = sim_stats['simulated_tokens_used']
-                    cost = sim_stats['simulated_cost']
-                    logger.info(f"DRY RUN - Simulated tokens: {tokens_used}, Cost: ${cost:.4f}",
-                               pipeline_stage=PipelineStage.AI_ANALYSIS,
-                               run_id=run_id,
-                               structured_data={
-                                   'simulated_tokens': tokens_used,
-                                   'simulated_cost': cost
-                               })
-
-                metrics_collector.collect_ai_metrics(
-                    analyses, ai_time, Config.AI_MODEL, mock_mode, tokens_used, cost
-                )
-
-            except Exception as e:
-                ai_time = time.time() - ai_start
-                logger.error(f"AI analysis failed: {e}",
-                           pipeline_stage=PipelineStage.AI_ANALYSIS,
-                           run_id=run_id,
-                           error_category=ErrorCategory.API_ERROR,
-                           performance_data={
-                               'operation': 'ai_analysis',
-                               'execution_time_seconds': ai_time,
-                               'failed': True
-                           },
-                           structured_data={'error_details': str(e)})
-
-                # Fallback to mock analyses
-                logger.info("Falling back to mock analyses",
-                           pipeline_stage=PipelineStage.AI_ANALYSIS,
-                           run_id=run_id,
-                           structured_data={'fallback_mode': True})
-
+            # Check if AI analysis should be skipped due to degradation
+            if degradation_manager.should_skip_operation("ai_analysis", "ai_analyzer"):
+                logger.warning("Skipping AI analysis due to system degradation",
+                             pipeline_stage=PipelineStage.AI_ANALYSIS,
+                             run_id=run_id,
+                             structured_data={
+                                 'degradation_level': degradation_manager.overall_degradation_level.value,
+                                 'reason': 'graceful_degradation'
+                             })
+                # Use mock analysis as fallback
                 analyses = create_mock_analyses(clusters[:4])
-                ai_time = time.time() - ai_start
+            else:
+                ai_start = time.time()
+                try:
+                    analyzer = ClaudeAnalyzer()
+                    analyses = analyzer.analyze_clusters(clusters, target_stories=4)
+                    ai_time = time.time() - ai_start
 
-                # Collect metrics for fallback analysis
-                metrics_collector.collect_ai_metrics(
-                    analyses, ai_time, "mock_fallback", True, 0, 0.0
-                )
+                    if len(analyses) < 3:
+                        logger.error(f"Insufficient AI analyses: {len(analyses)}",
+                                    pipeline_stage=PipelineStage.AI_ANALYSIS,
+                                    run_id=run_id,
+                                    error_category=ErrorCategory.VALIDATION_ERROR,
+                                    structured_data={
+                                        'threshold': 3,
+                                        'actual': len(analyses)
+                                    })
+                        pipeline_tracker.track_pipeline_failure(run_id, ValueError("Insufficient AI analyses"), PipelineStage.AI_ANALYSIS)
+                        return False
+
+                    logger.info(f"AI analysis completed: {len(analyses)} stories selected",
+                               pipeline_stage=PipelineStage.AI_ANALYSIS,
+                               run_id=run_id,
+                               performance_data={
+                                   'operation': 'ai_analysis',
+                                   'execution_time_seconds': ai_time,
+                                   'stories_analyzed': len(analyses)
+                               },
+                               structured_data={
+                                   'stories_selected': len(analyses),
+                                   'analysis_time_seconds': ai_time
+                               })
+
+                    # Collect AI metrics with enhanced logging
+                    tokens_used = 0
+                    cost = 0.0
+                    mock_mode = analyzer.mock_mode
+
+                    if Config.DRY_RUN and hasattr(analyzer, 'get_simulation_stats'):
+                        sim_stats = analyzer.get_simulation_stats()
+                        tokens_used = sim_stats['simulated_tokens_used']
+                        cost = sim_stats['simulated_cost']
+                        logger.info(f"DRY RUN - Simulated tokens: {tokens_used}, Cost: ${cost:.4f}",
+                                   pipeline_stage=PipelineStage.AI_ANALYSIS,
+                                   run_id=run_id,
+                                   structured_data={
+                                       'simulated_tokens': tokens_used,
+                                       'simulated_cost': cost
+                                   })
+
+                    metrics_collector.collect_ai_metrics(
+                        analyses, ai_time, Config.AI_MODEL, mock_mode, tokens_used, cost
+                    )
+
+                except Exception as e:
+                    ai_time = time.time() - ai_start
+                    logger.error(f"AI analysis failed: {e}",
+                               pipeline_stage=PipelineStage.AI_ANALYSIS,
+                               run_id=run_id,
+                               error_category=ErrorCategory.API_ERROR,
+                               performance_data={
+                                   'operation': 'ai_analysis',
+                                   'execution_time_seconds': ai_time,
+                                   'failed': True
+                               },
+                               structured_data={'error_details': str(e)})
+
+                    # Fallback to mock analyses
+                    logger.info("Falling back to mock analyses",
+                               pipeline_stage=PipelineStage.AI_ANALYSIS,
+                               run_id=run_id,
+                               structured_data={'fallback_mode': True})
+
+                    analyses = create_mock_analyses(clusters[:4])
+                    ai_time = time.time() - ai_start
+
+                    # Collect metrics for fallback analysis
+                    metrics_collector.collect_ai_metrics(
+                        analyses, ai_time, "mock_fallback", True, 0, 0.0
+                    )
         
         # Step 5: Generate newsletter
         with PerformanceProfiler.profile_operation("newsletter_generation", logger):
@@ -311,33 +420,53 @@ def run_complete_pipeline() -> bool:
                        run_id=run_id,
                        structured_data={'analyses_count': len(analyses)})
 
-            try:
-                generator = NewsletterGenerator()
-                newsletter = generator.generate_newsletter(analyses)
-                html_content = generator.generate_html(newsletter)
+            # Check if newsletter generation should be skipped due to degradation
+            if degradation_manager.should_skip_operation("newsletter_generation", "newsletter_generator"):
+                logger.warning("Skipping newsletter generation due to system degradation",
+                             pipeline_stage=PipelineStage.GENERATION,
+                             run_id=run_id,
+                             structured_data={
+                                 'degradation_level': degradation_manager.overall_degradation_level.value,
+                                 'reason': 'graceful_degradation'
+                             })
+                # Create minimal newsletter as fallback
+                newsletter = Newsletter(
+                    date=datetime.now(),
+                    title=Config.NEWSLETTER_TITLE,
+                    stories=analyses[:2] if analyses else [],  # Use first 2 stories
+                    intro_text="Newsletter generated with limited functionality due to system constraints.",
+                    footer_text="This newsletter was generated under degraded conditions."
+                )
+                html_content = f"<html><body><h1>{newsletter.title}</h1><p>System operating in degraded mode.</p></body></html>"
+                file_path = None
+            else:
+                try:
+                    generator = NewsletterGenerator()
+                    newsletter = generator.generate_newsletter(analyses)
+                    html_content = generator.generate_html(newsletter)
 
-                # Save newsletter (legacy format)
-                timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-                filename = f"newsletter_{timestamp}.html"
-                file_path = generator.save_html(html_content, filename)
+                    # Save newsletter (legacy format)
+                    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+                    filename = f"newsletter_{timestamp}.html"
+                    file_path = generator.save_html(html_content, filename)
 
-                logger.info(f"Newsletter saved to: {file_path}",
-                           pipeline_stage=PipelineStage.GENERATION,
-                           run_id=run_id,
-                           structured_data={
-                               'file_path': str(file_path),
-                               'file_size_bytes': len(html_content) if html_content else 0,
-                               'stories_count': len(analyses)
-                           })
+                    logger.info(f"Newsletter saved to: {file_path}",
+                               pipeline_stage=PipelineStage.GENERATION,
+                               run_id=run_id,
+                               structured_data={
+                                   'file_path': str(file_path),
+                                   'file_size_bytes': len(html_content) if html_content else 0,
+                                   'stories_count': len(analyses)
+                               })
 
-            except Exception as e:
-                logger.error(f"Newsletter generation failed: {e}",
-                           pipeline_stage=PipelineStage.GENERATION,
-                           run_id=run_id,
-                           error_category=ErrorCategory.PARSING_ERROR,
-                           structured_data={'error_details': str(e)})
-                pipeline_tracker.track_pipeline_failure(run_id, e, PipelineStage.GENERATION)
-                return False
+                except Exception as e:
+                    logger.error(f"Newsletter generation failed: {e}",
+                               pipeline_stage=PipelineStage.GENERATION,
+                               run_id=run_id,
+                               error_category=ErrorCategory.PARSING_ERROR,
+                               structured_data={'error_details': str(e)})
+                    pipeline_tracker.track_pipeline_failure(run_id, e, PipelineStage.GENERATION)
+                    return False
         
         # Step 6: Multi-platform publishing
         with PerformanceProfiler.profile_operation("publishing", logger):
@@ -451,29 +580,56 @@ def run_complete_pipeline() -> bool:
         end_time = datetime.now()
         total_time = (end_time - start_time).total_seconds()
 
+        # Get AI cost report
+        cost_report = ai_cost_controller.get_cost_report()
+
         # Track pipeline success
         pipeline_tracker.track_pipeline_success(run_id, total_time)
 
         logger.info("=== Pipeline Summary ===",
-                    pipeline_stage=PipelineStage.CLEANUP,
-                    run_id=run_id,
-                    performance_data={
-                        'operation': 'pipeline_total',
-                        'execution_time_seconds': total_time
-                    },
-                    structured_data={
-                        'total_execution_time': total_time,
-                        'articles_collected': collection_stats.total_articles_collected,
-                        'articles_after_processing': processing_stats.articles_after_deduplication,
-                        'clusters_created': len(clusters),
-                        'stories_selected': len(analyses),
-                        'github_pages_url': publishing_summary['github_pages'],
-                        'substack_markdown': publishing_summary['substack_exports']['markdown_file'],
-                        'legacy_file': publishing_summary['legacy_file'],
-                        'processing_success_rate': processing_stats.success_rate,
-                        'collection_errors': len(collection_stats.errors) if isinstance(collection_stats.errors, list) and collection_stats.errors else 0,
-                        'processing_errors': len(processing_stats.errors) if isinstance(processing_stats.errors, list) and processing_stats.errors else 0
-                    })
+                     pipeline_stage=PipelineStage.CLEANUP,
+                     run_id=run_id,
+                     performance_data={
+                         'operation': 'pipeline_total',
+                         'execution_time_seconds': total_time
+                     },
+                     structured_data={
+                         'total_execution_time': total_time,
+                         'articles_collected': collection_stats.total_articles_collected,
+                         'articles_after_processing': processing_stats.articles_after_deduplication,
+                         'clusters_created': len(clusters),
+                         'stories_selected': len(analyses),
+                         'github_pages_url': publishing_summary['github_pages'],
+                         'substack_markdown': publishing_summary['substack_exports']['markdown_file'],
+                         'legacy_file': publishing_summary['legacy_file'],
+                         'processing_success_rate': processing_stats.success_rate,
+                         'collection_errors': len(collection_stats.errors) if isinstance(collection_stats.errors, list) and collection_stats.errors else 0,
+                         'processing_errors': len(processing_stats.errors) if isinstance(processing_stats.errors, list) and processing_stats.errors else 0,
+                         'ai_costs': {
+                             'daily_cost': cost_report['current_metrics']['daily_cost'],
+                             'monthly_cost': cost_report['current_metrics']['monthly_cost'],
+                             'daily_usage_percent': cost_report['budget_limits']['daily_usage_percent'],
+                             'monthly_usage_percent': cost_report['budget_limits']['monthly_usage_percent'],
+                             'budget_status': cost_report['status']
+                         }
+                     })
+
+        # Log AI cost summary separately for better visibility
+        logger.info("=== AI Cost Summary ===",
+                     pipeline_stage=PipelineStage.CLEANUP,
+                     run_id=run_id,
+                     structured_data={
+                         'daily_cost': cost_report['current_metrics']['daily_cost'],
+                         'monthly_cost': cost_report['current_metrics']['monthly_cost'],
+                         'daily_tokens': cost_report['current_metrics']['daily_tokens'],
+                         'monthly_tokens': cost_report['current_metrics']['monthly_tokens'],
+                         'daily_limit': cost_report['budget_limits']['daily_limit'],
+                         'monthly_limit': cost_report['budget_limits']['monthly_limit'],
+                         'daily_usage_percent': cost_report['budget_limits']['daily_usage_percent'],
+                         'monthly_usage_percent': cost_report['budget_limits']['monthly_usage_percent'],
+                         'budget_status': cost_report['status'],
+                         'api_calls_today': cost_report['current_metrics']['daily_api_calls']
+                     })
 
         # Step 9: Run cleanup (only if enabled and not in dry run mode)
         if Config.CLEANUP_ENABLED and not Config.DRY_RUN:
@@ -564,6 +720,18 @@ def run_complete_pipeline() -> bool:
     finally:
         # Ensure metrics collector is properly closed
         metrics_collector.close()
+
+        # Stop resilience monitoring
+        try:
+            health_monitor.stop_monitoring()
+            logger.info("Health monitoring stopped",
+                       pipeline_stage=PipelineStage.CLEANUP,
+                       run_id=run_id if 'run_id' in locals() else None,
+                       structured_data={'monitoring_status': 'stopped'})
+        except Exception as e:
+            logger.warning(f"Error stopping health monitoring: {e}",
+                          pipeline_stage=PipelineStage.CLEANUP,
+                          run_id=run_id if 'run_id' in locals() else None)
 
         # Log final cleanup
         logger.info("Pipeline cleanup completed",
