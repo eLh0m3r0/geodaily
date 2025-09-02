@@ -16,14 +16,14 @@ logger = get_logger(__name__)
 class ArticleDeduplicator:
     """Handles deduplication and clustering of articles."""
     
-    def __init__(self, similarity_threshold: float = 0.8):
+    def __init__(self, similarity_threshold: float = 0.95):
         """
         Initialize deduplicator.
-        
+
         Args:
             similarity_threshold: Minimum similarity score to consider articles duplicates
         """
-        self.similarity_threshold = similarity_threshold
+        self.similarity_threshold = similarity_threshold  # Increased from 0.8 to 0.95 to preserve perspectives
     
     def deduplicate_articles(self, articles: List[Article]) -> List[Article]:
         """
@@ -82,7 +82,8 @@ class ArticleDeduplicator:
                     continue
                 
                 similarity = self._calculate_title_similarity(article.title, other_article.title)
-                if similarity >= self.similarity_threshold * 0.7:  # Lower threshold for clustering
+                # Use higher threshold for clustering to preserve diverse perspectives
+                if similarity >= self.similarity_threshold * 0.9:  # Higher threshold for clustering
                     cluster_articles.append(other_article)
                     processed_articles.add(id(other_article))
             
@@ -113,15 +114,30 @@ class ArticleDeduplicator:
         return unique_articles
     
     def _remove_similar_titles(self, articles: List[Article]) -> List[Article]:
-        """Remove articles with very similar titles."""
+        """Remove articles with very similar titles, but preserve different perspectives."""
         unique_articles = []
-        
+
         for article in articles:
             is_duplicate = False
-            
+
             for existing_article in unique_articles:
                 similarity = self._calculate_title_similarity(article.title, existing_article.title)
+
+                # Only remove if extremely similar (technical duplicates)
                 if similarity >= self.similarity_threshold:
+                    # Check if they are from different sources (preserve perspectives)
+                    if article.source != existing_article.source:
+                        # Different sources = different perspectives, keep both
+                        logger.debug(f"Keeping articles from different sources: '{article.title[:50]}...' from {article.source} and {existing_article.source}")
+                        continue
+
+                    # Check if they have different content (preserve different analyses)
+                    content_similarity = self._calculate_content_similarity(article, existing_article)
+                    if content_similarity < 0.9:  # Different content = different analysis
+                        logger.debug(f"Keeping articles with different content: '{article.title[:50]}...'")
+                        continue
+
+                    # Only remove true technical duplicates
                     # Keep the article from a higher-weight source
                     if self._get_source_weight(article) > self._get_source_weight(existing_article):
                         # Replace existing article with this one
@@ -129,10 +145,11 @@ class ArticleDeduplicator:
                         unique_articles.append(article)
                     is_duplicate = True
                     break
-            
+
             if not is_duplicate:
                 unique_articles.append(article)
-        
+
+        logger.info(f"Preserved {len(unique_articles)} articles with diverse perspectives")
         return unique_articles
     
     def _calculate_title_similarity(self, title1: str, title2: str) -> float:
@@ -140,11 +157,47 @@ class ArticleDeduplicator:
         # Normalize titles
         norm_title1 = self._normalize_title(title1)
         norm_title2 = self._normalize_title(title2)
-        
+
         # Use SequenceMatcher for similarity
         similarity = SequenceMatcher(None, norm_title1, norm_title2).ratio()
-        
+
         return similarity
+
+    def _calculate_content_similarity(self, article1: Article, article2: Article) -> float:
+        """Calculate similarity between article content (title + summary)."""
+        # Combine title and summary for comparison
+        content1 = f"{article1.title} {article1.summary or ''}".strip()
+        content2 = f"{article2.title} {article2.summary or ''}".strip()
+
+        if not content1 or not content2:
+            return 0.0
+
+        # Normalize content
+        norm_content1 = self._normalize_content(content1)
+        norm_content2 = self._normalize_content(content2)
+
+        # Use SequenceMatcher for similarity
+        similarity = SequenceMatcher(None, norm_content1, norm_content2).ratio()
+
+        return similarity
+
+    def _normalize_content(self, content: str) -> str:
+        """Normalize content for comparison."""
+        # Convert to lowercase
+        content = content.lower()
+
+        # Remove HTML tags if present
+        content = re.sub(r'<[^>]+>', '', content)
+
+        # Remove common punctuation and extra spaces
+        content = re.sub(r'[^\w\s]', ' ', content)
+        content = re.sub(r'\s+', ' ', content).strip()
+
+        # Remove common stop words
+        stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could', 'should', 'may', 'might', 'must', 'can', 'this', 'that', 'these', 'those'}
+        words = [word for word in content.split() if word not in stop_words]
+
+        return ' '.join(words)
     
     def _normalize_title(self, title: str) -> str:
         """Normalize title for comparison."""

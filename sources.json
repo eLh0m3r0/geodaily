@@ -7,6 +7,18 @@
       "weight": 0.8
     },
     {
+      "name": "Reuters World",
+      "url": "https://feeds.reuters.com/Reuters/worldNews",
+      "category": "mainstream",
+      "weight": 0.9
+    },
+    {
+      "name": "Associated Press",
+      "url": "https://feeds.apnews.com/rss/apf-worldnews",
+      "category": "mainstream",
+      "weight": 0.8
+    },
+    {
       "name": "Guardian International",
       "url": "https://www.theguardian.com/world/rss",
       "category": "mainstream",
@@ -25,6 +37,18 @@
       "weight": 0.9
     },
     {
+      "name": "NPR World",
+      "url": "https://feeds.npr.org/1004/rss.xml",
+      "category": "mainstream",
+      "weight": 0.7
+    },
+    {
+      "name": "DW News",
+      "url": "https://rss.dw.com/xml/rss_en_all",
+      "category": "mainstream",
+      "weight": 0.8
+    },
+    {
       "name": "Foreign Affairs",
       "url": "https://www.foreignaffairs.com/rss.xml",
       "category": "analysis",
@@ -39,6 +63,36 @@
     {
       "name": "The Diplomat",
       "url": "https://thediplomat.com/feed/",
+      "category": "analysis",
+      "weight": 1.1
+    },
+    {
+      "name": "Foreign Policy Magazine",
+      "url": "https://foreignpolicy.com/feed/",
+      "category": "analysis",
+      "weight": 1.2
+    },
+    {
+      "name": "Politico Foreign",
+      "url": "https://www.politico.com/rss/politics.xml",
+      "category": "analysis",
+      "weight": 1.0
+    },
+    {
+      "name": "Economist World Politics",
+      "url": "https://www.economist.com/world-politics/rss.xml",
+      "category": "analysis",
+      "weight": 1.0
+    },
+    {
+      "name": "Defense One RSS",
+      "url": "https://www.defenseone.com/rss.xml",
+      "category": "analysis",
+      "weight": 1.1
+    },
+    {
+      "name": "Jane's Defence",
+      "url": "https://www.janes.com/rss/",
       "category": "analysis",
       "weight": 1.1
     },
@@ -71,60 +125,194 @@
       "url": "https://www.atlanticcouncil.org/feed/",
       "category": "think_tank",
       "weight": 1.2
+    },
+    {
+      "name": "RAND Corporation",
+      "url": "https://www.rand.org/rss/",
+      "category": "think_tank",
+      "weight": 1.2
+    },
+    {
+      "name": "Chatham House",
+      "url": "https://www.chathamhouse.org/rss.xml",
+      "category": "think_tank",
+      "weight": 1.1
+    },
+    {
+      "name": "Wilson Center",
+      "url": "https://www.wilsoncenter.org/rss.xml",
+      "category": "think_tank",
+      "weight": 1.0
+    },
+    {
+      "name": "Heritage Foundation",
+      "url": "https://www.heritage.org/rss.xml",
+      "category": "think_tank",
+      "weight": 1.0
+    },
+    {
+      "name": "PIIE",
+      "url": "https://www.piie.com/rss.xml",
+      "category": "think_tank",
+      "weight": 1.0
+    },
+    {
+      "name": "Stimson Center",
+      "url": "https://www.stimson.org/rss.xml",
+      "category": "think_tank",
+      "weight": 0.9
+    },
+    {
+      "name": "USIP",
+      "url": "https://www.usip.org/rss.xml",
+      "category": "think_tank",
+      "weight": 0.9
+    },
+    {
+      "name": "France 24 English",
+      "url": "https://www.france24.com/en/rss",
+      "category": "regional",
+      "weight": 0.8
+    },
+    {
+      "name": "RT News",
+      "url": "https://www.rt.com/rss/",
+      "category": "regional",
+      "weight": 0.6
+    },
+    {
+      "name": "South China Morning Post RSS",
+      "url": "https://www.scmp.com/rss/91/feed",
+      "category": "regional",
+      "weight": 1.0
+    },
+    {
+      "name": "Asia Times",
+      "url": "https://asiatimes.com/feed/",
+      "category": "regional",
+      "weight": 1.0
+    },
+    {
+      "name": "Middle East Eye",
+      "url": "https://www.middleeasteye.net/rss",
+      "category": "regional",
+      "weight": 0.9
+    },
+    {
+      "name": "Al-Monitor",
+      "url": "https://www.al-monitor.com/rss.xml",
+      "category": "regional",
+      "weight": 0.9
     }
   ],
   "tier2_sources": [
     {
-      "name": "Foreign Policy",
-      "url": "https://foreignpolicy.com/news/",
+      "name": "Foreign Policy (Fixed)",
+      "url": "https://foreignpolicy.com/latest/",
       "method": "basic",
       "category": "analysis",
       "weight": 1.2,
       "selectors": {
-        "container": "article, .fp-post-item",
-        "title": "h2, h3, .fp-headline",
+        "container": ".card--article, .post-item, article",
+        "title": ".card__title, h2, h3, .headline",
         "link": "a",
-        "summary": ".fp-excerpt, .excerpt",
-        "date": "time, .fp-date"
+        "summary": ".card__excerpt, .excerpt, .summary",
+        "date": ".card__date, time, .date"
       }
     },
     {
-      "name": "South China Morning Post",
-      "url": "https://www.scmp.com/news/world",
-      "method": "basic",
-      "category": "regional",
-      "weight": 1.0,
-      "selectors": {
-        "container": ".story-list-item, .listing-item",
-        "title": "h2, h3, .headline",
-        "link": "a",
-        "summary": ".story-summary, .kicker",
-        "date": "time, .date"
-      }
-    },
-    {
-      "name": "Defense One",
-      "url": "https://www.defenseone.com",
+      "name": "Politico Foreign Policy",
+      "url": "https://www.politico.com/foreign-policy/",
       "method": "basic",
       "category": "analysis",
       "weight": 1.1,
       "selectors": {
-        "container": ".river-well, article",
-        "title": "h3, h2",
+        "container": ".story-card, article, .card",
+        "title": "h2, h3, .headline",
         "link": "a",
-        "summary": ".summary",
+        "summary": ".summary, .excerpt",
+        "date": "time, .date"
+      }
+    },
+    {
+      "name": "Defense One (Fixed)",
+      "url": "https://www.defenseone.com/",
+      "method": "basic",
+      "category": "analysis",
+      "weight": 1.1,
+      "selectors": {
+        "container": ".river-well, article, .post-item",
+        "title": "h3, h2, .headline",
+        "link": "a",
+        "summary": ".summary, .excerpt",
+        "date": "time, .date"
+      }
+    },
+    {
+      "name": "The National Interest (Fixed)",
+      "url": "https://nationalinterest.org/",
+      "method": "basic",
+      "category": "analysis",
+      "weight": 1.0,
+      "selectors": {
+        "container": ".article-item, article, .post",
+        "title": "h3, h2, .title",
+        "link": "a",
+        "summary": ".excerpt, .summary",
+        "date": "time, .date"
+      }
+    },
+    {
+      "name": "RealClearWorld",
+      "url": "https://www.realclearworld.com/",
+      "method": "basic",
+      "category": "analysis",
+      "weight": 1.0,
+      "selectors": {
+        "container": ".article, .post-item",
+        "title": "h2, h3, .headline",
+        "link": "a",
+        "summary": ".excerpt, .summary",
         "date": "time"
       }
     },
     {
-      "name": "The National Interest",
-      "url": "https://nationalinterest.org",
+      "name": "World Politics Review",
+      "url": "https://www.worldpoliticsreview.com/",
       "method": "basic",
       "category": "analysis",
       "weight": 1.0,
       "selectors": {
         "container": ".article-item, article",
-        "title": "h3, h2",
+        "title": "h2, h3",
+        "link": "a",
+        "summary": ".excerpt",
+        "date": "time"
+      }
+    },
+    {
+      "name": "Geopolitical Monitor",
+      "url": "https://www.geopoliticalmonitor.com/",
+      "method": "basic",
+      "category": "analysis",
+      "weight": 0.9,
+      "selectors": {
+        "container": ".post-item, article",
+        "title": "h2, h3",
+        "link": "a",
+        "summary": ".excerpt",
+        "date": "time"
+      }
+    },
+    {
+      "name": "Eurasianet",
+      "url": "https://eurasianet.org/",
+      "method": "basic",
+      "category": "regional",
+      "weight": 0.9,
+      "selectors": {
+        "container": ".article-item, article",
+        "title": "h2, h3",
         "link": "a",
         "summary": ".excerpt",
         "date": "time"
