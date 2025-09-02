@@ -7,18 +7,6 @@
       "weight": 0.8
     },
     {
-      "name": "Reuters World",
-      "url": "https://feeds.reuters.com/Reuters/worldNews",
-      "category": "mainstream",
-      "weight": 0.9
-    },
-    {
-      "name": "Associated Press",
-      "url": "https://feeds.apnews.com/rss/apf-worldnews",
-      "category": "mainstream",
-      "weight": 0.8
-    },
-    {
       "name": "Guardian International",
       "url": "https://www.theguardian.com/world/rss",
       "category": "mainstream",
@@ -43,22 +31,10 @@
       "weight": 0.7
     },
     {
-      "name": "DW News",
-      "url": "https://rss.dw.com/xml/rss_en_all",
-      "category": "mainstream",
-      "weight": 0.8
-    },
-    {
       "name": "Foreign Affairs",
       "url": "https://www.foreignaffairs.com/rss.xml",
       "category": "analysis",
       "weight": 1.2
-    },
-    {
-      "name": "War on the Rocks",
-      "url": "https://warontherocks.com/feed/",
-      "category": "analysis",
-      "weight": 1.1
     },
     {
       "name": "The Diplomat",
@@ -73,50 +49,8 @@
       "weight": 1.2
     },
     {
-      "name": "Politico Foreign",
-      "url": "https://www.politico.com/rss/politics.xml",
-      "category": "analysis",
-      "weight": 1.0
-    },
-    {
-      "name": "Economist World Politics",
-      "url": "https://www.economist.com/world-politics/rss.xml",
-      "category": "analysis",
-      "weight": 1.0
-    },
-    {
-      "name": "Defense One RSS",
-      "url": "https://www.defenseone.com/rss.xml",
-      "category": "analysis",
-      "weight": 1.1
-    },
-    {
-      "name": "Jane's Defence",
-      "url": "https://www.janes.com/rss/",
-      "category": "analysis",
-      "weight": 1.1
-    },
-    {
-      "name": "Brookings Institution",
-      "url": "https://www.brookings.edu/feed/",
-      "category": "think_tank",
-      "weight": 1.3
-    },
-    {
-      "name": "Council on Foreign Relations",
-      "url": "https://www.cfr.org/feed/blog/",
-      "category": "think_tank",
-      "weight": 1.3
-    },
-    {
       "name": "CSIS",
       "url": "https://www.csis.org/rss.xml",
-      "category": "think_tank",
-      "weight": 1.2
-    },
-    {
-      "name": "Carnegie Endowment",
-      "url": "https://carnegieendowment.org/rss/",
       "category": "think_tank",
       "weight": 1.2
     },
@@ -127,46 +61,28 @@
       "weight": 1.2
     },
     {
-      "name": "RAND Corporation",
-      "url": "https://www.rand.org/rss/",
-      "category": "think_tank",
-      "weight": 1.2
-    },
-    {
-      "name": "Chatham House",
-      "url": "https://www.chathamhouse.org/rss.xml",
+      "name": "European Council on Foreign Relations",
+      "url": "https://ecfr.eu/feed/",
       "category": "think_tank",
       "weight": 1.1
     },
     {
-      "name": "Wilson Center",
-      "url": "https://www.wilsoncenter.org/rss.xml",
+      "name": "German Marshall Fund",
+      "url": "https://www.gmfus.org/rss.xml",
       "category": "think_tank",
+      "weight": 1.1
+    },
+    {
+      "name": "International Crisis Group",
+      "url": "https://www.crisisgroup.org/rss.xml",
+      "category": "think_tank",
+      "weight": 1.2
+    },
+    {
+      "name": "Human Rights Watch",
+      "url": "https://www.hrw.org/rss.xml",
+      "category": "analysis",
       "weight": 1.0
-    },
-    {
-      "name": "Heritage Foundation",
-      "url": "https://www.heritage.org/rss.xml",
-      "category": "think_tank",
-      "weight": 1.0
-    },
-    {
-      "name": "PIIE",
-      "url": "https://www.piie.com/rss.xml",
-      "category": "think_tank",
-      "weight": 1.0
-    },
-    {
-      "name": "Stimson Center",
-      "url": "https://www.stimson.org/rss.xml",
-      "category": "think_tank",
-      "weight": 0.9
-    },
-    {
-      "name": "USIP",
-      "url": "https://www.usip.org/rss.xml",
-      "category": "think_tank",
-      "weight": 0.9
     },
     {
       "name": "France 24 English",
@@ -221,20 +137,6 @@
       }
     },
     {
-      "name": "Politico Foreign Policy",
-      "url": "https://www.politico.com/foreign-policy/",
-      "method": "basic",
-      "category": "analysis",
-      "weight": 1.1,
-      "selectors": {
-        "container": ".story-card, article, .card",
-        "title": "h2, h3, .headline",
-        "link": "a",
-        "summary": ".summary, .excerpt",
-        "date": "time, .date"
-      }
-    },
-    {
       "name": "Defense One (Fixed)",
       "url": "https://www.defenseone.com/",
       "method": "basic",
@@ -246,34 +148,6 @@
         "link": "a",
         "summary": ".summary, .excerpt",
         "date": "time, .date"
-      }
-    },
-    {
-      "name": "The National Interest (Fixed)",
-      "url": "https://nationalinterest.org/",
-      "method": "basic",
-      "category": "analysis",
-      "weight": 1.0,
-      "selectors": {
-        "container": ".article-item, article, .post",
-        "title": "h3, h2, .title",
-        "link": "a",
-        "summary": ".excerpt, .summary",
-        "date": "time, .date"
-      }
-    },
-    {
-      "name": "RealClearWorld",
-      "url": "https://www.realclearworld.com/",
-      "method": "basic",
-      "category": "analysis",
-      "weight": 1.0,
-      "selectors": {
-        "container": ".article, .post-item",
-        "title": "h2, h3, .headline",
-        "link": "a",
-        "summary": ".excerpt, .summary",
-        "date": "time"
       }
     },
     {
@@ -291,31 +165,37 @@
       }
     },
     {
-      "name": "Geopolitical Monitor",
-      "url": "https://www.geopoliticalmonitor.com/",
+      "name": "Foreign Affairs Magazine",
+      "url": "https://www.foreignaffairs.com/articles",
       "method": "basic",
       "category": "analysis",
-      "weight": 0.9,
+      "weight": 1.3,
       "selectors": {
-        "container": ".post-item, article",
-        "title": "h2, h3",
+        "container": ".article-card, article, .card",
+        "title": "h2, h3, .headline",
         "link": "a",
-        "summary": ".excerpt",
-        "date": "time"
+        "summary": ".summary, .excerpt, .description",
+        "date": "time, .date"
       }
     },
     {
-      "name": "Eurasianet",
-      "url": "https://eurasianet.org/",
+      "name": "Atlantic Council",
+      "url": "https://www.atlanticcouncil.org/feed/",
+      "category": "think_tank",
+      "weight": 1.1
+    },
+    {
+      "name": "Center for Strategic and International Studies",
+      "url": "https://www.csis.org/analysis/",
       "method": "basic",
-      "category": "regional",
-      "weight": 0.9,
+      "category": "think_tank",
+      "weight": 1.2,
       "selectors": {
-        "container": ".article-item, article",
-        "title": "h2, h3",
+        "container": ".analysis-item, article, .post",
+        "title": "h2, h3, .title",
         "link": "a",
-        "summary": ".excerpt",
-        "date": "time"
+        "summary": ".excerpt, .summary",
+        "date": "time, .date"
       }
     }
   ]
