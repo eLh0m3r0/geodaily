@@ -12,9 +12,9 @@ from urllib.parse import urljoin, urlparse
 
 from ..models import Article, NewsSource, SourceCategory
 from ..config import Config
-from ..logger import get_logger
+from ..logging_system import get_structured_logger, ErrorCategory, PipelineStage
 
-logger = get_logger(__name__)
+logger = get_structured_logger(__name__)
 
 class WebScraper:
     """Scrapes articles from websites using CSS selectors."""
@@ -42,28 +42,50 @@ class WebScraper:
         articles = []
         
         try:
-            logger.info(f"Scraping web source: {source.name}")
-            
+            logger.info(f"Scraping web source: {source.name}",
+                       pipeline_stage=PipelineStage.COLLECTION,
+                       structured_data={'source_name': source.name, 'source_url': source.url})
+
             # Fetch webpage
-            soup = self._fetch_page_with_retry(source.url)
+            soup = self._fetch_page_with_retry(source.url, source.name)
             if not soup:
-                logger.error(f"Failed to fetch webpage: {source.name}")
+                logger.error(f"Failed to fetch webpage: {source.name}",
+                           pipeline_stage=PipelineStage.COLLECTION,
+                           error_category=ErrorCategory.NETWORK_ERROR,
+                           structured_data={'source_name': source.name, 'source_url': source.url})
                 return articles
-            
+
             # Extract articles using selectors
             if source.selectors:
                 articles = self._extract_articles(soup, source)
             else:
-                logger.warning(f"No selectors defined for {source.name}")
-            
-            logger.info(f"Scraped {len(articles)} articles from {source.name}")
-            
+                logger.warning(f"No selectors defined for {source.name}",
+                             pipeline_stage=PipelineStage.COLLECTION,
+                             error_category=ErrorCategory.CONFIGURATION_ERROR,
+                             structured_data={'source_name': source.name, 'missing_selectors': True})
+
+            logger.info(f"Scraped {len(articles)} articles from {source.name}",
+                       pipeline_stage=PipelineStage.COLLECTION,
+                       structured_data={
+                           'source_name': source.name,
+                           'articles_scraped': len(articles),
+                           'source_url': source.url
+                       })
+
         except Exception as e:
-            logger.error(f"Error scraping web source {source.name}: {e}")
+            logger.error(f"Error scraping web source {source.name}: {e}",
+                       pipeline_stage=PipelineStage.COLLECTION,
+                       error_category=ErrorCategory.UNKNOWN_ERROR,
+                       structured_data={
+                           'source_name': source.name,
+                           'source_url': source.url,
+                           'error_type': type(e).__name__,
+                           'error_message': str(e)
+                       })
         
         return articles
     
-    def _fetch_page_with_retry(self, url: str) -> Optional[BeautifulSoup]:
+    def _fetch_page_with_retry(self, url: str, source_name: str) -> Optional[BeautifulSoup]:
         """Fetch webpage with retry logic."""
         for attempt in range(Config.MAX_RETRIES):
             try:
@@ -73,21 +95,47 @@ class WebScraper:
                     allow_redirects=True
                 )
                 response.raise_for_status()
-                
+
                 # Parse HTML
                 soup = BeautifulSoup(response.content, 'html.parser')
                 return soup
-                
+
             except requests.RequestException as e:
-                logger.warning(f"Attempt {attempt + 1} failed for {url}: {e}")
+                logger.warning(f"Attempt {attempt + 1} failed for {url}: {e}",
+                             pipeline_stage=PipelineStage.COLLECTION,
+                             error_category=ErrorCategory.NETWORK_ERROR,
+                             structured_data={
+                                 'source_name': source_name,
+                                 'url': url,
+                                 'attempt': attempt + 1,
+                                 'max_retries': Config.MAX_RETRIES,
+                                 'error_type': type(e).__name__,
+                                 'error_message': str(e)
+                             })
                 if attempt < Config.MAX_RETRIES - 1:
                     time.sleep(Config.RETRY_DELAY * (attempt + 1))
                 else:
-                    logger.error(f"All retry attempts failed for {url}")
+                    logger.error(f"All retry attempts failed for {url}",
+                               pipeline_stage=PipelineStage.COLLECTION,
+                               error_category=ErrorCategory.NETWORK_ERROR,
+                               structured_data={
+                                   'source_name': source_name,
+                                   'url': url,
+                                   'total_attempts': Config.MAX_RETRIES,
+                                   'final_error': str(e)
+                               })
             except Exception as e:
-                logger.error(f"Error parsing HTML for {url}: {e}")
+                logger.error(f"Error parsing HTML for {url}: {e}",
+                           pipeline_stage=PipelineStage.COLLECTION,
+                           error_category=ErrorCategory.PARSING_ERROR,
+                           structured_data={
+                               'source_name': source_name,
+                               'url': url,
+                               'error_type': type(e).__name__,
+                               'error_message': str(e)
+                           })
                 break
-        
+
         return None
     
     def _extract_articles(self, soup: BeautifulSoup, source: NewsSource) -> List[Article]:
@@ -101,20 +149,41 @@ class WebScraper:
             containers = soup.select(container_selector)
             
             if not containers:
-                logger.warning(f"No containers found with selector '{container_selector}' for {source.name}")
+                logger.warning(f"No containers found with selector '{container_selector}' for {source.name}",
+                             pipeline_stage=PipelineStage.COLLECTION,
+                             error_category=ErrorCategory.PARSING_ERROR,
+                             structured_data={
+                                 'source_name': source.name,
+                                 'selector': container_selector,
+                                 'containers_found': 0
+                             })
                 return articles
-            
+
             for container in containers:
                 try:
                     article = self._extract_single_article(container, source, soup)
                     if article:
                         articles.append(article)
                 except Exception as e:
-                    logger.error(f"Error extracting article from {source.name}: {e}")
+                    logger.error(f"Error extracting article from {source.name}: {e}",
+                               pipeline_stage=PipelineStage.COLLECTION,
+                               error_category=ErrorCategory.PARSING_ERROR,
+                               structured_data={
+                                   'source_name': source.name,
+                                   'error_type': type(e).__name__,
+                                   'error_message': str(e)
+                               })
                     continue
-            
+
         except Exception as e:
-            logger.error(f"Error in article extraction for {source.name}: {e}")
+            logger.error(f"Error in article extraction for {source.name}: {e}",
+                       pipeline_stage=PipelineStage.COLLECTION,
+                       error_category=ErrorCategory.PARSING_ERROR,
+                       structured_data={
+                           'source_name': source.name,
+                           'error_type': type(e).__name__,
+                           'error_message': str(e)
+                       })
         
         return articles
     
@@ -177,7 +246,14 @@ class WebScraper:
             return article
             
         except Exception as e:
-            logger.error(f"Error extracting single article: {e}")
+            logger.error(f"Error extracting single article: {e}",
+                       pipeline_stage=PipelineStage.COLLECTION,
+                       error_category=ErrorCategory.PARSING_ERROR,
+                       structured_data={
+                           'source_name': source.name,
+                           'error_type': type(e).__name__,
+                           'error_message': str(e)
+                       })
             return None
     
     def _extract_date(self, container, selectors: Dict[str, str]) -> datetime:
@@ -249,7 +325,13 @@ class WebScraper:
                 continue
         
         # If all parsing fails, return current time
-        logger.warning(f"Could not parse date string: {date_str}")
+        logger.warning(f"Could not parse date string: {date_str}",
+                     pipeline_stage=PipelineStage.COLLECTION,
+                     error_category=ErrorCategory.VALIDATION_ERROR,
+                     structured_data={
+                         'date_string': date_str,
+                         'fallback_action': 'current_time'
+                     })
         return datetime.now(timezone.utc)
     
     def _clean_text(self, text: str) -> str:

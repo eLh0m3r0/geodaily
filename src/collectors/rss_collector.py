@@ -12,9 +12,9 @@ from bs4 import BeautifulSoup
 
 from ..models import Article, NewsSource, SourceCategory
 from ..config import Config
-from ..logger import get_logger
+from ..logging_system import get_structured_logger, ErrorCategory, PipelineStage
 
-logger = get_logger(__name__)
+logger = get_structured_logger(__name__)
 
 class RSSCollector:
     """Collects articles from RSS feeds."""
@@ -38,18 +38,26 @@ class RSSCollector:
         articles = []
 
         try:
-            logger.info(f"Collecting from RSS source: {source.name}")
+            logger.info(f"Collecting from RSS source: {source.name}",
+                       pipeline_stage=PipelineStage.COLLECTION,
+                       structured_data={'source_name': source.name, 'source_url': source.url})
 
             # Parse RSS feed with retry logic
-            feed_data = self._fetch_feed_with_retry(source.url)
+            feed_data = self._fetch_feed_with_retry(source.url, source.name)
             if not feed_data:
-                logger.error(f"Failed to fetch RSS feed: {source.name}")
+                logger.error(f"Failed to fetch RSS feed: {source.name}",
+                           pipeline_stage=PipelineStage.COLLECTION,
+                           error_category=ErrorCategory.NETWORK_ERROR,
+                           structured_data={'source_name': source.name, 'source_url': source.url})
                 return articles
 
             feed = feedparser.parse(feed_data)
 
             if feed.bozo and feed.bozo_exception:
-                logger.warning(f"RSS feed has issues ({source.name}): {feed.bozo_exception}")
+                logger.warning(f"RSS feed has issues ({source.name}): {feed.bozo_exception}",
+                             pipeline_stage=PipelineStage.COLLECTION,
+                             error_category=ErrorCategory.PARSING_ERROR,
+                             structured_data={'source_name': source.name, 'feed_bozo_exception': str(feed.bozo_exception)})
 
             # Process each entry
             for entry in feed.entries:
@@ -60,19 +68,47 @@ class RSSCollector:
                         if self._is_recent_article(article):
                             articles.append(article)
                         else:
-                            logger.debug(f"Skipping old article: {article.title} ({article.published_date})")
+                            logger.debug(f"Skipping old article: {article.title} ({article.published_date})",
+                                       pipeline_stage=PipelineStage.COLLECTION,
+                                       structured_data={
+                                           'source_name': source.name,
+                                           'article_title': article.title[:50],
+                                           'published_date': article.published_date.isoformat() if article.published_date else None,
+                                           'reason': 'too_old'
+                                       })
                 except Exception as e:
-                    logger.error(f"Error parsing RSS entry from {source.name}: {e}")
+                    logger.error(f"Error parsing RSS entry from {source.name}: {e}",
+                               pipeline_stage=PipelineStage.COLLECTION,
+                               error_category=ErrorCategory.PARSING_ERROR,
+                               structured_data={
+                                   'source_name': source.name,
+                                   'error_type': type(e).__name__,
+                                   'error_message': str(e)
+                               })
                     continue
 
-            logger.info(f"Collected {len(articles)} recent articles from {source.name}")
+            logger.info(f"Collected {len(articles)} recent articles from {source.name}",
+                       pipeline_stage=PipelineStage.COLLECTION,
+                       structured_data={
+                           'source_name': source.name,
+                           'articles_collected': len(articles),
+                           'source_url': source.url
+                       })
 
         except Exception as e:
-            logger.error(f"Error collecting from RSS source {source.name}: {e}")
+            logger.error(f"Error collecting from RSS source {source.name}: {e}",
+                       pipeline_stage=PipelineStage.COLLECTION,
+                       error_category=ErrorCategory.UNKNOWN_ERROR,
+                       structured_data={
+                           'source_name': source.name,
+                           'source_url': source.url,
+                           'error_type': type(e).__name__,
+                           'error_message': str(e)
+                       })
 
         return articles
     
-    def _fetch_feed_with_retry(self, url: str) -> Optional[str]:
+    def _fetch_feed_with_retry(self, url: str, source_name: str) -> Optional[str]:
         """Fetch RSS feed with retry logic."""
         for attempt in range(Config.MAX_RETRIES):
             try:
@@ -83,14 +119,32 @@ class RSSCollector:
                 )
                 response.raise_for_status()
                 return response.content
-                
+
             except requests.RequestException as e:
-                logger.warning(f"Attempt {attempt + 1} failed for {url}: {e}")
+                logger.warning(f"Attempt {attempt + 1} failed for {url}: {e}",
+                             pipeline_stage=PipelineStage.COLLECTION,
+                             error_category=ErrorCategory.NETWORK_ERROR,
+                             structured_data={
+                                 'source_name': source_name,
+                                 'url': url,
+                                 'attempt': attempt + 1,
+                                 'max_retries': Config.MAX_RETRIES,
+                                 'error_type': type(e).__name__,
+                                 'error_message': str(e)
+                             })
                 if attempt < Config.MAX_RETRIES - 1:
                     time.sleep(Config.RETRY_DELAY * (attempt + 1))
                 else:
-                    logger.error(f"All retry attempts failed for {url}")
-        
+                    logger.error(f"All retry attempts failed for {url}",
+                               pipeline_stage=PipelineStage.COLLECTION,
+                               error_category=ErrorCategory.NETWORK_ERROR,
+                               structured_data={
+                                   'source_name': source_name,
+                                   'url': url,
+                                   'total_attempts': Config.MAX_RETRIES,
+                                   'final_error': str(e)
+                               })
+
         return None
     
     def _parse_rss_entry(self, entry, source: NewsSource) -> Optional[Article]:
@@ -137,7 +191,13 @@ class RSSCollector:
             return article
             
         except Exception as e:
-            logger.error(f"Error parsing RSS entry: {e}")
+            logger.error(f"Error parsing RSS entry: {e}",
+                       pipeline_stage=PipelineStage.COLLECTION,
+                       error_category=ErrorCategory.PARSING_ERROR,
+                       structured_data={
+                           'error_type': type(e).__name__,
+                           'error_message': str(e)
+                       })
             return None
     
     def _parse_date(self, entry) -> datetime:
@@ -167,7 +227,10 @@ class RSSCollector:
                     continue
         
         # Default to current time if no date found
-        logger.warning("No valid date found in RSS entry, using current time")
+        logger.warning("No valid date found in RSS entry, using current time",
+                     pipeline_stage=PipelineStage.COLLECTION,
+                     error_category=ErrorCategory.VALIDATION_ERROR,
+                     structured_data={'fallback_action': 'current_time'})
         return datetime.now(timezone.utc)
     
     def _clean_html(self, text: str) -> str:
@@ -213,6 +276,13 @@ class RSSCollector:
         time_diff = now - article.published_date
         is_recent = time_diff <= timedelta(hours=24)
 
-        logger.debug(f"Article age check: {article.title[:50]}... - {time_diff} - Recent: {is_recent}")
+        logger.debug(f"Article age check: {article.title[:50]}... - {time_diff} - Recent: {is_recent}",
+                   pipeline_stage=PipelineStage.COLLECTION,
+                   structured_data={
+                       'article_title': article.title[:50],
+                       'time_diff_hours': time_diff.total_seconds() / 3600,
+                       'is_recent': is_recent,
+                       'published_date': article.published_date.isoformat() if article.published_date else None
+                   })
 
         return is_recent
