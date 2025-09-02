@@ -107,19 +107,6 @@ jobs:
       with:
         path: docs/
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: generate-newsletter
-    if: success()
-
-    steps:
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
-        
     - name: Upload newsletter artifacts
       uses: actions/upload-artifact@v4
       if: always()
@@ -195,3 +182,16 @@ jobs:
         else
           echo "- **Dashboard**: ❌ Missing" >> $GITHUB_STEP_SUMMARY
         fi
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: generate-newsletter
+    if: success()
+
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
