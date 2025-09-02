@@ -28,44 +28,48 @@ class RSSCollector:
     def collect_from_source(self, source: NewsSource) -> List[Article]:
         """
         Collect articles from a single RSS source.
-        
+
         Args:
             source: NewsSource configuration
-            
+
         Returns:
             List of Article objects
         """
         articles = []
-        
+
         try:
             logger.info(f"Collecting from RSS source: {source.name}")
-            
+
             # Parse RSS feed with retry logic
             feed_data = self._fetch_feed_with_retry(source.url)
             if not feed_data:
                 logger.error(f"Failed to fetch RSS feed: {source.name}")
                 return articles
-            
+
             feed = feedparser.parse(feed_data)
-            
+
             if feed.bozo and feed.bozo_exception:
                 logger.warning(f"RSS feed has issues ({source.name}): {feed.bozo_exception}")
-            
+
             # Process each entry
             for entry in feed.entries:
                 try:
                     article = self._parse_rss_entry(entry, source)
                     if article:
-                        articles.append(article)
+                        # Filter articles by publication date (only last 24 hours)
+                        if self._is_recent_article(article):
+                            articles.append(article)
+                        else:
+                            logger.debug(f"Skipping old article: {article.title} ({article.published_date})")
                 except Exception as e:
                     logger.error(f"Error parsing RSS entry from {source.name}: {e}")
                     continue
-            
-            logger.info(f"Collected {len(articles)} articles from {source.name}")
-            
+
+            logger.info(f"Collected {len(articles)} recent articles from {source.name}")
+
         except Exception as e:
             logger.error(f"Error collecting from RSS source {source.name}: {e}")
-        
+
         return articles
     
     def _fetch_feed_with_retry(self, url: str) -> Optional[str]:
@@ -182,11 +186,33 @@ class RSSCollector:
         """Clean and normalize text."""
         if not text:
             return ""
-        
+
         # Remove extra whitespace
         text = re.sub(r'\s+', ' ', text.strip())
-        
+
         # Remove common RSS artifacts
         text = re.sub(r'\[CDATA\[|\]\]', '', text)
-        
+
         return text
+
+    def _is_recent_article(self, article) -> bool:
+        """Check if article was published within the last 24 hours."""
+        from datetime import datetime, timezone, timedelta
+
+        if not article.published_date:
+            return False
+
+        # Ensure published_date is timezone-aware
+        if article.published_date.tzinfo is None:
+            article.published_date = article.published_date.replace(tzinfo=timezone.utc)
+
+        # Get current time in UTC
+        now = datetime.now(timezone.utc)
+
+        # Check if article is from last 24 hours
+        time_diff = now - article.published_date
+        is_recent = time_diff <= timedelta(hours=24)
+
+        logger.debug(f"Article age check: {article.title[:50]}... - {time_diff} - Recent: {is_recent}")
+
+        return is_recent

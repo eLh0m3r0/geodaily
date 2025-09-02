@@ -42,14 +42,30 @@ class GitHubPagesPublisher:
             URL of published newsletter
         """
         try:
-            # Generate newsletter HTML
-            html_content = self._generate_newsletter_html(newsletter, analyses)
-
-            # Save individual newsletter
+            # Check for duplicate newsletter (same date)
             date_str = newsletter.date.strftime('%Y-%m-%d')
             filename = f"newsletter-{date_str}.html"
             newsletter_path = self.output_dir / "newsletters" / filename
 
+            if newsletter_path.exists():
+                logger.warning(f"Newsletter for {date_str} already exists. Skipping publication to prevent duplicates.")
+                # Still update site pages and return existing URL
+                self._update_index_page()
+                self._update_archive_page()
+                self._update_about_page()
+                self._update_rss_feed()
+                self._update_dashboard()
+                self._update_sitemap()
+                self._copy_assets()
+
+                relative_url = f"newsletters/{filename}"
+                logger.info(f"Site pages updated, existing newsletter: {relative_url}")
+                return relative_url
+
+            # Generate newsletter HTML
+            html_content = self._generate_newsletter_html(newsletter, analyses)
+
+            # Save individual newsletter
             with open(newsletter_path, 'w', encoding='utf-8') as f:
                 f.write(html_content)
 

@@ -57,26 +57,44 @@ def run_complete_pipeline() -> bool:
                })
 
     try:
+        # Step 0: Check for duplicate newsletter (same date)
+        current_date = datetime.now().date()
+        from pathlib import Path
+        docs_dir = Path("docs")
+        newsletter_filename = f"newsletter-{current_date.strftime('%Y-%m-%d')}.html"
+        newsletter_path = docs_dir / "newsletters" / newsletter_filename
+
+        if newsletter_path.exists():
+            logger.warning(f"Newsletter for {current_date.strftime('%Y-%m-%d')} already exists. Skipping pipeline execution to prevent duplicates.",
+                          pipeline_stage=PipelineStage.INITIALIZATION,
+                          run_id=run_id,
+                          structured_data={
+                              'existing_file': str(newsletter_path),
+                              'reason': 'duplicate_prevention'
+                          })
+            pipeline_tracker.track_pipeline_success(run_id, 0)  # Mark as successful with 0 execution time
+            return True  # Return True since this is expected behavior
+
         # Step 1: Validate configuration
         with PerformanceProfiler.profile_operation("config_validation", logger):
             logger.info("Step 1: Validating configuration...",
-                       pipeline_stage=PipelineStage.CONFIGURATION,
-                       run_id=run_id)
+                        pipeline_stage=PipelineStage.CONFIGURATION,
+                        run_id=run_id)
 
             missing_config = Config.validate_config()
             if missing_config:
                 logger.error(f"Missing configuration: {missing_config}",
-                           pipeline_stage=PipelineStage.CONFIGURATION,
-                           run_id=run_id,
-                           error_category=ErrorCategory.CONFIGURATION_ERROR,
-                           structured_data={'missing_items': missing_config})
+                            pipeline_stage=PipelineStage.CONFIGURATION,
+                            run_id=run_id,
+                            error_category=ErrorCategory.CONFIGURATION_ERROR,
+                            structured_data={'missing_items': missing_config})
                 pipeline_tracker.track_pipeline_failure(run_id, ValueError("Missing configuration"), PipelineStage.CONFIGURATION)
                 return False
 
             logger.info("Configuration validated successfully",
-                       pipeline_stage=PipelineStage.CONFIGURATION,
-                       run_id=run_id,
-                       structured_data={'validated_items': ['api_keys', 'sources_file']})
+                        pipeline_stage=PipelineStage.CONFIGURATION,
+                        run_id=run_id,
+                        structured_data={'validated_items': ['api_keys', 'sources_file']})
         
         # Step 2: Collect articles
         with PerformanceProfiler.profile_operation("article_collection", logger):
