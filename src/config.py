@@ -8,8 +8,12 @@ from pathlib import Path
 from typing import Dict, Any, List
 from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
+# Load environment variables from .env file if it exists
+env_file = Path(__file__).parent.parent / ".env"
+if env_file.exists():
+    load_dotenv()
+else:
+    print("Info: .env file not found, using environment variables only")
 
 class Config:
     """Configuration class for the application."""

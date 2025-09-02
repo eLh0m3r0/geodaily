@@ -20,3 +20,5 @@ tests/*.json
 
 # Virtual environment
 geodaily-env/
+# Environment variables
+.env
