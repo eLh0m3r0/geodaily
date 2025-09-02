@@ -195,7 +195,6 @@ class MetricsCollector:
 
     def collect_publishing_metrics(self, newsletter: Newsletter,
                                  github_url: str = None,
-                                 substack_files: List[str] = None,
                                  notifications_sent: int = 0,
                                  publishing_time: float = 0.0,
                                  success: bool = True):
@@ -208,7 +207,6 @@ class MetricsCollector:
             run_id=self.current_run_id,
             newsletter_date=newsletter.date.date(),
             github_pages_url=github_url,
-            substack_exports=substack_files or [],
             email_notifications_sent=notifications_sent,
             publishing_time_seconds=publishing_time,
             success=success

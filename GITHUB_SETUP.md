@@ -20,16 +20,6 @@ Name: ANTHROPIC_API_KEY
 Value: [tvůj Claude API klíč z Anthropic]
 ```
 
-#### Povinné pro publikování (volitelné pro testování):
-```
-Name: SUBSTACK_API_KEY
-Value: [tvůj Substack API klíč]
-```
-
-```
-Name: SUBSTACK_PUBLICATION_ID
-Value: [ID tvé Substack publikace]
-```
 
 ### Krok 2: Získání API klíčů
 
@@ -39,13 +29,6 @@ Value: [ID tvé Substack publikace]
 3. Jdi na `API Keys` sekci
 4. Vytvoř nový API klíč
 5. Zkopíruj klíč (začíná `sk-ant-...`)
-
-#### Substack API klíč (volitelné):
-1. Jdi na: https://substack.com/
-2. Přihlas se do svého účtu
-3. Jdi na `Settings` → `API`
-4. Vytvoř nový API klíč
-5. Zkopíruj klíč a publication ID
 
 ### Krok 3: Povolení GitHub Actions
 
@@ -97,7 +80,6 @@ Value: [ID tvé Substack publikace]
 #### Pro plnou automatizaci:
 1. Nastav všechny API klíče
 2. Změň `DRY_RUN=false` v workflow (už je nastaveno)
-3. Implementuj Substack publishing (volitelné)
 
 #### Monitoring:
 - Denní kontrola Actions tab

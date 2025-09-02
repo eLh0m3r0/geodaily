@@ -16,7 +16,6 @@ from .ai.claude_analyzer import ClaudeAnalyzer
 from .ai.cost_controller import ai_cost_controller
 from .newsletter.generator import NewsletterGenerator
 from .publishers.github_pages_publisher import GitHubPagesPublisher
-from .publishers.substack_exporter import SubstackExporter
 from .notifications.email_notifier import EmailNotifier
 from .metrics.collector import MetricsCollector
 from .config import Config
@@ -489,18 +488,6 @@ def run_complete_pipeline() -> bool:
                                'success': bool(github_url)
                            })
 
-                # Substack export (for manual publishing)
-                substack_exporter = SubstackExporter()
-                substack_files = substack_exporter.save_substack_files(newsletter, analyses)
-                logger.info(f"✅ Substack exports ready: {substack_files['markdown_file']}",
-                           pipeline_stage=PipelineStage.PUBLISHING,
-                           run_id=run_id,
-                           structured_data={
-                               'platform': 'substack',
-                               'markdown_file': substack_files.get('markdown_file'),
-                               'html_file': substack_files.get('html_file')
-                           })
-
                 publishing_time = time.time() - publishing_start
 
                 logger.info("Publishing completed",
@@ -527,16 +514,12 @@ def run_complete_pipeline() -> bool:
 
         publishing_summary = {
             "github_pages": github_url,
-            "substack_exports": substack_files,
             "legacy_file": file_path
         }
 
         # Collect publishing metrics
-        substack_file_list = [substack_files.get('markdown_file'), substack_files.get('html_file')]
-        substack_file_list = [f for f in substack_file_list if f]  # Filter out None values
-
         metrics_collector.collect_publishing_metrics(
-            newsletter, github_url, substack_file_list, 0, publishing_time, True
+            newsletter, github_url, [], 0, publishing_time, True
         )
         
         # Step 7: Send admin notification
@@ -600,7 +583,6 @@ def run_complete_pipeline() -> bool:
                          'clusters_created': len(clusters),
                          'stories_selected': len(analyses),
                          'github_pages_url': publishing_summary['github_pages'],
-                         'substack_markdown': publishing_summary['substack_exports']['markdown_file'],
                          'legacy_file': publishing_summary['legacy_file'],
                          'processing_success_rate': processing_stats.success_rate,
                          'collection_errors': len(collection_stats.errors) if isinstance(collection_stats.errors, list) and collection_stats.errors else 0,

@@ -152,16 +152,14 @@ Please check the GitHub Actions logs for more information.
             <h3>🎯 Next Steps</h3>
             <ol>
                 <li>✅ <strong>GitHub Pages:</strong> Automatically published</li>
-                <li>📝 <strong>Substack:</strong> Copy content from exports and publish manually</li>
                 <li>📱 <strong>Social Media:</strong> Share key insights (optional)</li>
             </ol>
         </div>
-        
+
         <h3>📊 Publishing Status</h3>
         <ul>
             <li><strong>GitHub Pages:</strong> {publishing_summary.get('github_pages', 'Unknown')}</li>
-            <li><strong>Substack Files:</strong> {publishing_summary.get('substack_exports', {}).get('markdown_file', 'Not generated')}</li>
-            <li><strong>Reading Time:</strong> {publishing_summary.get('substack_exports', {}).get('estimated_reading_time', 'Unknown')}</li>
+            <li><strong>Legacy File:</strong> {publishing_summary.get('legacy_file', 'Generated')}</li>
         </ul>
         
         <h3>📰 Top Stories Preview</h3>
@@ -203,17 +201,14 @@ Please check the GitHub Actions logs for more information.
 QUICK STATS:
 • Stories Selected: {len(analyses)}
 • Average Impact Score: {avg_impact:.1f}/10
-• Estimated Reading Time: {publishing_summary.get('substack_exports', {}).get('estimated_reading_time', 'Unknown')}
 
 PUBLISHING STATUS:
 ✅ GitHub Pages: {publishing_summary.get('github_pages', 'Unknown')}
-📝 Substack Files: Ready for copy-paste
 📊 Legacy File: Generated
 
 NEXT STEPS:
 1. ✅ GitHub Pages is live automatically
-2. 📝 Copy content from Substack exports to publish manually
-3. 📱 Share on social media (optional)
+2. 📱 Share on social media (optional)
 
 TOP STORIES:
 """

@@ -105,15 +105,12 @@ class PublishingMetrics:
     run_id: str
     newsletter_date: date
     github_pages_url: Optional[str] = None
-    substack_exports: Optional[List[str]] = None
     email_notifications_sent: int = 0
     publishing_time_seconds: float = 0.0
     success: bool = True
     published_at: datetime = None
 
     def __post_init__(self):
-        if self.substack_exports is None:
-            self.substack_exports = []
         if self.published_at is None:
             self.published_at = datetime.now()
 
@@ -226,7 +223,6 @@ class MetricsDatabase:
                 run_id TEXT PRIMARY KEY,
                 newsletter_date DATE NOT NULL,
                 github_pages_url TEXT,
-                substack_exports TEXT,  -- JSON array
                 email_notifications_sent INTEGER DEFAULT 0,
                 publishing_time_seconds REAL DEFAULT 0.0,
                 success BOOLEAN DEFAULT TRUE,
@@ -375,7 +371,6 @@ class MetricsDatabase:
         """Save publishing metrics."""
         try:
             data = asdict(metrics)
-            data['substack_exports'] = json.dumps(data['substack_exports'])
             columns = ', '.join(data.keys())
             placeholders = ', '.join(['?' for _ in data])
             values = list(data.values())

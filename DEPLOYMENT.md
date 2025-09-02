@@ -16,10 +16,6 @@
 - `ANTHROPIC_API_KEY`: Your Claude API key from Anthropic
 - `GEMINI_API_KEY`: Your Gemini API key (optional fallback)
 
-**Required for Publishing:**
-- `SUBSTACK_API_KEY`: Your Substack API key
-- `SUBSTACK_PUBLICATION_ID`: Your Substack publication ID
-
 **Newsletter Configuration:**
 - `NEWSLETTER_TITLE`: Your newsletter title
 - `NEWSLETTER_AUTHOR`: Your name
@@ -38,8 +34,6 @@ Instead of using `.env` file, configure GitHub Secrets in your repository:
 
 **Required Secrets:**
 - `ANTHROPIC_API_KEY`: Your Claude API key
-- `SUBSTACK_API_KEY`: Your Substack API key
-- `SUBSTACK_PUBLICATION_ID`: Your Substack publication ID
 
 **Optional Secrets:**
 - `GEMINI_API_KEY`: Your Gemini API key (fallback)

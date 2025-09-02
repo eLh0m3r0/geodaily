@@ -38,7 +38,7 @@ SMTP_PASSWORD=your_app_password
 3. Set **dry_run** to `true`
 4. Click **Run workflow**
 
-**✅ If successful, your newsletter site will be live at: `https://yourusername.github.io/geodaily`**
+**✅ If successful, your newsletter site will be live at: `https://elh0m3r0.github.io/geodaily`**
 
 ---
 
@@ -50,7 +50,7 @@ SMTP_PASSWORD=your_app_password
 |----------|----------|---------|-------------|
 | `ANTHROPIC_API_KEY` | ✅ | - | Claude AI API key |
 | `AI_MODEL` | ❌ | `claude-3-haiku-20240307` | AI model to use |
-| `AI_MAX_TOKENS` | ❌ | `2000` | Max tokens per analysis |
+| `AI_MAX_TOKENS` | ❌ | `5000` | Max tokens per analysis |
 | `AI_MAX_COST_PER_DAY` | ❌ | `2.0` | Daily cost limit ($) |
 | `ADMIN_EMAIL` | ❌ | - | Email for notifications |
 | `SMTP_SERVER` | ❌ | - | SMTP server for emails |
@@ -67,26 +67,10 @@ The system is configured for ~$25-35/month cost:
 
 1. **6:00 UTC**: GitHub Actions automatically runs
 2. **6:02 UTC**: Newsletter published to GitHub Pages
-3. **6:03 UTC**: Substack exports ready + Email notification sent
-4. **Your action**: Copy-paste Substack content (2 minutes)
+3. **6:03 UTC**: Email notification sent
 
 ---
 
-## 📧 Substack Publishing
-
-### Automated Process
-1. Check your email for "Newsletter Ready" notification
-2. Open the Substack export files in `substack_exports/`
-3. Copy HTML content to Substack
-4. Publish (total time: 2 minutes)
-
-### Manual Process
-1. Go to GitHub Actions artifacts
-2. Download latest newsletter bundle
-3. Use `substack-YYYY-MM-DD.html` for publishing
-4. Follow instructions in `instructions-YYYY-MM-DD.txt`
-
----
 
 ## 🛠️ Customization
 
@@ -208,7 +192,6 @@ Before going live:
 - [ ] Test with `dry_run: true`
 - [ ] Configure email notifications (optional)
 - [ ] Customize branding/styling
-- [ ] Set up Substack account
 - [ ] Test complete workflow end-to-end
 
 **🎉 Ready for Production!**

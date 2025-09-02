@@ -27,21 +27,19 @@ class Config:
     # API Configuration
     ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
     GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-    SUBSTACK_API_KEY = os.getenv("SUBSTACK_API_KEY")
-    SUBSTACK_PUBLICATION_ID = os.getenv("SUBSTACK_PUBLICATION_ID")
-    
+
     # Newsletter Configuration
     NEWSLETTER_TITLE = os.getenv("NEWSLETTER_TITLE", "Geopolitical Daily")
     NEWSLETTER_AUTHOR = os.getenv("NEWSLETTER_AUTHOR", "Geopolitical Daily Team")
     NEWSLETTER_FROM_EMAIL = os.getenv("NEWSLETTER_FROM_EMAIL")
 
     # Site Configuration
-    SITE_BASE_URL = os.getenv("SITE_BASE_URL", "https://yourusername.github.io/geodaily")
-    
+    SITE_BASE_URL = os.getenv("SITE_BASE_URL", "https://elh0m3r0.github.io/geodaily")
+
     # AI Configuration
     AI_PROVIDER = os.getenv("AI_PROVIDER", "anthropic")
     AI_MODEL = os.getenv("AI_MODEL", "claude-3-haiku-20240307")  # Use cheaper model by default
-    AI_MAX_TOKENS = int(os.getenv("AI_MAX_TOKENS", "2000"))  # Reduce tokens to control cost
+    AI_MAX_TOKENS = int(os.getenv("AI_MAX_TOKENS", "5000"))  # Increased for comprehensive analysis
     AI_TEMPERATURE = float(os.getenv("AI_TEMPERATURE", "0.3"))
     AI_MAX_COST_PER_DAY = float(os.getenv("AI_MAX_COST_PER_DAY", "2.0"))  # $2/day limit
     

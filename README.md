@@ -19,7 +19,7 @@ An intelligent newsletter system that collects news from diverse sources, analyz
 
 - **🤖 AI-Powered Analysis**: Claude AI identifies underreported stories with strategic significance
 - **📊 Multi-Source Collection**: Aggregates from think tanks, regional outlets, and specialized publications
-- **🌐 Multi-Platform Publishing**: GitHub Pages + Substack-ready exports
+- **🌐 Automated Publishing**: GitHub Pages with professional formatting
 - **📧 Smart Notifications**: Email alerts when newsletters are ready
 - **💰 Cost Control**: Built-in spending limits (~$25-35/month)
 - **⚡ Fast Processing**: 400+ articles analyzed in ~30 seconds
@@ -32,8 +32,7 @@ Every day at 6:00 UTC, the system:
 2. **Analyzes** content using Claude AI for strategic significance
 3. **Generates** professional newsletters in multiple formats
 4. **Publishes** to GitHub Pages automatically
-5. **Exports** Substack-ready content for manual publishing
-6. **Notifies** you via email when everything is ready
+5. **Notifies** you via email when everything is ready
 
 ## 🎯 Target Audience
 
@@ -59,9 +58,9 @@ Each daily edition contains 3-4 carefully selected stories with:
 News Sources → Collection → AI Analysis → Publishing
      ↓              ↓           ↓           ↓
   RSS Feeds    Deduplication  Claude AI   GitHub Pages
-  Web Scraping   Clustering   Analysis    Substack Export
+  Web Scraping   Clustering   Analysis    Newsletter
      ↓              ↓           ↓           ↓
-   476 articles → 4-8 stories → Newsletter → Email Alert
+   476 articles → 4-8 stories → Publishing → Email Alert
 ```
 
 ## 📊 Performance
@@ -109,7 +108,7 @@ Edit `sources.json` to customize news sources:
 - **Focus areas**: China-US relations, Indo-Pacific strategy, Middle East dynamics
 - **Formats**: HTML newsletter, Markdown export, RSS feed
 
-[→ View Live Example](https://yourusername.github.io/geodaily)
+[→ View Live Example](https://elh0m3r0.github.io/geodaily)
 
 ## 🚀 Deployment
 
@@ -134,9 +133,7 @@ DRY_RUN=true python test_complete_pipeline.py
 ## 📧 Publishing Workflow
 
 1. **Automated**: Newsletter published to GitHub Pages
-2. **Semi-automated**: Substack exports generated automatically
-3. **Manual**: Copy-paste to Substack (2 minutes)
-4. **Notification**: Email alert with publishing instructions
+2. **Notification**: Email alert when publishing is complete
 
 ## 🔒 Security
 
@@ -170,11 +167,10 @@ geodaily/
 ├── src/                    # Core application code
 │   ├── collectors/         # News collection (RSS, web scraping)
 │   ├── ai/                # Claude AI analysis
-│   ├── publishers/        # GitHub Pages, Substack exports
+│   ├── publishers/        # GitHub Pages publishing
 │   ├── notifications/     # Email alerts
 │   └── utils/             # Shared utilities
 ├── docs/                  # GitHub Pages website
-├── substack_exports/      # Ready-to-publish Substack content
 ├── output/               # Generated newsletters
 ├── sources.json          # News source configuration
 └── .github/workflows/    # Automation workflows
@@ -203,4 +199,4 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 **🎯 Ready to launch your geopolitical intelligence newsletter?**
 
-[**→ Start Setup Now**](SETUP.md) | [**→ View Live Demo**](https://yourusername.github.io/geodaily)
+[**→ Start Setup Now**](SETUP.md) | [**→ View Live Demo**](https://elh0m3r0.github.io/geodaily)

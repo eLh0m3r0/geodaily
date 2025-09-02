@@ -13,7 +13,6 @@ __pycache__/
 # Output directories
 output/
 docs/newsletters/
-substack_exports/
 
 # Test results
 tests/*.json
