@@ -15,7 +15,7 @@ from .collectors.main_collector import MainCollector
 from .processors.main_processor import MainProcessor
 from .processors.content_quality_validator import content_quality_validator
 from .ai.claude_analyzer import ClaudeAnalyzer
-from .ai.multi_stage_analyzer import MultiStageAIAnalyzer
+from .ai.simple_multi_stage_analyzer import SimplifiedMultiStageAnalyzer
 from .ai.cost_controller import ai_cost_controller
 from .archiver.ai_data_archiver import ai_archiver
 from .content import enrich_articles_with_content
@@ -453,9 +453,9 @@ def run_complete_pipeline() -> bool:
             else:
                 ai_start = time.time()
                 try:
-                    # Use new multi-stage analyzer for comprehensive analysis
-                    multi_stage_analyzer = MultiStageAIAnalyzer()
-                    analyses = asyncio.run(multi_stage_analyzer.analyze_articles_comprehensive(scored_articles, target_stories=4))
+                    # Use simplified multi-stage analyzer with SINGLE API call
+                    multi_stage_analyzer = SimplifiedMultiStageAnalyzer()
+                    analyses = asyncio.run(multi_stage_analyzer.analyze_articles_single_call(scored_articles, target_stories=4))
                     ai_time = time.time() - ai_start
 
                     if len(analyses) < 3:
@@ -506,24 +506,24 @@ def run_complete_pipeline() -> bool:
                                     'top_selected_sources': sorted(selected_source_counts.items(), key=lambda x: x[1], reverse=True)[:5]
                                 })
 
-                    # Collect AI metrics with enhanced logging
-                    stage_stats = multi_stage_analyzer.get_stage_statistics()
-                    total_tokens = sum(stats['tokens_used'] for stats in stage_stats.values())
-                    total_cost = sum(stats['cost'] for stats in stage_stats.values())
+                    # Collect AI metrics with simplified logging
+                    # Rough estimates since we're doing single call
+                    estimated_tokens = len(scored_articles) * 50 + len(analyses) * 200
+                    estimated_cost = estimated_tokens * 0.00001  # Rough estimate
                     mock_mode = multi_stage_analyzer.mock_mode
 
-                    logger.info(f"Multi-stage analysis completed - Total tokens: {total_tokens}, Cost: ${total_cost:.4f}",
+                    logger.info(f"Simplified analysis completed - Estimated tokens: {estimated_tokens}, Cost: ~${estimated_cost:.4f}",
                                pipeline_stage=PipelineStage.AI_ANALYSIS,
                                run_id=run_id,
                                structured_data={
-                                   'total_tokens': total_tokens,
-                                   'total_cost': total_cost,
-                                   'stage_breakdown': stage_stats,
+                                   'estimated_tokens': estimated_tokens,
+                                   'estimated_cost': estimated_cost,
+                                   'single_api_call': True,
                                    'mock_mode': mock_mode
                                })
 
                     metrics_collector.collect_ai_metrics(
-                        analyses, ai_time, Config.AI_MODEL, mock_mode, total_tokens, total_cost
+                        analyses, ai_time, Config.AI_MODEL, mock_mode, estimated_tokens, estimated_cost
                     )
 
                 except Exception as e:
