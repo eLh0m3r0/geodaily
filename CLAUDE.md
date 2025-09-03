@@ -115,7 +115,7 @@ python src/sitemap_generator.py             # Generate sitemap for GitHub Pages
 - **Claude Analyzer** (`src/ai/claude_analyzer.py`): Anthropic Claude API integration with multi-dimensional scoring
 - **Cost Controller** (`src/ai/cost_controller.py`): Budget tracking and spending limits
 - Mock analysis fallback for testing and API failures
-- Configurable token limits (default: 8000 for production, increased from 4096)
+- Configurable token limits (default: 8000 for Sonnet 4, increased from 4096 Haiku)
 - Enhanced debug logging for API requests/responses
 - **AI Data Archiver** (`src/archiver/ai_data_archiver.py`): Comprehensive data archiving for transparency
 
@@ -191,7 +191,7 @@ The AI analyzer now evaluates stories across multiple dimensions:
 - `.env` file for local development
 - GitHub Secrets for production API keys
 - `DRY_RUN=true` for testing without API costs
-- `AI_MAX_TOKENS=8000` for production (increased from 4096)
+- `AI_MAX_TOKENS=8000` for Sonnet 4 production (increased from 4096 Haiku)
 - `ALLOW_OVERWRITE=true` to regenerate existing newsletters
 - Configurable AI provider support
 
@@ -222,7 +222,7 @@ The AI analyzer now evaluates stories across multiple dimensions:
 ### AI Integration
 - Claude API key in `ANTHROPIC_API_KEY` environment variable
 - Cost controls via `src/ai/cost_controller.py`
-- Token limit: 8000 for production (configurable)
+- Token limit: 8000 for production with Sonnet 4 (configurable)
 - Mock analysis automatic fallback with realistic simulations
 - Prompt customization in `claude_analyzer.py` (line 217-261)
 - Multi-dimensional scoring for better story selection
@@ -284,7 +284,7 @@ The AI analyzer now evaluates stories across multiple dimensions:
 
 ### Known Issues & Workarounds
 - SSL certificate verification disabled for web scraping (line 121 in `web_scraper.py`) - required for some sources with certificate issues
-- Token limit increased to 8000 for better AI analysis quality
+- AI model upgraded to Claude Sonnet 4 with 8000 token limit for better analysis quality
 - ALLOW_OVERWRITE environment variable for debugging duplicate prevention
 - Archive cleanup required for long-running installations to manage disk space
 
