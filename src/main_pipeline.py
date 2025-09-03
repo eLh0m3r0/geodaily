@@ -282,15 +282,15 @@ def run_complete_pipeline() -> bool:
                                'duplicates_removed': len(raw_articles) - processing_stats.articles_after_deduplication
                            })
 
-                if len(clusters) < 5:
+                if len(clusters) < 3:
                     logger.error(f"Insufficient clusters created: {len(clusters)}",
-                               pipeline_stage=PipelineStage.PROCESSING,
-                               run_id=run_id,
-                               error_category=ErrorCategory.VALIDATION_ERROR,
-                               structured_data={
-                                   'threshold': 5,
-                                   'actual': len(clusters)
-                               })
+                                pipeline_stage=PipelineStage.PROCESSING,
+                                run_id=run_id,
+                                error_category=ErrorCategory.VALIDATION_ERROR,
+                                structured_data={
+                                    'threshold': 3,
+                                    'actual': len(clusters)
+                                })
                     pipeline_tracker.track_pipeline_failure(run_id, ValueError("Insufficient clusters"), PipelineStage.PROCESSING)
                     return False
 

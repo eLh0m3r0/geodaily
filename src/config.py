@@ -39,7 +39,7 @@ class Config:
     # AI Configuration
     AI_PROVIDER = os.getenv("AI_PROVIDER", "anthropic")
     AI_MODEL = os.getenv("AI_MODEL", "claude-3-haiku-20240307")  # Use cheaper model by default
-    AI_MAX_TOKENS = int(os.getenv("AI_MAX_TOKENS", "8000"))  # Increased for comprehensive analysis
+    AI_MAX_TOKENS = int(os.getenv("AI_MAX_TOKENS", "4096"))  # Maximum for Claude 3 Haiku
     AI_TEMPERATURE = float(os.getenv("AI_TEMPERATURE", "0.3"))
     AI_MAX_COST_PER_DAY = float(os.getenv("AI_MAX_COST_PER_DAY", "2.0"))  # $2/day limit
     

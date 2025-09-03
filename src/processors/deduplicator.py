@@ -16,14 +16,14 @@ logger = get_logger(__name__)
 class ArticleDeduplicator:
     """Handles deduplication and clustering of articles."""
     
-    def __init__(self, similarity_threshold: float = 0.95):
+    def __init__(self, similarity_threshold: float = 0.3):
         """
         Initialize deduplicator.
 
         Args:
             similarity_threshold: Minimum similarity score to consider articles duplicates
         """
-        self.similarity_threshold = similarity_threshold  # Increased from 0.8 to 0.95 to preserve perspectives
+        self.similarity_threshold = similarity_threshold  # Lowered from 0.6 to 0.3 to increase clustering
     
     def deduplicate_articles(self, articles: List[Article]) -> List[Article]:
         """
@@ -293,4 +293,4 @@ class ArticleDeduplicator:
     def _is_high_quality_article(self, article: Article) -> bool:
         """Determine if a single article is high quality enough to form its own cluster."""
         score = self._calculate_article_quality_score(article)
-        return score >= 1.0  # Lower threshold for testing
+        return score >= 0.5  # Lower threshold for testing

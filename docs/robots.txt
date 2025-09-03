@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://yourusername.github.io/geodaily/sitemap.xml
+Sitemap: https://elh0m3r0.github.io/geodaily/sitemap.xml
 
 # Crawl delay (optional)
 Crawl-delay: 1

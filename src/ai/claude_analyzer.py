@@ -4,6 +4,7 @@ Claude AI analyzer for geopolitical content analysis.
 
 import json
 import re
+import time
 from typing import List, Dict, Optional, Any
 
 try:

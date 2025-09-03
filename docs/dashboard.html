@@ -172,13 +172,13 @@
         <div class="metrics-grid">
             <div class="metric-card">
                 <div class="metric-title">Total Articles Collected</div>
-                <div class="metric-value">116</div>
+                <div class="metric-value">87</div>
                 <div class="metric-change">Last 30 days average</div>
             </div>
 
             <div class="metric-card">
                 <div class="metric-title">Pipeline Runs</div>
-                <div class="metric-value">15</div>
+                <div class="metric-value">22</div>
                 <div class="metric-change">Last 30 days</div>
             </div>
 
@@ -270,6 +270,13 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td>BBC World</td>
+                        <td>mainstream</td>
+                        <td>300</td>
+                        <td><span class="status-indicator status-success"></span>100.0%</td>
+                        <td>0.00s</td>
+                    </tr>
+                    <tr>
                         <td>South China Morning Post RSS</td>
                         <td>regional</td>
                         <td>200</td>
@@ -308,13 +315,6 @@
                         <td>Financial Times World</td>
                         <td>mainstream</td>
                         <td>125</td>
-                        <td><span class="status-indicator status-success"></span>100.0%</td>
-                        <td>0.00s</td>
-                    </tr>
-                    <tr>
-                        <td>BBC World</td>
-                        <td>mainstream</td>
-                        <td>118</td>
                         <td><span class="status-indicator status-success"></span>100.0%</td>
                         <td>0.00s</td>
                     </tr>
@@ -379,7 +379,7 @@
         </div>
 
             <div class="last-updated">
-                Last updated: 2025-09-02 17:58:55 UTC
+                Last updated: 2025-09-03 15:00:36 UTC
             </div>
         </div>
     </main>
@@ -402,10 +402,10 @@
         new Chart(articlesCtx, {
             type: 'line',
             data: {
-                labels: ["2025-09-02", "2025-08-31"],
+                labels: ["2025-09-03", "2025-09-02", "2025-08-31"],
                 datasets: [{
                     label: 'Articles Collected',
-                    data: [159.75, 67.28571428571429],
+                    data: [26.0, 159.75, 67.28571428571429],
                     borderColor: '#3182ce',
                     backgroundColor: 'rgba(49, 130, 206, 0.1)',
                     tension: 0.4,
@@ -437,10 +437,10 @@
         new Chart(aiUsageCtx, {
             type: 'bar',
             data: {
-                labels: ["2025-09-02", "2025-08-31"],
+                labels: ["2025-09-03", "2025-09-02", "2025-08-31"],
                 datasets: [{
                     label: 'AI Cost ($)',
-                    data: [0.0008008, 0.0002252571428571428],
+                    data: [0, 0.0008008, 0.0002252571428571428],
                     backgroundColor: '#38a169',
                     borderColor: '#2f855a',
                     borderWidth: 1
@@ -471,7 +471,7 @@
         new Chart(sourcePerformanceCtx, {
             type: 'horizontalBar',
             data: {
-                labels: ["South China Mor...", "Guardian Intern...", "RT News", "Atlantic Counci...", "Al Jazeera Engl...", "Financial Times...", "BBC World", "The Diplomat", "War on the Rock...", "France 24 Engli..."],
+                labels: ["BBC World", "South China Mor...", "Guardian Intern...", "RT News", "Atlantic Counci...", "Al Jazeera Engl...", "Financial Times...", "The Diplomat", "War on the Rock...", "France 24 Engli..."],
                 datasets: [{
                     label: 'Success Rate (%)',
                     data: [100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0],
@@ -507,10 +507,10 @@
         new Chart(processingTimeCtx, {
             type: 'line',
             data: {
-                labels: ["2025-09-02", "2025-08-31"],
+                labels: ["2025-09-03", "2025-09-02", "2025-08-31"],
                 datasets: [{
                     label: 'Processing Time (s)',
-                    data: [9.3793655, 3.8018104285714287],
+                    data: [0, 11.452043125, 3.8018104285714287],
                     borderColor: '#805ad5',
                     backgroundColor: 'rgba(128, 90, 213, 0.1)',
                     tension: 0.4,
