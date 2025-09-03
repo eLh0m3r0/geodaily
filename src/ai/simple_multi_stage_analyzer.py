@@ -111,14 +111,25 @@ class SimplifiedMultiStageAnalyzer:
             total_tokens = int(prompt_tokens + response_tokens)
             estimated_cost = total_tokens * 0.00001  # Rough cost estimate
             
-            # Archive the response
-            ai_archiver.archive_ai_response(
-                response_text=response_text,
-                analysis=analyses,
-                cluster_index=0,
-                cost=estimated_cost,
-                tokens=total_tokens
-            )
+            # Archive the response (one entry per analysis)
+            if analyses:
+                for i, analysis in enumerate(analyses):
+                    ai_archiver.archive_ai_response(
+                        response_text=response_text,
+                        analysis=analysis,  # Single analysis instead of list
+                        cluster_index=i,
+                        cost=estimated_cost / len(analyses) if len(analyses) > 0 else estimated_cost,
+                        tokens=total_tokens // len(analyses) if len(analyses) > 0 else total_tokens
+                    )
+            else:
+                # Archive empty response
+                ai_archiver.archive_ai_response(
+                    response_text=response_text,
+                    analysis=None,
+                    cluster_index=0,
+                    cost=estimated_cost,
+                    tokens=total_tokens
+                )
             
             elapsed = time.time() - start_time
             
