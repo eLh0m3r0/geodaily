@@ -1,0 +1,534 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Multi-Stage Analysis Dashboard - 2025-09-03</title>
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .dashboard-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+        }
+        
+        .dashboard-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header-info {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .date-badge, .run-badge, .status-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .status-success {
+            background: rgba(46, 204, 113, 0.8);
+        }
+        
+        .dashboard-nav {
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .nav-btn {
+            background: none;
+            border: none;
+            color: white;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .nav-btn:hover, .nav-btn.active {
+            background: #2c3e50;
+            transform: translateY(-2px);
+        }
+        
+        .dashboard-main {
+            padding: 2rem;
+            min-height: 600px;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .summary-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .summary-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .summary-icon {
+            font-size: 2.5rem;
+            opacity: 0.8;
+        }
+        
+        .summary-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .summary-content p {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+        
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+        }
+        
+        .chart-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
+        }
+        
+        .chart-card.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .chart-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+        
+        .stage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .stage-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            border-left: 5px solid #3498db;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stage-card h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .stage-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem;
+            background: white;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .stat-label {
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .stat-value {
+            font-weight: bold;
+            color: #3498db;
+        }
+        
+        .stage-reasoning {
+            background: #e8f5e8;
+            padding: 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            border-left: 3px solid #27ae60;
+        }
+        
+        .audit-trail {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .audit-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #e67e22;
+        }
+        
+        .audit-header {
+            background: #f8f9fa;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .audit-stage {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .audit-confidence {
+            background: #27ae60;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+        
+        .audit-content {
+            padding: 1rem;
+        }
+        
+        .audit-content p {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        .dashboard-footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .dashboard-footer p {
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .dashboard-nav {
+                flex-direction: column;
+            }
+            
+            .nav-btn {
+                text-align: left;
+                padding: 0.8rem 1rem;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .chart-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stage-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1><i class="fas fa-microscope"></i> Enhanced Multi-Stage Analysis Dashboard</h1>
+                <div class="header-info">
+                    <span class="date-badge">2025-09-03</span>
+                    <span class="run-badge">Run: run_20250903_225303</span>
+                    <span class="status-badge status-success">Complete Transparency</span>
+                </div>
+            </div>
+        </header>
+
+        <nav class="dashboard-nav">
+            <button class="nav-btn active" onclick="showTab('overview')">
+                <i class="fas fa-chart-pie"></i> Overview
+            </button>
+            <button class="nav-btn" onclick="showTab('pipeline')">
+                <i class="fas fa-sitemap"></i> Pipeline Flow
+            </button>
+            <button class="nav-btn" onclick="showTab('stages')">
+                <i class="fas fa-layer-group"></i> Stage Details
+            </button>
+            <button class="nav-btn" onclick="showTab('content')">
+                <i class="fas fa-file-text"></i> Content Analysis
+            </button>
+            <button class="nav-btn" onclick="showTab('decisions')">
+                <i class="fas fa-gavel"></i> Decision Audit
+            </button>
+            <button class="nav-btn" onclick="showTab('sources')">
+                <i class="fas fa-globe"></i> Source Analysis
+            </button>
+        </nav>
+
+        <main class="dashboard-main">
+            <!-- Overview Tab -->
+            <div id="overview" class="tab-content active">
+                <div class="summary-grid">
+                    
+        <div class="summary-card">
+            <div class="summary-icon">
+                <i class="fas fa-newspaper"></i>
+            </div>
+            <div class="summary-content">
+                <h3>0</h3>
+                <p>Articles Processed</p>
+            </div>
+        </div>
+        
+        <div class="summary-card">
+            <div class="summary-icon">
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="summary-content">
+                <h3>0</h3>
+                <p>Stories Selected</p>
+            </div>
+        </div>
+        
+        <div class="summary-card">
+            <div class="summary-icon">
+                <i class="fas fa-dollar-sign"></i>
+            </div>
+            <div class="summary-content">
+                <h3>$0.0000</h3>
+                <p>Total Cost</p>
+            </div>
+        </div>
+        
+        <div class="summary-card">
+            <div class="summary-icon">
+                <i class="fas fa-clock"></i>
+            </div>
+            <div class="summary-content">
+                <h3>0.0s</h3>
+                <p>Processing Time</p>
+            </div>
+        </div>
+        
+        <div class="summary-card">
+            <div class="summary-icon">
+                <i class="fas fa-filter"></i>
+            </div>
+            <div class="summary-content">
+                <h3>0.0%</h3>
+                <p>Advancement Rate</p>
+            </div>
+        </div>
+        
+        <div class="summary-card">
+            <div class="summary-icon">
+                <i class="fas fa-calculator"></i>
+            </div>
+            <div class="summary-content">
+                <h3>$0.0000</h3>
+                <p>Cost per Story</p>
+            </div>
+        </div>
+        
+                </div>
+                <div class="chart-grid">
+                    <div class="chart-card">
+                        <h3><i class="fas fa-funnel-dollar"></i> Pipeline Funnel</h3>
+                        <div id="pipeline-funnel"></div>
+                    </div>
+                    <div class="chart-card">
+                        <h3><i class="fas fa-dollar-sign"></i> Cost Breakdown</h3>
+                        <div id="cost-breakdown"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pipeline Flow Tab -->
+            <div id="pipeline" class="tab-content">
+                <div class="chart-card full-width">
+                    <h3><i class="fas fa-sitemap"></i> Complete Pipeline Flow</h3>
+                    <div id="pipeline-flow"></div>
+                </div>
+            </div>
+
+            <!-- Stage Details Tab -->
+            <div id="stages" class="tab-content">
+                <div class="stage-grid">
+                    <p>No detailed stage data available</p>
+                </div>
+            </div>
+
+            <!-- Content Analysis Tab -->
+            <div id="content" class="tab-content">
+                <div class="chart-card full-width">
+                    <h3><i class="fas fa-file-text"></i> Content Extraction Analysis</h3>
+                    <div id="content-extraction"></div>
+                </div>
+            </div>
+
+            <!-- Decision Audit Tab -->
+            <div id="decisions" class="tab-content">
+                <div class="audit-trail">
+                    <h3><i class="fas fa-gavel"></i> Complete Decision Audit Trail</h3>
+                    <p>No decision audit data available</p>
+                </div>
+            </div>
+
+            <!-- Source Analysis Tab -->
+            <div id="sources" class="tab-content">
+                <div class="chart-card full-width">
+                    <h3><i class="fas fa-globe"></i> Source Performance Analysis</h3>
+                    <div id="source-analysis"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="dashboard-footer">
+            <p><i class="fas fa-clock"></i> Generated: 2025-09-03 22:53:37 UTC</p>
+            <p><i class="fas fa-brain"></i> Enhanced Multi-Stage AI Analysis Pipeline</p>
+        </footer>
+    </div>
+
+    <script>
+        
+        function showTab(tabName) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all nav buttons
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+        
+        // Auto-refresh functionality
+        function initAutoRefresh() {
+            setInterval(() => {
+                const timestamp = new Date().toLocaleString();
+                console.log(`Dashboard refreshed at ${timestamp}`);
+            }, 300000); // Refresh every 5 minutes
+        }
+        
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            initAutoRefresh();
+            
+            // Set default active tab
+            showTab('overview');
+        });
+        
+        
+        // Initialize charts
+        // No pipeline data available
+        // No cost data available
+        // No content extraction data available
+        
+        // Source Analysis Chart
+        const sourceData = [{
+            type: 'bar',
+            x: [41, 33, 14, 4, 2, 1],
+            y: ["Foreign Affairs Magazine", "BBC World", "Center for Strategic and International Studies", "Defense One (Fixed)", "World Politics Review", "Foreign Policy (Fixed)"],
+            orientation: 'h',
+            marker: {
+                color: '#3498db'
+            }
+        }];
+        
+        const sourceLayout = {
+            title: 'Top Sources by Article Count',
+            xaxis: {title: 'Number of Articles'},
+            yaxis: {title: 'Source', automargin: true},
+            height: 600,
+            margin: {l: 200}
+        };
+        
+        Plotly.newPlot('source-analysis', sourceData, sourceLayout, {responsive: true});
+        
+        
+        console.log('Enhanced Multi-Stage Dashboard initialized');
+    </script>
+</body>
+</html>
+        
