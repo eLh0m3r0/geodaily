@@ -166,13 +166,28 @@ def run_complete_pipeline() -> bool:
 
                     collection_stats = collector.get_stats()
                     logger.info(f"Collection completed: {collection_stats.total_articles_collected} articles",
-                               pipeline_stage=PipelineStage.COLLECTION,
-                               run_id=run_id,
-                               structured_data={
-                                   'articles_collected': collection_stats.total_articles_collected,
-                                   'sources_attempted': getattr(collection_stats, 'sources_attempted', 0),
-                                   'collection_errors': len(collection_stats.errors) if isinstance(collection_stats.errors, list) and collection_stats.errors else 0
-                               })
+                                pipeline_stage=PipelineStage.COLLECTION,
+                                run_id=run_id,
+                                structured_data={
+                                    'articles_collected': collection_stats.total_articles_collected,
+                                    'sources_attempted': getattr(collection_stats, 'sources_attempted', 0),
+                                    'collection_errors': len(collection_stats.errors) if isinstance(collection_stats.errors, list) and collection_stats.errors else 0
+                                })
+        
+                    # Log source distribution for debugging
+                    source_counts = {}
+                    for article in raw_articles:
+                        source_name = getattr(article, 'source', 'unknown')
+                        source_counts[source_name] = source_counts.get(source_name, 0) + 1
+        
+                    logger.info("Source distribution after collection:",
+                                pipeline_stage=PipelineStage.COLLECTION,
+                                run_id=run_id,
+                                structured_data={
+                                    'source_counts': source_counts,
+                                    'total_sources': len(source_counts),
+                                    'top_sources': sorted(source_counts.items(), key=lambda x: x[1], reverse=True)[:5]
+                                })
 
                     if collection_stats.total_articles_collected < 10:
                         logger.error(f"Insufficient articles collected: {collection_stats.total_articles_collected}",
@@ -282,19 +297,35 @@ def run_complete_pipeline() -> bool:
 
                 processing_stats = processor.get_stats()
                 logger.info(f"Processing completed: {len(clusters)} clusters created",
-                           pipeline_stage=PipelineStage.PROCESSING,
-                           run_id=run_id,
-                           performance_data={
-                               'operation': 'article_processing',
-                               'execution_time_seconds': processing_time,
-                               'input_count': len(raw_articles),
-                               'output_count': len(clusters)
-                           },
-                           structured_data={
-                               'clusters_created': len(clusters),
-                               'articles_after_deduplication': processing_stats.articles_after_deduplication,
-                               'duplicates_removed': len(raw_articles) - processing_stats.articles_after_deduplication
-                           })
+                            pipeline_stage=PipelineStage.PROCESSING,
+                            run_id=run_id,
+                            performance_data={
+                                'operation': 'article_processing',
+                                'execution_time_seconds': processing_time,
+                                'input_count': len(raw_articles),
+                                'output_count': len(clusters)
+                            },
+                            structured_data={
+                                'clusters_created': len(clusters),
+                                'articles_after_deduplication': processing_stats.articles_after_deduplication,
+                                'duplicates_removed': len(raw_articles) - processing_stats.articles_after_deduplication
+                            })
+
+                # Log cluster source distribution for debugging
+                cluster_source_counts = {}
+                for cluster in clusters:
+                    for article in cluster.articles:
+                        source_name = getattr(article, 'source', 'unknown')
+                        cluster_source_counts[source_name] = cluster_source_counts.get(source_name, 0) + 1
+
+                logger.info("Source distribution in clusters:",
+                            pipeline_stage=PipelineStage.PROCESSING,
+                            run_id=run_id,
+                            structured_data={
+                                'cluster_source_counts': cluster_source_counts,
+                                'total_cluster_sources': len(cluster_source_counts),
+                                'top_cluster_sources': sorted(cluster_source_counts.items(), key=lambda x: x[1], reverse=True)[:5]
+                            })
 
                 if len(clusters) < 3:
                     logger.error(f"Insufficient clusters created: {len(clusters)}",
@@ -366,17 +397,40 @@ def run_complete_pipeline() -> bool:
                         return False
 
                     logger.info(f"AI analysis completed: {len(analyses)} stories selected",
-                               pipeline_stage=PipelineStage.AI_ANALYSIS,
-                               run_id=run_id,
-                               performance_data={
-                                   'operation': 'ai_analysis',
-                                   'execution_time_seconds': ai_time,
-                                   'stories_analyzed': len(analyses)
-                               },
-                               structured_data={
-                                   'stories_selected': len(analyses),
-                                   'analysis_time_seconds': ai_time
-                               })
+                                pipeline_stage=PipelineStage.AI_ANALYSIS,
+                                run_id=run_id,
+                                performance_data={
+                                    'operation': 'ai_analysis',
+                                    'execution_time_seconds': ai_time,
+                                    'stories_analyzed': len(analyses)
+                                },
+                                structured_data={
+                                    'stories_selected': len(analyses),
+                                    'analysis_time_seconds': ai_time
+                                })
+
+                    # Log sources in selected stories for debugging
+                    selected_source_counts = {}
+                    for analysis in analyses:
+                        for source_url in analysis.sources:
+                            # Extract domain from URL for grouping
+                            try:
+                                from urllib.parse import urlparse
+                                domain = urlparse(source_url).netloc
+                                if 'bbc' in domain.lower():
+                                    domain = 'BBC'
+                                selected_source_counts[domain] = selected_source_counts.get(domain, 0) + 1
+                            except:
+                                selected_source_counts['unknown'] = selected_source_counts.get('unknown', 0) + 1
+
+                    logger.info("Source distribution in selected stories:",
+                                pipeline_stage=PipelineStage.AI_ANALYSIS,
+                                run_id=run_id,
+                                structured_data={
+                                    'selected_source_counts': selected_source_counts,
+                                    'total_selected_sources': len(selected_source_counts),
+                                    'top_selected_sources': sorted(selected_source_counts.items(), key=lambda x: x[1], reverse=True)[:5]
+                                })
 
                     # Collect AI metrics with enhanced logging
                     tokens_used = 0
