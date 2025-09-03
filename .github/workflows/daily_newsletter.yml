@@ -119,8 +119,8 @@ jobs:
           echo "DRY_RUN=false" >> $GITHUB_ENV
         fi
 
-        # Allow overwriting existing newsletters for manual runs and dry-run mode
-        if [ "${{ github.event.inputs.dry_run }}" = "true" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+        # Allow overwriting existing newsletters for debugging (manual runs, dry-run mode, or debug mode)
+        if [ "${{ github.event.inputs.dry_run }}" = "true" ] || [ "$DEBUG" = "true" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
           echo "ALLOW_OVERWRITE=true" >> $GITHUB_ENV
         else
           echo "ALLOW_OVERWRITE=false" >> $GITHUB_ENV
