@@ -149,29 +149,32 @@ class SimplifiedMultiStageAnalyzer:
             if len(content) > 300:
                 content = content[:297] + "..."
             
-            article_texts.append(f"""
-[{i}] {article.title}
-Source: {article.source} ({article.source_category.value})
-Content: {content}
-URL: {article.url}
-""")
+            # Safely format article info avoiding f-string issues with braces in content
+            article_info = """
+[{}] {}
+Source: {} ({})
+Content: {}
+URL: {}
+""".format(i, article.title, article.source, article.source_category.value, content, article.url)
+            article_texts.append(article_info)
         
         articles_section = "\n".join(article_texts)
         
-        return f"""You are a geopolitical analyst creating a daily newsletter. Analyze these {len(articles)} articles and select the {target_stories} MOST IMPORTANT stories.
+        # Use string formatting to avoid f-string issues with article content containing braces
+        template = """You are a geopolitical analyst creating a daily newsletter. Analyze these {} articles and select the {} MOST IMPORTANT stories.
 
 ARTICLES TO ANALYZE:
-{articles_section}
+{}
 
 ANALYSIS INSTRUCTIONS:
 Perform a transparent multi-stage analysis:
 
 1. RELEVANCE SCREENING: Mentally evaluate each article for geopolitical relevance
 2. CATEGORY ANALYSIS: Group by strategic importance (conflicts, economic, diplomatic, etc.)
-3. STRATEGIC SELECTION: Choose the {target_stories} most impactful stories
+3. STRATEGIC SELECTION: Choose the {} most impactful stories
 4. CONTENT GENERATION: Create compelling newsletter content
 
-For each of the {target_stories} selected stories, provide analysis in this EXACT JSON format:
+For each of the {} selected stories, provide analysis in this EXACT JSON format:
 
 [
   {{
@@ -200,7 +203,9 @@ IMPORTANT RULES:
 6. Do NOT include any text before or after the JSON array
 7. Do NOT use markdown code blocks - just the raw JSON
 
-CRITICAL: Return ONLY the JSON array. No explanations, no markdown, just [{"article_indices": ...}, ...]"""
+CRITICAL: Return ONLY the JSON array. No explanations, no markdown, just [{{"article_indices": ...}}, ...]"""
+        
+        return template.format(len(articles), target_stories, articles_section, target_stories, target_stories)
     
     def _parse_single_response(self, response_text: str, articles: List[Article]) -> List[AIAnalysis]:
         """Parse the single API response into AIAnalysis objects."""
