@@ -27,8 +27,10 @@ class AIDataArchiver:
         
     def start_new_run(self) -> str:
         """Initialize a new archive run."""
+        print(f"🗄️ AI Archiver: start_new_run called, enabled={self.enabled}")
         if not self.enabled:
             logger.info("AI archiving is disabled")
+            print("🗄️ AI Archiver: AI archiving is disabled")
             return "disabled"
             
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -59,11 +61,14 @@ class AIDataArchiver:
         
         self._save_json("metadata.json", metadata)
         logger.info(f"Archive run started: {self.current_run_id}")
+        print(f"🗄️ AI Archiver: Archive run started: {self.current_run_id}")
         return self.current_run_id
     
     def archive_collected_articles(self, articles: List[Article]):
         """Archive all collected articles."""
+        print(f"🗄️ AI Archiver: archive_collected_articles called with {len(articles)} articles, enabled={self.enabled}, run_path={self.current_run_path}")
         if not self.enabled or not self.current_run_path:
+            print("🗄️ AI Archiver: Skipping article archiving - disabled or no run path")
             return
             
         articles_data = []
@@ -95,6 +100,7 @@ class AIDataArchiver:
         
         self._save_json("source_distribution.json", source_dist)
         logger.info(f"Archived {len(articles)} collected articles")
+        print(f"🗄️ AI Archiver: Archived {len(articles)} collected articles")
     
     def archive_cluster(self, cluster: ArticleCluster, cluster_index: int):
         """Archive a cluster before AI analysis."""

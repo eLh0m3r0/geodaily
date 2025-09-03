@@ -116,6 +116,104 @@ class ClaudeAnalyzer:
             self._log_simulation_stats(analyses)
             return analyses
     
+    def analyze_articles(self, articles: List[Article], target_stories: int = 4) -> List[AIAnalysis]:
+        """
+        Analyze individual articles directly and select the best stories.
+        This bypasses clustering and lets Claude handle article selection directly.
+
+        Args:
+            articles: List of individual articles to analyze
+            target_stories: Number of stories to select
+
+        Returns:
+            List of AI analysis results for selected stories
+        """
+        logger.info(f"Analyzing {len(articles)} articles directly to select {target_stories} stories")
+
+        if not articles:
+            return []
+
+        # Pre-filter articles to manageable number for AI processing
+        # Sort by relevance score and take top articles
+        sorted_articles = sorted(articles, key=lambda a: getattr(a, 'relevance_score', 0), reverse=True)
+        
+        # Take more articles than needed to give Claude good selection
+        candidates_count = min(target_stories * 3, len(sorted_articles), 15)  # Max 15 articles for API limits
+        candidate_articles = sorted_articles[:candidates_count]
+        
+        logger.info(f"Pre-filtered to {len(candidate_articles)} candidate articles for AI analysis")
+
+        # Estimate cost for this operation
+        total_text_length = sum(len(article.title + article.summary) for article in candidate_articles)
+        cost_estimate = ai_cost_controller.estimate_cost(total_text_length, "analysis")
+
+        # Check budget allowance
+        budget_check = ai_cost_controller.check_budget_allowance(cost_estimate.estimated_cost)
+
+        if not budget_check['allowed']:
+            logger.warning("AI analysis blocked due to budget constraints",
+                          structured_data={
+                              'reason': budget_check['reason'],
+                              'estimated_cost': cost_estimate.estimated_cost,
+                              'current_daily_cost': budget_check['current_daily_cost'],
+                              'daily_limit': budget_check['daily_limit']
+                          })
+            # Fallback to mock analysis
+            logger.info("Falling back to mock analysis due to budget constraints")
+            analyses = self._create_simulated_analyses_from_articles(candidate_articles[:target_stories])
+            self._log_simulation_stats(analyses)
+            return analyses
+
+        logger.info("Budget check passed, proceeding with AI analysis",
+                   structured_data={
+                       'estimated_cost': cost_estimate.estimated_cost,
+                       'estimated_tokens': cost_estimate.estimated_tokens,
+                       'current_daily_cost': budget_check['current_daily_cost'],
+                       'remaining_daily_budget': budget_check['daily_limit'] - budget_check['current_daily_cost']
+                   })
+
+        try:
+            if self.mock_mode:
+                analyses = self._create_simulated_analyses_from_articles(candidate_articles[:target_stories])
+                self._log_simulation_stats(analyses)
+                return analyses
+            else:
+                return self._analyze_articles_with_claude_api(candidate_articles, target_stories)
+
+        except Exception as e:
+            logger.error(f"Error in AI analysis: {e}")
+            # Fallback to mock analysis
+            logger.info("Falling back to mock analysis")
+            analyses = self._create_simulated_analyses_from_articles(candidate_articles[:target_stories])
+            self._log_simulation_stats(analyses)
+            return analyses
+    
+    def _analyze_articles_with_claude_api(self, articles: List[Article], target_stories: int) -> List[AIAnalysis]:
+        """Analyze individual articles using real Claude API."""
+        if not self.client:
+            logger.error("Claude client not initialized")
+            return self._create_simulated_analyses_from_articles(articles[:target_stories])
+        
+        analyses = []
+        
+        # Archive all candidate articles
+        for i, article in enumerate(articles):
+            ai_archiver.archive_article(article, i)
+        
+        try:
+            # Send all articles to Claude in a single request for selection
+            analysis_results = self._analyze_multiple_articles_with_api(articles, target_stories)
+            if analysis_results:
+                analyses.extend(analysis_results)
+        except Exception as e:
+            logger.error(f"Error analyzing articles with API: {e}")
+            # Fallback to mock for remaining articles
+            mock_analyses = self._create_simulated_analyses_from_articles(articles[:target_stories])
+            if mock_analyses:
+                analyses.extend(mock_analyses)
+        
+        return analyses
+    
     def _analyze_with_claude_api(self, clusters: List[ArticleCluster]) -> List[AIAnalysis]:
         """Analyze clusters using real Claude API."""
         if not self.client:
@@ -480,7 +578,26 @@ Return only valid JSON, no additional text."""
         if main_article.relevance_score > 3.0:
             score += 1
         
+        # Source bias adjustments - lower impact for specific sources
+        source_bias_penalty = self._get_source_bias_penalty(main_article.source)
+        score -= source_bias_penalty
+        
         return min(10, max(1, score))
+    
+    def _get_source_bias_penalty(self, source: str) -> int:
+        """Get source-specific bias penalty to reduce impact of certain sources."""
+        # Normalize source name for comparison
+        source_lower = source.lower()
+        
+        # High bias penalty for sources that should have significantly reduced impact
+        if any(biased_source in source_lower for biased_source in ['rt.com', 'russia today', 'rt news']):
+            return 3  # Significant penalty for RT
+        
+        if any(biased_source in source_lower for biased_source in ['scmp.com', 'south china morning post']):
+            return 2  # Moderate penalty for SCMP
+        
+        # No penalty for other sources
+        return 0
 
     def _calculate_urgency_score(self, cluster: ArticleCluster) -> int:
         """Calculate urgency score based on cluster characteristics."""
@@ -569,7 +686,11 @@ Return only valid JSON, no additional text."""
         # High relevance score bonus
         if main_article.relevance_score > 4.0:
             score += 1
-
+        
+        # Source bias adjustments - lower credibility for specific sources
+        source_bias_penalty = self._get_source_bias_penalty(main_article.source)
+        score -= source_bias_penalty
+        
         return min(10, max(1, score))
 
     def _calculate_impact_dimension_score(self, cluster: ArticleCluster) -> int:
@@ -590,7 +711,11 @@ Return only valid JSON, no additional text."""
         # Strategic keywords
         if any(keyword in content for keyword in ['sovereignty', 'influence', 'power', 'dominance']):
             score += 1
-
+        
+        # Source bias adjustments - lower impact dimension for specific sources
+        source_bias_penalty = self._get_source_bias_penalty(main_article.source)
+        score -= source_bias_penalty
+        
         return min(10, max(1, score))
 
     def _classify_content_type_mock(self, article: Article) -> ContentType:

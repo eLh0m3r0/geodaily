@@ -29,7 +29,9 @@ class DebugDashboard:
     
     def __init__(self, archive_path: str = None):
         self.archive_path = Path(archive_path or getattr(Config, 'AI_ARCHIVE_PATH', 'ai_archive'))
-        self.output_path = Path("docs") / "dashboards"
+        # Use config-specified dashboard output path, fallback to docs/dashboards
+        default_dashboard_path = getattr(Config, 'DASHBOARD_OUTPUT_PATH', 'docs/dashboards')
+        self.output_path = Path(default_dashboard_path)
         self.output_path.mkdir(parents=True, exist_ok=True)
         
     def generate_dashboard(self, date: str = None) -> str:
