@@ -94,6 +94,7 @@ class Config:
     def validate_config(cls) -> List[str]:
         """Validate configuration and return list of missing required settings."""
         missing = []
+        warnings = []
 
         # Skip API key validation in dry run mode
         if not cls.DRY_RUN:
@@ -107,6 +108,37 @@ class Config:
         if not cls.SOURCES_FILE.exists():
             missing.append(f"Sources file: {cls.SOURCES_FILE}")
 
+        # Validate AI Archive settings
+        if cls.AI_ARCHIVE_ENABLED:
+            if cls.AI_ARCHIVE_RETENTION_DAYS < 1:
+                warnings.append("AI_ARCHIVE_RETENTION_DAYS should be at least 1 day")
+            if cls.AI_ARCHIVE_RETENTION_DAYS > 365:
+                warnings.append("AI_ARCHIVE_RETENTION_DAYS is very high (>365 days)")
+            
+            if cls.AI_ARCHIVE_MAX_SIZE_MB < 10:
+                warnings.append("AI_ARCHIVE_MAX_SIZE_MB is very low (<10MB)")
+            if cls.AI_ARCHIVE_MAX_SIZE_MB > 10000:
+                warnings.append("AI_ARCHIVE_MAX_SIZE_MB is very high (>10GB)")
+            
+            # Check if archive path is valid
+            try:
+                Path(cls.AI_ARCHIVE_PATH).mkdir(parents=True, exist_ok=True)
+            except Exception as e:
+                missing.append(f"Cannot create AI_ARCHIVE_PATH: {e}")
+
+        # Validate Dashboard settings
+        if cls.DASHBOARD_AUTO_GENERATE:
+            try:
+                Path(cls.DASHBOARD_OUTPUT_PATH).mkdir(parents=True, exist_ok=True)
+            except Exception as e:
+                missing.append(f"Cannot create DASHBOARD_OUTPUT_PATH: {e}")
+
+        # Print warnings if any
+        if warnings:
+            print("⚠️  Configuration warnings:")
+            for warning in warnings:
+                print(f"   • {warning}")
+
         return missing
     
     @classmethod
@@ -117,3 +149,22 @@ class Config:
         cls.OUTPUT_DIR.mkdir(exist_ok=True)
         cls.NEWSLETTERS_DIR.mkdir(exist_ok=True, parents=True)
         cls.METRICS_DB_PATH.parent.mkdir(exist_ok=True, parents=True)
+        
+        # Create archive and dashboard directories if enabled
+        if cls.AI_ARCHIVE_ENABLED:
+            Path(cls.AI_ARCHIVE_PATH).mkdir(exist_ok=True, parents=True)
+        
+        if cls.DASHBOARD_AUTO_GENERATE:
+            Path(cls.DASHBOARD_OUTPUT_PATH).mkdir(exist_ok=True, parents=True)
+    
+    # AI Archive Configuration
+    AI_ARCHIVE_ENABLED = os.getenv("AI_ARCHIVE_ENABLED", "true").lower() == "true"
+    AI_ARCHIVE_PATH = os.getenv("AI_ARCHIVE_PATH", "ai_archive")
+    AI_ARCHIVE_RETENTION_DAYS = int(os.getenv("AI_ARCHIVE_RETENTION_DAYS", "30"))
+    AI_ARCHIVE_MAX_SIZE_MB = int(os.getenv("AI_ARCHIVE_MAX_SIZE_MB", "500"))
+    AI_ARCHIVE_COMPRESS_OLD = os.getenv("AI_ARCHIVE_COMPRESS_OLD", "false").lower() == "true"
+    
+    # Dashboard Configuration  
+    DASHBOARD_OUTPUT_PATH = os.getenv("DASHBOARD_OUTPUT_PATH", "dashboards")
+    DASHBOARD_AUTO_GENERATE = os.getenv("DASHBOARD_AUTO_GENERATE", "true").lower() == "true"
+    DEBUG_DASHBOARD_ENABLED = os.getenv("DEBUG_DASHBOARD", "true").lower() == "true"

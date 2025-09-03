@@ -16,6 +16,7 @@ from ..models import Article, ArticleCluster, AIAnalysis, ContentType
 from ..config import Config
 from ..logger import get_logger
 from .cost_controller import ai_cost_controller
+from ..archiver.ai_data_archiver import ai_archiver
 
 logger = get_logger("main_pipeline")
 
@@ -123,9 +124,12 @@ class ClaudeAnalyzer:
         
         analyses = []
         
-        for cluster in clusters:
+        for i, cluster in enumerate(clusters):
+            # Archive the cluster before analysis
+            ai_archiver.archive_cluster(cluster, i)
+            
             try:
-                analysis = self._analyze_single_cluster_with_api(cluster)
+                analysis = self._analyze_single_cluster_with_api(cluster, cluster_index=i)
                 if analysis:
                     analyses.append(analysis)
             except Exception as e:
@@ -137,7 +141,7 @@ class ClaudeAnalyzer:
         
         return analyses
     
-    def _analyze_single_cluster_with_api(self, cluster: ArticleCluster) -> Optional[AIAnalysis]:
+    def _analyze_single_cluster_with_api(self, cluster: ArticleCluster, cluster_index: int = 0) -> Optional[AIAnalysis]:
         """Analyze a single cluster using Claude API with cost tracking."""
         main_article = cluster.main_article
 
@@ -145,6 +149,14 @@ class ClaudeAnalyzer:
         articles_summary = self._prepare_articles_for_analysis(cluster.articles)
 
         prompt = self._build_analysis_prompt(articles_summary, main_article)
+        
+        # Archive the AI request
+        ai_archiver.archive_ai_request(
+            prompt=prompt,
+            articles_summary=articles_summary,
+            cluster_index=cluster_index,
+            main_article_title=main_article.title if main_article else "Unknown"
+        )
 
         try:
             start_time = time.time()
@@ -209,8 +221,20 @@ class ClaudeAnalyzer:
                             'response_length': len(analysis_text),
                             'cluster_main_article': main_article.title if main_article else 'None'
                         })
+            
+            # Parse the response
+            parsed_analysis = self._parse_claude_response(analysis_text, cluster)
+            
+            # Archive the AI response
+            ai_archiver.archive_ai_response(
+                response_text=analysis_text,
+                analysis=parsed_analysis,
+                cluster_index=cluster_index,
+                cost=total_cost,
+                tokens=total_tokens
+            )
 
-            return self._parse_claude_response(analysis_text, cluster)
+            return parsed_analysis
 
         except Exception as e:
             logger.error(f"Claude API call failed: {e}")

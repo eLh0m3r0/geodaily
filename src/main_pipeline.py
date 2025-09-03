@@ -15,6 +15,7 @@ from .processors.main_processor import MainProcessor
 from .processors.content_quality_validator import content_quality_validator
 from .ai.claude_analyzer import ClaudeAnalyzer
 from .ai.cost_controller import ai_cost_controller
+from .archiver.ai_data_archiver import ai_archiver
 from .newsletter.generator import NewsletterGenerator
 from .publishers.github_pages_publisher import GitHubPagesPublisher
 from .notifications.email_notifier import EmailNotifier
@@ -61,6 +62,9 @@ def run_complete_pipeline() -> bool:
                    }
                })
 
+    # Initialize AI archiver for this run
+    ai_archiver.start_new_run()
+    
     try:
         # Step 0: Check for duplicate newsletter (same date)
         current_date = datetime.now().date()
@@ -173,6 +177,9 @@ def run_complete_pipeline() -> bool:
                                     'sources_attempted': getattr(collection_stats, 'sources_attempted', 0),
                                     'collection_errors': len(collection_stats.errors) if isinstance(collection_stats.errors, list) and collection_stats.errors else 0
                                 })
+                    
+                    # Archive collected articles
+                    ai_archiver.archive_collected_articles(raw_articles)
         
                     # Log source distribution for debugging
                     source_counts = {}
@@ -525,6 +532,9 @@ def run_complete_pipeline() -> bool:
                                    'file_size_bytes': len(html_content) if html_content else 0,
                                    'stories_count': len(analyses)
                                })
+                    
+                    # Archive final newsletter
+                    ai_archiver.archive_final_newsletter(html_content, analyses)
 
                 except Exception as e:
                     logger.error(f"Newsletter generation failed: {e}",
@@ -732,6 +742,9 @@ def run_complete_pipeline() -> bool:
                        'run_id': run_id
                    })
 
+        # Create archive run summary
+        ai_archiver.create_run_summary()
+        
         # End pipeline run successfully
         metrics_collector.end_pipeline_run(success=True)
         return True

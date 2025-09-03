@@ -163,7 +163,7 @@ class ConnectionPoolManager:
         try:
             # For HTTPS requests, use the pool
             if parsed.scheme == 'https':
-                logger.debug("Making HTTPS request via connection pool",
+                self.logger.debug("Making HTTPS request via connection pool",
                            structured_data={
                                'url': url,
                                'method': method,
