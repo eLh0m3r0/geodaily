@@ -6,6 +6,7 @@ Orchestrates the complete workflow from data collection to publishing.
 
 import sys
 import time
+import os
 from datetime import datetime
 from pathlib import Path
 
@@ -68,16 +69,29 @@ def run_complete_pipeline() -> bool:
         newsletter_filename = f"newsletter-{current_date.strftime('%Y-%m-%d')}.html"
         newsletter_path = docs_dir / "newsletters" / newsletter_filename
 
-        if newsletter_path.exists():
+        # Allow overwriting if explicitly requested via environment variable or debug mode
+        allow_overwrite = Config.DEBUG or os.getenv('ALLOW_OVERWRITE', '').lower() in ('true', '1', 'yes')
+
+        if newsletter_path.exists() and not allow_overwrite:
             logger.warning(f"Newsletter for {current_date.strftime('%Y-%m-%d')} already exists. Skipping pipeline execution to prevent duplicates.",
                           pipeline_stage=PipelineStage.INITIALIZATION,
                           run_id=run_id,
                           structured_data={
                               'existing_file': str(newsletter_path),
-                              'reason': 'duplicate_prevention'
+                              'reason': 'duplicate_prevention',
+                              'allow_overwrite': allow_overwrite
                           })
             pipeline_tracker.track_pipeline_success(run_id, 0)  # Mark as successful with 0 execution time
             return True  # Return True since this is expected behavior
+        elif newsletter_path.exists() and allow_overwrite:
+            logger.info(f"Newsletter for {current_date.strftime('%Y-%m-%d')} already exists but overwrite is allowed. Continuing with pipeline execution.",
+                       pipeline_stage=PipelineStage.INITIALIZATION,
+                       run_id=run_id,
+                       structured_data={
+                           'existing_file': str(newsletter_path),
+                           'action': 'overwrite_allowed',
+                           'allow_overwrite': allow_overwrite
+                       })
 
         # Step 1: Validate configuration
         with PerformanceProfiler.profile_operation("config_validation", logger):

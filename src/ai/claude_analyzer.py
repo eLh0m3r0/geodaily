@@ -149,6 +149,14 @@ class ClaudeAnalyzer:
         try:
             start_time = time.time()
 
+            logger.info("Making Claude API call",
+                       structured_data={
+                           'model': Config.AI_MODEL,
+                           'max_tokens': Config.AI_MAX_TOKENS,
+                           'temperature': Config.AI_TEMPERATURE,
+                           'prompt_length': len(prompt)
+                       })
+
             response = self.client.messages.create(
                 model=Config.AI_MODEL,
                 max_tokens=Config.AI_MAX_TOKENS,

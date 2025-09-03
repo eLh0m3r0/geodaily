@@ -121,6 +121,12 @@ class WebScraper:
                         'cert_reqs': 'CERT_NONE',
                         'assert_hostname': False
                     })
+                    logger.debug("SSL parameters added for HTTPS request",
+                               structured_data={
+                                   'url': url,
+                                   'cert_reqs': 'CERT_NONE',
+                                   'assert_hostname': False
+                               })
 
                 # Use connection pool manager for better performance
                 response = connection_pool_manager.make_request(

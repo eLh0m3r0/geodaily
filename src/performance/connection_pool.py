@@ -5,9 +5,10 @@ Connection pooling and performance optimization for HTTP requests.
 import time
 import threading
 from typing import Dict, Any, List, Optional
-from urllib3 import PoolManager, Retry
+from urllib3 import PoolManager, HTTPSConnectionPool, Retry
 from urllib3.util import Retry as RetryConfig
 import requests.adapters
+import ssl
 
 from ..logging_system import get_structured_logger, ErrorCategory, PipelineStage
 
@@ -35,38 +36,77 @@ class ConnectionPoolManager:
             'timeout': 30.0
         }
 
-    def get_pool(self, domain: str, config: Optional[Dict[str, Any]] = None) -> PoolManager:
+    def get_pool(self, domain: str, config: Optional[Dict[str, Any]] = None, ssl_config: Optional[Dict[str, Any]] = None) -> PoolManager:
         """
         Get or create a connection pool for a domain.
 
         Args:
             domain: Domain name
             config: Custom pool configuration
+            ssl_config: SSL configuration for HTTPS requests
 
         Returns:
             Connection pool for the domain
         """
         with self._lock:
-            if domain not in self.pools:
+            pool_key = f"{domain}_{str(ssl_config) if ssl_config else 'default'}"
+
+            if pool_key not in self.pools:
                 pool_config = {**self.default_config}
                 if config:
                     pool_config.update(config)
 
-                self.pool_configs[domain] = pool_config
+                self.pool_configs[pool_key] = pool_config
 
                 try:
-                    pool = PoolManager(
-                        maxsize=pool_config['maxsize'],
-                        block=pool_config['block'],
-                        retries=pool_config['retries']
-                    )
-                    self.pools[domain] = pool
+                    # Handle SSL configuration for HTTPS domains
+                    if ssl_config:
+                        # Create HTTPSConnectionPool with SSL configuration
+                        pool_kwargs = {
+                            'host': domain,
+                            'port': 443,
+                            'maxsize': pool_config['maxsize'],
+                            'block': pool_config['block'],
+                            'retries': pool_config['retries']
+                        }
+
+                        # Configure SSL context
+                        if 'cert_reqs' in ssl_config and ssl_config['cert_reqs'] == 'CERT_NONE':
+                            ssl_context = ssl.create_default_context()
+                            ssl_context.check_hostname = False
+                            ssl_context.verify_mode = ssl.CERT_NONE
+                            pool_kwargs['ssl_context'] = ssl_context
+
+                        if 'assert_hostname' in ssl_config and not ssl_config['assert_hostname']:
+                            if 'ssl_context' not in pool_kwargs:
+                                pool_kwargs['ssl_context'] = ssl.create_default_context()
+                            pool_kwargs['ssl_context'].check_hostname = False
+
+                        pool = HTTPSConnectionPool(**pool_kwargs)
+
+                        self.logger.debug("Created SSL-configured HTTPS connection pool",
+                                        structured_data={
+                                            'domain': domain,
+                                            'ssl_config': ssl_config,
+                                            'ssl_context_configured': 'ssl_context' in pool_kwargs
+                                        })
+                    else:
+                        # Create regular PoolManager for HTTP or default HTTPS
+                        pool = PoolManager(
+                            maxsize=pool_config['maxsize'],
+                            block=pool_config['block'],
+                            retries=pool_config['retries']
+                        )
+
+                    self.pools[pool_key] = pool
 
                     self.logger.debug("Created connection pool",
                                     structured_data={
                                         'domain': domain,
+                                        'pool_key': pool_key,
                                         'maxsize': pool_config['maxsize'],
-                                        'retries': pool_config['retries'].total if hasattr(pool_config['retries'], 'total') else 3
+                                        'retries': pool_config['retries'].total if hasattr(pool_config['retries'], 'total') else 3,
+                                        'ssl_configured': ssl_config is not None
                                     })
 
                 except Exception as e:
@@ -74,11 +114,12 @@ class ConnectionPoolManager:
                                     error_category=ErrorCategory.UNKNOWN_ERROR,
                                     structured_data={
                                         'domain': domain,
+                                        'pool_key': pool_key,
                                         'error': str(e)
                                     })
                     raise
 
-            return self.pools[domain]
+            return self.pools[pool_key]
 
     def make_request(self, url: str, method: str = 'GET', **kwargs) -> requests.Response:
         """
@@ -96,23 +137,59 @@ class ConnectionPoolManager:
         parsed = urlparse(url)
         domain = parsed.netloc
 
-        pool = self.get_pool(domain)
+        # Extract SSL parameters from kwargs for HTTPS requests
+        ssl_config = None
+        request_kwargs = kwargs.copy()
+
+        if parsed.scheme == 'https':
+            ssl_params = {}
+            if 'cert_reqs' in request_kwargs:
+                ssl_params['cert_reqs'] = request_kwargs.pop('cert_reqs')
+            if 'assert_hostname' in request_kwargs:
+                ssl_params['assert_hostname'] = request_kwargs.pop('assert_hostname')
+
+            if ssl_params:
+                ssl_config = ssl_params
+
+        pool = self.get_pool(domain, ssl_config=ssl_config)
 
         # Set default timeout if not provided
-        if 'timeout' not in kwargs:
-            kwargs['timeout'] = self.pool_configs[domain]['timeout']
+        pool_key = f"{domain}_{str(ssl_config) if ssl_config else 'default'}"
+        if 'timeout' not in request_kwargs:
+            request_kwargs['timeout'] = self.pool_configs[pool_key]['timeout']
 
         start_time = time.time()
 
         try:
             # For HTTPS requests, use the pool
             if parsed.scheme == 'https':
-                response = pool.request(method, url, **kwargs)
+                logger.debug("Making HTTPS request via connection pool",
+                           structured_data={
+                               'url': url,
+                               'method': method,
+                               'ssl_config': ssl_config,
+                               'pool_type': type(pool).__name__,
+                               'request_kwargs_keys': list(request_kwargs.keys())
+                           })
+
+                if isinstance(pool, HTTPSConnectionPool):
+                    # For HTTPSConnectionPool, we need to extract path from URL
+                    from urllib.parse import urlparse
+                    parsed_url = urlparse(url)
+                    path = parsed_url.path
+                    if parsed_url.query:
+                        path += '?' + parsed_url.query
+
+                    response = pool.request(method, path, **request_kwargs)
+                else:
+                    # For regular PoolManager
+                    response = pool.request(method, url, **request_kwargs)
+
                 # Convert urllib3 response to requests-like response for compatibility
                 return self._convert_urllib3_response(response)
             else:
                 # For HTTP or other schemes, fall back to requests
-                return requests.request(method, url, **kwargs)
+                return requests.request(method, url, **request_kwargs)
 
         except Exception as e:
             response_time = time.time() - start_time
@@ -122,6 +199,7 @@ class ConnectionPoolManager:
                                 'url': url,
                                 'method': method,
                                 'domain': domain,
+                                'ssl_config': ssl_config,
                                 'response_time': response_time,
                                 'error': str(e)
                             })
