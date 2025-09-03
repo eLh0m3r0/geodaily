@@ -165,10 +165,18 @@ class MultiStageAIAnalyzer:
             return final_analyses
             
         except Exception as e:
-            logger.error(f"Multi-stage analysis failed: {e}")
+            logger.error(f"Multi-stage analysis failed: {e}", exc_info=True)
             print(f"❌ Multi-stage analysis failed: {e}")
             # Fallback to simple analysis
-            return await self._fallback_analysis(articles, target_stories)
+            try:
+                fallback_result = await self._fallback_analysis(articles, target_stories)
+                if not isinstance(fallback_result, list):
+                    logger.error(f"Fallback analysis returned invalid type: {type(fallback_result)}")
+                    return []
+                return fallback_result
+            except Exception as fallback_error:
+                logger.error(f"Fallback analysis also failed: {fallback_error}", exc_info=True)
+                return []
 
     async def _stage1_relevance_screening(self, articles: List[Article]) -> List[Tuple[Article, RelevanceScore]]:
         """
@@ -278,15 +286,15 @@ class MultiStageAIAnalyzer:
             
         except Exception as e:
             logger.error(f"Relevance batch processing failed: {e}")
-            # Return mock scores for this batch
+            # Return mock scores for this batch with reasonable scores
             return [(article, RelevanceScore(
                 article_index=offset + i,
                 title=article.title,
-                overall_score=0.6,
-                geopolitical_relevance=0.6,
-                urgency_score=0.5,
-                source_quality=0.7,
-                content_richness=0.5,
+                overall_score=7.0,  # Above threshold to ensure some articles advance
+                geopolitical_relevance=6.5,
+                urgency_score=5.5,
+                source_quality=7.5,
+                content_richness=6.0,
                 reasoning="Mock scoring due to API error",
                 should_advance=True
             )) for i, article in enumerate(batch)]
@@ -339,7 +347,7 @@ Return ONLY the JSON array, no additional text. Focus on identifying articles wi
             import re
             json_match = re.search(r'\[.*\]', response_text, re.DOTALL)
             if not json_match:
-                logger.error("No JSON found in relevance response")
+                logger.error(f"No JSON found in relevance response. Response text: {response_text[:500]}...")
                 return self._create_mock_relevance_scores(articles)
             
             scores_data = json.loads(json_match.group())
