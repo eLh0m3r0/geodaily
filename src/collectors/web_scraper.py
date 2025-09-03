@@ -93,13 +93,18 @@ class WebScraper:
         success = False
         error_type = None
 
+        # WARNING: SSL certificate verification is disabled for HTTPS requests to handle sources with certificate issues.
+        # This reduces security by making the connection vulnerable to man-in-the-middle attacks.
+        # Only use this when necessary and ensure the sources are trusted.
+        logger.warning("SSL certificate verification disabled for web scraping requests",
+                      pipeline_stage=PipelineStage.COLLECTION,
+                      structured_data={'source_name': source_name, 'url': url})
+
         for attempt in range(Config.MAX_RETRIES):
             try:
-                # Use connection pool manager for better performance
-                response = connection_pool_manager.make_request(
-                    url=url,
-                    method='GET',
-                    headers={
+                # Prepare request parameters
+                request_kwargs = {
+                    'headers': {
                         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
                         'Accept-Language': 'en-US,en;q=0.5',
                         'Accept-Encoding': 'gzip, deflate',
@@ -108,6 +113,20 @@ class WebScraper:
                         'Upgrade-Insecure-Requests': '1',
                         'User-Agent': 'Mozilla/5.0 (compatible; GeopoliticalDaily/1.0)'
                     }
+                }
+
+                # Disable SSL verification for HTTPS requests to handle certificate issues
+                if url.startswith('https://'):
+                    request_kwargs.update({
+                        'cert_reqs': 'CERT_NONE',
+                        'assert_hostname': False
+                    })
+
+                # Use connection pool manager for better performance
+                response = connection_pool_manager.make_request(
+                    url=url,
+                    method='GET',
+                    **request_kwargs
                 )
                 response.raise_for_status()
 
