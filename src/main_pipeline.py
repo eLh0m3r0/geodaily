@@ -7,6 +7,7 @@ Orchestrates the complete workflow from data collection to publishing.
 import sys
 import time
 import os
+import asyncio
 from datetime import datetime
 from pathlib import Path
 
@@ -14,8 +15,11 @@ from .collectors.main_collector import MainCollector
 from .processors.main_processor import MainProcessor
 from .processors.content_quality_validator import content_quality_validator
 from .ai.claude_analyzer import ClaudeAnalyzer
+from .ai.multi_stage_analyzer import MultiStageAIAnalyzer
 from .ai.cost_controller import ai_cost_controller
 from .archiver.ai_data_archiver import ai_archiver
+from .content import enrich_articles_with_content
+from .dashboard.enhanced_multi_stage_dashboard import EnhancedMultiStageDashboard
 from .newsletter.generator import NewsletterGenerator
 from .publishers.github_pages_publisher import GitHubPagesPublisher
 from .notifications.email_notifier import EmailNotifier
@@ -237,9 +241,70 @@ def run_complete_pipeline() -> bool:
 
         metrics_collector.collect_collection_metrics(sources, raw_articles)
 
-        # Step 2.5: Content Quality Validation
+        # Step 2.5: Content Enrichment with Full-Text Scraping
+        with PerformanceProfiler.profile_operation("content_enrichment", logger):
+            logger.info("Step 2.5: Enriching articles with full-text content...",
+                       pipeline_stage=PipelineStage.PROCESSING,
+                       run_id=run_id,
+                       structured_data={'articles_to_enrich': len(raw_articles)})
+
+            try:
+                # Enrich articles with full content using intelligent scraping
+                enriched_results = asyncio.run(enrich_articles_with_content(raw_articles))
+                
+                # Archive content extraction results for transparency
+                ai_archiver.archive_content_extraction_results(enriched_results)
+                
+                # Update articles with enriched content
+                for article, extraction_result in enriched_results:
+                    if extraction_result.success and extraction_result.quality_score > 0.4:
+                        article.full_content = extraction_result.full_content
+                        article.content_quality_score = extraction_result.quality_score
+                        article.extraction_method = extraction_result.extraction_method
+                        article.word_count = extraction_result.word_count
+                    else:
+                        # Keep original summary as fallback
+                        article.full_content = article.summary
+                        article.content_quality_score = 0.3
+                        article.extraction_method = "summary_fallback"
+                        article.word_count = len(article.summary.split())
+                
+                enriched_articles = [article for article, _ in enriched_results]
+                
+                # Calculate enrichment statistics
+                successful_extractions = sum(1 for _, result in enriched_results if result.success and result.quality_score > 0.4)
+                avg_quality = sum(result.quality_score for _, result in enriched_results) / len(enriched_results) if enriched_results else 0
+                avg_word_count = sum(result.word_count for _, result in enriched_results) / len(enriched_results) if enriched_results else 0
+                
+                logger.info("Content enrichment completed",
+                           pipeline_stage=PipelineStage.PROCESSING,
+                           run_id=run_id,
+                           structured_data={
+                               'original_articles': len(raw_articles),
+                               'enriched_articles': len(enriched_articles),
+                               'successful_extractions': successful_extractions,
+                               'enrichment_success_rate': successful_extractions / len(raw_articles) if raw_articles else 0,
+                               'avg_quality_score': avg_quality,
+                               'avg_word_count': avg_word_count
+                           })
+                
+                # Use enriched articles for further processing
+                raw_articles = enriched_articles
+                
+            except Exception as e:
+                logger.error(f"Content enrichment failed: {e}",
+                            pipeline_stage=PipelineStage.PROCESSING,
+                            run_id=run_id,
+                            error_category=ErrorCategory.PARSING_ERROR,
+                            structured_data={'error_details': str(e)})
+                # Continue with original articles if enrichment fails
+                logger.info("Continuing with original articles due to enrichment failure",
+                           pipeline_stage=PipelineStage.PROCESSING,
+                           run_id=run_id)
+
+        # Step 2.6: Content Quality Validation
         with PerformanceProfiler.profile_operation("content_quality_validation", logger):
-            logger.info("Step 2.5: Validating content quality...",
+            logger.info("Step 2.6: Validating content quality...",
                        pipeline_stage=PipelineStage.PROCESSING,
                        run_id=run_id,
                        structured_data={'articles_to_validate': len(raw_articles)})
@@ -363,14 +428,15 @@ def run_complete_pipeline() -> bool:
         # Collect processing metrics (adapted for articles instead of clusters)
         metrics_collector.collect_processing_metrics(raw_articles, [], processing_time)
         
-        # Step 4: AI Analysis (DIRECT ARTICLE ANALYSIS)
+        # Step 4: Multi-Stage AI Analysis with Transparency
         with PerformanceProfiler.profile_operation("ai_analysis", logger):
-            logger.info("Step 4: Running AI analysis on articles directly...",
+            logger.info("Step 4: Running multi-stage AI analysis with full transparency...",
                        pipeline_stage=PipelineStage.AI_ANALYSIS,
                        run_id=run_id,
                        structured_data={
                            'target_stories': 4,
-                           'articles_input': len(scored_articles)
+                           'articles_input': len(scored_articles),
+                           'analysis_method': 'multi_stage_transparent'
                        })
 
             # Check if AI analysis should be skipped due to degradation
@@ -387,9 +453,9 @@ def run_complete_pipeline() -> bool:
             else:
                 ai_start = time.time()
                 try:
-                    analyzer = ClaudeAnalyzer()
-                    # Use new direct article analysis method
-                    analyses = analyzer.analyze_articles(scored_articles, target_stories=4)
+                    # Use new multi-stage analyzer for comprehensive analysis
+                    multi_stage_analyzer = MultiStageAIAnalyzer()
+                    analyses = asyncio.run(multi_stage_analyzer.analyze_articles_comprehensive(scored_articles, target_stories=4))
                     ai_time = time.time() - ai_start
 
                     if len(analyses) < 3:
@@ -441,24 +507,23 @@ def run_complete_pipeline() -> bool:
                                 })
 
                     # Collect AI metrics with enhanced logging
-                    tokens_used = 0
-                    cost = 0.0
-                    mock_mode = analyzer.mock_mode
+                    stage_stats = multi_stage_analyzer.get_stage_statistics()
+                    total_tokens = sum(stats['tokens_used'] for stats in stage_stats.values())
+                    total_cost = sum(stats['cost'] for stats in stage_stats.values())
+                    mock_mode = multi_stage_analyzer.mock_mode
 
-                    if Config.DRY_RUN and hasattr(analyzer, 'get_simulation_stats'):
-                        sim_stats = analyzer.get_simulation_stats()
-                        tokens_used = sim_stats['simulated_tokens_used']
-                        cost = sim_stats['simulated_cost']
-                        logger.info(f"DRY RUN - Simulated tokens: {tokens_used}, Cost: ${cost:.4f}",
-                                   pipeline_stage=PipelineStage.AI_ANALYSIS,
-                                   run_id=run_id,
-                                   structured_data={
-                                       'simulated_tokens': tokens_used,
-                                       'simulated_cost': cost
-                                   })
+                    logger.info(f"Multi-stage analysis completed - Total tokens: {total_tokens}, Cost: ${total_cost:.4f}",
+                               pipeline_stage=PipelineStage.AI_ANALYSIS,
+                               run_id=run_id,
+                               structured_data={
+                                   'total_tokens': total_tokens,
+                                   'total_cost': total_cost,
+                                   'stage_breakdown': stage_stats,
+                                   'mock_mode': mock_mode
+                               })
 
                     metrics_collector.collect_ai_metrics(
-                        analyses, ai_time, Config.AI_MODEL, mock_mode, tokens_used, cost
+                        analyses, ai_time, Config.AI_MODEL, mock_mode, total_tokens, total_cost
                     )
 
                 except Exception as e:
@@ -480,7 +545,7 @@ def run_complete_pipeline() -> bool:
                                run_id=run_id,
                                structured_data={'fallback_mode': True})
 
-                    analyses = create_mock_analyses(clusters[:4])
+                    analyses = create_mock_analyses_from_articles(scored_articles[:4])
                     ai_time = time.time() - ai_start
 
                     # Collect metrics for fallback analysis
@@ -742,6 +807,32 @@ def run_complete_pipeline() -> bool:
                        'final_status': 'success',
                        'run_id': run_id
                    })
+
+        # Step 10: Generate Enhanced Multi-Stage Dashboard
+        with PerformanceProfiler.profile_operation("dashboard_generation", logger):
+            logger.info("Step 10: Generating enhanced multi-stage dashboard...",
+                       pipeline_stage=PipelineStage.CLEANUP,
+                       run_id=run_id)
+            
+            try:
+                dashboard_generator = EnhancedMultiStageDashboard()
+                dashboard_path = dashboard_generator.generate_dashboard_for_date(current_date)
+                
+                logger.info(f"✅ Enhanced dashboard generated: {dashboard_path}",
+                           pipeline_stage=PipelineStage.CLEANUP,
+                           run_id=run_id,
+                           structured_data={
+                               'dashboard_path': str(dashboard_path),
+                               'dashboard_type': 'enhanced_multi_stage'
+                           })
+                           
+            except Exception as e:
+                logger.error(f"Dashboard generation failed: {e}",
+                           pipeline_stage=PipelineStage.CLEANUP,
+                           run_id=run_id,
+                           error_category=ErrorCategory.PARSING_ERROR,
+                           structured_data={'error_details': str(e)})
+                # Don't fail the pipeline for dashboard errors
 
         # Create archive run summary
         ai_archiver.create_run_summary()

@@ -57,6 +57,11 @@ class Article:
     content: Optional[str] = None
     author: Optional[str] = None
     tags: List[str] = field(default_factory=list)
+    # Content enrichment fields
+    full_content: Optional[str] = None
+    content_quality_score: float = 0.0
+    extraction_method: Optional[str] = None
+    word_count: int = 0
     
     def __post_init__(self):
         if isinstance(self.source_category, str):

@@ -330,6 +330,108 @@ class AIDataArchiver:
                     # Not a date folder, skip
                     continue
 
+    def archive_analysis_stage(self, stage: str, input_data: List[Dict], output_data: List[Dict], 
+                              reasoning: str, cost: float, tokens: int):
+        """Archive a multi-stage analysis stage with complete transparency."""
+        if not self.enabled or not self.current_run_path:
+            return
+            
+        stage_data = {
+            "stage": stage,
+            "timestamp": datetime.now().isoformat(),
+            "input_count": len(input_data),
+            "output_count": len(output_data),
+            "reasoning": reasoning,
+            "cost": cost,
+            "tokens_used": tokens,
+            "input_data": input_data[:10],  # Limit size, store first 10 for review
+            "output_data": output_data,
+            "statistics": {
+                "input_articles": len(input_data),
+                "output_articles": len(output_data),
+                "advancement_rate": len(output_data) / len(input_data) if input_data else 0,
+                "average_score": sum(item.get('score', 0) for item in output_data) / len(output_data) if output_data else 0
+            }
+        }
+        
+        # Save stage analysis
+        stage_filename = f"stage_{stage}.json"
+        self._save_json(stage_filename, stage_data)
+        
+        print(f"🗄️ AI Archiver: Archived {stage} stage - {len(input_data)} → {len(output_data)} articles")
+        logger.info(f"Archived analysis stage: {stage}")
+
+    def archive_content_extraction_results(self, extraction_results: List[Dict]):
+        """Archive content extraction results for transparency."""
+        if not self.enabled or not self.current_run_path:
+            return
+            
+        extraction_data = {
+            "extraction_timestamp": datetime.now().isoformat(),
+            "total_articles": len(extraction_results),
+            "extraction_summary": {
+                "successful_extractions": sum(1 for r in extraction_results if r.get('success', False)),
+                "fallback_used": sum(1 for r in extraction_results if r.get('extraction_method', '').endswith('fallback')),
+                "average_word_count": sum(r.get('word_count', 0) for r in extraction_results) / len(extraction_results) if extraction_results else 0,
+                "average_quality_score": sum(r.get('quality_score', 0) for r in extraction_results) / len(extraction_results) if extraction_results else 0
+            },
+            "detailed_results": extraction_results[:20]  # Store first 20 for detailed review
+        }
+        
+        self._save_json("content_extraction_results.json", extraction_data)
+        
+        print(f"🗄️ AI Archiver: Archived content extraction for {len(extraction_results)} articles")
+        logger.info(f"Archived content extraction results")
+
+    def archive_pipeline_transparency(self, pipeline_stages: List[Dict], total_time: float, 
+                                    total_cost: float, total_tokens: int):
+        """Archive complete pipeline transparency data."""
+        if not self.enabled or not self.current_run_path:
+            return
+            
+        transparency_data = {
+            "pipeline_completion": datetime.now().isoformat(),
+            "total_execution_time": total_time,
+            "total_cost": total_cost,
+            "total_tokens": total_tokens,
+            "stage_breakdown": pipeline_stages,
+            "pipeline_summary": {
+                "stages_completed": len(pipeline_stages),
+                "total_articles_processed": sum(stage.get('input_count', 0) for stage in pipeline_stages),
+                "final_stories_selected": pipeline_stages[-1].get('output_count', 0) if pipeline_stages else 0,
+                "overall_advancement_rate": pipeline_stages[-1].get('output_count', 0) / pipeline_stages[0].get('input_count', 1) if pipeline_stages else 0,
+                "cost_per_story": total_cost / pipeline_stages[-1].get('output_count', 1) if pipeline_stages and pipeline_stages[-1].get('output_count', 0) > 0 else 0
+            },
+            "decision_audit_trail": [
+                {
+                    "stage": stage.get('stage', 'unknown'),
+                    "decision_reasoning": stage.get('reasoning', ''),
+                    "confidence": stage.get('confidence', 0),
+                    "articles_advanced": stage.get('output_count', 0)
+                } for stage in pipeline_stages
+            ]
+        }
+        
+        self._save_json("pipeline_transparency.json", transparency_data)
+        
+        print(f"🗄️ AI Archiver: Archived complete pipeline transparency data")
+        logger.info(f"Archived pipeline transparency: {len(pipeline_stages)} stages, ${total_cost:.4f} total cost")
+
+    def get_stage_analysis_data(self) -> Optional[Dict]:
+        """Retrieve archived stage analysis data for dashboard visualization."""
+        if not self.enabled or not self.current_run_path:
+            return None
+            
+        try:
+            transparency_file = self.current_run_path / "pipeline_transparency.json"
+            if transparency_file.exists():
+                with open(transparency_file, 'r') as f:
+                    return json.load(f)
+        except Exception as e:
+            logger.error(f"Failed to retrieve stage analysis data: {e}")
+        
+        return None
+
 
 # Global instance
 ai_archiver = AIDataArchiver()
