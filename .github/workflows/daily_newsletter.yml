@@ -119,9 +119,12 @@ jobs:
           echo "DRY_RUN=false" >> $GITHUB_ENV
         fi
 
-        # Allow overwriting existing newsletters for all runs (prevents duplicate prevention issues)
-        # Set to true to always regenerate newsletter, even if one exists for today
-        echo "ALLOW_OVERWRITE=true" >> $GITHUB_ENV
+        # Allow overwriting existing newsletters for manual runs and dry-run mode
+        if [ "${{ github.event.inputs.dry_run }}" = "true" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          echo "ALLOW_OVERWRITE=true" >> $GITHUB_ENV
+        else
+          echo "ALLOW_OVERWRITE=false" >> $GITHUB_ENV
+        fi
 
     - name: Validate configuration
       run: |
