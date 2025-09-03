@@ -533,7 +533,7 @@ def run_complete_pipeline() -> bool:
 
         # Collect publishing metrics
         metrics_collector.collect_publishing_metrics(
-            newsletter, github_url, [], 0, publishing_time, True
+            newsletter, github_url, 0, publishing_time, True
         )
         
         # Step 7: Send admin notification
