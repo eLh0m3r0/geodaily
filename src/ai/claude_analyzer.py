@@ -150,12 +150,21 @@ class ClaudeAnalyzer:
             start_time = time.time()
 
             logger.info("Making Claude API call",
-                       structured_data={
-                           'model': Config.AI_MODEL,
-                           'max_tokens': Config.AI_MAX_TOKENS,
-                           'temperature': Config.AI_TEMPERATURE,
-                           'prompt_length': len(prompt)
-                       })
+                        structured_data={
+                            'model': Config.AI_MODEL,
+                            'max_tokens': Config.AI_MAX_TOKENS,
+                            'temperature': Config.AI_TEMPERATURE,
+                            'prompt_length': len(prompt)
+                        })
+    
+            # Log full prompt and content for debugging
+            logger.info("=== CLAUDE API REQUEST DEBUG ===",
+                        structured_data={
+                            'full_prompt': prompt,
+                            'articles_summary': articles_summary,
+                            'cluster_main_article': main_article.title if main_article else 'None',
+                            'cluster_size': len(cluster.articles) if cluster else 0
+                        })
 
             response = self.client.messages.create(
                 model=Config.AI_MODEL,
@@ -192,6 +201,15 @@ class ClaudeAnalyzer:
 
             # Parse Claude's response
             analysis_text = response.content[0].text
+
+            # Log Claude's response for debugging
+            logger.info("=== CLAUDE API RESPONSE DEBUG ===",
+                        structured_data={
+                            'response_text': analysis_text,
+                            'response_length': len(analysis_text),
+                            'cluster_main_article': main_article.title if main_article else 'None'
+                        })
+
             return self._parse_claude_response(analysis_text, cluster)
 
         except Exception as e:
