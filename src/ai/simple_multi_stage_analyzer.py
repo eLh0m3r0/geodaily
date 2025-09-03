@@ -209,10 +209,13 @@ IMPORTANT RULES:
 1. Select stories with genuine geopolitical impact
 2. Ensure diversity (not all from same region/topic)  
 3. Prioritize breaking news (25%) and deep analysis (75%)
-4. All scores MUST be integers between 1-10
-5. The response MUST be a valid JSON array starting with [ and ending with ]
-6. Do NOT include any text before or after the JSON array
-7. Do NOT use markdown code blocks - just the raw JSON
+4. **Source quality matters**: Think tanks, analysis sources, and mainstream outlets are preferred
+5. **Bias consideration**: RT News and similar Russian sources should have lower priority due to potential bias
+6. **Volume adjustment**: Sources publishing many articles (like RT News with 73 articles, SCMP with 50) should not dominate selection
+7. All scores MUST be integers between 1-10
+8. The response MUST be a valid JSON array starting with [ and ending with ]
+9. Do NOT include any text before or after the JSON array
+10. Do NOT use markdown code blocks - just the raw JSON
 
 CRITICAL: Return ONLY the JSON array. No explanations, no markdown, just [{{"article_indices": ...}}, ...]"""
         
