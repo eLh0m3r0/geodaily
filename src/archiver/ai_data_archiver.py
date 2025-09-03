@@ -102,6 +102,27 @@ class AIDataArchiver:
         logger.info(f"Archived {len(articles)} collected articles")
         print(f"🗄️ AI Archiver: Archived {len(articles)} collected articles")
     
+    def archive_article(self, article: Article, article_index: int):
+        """Archive an individual article before AI analysis."""
+        if not self.enabled or not self.current_run_path:
+            return
+            
+        article_data = {
+            "article_index": article_index,
+            "title": article.title,
+            "source": article.source,
+            "source_category": article.source_category.value if hasattr(article.source_category, 'value') else str(article.source_category),
+            "url": article.url,
+            "summary": article.summary[:500] if article.summary else "",
+            "published_date": article.published_date.isoformat() if article.published_date else None,
+            "author": article.author,
+            "relevance_score": getattr(article, 'relevance_score', None)
+        }
+        
+        # Save individual article data
+        article_filename = f"candidate_article_{article_index:02d}.json"
+        self._save_json(article_filename, article_data)
+    
     def archive_cluster(self, cluster: ArticleCluster, cluster_index: int):
         """Archive a cluster before AI analysis."""
         if not self.enabled or not self.current_run_path:

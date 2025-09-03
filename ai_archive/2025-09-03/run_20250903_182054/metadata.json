@@ -1,0 +1,17 @@
+{
+  "run_id": "run_20250903_182054",
+  "timestamp": "2025-09-03T18:20:54.399925",
+  "config": {
+    "ai_provider": "anthropic",
+    "ai_model": "claude-sonnet-4-20250514",
+    "ai_max_tokens": 8000,
+    "dry_run": false
+  },
+  "environment": {
+    "github_action": null,
+    "github_run_id": null,
+    "github_sha": null,
+    "github_workflow": null,
+    "github_event_name": null
+  }
+}

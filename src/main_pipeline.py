@@ -286,9 +286,9 @@ def run_complete_pipeline() -> bool:
                            pipeline_stage=PipelineStage.PROCESSING,
                            run_id=run_id)
 
-        # Step 3: Process articles (deduplication, clustering, scoring)
+        # Step 3: Process articles (deduplication and scoring - NO CLUSTERING)
         with PerformanceProfiler.profile_operation("article_processing", logger):
-            logger.info("Step 3: Processing articles...",
+            logger.info("Step 3: Processing articles (deduplication and scoring)...",
                        pipeline_stage=PipelineStage.PROCESSING,
                        run_id=run_id,
                        structured_data={'input_articles': len(raw_articles)})
@@ -296,54 +296,54 @@ def run_complete_pipeline() -> bool:
             processing_start = time.time()
             try:
                 processor = MainProcessor()
-                initial_clusters = processor.process_articles(raw_articles)
-
-                # Apply content quality validation to clusters
-                clusters = content_quality_validator.validate_article_clusters(initial_clusters)
+                # Only do deduplication and basic scoring, skip clustering
+                deduplicated_articles = processor.deduplicator.deduplicate_articles(raw_articles)
+                
+                # Apply basic scoring to articles
+                scored_articles = processor._score_articles_basic(deduplicated_articles)
+                
                 processing_time = time.time() - processing_start
 
-                processing_stats = processor.get_stats()
-                logger.info(f"Processing completed: {len(clusters)} clusters created",
+                logger.info(f"Processing completed: {len(scored_articles)} articles processed (no clustering)",
                             pipeline_stage=PipelineStage.PROCESSING,
                             run_id=run_id,
                             performance_data={
                                 'operation': 'article_processing',
                                 'execution_time_seconds': processing_time,
                                 'input_count': len(raw_articles),
-                                'output_count': len(clusters)
+                                'output_count': len(scored_articles)
                             },
                             structured_data={
-                                'clusters_created': len(clusters),
-                                'articles_after_deduplication': processing_stats.articles_after_deduplication,
-                                'duplicates_removed': len(raw_articles) - processing_stats.articles_after_deduplication
+                                'articles_processed': len(scored_articles),
+                                'articles_after_deduplication': len(deduplicated_articles),
+                                'duplicates_removed': len(raw_articles) - len(deduplicated_articles)
                             })
 
-                # Log cluster source distribution for debugging
-                cluster_source_counts = {}
-                for cluster in clusters:
-                    for article in cluster.articles:
-                        source_name = getattr(article, 'source', 'unknown')
-                        cluster_source_counts[source_name] = cluster_source_counts.get(source_name, 0) + 1
+                # Log source distribution for debugging
+                source_counts = {}
+                for article in scored_articles:
+                    source_name = getattr(article, 'source', 'unknown')
+                    source_counts[source_name] = source_counts.get(source_name, 0) + 1
 
-                logger.info("Source distribution in clusters:",
+                logger.info("Source distribution in processed articles:",
                             pipeline_stage=PipelineStage.PROCESSING,
                             run_id=run_id,
                             structured_data={
-                                'cluster_source_counts': cluster_source_counts,
-                                'total_cluster_sources': len(cluster_source_counts),
-                                'top_cluster_sources': sorted(cluster_source_counts.items(), key=lambda x: x[1], reverse=True)[:5]
+                                'source_counts': source_counts,
+                                'total_sources': len(source_counts),
+                                'top_sources': sorted(source_counts.items(), key=lambda x: x[1], reverse=True)[:5]
                             })
 
-                if len(clusters) < 3:
-                    logger.error(f"Insufficient clusters created: {len(clusters)}",
+                if len(scored_articles) < 10:
+                    logger.error(f"Insufficient articles after processing: {len(scored_articles)}",
                                 pipeline_stage=PipelineStage.PROCESSING,
                                 run_id=run_id,
                                 error_category=ErrorCategory.VALIDATION_ERROR,
                                 structured_data={
-                                    'threshold': 3,
-                                    'actual': len(clusters)
+                                    'threshold': 10,
+                                    'actual': len(scored_articles)
                                 })
-                    pipeline_tracker.track_pipeline_failure(run_id, ValueError("Insufficient clusters"), PipelineStage.PROCESSING)
+                    pipeline_tracker.track_pipeline_failure(run_id, ValueError("Insufficient articles"), PipelineStage.PROCESSING)
                     return False
 
             except Exception as e:
@@ -360,17 +360,17 @@ def run_complete_pipeline() -> bool:
                 pipeline_tracker.track_pipeline_failure(run_id, e, PipelineStage.PROCESSING)
                 return False
 
-        # Collect processing metrics
-        metrics_collector.collect_processing_metrics(raw_articles, clusters, processing_time)
+        # Collect processing metrics (adapted for articles instead of clusters)
+        metrics_collector.collect_processing_metrics(raw_articles, [], processing_time)
         
-        # Step 4: AI Analysis
+        # Step 4: AI Analysis (DIRECT ARTICLE ANALYSIS)
         with PerformanceProfiler.profile_operation("ai_analysis", logger):
-            logger.info("Step 4: Running AI analysis...",
+            logger.info("Step 4: Running AI analysis on articles directly...",
                        pipeline_stage=PipelineStage.AI_ANALYSIS,
                        run_id=run_id,
                        structured_data={
                            'target_stories': 4,
-                           'clusters_input': len(clusters)
+                           'articles_input': len(scored_articles)
                        })
 
             # Check if AI analysis should be skipped due to degradation
@@ -382,13 +382,14 @@ def run_complete_pipeline() -> bool:
                                  'degradation_level': degradation_manager.overall_degradation_level.value,
                                  'reason': 'graceful_degradation'
                              })
-                # Use mock analysis as fallback
-                analyses = create_mock_analyses(clusters[:4])
+                # Use mock analysis as fallback - create mock articles
+                analyses = create_mock_analyses_from_articles(scored_articles[:4])
             else:
                 ai_start = time.time()
                 try:
                     analyzer = ClaudeAnalyzer()
-                    analyses = analyzer.analyze_clusters(clusters, target_stories=4)
+                    # Use new direct article analysis method
+                    analyses = analyzer.analyze_articles(scored_articles, target_stories=4)
                     ai_time = time.time() - ai_start
 
                     if len(analyses) < 3:
@@ -657,14 +658,14 @@ def run_complete_pipeline() -> bool:
                      structured_data={
                          'total_execution_time': total_time,
                          'articles_collected': collection_stats.total_articles_collected,
-                         'articles_after_processing': processing_stats.articles_after_deduplication,
-                         'clusters_created': len(clusters),
+                         'articles_after_processing': len(scored_articles),  # Use actual scored articles count
+                         'clusters_created': 0,  # No clusters in direct article analysis
                          'stories_selected': len(analyses),
                          'github_pages_url': publishing_summary['github_pages'],
                          'legacy_file': publishing_summary['legacy_file'],
-                         'processing_success_rate': processing_stats.success_rate,
+                         'processing_success_rate': 1.0,  # Always successful in direct mode
                          'collection_errors': len(collection_stats.errors) if isinstance(collection_stats.errors, list) and collection_stats.errors else 0,
-                         'processing_errors': len(processing_stats.errors) if isinstance(processing_stats.errors, list) and processing_stats.errors else 0,
+                         'processing_errors': 0,  # No processing errors in direct mode
                          'ai_costs': {
                              'daily_cost': cost_report['current_metrics']['daily_cost'],
                              'monthly_cost': cost_report['current_metrics']['monthly_cost'],
@@ -818,6 +819,52 @@ def create_mock_analyses(clusters):
             prediction="This situation will likely evolve over the coming weeks with potential impacts on regional stability and international partnerships.",
             impact_score=min(8, max(5, int(cluster.cluster_score))),
             sources=[article.url for article in cluster.articles],
+            confidence=0.7
+        )
+        
+        mock_analyses.append(analysis)
+    
+    return mock_analyses
+
+def create_mock_analyses_from_articles(articles):
+    """Create mock AI analyses for testing/fallback from individual articles."""
+    from .models import AIAnalysis, ContentType
+    
+    mock_analyses = []
+    
+    for i, article in enumerate(articles[:4]):
+        # Generate basic analysis based on article content
+        content_lower = f"{article.title} {article.summary}".lower()
+        
+        # Determine content type based on keywords
+        if any(keyword in content_lower for keyword in ['breaking', 'urgent', 'crisis', 'emergency']):
+            content_type = ContentType.BREAKING_NEWS
+        elif any(keyword in content_lower for keyword in ['trend', 'emerging', 'shift', 'pattern']):
+            content_type = ContentType.TREND
+        else:
+            content_type = ContentType.ANALYSIS
+        
+        # Basic impact score calculation
+        impact_score = 5  # Base score
+        if any(keyword in content_lower for keyword in ['china', 'russia', 'taiwan', 'ukraine']):
+            impact_score += 2
+        if article.source_category.value in ['think_tank', 'analysis']:
+            impact_score += 1
+        impact_score = min(8, max(4, impact_score))
+        
+        analysis = AIAnalysis(
+            story_title=article.title[:60],
+            why_important=f"This story represents a significant development in {article.source_category.value} geopolitics with potential implications for international relations and strategic decision-making.",
+            what_overlooked="Mainstream media coverage may be missing the broader strategic implications and second-order effects of this development.",
+            prediction="This situation will likely evolve over the coming weeks with potential impacts on regional stability and international partnerships.",
+            impact_score=impact_score,
+            content_type=content_type,
+            urgency_score=5,
+            scope_score=5,
+            novelty_score=5,
+            credibility_score=6 if article.source_category.value in ['think_tank', 'analysis'] else 5,
+            impact_dimension_score=impact_score,
+            sources=[article.url],
             confidence=0.7
         )
         

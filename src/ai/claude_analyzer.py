@@ -214,6 +214,459 @@ class ClaudeAnalyzer:
         
         return analyses
     
+    def _analyze_multiple_articles_with_api(self, articles: List[Article], target_stories: int) -> List[AIAnalysis]:
+        """Analyze multiple articles with Claude API in a single request for intelligent selection."""
+        
+        # Prepare articles content for analysis
+        articles_summary = self._prepare_articles_for_analysis_direct(articles)
+        
+        prompt = self._build_multi_article_analysis_prompt(articles_summary, target_stories)
+        
+        # Archive the AI request
+        ai_archiver.archive_ai_request(
+            prompt=prompt,
+            articles_summary=articles_summary,
+            cluster_index=0,
+            main_article_title=f"Multi-article analysis ({len(articles)} articles)"
+        )
+
+        try:
+            start_time = time.time()
+
+            logger.info("Making Claude API call for multi-article selection",
+                        structured_data={
+                            'model': Config.AI_MODEL,
+                            'max_tokens': Config.AI_MAX_TOKENS,
+                            'temperature': Config.AI_TEMPERATURE,
+                            'prompt_length': len(prompt),
+                            'articles_count': len(articles),
+                            'target_stories': target_stories
+                        })
+
+            response = self.client.messages.create(
+                model=Config.AI_MODEL,
+                max_tokens=Config.AI_MAX_TOKENS,
+                temperature=Config.AI_TEMPERATURE,
+                messages=[{
+                    "role": "user",
+                    "content": prompt
+                }]
+            )
+
+            response_time = time.time() - start_time
+
+            # Estimate tokens used
+            prompt_tokens = len(prompt.split()) * 1.3
+            response_tokens = len(response.content[0].text.split()) * 1.3
+            total_tokens = int(prompt_tokens + response_tokens)
+
+            # Estimate cost
+            input_cost = (prompt_tokens / 1000) * 0.0008
+            output_cost = (response_tokens / 1000) * 0.0024
+            total_cost = input_cost + output_cost
+
+            # Record actual cost
+            ai_cost_controller.record_cost(total_cost, total_tokens, "multi_article_analysis")
+
+            logger.debug("Claude API multi-article call completed",
+                        structured_data={
+                            'tokens_used': total_tokens,
+                            'cost': total_cost,
+                            'response_time': response_time,
+                            'model': Config.AI_MODEL
+                        })
+
+            # Parse Claude's response
+            analysis_text = response.content[0].text
+
+            logger.info("Claude API multi-article response received",
+                        structured_data={
+                            'response_length': len(analysis_text),
+                            'articles_analyzed': len(articles)
+                        })
+            
+            # Parse the multi-article response  
+            logger.debug(f"Claude response received (first 500 chars): {analysis_text[:500]}...")
+            parsed_analyses = self._parse_claude_multi_article_response(analysis_text, articles)
+            
+            # Archive the AI response (only if we have valid parsed analyses)
+            if parsed_analyses:
+                for i, analysis in enumerate(parsed_analyses):
+                    ai_archiver.archive_ai_response(
+                        response_text=analysis_text,
+                        analysis=analysis,  # Single analysis instead of list
+                        cluster_index=i,
+                        cost=total_cost / len(parsed_analyses) if len(parsed_analyses) > 0 else total_cost,
+                        tokens=total_tokens // len(parsed_analyses) if len(parsed_analyses) > 0 else total_tokens
+                    )
+            else:
+                # Archive the response even if parsing failed
+                ai_archiver.archive_ai_response(
+                    response_text=analysis_text,
+                    analysis=None,
+                    cluster_index=0,
+                    cost=total_cost,
+                    tokens=total_tokens
+                )
+
+            return parsed_analyses
+
+        except Exception as e:
+            logger.error(f"Claude API multi-article call failed: {e}")
+            return []
+    
+    def _prepare_articles_for_analysis_direct(self, articles: List[Article]) -> str:
+        """Prepare individual articles content for Claude analysis."""
+        summaries = []
+        for i, article in enumerate(articles):
+            summary = f"Article {i+1}:\n"
+            summary += f"Source: {article.source} ({article.source_category.value})\n"
+            summary += f"Title: {article.title}\n"
+            summary += f"URL: {article.url}\n"
+            summary += f"Summary: {article.summary[:400]}...\n"  # Longer summaries for better context
+            summary += f"Relevance Score: {getattr(article, 'relevance_score', 'N/A')}\n"
+            summaries.append(summary)
+        
+        return "\n" + "="*80 + "\n".join(summaries)
+    
+    def _build_multi_article_analysis_prompt(self, articles_summary: str, target_stories: int) -> str:
+        """Build the analysis prompt for multiple articles selection."""
+        return f"""You are a geopolitical analyst creating a daily briefing that balances breaking news, in-depth analysis, and emerging trends.
+
+Analyze the following {len(articles_summary.split('Article '))-1} articles and select the {target_stories} most important stories for today's geopolitical newsletter. Focus on:
+
+1. **Strategic significance** - Stories that impact international relations, power dynamics, or regional stability
+2. **Content diversity** - Balance of breaking news, analysis, and emerging trends  
+3. **Source quality** - Prioritize think tanks and analysis sources over regional/biased sources
+4. **Novelty and importance** - Fresh developments with meaningful geopolitical implications
+
+**IMPORTANT SOURCE CONSIDERATIONS:**
+- RT Today and similar sources should have lower priority due to bias
+- Think tanks (CSIS, Atlantic Council) and analysis sources (Foreign Affairs, Foreign Policy) should be prioritized
+- Look for stories that complement each other rather than overlap
+
+{articles_summary}
+
+For each selected story, provide analysis in this exact JSON format, enclosed in a JSON array:
+
+[
+  {{
+    "article_index": [1-based index of selected article],
+    "story_title": "Concise, engaging title (max 60 characters)",
+    "content_type": "breaking_news|analysis|trend",
+    "why_important": "Strategic significance and implications (max 80 words)",
+    "what_overlooked": "What mainstream media is missing or underemphasizing (max 40 words)",
+    "prediction": "Expected developments in next 72 hours (max 30 words)",
+    "impact_score": [1-10 integer],
+    "urgency_score": [1-10 integer],
+    "scope_score": [1-10 integer],
+    "novelty_score": [1-10 integer],
+    "credibility_score": [1-10 integer],
+    "impact_dimension_score": [1-10 integer],
+    "confidence": [0.0-1.0 float]
+  }}
+]
+
+Content Type Guidelines:
+- breaking_news: Recent events, announcements, crises requiring immediate attention
+- analysis: Deeper examination of causes, implications, strategic context
+- trend: Patterns, shifts indicating changing geopolitical landscapes
+
+Scoring Guidelines:
+- urgency_score: Time sensitivity (1=long-term, 10=immediate)
+- scope_score: Geographic/political impact (1=local, 10=global)  
+- novelty_score: Unexpectedness (1=expected, 10=unprecedented)
+- credibility_score: Source reliability (1=unverified, 10=confirmed)
+- impact_dimension_score: Geopolitical significance (1=minor, 10=world-changing)
+
+Return ONLY the JSON array, no additional text. Select exactly {target_stories} stories."""
+    
+    def _parse_claude_multi_article_response(self, response_text: str, articles: List[Article]) -> List[AIAnalysis]:
+        """Parse Claude's multi-article JSON response into AIAnalysis objects."""
+        try:
+            import re
+            import json
+            
+            # Extract JSON array from response
+            json_match = re.search(r'\[.*\]', response_text, re.DOTALL)
+            if not json_match:
+                logger.error("No JSON array found in Claude multi-article response")
+                return []
+            
+            data_array = json.loads(json_match.group())
+            
+            if not isinstance(data_array, list):
+                logger.error("Response is not a JSON array")
+                return []
+            
+            analyses = []
+            for data in data_array:
+                # Validate required fields
+                required_fields = ['article_index', 'story_title', 'why_important', 'what_overlooked', 
+                                 'prediction', 'impact_score', 'content_type']
+                
+                missing_fields = [field for field in required_fields if field not in data]
+                if missing_fields:
+                    logger.error(f"Missing required fields in analysis: {missing_fields}")
+                    continue
+                
+                # Get the source article
+                article_index = int(data['article_index']) - 1  # Convert to 0-based
+                if article_index < 0 or article_index >= len(articles):
+                    logger.error(f"Invalid article index: {article_index}")
+                    continue
+                
+                source_article = articles[article_index]
+                
+                # Create AIAnalysis object
+                analysis = AIAnalysis(
+                    story_title=data['story_title'][:60],
+                    why_important=data['why_important'],
+                    what_overlooked=data['what_overlooked'],
+                    prediction=data['prediction'],
+                    impact_score=int(data['impact_score']),
+                    content_type=ContentType(data['content_type']),
+                    urgency_score=int(data.get('urgency_score', 5)),
+                    scope_score=int(data.get('scope_score', 5)),
+                    novelty_score=int(data.get('novelty_score', 5)),
+                    credibility_score=int(data.get('credibility_score', 5)),
+                    impact_dimension_score=int(data.get('impact_dimension_score', 5)),
+                    sources=[source_article.url],  # Single source per analysis
+                    confidence=float(data.get('confidence', 0.8))
+                )
+                
+                analyses.append(analysis)
+                logger.info(f"Parsed analysis for: {source_article.title[:50]}...")
+            
+            logger.info(f"Successfully parsed {len(analyses)} analyses from Claude response")
+            return analyses
+            
+        except json.JSONDecodeError as e:
+            logger.error(f"Failed to parse Claude multi-article response as JSON: {e}")
+            logger.debug(f"Response text: {response_text}")
+            return []
+        except Exception as e:
+            logger.error(f"Error parsing Claude multi-article response: {e}")
+            return []
+    
+    def _create_simulated_analyses_from_articles(self, articles: List[Article]) -> List[AIAnalysis]:
+        """Create simulated AI analyses from individual articles."""
+        analyses = []
+        
+        for i, article in enumerate(articles):
+            # Generate contextual analysis based on article content
+            why_important = self._generate_why_important_from_article(article)
+            what_overlooked = self._generate_what_overlooked_from_article(article)
+            prediction = self._generate_prediction_from_article(article)
+            
+            # Calculate scores based on article attributes (not cluster)
+            impact_score = self._calculate_impact_score_from_article(article)
+            urgency_score = self._calculate_urgency_score_from_article(article)
+            scope_score = self._calculate_scope_score_from_article(article)
+            novelty_score = self._calculate_novelty_score_from_article(article)
+            credibility_score = self._calculate_credibility_score_from_article(article)
+            impact_dimension_score = self._calculate_impact_dimension_score_from_article(article)
+
+            # Simulate API call metrics for this article
+            simulated_input_tokens = len(f"{article.title} {article.summary}".split()) + 100
+            simulated_output_tokens = len(f"{why_important} {what_overlooked} {prediction}".split()) + 50
+
+            # Track simulated usage
+            self.simulated_tokens_used += simulated_input_tokens + simulated_output_tokens
+            simulated_cost_increment = (simulated_input_tokens / 1000 * 0.0008) + (simulated_output_tokens / 1000 * 0.0024)
+            self.simulated_cost += simulated_cost_increment
+
+            analysis = AIAnalysis(
+                story_title=article.title[:60],
+                why_important=why_important,
+                what_overlooked=what_overlooked,
+                prediction=prediction,
+                impact_score=impact_score,
+                content_type=self._classify_content_type_mock(article),
+                urgency_score=urgency_score,
+                scope_score=scope_score,
+                novelty_score=novelty_score,
+                credibility_score=credibility_score,
+                impact_dimension_score=impact_dimension_score,
+                sources=[article.url],
+                confidence=0.85
+            )
+            
+            analyses.append(analysis)
+        
+        return analyses
+
+    # Helper methods for article-based scoring (without clusters)
+    def _calculate_impact_score_from_article(self, article: Article) -> int:
+        """Calculate impact score based on individual article characteristics."""
+        score = 5  # Base score
+        
+        content = f"{article.title} {article.summary}".lower()
+        
+        # High-impact keywords
+        if any(keyword in content for keyword in ['china', 'taiwan', 'russia', 'ukraine', 'nato']):
+            score += 2
+        
+        # Medium-impact keywords
+        if any(keyword in content for keyword in ['nuclear', 'sanctions', 'energy', 'cyber']):
+            score += 1
+        
+        # Source quality bonus
+        if article.source_category.value == 'think_tank':
+            score += 1
+        elif article.source_category.value == 'analysis':
+            score += 1
+        
+        # Relevance score bonus
+        if getattr(article, 'relevance_score', 0) > 3.0:
+            score += 1
+        
+        # Source bias adjustments
+        source_bias_penalty = self._get_source_bias_penalty(article.source)
+        score -= source_bias_penalty
+        
+        return min(10, max(1, score))
+
+    def _calculate_urgency_score_from_article(self, article: Article) -> int:
+        """Calculate urgency score based on individual article characteristics."""
+        score = 5  # Base score
+
+        content = f"{article.title} {article.summary}".lower()
+
+        # High-urgency keywords
+        if any(keyword in content for keyword in ['breaking', 'urgent', 'immediate', 'crisis', 'emergency']):
+            score += 3
+
+        # Medium-urgency keywords
+        if any(keyword in content for keyword in ['escalation', 'deadline', 'warning', 'alert']):
+            score += 2
+
+        # Time-sensitive topics
+        if any(keyword in content for keyword in ['election', 'summit', 'meeting', 'deadline']):
+            score += 1
+
+        return min(10, max(1, score))
+
+    def _calculate_scope_score_from_article(self, article: Article) -> int:
+        """Calculate scope score based on individual article characteristics."""
+        score = 5  # Base score
+
+        content = f"{article.title} {article.summary}".lower()
+
+        # Global scope keywords
+        if any(keyword in content for keyword in ['global', 'world', 'international', 'nato', 'united nations']):
+            score += 3
+
+        # Regional scope keywords
+        if any(keyword in content for keyword in ['asia', 'europe', 'middle east', 'africa', 'americas']):
+            score += 2
+
+        # Multiple countries mentioned
+        countries = ['china', 'russia', 'usa', 'uk', 'germany', 'france', 'japan', 'india']
+        country_count = sum(1 for country in countries if country in content)
+        score += min(2, country_count)
+
+        return min(10, max(1, score))
+
+    def _calculate_novelty_score_from_article(self, article: Article) -> int:
+        """Calculate novelty score based on individual article characteristics."""
+        score = 5  # Base score
+
+        content = f"{article.title} {article.summary}".lower()
+
+        # Novel developments
+        if any(keyword in content for keyword in ['breakthrough', 'unprecedented', 'first time', 'historic', 'surprise']):
+            score += 3
+
+        # Unexpected events
+        if any(keyword in content for keyword in ['sudden', 'unexpected', 'shock', 'surprising']):
+            score += 2
+
+        # New developments
+        if any(keyword in content for keyword in ['new', 'emerging', 'developing']):
+            score += 1
+
+        return min(10, max(1, score))
+
+    def _calculate_credibility_score_from_article(self, article: Article) -> int:
+        """Calculate credibility score based on individual article characteristics."""
+        score = 5  # Base score
+
+        # Source quality bonus
+        if article.source_category.value == 'think_tank':
+            score += 2
+        elif article.source_category.value == 'analysis':
+            score += 2
+        elif article.source_category.value == 'mainstream':
+            score += 1
+
+        # High relevance score bonus
+        if getattr(article, 'relevance_score', 0) > 4.0:
+            score += 1
+        
+        # Source bias adjustments
+        source_bias_penalty = self._get_source_bias_penalty(article.source)
+        score -= source_bias_penalty
+        
+        return min(10, max(1, score))
+
+    def _calculate_impact_dimension_score_from_article(self, article: Article) -> int:
+        """Calculate impact dimension score based on individual article characteristics."""
+        score = 5  # Base score
+
+        content = f"{article.title} {article.summary}".lower()
+
+        # High-impact keywords
+        if any(keyword in content for keyword in ['china', 'taiwan', 'russia', 'ukraine', 'nato', 'nuclear']):
+            score += 3
+
+        # Medium-impact keywords
+        if any(keyword in content for keyword in ['sanctions', 'energy', 'cyber', 'alliance', 'treaty']):
+            score += 2
+
+        # Strategic keywords
+        if any(keyword in content for keyword in ['sovereignty', 'influence', 'power', 'dominance']):
+            score += 1
+        
+        # Source bias adjustments
+        source_bias_penalty = self._get_source_bias_penalty(article.source)
+        score -= source_bias_penalty
+        
+        return min(10, max(1, score))
+    
+    def _generate_why_important_from_article(self, article: Article) -> str:
+        """Generate why_important text from individual article."""
+        content = f"{article.title} {article.summary}".lower()
+        
+        if any(keyword in content for keyword in ['china', 'taiwan']):
+            return "This development impacts critical US-China strategic competition and regional stability in the Asia-Pacific, with implications for global supply chains and military positioning."
+        elif any(keyword in content for keyword in ['russia', 'ukraine']):
+            return "This story reflects ongoing shifts in European security architecture and NATO cohesion, affecting global energy markets and international law enforcement."
+        elif any(keyword in content for keyword in ['nuclear', 'cyber']):
+            return "This represents a significant escalation in strategic domains that could reshape deterrence calculations and international security frameworks."
+        else:
+            return f"This development in {article.source_category.value} geopolitics has potential implications for international relations and strategic decision-making."
+    
+    def _generate_what_overlooked_from_article(self, article: Article) -> str:
+        """Generate what_overlooked text from individual article."""
+        if article.source_category.value == 'think_tank':
+            return "Strategic analysis perspective often missing from breaking news coverage."
+        elif 'economic' in f"{article.title} {article.summary}".lower():
+            return "Economic implications and second-order market effects."
+        else:
+            return "Long-term strategic implications and regional spillover effects."
+    
+    def _generate_prediction_from_article(self, article: Article) -> str:
+        """Generate prediction text from individual article."""
+        content = f"{article.title} {article.summary}".lower()
+        
+        if any(keyword in content for keyword in ['summit', 'meeting', 'talks']):
+            return "Expect follow-up diplomatic engagement and possible joint statements within 48-72 hours."
+        elif any(keyword in content for keyword in ['sanctions', 'trade']):
+            return "Market reactions and possible retaliatory measures likely within next week."
+        else:
+            return "This situation will likely evolve over the coming weeks with potential impacts on regional stability."
+    
     def _analyze_with_claude_api(self, clusters: List[ArticleCluster]) -> List[AIAnalysis]:
         """Analyze clusters using real Claude API."""
         if not self.client:

@@ -1,0 +1,29 @@
+{
+  "run_id": "run_20250903_182335",
+  "timestamp": "2025-09-03T18:24:01.085166",
+  "files_created": [
+    {
+      "path": "final_newsletter.html",
+      "size_bytes": 23069
+    },
+    {
+      "path": "source_distribution.json",
+      "size_bytes": 200
+    },
+    {
+      "path": "metadata.json",
+      "size_bytes": 385
+    },
+    {
+      "path": "collected_articles.json",
+      "size_bytes": 41294
+    },
+    {
+      "path": "final_newsletter.json",
+      "size_bytes": 826
+    }
+  ],
+  "statistics": {
+    "total_articles_collected": 89
+  }
+}
