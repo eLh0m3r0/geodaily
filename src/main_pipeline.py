@@ -249,8 +249,18 @@ def run_complete_pipeline() -> bool:
                        structured_data={'articles_to_enrich': len(raw_articles)})
 
             try:
-                # Enrich articles with full content using intelligent scraping
-                enriched_results = asyncio.run(enrich_articles_with_content(raw_articles))
+                # Skip content enrichment if too many articles (to save time and avoid failures)
+                if len(raw_articles) > 100:
+                    logger.info(f"Skipping content enrichment for {len(raw_articles)} articles (too many)")
+                    enriched_results = [(article, None) for article in raw_articles]
+                    for article in raw_articles:
+                        article.full_content = article.summary
+                        article.content_quality_score = 0.5
+                        article.extraction_method = "skipped_too_many"
+                        article.word_count = len(article.summary.split())
+                else:
+                    # Enrich articles with full content using intelligent scraping
+                    enriched_results = asyncio.run(enrich_articles_with_content(raw_articles))
                 
                 # Archive content extraction results for transparency
                 ai_archiver.archive_content_extraction_results(enriched_results)
