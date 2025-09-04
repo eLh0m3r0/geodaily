@@ -160,8 +160,8 @@ jobs:
       run: |
         echo "📊 Generating unified dashboard..."
         
-        # Generate unified dashboard directly to docs/dashboard.html
-        python generate_unified_dashboard.py || echo "Dashboard generation failed, continuing..."
+        # Generate simple dashboard (no complex imports)
+        python generate_simple_dashboard.py || echo "Dashboard generation failed, continuing..."
 
     - name: Archive cleanup
       if: success() && github.event_name == 'schedule'
