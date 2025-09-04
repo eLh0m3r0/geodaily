@@ -9,23 +9,26 @@ from typing import List, Optional
 import time
 import re
 from bs4 import BeautifulSoup
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from ..models import Article, NewsSource, SourceCategory
 from ..config import Config
 from ..logging_system import get_structured_logger, ErrorCategory, PipelineStage
 from .source_health_monitor import source_health_monitor
 from ..performance.connection_pool import connection_pool_manager
+from .article_content_fetcher import article_content_fetcher
 
 logger = get_structured_logger(__name__)
 
 class RSSCollector:
     """Collects articles from RSS feeds."""
     
-    def __init__(self):
+    def __init__(self, fetch_full_content: bool = True):
         self.session = requests.Session()
         self.session.headers.update({
             'User-Agent': Config.USER_AGENT
         })
+        self.fetch_full_content = fetch_full_content
     
     def collect_from_source(self, source: NewsSource) -> List[Article]:
         """
@@ -61,14 +64,15 @@ class RSSCollector:
                              error_category=ErrorCategory.PARSING_ERROR,
                              structured_data={'source_name': source.name, 'feed_bozo_exception': str(feed.bozo_exception)})
 
-            # Process each entry
+            # Process each entry and collect valid articles
+            parsed_articles = []
             for entry in feed.entries:
                 try:
                     article = self._parse_rss_entry(entry, source)
                     if article:
                         # Filter articles by publication date (only last 24 hours)
                         if self._is_recent_article(article):
-                            articles.append(article)
+                            parsed_articles.append(article)
                         else:
                             logger.debug(f"Skipping old article: {article.title} ({article.published_date})",
                                        pipeline_stage=PipelineStage.COLLECTION,
@@ -88,6 +92,12 @@ class RSSCollector:
                                    'error_message': str(e)
                                })
                     continue
+            
+            # Enhance articles with full content in parallel if enabled
+            if self.fetch_full_content and parsed_articles:
+                articles = self._enhance_articles_parallel(parsed_articles)
+            else:
+                articles = parsed_articles
 
             logger.info(f"Collected {len(articles)} recent articles from {source.name}",
                        pipeline_stage=PipelineStage.COLLECTION,
@@ -327,3 +337,76 @@ class RSSCollector:
                    })
 
         return is_recent
+    
+    def _enhance_articles_parallel(self, articles: List[Article]) -> List[Article]:
+        """Enhance articles with full content fetching in parallel."""
+        # Filter articles that need enhancement (short summaries)
+        articles_to_enhance = [
+            article for article in articles 
+            if not article.summary or len(article.summary) < 200
+        ]
+        
+        if not articles_to_enhance:
+            return articles
+        
+        logger.info(f"Enhancing {len(articles_to_enhance)} articles with full content",
+                   pipeline_stage=PipelineStage.COLLECTION,
+                   structured_data={'articles_to_enhance': len(articles_to_enhance)})
+        
+        # Use ThreadPoolExecutor for parallel fetching
+        max_workers = min(Config.MAX_PARALLEL_FETCHES, len(articles_to_enhance))
+        enhanced_count = 0
+        
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            # Submit content fetching tasks
+            future_to_article = {
+                executor.submit(self._enhance_single_article, article): article 
+                for article in articles_to_enhance
+            }
+            
+            # Process completed tasks
+            for future in as_completed(future_to_article):
+                article = future_to_article[future]
+                try:
+                    enhanced = future.result(timeout=Config.CONTENT_FETCH_TIMEOUT)
+                    if enhanced:
+                        enhanced_count += 1
+                except Exception as e:
+                    logger.debug(f"Failed to enhance article: {article.title[:50]}... - {e}",
+                               pipeline_stage=PipelineStage.COLLECTION,
+                               error_category=ErrorCategory.NETWORK_ERROR)
+        
+        logger.info(f"Successfully enhanced {enhanced_count}/{len(articles_to_enhance)} articles",
+                   pipeline_stage=PipelineStage.COLLECTION,
+                   structured_data={
+                       'enhanced_count': enhanced_count,
+                       'total_attempted': len(articles_to_enhance),
+                       'success_rate': enhanced_count / len(articles_to_enhance) if articles_to_enhance else 0
+                   })
+        
+        return articles
+    
+    def _enhance_single_article(self, article: Article) -> bool:
+        """Enhance a single article with full content."""
+        try:
+            full_text, enhanced_summary = article_content_fetcher.fetch_article_content(article.url)
+            
+            if enhanced_summary and len(enhanced_summary) > len(article.summary or ''):
+                original_length = len(article.summary or '')
+                article.summary = enhanced_summary
+                
+                logger.debug(f"Enhanced: {article.title[:50]}... ({original_length} → {len(enhanced_summary)} chars)",
+                           pipeline_stage=PipelineStage.COLLECTION,
+                           structured_data={
+                               'article_title': article.title[:50],
+                               'original_length': original_length,
+                               'enhanced_length': len(enhanced_summary)
+                           })
+                return True
+                
+        except Exception as e:
+            logger.debug(f"Error enhancing article {article.url}: {e}",
+                       pipeline_stage=PipelineStage.COLLECTION,
+                       error_category=ErrorCategory.NETWORK_ERROR)
+        
+        return False

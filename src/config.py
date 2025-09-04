@@ -54,6 +54,12 @@ class Config:
     X_THREADS_MAX_DAILY = int(os.getenv("X_THREADS_MAX_DAILY", "4"))
     X_THREADS_MIN_IMPACT_SCORE = float(os.getenv("X_THREADS_MIN_IMPACT_SCORE", "7.0"))
     
+    # Content Enhancement Configuration
+    FETCH_FULL_CONTENT = os.getenv("FETCH_FULL_CONTENT", "true").lower() == "true"
+    CONTENT_FETCH_TIMEOUT = int(os.getenv("CONTENT_FETCH_TIMEOUT", "10"))
+    CONTENT_CACHE_DAYS = int(os.getenv("CONTENT_CACHE_DAYS", "1"))
+    MAX_PARALLEL_FETCHES = int(os.getenv("MAX_PARALLEL_FETCHES", "5"))
+    
     # Logging Configuration
     LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
     LOG_FORMAT = os.getenv("LOG_FORMAT", "%(asctime)s - %(name)s - %(levelname)s - %(message)s")

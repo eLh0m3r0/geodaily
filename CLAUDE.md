@@ -44,6 +44,9 @@ python tests/test_archive_utilities.py # Test cleanup and dashboard utilities
 # Test X.com thread generation
 python test_x_threads.py              # Test thread generation (mock + real if API key available)
 
+# Test enhanced content extraction
+python test_enhanced_content.py      # Test full article content fetching
+
 # Run with coverage
 python -m pytest tests/ --cov=src --cov-report=html
 ```
@@ -97,10 +100,19 @@ python src/sitemap_generator.py             # Generate sitemap for GitHub Pages
 ### Key Components
 
 #### Data Collection
-- **RSS Collector** (`src/collectors/rss_collector.py`): Handles 20 tier1 RSS feeds
+- **RSS Collector** (`src/collectors/rss_collector.py`): Handles 20 tier1 RSS feeds with enhanced content extraction
 - **Web Scraper** (`src/collectors/web_scraper.py`): Scrapes 6 tier2 sources with SSL bypass for certificate issues
 - **Main Collector** (`src/collectors/main_collector.py`): Parallel collection orchestration
+- **Article Content Fetcher** (`src/collectors/article_content_fetcher.py`): Advanced full-text extraction from URLs
 - **Connection Pooling**: Optimized HTTP connections for performance
+
+#### Enhanced Content Extraction (NEW)
+- **Multi-strategy extraction**: Uses newspaper3k, readability-lxml, and BeautifulSoup in order of preference
+- **Parallel fetching**: Fetches full article content for up to 5 articles simultaneously  
+- **Smart caching**: 24-hour cache to reduce redundant requests
+- **Quality scoring**: Scores content quality (0.0-1.0) based on length, structure, and variety
+- **Automatic enhancement**: Enhances short RSS summaries (<200 chars) with full article content
+- **Configurable**: Enable/disable with `FETCH_FULL_CONTENT` environment variable
 
 #### Data Processing
 - **Deduplicator** (`src/processors/deduplicator.py`): Title similarity-based deduplication (0.85 threshold)
@@ -191,6 +203,10 @@ The AI analyzer now evaluates stories across multiple dimensions:
 - `AI_MAX_TOKENS=8000` for Sonnet 4 production (increased from 4096 Haiku)
 - `ALLOW_OVERWRITE=true` to regenerate existing newsletters
 - Configurable AI provider support
+- `FETCH_FULL_CONTENT=true` to enable enhanced article content extraction (default: true)
+- `MAX_PARALLEL_FETCHES=5` maximum concurrent content fetches
+- `CONTENT_FETCH_TIMEOUT=10` timeout in seconds for each fetch
+- `CONTENT_CACHE_DAYS=1` days to cache extracted content
 
 #### Archive Configuration
 - `AI_ARCHIVE_ENABLED=true` to enable comprehensive data archiving

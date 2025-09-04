@@ -20,7 +20,7 @@ class MainCollector:
     """Main collector that coordinates all data collection."""
     
     def __init__(self):
-        self.rss_collector = RSSCollector()
+        self.rss_collector = RSSCollector(fetch_full_content=Config.FETCH_FULL_CONTENT)
         self.web_scraper = WebScraper()
         self.stats = ProcessingStats()
         self.health_monitor = source_health_monitor
