@@ -56,7 +56,7 @@ jobs:
 
     - name: Create necessary directories
       run: |
-        mkdir -p logs output docs ai_archive dashboards
+        mkdir -p logs output docs ai_archive
 
     - name: Set environment variables
       run: |
@@ -109,7 +109,7 @@ jobs:
         echo "AI_ARCHIVE_MAX_SIZE_MB=500" >> $GITHUB_ENV
         
         # Dashboard configuration
-        echo "DASHBOARD_OUTPUT_PATH=dashboards" >> $GITHUB_ENV
+        echo "DASHBOARD_OUTPUT_PATH=docs" >> $GITHUB_ENV
         echo "DASHBOARD_AUTO_GENERATE=true" >> $GITHUB_ENV
 
         # Set dry run mode based on input or default to false for scheduled runs
@@ -155,22 +155,13 @@ jobs:
           exit 1
         fi
 
-    - name: Generate debug dashboards
+    - name: Generate unified dashboard
       if: success()
       run: |
-        echo "📊 Generating debug dashboards..."
+        echo "📊 Generating unified dashboard..."
         
-        # Generate today's dashboard
-        python generate_dashboard.py --verbose
-        
-        # Generate 7-day summary dashboard
-        python generate_dashboard.py --summary --days 7 --verbose
-        
-        # Copy dashboards to docs for GitHub Pages
-        if [ -d "dashboards" ]; then
-          mkdir -p docs/dashboards
-          cp dashboards/*.html docs/dashboards/ || echo "No dashboard files to copy"
-        fi
+        # Generate unified dashboard directly to docs/dashboard.html
+        python generate_unified_dashboard.py || echo "Dashboard generation failed, continuing..."
 
     - name: Archive cleanup
       if: success() && github.event_name == 'schedule'
@@ -193,7 +184,7 @@ jobs:
           docs/**/*
           logs/*.log
           ai_archive/**/*
-          dashboards/*.html
+          docs/dashboard.html
         retention-days: 30
 
     - name: Create issue on failure
@@ -245,13 +236,11 @@ jobs:
           echo "- **Newsletter**: ❌ Failed" >> $GITHUB_STEP_SUMMARY
         fi
 
-        # Check if dashboards were generated
-        if [ -d "dashboards" ] && [ "$(ls -A dashboards/*.html 2>/dev/null)" ]; then
-          dashboard_count=$(ls dashboards/*.html 2>/dev/null | wc -l)
-          echo "- **Dashboards**: ✅ Generated ($dashboard_count files)" >> $GITHUB_STEP_SUMMARY
-          ls dashboards/*.html 2>/dev/null | head -3 | xargs -I {} basename {} | sed 's/^/  - /' >> $GITHUB_STEP_SUMMARY
+        # Check if unified dashboard was generated
+        if [ -f "docs/dashboard.html" ]; then
+          echo "- **Dashboard**: ✅ Generated (docs/dashboard.html)" >> $GITHUB_STEP_SUMMARY
         else
-          echo "- **Dashboards**: ❌ Missing" >> $GITHUB_STEP_SUMMARY
+          echo "- **Dashboard**: ❌ Missing" >> $GITHUB_STEP_SUMMARY
         fi
 
         # Check if AI archive was created

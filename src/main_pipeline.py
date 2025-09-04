@@ -19,7 +19,7 @@ from .ai.simple_multi_stage_analyzer import SimplifiedMultiStageAnalyzer
 from .ai.cost_controller import ai_cost_controller
 from .archiver.ai_data_archiver import ai_archiver
 from .content import enrich_articles_with_content
-from .dashboard.enhanced_multi_stage_dashboard import EnhancedMultiStageDashboard
+from .dashboard.unified_dashboard import UnifiedDashboard
 from .newsletter.generator import NewsletterGenerator
 from .publishers.github_pages_publisher import GitHubPagesPublisher
 from .notifications.email_notifier import EmailNotifier
@@ -818,22 +818,22 @@ def run_complete_pipeline() -> bool:
                        'run_id': run_id
                    })
 
-        # Step 10: Generate Enhanced Multi-Stage Dashboard
+        # Step 10: Generate Unified Dashboard
         with PerformanceProfiler.profile_operation("dashboard_generation", logger):
-            logger.info("Step 10: Generating enhanced multi-stage dashboard...",
+            logger.info("Step 10: Generating unified dashboard...",
                        pipeline_stage=PipelineStage.CLEANUP,
                        run_id=run_id)
             
             try:
-                dashboard_generator = EnhancedMultiStageDashboard()
-                dashboard_path = dashboard_generator.generate_dashboard_for_date(current_date)
+                dashboard_generator = UnifiedDashboard()
+                dashboard_path = dashboard_generator.generate_dashboard()
                 
-                logger.info(f"✅ Enhanced dashboard generated: {dashboard_path}",
+                logger.info(f"✅ Unified dashboard generated: {dashboard_path}",
                            pipeline_stage=PipelineStage.CLEANUP,
                            run_id=run_id,
                            structured_data={
                                'dashboard_path': str(dashboard_path),
-                               'dashboard_type': 'enhanced_multi_stage'
+                               'dashboard_type': 'unified'
                            })
                            
             except Exception as e:

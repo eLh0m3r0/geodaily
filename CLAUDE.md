@@ -73,14 +73,8 @@ python cleanup_archives.py --dry-run         # Preview what would be deleted
 python cleanup_archives.py --deep-clean      # Aggressive cleanup (remove failed runs)
 python cleanup_archives.py --force           # Skip confirmation prompts
 
-# Debug Dashboard Generation
-python generate_dashboard.py                 # Generate today's dashboard
-python generate_dashboard.py --date 2024-01-01 # Generate for specific date
-python generate_dashboard.py --summary --days 7 # Generate 7-day summary
-python generate_dashboard.py --all           # Generate all available dashboards
-
-# Legacy utilities
-python src/metrics/dashboard_generator.py    # Legacy dashboard
+# Dashboard Generation (Unified)
+python generate_unified_dashboard.py        # Generate unified dashboard to docs/dashboard.html
 python src/cleanup.py                        # Legacy cleanup (keeps 30 days)
 python src/sitemap_generator.py             # Generate sitemap for GitHub Pages
 ```
@@ -93,7 +87,7 @@ python src/sitemap_generator.py             # Generate sitemap for GitHub Pages
 3. **AI Analysis Layer** (`src/ai/`): Claude API with cost controls and fallback mechanisms
 4. **Newsletter Generation** (`src/newsletter/`): Professional HTML newsletter creation
 5. **AI Archive Layer** (`src/archiver/`): Comprehensive data archiving and retention management
-6. **Debug Dashboard Layer** (`src/dashboard/`): Interactive monitoring and visualization dashboards
+6. **Unified Dashboard Layer** (`src/dashboard/`): Single streamlined dashboard for GitHub Pages
 7. **Publishing Layer** (`src/publishers/`): GitHub Pages deployment and email notifications
 8. **Metrics & Monitoring**: Performance tracking, cost monitoring, health checks
 
@@ -127,13 +121,13 @@ python src/sitemap_generator.py             # Generate sitemap for GitHub Pages
 - **Storage Optimization**: JSON-based storage with optional compression for old data
 - **Structured Organization**: Date-based directory structure with unique run IDs
 
-#### Debug Dashboard System
-- **Interactive Dashboards** (`src/dashboard/debug_dashboard.py`): Rich HTML dashboards with Plotly visualizations
-- **Real-time Monitoring**: Source performance, AI cost analysis, processing times
-- **Multi-tab Interface**: Individual run analysis, summary views, trend visualization
-- **Responsive Design**: Professional CSS styling with mobile-friendly layouts
-- **Auto-refresh**: JavaScript-powered updates for live monitoring
-- **Batch Generation**: Support for single date, multi-day summaries, and bulk dashboard creation
+#### Unified Dashboard System
+- **Unified Dashboard** (`src/dashboard/unified_dashboard.py`): Single streamlined dashboard generator
+- **GitHub Pages Integration**: Generates directly to `docs/dashboard.html` for seamless publishing
+- **Minimalist Design**: Clean, functional interface with essential metrics only
+- **Latest Run Data**: Shows most recent pipeline execution results
+- **Summary Statistics**: 7-day success rates, cost tracking, performance metrics
+- **Real-time Updates**: Automatic generation with each pipeline run
 
 #### AI Scoring Dimensions
 The AI analyzer now evaluates stories across multiple dimensions:
