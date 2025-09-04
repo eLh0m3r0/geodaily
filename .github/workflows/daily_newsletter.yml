@@ -111,6 +111,11 @@ jobs:
         # Dashboard configuration
         echo "DASHBOARD_OUTPUT_PATH=docs" >> $GITHUB_ENV
         echo "DASHBOARD_AUTO_GENERATE=true" >> $GITHUB_ENV
+        
+        # X.com Thread Generation configuration
+        echo "X_THREADS_ENABLED=true" >> $GITHUB_ENV
+        echo "X_THREADS_MAX_DAILY=4" >> $GITHUB_ENV
+        echo "X_THREADS_MIN_IMPACT_SCORE=7.0" >> $GITHUB_ENV
 
         # Set dry run mode based on input or default to false for scheduled runs
         if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
@@ -249,6 +254,14 @@ jobs:
           echo "- **AI Archive**: ✅ Created ($archive_size)" >> $GITHUB_STEP_SUMMARY
         else
           echo "- **AI Archive**: ❌ Missing" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        # Check if X.com threads were generated
+        if [ -d "docs/threads" ] && [ "$(ls -A docs/threads/*.html 2>/dev/null)" ]; then
+          thread_count=$(ls docs/threads/*.json 2>/dev/null | xargs -I {} grep -c "thread_title" {} | head -1)
+          echo "- **X.com Threads**: ✅ Generated ($thread_count threads)" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "- **X.com Threads**: ❌ Not generated" >> $GITHUB_STEP_SUMMARY
         fi
 
   deploy:

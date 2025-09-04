@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geopolitical Daily - 2025-09-04</title>
+    <style>
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin: 0;
+            font-weight: bold;
+        }
+        
+        .header .date {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .intro {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-left: 4px solid #3498db;
+            margin-bottom: 30px;
+            font-style: italic;
+            white-space: pre-line;
+        }
+        
+        .story {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #ecf0f1;
+            padding-bottom: 30px;
+        }
+        
+        .story:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .story-title {
+            color: #2c3e50;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            line-height: 1.3;
+        }
+        
+        .story-meta {
+            color: #7f8c8d;
+            font-size: 12px;
+            margin-bottom: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .score-row {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+        .score-label {
+            margin-right: 5px;
+            font-weight: bold;
+        }
+
+        .impact-score, .urgency-score, .scope-score, .novelty-score, .credibility-score, .impact-dimension-score {
+            display: inline-block;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 8px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .impact-score.high { background-color: #e74c3c; }
+        .impact-score.medium { background-color: #f39c12; }
+        .impact-score.low { background-color: #27ae60; }
+
+        .urgency-score { background-color: #9b59b6; }
+        .scope-score { background-color: #3498db; }
+        .novelty-score { background-color: #e67e22; }
+        .credibility-score { background-color: #2ecc71; }
+        .impact-dimension-score { background-color: #95a5a6; }
+
+        .content-type-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .content-type-badge.breaking_news { background-color: #e74c3c; }
+        .content-type-badge.analysis { background-color: #3498db; }
+        .content-type-badge.trend { background-color: #9b59b6; }
+
+        .story.breaking_news { border-left: 4px solid #e74c3c; }
+        .story.analysis { border-left: 4px solid #3498db; }
+        .story.trend { border-left: 4px solid #9b59b6; }
+        
+        .story-section {
+            margin-bottom: 15px;
+        }
+        
+        .section-title {
+            color: #34495e;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .section-content {
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .sources {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ecf0f1;
+        }
+        
+        .sources-title {
+            color: #7f8c8d;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .source-link {
+            display: block;
+            color: #3498db;
+            text-decoration: none;
+            font-size: 12px;
+            margin-bottom: 3px;
+            word-break: break-all;
+        }
+        
+        .source-link:hover {
+            text-decoration: underline;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #ecf0f1;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 12px;
+        }
+        
+        .footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Feedback Section Styles */
+        .feedback-section {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #ecf0f1;
+        }
+
+        .feedback-section h4 {
+            color: #2c3e50;
+            margin: 0 0 15px 0;
+            font-size: 16px;
+        }
+
+        .feedback-section p {
+            margin: 10px 0;
+            color: #34495e;
+            font-size: 14px;
+        }
+
+        .feedback-buttons {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .feedback-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: background-color 0.3s;
+        }
+
+        .feedback-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .feedback-btn:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        .feedback-form {
+            margin-top: 15px;
+        }
+
+        .feedback-form textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 12px;
+            resize: vertical;
+        }
+
+        .submit-feedback-btn {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-top: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .submit-feedback-btn:hover {
+            background-color: #229954;
+        }
+
+        .newsletter-actions {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #ecf0f1;
+            text-align: center;
+        }
+
+        .newsletter-actions a {
+            margin: 0 10px;
+            color: #3498db;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .newsletter-actions a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive design for feedback section */
+        @media (max-width: 600px) {
+            .feedback-buttons {
+                flex-direction: column;
+            }
+
+            .feedback-btn {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+        }
+        </style>
+    <script>
+        function submitFeedback(type, rating) {
+            // In a real implementation, this would send data to your backend
+            console.log('Feedback submitted:', { type: type, rating: rating });
+
+            // Visual feedback
+            const buttons = document.querySelectorAll('.feedback-btn');
+            buttons.forEach(btn => btn.style.backgroundColor = '#3498db');
+
+            // Show thank you message
+            const feedbackSection = document.querySelector('.feedback-section');
+            const thankYou = document.createElement('p');
+            thankYou.textContent = 'Thank you for your feedback!';
+            thankYou.style.color = '#27ae60';
+            thankYou.style.fontWeight = 'bold';
+            feedbackSection.appendChild(thankYou);
+
+            // Disable buttons after submission
+            setTimeout(() => {
+                buttons.forEach(btn => btn.disabled = true);
+            }, 1000);
+        }
+
+        function submitDetailedFeedback() {
+            const comment = document.getElementById('feedback-comment').value;
+            if (comment.trim()) {
+                console.log('Detailed feedback:', comment);
+                alert('Thank you for your detailed feedback!');
+                document.getElementById('feedback-comment').value = '';
+            }
+        }
+
+        // Track content engagement
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track story views
+            const stories = document.querySelectorAll('.story');
+            stories.forEach((story, index) => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            console.log('Story viewed:', index + 1);
+                            // In real implementation, send view tracking data
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                observer.observe(story);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="header">
+            <h1>Geopolitical Daily</h1>
+            <div class="date">September 04, 2025</div>
+        </div>
+        
+        <div class="intro">Good morning. Today is Thursday, September 04, 2025.
+
+Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers.
+
+Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</div>
+        
+        <div class="story breaking_news">
+            <div class="story-header">
+                <h2 class="story-title">Kazakhstan’s Emerging Civilian Nuclear Energy Industry: Impl</h2>
+                
+        <div class="story-meta">
+            <div class="content-type-badge breaking_news">Breaking News</div>
+            <div class="score-row">
+                <span class="score-label">Impact:</span>
+                <span class="impact-score high">8/10</span>
+            </div>
+            <div class="score-row">
+                <span class="score-label">Urgency:</span>
+                <span class="urgency-score">7/10</span>
+            </div>
+            <div class="score-row">
+                <span class="score-label">Scope:</span>
+                <span class="scope-score">7/10</span>
+            </div>
+            <div class="score-row">
+                <span class="score-label">Novelty:</span>
+                <span class="novelty-score">6/10</span>
+            </div>
+            <div class="score-row">
+                <span class="score-label">Credibility:</span>
+                <span class="credibility-score">7/10</span>
+            </div>
+            <div class="score-row">
+                <span class="score-label">Impact Dim.:</span>
+                <span class="impact-dimension-score">8/10</span>
+            </div>
+        </div>
+        
+            </div>
+
+            <div class="story-section">
+                <div class="section-title">Why This Matters</div>
+                <div class="section-content">This development signals a major shift in regional power dynamics that could reshape international relations</div>
+            </div>
+
+            <div class="story-section">
+                <div class="section-title">What Others Are Missing</div>
+                <div class="section-content">The second-order effects on neighboring states and global supply chains</div>
+            </div>
+
+            <div class="story-section">
+                <div class="section-title">What to Watch</div>
+                <div class="section-content">Expect escalating tensions and diplomatic realignment in coming weeks</div>
+            </div>
+
+            <div class="sources"><div class="sources-title">Sources:</div><a href="https://www.csis.org/analysis/kazakhstans-emerging-civilian-nuclear-energy-industry-implications-us-strategic-interests" class="source-link" target="_blank">https://www.csis.org/analysis/kazakhstans-emerging-civilian-nuclear-energy-industry-implications-us-strategic-interests</a></div>
+        </div>
+        
+        <div class="story analysis">
+            <div class="story-header">
+                <h2 class="story-title">The Real Meaning of Putin’s Middle East Failure</h2>
+                
+        <div class="story-meta">
+            <div class="content-type-badge analysis">Analysis</div>
+            <div class="score-row">
+                <span class="score-label">Impact:</span>
+                <span class="impact-score medium">7/10</span>
+            </div>
+            <div class="score-row">
+                <span class="score-label">Urgency:</span>
+                <span class="urgency-score">6/10</span>
+            </div>
+            <div class="score-row">
+                <span class="score-label">Scope:</span>
+                <span class="scope-score">6/10</span>
+            </div>
+            <div class="score-row">
+                <span class="score-label">Novelty:</span>
+                <span class="novelty-score">5/10</span>
+            </div>
+            <div class="score-row">
+                <span class="score-label">Credibility:</span>
+                <span class="credibility-score">7/10</span>
+            </div>
+            <div class="score-row">
+                <span class="score-label">Impact Dim.:</span>
+                <span class="impact-dimension-score">7/10</span>
+            </div>
+        </div>
+        
+            </div>
+
+            <div class="story-section">
+                <div class="section-title">Why This Matters</div>
+                <div class="section-content">This economic development has immediate implications for global markets and strategic resource allocation</div>
+            </div>
+
+            <div class="story-section">
+                <div class="section-title">What Others Are Missing</div>
+                <div class="section-content">The underlying structural changes that mainstream media tends to overlook</div>
+            </div>
+
+            <div class="story-section">
+                <div class="section-title">What to Watch</div>
+                <div class="section-content">Watch for policy responses from major powers within days</div>
+            </div>
+
+            <div class="sources"><div class="sources-title">Sources:</div><a href="https://www.foreignaffairs.com/russia/real-meaning-putins-middle-east-failure-michael-mcfaul" class="source-link" target="_blank">https://www.foreignaffairs.com/russia/real-meaning-putins-middle-east-failure-michael-mcfaul</a></div>
+        </div>
+        
+        <div class="story analysis">
+            <div class="story-header">
+                <h2 class="story-title">The Pernicious Spectacle of Trump’s Russia-Ukraine Diplomacy</h2>
+                
+        <div class="story-meta">
+            <div class="content-type-badge analysis">Analysis</div>
+            <div class="score-row">
+                <span class="score-label">Impact:</span>
+                <span class="impact-score medium">6/10</span>
+            </div>
+            <div class="score-row">
+                <span class="score-label">Urgency:</span>
+                <span class="urgency-score">5/10</span>
+            </div>
+            <div class="score-row">
+                <span class="score-label">Scope:</span>
+                <span class="scope-score">5/10</span>
+            </div>
+            <div class="score-row">
+                <span class="score-label">Novelty:</span>
+                <span class="novelty-score">4/10</span>
+            </div>
+            <div class="score-row">
+                <span class="score-label">Credibility:</span>
+                <span class="credibility-score">7/10</span>
+            </div>
+            <div class="score-row">
+                <span class="score-label">Impact Dim.:</span>
+                <span class="impact-dimension-score">6/10</span>
+            </div>
+        </div>
+        
+            </div>
+
+            <div class="story-section">
+                <div class="section-title">Why This Matters</div>
+                <div class="section-content">This diplomatic move represents a calculated strategic gambit with far-reaching consequences</div>
+            </div>
+
+            <div class="story-section">
+                <div class="section-title">What Others Are Missing</div>
+                <div class="section-content">The historical context and long-term strategic calculations behind this decision</div>
+            </div>
+
+            <div class="story-section">
+                <div class="section-title">What to Watch</div>
+                <div class="section-content">Anticipate countermoves from rival powers and regional realignment</div>
+            </div>
+
+            <div class="sources"><div class="sources-title">Sources:</div><a href="https://www.foreignaffairs.com/russia/pernicious-spectacle-trumps-russia-ukraine-diplomacy" class="source-link" target="_blank">https://www.foreignaffairs.com/russia/pernicious-spectacle-trumps-russia-ukraine-diplomacy</a></div>
+        </div>
+        
+        <div class="story analysis">
+            <div class="story-header">
+                <h2 class="story-title">It's 4,000 miles from Ukraine - but even this Asian city is </h2>
+                
+        <div class="story-meta">
+            <div class="content-type-badge analysis">Analysis</div>
+            <div class="score-row">
+                <span class="score-label">Impact:</span>
+                <span class="impact-score low">5/10</span>
+            </div>
+            <div class="score-row">
+                <span class="score-label">Urgency:</span>
+                <span class="urgency-score">4/10</span>
+            </div>
+            <div class="score-row">
+                <span class="score-label">Scope:</span>
+                <span class="scope-score">5/10</span>
+            </div>
+            <div class="score-row">
+                <span class="score-label">Novelty:</span>
+                <span class="novelty-score">4/10</span>
+            </div>
+            <div class="score-row">
+                <span class="score-label">Credibility:</span>
+                <span class="credibility-score">6/10</span>
+            </div>
+            <div class="score-row">
+                <span class="score-label">Impact Dim.:</span>
+                <span class="impact-dimension-score">5/10</span>
+            </div>
+        </div>
+        
+            </div>
+
+            <div class="story-section">
+                <div class="section-title">Why This Matters</div>
+                <div class="section-content">This security development threatens to upset the established balance of power in the region</div>
+            </div>
+
+            <div class="story-section">
+                <div class="section-title">What Others Are Missing</div>
+                <div class="section-content">The military capabilities gap and deterrence implications</div>
+            </div>
+
+            <div class="story-section">
+                <div class="section-title">What to Watch</div>
+                <div class="section-content">Increased military posturing and alliance strengthening likely</div>
+            </div>
+
+            <div class="sources"><div class="sources-title">Sources:</div><a href="https://www.bbc.com/news/articles/cvg0e54z7x8o?at_medium=RSS&at_campaign=rss" class="source-link" target="_blank">https://www.bbc.com/news/articles/cvg0e54z7x8o?at_medium=RSS&at_campaign=rss</a></div>
+        </div>
+        
+        
+        <div class="footer">
+            <p>Geopolitical Daily - Geopolitical Intelligence for Decision Makers</p>
+            <p>This daily briefing is generated using AI analysis of global news sources, providing balanced coverage of breaking developments, strategic analysis, and emerging trends. For questions or feedback, please contact our editorial team.</p>
+
+            <!-- Feedback Section -->
+            <div class="feedback-section">
+                <h4>Help us improve this newsletter</h4>
+                <p>How relevant was today's content to your work?</p>
+                <div class="feedback-buttons">
+                    <button class="feedback-btn" onclick="submitFeedback('relevance', 1)">Not Relevant</button>
+                    <button class="feedback-btn" onclick="submitFeedback('relevance', 0.5)">Somewhat</button>
+                    <button class="feedback-btn" onclick="submitFeedback('relevance', 1)">Very Relevant</button>
+                </div>
+
+                <p>How was the quality of analysis?</p>
+                <div class="feedback-buttons">
+                    <button class="feedback-btn" onclick="submitFeedback('quality', 0.3)">Poor</button>
+                    <button class="feedback-btn" onclick="submitFeedback('quality', 0.7)">Good</button>
+                    <button class="feedback-btn" onclick="submitFeedback('quality', 1)">Excellent</button>
+                </div>
+
+                <div class="feedback-form">
+                    <textarea id="feedback-comment" placeholder="Additional comments (optional)" rows="2"></textarea>
+                    <button class="submit-feedback-btn" onclick="submitDetailedFeedback()">Submit Feedback</button>
+                </div>
+            </div>
+
+            <div class="newsletter-actions">
+                <a href="#unsubscribe">Unsubscribe</a> |
+                <a href="#archive">Archive</a> |
+                <a href="#preferences">Update Preferences</a> |
+                <a href="#recommendations">Get Recommendations</a>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

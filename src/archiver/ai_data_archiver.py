@@ -431,6 +431,32 @@ class AIDataArchiver:
             logger.error(f"Failed to retrieve stage analysis data: {e}")
         
         return None
+    
+    def archive_threads_data(self, threads: List[Dict]) -> None:
+        """Archive generated X.com threads data.
+        
+        Args:
+            threads: List of generated thread data dictionaries
+        """
+        if not self.enabled or not self.current_run_path:
+            return
+            
+        threads_data = {
+            "generated_at": datetime.now().isoformat(),
+            "threads_count": len(threads),
+            "total_tweets": sum(len(t.get('tweets', [])) for t in threads),
+            "threads": threads,
+            "metadata": {
+                "language": "cs",
+                "platform": "x.com",
+                "thread_type": "geopolitical_analysis"
+            }
+        }
+        
+        self._save_json("x_threads.json", threads_data)
+        
+        print(f"🐦 AI Archiver: Archived {len(threads)} X.com threads with {threads_data['total_tweets']} tweets")
+        logger.info(f"Archived X.com threads: {len(threads)} threads, {threads_data['total_tweets']} total tweets")
 
 
 # Global instance

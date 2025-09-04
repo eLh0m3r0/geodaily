@@ -49,6 +49,11 @@ class Config:
     RETRY_DELAY = int(os.getenv("RETRY_DELAY", "2"))
     USER_AGENT = os.getenv("USER_AGENT", "Mozilla/5.0 (compatible; GeopoliticalDaily/1.0)")
     
+    # X.com Thread Generation Configuration
+    X_THREADS_ENABLED = os.getenv("X_THREADS_ENABLED", "false").lower() == "true"
+    X_THREADS_MAX_DAILY = int(os.getenv("X_THREADS_MAX_DAILY", "4"))
+    X_THREADS_MIN_IMPACT_SCORE = float(os.getenv("X_THREADS_MIN_IMPACT_SCORE", "7.0"))
+    
     # Logging Configuration
     LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
     LOG_FORMAT = os.getenv("LOG_FORMAT", "%(asctime)s - %(name)s - %(levelname)s - %(message)s")

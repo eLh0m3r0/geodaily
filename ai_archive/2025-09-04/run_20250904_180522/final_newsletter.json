@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-09-04T18:05:48.037594",
+  "stories_count": 4,
+  "stories": [
+    {
+      "title": "Kazakhstan\u2019s Emerging Civilian Nuclear Energy Industry: Impl",
+      "content_type": "breaking_news",
+      "impact_score": 8,
+      "sources_count": 1
+    },
+    {
+      "title": "The Real Meaning of Putin\u2019s Middle East Failure",
+      "content_type": "analysis",
+      "impact_score": 7,
+      "sources_count": 1
+    },
+    {
+      "title": "The Pernicious Spectacle of Trump\u2019s Russia-Ukraine Diplomacy",
+      "content_type": "analysis",
+      "impact_score": 6,
+      "sources_count": 1
+    },
+    {
+      "title": "It's 4,000 miles from Ukraine - but even this Asian city is ",
+      "content_type": "analysis",
+      "impact_score": 5,
+      "sources_count": 1
+    }
+  ],
+  "html_length": 22690
+}

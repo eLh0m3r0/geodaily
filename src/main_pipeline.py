@@ -621,6 +621,98 @@ def run_complete_pipeline() -> bool:
                     pipeline_tracker.track_pipeline_failure(run_id, e, PipelineStage.GENERATION)
                     return False
         
+        # Step 5.5: Generate X.com threads (if enabled)
+        if Config.X_THREADS_ENABLED:
+            with PerformanceProfiler.profile_operation("thread_generation", logger):
+                logger.info("Step 5.5: Generating X.com threads...",
+                           pipeline_stage=PipelineStage.GENERATION,
+                           run_id=run_id,
+                           structured_data={'enabled': True})
+                
+                try:
+                    from src.social.x_thread_generator import XThreadGenerator
+                    thread_generator = XThreadGenerator()
+                    
+                    # Select top stories for threads (by impact score)
+                    top_analyses = sorted(analyses, 
+                                        key=lambda a: a.impact_dimension_score, 
+                                        reverse=True)[:Config.X_THREADS_MAX_DAILY]
+                    
+                    # Filter by minimum impact score
+                    thread_analyses = [a for a in top_analyses 
+                                     if a.impact_dimension_score >= Config.X_THREADS_MIN_IMPACT_SCORE]
+                    
+                    if thread_analyses:
+                        threads = []
+                        
+                        # Check if we're in dry run mode
+                        if Config.DRY_RUN:
+                            logger.info(f"Generating mock threads (DRY_RUN mode) for {len(thread_analyses)} stories",
+                                      pipeline_stage=PipelineStage.GENERATION,
+                                      run_id=run_id,
+                                      structured_data={'mock_mode': True, 'stories_count': len(thread_analyses)})
+                            
+                            for analysis in thread_analyses:
+                                thread_data = thread_generator.generate_mock_thread(analysis)
+                                threads.append(thread_data)
+                                logger.debug(f"Mock thread generated: {thread_data['thread_title']}")
+                        else:
+                            # Use real Claude API for thread generation
+                            logger.info(f"Generating real threads for {len(thread_analyses)} stories",
+                                      pipeline_stage=PipelineStage.GENERATION,
+                                      run_id=run_id,
+                                      structured_data={'api_mode': True, 'stories_count': len(thread_analyses)})
+                            
+                            # Import Claude client if needed
+                            from anthropic import Anthropic
+                            api_client = Anthropic(api_key=Config.ANTHROPIC_API_KEY)
+                            
+                            for analysis in thread_analyses:
+                                thread_data = thread_generator.generate_thread_from_analysis(analysis, api_client)
+                                if thread_data:
+                                    threads.append(thread_data)
+                                    logger.info(f"Thread generated: {thread_data['thread_title']}")
+                        
+                        if threads:
+                            # Export HTML preview
+                            current_date = datetime.now().strftime("%Y-%m-%d")
+                            html_path = thread_generator.export_html(threads, current_date)
+                            json_path = thread_generator.export_json(threads, current_date)
+                            
+                            logger.info(f"X.com threads generated successfully: {len(threads)} threads",
+                                      pipeline_stage=PipelineStage.GENERATION,
+                                      run_id=run_id,
+                                      structured_data={
+                                          'threads_count': len(threads),
+                                          'html_export': html_path,
+                                          'json_export': json_path,
+                                          'total_tweets': sum(len(t.get('tweets', [])) for t in threads)
+                                      })
+                            
+                            # Archive thread data
+                            ai_archiver.archive_threads_data(threads)
+                        else:
+                            logger.warning("No threads generated",
+                                        pipeline_stage=PipelineStage.GENERATION,
+                                        run_id=run_id)
+                    else:
+                        logger.info(f"No stories meet thread criteria (min impact: {Config.X_THREADS_MIN_IMPACT_SCORE})",
+                                  pipeline_stage=PipelineStage.GENERATION,
+                                  run_id=run_id)
+                        
+                except Exception as e:
+                    logger.error(f"Thread generation failed: {e}",
+                               pipeline_stage=PipelineStage.GENERATION,
+                               run_id=run_id,
+                               error_category=ErrorCategory.PROCESSING_ERROR,
+                               structured_data={'error_details': str(e)})
+                    # Don't fail the whole pipeline for thread generation errors
+        else:
+            logger.info("X.com thread generation disabled",
+                       pipeline_stage=PipelineStage.GENERATION,
+                       run_id=run_id,
+                       structured_data={'enabled': False})
+        
         # Step 6: Multi-platform publishing
         with PerformanceProfiler.profile_operation("publishing", logger):
             logger.info("Step 6: Publishing newsletter...",

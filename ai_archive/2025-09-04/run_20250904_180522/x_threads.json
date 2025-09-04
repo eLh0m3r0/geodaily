@@ -1,0 +1,90 @@
+{
+  "generated_at": "2025-09-04T18:05:48.041744",
+  "threads_count": 2,
+  "total_tweets": 10,
+  "threads": [
+    {
+      "thread_title": "Test: Kazakhstan\u2019s Emerging Civilian Nuclear E",
+      "tweets": [
+        {
+          "number": 1,
+          "content": "1/5 \ud83d\udd0d ANAL\u00ddZA: Kazakhstan\u2019s Emerging Civilian Nuclear Energy Industry: Impl... Co to znamen\u00e1 pro \u010cR? \ud83e\uddf5",
+          "char_count": 102
+        },
+        {
+          "number": 2,
+          "content": "2/5 \ud83d\udcca Kl\u00ed\u010dov\u00e1 fakta: This development signals a major shift in regional power dynamics that could reshape international relations...",
+          "char_count": 132
+        },
+        {
+          "number": 3,
+          "content": "3/5 \u26a1 Co p\u0159ehl\u00ed\u017e\u00edme: The second-order effects on neighboring states and global supply chains...",
+          "char_count": 95
+        },
+        {
+          "number": 4,
+          "content": "4/5 \ud83c\udfaf Co sledovat: Expect escalating tensions and diplomatic realignment in coming weeks...",
+          "char_count": 91
+        },
+        {
+          "number": 5,
+          "content": "5/5 \ud83d\udca1 Z\u00e1v\u011br: Situace se rychle vyv\u00edj\u00ed. Sledujte n\u00e1\u0161 newsletter pro detailn\u00ed anal\u00fdzy. #geopolitika #bezpe\u010dnost",
+          "char_count": 109
+        }
+      ],
+      "hashtags": [
+        "#geopolitika",
+        "#bezpe\u010dnost",
+        "#anal\u00fdza"
+      ],
+      "estimated_engagement": 7.5,
+      "main_topic": "test_topic",
+      "source_analysis_id": "Kazakhstan\u2019s Emerging Civilian Nuclear Energy Industry: Impl",
+      "generated_at": "2025-09-04T18:05:48.039609"
+    },
+    {
+      "thread_title": "Test: The Real Meaning of Putin\u2019s Middle East ",
+      "tweets": [
+        {
+          "number": 1,
+          "content": "1/5 \ud83d\udd0d ANAL\u00ddZA: The Real Meaning of Putin\u2019s Middle East Failure... Co to znamen\u00e1 pro \u010cR? \ud83e\uddf5",
+          "char_count": 89
+        },
+        {
+          "number": 2,
+          "content": "2/5 \ud83d\udcca Kl\u00ed\u010dov\u00e1 fakta: This economic development has immediate implications for global markets and strategic resource allocation...",
+          "char_count": 129
+        },
+        {
+          "number": 3,
+          "content": "3/5 \u26a1 Co p\u0159ehl\u00ed\u017e\u00edme: The underlying structural changes that mainstream media tends to overlook...",
+          "char_count": 97
+        },
+        {
+          "number": 4,
+          "content": "4/5 \ud83c\udfaf Co sledovat: Watch for policy responses from major powers within days...",
+          "char_count": 78
+        },
+        {
+          "number": 5,
+          "content": "5/5 \ud83d\udca1 Z\u00e1v\u011br: Situace se rychle vyv\u00edj\u00ed. Sledujte n\u00e1\u0161 newsletter pro detailn\u00ed anal\u00fdzy. #geopolitika #bezpe\u010dnost",
+          "char_count": 109
+        }
+      ],
+      "hashtags": [
+        "#geopolitika",
+        "#bezpe\u010dnost",
+        "#anal\u00fdza"
+      ],
+      "estimated_engagement": 7.5,
+      "main_topic": "test_topic",
+      "source_analysis_id": "The Real Meaning of Putin\u2019s Middle East Failure",
+      "generated_at": "2025-09-04T18:05:48.039617"
+    }
+  ],
+  "metadata": {
+    "language": "cs",
+    "platform": "x.com",
+    "thread_type": "geopolitical_analysis"
+  }
+}

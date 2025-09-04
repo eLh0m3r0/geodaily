@@ -41,6 +41,9 @@ python test_archiver_suite.py         # Test complete archiver functionality
 python tests/test_archiver.py         # Test AI data archiver core features
 python tests/test_archive_utilities.py # Test cleanup and dashboard utilities
 
+# Test X.com thread generation
+python test_x_threads.py              # Test thread generation (mock + real if API key available)
+
 # Run with coverage
 python -m pytest tests/ --cov=src --cov-report=html
 ```
@@ -245,6 +248,19 @@ The AI analyzer now evaluates stories across multiple dimensions:
 - GitHub Pages deployment to `docs/` directory
 - Sitemap generation for SEO
 - Content balancing: ~25% breaking news, 75% analysis/trends
+
+### X.com Thread Generation (NEW)
+- **Thread Generator** (`src/social/x_thread_generator.py`): Generates Czech X.com threads
+- **Single API Call**: Everything handled in one Claude call (analysis → Czech translation → formatting)
+- **Smart Selection**: Only stories with impact score ≥ 7.0 become threads
+- **Czech-Native**: Direct Czech generation, not translation - more natural
+- **HTML Preview**: Export to `docs/threads/` for manual review before posting
+- **Character Validation**: Automatic 280-char limit checking per tweet
+- **Mock Mode**: Test generation without API calls
+- **Configuration**:
+  - `X_THREADS_ENABLED=true` to enable
+  - `X_THREADS_MAX_DAILY=4` max threads per day
+  - `X_THREADS_MIN_IMPACT_SCORE=7.0` minimum story score
 
 ### GitHub Actions
 - Daily automation at 6:00 UTC
