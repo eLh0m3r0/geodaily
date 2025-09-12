@@ -871,7 +871,7 @@ Return only valid JSON, no additional text."""
 
             # Create AIAnalysis object with new multi-dimensional scores
             analysis = AIAnalysis(
-                story_title=data['story_title'][:60],  # Ensure length limit
+                story_title=data['story_title'],  # Keep full title
                 why_important=data['why_important'],
                 what_overlooked=data['what_overlooked'],
                 prediction=data['prediction'],
@@ -1217,7 +1217,7 @@ Return only valid JSON, no additional text."""
             self.simulated_cost += simulated_cost_increment
 
             analysis = AIAnalysis(
-                story_title=main_article.title[:60],  # Ensure length limit
+                story_title=main_article.title,  # Keep full title
                 why_important=why_important,
                 what_overlooked=what_overlooked,
                 prediction=prediction,

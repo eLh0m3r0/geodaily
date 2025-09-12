@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-09-12T19:03:57.716906",
+  "stories_count": 4,
+  "stories": [
+    {
+      "title": "The Real Meaning of Putin\u2019s Middle East Failure",
+      "content_type": "breaking_news",
+      "impact_score": 8,
+      "sources_count": 1
+    },
+    {
+      "title": "A Better Way for Europe to Guarantee Ukraine\u2019s Security",
+      "content_type": "analysis",
+      "impact_score": 7,
+      "sources_count": 1
+    },
+    {
+      "title": "What\u2019s missing from Trump\u2019s nuclear diplomacy",
+      "content_type": "analysis",
+      "impact_score": 6,
+      "sources_count": 1
+    },
+    {
+      "title": "China Is Winning the Cyberwar",
+      "content_type": "analysis",
+      "impact_score": 5,
+      "sources_count": 1
+    }
+  ],
+  "html_length": 22561
+}
