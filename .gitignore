@@ -12,7 +12,7 @@ __pycache__/
 
 # Output directories
 output/
-docs/newsletters/
+# Note: docs/newsletters/ is now committed for archive persistence
 
 # Test results
 tests/*.json
