@@ -13,22 +13,26 @@ from ..metrics.dashboard_generator import DashboardGenerator
 from ..sitemap_generator import SitemapGenerator
 from ..config import Config
 from ..logger import get_logger
+from .newsletter_archive_manager import NewsletterArchiveManager
 
 logger = get_logger(__name__)
 
 class GitHubPagesPublisher:
     """Publishes newsletters to GitHub Pages site."""
     
-    def __init__(self, output_dir: str = "docs"):
+    def __init__(self, output_dir: str = "docs", max_newsletters: int = 10):
         """Initialize GitHub Pages publisher."""
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(exist_ok=True)
+        
+        # Initialize newsletter archive manager
+        self.archive_manager = NewsletterArchiveManager(output_dir, max_newsletters)
         
         # Create necessary subdirectories
         (self.output_dir / "newsletters").mkdir(exist_ok=True)
         (self.output_dir / "assets").mkdir(exist_ok=True)
         
-        logger.info(f"GitHub Pages publisher initialized: {self.output_dir}")
+        logger.info(f"GitHub Pages publisher initialized: {self.output_dir}, max_newsletters: {max_newsletters}")
     
     def publish_newsletter(self, newsletter: Newsletter, analyses: List[AIAnalysis]) -> str:
         """
@@ -42,34 +46,15 @@ class GitHubPagesPublisher:
             URL of published newsletter
         """
         try:
-            # Check for duplicate newsletter (same date)
-            date_str = newsletter.date.strftime('%Y-%m-%d')
-            filename = f"newsletter-{date_str}.html"
-            newsletter_path = self.output_dir / "newsletters" / filename
-
-            if newsletter_path.exists():
-                logger.warning(f"Newsletter for {date_str} already exists. Skipping publication to prevent duplicates.")
-                # Still update site pages and return existing URL
-                self._update_index_page()
-                self._update_archive_page()
-                self._update_about_page()
-                self._update_rss_feed()
-                self._update_dashboard()
-                self._update_sitemap()
-                self._copy_assets()
-
-                relative_url = f"newsletters/{filename}"
-                logger.info(f"Site pages updated, existing newsletter: {relative_url}")
-                return relative_url
-
             # Generate newsletter HTML
             html_content = self._generate_newsletter_html(newsletter, analyses)
 
-            # Save individual newsletter
-            with open(newsletter_path, 'w', encoding='utf-8') as f:
-                f.write(html_content)
+            # Use Archive Manager to add newsletter (handles rotation automatically)
+            newsletter_path = self.archive_manager.add_newsletter(html_content, newsletter.date)
+            
+            logger.info(f"Newsletter added to archive: {newsletter_path}")
 
-            # Update all site pages
+            # Update all site pages with archive-aware content
             self._update_index_page()
             self._update_archive_page()
             self._update_about_page()
@@ -86,6 +71,8 @@ class GitHubPagesPublisher:
             # Copy CSS assets
             self._copy_assets()
 
+            # Extract filename for return URL
+            filename = Path(newsletter_path).name
             relative_url = f"newsletters/{filename}"
             logger.info(f"Newsletter published to: {relative_url}")
 
@@ -227,9 +214,8 @@ class GitHubPagesPublisher:
     def _update_index_page(self):
         """Update the main index page with recent newsletters."""
         
-        # Get list of newsletters sorted by date (newest first)
-        newsletters_dir = self.output_dir / "newsletters"
-        newsletter_files = sorted(newsletters_dir.glob("newsletter-*.html"), reverse=True)
+        # Get list of newsletters from Archive Manager (already sorted, newest first)
+        newsletter_list = self.archive_manager.get_newsletter_list(limit=10)
         
         html = """<!DOCTYPE html>
 <html lang="en">
@@ -264,22 +250,15 @@ class GitHubPagesPublisher:
                 <div class="newsletter-list">
 """
         
-        # Add recent newsletters (last 10)
-        for newsletter_file in newsletter_files[:10]:
-            date_str = newsletter_file.stem.replace('newsletter-', '')
-            try:
-                date_obj = datetime.strptime(date_str, '%Y-%m-%d')
-                formatted_date = date_obj.strftime('%B %d, %Y')
-                
-                html += f"""
+        # Add recent newsletters (up to 10)
+        for newsletter in newsletter_list:
+            html += f"""
                     <article class="newsletter-preview">
-                        <h3><a href="newsletters/{newsletter_file.name}">{formatted_date} Edition</a></h3>
-                        <p class="newsletter-date">{formatted_date}</p>
+                        <h3><a href="{newsletter['relative_path']}">{newsletter['formatted_date']} Edition</a></h3>
+                        <p class="newsletter-date">{newsletter['formatted_date']}</p>
                         <p>Strategic analysis of today's most significant underreported geopolitical developments.</p>
                     </article>
 """
-            except ValueError:
-                continue
         
         html += """
                 </div>
@@ -323,35 +302,31 @@ class GitHubPagesPublisher:
     def _update_archive_page(self):
         """Generate archive page with all published newsletters organized by month/year."""
 
-        # Get all newsletters sorted by date (newest first)
-        newsletters_dir = self.output_dir / "newsletters"
-        newsletter_files = sorted(newsletters_dir.glob("newsletter-*.html"), reverse=True)
+        # Get all newsletters from Archive Manager
+        newsletter_list = self.archive_manager.get_newsletter_list()
 
         # Group newsletters by year and month
         newsletters_by_period = {}
-        for newsletter_file in newsletter_files:
-            date_str = newsletter_file.stem.replace('newsletter-', '')
-            try:
-                date_obj = datetime.strptime(date_str, '%Y-%m-%d')
-                year_month = date_obj.strftime('%Y-%m')
-                year = date_obj.strftime('%Y')
-                month = date_obj.strftime('%B %Y')
+        for newsletter in newsletter_list:
+            date_obj = newsletter['date']
+            year_month = date_obj.strftime('%Y-%m')
+            year = date_obj.strftime('%Y')
+            month = date_obj.strftime('%B %Y')
 
-                if year not in newsletters_by_period:
-                    newsletters_by_period[year] = {}
-                if year_month not in newsletters_by_period[year]:
-                    newsletters_by_period[year][year_month] = {
-                        'month_name': month,
-                        'newsletters': []
-                    }
+            if year not in newsletters_by_period:
+                newsletters_by_period[year] = {}
+            if year_month not in newsletters_by_period[year]:
+                newsletters_by_period[year][year_month] = {
+                    'month_name': month,
+                    'newsletters': []
+                }
 
-                newsletters_by_period[year][year_month]['newsletters'].append({
-                    'date': date_obj,
-                    'filename': newsletter_file.name,
-                    'formatted_date': date_obj.strftime('%B %d, %Y')
-                })
-            except ValueError:
-                continue
+            newsletters_by_period[year][year_month]['newsletters'].append({
+                'date': date_obj,
+                'filename': newsletter['filename'],
+                'formatted_date': newsletter['formatted_date'],
+                'relative_path': newsletter['relative_path']
+            })
 
         html = """<!DOCTYPE html>
 <html lang="en">
@@ -401,7 +376,7 @@ class GitHubPagesPublisher:
                 for newsletter in month_data['newsletters']:
                     html += f"""
                         <article class="newsletter-preview archive-item">
-                            <h4><a href="newsletters/{newsletter['filename']}">{newsletter['formatted_date']} Edition</a></h4>
+                            <h4><a href="{newsletter['relative_path']}">{newsletter['formatted_date']} Edition</a></h4>
                             <p>Strategic analysis of geopolitical developments</p>
                         </article>
 """
@@ -570,14 +545,14 @@ class GitHubPagesPublisher:
         """Generate enhanced RSS feed for subscribers with comprehensive metadata and content."""
 
         try:
-            newsletters_dir = self.output_dir / "newsletters"
-            newsletter_files = sorted(newsletters_dir.glob("newsletter-*.html"), reverse=True)
+            # Get newsletters from Archive Manager (up to 20 for RSS)
+            newsletter_list = self.archive_manager.get_newsletter_list(limit=20)
 
             rss_items = []
-            for newsletter_file in newsletter_files[:20]:  # Last 20 newsletters
+            for newsletter in newsletter_list:
                 try:
-                    date_str = newsletter_file.stem.replace('newsletter-', '')
-                    date_obj = datetime.strptime(date_str, '%Y-%m-%d')
+                    newsletter_file = Path(newsletter['path'])
+                    date_obj = newsletter['date']
 
                     # Generate unique GUID based on date
                     guid = f"geodaily-{date_obj.strftime('%Y%m%d')}"
@@ -1436,11 +1411,16 @@ body {
 
     def get_stats(self) -> dict:
         """Get publishing statistics."""
-        newsletters_dir = self.output_dir / "newsletters"
-        newsletter_count = len(list(newsletters_dir.glob("newsletter-*.html")))
-
+        # Use Archive Manager for statistics
+        archive_stats = self.archive_manager.get_stats()
+        
         return {
-            "total_newsletters": newsletter_count,
+            "total_newsletters": archive_stats['total_newsletters'],
+            "max_newsletters": archive_stats['max_newsletters'],
             "output_directory": str(self.output_dir),
+            "archive_at_capacity": archive_stats['is_at_capacity'],
+            "oldest_newsletter": archive_stats['oldest_newsletter'],
+            "newest_newsletter": archive_stats['newest_newsletter'],
+            "total_size_bytes": archive_stats['total_size_bytes'],
             "last_updated": datetime.now().isoformat()
         }

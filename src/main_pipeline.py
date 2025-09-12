@@ -70,36 +70,8 @@ def run_complete_pipeline() -> bool:
     ai_archiver.start_new_run()
     
     try:
-        # Step 0: Check for duplicate newsletter (same date)
-        current_date = datetime.now().date()
-        from pathlib import Path
-        docs_dir = Path("docs")
-        newsletter_filename = f"newsletter-{current_date.strftime('%Y-%m-%d')}.html"
-        newsletter_path = docs_dir / "newsletters" / newsletter_filename
-
-        # Allow overwriting if explicitly requested via environment variable or debug mode
-        allow_overwrite = Config.DEBUG or os.getenv('ALLOW_OVERWRITE', '').lower() in ('true', '1', 'yes')
-
-        if newsletter_path.exists() and not allow_overwrite:
-            logger.warning(f"Newsletter for {current_date.strftime('%Y-%m-%d')} already exists. Skipping pipeline execution to prevent duplicates.",
-                          pipeline_stage=PipelineStage.INITIALIZATION,
-                          run_id=run_id,
-                          structured_data={
-                              'existing_file': str(newsletter_path),
-                              'reason': 'duplicate_prevention',
-                              'allow_overwrite': allow_overwrite
-                          })
-            pipeline_tracker.track_pipeline_success(run_id, 0)  # Mark as successful with 0 execution time
-            return True  # Return True since this is expected behavior
-        elif newsletter_path.exists() and allow_overwrite:
-            logger.info(f"Newsletter for {current_date.strftime('%Y-%m-%d')} already exists but overwrite is allowed. Continuing with pipeline execution.",
-                       pipeline_stage=PipelineStage.INITIALIZATION,
-                       run_id=run_id,
-                       structured_data={
-                           'existing_file': str(newsletter_path),
-                           'action': 'overwrite_allowed',
-                           'allow_overwrite': allow_overwrite
-                       })
+        # Note: Duplicate prevention is now handled by Archive Manager in GitHubPagesPublisher
+        # The Archive Manager will automatically maintain the rolling archive of 10 newsletters
 
         # Step 1: Validate configuration
         with PerformanceProfiler.profile_operation("config_validation", logger):
@@ -722,8 +694,9 @@ def run_complete_pipeline() -> bool:
             publishing_start = time.time()
 
             try:
-                # GitHub Pages (automatic)
-                github_publisher = GitHubPagesPublisher()
+                # GitHub Pages (automatic) - with Archive Manager (10 newsletter limit)
+                max_newsletters = int(os.getenv('NEWSLETTER_ARCHIVE_SIZE', '10'))
+                github_publisher = GitHubPagesPublisher(max_newsletters=max_newsletters)
                 github_url = github_publisher.publish_newsletter(newsletter, analyses)
                 logger.info(f"✅ Published to GitHub Pages: {github_url}",
                            pipeline_stage=PipelineStage.PUBLISHING,

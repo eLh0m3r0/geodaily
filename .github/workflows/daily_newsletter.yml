@@ -117,6 +117,9 @@ jobs:
         echo "X_THREADS_MAX_DAILY=4" >> $GITHUB_ENV
         echo "X_THREADS_MIN_IMPACT_SCORE=7.0" >> $GITHUB_ENV
 
+        # Newsletter Archive configuration
+        echo "NEWSLETTER_ARCHIVE_SIZE=10" >> $GITHUB_ENV
+
         # Set dry run mode based on input or default to false for scheduled runs
         if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
           echo "DRY_RUN=true" >> $GITHUB_ENV
