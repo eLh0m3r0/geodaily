@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 12 Sep 2025 17:33:44 GMT</pubDate>
-        <lastBuildDate>Fri, 12 Sep 2025 17:33:44 GMT</lastBuildDate>
+        <pubDate>Fri, 12 Sep 2025 17:42:52 GMT</pubDate>
+        <lastBuildDate>Fri, 12 Sep 2025 17:42:52 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -62,7 +62,7 @@
         <item>
         <title><![CDATA[Geopolitical Daily - September 12, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-12.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, September 12, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>NATO Responds to Russian Drone Incursion into Poland</strong>: First direct NATO interception of Russian drones marks escalation in Ukraine conflict. Poland invoked Article 4, triggering enhanced air defense commitment from France, Germany, Denmark. This represen...</li><li><strong>China-Russia Energy Deal Challenges Western Sanctions</strong>: Power of Siberia 2 pipeline breakthrough delivers 50 billion cubic meters annually, fundamentally reshaping global energy markets. US proposes 100% tariffs on China-India over Russian oil trade. Russi...</li><li><strong>China-Russia Military Technology Race Intensifies</strong>: China unveils DF-5C nuclear ICBM with global reach capability, while advancing hypersonic missile technology alongside Russia. Chinese researchers warn of US X-37B space plane as orbital weapon. This ...</li></ul><p><em>Published: September 12, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, September 12, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>NATO Launches 'Eastern Sentry' After Russian Drone Breach</strong>: Russian drones penetrating Polish airspace marks first direct NATO-Russia military confrontation since Ukraine invasion began. NATO's immediate 'Eastern Sentry' mission launch with French, German, Dan...</li><li><strong>China-Russia Energy Alliance Challenges Western Sanctions</strong>: Power of Siberia 2 pipeline breakthrough delivering 50 billion cubic meters annually creates alternative energy architecture bypassing Western systems. Combined with proposed Russia-China financial cl...</li><li><strong>China-Russia Military Tech Race Reshapes Strategic Balance</strong>: China's DF-5C ICBM 'always on alert' capability and hypersonic missile advances alongside Russian developments fundamentally alter nuclear deterrence calculations. Combined with PLA barge fleet deploy...</li></ul><p><em>Published: September 12, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
         <pubDate>Fri, 12 Sep 2025 06:00:00 GMT</pubDate>
         <guid isPermaLink="false">geodaily-20250912</guid>
         <author>Geopolitical Daily Editorial Team</author>
@@ -72,7 +72,6 @@
         <category><![CDATA[China]]></category>
         <category><![CDATA[Russia]]></category>
         <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-12.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
