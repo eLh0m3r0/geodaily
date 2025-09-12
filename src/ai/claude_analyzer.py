@@ -803,11 +803,69 @@ Return ONLY the JSON array, no additional text. Select exactly {target_stories} 
         
         return "\n\n".join(summaries)
     
-    def _build_analysis_prompt(self, articles_summary: str, main_article: Article) -> str:
-        """Build the analysis prompt for Claude."""
-        return f"""You are a geopolitical analyst creating a daily briefing that balances breaking news, in-depth analysis, and emerging trends.
+    def _load_recent_newsletter_history(self, days_back: int = 2) -> str:
+        """Load recent newsletter titles for diversity context."""
+        try:
+            from datetime import datetime, timedelta
+            import os
+            
+            # Import BeautifulSoup safely
+            try:
+                from bs4 import BeautifulSoup
+            except ImportError:
+                logger.warning("BeautifulSoup not available, skipping newsletter history")
+                return "Newsletter history unavailable - missing BeautifulSoup"
+            
+            history_entries = []
+            today = datetime.now().date()
+            
+            # Look for newsletters from previous days (skip today)
+            for i in range(1, days_back + 1):
+                date = today - timedelta(days=i)
+                date_str = date.strftime('%Y-%m-%d')
+                newsletter_path = os.path.join("docs", "newsletters", f"newsletter-{date_str}.html")
+                
+                if os.path.exists(newsletter_path):
+                    try:
+                        with open(newsletter_path, 'r', encoding='utf-8') as f:
+                            soup = BeautifulSoup(f.read(), 'html.parser')
+                            titles = [elem.get_text().strip() 
+                                     for elem in soup.find_all('h2', class_='story-title')]
+                        
+                        if titles:
+                            history_entries.append(f"Day -{i} ({date_str}): {' | '.join(titles)}")
+                    except Exception as e:
+                        logger.warning(f"Error parsing newsletter {newsletter_path}: {e}")
+                        continue
+            
+            return "\n".join(history_entries) if history_entries else "No recent newsletter history found."
+            
+        except Exception as e:
+            logger.warning(f"Newsletter history loading failed: {e}")
+            return "Newsletter history unavailable due to error."
 
-Analyze the following cluster of articles and classify the story into one of three content types:
+    def _build_analysis_prompt(self, articles_summary: str, main_article: Article) -> str:
+        """Build the analysis prompt for Claude with newsletter history context."""
+        
+        # Load newsletter history for diversity awareness
+        newsletter_context = ""
+        if Config.ENABLE_NEWSLETTER_HISTORY:
+            newsletter_history = self._load_recent_newsletter_history(Config.NEWSLETTER_HISTORY_DAYS)
+            newsletter_context = f"""
+RECENT NEWSLETTER COVERAGE (Last {Config.NEWSLETTER_HISTORY_DAYS} days):
+{newsletter_history}
+
+DIVERSITY REQUIREMENTS:
+- AVOID stories with identical or very similar titles to recent coverage above
+- AVOID same actors doing similar actions (Putin/Russia, Trump/US, China/Xi repeatedly)
+- PRIORITIZE different geographic regions and new geopolitical angles
+- ENSURE variety: breaking news (~25%), analysis (~50%), trends (~25%)
+
+"""
+        
+        return f"""You are a geopolitical analyst creating today's briefing with strategic diversity awareness.
+
+{newsletter_context}Analyze the following cluster of articles and classify the story into one of three content types:
 - breaking_news: Immediate developments, urgent events, or time-sensitive announcements
 - analysis: In-depth examination of ongoing situations, strategic implications, or policy impacts
 - trend: Emerging patterns, long-term developments, or evolving geopolitical dynamics

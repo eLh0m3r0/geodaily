@@ -43,6 +43,10 @@ class Config:
     AI_TEMPERATURE = float(os.getenv("AI_TEMPERATURE", "0.3"))
     AI_MAX_COST_PER_DAY = float(os.getenv("AI_MAX_COST_PER_DAY", "2.0"))  # $2/day limit
     
+    # Newsletter History Configuration (for duplicate prevention)
+    NEWSLETTER_HISTORY_DAYS = int(os.getenv("NEWSLETTER_HISTORY_DAYS", "2"))  # Look back 2 days
+    ENABLE_NEWSLETTER_HISTORY = os.getenv("ENABLE_NEWSLETTER_HISTORY", "true").lower() == "true"
+    
     # Scraping Configuration
     REQUEST_TIMEOUT = int(os.getenv("REQUEST_TIMEOUT", "30"))
     MAX_RETRIES = int(os.getenv("MAX_RETRIES", "3"))
