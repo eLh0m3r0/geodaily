@@ -310,7 +310,7 @@ class RSSCollector:
         return text
 
     def _is_recent_article(self, article) -> bool:
-        """Check if article was published within the last 48 hours."""
+        """Check if article was published within the last 24 hours."""
         from datetime import datetime, timezone, timedelta
 
         if not article.published_date:
@@ -323,9 +323,9 @@ class RSSCollector:
         # Get current time in UTC
         now = datetime.now(timezone.utc)
 
-        # Check if article is from last 48 hours
+        # Check if article is from last 24 hours
         time_diff = now - article.published_date
-        is_recent = time_diff <= timedelta(hours=48)
+        is_recent = time_diff <= timedelta(hours=24)
 
         logger.debug(f"Article age check: {article.title[:50]}... - {time_diff} - Recent: {is_recent}",
                    pipeline_stage=PipelineStage.COLLECTION,
