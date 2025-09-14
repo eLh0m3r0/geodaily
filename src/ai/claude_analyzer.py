@@ -331,8 +331,20 @@ class ClaudeAnalyzer:
     
     def _build_multi_article_analysis_prompt(self, articles_summary: str, target_stories: int) -> str:
         """Build the analysis prompt for multiple articles selection."""
-        return f"""You are a geopolitical analyst creating a daily briefing that balances breaking news, in-depth analysis, and emerging trends.
+        
+        # Load newsletter history for diversity awareness
+        newsletter_context = ""
+        if Config.ENABLE_NEWSLETTER_HISTORY:
+            newsletter_history = self._load_recent_newsletter_history(Config.NEWSLETTER_HISTORY_DAYS)
+            newsletter_context = f"""
+RECENT NEWSLETTER COVERAGE (Last {Config.NEWSLETTER_HISTORY_DAYS} days):
+{newsletter_history}
 
+**AVOID REPEATING RECENT TOPICS** - Select stories that complement, not duplicate, recent coverage.
+"""
+        
+        return f"""You are a geopolitical analyst creating a daily briefing that balances breaking news, in-depth analysis, and emerging trends.
+{newsletter_context}
 Analyze the following {len(articles_summary.split('Article '))-1} articles and select the {target_stories} most important stories for today's geopolitical newsletter. Focus on:
 
 1. **Strategic significance** - Stories that impact international relations, power dynamics, or regional stability
@@ -352,7 +364,7 @@ For each selected story, provide analysis in this exact JSON format, enclosed in
 [
   {{
     "article_index": [1-based index of selected article],
-    "story_title": "Concise, engaging title (max 60 characters)",
+    "story_title": "Concise, engaging title (natural length, avoid truncation)",
     "content_type": "breaking_news|analysis|trend",
     "why_important": "Strategic significance and implications (max 80 words)",
     "what_overlooked": "What mainstream media is missing or underemphasizing (max 40 words)",
@@ -420,7 +432,7 @@ Return ONLY the JSON array, no additional text. Select exactly {target_stories} 
                 
                 # Create AIAnalysis object
                 analysis = AIAnalysis(
-                    story_title=data['story_title'][:60],
+                    story_title=data['story_title'],
                     why_important=data['why_important'],
                     what_overlooked=data['what_overlooked'],
                     prediction=data['prediction'],
@@ -477,7 +489,7 @@ Return ONLY the JSON array, no additional text. Select exactly {target_stories} 
             self.simulated_cost += simulated_cost_increment
 
             analysis = AIAnalysis(
-                story_title=article.title[:60],
+                story_title=article.title,
                 why_important=why_important,
                 what_overlooked=what_overlooked,
                 prediction=prediction,
@@ -874,7 +886,7 @@ DIVERSITY REQUIREMENTS:
 
 Provide analysis in this exact JSON format:
 {{
-  "story_title": "Concise, engaging title (max 60 characters)",
+  "story_title": "Concise, engaging title (natural length, avoid truncation)",
   "content_type": "breaking_news|analysis|trend",
   "why_important": "Strategic significance and implications (max 80 words)",
   "what_overlooked": "What mainstream media is missing or underemphasizing (max 40 words)",

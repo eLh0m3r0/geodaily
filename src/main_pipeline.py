@@ -1019,7 +1019,7 @@ def create_mock_analyses_from_articles(articles):
         impact_score = min(8, max(4, impact_score))
         
         analysis = AIAnalysis(
-            story_title=article.title[:60],
+            story_title=article.title,
             why_important=f"This story represents a significant development in {article.source_category.value} geopolitics with potential implications for international relations and strategic decision-making.",
             what_overlooked="Mainstream media coverage may be missing the broader strategic implications and second-order effects of this development.",
             prediction="This situation will likely evolve over the coming weeks with potential impacts on regional stability and international partnerships.",
