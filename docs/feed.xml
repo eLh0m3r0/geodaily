@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sun, 14 Sep 2025 06:35:06 GMT</pubDate>
-        <lastBuildDate>Sun, 14 Sep 2025 06:35:06 GMT</lastBuildDate>
+        <pubDate>Sun, 14 Sep 2025 21:52:01 GMT</pubDate>
+        <lastBuildDate>Sun, 14 Sep 2025 21:52:01 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -62,7 +62,7 @@
         <item>
         <title><![CDATA[Geopolitical Daily - September 14, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-14.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, September 14, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump Demands NATO End Russian Oil Purchases Before US Sanct</strong>: Trump is conditioning major US sanctions on Russia based on NATO allies first halting Russian oil purchases, creating unprecedented pressure on European energy security. This represents a fundamental ...</li><li><strong>China-Russia Gas Deal Reshapes Global Energy Geopolitics</strong>: The Power of Siberia 2 pipeline breakthrough will transport 50 billion cubic meters of Russian gas annually to China via Mongolia, fundamentally altering global energy flows. This massive infrastructu...</li><li><strong>Russian Drones Breach NATO Airspace, Triggering Military Res</strong>: Russian drones have violated Polish and Romanian airspace, marking the first direct NATO interception of Russian military assets since the Ukraine conflict began. This escalation tests Article 5 bound...</li></ul><p><em>Published: September 14, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, September 14, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump Demands NATO End Russian Oil Purchases for New Sanctio</strong>: Trump's conditional approach to Russia sanctions represents a major shift in US foreign policy, potentially fracturing NATO unity. By making US action contingent on European energy sacrifices, this co...</li><li><strong>Russian Drones Breach NATO Territory in Poland and Romania</strong>: Russian drone incursions into NATO territory mark a dangerous escalation that could trigger Article 5 collective defense provisions. These violations test NATO's response mechanisms and represent the ...</li><li><strong>China Links TikTok Operations to US Trade Talks Progress</strong>: China's explicit linkage of TikTok's US operations to trade negotiations represents a significant escalation in tech-economic warfare. This creates a direct connection between national security concer...</li></ul><p><em>Published: September 14, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
         <pubDate>Sun, 14 Sep 2025 06:00:00 GMT</pubDate>
         <guid isPermaLink="false">geodaily-20250914</guid>
         <author>Geopolitical Daily Editorial Team</author>
@@ -71,7 +71,6 @@
         <category><![CDATA[International Relations]]></category>
         <category><![CDATA[China]]></category>
         <category><![CDATA[Russia]]></category>
-        <category><![CDATA[United States]]></category>
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
