@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sun, 14 Sep 2025 21:58:20 GMT</pubDate>
-        <lastBuildDate>Sun, 14 Sep 2025 21:58:20 GMT</lastBuildDate>
+        <pubDate>Mon, 15 Sep 2025 06:40:52 GMT</pubDate>
+        <lastBuildDate>Mon, 15 Sep 2025 06:40:52 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,24 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - September 15, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-15.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Monday, September 15, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russian Drone Incursions Test NATO's Eastern Defenses</strong>: Russian drones have violated NATO airspace in both Romania and Poland, marking a dangerous escalation that tests Article 5 boundaries. This represents the first direct territorial violations by Russia...</li><li><strong>US-China Trade Talks Resume as TikTok Deadline Approaches</strong>: Fourth round of US-China trade negotiations in Madrid coincides with looming TikTok ban deadline, representing critical juncture for world's two largest economies. Success or failure will determine wh...</li><li><strong>China's Economic Slowdown Signals Global Implications</strong>: China's retail sales and industrial output missed forecasts in August, growing at slowest pace this year amid property downturn and trade pressures. As world's second-largest economy, China's weakness...</li></ul><p><em>Published: September 15, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Mon, 15 Sep 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20250915</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-15.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - September 14, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-14.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, September 14, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russian Drones Breach NATO Airspace in Poland and Romania</strong>: Russian drones have violated NATO territory in both Poland and Romania, marking a dangerous escalation that tests Article 5 collective defense principles. This represents the first direct Russian mili...</li><li><strong>Australia Commits $8B to Nuclear Submarine Infrastructure</strong>: Australia's massive nuclear submarine investment signals deepening AUKUS alliance commitment and Indo-Pacific militarization against China's growing naval power. This represents the largest Australian...</li><li><strong>China-US Trade Talks Resume in Madrid Amid TikTok Tensions</strong>: Fourth round of China-US trade negotiations occurs as Beijing conditions progress on TikTok's continued US operations, highlighting how technology and trade are increasingly intertwined in superpower ...</li></ul><p><em>Published: September 14, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
