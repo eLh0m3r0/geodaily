@@ -1,8 +1,14 @@
 {
-  "last_updated": "2025-09-17T06:38:41.013651",
-  "total_newsletters": 8,
+  "last_updated": "2025-09-18T13:08:01.998012",
+  "total_newsletters": 9,
   "max_newsletters": 10,
   "newsletters": [
+    {
+      "filename": "newsletter-2025-09-18.html",
+      "date": "2025-09-18T00:00:00",
+      "formatted_date": "September 18, 2025",
+      "relative_path": "newsletters/newsletter-2025-09-18.html"
+    },
     {
       "filename": "newsletter-2025-09-17.html",
       "date": "2025-09-17T00:00:00",
