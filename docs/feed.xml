@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sun, 21 Sep 2025 06:36:51 GMT</pubDate>
-        <lastBuildDate>Sun, 21 Sep 2025 06:36:51 GMT</lastBuildDate>
+        <pubDate>Mon, 22 Sep 2025 06:40:33 GMT</pubDate>
+        <lastBuildDate>Mon, 22 Sep 2025 06:40:33 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,23 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - September 22, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-22.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Monday, September 22, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump Cuts Baltic NATO Security Aid After Ukraine Diplomacy</strong>: Pentagon's threat to cut security assistance to Latvia, Lithuania, and Estonia represents a fundamental shift in NATO burden-sharing dynamics. This move signals Trump's transactional approach to allia...</li><li><strong>Iran Nuclear Crisis Escalates as Vienna Talks Collapse</strong>: Iran's decision to halt UN nuclear watchdog cooperation following European sanctions reimposition marks a critical escalation in the nuclear standoff. This breakdown occurs as international sanctions ...</li><li><strong>US-Taiwan Joint Missile Production Signals Defense Shift</strong>: The Barracuda-500 missile represents unprecedented US-Taiwan military cooperation, moving beyond arms sales to joint production. This deepens military integration as China increases pressure, potentia...</li></ul><p><em>Published: September 22, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Mon, 22 Sep 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20250922</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-22.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - September 21, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-21.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, September 21, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Xi-Trump Call Offers Stability Hope Amid Taiwan-Tariff Tensi</strong>: The phone call between Xi and Trump represents a crucial diplomatic moment for the world's most consequential bilateral relationship. With ongoing tensions over Taiwan and potential tariffs threatenin...</li><li><strong>Russian Jets Breach NATO Airspace in Unprecedented Escalatio</strong>: Three Russian MiG-31 fighters violated Estonian airspace for 12 minutes in what officials called an 'unprecedentedly brazen' act. This direct challenge to NATO Article 5 territory represents a dangero...</li><li><strong>UN Sanctions Snap Back on Iran as Nuclear Crisis Deepens</strong>: The UN Security Council failed to prevent reimposition of comprehensive sanctions on Iran's nuclear program after the E3 (France, Germany, UK) triggered the snapback mechanism. Iran responded by suspe...</li></ul><p><em>Published: September 21, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -215,23 +232,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-13.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - September 12, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-12.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, September 12, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>NATO Launches Eastern Sentry After Russian Drone Breach</strong>: Russian drones penetrating Polish airspace marks the first direct NATO interception since Ukraine war began, triggering Article 4 consultations and a new NATO defense mission. This escalation demonstr...</li><li><strong>US Pushes 100% Tariffs on China-India Over Russian Energy</strong>: Washington's proposal for punitive tariffs against China and India for purchasing Russian oil represents a dramatic escalation in economic warfare. The simultaneous China-Russia gas deal worth 50 bill...</li><li><strong>China-Russia Military Tech Race Accelerates</strong>: China's unveiling of the DF-5C nuclear ICBM with global reach capability, combined with advances in hypersonic weapons and space-based military assets, signals a fundamental shift in strategic balance...</li></ul><p><em>Published: September 12, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Fri, 12 Sep 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20250912</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[United States]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-12.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
