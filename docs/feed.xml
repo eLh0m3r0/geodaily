@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Mon, 22 Sep 2025 06:40:33 GMT</pubDate>
-        <lastBuildDate>Mon, 22 Sep 2025 06:40:33 GMT</lastBuildDate>
+        <pubDate>Tue, 23 Sep 2025 06:39:34 GMT</pubDate>
+        <lastBuildDate>Tue, 23 Sep 2025 06:39:34 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,21 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - September 23, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-23.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, September 23, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Putin Offers Nuclear Treaty Extension to US</strong>: Putin's offer to extend New START nuclear arms limits represents a rare diplomatic opening amid escalating tensions. With the treaty expiring in February, this proposal could prevent an unconstrained ...</li><li><strong>Iran Seeks Nuclear Diplomacy as Sanctions Loom</strong>: Iran's Foreign Minister meeting with UN nuclear watchdog officials signals urgent diplomatic efforts to prevent reimposition of UN sanctions. With the nuclear program advancing and regional tensions h...</li><li><strong>Russia's Aggressive Moldova Election Interference</strong>: Moldova's upcoming parliamentary election faces unprecedented Russian interference that goes far beyond typical influence operations. This represents a direct challenge to European democracy and could...</li></ul><p><em>Published: September 23, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Tue, 23 Sep 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20250923</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Europe]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-23.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - September 22, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-22.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Monday, September 22, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump Cuts Baltic NATO Security Aid After Ukraine Diplomacy</strong>: Pentagon's threat to cut security assistance to Latvia, Lithuania, and Estonia represents a fundamental shift in NATO burden-sharing dynamics. This move signals Trump's transactional approach to allia...</li><li><strong>Iran Nuclear Crisis Escalates as Vienna Talks Collapse</strong>: Iran's decision to halt UN nuclear watchdog cooperation following European sanctions reimposition marks a critical escalation in the nuclear standoff. This breakdown occurs as international sanctions ...</li><li><strong>US-Taiwan Joint Missile Production Signals Defense Shift</strong>: The Barracuda-500 missile represents unprecedented US-Taiwan military cooperation, moving beyond arms sales to joint production. This deepens military integration as China increases pressure, potentia...</li></ul><p><em>Published: September 22, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -216,22 +231,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-14.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - September 13, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-13.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, September 13, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>China-Russia Gas Deal Reshapes Global Energy Geopolitics</strong>: The Power of Siberia 2 pipeline deal for 50 billion cubic meters annually represents a massive geopolitical shift, deepening China-Russia energy ties while potentially undermining Western sanctions ef...</li><li><strong>NATO Responds to First Russian Drone Incursion Over Poland</strong>: Russian drones penetrating Polish airspace marks the first direct NATO military response to Russian aggression, with alliance fighters shooting down multiple drones. This unprecedented escalation trig...</li><li><strong>Trump Warns Putin: Patience 'Running Out Fast' on Ukraine</strong>: Trump's public warning to Putin signals potential shift from diplomatic engagement to confrontational approach, threatening 'very strong' sanctions on Russian banks and oil. This represents a signific...</li></ul><p><em>Published: September 13, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sat, 13 Sep 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20250913</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-13.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
