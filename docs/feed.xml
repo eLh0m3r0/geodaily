@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sun, 28 Sep 2025 06:34:24 GMT</pubDate>
-        <lastBuildDate>Sun, 28 Sep 2025 06:34:24 GMT</lastBuildDate>
+        <pubDate>Mon, 29 Sep 2025 06:39:54 GMT</pubDate>
+        <lastBuildDate>Mon, 29 Sep 2025 06:39:54 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,23 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - September 29, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-29.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Monday, September 29, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russian strikes kill 4 in Ukraine as Zelenskyy urges world n</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>China claims its green, US leaves the scene</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>Russia says ‘no signals’ from Ukraine on peace talks as it f</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: September 29, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Mon, 29 Sep 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20250929</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-29.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - September 28, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-28.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, September 28, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russian-occupied Zaporizhzhia nuclear plant off-grid for day</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>Ukraine war at an oil turning point</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>Russia warns NATO, EU: any aggression will be met with 'deci</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: September 28, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -209,24 +226,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-20.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - September 19, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-19.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, September 19, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump Vows to Reclaim Afghan Bagram Base, Cites China Threat</strong>: Trump's plan to retake Bagram Air Base represents a major shift in US-Afghanistan policy and signals escalating US-China strategic competition. The base's proximity to Chinese nuclear facilities makes...</li><li><strong>Russian Drone Incursions Test NATO's Eastern Defenses</strong>: Russian drones violating Polish and Romanian airspace represent a direct challenge to NATO's Article 5 credibility. Poland's response of partnering with Ukraine on drone warfare and shutting airports ...</li><li><strong>UN Security Council Votes on Reimposing Iran Nuclear Sanctio</strong>: The E3 triggering snapback sanctions against Iran marks a critical escalation in nuclear diplomacy, potentially ending the JCPOA framework permanently. This vote could reshape Middle East security arc...</li></ul><p><em>Published: September 19, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Fri, 19 Sep 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20250919</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-19.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
