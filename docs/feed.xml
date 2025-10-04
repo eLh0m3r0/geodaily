@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 03 Oct 2025 06:36:09 GMT</pubDate>
-        <lastBuildDate>Fri, 03 Oct 2025 06:36:09 GMT</lastBuildDate>
+        <pubDate>Sat, 04 Oct 2025 06:34:14 GMT</pubDate>
+        <lastBuildDate>Sat, 04 Oct 2025 06:34:14 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - October 04, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-04.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, October 04, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Guinea’s Call to Elections Exposes Military Bid to Cling to</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>Türkiye rejects US demand to abandon Russian gas</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>'This is the moment to invite the world to reconstruct Gaza'</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: October 04, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sat, 04 Oct 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251004</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-04.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - October 03, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-03.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, October 03, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Drone superpower Ukraine is teaching NATO how to defend agai</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>Mapping Conflict: Russia’s Growing Influence in Africa</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>Putin calls detention of Russia-linked tanker by France 'pir</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: October 03, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -207,24 +223,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-25.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - September 24, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-24.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, September 24, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump's Ukraine Policy U-Turn: From Concessions to Total Vic</strong>: Trump's dramatic reversal from advocating Ukrainian territorial concessions to supporting complete territorial recovery represents a seismic shift in US foreign policy. This change could fundamentally...</li><li><strong>Russian Airspace Violations Test NATO's Article 5 Resolve</strong>: Escalating Russian drone and fighter jet incursions into NATO territory (Poland, Romania, Estonia, Denmark) represent the most serious test of Article 5 collective defense since the alliance's foundin...</li><li><strong>Iran Nuclear Crisis: Sanctions Snapback as Diplomacy Fails</strong>: Iran faces imminent UN sanctions reimposition as last-ditch European diplomacy fails and Khamenei rejects US talks. This crisis threatens Middle East stability, could trigger Israeli military action, ...</li></ul><p><em>Published: September 24, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Wed, 24 Sep 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20250924</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-24.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
