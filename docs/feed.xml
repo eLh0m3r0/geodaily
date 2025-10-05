@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sat, 04 Oct 2025 06:34:14 GMT</pubDate>
-        <lastBuildDate>Sat, 04 Oct 2025 06:34:14 GMT</lastBuildDate>
+        <pubDate>Sun, 05 Oct 2025 06:33:46 GMT</pubDate>
+        <lastBuildDate>Sun, 05 Oct 2025 06:33:46 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,21 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - October 05, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-05.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, October 05, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Hong Kong shipper Wah Kwong joins push for greener energy at</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>Russia strikes hit two passenger trains in northern Ukraine</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>Malaysia’s ‘2 kitchens’: an appetising solution to the US-Ch</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: October 05, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sun, 05 Oct 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251005</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-05.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - October 04, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-04.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, October 04, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Guinea’s Call to Elections Exposes Military Bid to Cling to</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>Türkiye rejects US demand to abandon Russian gas</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>'This is the moment to invite the world to reconstruct Gaza'</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: October 04, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -207,22 +222,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-26.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - September 25, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-25.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, September 25, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump's Ukraine Reversal: From Peace Talks to Victory Push</strong>: Trump's dramatic shift from seeking quick peace to declaring Ukraine can 'win back all territory' fundamentally alters US strategy and global expectations. This reversal pressures Europe to increase s...</li><li><strong>Europe Faces Strategic Isolation as US Shifts Ukraine Burden</strong>: Trump's 'good luck to all' message signals potential US disengagement from European security, forcing the EU to assume primary responsibility for containing Russia. This represents the most significan...</li><li><strong>North Korea's Nuclear Arsenal: Two Tonnes of Weapons-Grade U</strong>: South Korea's assessment that North Korea possesses enough highly enriched uranium for dozens of nuclear weapons represents a critical escalation in regional security threats. This capability fundamen...</li></ul><p><em>Published: September 25, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Thu, 25 Sep 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20250925</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-09-25.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
