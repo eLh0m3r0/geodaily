@@ -38,8 +38,8 @@ class Config:
 
     # AI Configuration
     AI_PROVIDER = os.getenv("AI_PROVIDER", "anthropic")
-    AI_MODEL = os.getenv("AI_MODEL", "claude-sonnet-4-20250514")  # Use Sonnet 4 for better quality
-    AI_MAX_TOKENS = int(os.getenv("AI_MAX_TOKENS", "8000"))  # Higher limit for Sonnet 4
+    AI_MODEL = os.getenv("AI_MODEL", "claude-haiku-4-5-20251001")  # Use Haiku 4.5 for cost efficiency
+    AI_MAX_TOKENS = int(os.getenv("AI_MAX_TOKENS", "8000"))  # Token limit for Haiku 4.5
     AI_TEMPERATURE = float(os.getenv("AI_TEMPERATURE", "0.3"))
     AI_MAX_COST_PER_DAY = float(os.getenv("AI_MAX_COST_PER_DAY", "2.0"))  # $2/day limit
     
