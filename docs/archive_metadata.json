@@ -1,8 +1,14 @@
 {
-  "last_updated": "2025-10-19T06:36:15.421602",
+  "last_updated": "2025-10-20T06:39:52.111403",
   "total_newsletters": 10,
   "max_newsletters": 10,
   "newsletters": [
+    {
+      "filename": "newsletter-2025-10-20.html",
+      "date": "2025-10-20T00:00:00",
+      "formatted_date": "October 20, 2025",
+      "relative_path": "newsletters/newsletter-2025-10-20.html"
+    },
     {
       "filename": "newsletter-2025-10-19.html",
       "date": "2025-10-19T00:00:00",
@@ -56,12 +62,6 @@
       "date": "2025-10-11T00:00:00",
       "formatted_date": "October 11, 2025",
       "relative_path": "newsletters/newsletter-2025-10-11.html"
-    },
-    {
-      "filename": "newsletter-2025-10-10.html",
-      "date": "2025-10-10T00:00:00",
-      "formatted_date": "October 10, 2025",
-      "relative_path": "newsletters/newsletter-2025-10-10.html"
     }
   ]
 }
