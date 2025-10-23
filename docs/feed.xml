@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Wed, 22 Oct 2025 06:40:14 GMT</pubDate>
-        <lastBuildDate>Wed, 22 Oct 2025 06:40:14 GMT</lastBuildDate>
+        <pubDate>Thu, 23 Oct 2025 06:39:47 GMT</pubDate>
+        <lastBuildDate>Thu, 23 Oct 2025 06:39:47 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - October 23, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-23.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, October 23, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump Sanctions Russian Oil Giants as Ukraine Peace Talks St</strong>: Trump administration's first major sanctions against Russia signal hardening stance after failed Budapest summit negotiations. Targeting Rosneft and Lukoil directly attacks Kremlin's war financing. Co...</li><li><strong>NATO Escalation: Nuclear Drills, Airspace Violations, Polish</strong>: Russia conducted strategic nuclear exercises amid NATO's annual drills, creating dangerous escalation cycle. Russian aircraft violated NATO airspace multiple times in Poland, Lithuania, Latvia, Romani...</li><li><strong>Indo-Pacific Power Shift: China Faces Allied Defense Coordin</strong>: India, South Korea, and Australia deepening defense ties amid concerns about US security commitment gaps. Japan's new hawkish PM Takaichi Sanae signals tougher China stance. China's GJ-X stealth drone...</li></ul><p><em>Published: October 23, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Thu, 23 Oct 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251023</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-23.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - October 22, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-22.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, October 22, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump-Putin Budapest Summit Collapses Over Ukraine Ceasefire</strong>: The postponement of Trump's planned summit with Putin represents a critical diplomatic failure that undermines Trump's central campaign promise to quickly end the Ukraine war. Putin's rejection of cea...</li><li><strong>US-China Trade War Escalates: Rare Earths Weaponization Begi</strong>: China's expansion of rare earth export restrictions represents a fundamental shift from trade disputes to strategic resource weaponization. Combined with Trump's tariff threats and currency swap discu...</li><li><strong>Russia's War Economy Fractures: Energy Infrastructure Collap</strong>: Ukraine's successful strikes on Russian energy infrastructure expose critical vulnerabilities in Putin's war machine. Atlantic Council and Foreign Affairs analyses indicate Russia's economy is far mor...</li></ul><p><em>Published: October 22, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -207,22 +223,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-14.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - October 13, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-13.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Monday, October 13, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russian attacks on Ukraine’s power grid intensify as winter</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>EU prepares to offer Ukraine Russia’s frozen billions</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>Russia attacks Ukraine power grid, Moscow expresses 'extreme</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: October 13, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Mon, 13 Oct 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251013</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-13.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
