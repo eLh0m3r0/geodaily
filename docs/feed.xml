@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 24 Oct 2025 06:38:09 GMT</pubDate>
-        <lastBuildDate>Fri, 24 Oct 2025 06:38:09 GMT</lastBuildDate>
+        <pubDate>Sat, 25 Oct 2025 06:35:39 GMT</pubDate>
+        <lastBuildDate>Sat, 25 Oct 2025 06:35:39 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,21 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - October 25, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-25.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, October 25, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump's Russia Oil Sanctions: Coalition Strategy vs. Kremlin</strong>: Trump imposed first sanctions targeting Rosneft and Lukoil, attempting to pressure Russia into ceasefire negotiations. Simultaneously, a Western 'coalition of the willing' in London pledged to remove ...</li><li><strong>Zelensky's London Coalition: Europe Mobilizes Without Trump</strong>: Zelensky convened 24 European leaders in London to coordinate military aid and pressure on Russia, explicitly stating Ukraine wants US involvement but proceeding without Trump. This signals European r...</li><li><strong>North Korea's Crypto Sanctions Evasion: New Hybrid Threat Mo</strong>: UN monitoring groups report North Korea systematically circumventing sanctions via cryptocurrency for weapons procurement and deploying IT workers abroad for money laundering. This reveals sophisticat...</li></ul><p><em>Published: October 25, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sat, 25 Oct 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251025</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-25.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - October 24, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-24.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, October 24, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US-EU Sanctions Squeeze Russia's Oil Economy as China, India</strong>: Coordinated US-EU sanctions targeting Russia's largest oil producers (Rosneft, Lukoil) represent a significant escalation in economic pressure. China and India—Russia's primary oil customers—are repor...</li><li><strong>Trump's Ukraine Strategy Shift: Sanctions Over Support, Talk</strong>: Trump administration is pivoting from military aid to economic pressure and diplomatic engagement. Closed-door meetings with Zelensky reportedly excluded Tomahawk missiles; instead, Trump is pursuing ...</li><li><strong>CRINK Alliance Deepens: North Korea Joins Russia-China-Iran</strong>: North Korean troops now formally integrated into Russia's Ukraine war effort with Kim Jong Un celebrating the military alliance. This represents the emergence of a genuine anti-Western bloc (China-Rus...</li></ul><p><em>Published: October 24, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -208,23 +223,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-16.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - October 15, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-15.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, October 15, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russian strikes on Ukraine’s energy infrastructure are a Eur</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>Tomahawk missiles are Russia’s latest red line. Will Trump c</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>Israeli Forces Fire on Palestinians in Northern Gaza</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: October 15, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Wed, 15 Oct 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251015</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-15.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
