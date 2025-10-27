@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sun, 26 Oct 2025 06:36:46 GMT</pubDate>
-        <lastBuildDate>Sun, 26 Oct 2025 06:36:46 GMT</lastBuildDate>
+        <pubDate>Mon, 27 Oct 2025 06:43:08 GMT</pubDate>
+        <lastBuildDate>Mon, 27 Oct 2025 06:43:08 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - October 27, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-27.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Monday, October 27, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US-China Trade Framework Agreement Signals Potential Tariff</strong>: Days before Xi-Jinping and Trump meet, both nations agreed on a trade deal framework. This represents the most significant diplomatic breakthrough in US-China relations in months, with potential to re...</li><li><strong>Trump's Sanctions Strategy Tests Russia's War Economy Vulner</strong>: Trump administration escalates sanctions targeting Russian oil revenues while simultaneously pursuing peace negotiations. This dual-track approach exposes critical fractures in Russia's war economy, c...</li><li><strong>India-China Resume Direct Flights After 5-Year Suspension</strong>: First commercial flights between India and China since 2020 border tensions signal cautious diplomatic thaw between Asia's two most populous nations. This symbolic gesture indicates both countries pri...</li></ul><p><em>Published: October 27, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Mon, 27 Oct 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251027</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-27.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - October 26, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-26.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, October 26, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump-Xi Meeting: Trade Deal Prospects Amid Taiwan Tensions</strong>: Trump's imminent meeting with Xi Jinping represents the most significant US-China diplomatic engagement in months. The administration seeks a comprehensive trade deal while maintaining Taiwan support,...</li><li><strong>Ukraine Peace Stalls: Trump Cancels Putin Meeting, Escalates</strong>: Trump's cancellation of Putin meeting and new sanctions on Russian oil companies signal deteriorating Ukraine peace prospects. This reverses Trump's earlier dovish positioning and indicates Russia's i...</li><li><strong>Critical Minerals War: US-EU-China Competition Reshapes Supp</strong>: Competition for rare earths and critical minerals is becoming a primary geopolitical battleground. Von der Leyen's hardline stance, Kenya's rare earth deposits, and the Nexperia chipmaker dispute reve...</li></ul><p><em>Published: October 26, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -206,23 +222,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-18.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - October 17, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-17.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, October 17, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Brussels and Beijing lawmakers spar over Russia, Taiwan in f</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>Taiwan Strait: Managing Europe’s Risk in a Global Hotspot</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>3 Singaporeans sanctioned over links to Cambodia’s Chen Zhi</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: October 17, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Fri, 17 Oct 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251017</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-17.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
