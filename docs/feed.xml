@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sat, 01 Nov 2025 06:36:24 GMT</pubDate>
-        <lastBuildDate>Sat, 01 Nov 2025 06:36:24 GMT</lastBuildDate>
+        <pubDate>Sun, 02 Nov 2025 06:37:41 GMT</pubDate>
+        <lastBuildDate>Sun, 02 Nov 2025 06:37:41 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 02, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-02.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, November 02, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump-Xi Summit Pauses US-China Trade War With Military Chan</strong>: The Trump-Xi meeting represents a critical diplomatic breakthrough after escalating tensions. Agreements on rare earth suspensions, semiconductor probes, and military-to-military channels signal poten...</li><li><strong>Ukraine's Pokrovsk Crisis: Strategic City Faces Russian Enci</strong>: Pokrovsk represents a critical juncture in the Ukraine conflict. As a major supply hub and gateway city, its potential fall would fundamentally alter the military balance in eastern Ukraine. Russia's ...</li><li><strong>Trump's Nuclear Testing Call Risks Destabilizing Great Power</strong>: Trump's call to resume nuclear testing directly contradicts his simultaneous de-escalation messaging with China. This signals unpredictable policy direction that could trigger arms race acceleration a...</li></ul><p><em>Published: November 02, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sun, 02 Nov 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251102</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-02.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 01, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-01.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, November 01, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump-Xi Reset: Trade War Pause Signals Shift in US-China Co</strong>: Trump and Xi's first face-to-face meeting since 2019 marks a potential strategic realignment in US-China relations. Trump's optimistic tone and tariff reduction signals suggest a temporary de-escalati...</li><li><strong>Europe Decouples from Russian Energy: Strategic Shift with E</strong>: EU's commitment to ban Russian gas by 2028 represents fundamental geopolitical realignment post-Ukraine invasion. This ends Moscow's energy leverage over Europe—historically a key strategic tool. Howe...</li><li><strong>US-China Military Escalation Risk: Dangerous Communication V</strong>: While Trump-Xi trade talks proceed, military-to-military communication channels remain dangerously underdeveloped. Russia-China joint submarine exercises signal deepening military coordination. This a...</li></ul><p><em>Published: November 01, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -210,22 +226,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-24.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - October 23, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-23.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, October 23, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump Sanctions Russian Oil Giants as Ukraine Peace Talks St</strong>: Trump administration's first major sanctions against Russia signal hardening stance after failed Budapest summit negotiations. Targeting Rosneft and Lukoil directly attacks Kremlin's war financing. Co...</li><li><strong>NATO Escalation: Nuclear Drills, Airspace Violations, Polish</strong>: Russia conducted strategic nuclear exercises amid NATO's annual drills, creating dangerous escalation cycle. Russian aircraft violated NATO airspace multiple times in Poland, Lithuania, Latvia, Romani...</li><li><strong>Indo-Pacific Power Shift: China Faces Allied Defense Coordin</strong>: India, South Korea, and Australia deepening defense ties amid concerns about US security commitment gaps. Japan's new hawkish PM Takaichi Sanae signals tougher China stance. China's GJ-X stealth drone...</li></ul><p><em>Published: October 23, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Thu, 23 Oct 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251023</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-23.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
