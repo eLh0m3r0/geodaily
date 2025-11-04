@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Mon, 03 Nov 2025 06:41:36 GMT</pubDate>
-        <lastBuildDate>Mon, 03 Nov 2025 06:41:36 GMT</lastBuildDate>
+        <pubDate>Tue, 04 Nov 2025 06:40:35 GMT</pubDate>
+        <lastBuildDate>Tue, 04 Nov 2025 06:40:35 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,21 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 04, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-04.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, November 04, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>U.S.-China Military Disengagement Creates Crisis Risk</strong>: Beijing's reluctance to engage with U.S. military channels amid escalating tensions represents a critical vulnerability in crisis management. Without communication mechanisms, accidental escalation in...</li><li><strong>Taiwan War Scenario Already Visible in Ukraine Conflict</strong>: Ukraine's experience with drone swarms, attrition warfare, and foreign fighter integration provides concrete operational template for potential Taiwan conflict. The article demonstrates how modern war...</li><li><strong>Nuclear Escalation Spiral Accelerates Among Great Powers</strong>: Russia's claimed nuclear-powered cruise missile test signals breakdown in nuclear restraint norms. Combined with Trump's nuclear testing rhetoric and China's modernization, this represents fundamental...</li></ul><p><em>Published: November 04, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Tue, 04 Nov 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251104</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-04.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 03, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-03.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Monday, November 03, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump's Nuclear Testing Orders Escalate Arms Race Risks</strong>: Trump's directive to resume nuclear weapons testing signals potential withdrawal from nonproliferation norms. Energy Secretary clarified tests won't involve explosions, but the policy shift threatens ...</li><li><strong>Trump-Xi Taiwan Deal: Assurances or Strategic Ambiguity?</strong>: Trump claims Xi assured him China won't attack Taiwan during his presidency. This extraordinary diplomatic claim, if accurate, represents major geopolitical realignment. However, vagueness about US de...</li><li><strong>Ukraine's Energy War: Targeting Russian Oil Infrastructure</strong>: Ukraine systematically strikes Russian energy infrastructure and oil terminals, degrading Russia's war economy. Recent Tuapse attack damaged vessels and facilities. This strategy aims to undermine Rus...</li></ul><p><em>Published: November 03, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -209,21 +224,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-26.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - October 25, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-25.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, October 25, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump's Russia Oil Sanctions: Coalition Strategy vs. Kremlin</strong>: Trump imposed first sanctions targeting Rosneft and Lukoil, attempting to pressure Russia into ceasefire negotiations. Simultaneously, a Western 'coalition of the willing' in London pledged to remove ...</li><li><strong>Zelensky's London Coalition: Europe Mobilizes Without Trump</strong>: Zelensky convened 24 European leaders in London to coordinate military aid and pressure on Russia, explicitly stating Ukraine wants US involvement but proceeding without Trump. This signals European r...</li><li><strong>North Korea's Crypto Sanctions Evasion: New Hybrid Threat Mo</strong>: UN monitoring groups report North Korea systematically circumventing sanctions via cryptocurrency for weapons procurement and deploying IT workers abroad for money laundering. This reveals sophisticat...</li></ul><p><em>Published: October 25, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sat, 25 Oct 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251025</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-25.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
