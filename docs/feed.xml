@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Thu, 06 Nov 2025 06:40:41 GMT</pubDate>
-        <lastBuildDate>Thu, 06 Nov 2025 06:40:41 GMT</lastBuildDate>
+        <pubDate>Fri, 07 Nov 2025 06:42:35 GMT</pubDate>
+        <lastBuildDate>Fri, 07 Nov 2025 06:42:35 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,21 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 07, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-07.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, November 07, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Orbán's White House Visit: Trump-Putin Summit and Russian Oi</strong>: Hungary's PM seeks to broker Trump-Putin peace talks while negotiating exemptions from US Russia oil sanctions. This signals potential fractures in Western unity on Ukraine policy and reveals Trump ad...</li><li><strong>Iran Nuclear Capability Remains Intact Despite Facility Atta</strong>: IAEA Director Grossi confirms Iran retains sufficient highly enriched uranium and technical knowledge for nuclear weapons despite recent strikes. This contradicts assumptions that military action has ...</li><li><strong>Trump Secures Central Asian Critical Minerals Deals Against</strong>: Trump administration hosts C5 Central Asian leaders to negotiate critical minerals access, directly countering Chinese supply chain dominance. This represents strategic repositioning of US economic co...</li></ul><p><em>Published: November 07, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Fri, 07 Nov 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251107</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-07.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 06, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-06.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, November 06, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russia Tightens Grip on Pokrovsk: Ukraine's Strategic Crisis</strong>: Pokrovsk's potential fall would represent a major Russian territorial gain and psychological victory. As a key transportation hub in Donetsk, its loss threatens Ukraine's ability to supply eastern for...</li><li><strong>Nuclear Escalation: Putin Orders Test Preparations Amid Trum</strong>: Putin's directive to prepare for nuclear weapons testing marks the most serious nuclear escalation since Cold War. This directly responds to Trump's stated willingness to resume US testing, creating a...</li><li><strong>Taiwan Crisis: US-China Military Miscalculation Risk Reaches</strong>: Foreign Affairs analysis reveals dangerous gap in US-China military communication precisely when Taiwan tensions peak. Beijing's reluctance to engage US military channels, combined with Trump's unpred...</li></ul><p><em>Published: November 06, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -205,23 +220,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-29.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - October 28, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-28.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, October 28, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump-Xi Meeting Signals Potential US-China Trade Truce</strong>: Trump's Asia tour culminating in planned Xi meeting represents critical moment for US-China relations. Tentative trade framework signals both sides seeking compromise, with implications for global eco...</li><li><strong>Finland Warns Ukraine Victory Essential for Indo-Pacific Sta</strong>: Finnish defense minister explicitly links Ukraine conflict outcome to China containment strategy, signaling NATO-Indo-Pacific security nexus. Demonstrates how European security directly impacts Asian ...</li><li><strong>Russia Escalates Nuclear Posture While Economy Shows Strain</strong>: Russia simultaneously rescinds plutonium treaty with US and faces sanctions-driven economic pressure, signaling escalatory nuclear rhetoric masking underlying vulnerabilities. Lukoil asset sales indic...</li></ul><p><em>Published: October 28, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Tue, 28 Oct 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251028</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-28.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
