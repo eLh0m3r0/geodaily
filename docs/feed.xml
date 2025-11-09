@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sat, 08 Nov 2025 06:36:46 GMT</pubDate>
-        <lastBuildDate>Sat, 08 Nov 2025 06:36:46 GMT</lastBuildDate>
+        <pubDate>Sun, 09 Nov 2025 06:36:40 GMT</pubDate>
+        <lastBuildDate>Sun, 09 Nov 2025 06:36:40 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 09, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-09.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, November 09, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russia Escalates Infrastructure Attacks, Ukraine Faces Criti</strong>: Russia's coordinated massive missile and drone campaign has reduced Ukraine's power generation to zero, forcing nationwide blackouts up to 16 hours daily. This represents a strategic shift toward civi...</li><li><strong>Hungary Secures Sanctions Waiver, Fracturing EU-US Russia Po</strong>: Hungary's claimed indefinite exemption from Russian energy sanctions represents a critical breach in Western sanctions coordination. This undermines EU sanctions effectiveness, signals divisions explo...</li><li><strong>EU-China Chip Deal and Vietnam's Strategic Hedging Signal Sh</strong>: The EU-China semiconductor agreement and Vietnam's deepening US defense cooperation represent competing realignment efforts in Indo-Pacific and European geopolitics. These moves indicate major powers ...</li></ul><p><em>Published: November 09, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sun, 09 Nov 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251109</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-09.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 08, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-08.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, November 08, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump Grants Hungary Sanctions Exemption, Fracturing Western</strong>: Trump's decision to exempt Hungary from Russian oil sanctions represents a fundamental shift in US enforcement of Russia policy. This undermines Western sanctions coordination, rewards a NATO ally for...</li><li><strong>Syria's Sharaa Rehabilitated: US Lifts Sanctions Ahead of Wh</strong>: UN, US, and UK removal of sanctions on Syrian President Ahmad al-Sharaa before his White House visit signals dramatic diplomatic rehabilitation. This represents potential realignment in Middle East po...</li><li><strong>Taiwan and India Caught Between US-China Competition</strong>: Taiwan's Vice President addresses European Parliament despite Beijing protests while India faces pressure from US sanctions on Russian oil. These parallel stories reveal China's expanding assertivenes...</li></ul><p><em>Published: November 08, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -204,23 +220,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-31.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - October 30, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-30.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, October 30, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump Orders Nuclear Testing Resume After 33 Years</strong>: Trump's directive to resume US nuclear weapons testing marks a dramatic escalation in great power competition. This reverses three decades of restraint, directly responding to Russian and Chinese nucl...</li><li><strong>Trump-Xi Meeting: Trade, Taiwan, and Ukraine Convergence</strong>: Trump-Xi summit represents critical inflection point for US-China relations with direct implications for Taiwan, Ukraine, and global trade. Trump's stated willingness to have China help broker Ukraine...</li><li><strong>Russia's Energy Weapon Fails; Europe Mobilizes Defense</strong>: Russia's strategic energy coercion against Ukraine and Europe has fundamentally failed due to EU sanctions, renewable transition, and Ukrainian infrastructure resilience. Simultaneously, EU is prepari...</li></ul><p><em>Published: October 30, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Thu, 30 Oct 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251030</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-10-30.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
