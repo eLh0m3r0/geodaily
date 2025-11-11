@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Mon, 10 Nov 2025 06:42:17 GMT</pubDate>
-        <lastBuildDate>Mon, 10 Nov 2025 06:42:17 GMT</lastBuildDate>
+        <pubDate>Tue, 11 Nov 2025 06:41:00 GMT</pubDate>
+        <lastBuildDate>Tue, 11 Nov 2025 06:41:00 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,23 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 11, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-11.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, November 11, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>EU's China De-Risking Strategy Faces Fragmentation Crisis</strong>: The EU's unified approach to China is fracturing across member states with conflicting priorities. This directly impacts European strategic autonomy, technology security, and transatlantic coordinatio...</li><li><strong>China's Energy-Technology Nexus Reshapes Global Competition</strong>: China's thorium reactor breakthrough and clean energy dominance represent dual strategic victories: energy security for Arctic expansion and AI ambitions, plus technological sovereignty. This shifts t...</li><li><strong>Trump-Orbán Alignment Signals NATO Fracture Over Russia Poli</strong>: Trump granting Hungary sanctions exemptions on Russian oil signals willingness to undermine collective Western strategy on Russia. Orbán's high-stakes Washington visit indicates potential NATO policy ...</li></ul><p><em>Published: November 11, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Tue, 11 Nov 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251111</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[United States]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-11.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 10, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-10.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Monday, November 10, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russia Deepens Egypt Military Alliance with High-Level Deleg</strong>: Sergei Shoigu's visit to Cairo with senior nuclear and arms officials signals Russia's strategic pivot toward Middle Eastern partnerships amid Western isolation. This strengthens Russia's geopolitical...</li><li><strong>Ukraine's Energy War: Mutual Destruction of Critical Infrast</strong>: Escalating tit-for-tat attacks on energy infrastructure represent a dangerous new phase of the Ukraine conflict. Russia's destruction of Ukrainian power generation capacity to 'zero' and Ukraine's ret...</li><li><strong>De-Dollarization Accelerates: Russia-China Trade Exits Weste</strong>: Russia-China bilateral trade reaching 99.1% outside Western financial systems signals fundamental shift in global economic architecture. This de-dollarization trend threatens US financial hegemony, cr...</li></ul><p><em>Published: November 10, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -202,24 +219,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-02.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - November 01, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-01.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, November 01, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump-Xi Reset: Trade War Pause Signals Shift in US-China Co</strong>: Trump and Xi's first face-to-face meeting since 2019 marks a potential strategic realignment in US-China relations. Trump's optimistic tone and tariff reduction signals suggest a temporary de-escalati...</li><li><strong>Europe Decouples from Russian Energy: Strategic Shift with E</strong>: EU's commitment to ban Russian gas by 2028 represents fundamental geopolitical realignment post-Ukraine invasion. This ends Moscow's energy leverage over Europe—historically a key strategic tool. Howe...</li><li><strong>US-China Military Escalation Risk: Dangerous Communication V</strong>: While Trump-Xi trade talks proceed, military-to-military communication channels remain dangerously underdeveloped. Russia-China joint submarine exercises signal deepening military coordination. This a...</li></ul><p><em>Published: November 01, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sat, 01 Nov 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251101</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[United States]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-01.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
