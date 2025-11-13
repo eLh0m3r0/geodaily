@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Wed, 12 Nov 2025 06:41:00 GMT</pubDate>
-        <lastBuildDate>Wed, 12 Nov 2025 06:41:00 GMT</lastBuildDate>
+        <pubDate>Thu, 13 Nov 2025 06:40:46 GMT</pubDate>
+        <lastBuildDate>Thu, 13 Nov 2025 06:40:46 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 13, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-13.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, November 13, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine Energy Corruption Scandal Threatens Wartime Stabilit</strong>: A $100 million kickback scheme in Ukraine's energy sector has forced ministerial resignations during active conflict. This undermines Western support credibility, exposes systemic corruption in a key ...</li><li><strong>US Escalates Iran Sanctions Across Asia Supply Networks</strong>: Treasury sanctions target 32+ entities across Iran, UAE, Turkey, and China supporting ballistic missile/drone production. This represents coordinated maximum pressure on Iran's military capabilities, ...</li><li><strong>Japan's Taiwan Military Stance Escalates China Tensions</strong>: PM Takaichi's suggestion of military deployment for Taiwan contingency directly challenges Beijing's red lines and represents Japan's most assertive Taiwan positioning. This escalates US-China-Japan s...</li></ul><p><em>Published: November 13, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Thu, 13 Nov 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251113</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-13.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 12, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-12.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, November 12, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>China Escalates Taiwan Rhetoric as Part of Long-Term Strateg</strong>: China is systematically intensifying its language and messaging on Taiwan through coordinated statements, articles, and symbolic gestures. This represents a deliberate shift in Beijing's approach that...</li><li><strong>AI Race Heats Up: China Closing Gap on US Technological Domi</strong>: Multiple sources confirm China is rapidly closing the AI capability gap with the US, with Nvidia's CEO stating China is 'nanoseconds' behind. This technological competition has profound implications f...</li><li><strong>Trump Sanctions Cripple Russian Oil Sector as Ukraine War Gr</strong>: Trump's secondary sanctions are effectively strangling Russian oil exports and major energy companies like Rosneft and Lukoil. Combined with Ukraine's energy infrastructure attacks, Russia faces a cri...</li></ul><p><em>Published: November 12, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -201,22 +217,6 @@
         <category><![CDATA[Russia]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-04.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - November 03, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-03.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Monday, November 03, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump's Nuclear Testing Orders Escalate Arms Race Risks</strong>: Trump's directive to resume nuclear weapons testing signals potential withdrawal from nonproliferation norms. Energy Secretary clarified tests won't involve explosions, but the policy shift threatens ...</li><li><strong>Trump-Xi Taiwan Deal: Assurances or Strategic Ambiguity?</strong>: Trump claims Xi assured him China won't attack Taiwan during his presidency. This extraordinary diplomatic claim, if accurate, represents major geopolitical realignment. However, vagueness about US de...</li><li><strong>Ukraine's Energy War: Targeting Russian Oil Infrastructure</strong>: Ukraine systematically strikes Russian energy infrastructure and oil terminals, degrading Russia's war economy. Recent Tuapse attack damaged vessels and facilities. This strategy aims to undermine Rus...</li></ul><p><em>Published: November 03, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Mon, 03 Nov 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251103</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-03.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
