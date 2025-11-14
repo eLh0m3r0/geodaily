@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Thu, 13 Nov 2025 06:40:46 GMT</pubDate>
-        <lastBuildDate>Thu, 13 Nov 2025 06:40:46 GMT</lastBuildDate>
+        <pubDate>Fri, 14 Nov 2025 06:40:23 GMT</pubDate>
+        <lastBuildDate>Fri, 14 Nov 2025 06:40:23 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,23 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 14, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-14.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, November 14, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine Corruption Crisis Threatens War Effort and Zelensky</strong>: Internal corruption scandals are undermining Ukraine's military effectiveness during critical frontline battles. This domestic political crisis compounds military setbacks and could weaken internation...</li><li><strong>China-Russia Military Alliance Deepens Amid PLA Restructurin</strong>: Finland's NATO accusation of Chinese financial support for Russia signals deepening strategic alignment. Simultaneously, Xi's military purges suggest PLA reorganization for potential Taiwan operations...</li><li><strong>Trump Administration's Venezuela Intervention Plans Fracture</strong>: Trump's threatened military intervention in Venezuela is creating diplomatic rifts with Caribbean and Latin American allies who oppose unilateral action. This represents a fundamental shift in US hemi...</li></ul><p><em>Published: November 14, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Fri, 14 Nov 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251114</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[United States]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-14.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 13, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-13.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, November 13, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine Energy Corruption Scandal Threatens Wartime Stabilit</strong>: A $100 million kickback scheme in Ukraine's energy sector has forced ministerial resignations during active conflict. This undermines Western support credibility, exposes systemic corruption in a key ...</li><li><strong>US Escalates Iran Sanctions Across Asia Supply Networks</strong>: Treasury sanctions target 32+ entities across Iran, UAE, Turkey, and China supporting ballistic missile/drone production. This represents coordinated maximum pressure on Iran's military capabilities, ...</li><li><strong>Japan's Taiwan Military Stance Escalates China Tensions</strong>: PM Takaichi's suggestion of military deployment for Taiwan contingency directly challenges Beijing's red lines and represents Japan's most assertive Taiwan positioning. This escalates US-China-Japan s...</li></ul><p><em>Published: November 13, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -202,21 +219,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-05.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - November 04, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-04.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, November 04, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>U.S.-China Military Disengagement Creates Crisis Risk</strong>: Beijing's reluctance to engage with U.S. military channels amid escalating tensions represents a critical vulnerability in crisis management. Without communication mechanisms, accidental escalation in...</li><li><strong>Taiwan War Scenario Already Visible in Ukraine Conflict</strong>: Ukraine's experience with drone swarms, attrition warfare, and foreign fighter integration provides concrete operational template for potential Taiwan conflict. The article demonstrates how modern war...</li><li><strong>Nuclear Escalation Spiral Accelerates Among Great Powers</strong>: Russia's claimed nuclear-powered cruise missile test signals breakdown in nuclear restraint norms. Combined with Trump's nuclear testing rhetoric and China's modernization, this represents fundamental...</li></ul><p><em>Published: November 04, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Tue, 04 Nov 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251104</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-04.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
