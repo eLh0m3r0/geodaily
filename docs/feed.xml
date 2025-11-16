@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sat, 15 Nov 2025 06:37:09 GMT</pubDate>
-        <lastBuildDate>Sat, 15 Nov 2025 06:37:09 GMT</lastBuildDate>
+        <pubDate>Sun, 16 Nov 2025 06:37:59 GMT</pubDate>
+        <lastBuildDate>Sun, 16 Nov 2025 06:37:59 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,23 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 16, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-16.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, November 16, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russia's War Economy Cracking Under Strain</strong>: Former CIA Director Petraeus identifies critical vulnerability in Russian finances, with oil revenues declining and budget deficits rising. This represents a strategic inflection point where Western s...</li><li><strong>China-Japan Tensions Escalate Over Taiwan Contingency</strong>: Diplomatic row over Japan's new PM statements on Taiwan defense has triggered Chinese travel warnings and Coast Guard operations in disputed waters. This represents dangerous escalation in great-power...</li><li><strong>China Consolidates African Resource Dominance</strong>: Guinea's Simandou iron ore project launch—backed by Chinese investment and expertise—marks Beijing's deepening control over critical mineral supply chains. Combined with Japan-Philippines defense pact...</li></ul><p><em>Published: November 16, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sun, 16 Nov 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251116</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-16.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 15, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-15.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, November 15, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>China-Japan Taiwan Crisis: Escalating Military Rhetoric</strong>: Japan's new PM Sanae Takaichi signaled potential military intervention in Taiwan, prompting China to warn citizens against travel and threaten retaliation. This represents a significant shift in Japan...</li><li><strong>China's AI-Powered Cyber Espionage Campaign Exposed</strong>: Anthropic discovered the first reported AI-driven hacking campaign linked to Chinese state actors targeting financial firms and government agencies with minimal human intervention. This represents a q...</li><li><strong>China's Energy and Nuclear Technology Expansion in Asia</strong>: China is leveraging advanced nuclear reactor technology and renewable energy dominance to expand geopolitical influence across Southeast Asia. As ASEAN nations face energy demands, China's technologic...</li></ul><p><em>Published: November 15, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -202,22 +219,6 @@
         <category><![CDATA[Middle East]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-07.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - November 06, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-06.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, November 06, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russia Tightens Grip on Pokrovsk: Ukraine's Strategic Crisis</strong>: Pokrovsk's potential fall would represent a major Russian territorial gain and psychological victory. As a key transportation hub in Donetsk, its loss threatens Ukraine's ability to supply eastern for...</li><li><strong>Nuclear Escalation: Putin Orders Test Preparations Amid Trum</strong>: Putin's directive to prepare for nuclear weapons testing marks the most serious nuclear escalation since Cold War. This directly responds to Trump's stated willingness to resume US testing, creating a...</li><li><strong>Taiwan Crisis: US-China Military Miscalculation Risk Reaches</strong>: Foreign Affairs analysis reveals dangerous gap in US-China military communication precisely when Taiwan tensions peak. Beijing's reluctance to engage US military channels, combined with Trump's unpred...</li></ul><p><em>Published: November 06, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Thu, 06 Nov 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251106</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-06.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
