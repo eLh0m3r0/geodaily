@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sun, 16 Nov 2025 06:37:59 GMT</pubDate>
-        <lastBuildDate>Sun, 16 Nov 2025 06:37:59 GMT</lastBuildDate>
+        <pubDate>Mon, 17 Nov 2025 06:41:34 GMT</pubDate>
+        <lastBuildDate>Mon, 17 Nov 2025 06:41:34 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,21 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 17, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-17.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Monday, November 17, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>China-Japan Military Tensions Escalate Over Taiwan</strong>: China's coast guard incursions into Senkaku waters combined with Japan's PM Taiwan comments and 48% public support for military intervention signals dangerous escalation. This represents the most acut...</li><li><strong>Ukraine Corruption Crisis Threatens Western Support</strong>: A $100M embezzlement scandal at Ukraine's nuclear energy company, involving Zelensky associates, undermines Western confidence in aid effectiveness. This corruption revelation coincides with war fatig...</li><li><strong>Trump Administration Reshapes US-China Economic Warfare</strong>: Republicans drafting sanctions legislation against countries trading with Russia while simultaneously negotiating rare earths deals with China reveals Trump's transactional approach. This dual strateg...</li></ul><p><em>Published: November 17, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Mon, 17 Nov 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251117</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-17.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 16, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-16.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, November 16, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russia's War Economy Cracking Under Strain</strong>: Former CIA Director Petraeus identifies critical vulnerability in Russian finances, with oil revenues declining and budget deficits rising. This represents a strategic inflection point where Western s...</li><li><strong>China-Japan Tensions Escalate Over Taiwan Contingency</strong>: Diplomatic row over Japan's new PM statements on Taiwan defense has triggered Chinese travel warnings and Coast Guard operations in disputed waters. This represents dangerous escalation in great-power...</li><li><strong>China Consolidates African Resource Dominance</strong>: Guinea's Simandou iron ore project launch—backed by Chinese investment and expertise—marks Beijing's deepening control over critical mineral supply chains. Combined with Japan-Philippines defense pact...</li></ul><p><em>Published: November 16, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -204,21 +219,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Economy]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-08.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - November 07, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-07.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, November 07, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Orbán's White House Visit: Trump-Putin Summit and Russian Oi</strong>: Hungary's PM seeks to broker Trump-Putin peace talks while negotiating exemptions from US Russia oil sanctions. This signals potential fractures in Western unity on Ukraine policy and reveals Trump ad...</li><li><strong>Iran Nuclear Capability Remains Intact Despite Facility Atta</strong>: IAEA Director Grossi confirms Iran retains sufficient highly enriched uranium and technical knowledge for nuclear weapons despite recent strikes. This contradicts assumptions that military action has ...</li><li><strong>Trump Secures Central Asian Critical Minerals Deals Against</strong>: Trump administration hosts C5 Central Asian leaders to negotiate critical minerals access, directly countering Chinese supply chain dominance. This represents strategic repositioning of US economic co...</li></ul><p><em>Published: November 07, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Fri, 07 Nov 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251107</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-07.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
