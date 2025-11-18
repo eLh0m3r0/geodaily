@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Mon, 17 Nov 2025 06:41:34 GMT</pubDate>
-        <lastBuildDate>Mon, 17 Nov 2025 06:41:34 GMT</lastBuildDate>
+        <pubDate>Tue, 18 Nov 2025 06:40:11 GMT</pubDate>
+        <lastBuildDate>Tue, 18 Nov 2025 06:40:11 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,23 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 18, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-18.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, November 18, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Japan's Taiwan Stance Triggers China Escalation</strong>: Japan's Prime Minister explicitly warned China that attacking Taiwan could trigger Japanese military response, fundamentally shifting regional security dynamics. China is retaliating with diplomatic p...</li><li><strong>UN Endorses Trump Gaza Plan with Palestinian Statehood</strong>: UN Security Council unanimously passed Trump's Gaza stabilization plan including pathway to Palestinian statehood, marking rare consensus on Middle East peace. This represents significant diplomatic b...</li><li><strong>US-China Competition Reshapes Central Asia & Indo-Pacific</strong>: Russia's Ukraine war has created strategic vacuum in Central Asia where US and China are expanding influence. Simultaneously, South Korea's nuclear submarine approval signals US-led Indo-Pacific conta...</li></ul><p><em>Published: November 18, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Tue, 18 Nov 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251118</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-18.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 17, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-17.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Monday, November 17, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>China-Japan Military Tensions Escalate Over Taiwan</strong>: China's coast guard incursions into Senkaku waters combined with Japan's PM Taiwan comments and 48% public support for military intervention signals dangerous escalation. This represents the most acut...</li><li><strong>Ukraine Corruption Crisis Threatens Western Support</strong>: A $100M embezzlement scandal at Ukraine's nuclear energy company, involving Zelensky associates, undermines Western confidence in aid effectiveness. This corruption revelation coincides with war fatig...</li><li><strong>Trump Administration Reshapes US-China Economic Warfare</strong>: Republicans drafting sanctions legislation against countries trading with Russia while simultaneously negotiating rare earths deals with China reveals Trump's transactional approach. This dual strateg...</li></ul><p><em>Published: November 17, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -202,23 +219,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-09.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - November 08, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-08.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, November 08, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump Grants Hungary Sanctions Exemption, Fracturing Western</strong>: Trump's decision to exempt Hungary from Russian oil sanctions represents a fundamental shift in US enforcement of Russia policy. This undermines Western sanctions coordination, rewards a NATO ally for...</li><li><strong>Syria's Sharaa Rehabilitated: US Lifts Sanctions Ahead of Wh</strong>: UN, US, and UK removal of sanctions on Syrian President Ahmad al-Sharaa before his White House visit signals dramatic diplomatic rehabilitation. This represents potential realignment in Middle East po...</li><li><strong>Taiwan and India Caught Between US-China Competition</strong>: Taiwan's Vice President addresses European Parliament despite Beijing protests while India faces pressure from US sanctions on Russian oil. These parallel stories reveal China's expanding assertivenes...</li></ul><p><em>Published: November 08, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sat, 08 Nov 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251108</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-08.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
