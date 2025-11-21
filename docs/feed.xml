@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Thu, 20 Nov 2025 06:39:47 GMT</pubDate>
-        <lastBuildDate>Thu, 20 Nov 2025 06:39:47 GMT</lastBuildDate>
+        <pubDate>Fri, 21 Nov 2025 06:41:48 GMT</pubDate>
+        <lastBuildDate>Fri, 21 Nov 2025 06:41:48 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 21, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-21.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, November 21, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US-Russia Ukraine Peace Plan Fractures Western Alliance</strong>: A reported US-drafted peace proposal requiring Ukraine to cede Donbas territory has triggered unprecedented transatlantic friction. Zelensky shows conditional openness while EU ministers demand inclus...</li><li><strong>Russia's Hybrid Warfare: Sanctions Evasion and Infrastructur</strong>: Investigations reveal sophisticated networks using cryptocurrency, money laundering through British banks, and Kyrgyz financial institutions to fund Russian war effort while evading sanctions. Simulta...</li><li><strong>Great Power Competition Intensifies in Africa and Asia-Pacif</strong>: China-US competition for influence in Nigeria, Japan-China tensions over military exports and economic coercion, and UK pivot toward Beijing signal realignment of global alignments. These parallel dev...</li></ul><p><em>Published: November 21, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Fri, 21 Nov 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251121</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-21.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 20, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-20.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, November 20, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US-Russia Secret Ukraine Peace Plan Demands Major Kyiv Conce</strong>: The Trump administration is secretly negotiating a 28-point peace framework with Russia that would require Ukraine to cede territory and reduce military size by over 50%. This represents a fundamental...</li><li><strong>China-Japan Taiwan Row Escalates Into Economic Warfare</strong>: Japan's new PM Takaichi's pro-Taiwan statements triggered Chinese economic retaliation including seafood bans and rare earth export threats. This represents the most serious China-Japan confrontation ...</li><li><strong>EU Faces Structural Disadvantage in Strategic Competition Wi</strong>: The EU confronts fundamental economic and political fragmentation limiting its negotiating power against China. Simultaneously, Brussels attempts to position itself as alternative partner to Indo-Paci...</li></ul><p><em>Published: November 20, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -203,23 +219,6 @@
         <category><![CDATA[China]]></category>
         <category><![CDATA[Russia]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-12.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - November 11, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-11.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, November 11, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>EU's China De-Risking Strategy Faces Fragmentation Crisis</strong>: The EU's unified approach to China is fracturing across member states with conflicting priorities. This directly impacts European strategic autonomy, technology security, and transatlantic coordinatio...</li><li><strong>China's Energy-Technology Nexus Reshapes Global Competition</strong>: China's thorium reactor breakthrough and clean energy dominance represent dual strategic victories: energy security for Arctic expansion and AI ambitions, plus technological sovereignty. This shifts t...</li><li><strong>Trump-Orbán Alignment Signals NATO Fracture Over Russia Poli</strong>: Trump granting Hungary sanctions exemptions on Russian oil signals willingness to undermine collective Western strategy on Russia. Orbán's high-stakes Washington visit indicates potential NATO policy ...</li></ul><p><em>Published: November 11, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Tue, 11 Nov 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251111</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[United States]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-11.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
