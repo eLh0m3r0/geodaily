@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 21 Nov 2025 06:41:48 GMT</pubDate>
-        <lastBuildDate>Fri, 21 Nov 2025 06:41:48 GMT</lastBuildDate>
+        <pubDate>Sat, 22 Nov 2025 06:37:08 GMT</pubDate>
+        <lastBuildDate>Sat, 22 Nov 2025 06:37:08 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,23 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 22, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-22.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, November 22, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump's Ukraine Peace Plan Ultimatum Fractures US-Europe All</strong>: Trump administration issued Thursday deadline for Ukraine to accept 28-point peace plan favoring Russian demands including territorial concessions and military restrictions. This represents fundamenta...</li><li><strong>China-Japan Taiwan Crisis Escalates Into Economic Coercion C</strong>: Japan's PM Takaichi's Taiwan defense comments triggered Chinese retaliation including flight cancellations, concert bans, and seafood embargoes. This represents dangerous escalation of gray-zone tacti...</li><li><strong>Sanctions Squeeze Forces Russia and Ukraine Into Financial C</strong>: Both Russia and Ukraine struggling to finance war operations amid US sanctions on Russian oil companies and Indian refiners phasing out Russian crude. This creates pressure for negotiated settlement b...</li></ul><p><em>Published: November 22, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sat, 22 Nov 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251122</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-22.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 21, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-21.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, November 21, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US-Russia Ukraine Peace Plan Fractures Western Alliance</strong>: A reported US-drafted peace proposal requiring Ukraine to cede Donbas territory has triggered unprecedented transatlantic friction. Zelensky shows conditional openness while EU ministers demand inclus...</li><li><strong>Russia's Hybrid Warfare: Sanctions Evasion and Infrastructur</strong>: Investigations reveal sophisticated networks using cryptocurrency, money laundering through British banks, and Kyrgyz financial institutions to fund Russian war effort while evading sanctions. Simulta...</li><li><strong>Great Power Competition Intensifies in Africa and Asia-Pacif</strong>: China-US competition for influence in Nigeria, Japan-China tensions over military exports and economic coercion, and UK pivot toward Beijing signal realignment of global alignments. These parallel dev...</li></ul><p><em>Published: November 21, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -205,20 +222,6 @@
         <category><![CDATA[Middle East]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-13.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - November 12, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-12.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, November 12, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>China Escalates Taiwan Rhetoric as Part of Long-Term Strateg</strong>: China is systematically intensifying its language and messaging on Taiwan through coordinated statements, articles, and symbolic gestures. This represents a deliberate shift in Beijing's approach that...</li><li><strong>AI Race Heats Up: China Closing Gap on US Technological Domi</strong>: Multiple sources confirm China is rapidly closing the AI capability gap with the US, with Nvidia's CEO stating China is 'nanoseconds' behind. This technological competition has profound implications f...</li><li><strong>Trump Sanctions Cripple Russian Oil Sector as Ukraine War Gr</strong>: Trump's secondary sanctions are effectively strangling Russian oil exports and major energy companies like Rosneft and Lukoil. Combined with Ukraine's energy infrastructure attacks, Russia faces a cri...</li></ul><p><em>Published: November 12, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Wed, 12 Nov 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251112</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-12.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
