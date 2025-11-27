@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Wed, 26 Nov 2025 06:42:19 GMT</pubDate>
-        <lastBuildDate>Wed, 26 Nov 2025 06:42:19 GMT</lastBuildDate>
+        <pubDate>Thu, 27 Nov 2025 06:42:45 GMT</pubDate>
+        <lastBuildDate>Thu, 27 Nov 2025 06:42:45 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 27, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-27.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, November 27, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump's Ukraine Peace Plan: Diplomatic Breakthrough or Dange</strong>: Active US-led negotiations to end the Russia-Ukraine war represent the most significant diplomatic development in months. The revised peace plan involves compromises on NATO membership and military si...</li><li><strong>China-Japan Crisis Escalates as Beijing Demands Taiwan Clari</strong>: Escalating China-Japan tensions over Taiwan statements represent a critical flashpoint in Indo-Pacific security. Japan's PM Takaichi's Taiwan comments triggered Beijing's demands for one-China princip...</li><li><strong>Guinea-Bissau Coup Signals Africa's Democratic Backsliding C</strong>: Military seizure of power in Guinea-Bissau three days after elections exemplifies Africa's recurring democratic collapse pattern. This West African coup occurs amid Ethiopia-Eritrea tensions and Niger...</li></ul><p><em>Published: November 27, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Thu, 27 Nov 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251127</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-27.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 26, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-26.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, November 26, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine Agrees to Revised US Peace Plan Amid Active Negotiat</strong>: Ukraine's acceptance of a revised 19-point US peace framework represents a critical diplomatic breakthrough in the Russia-Ukraine conflict. Zelensky's willingness to meet Trump urgently signals potent...</li><li><strong>Trump-Xi Call Signals US-China Diplomatic Thaw Amid Japan Cr</strong>: Trump's unexpected phone call with Xi Jinping, followed immediately by calls to Japan's new PM Takaichi, reveals shifting US diplomatic priorities. The timing suggests Trump may be recalibrating US-Ch...</li><li><strong>Trump Envoy Witkoff Coordinates Ukraine Peace Deal with Krem</strong>: Audio recordings reveal Trump's special envoy Steve Witkoff directly advising Kremlin officials on Ukraine peace negotiations, including territorial control discussions. This demonstrates unprecedente...</li></ul><p><em>Published: November 26, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -210,21 +226,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-18.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - November 17, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-17.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Monday, November 17, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>China-Japan Military Tensions Escalate Over Taiwan</strong>: China's coast guard incursions into Senkaku waters combined with Japan's PM Taiwan comments and 48% public support for military intervention signals dangerous escalation. This represents the most acut...</li><li><strong>Ukraine Corruption Crisis Threatens Western Support</strong>: A $100M embezzlement scandal at Ukraine's nuclear energy company, involving Zelensky associates, undermines Western confidence in aid effectiveness. This corruption revelation coincides with war fatig...</li><li><strong>Trump Administration Reshapes US-China Economic Warfare</strong>: Republicans drafting sanctions legislation against countries trading with Russia while simultaneously negotiating rare earths deals with China reveals Trump's transactional approach. This dual strateg...</li></ul><p><em>Published: November 17, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Mon, 17 Nov 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251117</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-17.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
