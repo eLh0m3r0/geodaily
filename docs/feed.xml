@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 28 Nov 2025 06:42:00 GMT</pubDate>
-        <lastBuildDate>Fri, 28 Nov 2025 06:42:00 GMT</lastBuildDate>
+        <pubDate>Sat, 29 Nov 2025 06:38:51 GMT</pubDate>
+        <lastBuildDate>Sat, 29 Nov 2025 06:38:51 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,23 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 29, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-29.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, November 29, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>China's Nuclear Arsenal Expansion Contradicts Restraint Rhet</strong>: China's rapid nuclear buildup while maintaining 'no-first-use' pledges signals strategic deception that fundamentally alters US-China deterrence calculations. This discrepancy between declaratory poli...</li><li><strong>Ukraine Peace Negotiations Accelerate Amid Internal Instabil</strong>: Yermak's resignation during active peace negotiations signals potential strategic shift in Ukraine's negotiating position. Combined with US peace plan circulation and European concerns about abandonme...</li><li><strong>US-China Competition Intensifies in Southeast Asian Supply C</strong>: Malaysia's US trade deal with 'tripwire clauses' forcing alignment with Washington sanctions regime represents escalating economic decoupling in critical semiconductor and EV battery sectors. This bif...</li></ul><p><em>Published: November 29, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sat, 29 Nov 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251129</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[United States]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Economy]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-29.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 28, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-28.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, November 28, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Putin Sets Territorial Demands as Ukraine Peace Talks Intens</strong>: Putin's hardline conditions for peace—Ukrainian territorial withdrawal—directly shape ongoing negotiations. This represents a critical juncture where Russia's maximalist demands may determine whether ...</li><li><strong>NATO Escalates Military Posture: Cyber Ops and European Rear</strong>: NATO members are considering offensive cyber operations against Russia while France reintroduces military service and Europe develops advanced air defense systems. This represents a fundamental shift ...</li><li><strong>China Weaponizes Economic Leverage: Rare Earths and Diplomat</strong>: China is using rare earth elements as economic coercion against the EU while freezing youth exchanges with Japan over Taiwan remarks and excluding EU leadership from diplomatic engagement. This demons...</li></ul><p><em>Published: November 28, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -208,23 +225,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-20.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - November 19, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-19.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, November 19, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine Faces Critical Military Crisis as Winter Looms</strong>: Ukraine's military is deteriorating with trapped forces, depleted manpower, and material shortages while Russia maintains offensive pressure. NATO intervention remains uncertain, creating existential ...</li><li><strong>China-Japan Tensions Escalate Over Taiwan, Threatening Regio</strong>: Japanese PM Takaichi's Taiwan comments triggered unprecedented Chinese diplomatic and economic retaliation including seafood import suspensions, military posturing, and UN Security Council attacks. Th...</li><li><strong>Iran-Russia Military Cooperation Deepens, Triggering IAEA Co</strong>: Iranian nuclear experts held second covert meeting with Russian weapons institute while US-E3 powers demand IAEA access to Iranian nuclear sites. This signals deepening Iran-Russia military alliance a...</li></ul><p><em>Published: November 19, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Wed, 19 Nov 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251119</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-19.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
