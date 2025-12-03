@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Tue, 02 Dec 2025 06:43:13 GMT</pubDate>
-        <lastBuildDate>Tue, 02 Dec 2025 06:43:13 GMT</lastBuildDate>
+        <pubDate>Wed, 03 Dec 2025 06:42:58 GMT</pubDate>
+        <lastBuildDate>Wed, 03 Dec 2025 06:42:58 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - December 03, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-03.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, December 03, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Putin-Trump Envoy Talks End Without Breakthrough on Ukraine</strong>: High-stakes Moscow negotiations between Putin and US envoys Witkoff and Kushner represent the most direct diplomatic engagement on Ukraine resolution. Putin's simultaneous threats against Europe signa...</li><li><strong>China-Japan Tensions Escalate Across Military and Cultural F</strong>: Deteriorating China-Japan relations now span military posturing (US airfield vulnerability), economic disruption (Canon factory closure), and cultural disputes. This multi-domain friction threatens re...</li><li><strong>EU Mobilizes €210bn Russian Assets and Strategic Autonomy Pl</strong>: EU's dual strategy—tapping frozen Russian assets for Ukraine financing while pursuing 70% domestic critical goods production—signals European pivot toward strategic independence from both Russia and U...</li></ul><p><em>Published: December 03, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Wed, 03 Dec 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251203</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-03.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - December 02, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-02.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, December 02, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US Envoy Witkoff Meets Putin: Trump's Direct Push for Ukrain</strong>: Steve Witkoff's Moscow visit represents a critical diplomatic inflection point in the Ukraine conflict. Trump's direct engagement with Putin signals potential major shifts in US foreign policy and cou...</li><li><strong>Macron-Zelensky Paris Summit: Europe Fights for Seat at Peac</strong>: France and Ukraine are actively mobilizing European diplomatic support to prevent exclusion from Ukraine peace negotiations. This represents a critical power struggle between European interests and Tr...</li><li><strong>North Korea-Russia-China Triangle: New Missile Diplomacy Res</strong>: North Korea's weapons showcase and pursuit of Russian fighter jets signals deepening Russia-North Korea military integration amid Ukraine war. This creates a new strategic axis that could destabilize ...</li></ul><p><em>Published: December 02, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -206,23 +222,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-24.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - November 23, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-23.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, November 23, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump Issues Ukraine Ultimatum as Peace Plan Faces Rejection</strong>: US envoys delivered a Thursday deadline for Ukraine to accept a 28-point peace plan heavily favoring Russian demands. This represents a critical diplomatic inflection point where Washington is pressur...</li><li><strong>G20 Fractures as US Boycott Signals Multipolar Realignment</strong>: Trump's first-ever G20 boycott while simultaneously pushing Ukraine terms reveals US withdrawal from multilateral consensus-building. South Africa and China secured backing despite US absence, demonst...</li><li><strong>China Advances Military Tech While US Allies Arm Against Bei</strong>: China's military modernization—stealth fighters, aircraft carriers, pilot program innovations—accelerates amid South Korea's nuclear submarine acquisition from US. This arms race dynamic in Indo-Pacif...</li></ul><p><em>Published: November 23, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sun, 23 Nov 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251123</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[United States]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-23.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
