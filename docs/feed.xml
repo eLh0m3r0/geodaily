@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Thu, 04 Dec 2025 06:42:58 GMT</pubDate>
-        <lastBuildDate>Thu, 04 Dec 2025 06:42:58 GMT</lastBuildDate>
+        <pubDate>Fri, 05 Dec 2025 06:43:03 GMT</pubDate>
+        <lastBuildDate>Fri, 05 Dec 2025 06:43:03 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,21 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - December 05, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-05.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, December 05, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine Peace Talks Stall: Putin Rejects US Proposal</strong>: Five-hour Kremlin meeting between Putin and Trump envoys failed to produce breakthrough. Putin explicitly stated unacceptable points in US peace plan while demanding Donbas seizure by force. This dead...</li><li><strong>Putin-Modi Summit: Russia Pivots to Asia Amid Isolation</strong>: Putin's first India visit since Ukraine invasion signals strategic realignment. India-Russia defense deals (S-400 systems) and energy cooperation despite US sanctions threats demonstrate Moscow's pivo...</li><li><strong>China Escalates 'Three Warfares' Against Japan Over Taiwan</strong>: Beijing intensifying lawfare, psychological warfare, and public opinion operations against Japan following PM Takaichi's Taiwan defense statements. This signals major shift in China's Taiwan strategy,...</li></ul><p><em>Published: December 05, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Fri, 05 Dec 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251205</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-05.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - December 04, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-04.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, December 04, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>EU Mobilizes €90B Ukraine Fund Using Frozen Russian Assets</strong>: The European Commission's plan to leverage frozen Russian central bank assets for Ukraine financing represents a critical shift in war funding strategy. This €90 billion commitment over two years addr...</li><li><strong>Macron's Beijing Gambit: France Seeks China's Leverage on Ru</strong>: Macron's three-day state visit to China represents Europe's most significant diplomatic effort to break the Russia-China alignment on Ukraine. By positioning China as 'decisive' to ceasefire prospects...</li><li><strong>US-Russia Peace Talks Show Movement But No Breakthrough Yet</strong>: Five-hour Moscow negotiations between US and Russian representatives mark the most substantive Ukraine peace discussions since invasion. Both sides characterize talks as 'constructive' with Russia acc...</li></ul><p><em>Published: December 04, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -204,24 +219,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-26.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - November 25, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-25.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, November 25, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump's Ukraine Peace Plan: Deadline Pressure Amid Deep Divi</strong>: Trump has imposed a November 27 Thanksgiving deadline for Ukraine peace negotiations. The leaked 28-point US proposal contains Russian maximalist demands, causing friction between Washington, Kyiv, an...</li><li><strong>Trump-Xi Call Signals US-China Détente While Japan Faces Pre</strong>: Trump announced an April 2025 China visit following a positive call with Xi Jinping covering Taiwan, Ukraine, and trade. Simultaneously, China is escalating pressure on Japan over missile deployments ...</li><li><strong>China's Military Modernization Targets Taiwan as Tensions Es</strong>: China deployed missiles 110km from Taiwan and launched its Type 076 amphibious assault ship with advanced drone integration. These military moves coincide with diplomatic pressure on Japan and represe...</li></ul><p><em>Published: November 25, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Tue, 25 Nov 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251125</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[United States]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-25.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
