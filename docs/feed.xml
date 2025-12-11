@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Wed, 10 Dec 2025 06:44:14 GMT</pubDate>
-        <lastBuildDate>Wed, 10 Dec 2025 06:44:14 GMT</lastBuildDate>
+        <pubDate>Thu, 11 Dec 2025 06:45:40 GMT</pubDate>
+        <lastBuildDate>Thu, 11 Dec 2025 06:45:40 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - December 11, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-11.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, December 11, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>China-Japan Military Tensions Escalate Over Taiwan</strong>: China conducting joint military patrols with Russia near Japan while responding aggressively to Japan's stated willingness to defend Taiwan represents a dangerous escalation in East Asia. This directl...</li><li><strong>Ukraine Peace Negotiations Fracture US-Europe Alliance</strong>: Ukraine submitted revised peace plans to US negotiators while Trump publicly criticized European allies, exposing fundamental disagreements on war termination. Collapsing transatlantic consensus on Uk...</li><li><strong>Trump Seizes Venezuelan Oil Tanker in Major Escalation</strong>: US military seizure of merchant vessel off Venezuela marks unprecedented escalation in Trump's confrontation with Maduro regime. Signals willingness to use military force for regime change objectives ...</li></ul><p><em>Published: December 11, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Thu, 11 Dec 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251211</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-11.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - December 10, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-10.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, December 10, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US National Security Strategy Reveals Muddled China Policy</strong>: The Trump administration's new strategic document shows inconsistency on China policy, with approval of Nvidia chip sales contradicting hardline rhetoric. This confusion signals potential shifts in US...</li><li><strong>Ukraine Faces Pressure to Cede Territory as Trump Demands Pe</strong>: Trump is pressuring Zelensky to accept major territorial concessions including potentially all of Donbas, while Zelensky signals willingness to hold elections. This represents a critical inflection po...</li><li><strong>Russia-China Military Coordination Escalates in Asia-Pacific</strong>: Russia and China conducted joint air patrols near South Korea and Japan, prompting military responses. Combined with warnings from Chinese diplomats about Japan as a threat, this signals deepening Rus...</li></ul><p><em>Published: December 10, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -204,21 +220,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-01.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - November 30, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-30.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, November 30, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russia Escalates Energy War as Ukraine Seeks Peace Talks</strong>: Russia conducted massive coordinated drone and missile strikes killing six and cutting power to 600,000+ civilians while Ukraine simultaneously pursues peace negotiations. This demonstrates Russia's s...</li><li><strong>China-Russia Military Industrial Complex Deepens Amid Ukrain</strong>: Chinese parts supplier taking stake in Russian drone maker marks unprecedented integration of military-industrial cooperation. Combined with Ukrainian drone strikes on Russian shadow fleet, this revea...</li><li><strong>Ukraine's Internal Crisis Threatens Negotiating Position Ami</strong>: Zelensky removed top negotiator Andriy Yermak amid corruption raids while simultaneously launching peace talks with new delegation. This internal political instability during critical negotiations wea...</li></ul><p><em>Published: November 30, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sun, 30 Nov 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251130</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-11-30.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
