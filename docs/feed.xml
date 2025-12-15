@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sun, 14 Dec 2025 06:40:19 GMT</pubDate>
-        <lastBuildDate>Sun, 14 Dec 2025 06:40:19 GMT</lastBuildDate>
+        <pubDate>Mon, 15 Dec 2025 06:47:55 GMT</pubDate>
+        <lastBuildDate>Mon, 15 Dec 2025 06:47:55 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,23 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - December 15, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-15.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Monday, December 15, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine Abandons NATO Membership Push for Security Guarantee</strong>: Zelenskyy's willingness to drop NATO aspirations represents a fundamental shift in Ukraine's post-war strategy. This signals potential breakthrough in Berlin peace talks, reshaping European security a...</li><li><strong>China's Drone Carrier Signals New Pacific Warfare Doctrine</strong>: China's Jiutian drone carrier test demonstrates shift toward swarm warfare capabilities targeting US Pacific infrastructure, Taiwan, and regional allies. This represents qualitative military advanceme...</li><li><strong>China-Saudi Arabia Coordination Reshapes Middle East Diploma</strong>: China-Saudi Arabia alignment on regional and global coordination signals deepening strategic partnership beyond energy economics. This challenges traditional US influence in Middle East, particularly ...</li></ul><p><em>Published: December 15, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Mon, 15 Dec 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251215</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-15.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - December 14, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-14.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, December 14, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine Peace Talks Stall as Russia Escalates Energy Attacks</strong>: As US-brokered peace negotiations intensify, Russia continues systematic strikes on Ukrainian infrastructure, killing power for over 1 million civilians. This demonstrates Russia's negotiating strateg...</li><li><strong>Transatlantic Rift Deepens Over Ukraine Peace Terms</strong>: Fundamental disagreement between US and Europe on Ukraine peace strategy threatens NATO cohesion. Europe fears Trump-backed demilitarization plan enables Russian reinvasion; US prioritizes rapid settl...</li><li><strong>US Rebalance Away from Europe Shifts Indo-Pacific Risks</strong>: New US National Security Strategy deprioritizes Southeast Asia and Europe while focusing on China containment. This creates strategic vacuums: Southeast Asia becomes bargaining chip in US-China compet...</li></ul><p><em>Published: December 14, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -204,23 +221,6 @@
         <category><![CDATA[Russia]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-05.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - December 04, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-04.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, December 04, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>EU Mobilizes €90B Ukraine Fund Using Frozen Russian Assets</strong>: The European Commission's plan to leverage frozen Russian central bank assets for Ukraine financing represents a critical shift in war funding strategy. This €90 billion commitment over two years addr...</li><li><strong>Macron's Beijing Gambit: France Seeks China's Leverage on Ru</strong>: Macron's three-day state visit to China represents Europe's most significant diplomatic effort to break the Russia-China alignment on Ukraine. By positioning China as 'decisive' to ceasefire prospects...</li><li><strong>US-Russia Peace Talks Show Movement But No Breakthrough Yet</strong>: Five-hour Moscow negotiations between US and Russian representatives mark the most substantive Ukraine peace discussions since invasion. Both sides characterize talks as 'constructive' with Russia acc...</li></ul><p><em>Published: December 04, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Thu, 04 Dec 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251204</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-04.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
