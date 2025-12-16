@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Mon, 15 Dec 2025 06:47:55 GMT</pubDate>
-        <lastBuildDate>Mon, 15 Dec 2025 06:47:55 GMT</lastBuildDate>
+        <pubDate>Tue, 16 Dec 2025 06:46:01 GMT</pubDate>
+        <lastBuildDate>Tue, 16 Dec 2025 06:46:01 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - December 16, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-16.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, December 16, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine Peace Framework: European Multinational Force Emerge</strong>: European leaders and the US are negotiating concrete security guarantees for Ukraine including a multinational military force. This represents a fundamental shift in how the West might enforce any Rus...</li><li><strong>US Military Warns of Taiwan Vulnerability to Chinese Overmat</strong>: Leaked Pentagon assessment reveals the US would likely lose a high-end war with China over Taiwan under current conditions. Combined with China's new drone carrier and quarantine strategy, this repres...</li><li><strong>Russia Rejects Peace Terms as NATO Border Tensions Escalate</strong>: While Western powers negotiate security frameworks for Ukraine, Russia maintains maximalist demands for Ukrainian surrender. Finland warns Russia will shift forces to NATO borders if peace is reached,...</li></ul><p><em>Published: December 16, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Tue, 16 Dec 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251216</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-16.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - December 15, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-15.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Monday, December 15, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine Abandons NATO Membership Push for Security Guarantee</strong>: Zelenskyy's willingness to drop NATO aspirations represents a fundamental shift in Ukraine's post-war strategy. This signals potential breakthrough in Berlin peace talks, reshaping European security a...</li><li><strong>China's Drone Carrier Signals New Pacific Warfare Doctrine</strong>: China's Jiutian drone carrier test demonstrates shift toward swarm warfare capabilities targeting US Pacific infrastructure, Taiwan, and regional allies. This represents qualitative military advanceme...</li><li><strong>China-Saudi Arabia Coordination Reshapes Middle East Diploma</strong>: China-Saudi Arabia alignment on regional and global coordination signals deepening strategic partnership beyond energy economics. This challenges traditional US influence in Middle East, particularly ...</li></ul><p><em>Published: December 15, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -206,21 +222,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-07.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - December 05, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-05.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, December 05, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine Peace Talks Stall: Putin Rejects US Proposal</strong>: Five-hour Kremlin meeting between Putin and Trump envoys failed to produce breakthrough. Putin explicitly stated unacceptable points in US peace plan while demanding Donbas seizure by force. This dead...</li><li><strong>Putin-Modi Summit: Russia Pivots to Asia Amid Isolation</strong>: Putin's first India visit since Ukraine invasion signals strategic realignment. India-Russia defense deals (S-400 systems) and energy cooperation despite US sanctions threats demonstrate Moscow's pivo...</li><li><strong>China Escalates 'Three Warfares' Against Japan Over Taiwan</strong>: Beijing intensifying lawfare, psychological warfare, and public opinion operations against Japan following PM Takaichi's Taiwan defense statements. This signals major shift in China's Taiwan strategy,...</li></ul><p><em>Published: December 05, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Fri, 05 Dec 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251205</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-05.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
