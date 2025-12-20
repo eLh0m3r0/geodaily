@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 19 Dec 2025 06:43:11 GMT</pubDate>
-        <lastBuildDate>Fri, 19 Dec 2025 06:43:11 GMT</lastBuildDate>
+        <pubDate>Sat, 20 Dec 2025 06:41:05 GMT</pubDate>
+        <lastBuildDate>Sat, 20 Dec 2025 06:41:05 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - December 20, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-20.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, December 20, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>EU Commits $105B to Ukraine Without Russian Asset Seizure</strong>: The EU's €90bn interest-free loan represents Europe's largest independent financial commitment to Ukraine, signaling strategic autonomy from US policy. However, the decision to avoid using frozen Russ...</li><li><strong>Russia-China Drone-Chip Alliance Reshaping Modern Warfare</strong>: Russia's Chinese-enabled drone supply network combined with China's EUV lithography advances creates a technological force multiplier that transforms warfare economics. This axis threatens NATO's tech...</li><li><strong>Ukraine Peace Talks Stall: Kyiv Rejects Territorial Concessi</strong>: Fresh US-led negotiations in Miami reveal fundamental impasse: Ukraine refuses territorial concessions while demanding security guarantees; Russia seeks territorial gains and NATO constraints. Rubio's...</li></ul><p><em>Published: December 20, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sat, 20 Dec 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251220</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-20.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - December 19, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-19.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, December 19, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US $11 Billion Taiwan Arms Sale Escalates US-China Tensions</strong>: The largest-ever US arms package to Taiwan ($11.1 billion) directly challenges Beijing's core sovereignty claims and occurs amid Trump's planned April visit to China. This signals potential deteriorat...</li><li><strong>EU Secures €90 Billion Ukraine Loan Without Russian Assets</strong>: EU leaders agreed on €90 billion emergency funding for Ukraine but rejected the preferred option of using frozen Russian assets (~$300 billion). This represents a strategic choice to avoid escalation ...</li><li><strong>Trump's Critical Minerals Strategy Reshapes Global Supply Ch</strong>: Trump administration is systematically pursuing critical minerals (rare earths, semiconductors) from China, Ukraine, Greenland, and elsewhere to secure AI and defense supply chains. This represents a ...</li></ul><p><em>Published: December 19, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -208,22 +224,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-11.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - December 10, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-10.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, December 10, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US National Security Strategy Reveals Muddled China Policy</strong>: The Trump administration's new strategic document shows inconsistency on China policy, with approval of Nvidia chip sales contradicting hardline rhetoric. This confusion signals potential shifts in US...</li><li><strong>Ukraine Faces Pressure to Cede Territory as Trump Demands Pe</strong>: Trump is pressuring Zelensky to accept major territorial concessions including potentially all of Donbas, while Zelensky signals willingness to hold elections. This represents a critical inflection po...</li><li><strong>Russia-China Military Coordination Escalates in Asia-Pacific</strong>: Russia and China conducted joint air patrols near South Korea and Japan, prompting military responses. Combined with warnings from Chinese diplomats about Japan as a threat, this signals deepening Rus...</li></ul><p><em>Published: December 10, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Wed, 10 Dec 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251210</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-10.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
