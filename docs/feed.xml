@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sat, 20 Dec 2025 06:41:05 GMT</pubDate>
-        <lastBuildDate>Sat, 20 Dec 2025 06:41:05 GMT</lastBuildDate>
+        <pubDate>Sun, 21 Dec 2025 06:41:04 GMT</pubDate>
+        <lastBuildDate>Sun, 21 Dec 2025 06:41:04 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,23 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - December 21, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-21.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, December 21, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US-Russia Ukraine Peace Talks Begin in Miami</strong>: Direct diplomatic engagement between US and Russian officials marks a significant shift in Ukraine conflict dynamics. These talks represent the first substantive negotiations in months, with both side...</li><li><strong>Pentagon Warns of Heavy US Losses in Taiwan Conflict</strong>: Classified Pentagon assessment reveals US military anxiety over PLA capabilities, projecting significant American losses in Taiwan intervention scenario. This represents critical shift in strategic ca...</li><li><strong>UK Cuts Russia Containment Funding in Western Balkans</strong>: 40% reduction in UK counter-Russian operations funding in strategically vital Balkans region signals weakening Western commitment to containing Russian influence in Europe. This creates vacuum for Rus...</li></ul><p><em>Published: December 21, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sun, 21 Dec 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251221</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[United States]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-21.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - December 20, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-20.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, December 20, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>EU Commits $105B to Ukraine Without Russian Asset Seizure</strong>: The EU's €90bn interest-free loan represents Europe's largest independent financial commitment to Ukraine, signaling strategic autonomy from US policy. However, the decision to avoid using frozen Russ...</li><li><strong>Russia-China Drone-Chip Alliance Reshaping Modern Warfare</strong>: Russia's Chinese-enabled drone supply network combined with China's EUV lithography advances creates a technological force multiplier that transforms warfare economics. This axis threatens NATO's tech...</li><li><strong>Ukraine Peace Talks Stall: Kyiv Rejects Territorial Concessi</strong>: Fresh US-led negotiations in Miami reveal fundamental impasse: Ukraine refuses territorial concessions while demanding security guarantees; Russia seeks territorial gains and NATO constraints. Rubio's...</li></ul><p><em>Published: December 20, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -208,22 +225,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-12.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - December 11, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-11.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, December 11, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>China-Japan Military Tensions Escalate Over Taiwan</strong>: China conducting joint military patrols with Russia near Japan while responding aggressively to Japan's stated willingness to defend Taiwan represents a dangerous escalation in East Asia. This directl...</li><li><strong>Ukraine Peace Negotiations Fracture US-Europe Alliance</strong>: Ukraine submitted revised peace plans to US negotiators while Trump publicly criticized European allies, exposing fundamental disagreements on war termination. Collapsing transatlantic consensus on Uk...</li><li><strong>Trump Seizes Venezuelan Oil Tanker in Major Escalation</strong>: US military seizure of merchant vessel off Venezuela marks unprecedented escalation in Trump's confrontation with Maduro regime. Signals willingness to use military force for regime change objectives ...</li></ul><p><em>Published: December 11, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Thu, 11 Dec 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251211</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-11.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
