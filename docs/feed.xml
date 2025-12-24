@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Tue, 23 Dec 2025 06:45:57 GMT</pubDate>
-        <lastBuildDate>Tue, 23 Dec 2025 06:45:57 GMT</lastBuildDate>
+        <pubDate>Wed, 24 Dec 2025 06:45:36 GMT</pubDate>
+        <lastBuildDate>Wed, 24 Dec 2025 06:45:36 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - December 24, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-24.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, December 24, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russia Seizes Siversk; Escalates Winter Energy War on Ukrain</strong>: Russia captured the strategic eastern town of Siversk while conducting massive drone/missile attacks on Ukrainian energy infrastructure during winter. This represents significant territorial gains and...</li><li><strong>US-China-Russia Clash Over Venezuela at UN; Sanctions Escala</strong>: Russia and China jointly accused the US of 'extortion' and international law violations over Venezuela sanctions and naval blockade at UN Security Council. This represents a coordinated challenge to U...</li><li><strong>Putin's 'Historical Lands' Doctrine Threatens EU Expansion P</strong>: Putin has renewed vows to 'liberate Russia's historical lands' through negotiation or military means, with implications extending far beyond Ukraine. Simultaneously, EU considers fast-tracking Western...</li></ul><p><em>Published: December 24, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Wed, 24 Dec 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251224</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-24.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - December 23, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-23.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, December 23, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>China Signals Taiwan Military Readiness Amid Shifting US Pos</strong>: Xi Jinping's promotion of PLA commanders overseeing Taiwan Strait coincides with analysis suggesting Beijing may be entering a new phase of Taiwan policy. This occurs as US leadership appears less com...</li><li><strong>Ukraine Peace Talks Advance Despite Military Escalation and</strong>: US-Russia detente is progressing through Miami negotiations despite ongoing military operations and fundamental disagreements over Donbas control. This reflects Trump administration's willingness to n...</li><li><strong>Russia-China Energy Alliance Deepens as Moscow Bypasses West</strong>: Russia's LNG exports to China surged 143% while gold purchases hit record levels, consolidating Moscow's pivot to Asia. Simultaneously, Russia-China support for Venezuela demonstrates coordinated chal...</li></ul><p><em>Published: December 23, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -208,24 +224,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-15.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - December 14, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-14.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, December 14, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine Peace Talks Stall as Russia Escalates Energy Attacks</strong>: As US-brokered peace negotiations intensify, Russia continues systematic strikes on Ukrainian infrastructure, killing power for over 1 million civilians. This demonstrates Russia's negotiating strateg...</li><li><strong>Transatlantic Rift Deepens Over Ukraine Peace Terms</strong>: Fundamental disagreement between US and Europe on Ukraine peace strategy threatens NATO cohesion. Europe fears Trump-backed demilitarization plan enables Russian reinvasion; US prioritizes rapid settl...</li><li><strong>US Rebalance Away from Europe Shifts Indo-Pacific Risks</strong>: New US National Security Strategy deprioritizes Southeast Asia and Europe while focusing on China containment. This creates strategic vacuums: Southeast Asia becomes bargaining chip in US-China compet...</li></ul><p><em>Published: December 14, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sun, 14 Dec 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251214</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[United States]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-14.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
