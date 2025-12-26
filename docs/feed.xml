@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Thu, 25 Dec 2025 06:44:31 GMT</pubDate>
-        <lastBuildDate>Thu, 25 Dec 2025 06:44:31 GMT</lastBuildDate>
+        <pubDate>Fri, 26 Dec 2025 06:43:13 GMT</pubDate>
+        <lastBuildDate>Fri, 26 Dec 2025 06:43:13 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - December 26, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-26.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, December 26, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine Peace Negotiations Accelerate with DMZ Proposal</strong>: Ukraine's acceptance of demilitarized zones marks a significant diplomatic shift in Russia-Ukraine negotiations. With US envoys engaged and Russia claiming 'steady progress,' this represents the most ...</li><li><strong>US-China Strategic Competition Reshapes Global Trade</strong>: The Panama Canal emerges as critical battleground in US-China trade war, with implications for global commerce. Simultaneously, Trump's naval expansion and China's technological advances signal intens...</li><li><strong>Myanmar Military Election Deepens Regional Instability</strong>: Myanmar's predetermined military-controlled elections represent democratic collapse with regional consequences. The Rohingya crisis deepens as elections offer no path to resolution. This affects ASEAN...</li></ul><p><em>Published: December 26, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Fri, 26 Dec 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251226</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-26.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - December 25, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-25.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, December 25, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine-US Peace Plan Unveiled: Demilitarized Zone Proposal</strong>: A comprehensive 20-point US-Ukraine peace plan has been jointly agreed and transmitted to Russia, marking the most concrete diplomatic progress since the war began. This represents a potential inflect...</li><li><strong>China Simulates Western Hemisphere Warfare: Taiwan, Mexico,</strong>: Chinese military wargames explicitly simulating conflicts near Mexico, Cuba, and Taiwan reveal strategic planning for multi-theater operations against US interests. This demonstrates China's willingne...</li><li><strong>Europe Faces Economic Siege: China Trade Shock, US Tariffs,</strong>: Europe confronts a three-front economic and security crisis: hostile Russian military posture, unpredictable Trump tariff threats, and Chinese competitive pressure in semiconductors and technology. Ch...</li></ul><p><em>Published: December 25, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -208,22 +224,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-17.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - December 16, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-16.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, December 16, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine Peace Framework: European Multinational Force Emerge</strong>: European leaders and the US are negotiating concrete security guarantees for Ukraine including a multinational military force. This represents a fundamental shift in how the West might enforce any Rus...</li><li><strong>US Military Warns of Taiwan Vulnerability to Chinese Overmat</strong>: Leaked Pentagon assessment reveals the US would likely lose a high-end war with China over Taiwan under current conditions. Combined with China's new drone carrier and quarantine strategy, this repres...</li><li><strong>Russia Rejects Peace Terms as NATO Border Tensions Escalate</strong>: While Western powers negotiate security frameworks for Ukraine, Russia maintains maximalist demands for Ukrainian surrender. Finland warns Russia will shift forces to NATO borders if peace is reached,...</li></ul><p><em>Published: December 16, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Tue, 16 Dec 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251216</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-16.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
