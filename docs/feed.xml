@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 26 Dec 2025 06:43:13 GMT</pubDate>
-        <lastBuildDate>Fri, 26 Dec 2025 06:43:13 GMT</lastBuildDate>
+        <pubDate>Sat, 27 Dec 2025 06:42:14 GMT</pubDate>
+        <lastBuildDate>Sat, 27 Dec 2025 06:42:14 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - December 27, 2025]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-27.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, December 27, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump-Zelensky Florida Summit: Ukraine Peace Deal at Critica</strong>: Trump and Zelensky's imminent meeting represents the most significant diplomatic moment in the Ukraine conflict. With a '90% ready' peace plan and Trump's leverage over aid, this summit could reshape ...</li><li><strong>North Korea's Nuclear Submarine Debut Destabilizes Asia-Paci</strong>: North Korea's nuclear submarine capability represents a qualitative shift in regional military balance, complicating US deterrence strategy in Asia. Combined with South Korea's diplomatic pivot toward...</li><li><strong>Taiwan Arms Sales Trigger US-China Escalation Spiral Ahead o</strong>: Trump's $10 billion Taiwan arms package and Beijing's retaliatory sanctions against Boeing and Northrop Grumman escalate US-China competition. This directly threatens Trump's planned 2026 Beijing visi...</li></ul><p><em>Published: December 27, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sat, 27 Dec 2025 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20251227</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-27.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - December 26, 2025]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-26.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, December 26, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine Peace Negotiations Accelerate with DMZ Proposal</strong>: Ukraine's acceptance of demilitarized zones marks a significant diplomatic shift in Russia-Ukraine negotiations. With US envoys engaged and Russia claiming 'steady progress,' this represents the most ...</li><li><strong>US-China Strategic Competition Reshapes Global Trade</strong>: The Panama Canal emerges as critical battleground in US-China trade war, with implications for global commerce. Simultaneously, Trump's naval expansion and China's technological advances signal intens...</li><li><strong>Myanmar Military Election Deepens Regional Instability</strong>: Myanmar's predetermined military-controlled elections represent democratic collapse with regional consequences. The Rohingya crisis deepens as elections offer no path to resolution. This affects ASEAN...</li></ul><p><em>Published: December 26, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -208,22 +224,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-18.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - December 17, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-17.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, December 17, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine Peace Deal Framework Emerges as Trump Pushes Russia</strong>: US envoys are preparing to present a comprehensive peace plan to Russia within days, with Berlin talks resolving 90% of contentious issues including security guarantees and use of frozen Russian asset...</li><li><strong>US-China Military Dialogue Resumes Amid Trade War and Nuclea</strong>: Senior US-China defense officials are meeting to stabilize military-to-military communication while Trump explores nuclear weapons reduction frameworks involving China, Russia, and the US. Simultaneou...</li><li><strong>35 Nations Establish Ukraine Reparations Commission Using Ru</strong>: An unprecedented coalition formally approved an International Claims Commission for Ukraine with 35 countries backing a plan to use €300+ billion in frozen Russian assets for reparations loans. This c...</li></ul><p><em>Published: December 17, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Wed, 17 Dec 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251217</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-17.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
