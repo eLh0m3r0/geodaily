@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 02 Jan 2026 06:45:14 GMT</pubDate>
-        <lastBuildDate>Fri, 02 Jan 2026 06:45:14 GMT</lastBuildDate>
+        <pubDate>Sat, 03 Jan 2026 06:42:26 GMT</pubDate>
+        <lastBuildDate>Sat, 03 Jan 2026 06:42:26 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - January 03, 2026]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-03.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, January 03, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine's Zelensky names spy chief Kyrylo Budanov as new top</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>Secret operation unveiled: Ukraine fakes death of anti-Kreml</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>Ukraine’s Zelenskyy names GUR chief Kyrylo Budanov as top ai</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: January 03, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sat, 03 Jan 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260103</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-03.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - January 02, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-02.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, January 02, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>China's Military Pressure on Taiwan Escalates Amid US Warnin</strong>: China conducted live-fire drills near Taiwan with PLA drones approaching Taipei's center, while the US approved an $11bn arms package and urged dialogue. This represents a critical flashpoint in great...</li><li><strong>North Korea-Russia Military Alliance Deepens as Kim Praises</strong>: North Korea's Kim Jong-un explicitly praised troops fighting in Ukraine and emphasized deepening military cooperation with Russia in his New Year message. This signals sustained North Korean involveme...</li><li><strong>Ukraine-Russia Escalation Continues Despite Peace Talks and</strong>: A New Year's Eve drone strike killed 24 civilians in Russian-occupied Kherson, with Russia claiming it targeted civilians while Ukraine denies responsibility. The CIA concluded Ukraine did not target ...</li></ul><p><em>Published: January 02, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -202,22 +218,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-25.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - December 24, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-24.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, December 24, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russia Seizes Siversk; Escalates Winter Energy War on Ukrain</strong>: Russia captured the strategic eastern town of Siversk while conducting massive drone/missile attacks on Ukrainian energy infrastructure during winter. This represents significant territorial gains and...</li><li><strong>US-China-Russia Clash Over Venezuela at UN; Sanctions Escala</strong>: Russia and China jointly accused the US of 'extortion' and international law violations over Venezuela sanctions and naval blockade at UN Security Council. This represents a coordinated challenge to U...</li><li><strong>Putin's 'Historical Lands' Doctrine Threatens EU Expansion P</strong>: Putin has renewed vows to 'liberate Russia's historical lands' through negotiation or military means, with implications extending far beyond Ukraine. Simultaneously, EU considers fast-tracking Western...</li></ul><p><em>Published: December 24, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Wed, 24 Dec 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251224</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-24.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
