@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sat, 03 Jan 2026 06:42:26 GMT</pubDate>
-        <lastBuildDate>Sat, 03 Jan 2026 06:42:26 GMT</lastBuildDate>
+        <pubDate>Sun, 04 Jan 2026 06:43:05 GMT</pubDate>
+        <lastBuildDate>Sun, 04 Jan 2026 06:43:05 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,23 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - January 04, 2026]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-04.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, January 04, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump Orders Military Seizure of Venezuela, Claims Direct Co</strong>: US military operation capturing Venezuelan President Maduro marks unprecedented direct intervention in Latin America under Trump. This fundamentally reshapes regional power dynamics, challenges post-W...</li><li><strong>North Korea Escalates Missile Tests as Regional Tensions Pea</strong>: North Korea's ballistic missile launches coincide with South Korean president's China visit, signaling coordinated pressure on Seoul and potential China-NK alignment. Timing suggests deliberate strate...</li><li><strong>Ukraine Restructures Security Apparatus Amid Peace Negotiati</strong>: Zelenskyy's appointment of military intelligence chief as security advisor signals preparation for major security guarantee negotiations. This institutional restructuring suggests Ukraine anticipating...</li></ul><p><em>Published: January 04, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sun, 04 Jan 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260104</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[United States]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-04.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - January 03, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-03.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, January 03, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine's Zelensky names spy chief Kyrylo Budanov as new top</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>Secret operation unveiled: Ukraine fakes death of anti-Kreml</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>Ukraine’s Zelenskyy names GUR chief Kyrylo Budanov as top ai</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: January 03, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -201,23 +218,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-26.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - December 25, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-25.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, December 25, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine-US Peace Plan Unveiled: Demilitarized Zone Proposal</strong>: A comprehensive 20-point US-Ukraine peace plan has been jointly agreed and transmitted to Russia, marking the most concrete diplomatic progress since the war began. This represents a potential inflect...</li><li><strong>China Simulates Western Hemisphere Warfare: Taiwan, Mexico,</strong>: Chinese military wargames explicitly simulating conflicts near Mexico, Cuba, and Taiwan reveal strategic planning for multi-theater operations against US interests. This demonstrates China's willingne...</li><li><strong>Europe Faces Economic Siege: China Trade Shock, US Tariffs,</strong>: Europe confronts a three-front economic and security crisis: hostile Russian military posture, unpredictable Trump tariff threats, and Chinese competitive pressure in semiconductors and technology. Ch...</li></ul><p><em>Published: December 25, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Thu, 25 Dec 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251225</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-25.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
