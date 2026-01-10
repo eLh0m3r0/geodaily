@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 09 Jan 2026 06:47:25 GMT</pubDate>
-        <lastBuildDate>Fri, 09 Jan 2026 06:47:25 GMT</lastBuildDate>
+        <pubDate>Sat, 10 Jan 2026 06:41:48 GMT</pubDate>
+        <lastBuildDate>Sat, 10 Jan 2026 06:41:48 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,21 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - January 10, 2026]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-10.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, January 10, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump's Greenland Ultimatum Threatens NATO Cohesion</strong>: Trump's explicit threats to acquire Greenland 'the hard way' represent an unprecedented challenge to NATO alliance unity. This directly threatens Denmark, a core NATO member, and signals willingness t...</li><li><strong>US Military Intervention in Venezuela Reshapes Global Order</strong>: The US seizure of Venezuelan President Maduro and ongoing oil tanker seizures represent the most significant unilateral military intervention since Iraq. This signals Trump's 'sphere of influence' doc...</li><li><strong>China's Taiwan Strait Militarization Accelerates Amid Strate</strong>: China's disclosure of Hurricane 3000 HPM weapon, combined with PLA 'decapitation' strike doctrine development and explicit retreat from Korean denuclearization, signals Beijing is preparing for milita...</li></ul><p><em>Published: January 10, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sat, 10 Jan 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260110</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-10.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - January 09, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-09.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, January 09, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine Peace Plan Collapses as Russia Escalates Military St</strong>: Russia's rejection of European peacekeeping proposals and subsequent massive attacks on Kyiv signal breakdown of diplomatic efforts. The deployment of hypersonic Oreshnik missiles and targeting of civ...</li><li><strong>Trump's Venezuela Intervention Reshapes Global Power Competi</strong>: US military removal of Maduro signals Trump administration's willingness to use force for resource control and geopolitical dominance. This action reverberates globally: China reassesses Latin America...</li><li><strong>China Exploits US Distraction to Advance Asia-Pacific Domina</strong>: While US focuses on Venezuela, China simultaneously pressures Japan with semiconductor sanctions, improves South Korea relations with major summit, and strengthens regional influence. This coordinated...</li></ul><p><em>Published: January 09, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -205,22 +220,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-01.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - December 31, 2025]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-31.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, December 31, 2025. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russia Deploys Nuclear Missiles to Belarus Amid Peace Talks</strong>: Russia's deployment of nuclear-capable Oreshnik hypersonic missiles to Belarus represents a major escalation during active Ukraine peace negotiations. This simultaneous military posturing and diplomat...</li><li><strong>China Executes Largest Taiwan Military Drills, Demonstrates</strong>: China's 'Justice Mission 2025' represents the largest military exercises around Taiwan, explicitly demonstrating blockade capabilities. This occurs amid US arms sales to Taiwan and signals Beijing's w...</li><li><strong>Putin Residence Attack Claims Threaten Ukraine Peace Negotia</strong>: Russia's accusation that Ukraine attacked Putin's residence—denied by Kyiv and doubted by US NATO envoy—reveals the fragility of ongoing peace talks. Whether fabricated or genuine, the claim demonstra...</li></ul><p><em>Published: December 31, 2025</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Wed, 31 Dec 2025 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20251231</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2025-12-31.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
