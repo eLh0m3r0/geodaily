@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Thu, 15 Jan 2026 06:46:45 GMT</pubDate>
-        <lastBuildDate>Thu, 15 Jan 2026 06:46:45 GMT</lastBuildDate>
+        <pubDate>Fri, 16 Jan 2026 06:46:52 GMT</pubDate>
+        <lastBuildDate>Fri, 16 Jan 2026 06:46:52 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - January 16, 2026]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-16.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, January 16, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>European Military Deployment to Greenland Signals Arctic Pow</strong>: Multiple European nations deployed troops to Greenland in direct response to Trump's acquisition ambitions, marking a rare show of European military unity. This escalates Arctic geopolitical competiti...</li><li><strong>Ukraine Faces Existential Winter Crisis as Kremlin Pressures</strong>: Russia is weaponizing winter through systematic energy infrastructure destruction, creating humanitarian crisis conditions while simultaneously demanding Ukraine accept unfavorable peace terms. Ukrain...</li><li><strong>US-Taiwan Semiconductor Deal Reshapes Indo-Pacific Power Dyn</strong>: The $250-300 billion US-Taiwan chip investment and tariff reduction deal represents strategic decoupling from China's supply chains while binding Taiwan closer to US economic interests. This directly ...</li></ul><p><em>Published: January 16, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Fri, 16 Jan 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260116</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-16.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - January 15, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-15.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, January 15, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Iran Crisis Escalates: Trump Threatens Military Action</strong>: Trump administration threatens military intervention in Iran amid mass protests and imminent executions. This represents a dramatic escalation in US-Iran tensions with potential for direct military co...</li><li><strong>Greenland Becomes Arctic Flashpoint: Trump vs NATO Allies</strong>: Trump's renewed push to acquire Greenland via military threats, tariffs, and cash offers has triggered unprecedented NATO response. France and Germany deploying troops to Greenland at Denmark's reques...</li><li><strong>Ukraine Energy Crisis Deepens as Winter Persists</strong>: Ukraine faces severe energy emergency with temperatures at -19°C, widespread blackouts, and no water access. Russian strikes systematically targeting energy infrastructure create humanitarian crisis. ...</li></ul><p><em>Published: January 15, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -208,22 +224,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-07.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - January 06, 2026]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-06.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, January 06, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine Peace Talks Accelerate as Zelensky Reshuffles Securi</strong>: European and US leaders convening in Paris to finalize peace plans while Ukraine undergoes major security leadership changes signals critical momentum toward ending the war. This represents the most c...</li><li><strong>US Venezuela Operation Reshapes Global Power Dynamics</strong>: The US military capture of Maduro demonstrates unprecedented willingness to conduct regime change operations, directly challenging China and Russia's ability to protect allies. This fundamentally alte...</li><li><strong>Trump's Greenland Annexation Threat Threatens NATO Collapse</strong>: Denmark's explicit warning that US military action on Greenland would end NATO signals potential dissolution of 80-year transatlantic alliance. This represents existential threat to Western security a...</li></ul><p><em>Published: January 06, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Tue, 06 Jan 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260106</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-06.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
