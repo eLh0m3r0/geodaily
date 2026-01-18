@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sat, 17 Jan 2026 06:41:54 GMT</pubDate>
-        <lastBuildDate>Sat, 17 Jan 2026 06:41:54 GMT</lastBuildDate>
+        <pubDate>Sun, 18 Jan 2026 06:42:35 GMT</pubDate>
+        <lastBuildDate>Sun, 18 Jan 2026 06:42:35 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,23 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - January 18, 2026]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-18.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, January 18, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russia Escalates Nuclear Infrastructure Attacks on Ukraine</strong>: Russia is systematically targeting Ukraine's nuclear power plants and energy grid during winter, creating humanitarian crisis and nuclear safety risks. Zelenskyy's warnings about Zaporozhye NPP attack...</li><li><strong>Trump's Greenland Tariffs Fracture NATO Alliance Structure</strong>: Trump imposed 10-25% tariffs on eight NATO allies for opposing Greenland acquisition, directly undermining alliance cohesion. This represents unprecedented US pressure on core NATO members (Denmark, U...</li><li><strong>China-Russia Military Coordination Escalates in Indo-Pacific</strong>: China, Russia, and Iran conducted joint naval exercises in South Africa while PLA drones penetrated Taiwan airspace. This coordinated military posturing signals strengthened authoritarian alignment an...</li></ul><p><em>Published: January 18, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sun, 18 Jan 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260118</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-18.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - January 17, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-17.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, January 17, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump's Aggressive Regime Change Campaign Reshapes Global Or</strong>: Trump administration is executing coordinated military and diplomatic operations against Venezuela and Iran while simultaneously undermining China-Russia anti-Western alliances. This represents a fund...</li><li><strong>Trump's Greenland Ultimatum Tests European Unity and NATO Co</strong>: Trump's explicit threats to annex Greenland and impose tariffs on non-compliant allies represent unprecedented pressure on NATO's foundational principle of territorial integrity. This forces Europe to...</li><li><strong>BRICS Military Drills Signal Institutional Evolution Toward</strong>: BRICS naval exercises demonstrate transition from economic bloc to coordinated military actor. China-Russia-UAE coordination in South African waters represents institutionalization of anti-Western all...</li></ul><p><em>Published: January 17, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -208,23 +225,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-09.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - January 08, 2026]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-08.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, January 08, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US Military Intervention in Venezuela Reshapes Western Hemis</strong>: The US abduction of Nicolas Maduro represents an unprecedented military intervention in Latin America, signaling aggressive assertion of hemispheric dominance. This operation directly challenges China...</li><li><strong>Trump Administration Escalates Economic Warfare Against Russ</strong>: Trump's bipartisan sanctions bill targeting China and India for Russian oil purchases, combined with US military seizure of Russian shadow fleet tankers, represents coordinated economic-military press...</li><li><strong>Trump's Greenland Ambitions Threaten NATO Alliance Cohesion</strong>: Trump's explicit consideration of military force to acquire Greenland represents unprecedented threat to NATO unity. The strategic Arctic location, critical minerals, and geopolitical positioning make...</li></ul><p><em>Published: January 08, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Thu, 08 Jan 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260108</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[United States]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-08.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
