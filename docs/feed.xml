@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Thu, 22 Jan 2026 06:48:39 GMT</pubDate>
-        <lastBuildDate>Thu, 22 Jan 2026 06:48:39 GMT</lastBuildDate>
+        <pubDate>Fri, 23 Jan 2026 06:48:18 GMT</pubDate>
+        <lastBuildDate>Fri, 23 Jan 2026 06:48:18 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - January 23, 2026]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-23.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, January 23, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine Peace Talks: First Trilateral US-Russia-Ukraine Meet</strong>: Historic first trilateral negotiations between US, Russia, and Ukraine represent a critical diplomatic breakthrough. Trump's envoys met Putin overnight, with territorial disputes emerging as central t...</li><li><strong>Taiwan Defense Gridlock Amid China's Military Pressure Escal</strong>: Taiwan faces dual crisis: domestic opposition blocking defense spending while China deploys unprecedented drone operations in claimed airspace. First confirmed PLA drone flight over Pratas Island sign...</li><li><strong>Europe's Strategic Autonomy Crisis: Davos Reveals Deep Trans</strong>: Zelensky's blistering Davos critique of European fragmentation and Trump-dependency exposes fundamental NATO crisis. European leaders simultaneously relieved by Greenland tensions easing yet terrified...</li></ul><p><em>Published: January 23, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Fri, 23 Jan 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260123</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-23.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - January 22, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-22.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, January 22, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Taiwan Military Risks: Understudied International Costs of C</strong>: While deterrence gaps receive attention, the international economic and geopolitical consequences of a Taiwan conflict remain underanalyzed. This research addresses critical blind spots in war plannin...</li><li><strong>Greenland Framework: Trump Reshapes Arctic Geopolitics and N</strong>: Trump's pivot from military threats to a negotiated 'framework' with NATO signals potential restructuring of Arctic access, NATO cohesion, and transatlantic relations. The deal's vagueness masks deepe...</li><li><strong>Trump Envoys Meet Putin: Ukraine Peace Negotiations Enter Cr</strong>: Direct Trump administration engagement with Putin on Ukraine through envoys Witkoff and Kushner signals potential shift toward negotiated settlement. Putin's cautious response to Trump's 'Board of Pea...</li></ul><p><em>Published: January 22, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -209,24 +225,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-14.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - January 13, 2026]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-13.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, January 13, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russia Escalates Ukraine War with Nuclear-Capable Missiles</strong>: Russia's deployment of the Oreshnik nuclear-capable missile represents a dangerous escalation in the Ukraine conflict. This development signals Moscow's willingness to raise stakes despite internation...</li><li><strong>Trump's Greenland Ambitions Fracture NATO Alliance Cohesion</strong>: Trump's repeated assertions about acquiring Greenland directly challenge NATO's foundational principles and Denmark's sovereignty. This threatens transatlantic unity at a critical moment when Europe n...</li><li><strong>China Expands Military Presence in South China Sea Amid US U</strong>: China's accelerated dredging at Antelope Reef combined with continued military pressure despite US-China stability rhetoric indicates Beijing is exploiting perceived American distraction. This challen...</li></ul><p><em>Published: January 13, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Tue, 13 Jan 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260113</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[United States]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-13.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
