@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 23 Jan 2026 06:48:18 GMT</pubDate>
-        <lastBuildDate>Fri, 23 Jan 2026 06:48:18 GMT</lastBuildDate>
+        <pubDate>Sat, 24 Jan 2026 06:43:09 GMT</pubDate>
+        <lastBuildDate>Sat, 24 Jan 2026 06:43:09 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - January 24, 2026]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-24.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, January 24, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine-Russia-US Trilateral Talks Begin: Territory Remains</strong>: First trilateral negotiations since 2022 invasion mark potential diplomatic breakthrough under Trump administration. Territory disputes in Donbas remain central sticking point. Simultaneous Russian ai...</li><li><strong>Nuclear Arms Control Collapses: New START Treaty Faces Expir</strong>: New START treaty—cornerstone of nuclear stability since 2010—approaching collapse as Russia suspends inspections and US-Russia relations deteriorate. Expiration would end half-century of nuclear arms ...</li><li><strong>China's Drone Dominance Becomes Strategic Weapon in Ukraine</strong>: China controls global drone supply chains critical to both Russian and Ukrainian military operations. Civilian technology has become indispensable to modern warfare. Reveals new form of geopolitical p...</li></ul><p><em>Published: January 24, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sat, 24 Jan 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260124</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-24.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - January 23, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-23.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, January 23, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine Peace Talks: First Trilateral US-Russia-Ukraine Meet</strong>: Historic first trilateral negotiations between US, Russia, and Ukraine represent a critical diplomatic breakthrough. Trump's envoys met Putin overnight, with territorial disputes emerging as central t...</li><li><strong>Taiwan Defense Gridlock Amid China's Military Pressure Escal</strong>: Taiwan faces dual crisis: domestic opposition blocking defense spending while China deploys unprecedented drone operations in claimed airspace. First confirmed PLA drone flight over Pratas Island sign...</li><li><strong>Europe's Strategic Autonomy Crisis: Davos Reveals Deep Trans</strong>: Zelensky's blistering Davos critique of European fragmentation and Trump-dependency exposes fundamental NATO crisis. European leaders simultaneously relieved by Greenland tensions easing yet terrified...</li></ul><p><em>Published: January 23, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -208,23 +224,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-15.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - January 14, 2026]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-14.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, January 14, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Japan-China Escalation Reshapes East Asian Security Dynamics</strong>: Japan's new PM Takaichi signaled military support for Taiwan, triggering aggressive Chinese retaliation. This represents a fundamental shift in regional deterrence posture, with Japan actively courtin...</li><li><strong>Russia's Winter Offensive Reveals Putin's No-Compromise Posi</strong>: Russia intensifying attacks on Ukrainian energy infrastructure while simultaneously rejecting any peace settlement preserving Ukrainian statehood. This dual strategy indicates Putin views military vic...</li><li><strong>China-Russia Energy Alliance Challenges Western Sanctions Re</strong>: China accepting sanctioned Russian LNG while Trump threatens Iran tariffs reveals fracturing global economic order. Beijing's willingness to circumvent sanctions combined with Trump's unilateral trade...</li></ul><p><em>Published: January 14, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Wed, 14 Jan 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260114</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-14.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
