@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sat, 24 Jan 2026 06:43:09 GMT</pubDate>
-        <lastBuildDate>Sat, 24 Jan 2026 06:43:09 GMT</lastBuildDate>
+        <pubDate>Sun, 25 Jan 2026 06:43:17 GMT</pubDate>
+        <lastBuildDate>Sun, 25 Jan 2026 06:43:17 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - January 25, 2026]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-25.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, January 25, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US-Brokered Ukraine Peace Talks End Without Breakthrough</strong>: First trilateral Russia-Ukraine-US negotiations in Abu Dhabi concluded without agreement, marking critical diplomatic moment in 4-year conflict. Simultaneous Russian attacks killing civilians and cutt...</li><li><strong>US Military Buildup Near Iran Triggers War Warnings</strong>: Trump administration deploying aircraft carrier strike group to Persian Gulf amid escalating rhetoric. Iran warns any attack will trigger 'all-out war,' while airlines cancel Middle East routes. Repre...</li><li><strong>Xi Consolidates Military Control Through Purge of Top Genera</strong>: Chinese leader Xi Jinping assumes direct operational control of military while investigating two highest-ranking generals for 'serious discipline violations.' Represents most significant military rest...</li></ul><p><em>Published: January 25, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sun, 25 Jan 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260125</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-25.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - January 24, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-24.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, January 24, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine-Russia-US Trilateral Talks Begin: Territory Remains</strong>: First trilateral negotiations since 2022 invasion mark potential diplomatic breakthrough under Trump administration. Territory disputes in Donbas remain central sticking point. Simultaneous Russian ai...</li><li><strong>Nuclear Arms Control Collapses: New START Treaty Faces Expir</strong>: New START treaty—cornerstone of nuclear stability since 2010—approaching collapse as Russia suspends inspections and US-Russia relations deteriorate. Expiration would end half-century of nuclear arms ...</li><li><strong>China's Drone Dominance Becomes Strategic Weapon in Ukraine</strong>: China controls global drone supply chains critical to both Russian and Ukrainian military operations. Civilian technology has become indispensable to modern warfare. Reveals new form of geopolitical p...</li></ul><p><em>Published: January 24, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -207,23 +223,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-16.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - January 15, 2026]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-15.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, January 15, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Iran Crisis Escalates: Trump Threatens Military Action</strong>: Trump administration threatens military intervention in Iran amid mass protests and imminent executions. This represents a dramatic escalation in US-Iran tensions with potential for direct military co...</li><li><strong>Greenland Becomes Arctic Flashpoint: Trump vs NATO Allies</strong>: Trump's renewed push to acquire Greenland via military threats, tariffs, and cash offers has triggered unprecedented NATO response. France and Germany deploying troops to Greenland at Denmark's reques...</li><li><strong>Ukraine Energy Crisis Deepens as Winter Persists</strong>: Ukraine faces severe energy emergency with temperatures at -19°C, widespread blackouts, and no water access. Russian strikes systematically targeting energy infrastructure create humanitarian crisis. ...</li></ul><p><em>Published: January 15, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Thu, 15 Jan 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260115</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-15.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
