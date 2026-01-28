@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Tue, 27 Jan 2026 06:50:15 GMT</pubDate>
-        <lastBuildDate>Tue, 27 Jan 2026 06:50:15 GMT</lastBuildDate>
+        <pubDate>Wed, 28 Jan 2026 06:50:20 GMT</pubDate>
+        <lastBuildDate>Wed, 28 Jan 2026 06:50:20 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,24 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - January 28, 2026]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-28.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, January 28, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Xi's Military Purge Signals Instability in China's War Readi</strong>: Zhang Youxia's removal as top general represents unprecedented instability in China's military hierarchy during heightened Taiwan tensions. This purge raises critical questions about PLA operational r...</li><li><strong>NATO Without America: Europe Faces Strategic Reckoning</strong>: Greenland standoff has forced European leaders to contemplate NATO viability without US commitment. Trump's 2026 defense strategy's strategic silence on Taiwan and reduced support signals potential US...</li><li><strong>Ukraine War Escalates: 2M Casualties as Russia Targets Civil</strong>: Nearly 2 million military casualties combined with systematic attacks on civilian infrastructure (power, heating, trains) indicate Russia's shift toward attrition warfare and terror tactics. This esca...</li></ul><p><em>Published: January 28, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Wed, 28 Jan 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260128</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[United States]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-28.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - January 27, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-27.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, January 27, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>NATO's Arctic Militarization: Closing the Russian Advantage</strong>: NATO is accelerating Arctic military preparations with AI-powered defensive systems spanning from the Arctic to the Black Sea. This represents a fundamental shift in alliance strategy to counter years...</li><li><strong>Ukraine Peace Talks Stall: Rare Earths Become Leverage</strong>: Russia is weaponizing rare earth mineral dependencies through a new $9.2bn Siberian processing hub while peace negotiations remain deadlocked. The gap between Russian and Ukrainian negotiating positio...</li><li><strong>US Carrier Deployment Signals Iran Confrontation Risk</strong>: USS Abraham Lincoln's arrival in the Middle East amid Trump administration rhetoric about Iran seeking deals creates dangerous ambiguity. The simultaneous messaging—Trump claiming Iran wants negotiati...</li></ul><p><em>Published: January 27, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -206,23 +224,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Economy]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-19.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - January 18, 2026]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-18.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, January 18, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russia Escalates Nuclear Infrastructure Attacks on Ukraine</strong>: Russia is systematically targeting Ukraine's nuclear power plants and energy grid during winter, creating humanitarian crisis and nuclear safety risks. Zelenskyy's warnings about Zaporozhye NPP attack...</li><li><strong>Trump's Greenland Tariffs Fracture NATO Alliance Structure</strong>: Trump imposed 10-25% tariffs on eight NATO allies for opposing Greenland acquisition, directly undermining alliance cohesion. This represents unprecedented US pressure on core NATO members (Denmark, U...</li><li><strong>China-Russia Military Coordination Escalates in Indo-Pacific</strong>: China, Russia, and Iran conducted joint naval exercises in South Africa while PLA drones penetrated Taiwan airspace. This coordinated military posturing signals strengthened authoritarian alignment an...</li></ul><p><em>Published: January 18, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sun, 18 Jan 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260118</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-18.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
