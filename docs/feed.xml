@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Thu, 29 Jan 2026 07:00:44 GMT</pubDate>
-        <lastBuildDate>Thu, 29 Jan 2026 07:00:44 GMT</lastBuildDate>
+        <pubDate>Fri, 30 Jan 2026 07:02:09 GMT</pubDate>
+        <lastBuildDate>Fri, 30 Jan 2026 07:02:09 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,23 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - January 30, 2026]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-30.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, January 30, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US Military Buildup Against Iran Escalates as Nuclear Diplom</strong>: Trump administration is rapidly massing military assets near Iran while threatening military action over nuclear program. EU designated Iran's Revolutionary Guard as terrorist organization. Iran resis...</li><li><strong>Trump Brokers Temporary Ukraine Ceasefire as Trilateral Dipl</strong>: Trump claims Putin agreed to week-long halt on Kyiv attacks during extreme cold; trilateral Russia-Ukraine-US talks resume February 1 in Abu Dhabi. This represents significant diplomatic shift from mi...</li><li><strong>Taiwan Arms Deal and Trump-Xi Diplomacy Signal US-China Stra</strong>: Senate advances four Taiwan-related bills strengthening island's energy and communications security ahead of Trump's April China visit. Simultaneously, Trump praises Xi as 'incredible man' at Davos, s...</li></ul><p><em>Published: January 30, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Fri, 30 Jan 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260130</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-30.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - January 29, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-29.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, January 29, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump's Asia-Pacific Silence Reshapes Global Power Balance</strong>: Trump's disengagement from China strategy and Indo-Pacific affairs represents a fundamental shift in US foreign policy. This creates strategic vacuums that China and other powers exploit, while allies...</li><li><strong>Russia-Syria-Iran Triangle Reshapes Middle East Amid US Unce</strong>: Syria's al-Sharaa consolidates Russian military presence while Iran faces EU terrorism designation and Trump threats. This creates competing power centers in Middle East. Russia secures strategic base...</li><li><strong>China's Internal Instability: Military Purges and Economic D</strong>: Xi's removal of two senior generals signals internal power consolidation amid economic stress. Combined with Russian oil revenue collapse and China's deepening property crisis, this reveals vulnerabil...</li></ul><p><em>Published: January 29, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -207,24 +224,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Economy]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-21.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - January 20, 2026]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-20.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, January 20, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US Arrests Venezuelan President, Reshaping Latin American Ge</strong>: The extradition of Maduro represents a dramatic shift in US intervention capacity and signals weakening Sino-Russian influence in the Western Hemisphere. This challenges the multipolar order and demon...</li><li><strong>Taiwan Strait Crisis: Failed Invasion Scenario Could Destabi</strong>: Analysis of failed Chinese military operation consequences reveals Xi Jinping's vulnerability and potential for miscalculation. Singapore's strategic role in deterrence adds critical regional dimensio...</li><li><strong>Trump's Greenland Ultimatum Fractures NATO and Reshapes Alli</strong>: Trump's 10% tariff threat against eight NATO allies over Greenland represents unprecedented economic coercion within the alliance. This signals fundamental shift in US commitment to multilateralism an...</li></ul><p><em>Published: January 20, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Tue, 20 Jan 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260120</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[United States]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-20.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
