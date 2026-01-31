@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 30 Jan 2026 07:02:09 GMT</pubDate>
-        <lastBuildDate>Fri, 30 Jan 2026 07:02:09 GMT</lastBuildDate>
+        <pubDate>Sat, 31 Jan 2026 06:53:27 GMT</pubDate>
+        <lastBuildDate>Sat, 31 Jan 2026 06:53:27 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,23 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - January 31, 2026]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-31.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, January 31, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Nuclear Arms Control Collapses as China Expands Arsenal</strong>: The collapse of New START and simultaneous Chinese nuclear expansion signals the end of post-Cold War arms control architecture. With Russia, US, and China all pursuing unconstrained nuclear moderniza...</li><li><strong>Trump Brokers Ukraine Ceasefire: Implications for War's Futu</strong>: Trump's successful request for Russia to pause strikes on Ukrainian energy infrastructure represents the first major diplomatic intervention in the Ukraine conflict. This temporary ceasefire (until Fe...</li><li><strong>US-Iran Confrontation Escalates: Military Strike Risk Grows</strong>: Trump administration is simultaneously approving $16 billion arms sales to Israel and Saudi Arabia while threatening military action against Iran over nuclear enrichment and protest crackdowns. This d...</li></ul><p><em>Published: January 31, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sat, 31 Jan 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260131</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-31.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - January 30, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-30.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, January 30, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US Military Buildup Against Iran Escalates as Nuclear Diplom</strong>: Trump administration is rapidly massing military assets near Iran while threatening military action over nuclear program. EU designated Iran's Revolutionary Guard as terrorist organization. Iran resis...</li><li><strong>Trump Brokers Temporary Ukraine Ceasefire as Trilateral Dipl</strong>: Trump claims Putin agreed to week-long halt on Kyiv attacks during extreme cold; trilateral Russia-Ukraine-US talks resume February 1 in Abu Dhabi. This represents significant diplomatic shift from mi...</li><li><strong>Taiwan Arms Deal and Trump-Xi Diplomacy Signal US-China Stra</strong>: Senate advances four Taiwan-related bills strengthening island's energy and communications security ahead of Trump's April China visit. Simultaneously, Trump praises Xi as 'incredible man' at Davos, s...</li></ul><p><em>Published: January 30, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -208,22 +225,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-22.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - January 21, 2026]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-21.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, January 21, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump's Energy Leverage Over Europe Reshapes Transatlantic</strong>: Trump's control of EU energy supplies through LNG creates unprecedented economic leverage over European allies. Combined with threats over Greenland and trade tariffs, this represents a fundamental sh...</li><li><strong>Nuclear Proliferation Crisis in Asia as US Deterrence Fails</strong>: South Korea and Japan are seriously considering independent nuclear weapons programs due to declining confidence in US extended deterrence. This represents the most significant nuclear proliferation r...</li><li><strong>Russia's Winter Offensive Targets Ukrainian Civilian Infrast</strong>: Russia is systematically destroying Ukraine's heating and power infrastructure in winter conditions, creating humanitarian catastrophe affecting millions. This represents escalation in targeting civil...</li></ul><p><em>Published: January 21, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Wed, 21 Jan 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260121</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-21.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
