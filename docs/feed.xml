@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Tue, 03 Feb 2026 07:03:35 GMT</pubDate>
-        <lastBuildDate>Tue, 03 Feb 2026 07:03:35 GMT</lastBuildDate>
+        <pubDate>Wed, 04 Feb 2026 07:05:10 GMT</pubDate>
+        <lastBuildDate>Wed, 04 Feb 2026 07:05:10 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - February 04, 2026]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-04.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, February 04, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine Peace Talks Resume Amid Russian Ceasefire Violations</strong>: US-brokered Ukraine-Russia negotiations in Abu Dhabi represent the most significant diplomatic effort to end the four-year conflict. Russia's simultaneous attacks on energy infrastructure demonstrate ...</li><li><strong>New START Collapse Triggers Nuclear Arms Race Without China</strong>: The February 5 expiration of the last US-Russia nuclear arms control treaty removes constraints on strategic weapons. China's refusal to join trilateral negotiations creates a three-way nuclear compet...</li><li><strong>Xi's Military Purge Signals Taiwan Strategy Shift and Intern</strong>: Removal of top PLA generals Zhang Youxia and Liu Zhenli indicates Xi prioritizes military restructuring over immediate Taiwan action. This suggests Beijing believes internal military modernization is ...</li></ul><p><em>Published: February 04, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Wed, 04 Feb 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260204</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-04.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - February 03, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-03.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, February 03, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Europe's Strategic Autonomy Crisis Amid US Realignment</strong>: Draghi's warning that the current world order is 'dead' signals Europe must urgently unify on defense and foreign policy. Combined with critical mineral dependency on China and the need for strategic ...</li><li><strong>Iran-US Nuclear Diplomacy Resumes Amid Military Escalation</strong>: Iran's President Pezeshkian has ordered nuclear talks with the US while Trump threatens military action and builds up forces in the Middle East. This represents a critical diplomatic window that could...</li><li><strong>Ukraine Ceasefire Framework Emerges With NATO Enforcement</strong>: Ukraine and Western allies are negotiating a multi-tier ceasefire enforcement plan involving European and US forces. This represents the most concrete progress toward ending the war, with implications...</li></ul><p><em>Published: February 03, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -210,22 +226,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-26.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - January 25, 2026]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-25.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, January 25, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US-Brokered Ukraine Peace Talks End Without Breakthrough</strong>: First trilateral Russia-Ukraine-US negotiations in Abu Dhabi concluded without agreement, marking critical diplomatic moment in 4-year conflict. Simultaneous Russian attacks killing civilians and cutt...</li><li><strong>US Military Buildup Near Iran Triggers War Warnings</strong>: Trump administration deploying aircraft carrier strike group to Persian Gulf amid escalating rhetoric. Iran warns any attack will trigger 'all-out war,' while airlines cancel Middle East routes. Repre...</li><li><strong>Xi Consolidates Military Control Through Purge of Top Genera</strong>: Chinese leader Xi Jinping assumes direct operational control of military while investigating two highest-ranking generals for 'serious discipline violations.' Represents most significant military rest...</li></ul><p><em>Published: January 25, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sun, 25 Jan 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260125</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-25.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
