@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 06 Feb 2026 07:05:34 GMT</pubDate>
-        <lastBuildDate>Fri, 06 Feb 2026 07:05:34 GMT</lastBuildDate>
+        <pubDate>Sat, 07 Feb 2026 06:55:53 GMT</pubDate>
+        <lastBuildDate>Sat, 07 Feb 2026 06:55:53 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,23 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - February 07, 2026]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-07.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, February 07, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>New START Collapse Triggers Uncontrolled Nuclear Arms Race</strong>: The expiration of New START on February 4 removes the last bilateral nuclear constraint between US and Russia. With no negotiations underway and Trump dismissing renewal, this marks a critical inflect...</li><li><strong>US-Iran Nuclear Talks Resume Amid Military Buildup Risk</strong>: Indirect negotiations in Oman represent first formal diplomatic contact since Trump's military strikes. High-stakes talks occur with massive US military presence in region, creating dual-track diploma...</li><li><strong>US-China Nuclear Transparency Crisis Undermines Arms Control</strong>: US accusation of Chinese secret 2020 nuclear test, coupled with simultaneous arms treaty proposals, reveals fundamental trust deficit. Neither country ratified 1996 test ban treaty. This contradiction...</li></ul><p><em>Published: February 07, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sat, 07 Feb 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260207</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-07.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - February 06, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-06.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, February 06, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>New START Collapse: Nuclear Arms Control Era Ends</strong>: The expiration of New START represents the first time since 1972 that US-Russia lack nuclear weapons limits. Trump's rejection of extension and call for trilateral US-China-Russia deal creates unprece...</li><li><strong>US-Russia Military Dialogue Resumes: Ukraine Peace Track Eme</strong>: After 4+ years without high-level military contact, US-Russia reestablish dialogue following Trump-brokered Ukraine talks in Abu Dhabi. Prisoner exchanges and trilateral negotiations signal potential ...</li><li><strong>Iran-US Nuclear Talks in Oman: Brinkmanship Under Military T</strong>: First high-level Iran-US nuclear negotiations since June 2025 US-Israel bombing campaign occur under explicit Trump military threats. Talks in Oman address Tehran's nuclear program amid domestic unres...</li></ul><p><em>Published: February 06, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -206,24 +223,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-29.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - January 28, 2026]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-28.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, January 28, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Xi's Military Purge Signals Instability in China's War Readi</strong>: Zhang Youxia's removal as top general represents unprecedented instability in China's military hierarchy during heightened Taiwan tensions. This purge raises critical questions about PLA operational r...</li><li><strong>NATO Without America: Europe Faces Strategic Reckoning</strong>: Greenland standoff has forced European leaders to contemplate NATO viability without US commitment. Trump's 2026 defense strategy's strategic silence on Taiwan and reduced support signals potential US...</li><li><strong>Ukraine War Escalates: 2M Casualties as Russia Targets Civil</strong>: Nearly 2 million military casualties combined with systematic attacks on civilian infrastructure (power, heating, trains) indicate Russia's shift toward attrition warfare and terror tactics. This esca...</li></ul><p><em>Published: January 28, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Wed, 28 Jan 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260128</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[United States]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-01-28.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
