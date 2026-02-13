@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Thu, 12 Feb 2026 07:13:45 GMT</pubDate>
-        <lastBuildDate>Thu, 12 Feb 2026 07:13:45 GMT</lastBuildDate>
+        <pubDate>Fri, 13 Feb 2026 07:10:45 GMT</pubDate>
+        <lastBuildDate>Fri, 13 Feb 2026 07:10:45 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,24 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - February 13, 2026]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-13.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, February 13, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Europe's Strategic Autonomy: NATO Shifts as US Commitment Wa</strong>: EU leaders are launching major economic overhauls and military initiatives (Arctic Sentry) while US defense officials signal reduced conventional forces in Europe. This represents a fundamental realig...</li><li><strong>Taiwan Becomes Central Flashpoint in Trump-Xi Diplomacy</strong>: With Trump-Xi meeting scheduled for April 2026, Taiwan tensions are identified as the 'most critical and contentious' issue. Simultaneous US-Taiwan trade deal ($85bn) and CIA recruitment of Chinese mi...</li><li><strong>US Military Buildup in Middle East Signals Iran Confrontatio</strong>: Deployment of second aircraft carrier to Persian Gulf while conducting nuclear diplomacy with Iran creates dangerous mixed signals. This military escalation contradicts diplomatic engagement, suggesti...</li></ul><p><em>Published: February 13, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Fri, 13 Feb 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260213</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-13.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - February 12, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-12.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, February 12, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>NATO's Structural Crisis Threatens Western Alliance Cohesion</strong>: NATO faces existential challenges as Trump questions US commitment and European defense capabilities lag. The alliance's procedural integrity remains intact but strategic unity is collapsing, threaten...</li><li><strong>US-Iran Nuclear Diplomacy Resurfaces Amid Regional Tensions</strong>: After months of military posturing, Trump administration signals willingness to negotiate with Iran on nuclear issues, with Gulf states and Turkey mediating. This represents a significant diplomatic s...</li><li><strong>US Nuclear Test Allegations Against China Destabilize Arms C</strong>: US accusations of Chinese covert nuclear testing in 2020 challenge global arms control norms already weakened by US-Russia tensions. This escalates great power competition into nuclear domain, threate...</li></ul><p><em>Published: February 12, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -205,23 +223,6 @@
         <category><![CDATA[Middle East]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-04.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - February 03, 2026]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-03.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, February 03, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Europe's Strategic Autonomy Crisis Amid US Realignment</strong>: Draghi's warning that the current world order is 'dead' signals Europe must urgently unify on defense and foreign policy. Combined with critical mineral dependency on China and the need for strategic ...</li><li><strong>Iran-US Nuclear Diplomacy Resumes Amid Military Escalation</strong>: Iran's President Pezeshkian has ordered nuclear talks with the US while Trump threatens military action and builds up forces in the Middle East. This represents a critical diplomatic window that could...</li><li><strong>Ukraine Ceasefire Framework Emerges With NATO Enforcement</strong>: Ukraine and Western allies are negotiating a multi-tier ceasefire enforcement plan involving European and US forces. This represents the most concrete progress toward ending the war, with implications...</li></ul><p><em>Published: February 03, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Tue, 03 Feb 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260203</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-03.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
