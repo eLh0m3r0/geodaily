@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 13 Feb 2026 07:10:45 GMT</pubDate>
-        <lastBuildDate>Fri, 13 Feb 2026 07:10:45 GMT</lastBuildDate>
+        <pubDate>Sat, 14 Feb 2026 06:58:02 GMT</pubDate>
+        <lastBuildDate>Sat, 14 Feb 2026 06:58:02 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - February 14, 2026]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-14.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, February 14, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>New-generation Ukraine woman warriors avenge losses of loved</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>Who would win a Ukraine election?</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>France concerned about the risk of foreign interference ahea</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: February 14, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sat, 14 Feb 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260214</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-14.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - February 13, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-13.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, February 13, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Europe's Strategic Autonomy: NATO Shifts as US Commitment Wa</strong>: EU leaders are launching major economic overhauls and military initiatives (Arctic Sentry) while US defense officials signal reduced conventional forces in Europe. This represents a fundamental realig...</li><li><strong>Taiwan Becomes Central Flashpoint in Trump-Xi Diplomacy</strong>: With Trump-Xi meeting scheduled for April 2026, Taiwan tensions are identified as the 'most critical and contentious' issue. Simultaneous US-Taiwan trade deal ($85bn) and CIA recruitment of Chinese mi...</li><li><strong>US Military Buildup in Middle East Signals Iran Confrontatio</strong>: Deployment of second aircraft carrier to Persian Gulf while conducting nuclear diplomacy with Iran creates dangerous mixed signals. This military escalation contradicts diplomatic engagement, suggesti...</li></ul><p><em>Published: February 13, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -207,22 +223,6 @@
         <category><![CDATA[Russia]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-05.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - February 04, 2026]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-04.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, February 04, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine Peace Talks Resume Amid Russian Ceasefire Violations</strong>: US-brokered Ukraine-Russia negotiations in Abu Dhabi represent the most significant diplomatic effort to end the four-year conflict. Russia's simultaneous attacks on energy infrastructure demonstrate ...</li><li><strong>New START Collapse Triggers Nuclear Arms Race Without China</strong>: The February 5 expiration of the last US-Russia nuclear arms control treaty removes constraints on strategic weapons. China's refusal to join trilateral negotiations creates a three-way nuclear compet...</li><li><strong>Xi's Military Purge Signals Taiwan Strategy Shift and Intern</strong>: Removal of top PLA generals Zhang Youxia and Liu Zhenli indicates Xi prioritizes military restructuring over immediate Taiwan action. This suggests Beijing believes internal military modernization is ...</li></ul><p><em>Published: February 04, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Wed, 04 Feb 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260204</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-04.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
