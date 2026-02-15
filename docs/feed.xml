@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sat, 14 Feb 2026 06:58:02 GMT</pubDate>
-        <lastBuildDate>Sat, 14 Feb 2026 06:58:02 GMT</lastBuildDate>
+        <pubDate>Sun, 15 Feb 2026 07:00:20 GMT</pubDate>
+        <lastBuildDate>Sun, 15 Feb 2026 07:00:20 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - February 15, 2026]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-15.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, February 15, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Elbridge Colby: ‘NATO Is Actually Stronger Than Ever.’</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>How a ‘military vacuum’ in West and Central Africa opened ne</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>Rubio’s ‘Reassuring’ Relationship Repair</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: February 15, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sun, 15 Feb 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260215</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-15.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - February 14, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-14.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, February 14, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>New-generation Ukraine woman warriors avenge losses of loved</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>Who would win a Ukraine election?</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>France concerned about the risk of foreign interference ahea</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: February 14, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -208,21 +224,6 @@
         <category><![CDATA[Middle East]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-06.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - February 05, 2026]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-05.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, February 05, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine-Russia Peace Talks Begin in Abu Dhabi Amid Energy Cr</strong>: US-brokered negotiations between Ukraine and Russia represent the most significant diplomatic breakthrough in the conflict. Both sides describe talks as productive, but major obstacles remain includin...</li><li><strong>New START Nuclear Treaty Expires: US-Russia Arms Control Col</strong>: The expiration of the last major US-Russia nuclear arms control treaty marks a critical inflection point in great power competition. Without verification mechanisms, both nations can expand nuclear ar...</li><li><strong>Xi Warns Trump on Taiwan Arms Sales in First Call Since Nove</strong>: Xi-Trump call reveals US-China tensions over Taiwan remain unresolved despite diplomatic engagement. China's warning about arms supplies signals red lines on Taiwan independence. This directly impacts...</li></ul><p><em>Published: February 05, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Thu, 05 Feb 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260205</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-05.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
