@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sat, 21 Feb 2026 06:54:59 GMT</pubDate>
-        <lastBuildDate>Sat, 21 Feb 2026 06:54:59 GMT</lastBuildDate>
+        <pubDate>Sun, 22 Feb 2026 06:58:43 GMT</pubDate>
+        <lastBuildDate>Sun, 22 Feb 2026 06:58:43 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - February 22, 2026]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-22.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, February 22, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump sends ‘great’ hospital boat to treat ‘sick’ people in</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>Live: Russian missiles pound Kyiv ahead of Ukraine war anniv</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>Moscow warns Seoul against sending weapons to Kiev</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: February 22, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sun, 22 Feb 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260222</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-22.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - February 21, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-21.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, February 21, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>'We will be able to defend Ukraine' thanks to EU loan: Ambas</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>After four years of Russia’s invasion, time to stop underest</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>Trump administration pursuing nuclear deal with Saudi Arabia</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: February 21, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -210,23 +226,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-13.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - February 12, 2026]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-12.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, February 12, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>NATO's Structural Crisis Threatens Western Alliance Cohesion</strong>: NATO faces existential challenges as Trump questions US commitment and European defense capabilities lag. The alliance's procedural integrity remains intact but strategic unity is collapsing, threaten...</li><li><strong>US-Iran Nuclear Diplomacy Resurfaces Amid Regional Tensions</strong>: After months of military posturing, Trump administration signals willingness to negotiate with Iran on nuclear issues, with Gulf states and Turkey mediating. This represents a significant diplomatic s...</li><li><strong>US Nuclear Test Allegations Against China Destabilize Arms C</strong>: US accusations of Chinese covert nuclear testing in 2020 challenge global arms control norms already weakened by US-Russia tensions. This escalates great power competition into nuclear domain, threate...</li></ul><p><em>Published: February 12, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Thu, 12 Feb 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260212</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-12.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
