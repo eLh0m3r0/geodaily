@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Thu, 26 Feb 2026 07:10:47 GMT</pubDate>
-        <lastBuildDate>Thu, 26 Feb 2026 07:10:47 GMT</lastBuildDate>
+        <pubDate>Fri, 27 Feb 2026 07:05:03 GMT</pubDate>
+        <lastBuildDate>Fri, 27 Feb 2026 07:05:03 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,21 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - February 27, 2026]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-27.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, February 27, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Tehran Has Discovered Moscow Is a Fair-Weather Friend</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>Hungary steps up rhetoric over Russian oil disruption</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>Can Critical Minerals Calm the Trans-Atlantic Relationship?</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: February 27, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Fri, 27 Feb 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260227</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-27.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - February 26, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-26.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, February 26, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>China affirms ‘no nukes’ position amid claims of European pl</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>German MPs urged to probe alleged Ukraine nuke plot</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>UN Vote Shows Enduring but Uneven International Support for</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: February 26, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -209,23 +224,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-18.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - February 17, 2026]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-17.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, February 17, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>The ticking clock: Why NATO’s deterrence against Russia is u</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>Back to the 19th century: Why is Russia targeting Ukraine’s</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>‘Economic fighters’: the volunteers helping direct sanctions</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: February 17, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Tue, 17 Feb 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260217</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-02-17.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
