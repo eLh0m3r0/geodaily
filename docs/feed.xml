@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Mon, 23 Mar 2026 07:23:21 GMT</pubDate>
-        <lastBuildDate>Mon, 23 Mar 2026 07:23:21 GMT</lastBuildDate>
+        <pubDate>Tue, 24 Mar 2026 07:15:20 GMT</pubDate>
+        <lastBuildDate>Tue, 24 Mar 2026 07:15:20 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,24 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - March 24, 2026]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-03-24.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, March 24, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>The Role of Diplomacy in US Management of Cross-Strait Relat</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>US must suspend Nvidia AI chip exports to China, senators sa</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>Ukraine diplomat urges strikes on Russian drone production o</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: March 24, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Tue, 24 Mar 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260324</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-03-24.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - March 23, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-03-23.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Monday, March 23, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Global economy under 'major threat' from Strait of Hormuz cr</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>War in the Middle East: latest developments</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>Using Minerals and Energy to Rebuild the U.S.-South Africa R</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: March 23, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -202,22 +220,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-03-15.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - March 14, 2026]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-03-14.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, March 14, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Zelensky in Paris: Macron pledges no 'respite' for Russia de</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>Ukraine, EU allies slam US decision to roll back Russia oil</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>Zelensky in Paris: Macron vows to keep support for Ukraine</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: March 14, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sat, 14 Mar 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260314</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-03-14.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
