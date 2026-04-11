@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 10 Apr 2026 07:53:45 GMT</pubDate>
-        <lastBuildDate>Fri, 10 Apr 2026 07:53:45 GMT</lastBuildDate>
+        <pubDate>Sat, 11 Apr 2026 07:12:07 GMT</pubDate>
+        <lastBuildDate>Sat, 11 Apr 2026 07:12:07 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,23 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - April 11, 2026]]></title>
+        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-04-11.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, April 11, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>China’s Middle East billions still woefully reliant on US gu</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>Starmer says NATO in US's 'interests' as Gulf tour ends</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>Pakistan Walks a Tightrope on Iran</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: April 11, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sat, 11 Apr 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260411</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-04-11.html#comments</comments>
+        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - April 10, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-04-10.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, April 10, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>China drills for US nuclear attack in a Taiwan war</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>Recognizing the role of propaganda in Russia’s infrastructur</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>The U.S. Trade Deficit Did Not Shrink—It Moved to Vietnam an</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: April 10, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -214,22 +231,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-04-02.html#comments</comments>
-        <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - April 01, 2026]]></title>
-        <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-04-01.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, April 01, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Shared energy stakes call for greater China-India cooperatio</strong>: This development signals a major shift in regional power dynamics that could reshape international relations</li><li><strong>Zelenskyy’s Gulf region tour was a masterclass in wartime di</strong>: This economic development has immediate implications for global markets and strategic resource allocation</li><li><strong>Iran Says It Will Target U.S. Tech Companies in the Middle E</strong>: This diplomatic move represents a calculated strategic gambit with far-reaching consequences</li></ul><p><em>Published: April 01, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Wed, 01 Apr 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260401</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-04-01.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
