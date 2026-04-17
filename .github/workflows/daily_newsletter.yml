@@ -98,6 +98,17 @@ jobs:
           echo "BUTTONDOWN_USERNAME=${{ secrets.BUTTONDOWN_USERNAME }}" >> $GITHUB_ENV
         fi
 
+        # Beehiiv publishing (optional — skipped if secrets not set)
+        if [ -n "${{ secrets.BEEHIIV_API_KEY }}" ]; then
+          echo "BEEHIIV_API_KEY=${{ secrets.BEEHIIV_API_KEY }}" >> $GITHUB_ENV
+        fi
+        if [ -n "${{ secrets.BEEHIIV_PUBLICATION_ID }}" ]; then
+          echo "BEEHIIV_PUBLICATION_ID=${{ secrets.BEEHIIV_PUBLICATION_ID }}" >> $GITHUB_ENV
+        fi
+        if [ -n "${{ secrets.BEEHIIV_STATUS }}" ]; then
+          echo "BEEHIIV_STATUS=${{ secrets.BEEHIIV_STATUS }}" >> $GITHUB_ENV
+        fi
+
         # System configuration
         echo "LOG_LEVEL=INFO" >> $GITHUB_ENV
         echo "AI_MODEL=claude-sonnet-4-6" >> $GITHUB_ENV

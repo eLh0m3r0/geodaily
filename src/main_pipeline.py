@@ -22,6 +22,7 @@ from .content import enrich_articles_with_content
 from .dashboard.unified_dashboard import UnifiedDashboard
 from .newsletter.generator import NewsletterGenerator
 from .publishers.github_pages_publisher import GitHubPagesPublisher
+from .publishers.beehiiv_publisher import BeehiivPublisher
 from .notifications.email_notifier import EmailNotifier
 from .metrics.collector import MetricsCollector
 from .config import Config
@@ -693,6 +694,7 @@ def run_complete_pipeline() -> bool:
 
             publishing_start = time.time()
 
+            beehiiv_url = None
             try:
                 # GitHub Pages (automatic) - with Archive Manager (10 newsletter limit)
                 max_newsletters = int(os.getenv('NEWSLETTER_ARCHIVE_SIZE', '10'))
@@ -706,6 +708,23 @@ def run_complete_pipeline() -> bool:
                                'url': github_url,
                                'success': bool(github_url)
                            })
+
+                # Beehiiv (email subscribers) — optional, skipped if not configured
+                beehiiv_publisher = BeehiivPublisher()
+                beehiiv_url = beehiiv_publisher.publish(newsletter, html_content)
+                if beehiiv_url:
+                    logger.info(f"✅ Published to Beehiiv: {beehiiv_url}",
+                               pipeline_stage=PipelineStage.PUBLISHING,
+                               run_id=run_id,
+                               structured_data={
+                                   'platform': 'beehiiv',
+                                   'url': beehiiv_url,
+                                   'success': True
+                               })
+                elif beehiiv_publisher.enabled:
+                    logger.warning("Beehiiv publish returned no URL (check API key / publication ID)",
+                                  pipeline_stage=PipelineStage.PUBLISHING,
+                                  run_id=run_id)
 
                 publishing_time = time.time() - publishing_start
 
@@ -733,6 +752,7 @@ def run_complete_pipeline() -> bool:
 
         publishing_summary = {
             "github_pages": github_url,
+            "beehiiv": beehiiv_url,
             "legacy_file": file_path
         }
 
