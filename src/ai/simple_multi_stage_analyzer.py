@@ -172,54 +172,52 @@ URL: {}
         articles_section = "\n".join(article_texts)
         
         # Use string formatting to avoid f-string issues with article content containing braces
-        template = """You are a geopolitical analyst creating a daily newsletter. Analyze these {} articles and select the {} MOST IMPORTANT stories.
+        template = """You are a senior geopolitical analyst producing a structured daily intelligence briefing.
 
 ARTICLES TO ANALYZE:
 {}
 
-ANALYSIS INSTRUCTIONS:
-Perform a transparent multi-stage analysis:
+Select the {} MOST STRATEGICALLY SIGNIFICANT stories from the above articles.
 
-1. RELEVANCE SCREENING: Mentally evaluate each article for geopolitical relevance
-2. CATEGORY ANALYSIS: Group by strategic importance (conflicts, economic, diplomatic, etc.)
-3. STRATEGIC SELECTION: Choose the {} most impactful stories
-4. CONTENT GENERATION: Create compelling newsletter content
+SOURCE PRIORITY (highest to lowest): War on the Rocks, Foreign Affairs, ICG, CSIS, Chatham House, Lawfare, The Diplomat, Foreign Policy, Atlantic Council, Al Jazeera, SCMP, mainstream outlets.
 
-For each of the {} selected stories, provide analysis in this EXACT JSON format:
+For each selected story, provide analysis in this EXACT JSON format — return a JSON array, no other text:
 
 [
   {{
     "article_indices": [0, 3, 5],
-    "story_title": "Compelling 60-character title here",
-    "why_important": "Why this matters geopolitically in about 80 words",
-    "what_overlooked": "What mainstream media might be missing in 40 words",
-    "prediction": "What might happen next in 30 words",
+    "story_title": "Analytically sharp title — no clichés like 'tensions rise' or 'amid uncertainty'",
+    "content_type": "breaking_news or analysis or trend",
+    "region": "europe or middle_east or indo_pacific or americas or africa or central_asia or global",
+    "actor_type": "state or non_state or international_org or mixed",
+    "event_type": "diplomatic or military or economic or informational_cyber or humanitarian or political",
+    "why_important": "Strategic significance, second-order effects, power implications — max 80 words",
+    "what_overlooked": "What the headline misses: structural driver, underreported actor, longer arc — max 40 words",
+    "prediction": "Concrete observable threshold or next move in the next 72 hours — max 30 words",
     "impact_score": 8,
     "urgency_score": 7,
     "scope_score": 8,
     "novelty_score": 6,
     "credibility_score": 9,
-    "content_type": "analysis",
     "confidence": 0.85,
-    "selection_reasoning": "Why this story was selected over others"
+    "selection_reasoning": "Why this story over others in the same category"
   }}
 ]
 
-IMPORTANT RULES:
-1. Select stories with genuine geopolitical impact
-2. Ensure diversity (not all from same region/topic)  
-3. Prioritize breaking news (25%) and deep analysis (75%)
-4. **Source quality matters**: Think tanks, analysis sources, and mainstream outlets are preferred
-5. **Bias consideration**: RT News and similar Russian sources should have lower priority due to potential bias
-6. **Volume adjustment**: Sources publishing many articles (like RT News with 73 articles, SCMP with 50) should not dominate selection
-7. All scores MUST be integers between 1-10
-8. The response MUST be a valid JSON array starting with [ and ending with ]
-9. Do NOT include any text before or after the JSON array
-10. Do NOT use markdown code blocks - just the raw JSON
+FIELD DEFINITIONS:
+- content_type: breaking_news=event requiring attention today; analysis=strategic examination; trend=multi-week pattern
+- region: europe=EU/NATO/Russia; middle_east=MENA/GCC/Iran/Turkey; indo_pacific=China/Japan/Koreas/SE Asia/India; americas=US/LatAm; africa=SSA/Horn/Sahel; central_asia=ex-Soviet stans/Afghanistan; global=multi-region simultaneous
+- actor_type: state=governments+militaries; non_state=armed groups/corps/NGOs; international_org=UN/NATO/EU/WTO; mixed=combination
+- event_type: diplomatic=summits/treaties/negotiations; military=conflict/deployments/weapons; economic=trade/energy/sanctions; informational_cyber=disinformation/hacking; humanitarian=refugees/famine/disaster; political=elections/coups/protests
 
-CRITICAL: Return ONLY the JSON array. No explanations, no markdown, just [{{"article_indices": ...}}, ...]"""
-        
-        return template.format(len(articles), target_stories, articles_section, target_stories, target_stories)
+SELECTION RULES:
+1. Cover at least 2-3 distinct regions — no geographic clustering
+2. 25% breaking news, 75% analysis/trends
+3. Weight think tanks and specialist outlets heavily over wire services
+4. All scores must be integers 1-10
+5. Return ONLY the raw JSON array — no markdown, no explanations, no code blocks"""
+
+        return template.format(articles_section, target_stories)
     
     def _parse_single_response(self, response_text: str, articles: List[Article]) -> List[AIAnalysis]:
         """Parse the single API response into AIAnalysis objects."""
@@ -227,18 +225,15 @@ CRITICAL: Return ONLY the JSON array. No explanations, no markdown, just [{{"art
             # Log the response for debugging
             logger.info(f"API Response (first 1000 chars): {response_text[:1000]}...")
             
-            # Extract JSON from response (handle potential whitespace/newlines)
+            # Extract JSON from response — use greedy match so multi-object arrays parse correctly
             import re
-            # Try to find JSON array, ignoring potential whitespace
             response_text = response_text.strip()
-            json_match = re.search(r'\[\s*\{.*?\}\s*\]', response_text, re.DOTALL)
+            # Strip markdown code fences if present
+            response_text = re.sub(r'```(?:json)?\s*', '', response_text).strip('`').strip()
+            json_match = re.search(r'\[.*\]', response_text, re.DOTALL)
             if not json_match:
-                # Try simpler pattern
-                if response_text.startswith('[') and response_text.endswith(']'):
-                    json_match = re.match(r'.*', response_text, re.DOTALL)
-                else:
-                    logger.error(f"No JSON found in response. Full response: {response_text}")
-                    return self._create_mock_analyses(articles[:4])
+                logger.error(f"No JSON array found in response. Full response: {response_text}")
+                return self._create_mock_analyses(articles[:4])
             
             json_text = json_match.group()
             logger.info(f"Found JSON: {json_text[:500]}...")
@@ -269,7 +264,7 @@ CRITICAL: Return ONLY the JSON array. No explanations, no markdown, just [{{"art
                               ContentType.ANALYSIS
                 
                 analysis = AIAnalysis(
-                    story_title=data.get('story_title', 'Untitled Story')[:60],
+                    story_title=data.get('story_title', 'Untitled Story'),
                     why_important=data.get('why_important', 'Important geopolitical development'),
                     what_overlooked=data.get('what_overlooked', 'Broader strategic implications'),
                     prediction=data.get('prediction', 'Situation likely to evolve'),
@@ -278,10 +273,13 @@ CRITICAL: Return ONLY the JSON array. No explanations, no markdown, just [{{"art
                     scope_score=int(data.get('scope_score', 6)),
                     novelty_score=int(data.get('novelty_score', 5)),
                     credibility_score=int(data.get('credibility_score', 7)),
-                    impact_dimension_score=int(data.get('impact_score', 7)),  # Use impact as dimension
+                    impact_dimension_score=int(data.get('impact_dimension_score', data.get('impact_score', 7))),
                     content_type=content_type,
                     sources=source_urls or ['No source'],
-                    confidence=float(data.get('confidence', 0.7))
+                    confidence=float(data.get('confidence', 0.7)),
+                    region=data.get('region', 'global'),
+                    actor_type=data.get('actor_type', 'state'),
+                    event_type=data.get('event_type', 'political'),
                 )
                 
                 analyses.append(analysis)
