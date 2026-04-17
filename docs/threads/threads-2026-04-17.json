@@ -1,139 +1,90 @@
 [
   {
-    "thread_title": "Írán: Příměří na obzoru? Tři diplomatické hry",
-    "tweets": [
-      {
-        "number": 1,
-        "content": "1/7 🚨 BREAKING: Trump naznačuje dohodu s Íránem. Zároveň probíhají 3 souběžné diplomatické procesy, které mohou buď ukončit krizi – nebo ji prohloubit. Co to znamená pro Evropu a ceny energií? 🧵",
-        "char_count": 194
-      },
-      {
-        "number": 2,
-        "content": "2/7 🌍 V Paříži právě zasedá summit 30 zemí o íránské krizi. Bez USA. Bez Izraele. Evropa se snaží hrát vlastní hru – ale bez hlavních hráčů u stolu je otázka, zda má tato iniciativa reálnou váhu.",
-        "char_count": 195
-      },
-      {
-        "number": 3,
-        "content": "3/7 ⚡ Turecko svolalo paralelní forum s Pákistánem, Saúdskou Arábií a Egyptem. Výsledek: 3 různé diplomatické rámce najednou. Convergence = mír. Rivalita rámců = chaos. Zatím nevíme, co vítězí.",
-        "char_count": 193
-      },
-      {
-        "number": 4,
-        "content": "4/7 📊 Klíčový bod: Hormuzský průliv. Tudy prochází ~20 % světové ropy. Pokud se otevře → okamžitá úleva pro energetické trhy. Pro ČR = nižší tlak na ceny energií. Pokud ne → eskalace a zdražování.",
-        "char_count": 196
-      },
-      {
-        "number": 5,
-        "content": "5/7 🔍 Co ostatní přehlížejí: Trumpův signál o dohodě není ověřen. Kongres USA nedal žádné zmocnění. A íránská vnitřní politika po vojenských úderech je černá skříňka – právě ona rozhodne, zda dohoda vydrží.",
-        "char_count": 206
-      },
-      {
-        "number": 6,
-        "content": "6/7 💡 Na co čekat v příštích 48 hodinách: Formální společné prohlášení z pařížského summitu + zda Trump konkrétně pojmenuje podmínky průjezdu Hormuzem. Pokud ano → dohoda je reálná. Pokud ne → jen Twitter diplomacie.",
-        "char_count": 216
-      },
-      {
-        "number": 7,
-        "content": "7/7 🎯 Závěr: Svět stojí před jednou z nejnaléhavějších geopolitických křižovatek roku. ČR a EU jsou přímo závislé na výsledku – energeticky i bezpečnostně. Sledujte vývoj. Co myslíte – dohodnou se? 👇 #Geopolitika #Bezpečnost #Írán",
-        "char_count": 230
-      }
-    ],
-    "hashtags": [
-      "#Geopolitika",
-      "#Bezpečnost",
-      "#Írán"
-    ],
-    "estimated_engagement": 8.7,
-    "main_topic": "Iran_diplomacy",
-    "source_analysis_id": "Iran Ceasefire Window Opens: Trump Signals Deal as European and Regional Diplomacy Converge on Hormuz",
-    "generated_at": "2026-04-17T16:27:09.016607"
-  },
-  {
-    "thread_title": "Íránský konflikt: dluhová past pro rozvíjející se svět",
-    "tweets": [
-      {
-        "number": 1,
-        "content": "1/6 🚨 Íránský konflikt neohrožuje jen ceny ropy. Spouští dluhovou krizi v rozvojovém světě, která přetváří globální obchod – a dotkne se i nás. Vlákno o tom, co mainstreamová média přehlíží 👇",
-        "char_count": 191
-      },
-      {
-        "number": 2,
-        "content": "2/6 ⚡ Rostoucí ceny paliv zvyšují dovozní účty chudších zemí → propadají se jim běžné účty → měny oslabují → přichází MMF. Foreign Affairs označuje toto jako primární riziko, NE jen zdražení energií.",
-        "char_count": 199
-      },
-      {
-        "number": 3,
-        "content": "3/6 🌍 Jihovýchodní Asie už přesměrovává dodavatelské řetězce směrem k Číně. Asijské aerolinky ruší trasy. Austrálie čelí akutnímu energetickému stresu. Strukturální přestavba světového obchodu probíhá TEĎ.",
-        "char_count": 205
-      },
-      {
-        "number": 4,
-        "content": "4/6 📊 Mechanismus přenosu: zdražení paliv → širší deficity → měnová depreciace → závislost na MMF. A právě tuto závislost může Peking diplomaticky využít. Čína nabízí půjčky bez podmínek – na rozdíl od Západu.",
-        "char_count": 209
-      },
-      {
-        "number": 5,
-        "content": "5/6 🎯 Dopad na ČR/EU: oslabení rozvíjejících se trhů = pokles poptávky po evropském zboží + tlak na migraci + přesun vlivu k Číně v klíčových regionech. Nejde o vzdálený problém – jde o náš export a bezpečnost.",
-        "char_count": 210
-      },
-      {
-        "number": 6,
-        "content": "6/6 🔍 Co sledovat nejbližších 72 hodin: nouzové konzultace MMF s vládami JV a jižní Asie = klíčový indikátor závažnosti krize. Pokud k nim dojde, dominino se rozjelo. Sdílej, ať to lidé vědí. #geopolitika #energetika #bezpečnost",
-        "char_count": 228
-      }
-    ],
-    "hashtags": [
-      "#geopolitika",
-      "#energetika",
-      "#bezpečnost"
-    ],
-    "estimated_engagement": 8.5,
-    "main_topic": "geopolitika",
-    "source_analysis_id": "Iran War Energy Shock Transmits Systemic Debt and Supply Chain Risk Across the Global South",
-    "generated_at": "2026-04-17T16:27:26.263182"
-  },
-  {
     "thread_title": "AI zkracuje čas na válečná rozhodnutí",
     "tweets": [
       {
         "number": 1,
-        "content": "1/6 🚨 Válka USA-Írán odhalila něco znepokojivého: AI systémy dnes zkracují čas na eskalaci konfliktu pod práh lidského uvažování. Co to znamená pro Tchaj-wan, Indii a Pákistán – a proč by to mělo zajímat i nás v ČR?",
-        "char_count": 215
-      },
-      {
-        "number": 2,
-        "content": "2/6 ⚡ Íránský model levných dronů dramaticky snižuje bariéru pro přesné údery. Dříve výsada velmocí – dnes dostupné i nestátním aktérům. Proliferace dronů mění pravidla odstrašení globálně, včetně evropského prostoru.",
-        "char_count": 217
-      },
-      {
-        "number": 3,
-        "content": "3/6 🎯 Klíčový poznatek: AI výhoda NENÍ symetrická. Lepší senzory a datová infrastruktura = rychlejší rozhodnutí. USA a Čína vedou. Indie, Pákistán a Tchaj-wan zaostávají. To vytváří nebezpečné nerovnováhy u jaderných aktérů.",
-        "char_count": 224
-      },
-      {
-        "number": 4,
-        "content": "4/6 🌍 CSIS (think-tank ve Washingtonu) explicitně propojuje lekce z íránské války s tchaj-wanským scénářem. Pokud AI zkrátí eskalační okno na minuty, tradiční diplomacie nestihne reagovat. Tohle je strukturální změna, ne dočasný trend.",
-        "char_count": 235
-      },
-      {
-        "number": 5,
-        "content": "5/6 📊 Co sledovat: Indie nebo Pákistán mohou brzy oznámit nákup AI-integrované protivzdušné obrany jako přímou reakci na pozorované lekce. Pro EU/NATO je otázka: jak rychle integrujeme AI do vlastní obranné doktríny?",
+        "content": "1/6 🚨 Konflikt USA-Írán právě změnil pravidla moderní války. AI systémy stlačily čas na krizová rozhodnutí na MINUTY. Lidský zásah? Téměř nemožný. A tento model teď kopírují jaderné mocnosti po celém světě. Vlákno ⬇️",
         "char_count": 216
       },
       {
+        "number": 2,
+        "content": "2/6 ⚡ Co se stalo: Írán ukázal, že levné rojové drony dokážou přetížit i nejpokročilejší protivzdušnou obranu. Zároveň AI systémy pro podporu rozhodování zkracují reakční okna na minimum. Kombinace obojího = strukturálně vyšší riziko omylu.",
+        "char_count": 240
+      },
+      {
+        "number": 3,
+        "content": "3/6 🎯 Nejvíce ohrožené regiony podle CSIS: Taiwan a dvojice Indie-Pákistán. Obě situace zahrnují jaderné zbraně + rychle se adaptující doktríny. Lekce z íránské války jsou absorbovány SOUČASNĚ více jadernými státy.",
+        "char_count": 214
+      },
+      {
+        "number": 4,
+        "content": "4/6 🔍 Co ostatní přehlíží: Problém není samotná AI, ale ASYMETRIE jejího nasazení. Státy se slabší vojenskou infrastrukturou přecházejí na autonomní režimy rychleji. Paradox: slabší hráči = vyšší riziko eskalace konfliktu.",
+        "char_count": 222
+      },
+      {
+        "number": 5,
+        "content": "5/6 🌍 Proč na tom záleží i pro ČR a EU: NATO musí počítat s tím, že protivník může eskalovat rychleji než alianční struktury stihnou reagovat. Kolektivní obrana postavená na konzultacích vs. AI rozhodnutí v minutách = vážný problém.",
+        "char_count": 232
+      },
+      {
         "number": 6,
-        "content": "6/6 💡 ČR sedí v NATO alianci, která AI v obraně teprve buduje. Čas rozhodnutí se globálně zkracuje – naše bezpečnostní struktury na to musí být připraveny. Sledujete vývoj AI v obraně? Sdílejte názor. 👇 #Geopolitika #Bezpečnost #ObranaČR",
-        "char_count": 237
+        "content": "6/6 💡 Co sledovat: Pokud Indie nebo Pákistán vydají doktrinální prohlášení o AI v systémech včasného varování, potvrdí se globální šíření tohoto modelu. Dopad: 9/10. Čas jednat na úrovni NATO a EU: teď. #Geopolitika #Bezpečnost #NATO",
+        "char_count": 233
       }
     ],
     "hashtags": [
       "#Geopolitika",
       "#Bezpečnost",
-      "#ObranaČR"
+      "#NATO"
     ],
-    "estimated_engagement": 8.2,
-    "main_topic": "AI_deterrence",
-    "source_analysis_id": "AI-Compressed Decision Timelines and Drone Proliferation Redefine Deterrence Logic from South Asia to the Taiwan Strait",
-    "generated_at": "2026-04-17T16:28:01.648741"
+    "estimated_engagement": 8.5,
+    "main_topic": "AI_eskalace",
+    "source_analysis_id": "AI-Compressed Decision Timelines and Drone Proliferation Redefine Escalation Calculus from South Asia to Taiwan",
+    "generated_at": "2026-04-17T21:05:23.878083"
+  },
+  {
+    "thread_title": "Rusko hrozí útoky na evropské zbrojovky",
+    "tweets": [
+      {
+        "number": 1,
+        "content": "1/6 🚨 POZOR: Rusko oficiálně označilo evropské výrobce dronů za vojenské cíle. Medveděv hrozí přímými útoky na půdě NATO. Pokud by hrozbu splnilo, šlo by o PRVNÍ přímý ruský útok na členský stát aliance. Spouštěč článku 5.",
+        "char_count": 222
+      },
+      {
+        "number": 2,
+        "content": "2/6 ⚡ Ukrajina mezitím zasáhla ruskou ropnou infrastrukturu dronovými údery do hloubky území. Cíl: odříznout Moskvě příjmy z ropy, které financují válku. Strategie přímého škrcení ruské válečné ekonomiky se zrychluje.",
+        "char_count": 217
+      },
+      {
+        "number": 3,
+        "content": "3/6 💡 Co ostatní přehlíží: Ruská hrozba NENÍ namířena proti stávající zásobě dronů. Jejím skutečným cílem je ZPOMALIT růst evropských výrobních kapacit. Moskva se bojí evropského zbrojního průmyslu za 2–3 roky, ne dnes.",
+        "char_count": 219
+      },
+      {
+        "number": 4,
+        "content": "4/6 🌍 EU do toho vstupuje s půjčkou €90 miliard pro Ukrajinu. Trojice událostí — hrozby, drony, finance — se děje SOUČASNĚ. Nejde o náhodu. Jde o souběh, který mění bezpečnostní architekturu celé Evropy včetně ČR.",
+        "char_count": 213
+      },
+      {
+        "number": 5,
+        "content": "5/6 🎯 Dopad pro ČR: Česko patří k předním dodavatelům munice Ukrajině. Pokud Rusko začne považovat evropské zbrojní kapacity za legitimní cíle, české závody nejsou mimo hru. Vláda by měla vydat bezpečnostní hodnocení.",
+        "char_count": 217
+      },
+      {
+        "number": 6,
+        "content": "6/6 📊 Co sledovat v příštích 72 hodinách: Vydá některá evropská vláda formální bezpečnostní hodnocení nebo přesune výrobu dronů? To bude signál, jak vážně NATO hrozbu bere. Napište — myslíte, že Rusko hrozbu splní? 👇 #Geopolitika #Bezpečnost #NATO",
+        "char_count": 247
+      }
+    ],
+    "hashtags": [
+      "#Geopolitika",
+      "#Bezpečnost",
+      "#NATO"
+    ],
+    "estimated_engagement": 8.5,
+    "main_topic": "security",
+    "source_analysis_id": "Russia Threatens European Drone Manufacturers as Ukraine's Long-Range Strikes Deny Oil Revenue and EU Prepares €90bn Loan",
+    "generated_at": "2026-04-17T21:05:59.240698"
   }
 ]
