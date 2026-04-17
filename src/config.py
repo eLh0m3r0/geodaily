@@ -71,6 +71,12 @@ class Config:
     # Subscribe / Newsletter delivery
     BUTTONDOWN_USERNAME = os.getenv("BUTTONDOWN_USERNAME", "")
 
+    # Beehiiv publishing
+    BEEHIIV_API_KEY = os.getenv("BEEHIIV_API_KEY", "")
+    BEEHIIV_PUBLICATION_ID = os.getenv("BEEHIIV_PUBLICATION_ID", "")
+    # "draft" saves without sending; "active" publishes immediately to subscribers
+    BEEHIIV_STATUS = os.getenv("BEEHIIV_STATUS", "active")
+
     # Notification Configuration
     ADMIN_EMAIL = os.getenv("ADMIN_EMAIL")
     SMTP_SERVER = os.getenv("SMTP_SERVER")
