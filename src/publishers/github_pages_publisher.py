@@ -134,6 +134,8 @@ class GitHubPagesPublisher:
                             <div class="story-meta">
                                 <span class="impact-score impact-{impact_class}" title="Impact Score">{analysis.impact_score}/10</span>
                                 <span class="confidence" title="Analysis Confidence">{int(analysis.confidence * 100)}%</span>
+                                <span class="geo-tag region-tag">{getattr(analysis, 'region', 'global').replace('_', ' ').title()}</span>
+                                <span class="geo-tag event-tag">{getattr(analysis, 'event_type', 'political').replace('_', ' ').title()}</span>
                             </div>
                         </header>
 
@@ -173,6 +175,7 @@ class GitHubPagesPublisher:
                 <footer class="newsletter-footer">
                     <p>{newsletter.footer_text or 'This newsletter is generated using AI analysis of geopolitical news sources.'}</p>
                     <p class="timestamp">Generated on {datetime.now().strftime('%Y-%m-%d at %H:%M UTC')}</p>
+                    {self._build_subscribe_html()}
                 </footer>
             </article>
         </div>
@@ -210,6 +213,25 @@ class GitHubPagesPublisher:
             return domain.replace('www.', '')
         except:
             return url[:50] + "..." if len(url) > 50 else url
+
+    def _build_subscribe_html(self) -> str:
+        """Build Buttondown subscribe form HTML, or empty string if not configured."""
+        username = Config.BUTTONDOWN_USERNAME
+        if not username:
+            return ""
+        return f"""
+                    <div class="subscribe-box">
+                        <h3>Get this briefing in your inbox</h3>
+                        <p>Daily geopolitical intelligence, delivered every morning.</p>
+                        <form action="https://buttondown.com/api/emails/embed-subscribe/{username}"
+                              method="post"
+                              target="popupwindow"
+                              onsubmit="window.open('https://buttondown.com/{username}', 'popupwindow')"
+                              class="subscribe-form">
+                            <input type="email" name="email" placeholder="your@email.com" required />
+                            <input type="submit" value="Subscribe" class="subscribe-btn" />
+                        </form>
+                    </div>"""
     
     def _update_index_page(self):
         """Update the main index page with recent newsletters."""
@@ -1052,6 +1074,40 @@ body {
     color: white;
     font-size: 0.9rem;
 }
+
+.geo-tag {
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+.region-tag { background: #edf2f7; color: #2d3748; border: 1px solid #cbd5e0; }
+.event-tag  { background: #fefce8; color: #713f12; border: 1px solid #fde68a; }
+
+.subscribe-box {
+    margin-top: 2rem;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, #1a2a4a 0%, #2c3e50 100%);
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+}
+.subscribe-box h3 { color: white; margin: 0 0 0.4rem 0; font-size: 1.1rem; }
+.subscribe-box p  { color: #a0aec0; margin: 0 0 1rem 0; font-size: 0.9rem; }
+.subscribe-form   { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+.subscribe-form input[type="email"] {
+    padding: 0.5rem 0.9rem; border: none; border-radius: 4px;
+    font-size: 0.9rem; width: 220px; max-width: 100%;
+}
+.subscribe-btn {
+    background: #e53e3e; color: white; border: none;
+    padding: 0.5rem 1.2rem; border-radius: 4px;
+    font-size: 0.9rem; font-weight: 600; cursor: pointer;
+}
+.subscribe-btn:hover { background: #c53030; }
 
 .story-content {
     display: grid;
