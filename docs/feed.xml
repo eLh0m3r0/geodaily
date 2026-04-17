@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 17 Apr 2026 11:56:59 GMT</pubDate>
-        <lastBuildDate>Fri, 17 Apr 2026 11:56:59 GMT</lastBuildDate>
+        <pubDate>Fri, 17 Apr 2026 16:28:01 GMT</pubDate>
+        <lastBuildDate>Fri, 17 Apr 2026 16:28:01 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -62,7 +62,7 @@
         <item>
         <title><![CDATA[Geopolitical Daily - April 17, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-04-17.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, April 17, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>European Strategic Autonomy Fractures as Middle East War Reshapes Global Energy and Diplomatic Architecture</strong>: Europe's attempt to broker Hormuz settlement without US/Israel/Iran signals declining transatlantic cohesion. Simultaneous China-Iran diplomatic acceleration and IMF warnings of cascading economic dam...</li><li><strong>Drone Proliferation Democratizes Precision Warfare While Creating Escalation Trap for European Suppliers</strong>: Ukraine's drone diplomacy creates security partnerships across Europe/Gulf, but Medvedev's targeting threat against European manufacturers signals Russia's willingness to expand conflict geography. Ir...</li><li><strong>EU Institutional Fracture Widens as Hungary Pivots Pro-Western While Bulgaria Emerges as Kremlin's New Proxy</strong>: Magyar's landslide victory removes Orbán as Putin's primary EU lever, but Bulgarian pro-Kremlin election success suggests Russia's EU infiltration strategy adapts rather than collapses. Simultaneous P...</li></ul><p><em>Published: April 17, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, April 17, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Iran Ceasefire Window Opens: Trump Signals Deal as European and Regional Diplomacy Converge on Hormuz</strong>: Trump's unverified deal signal, a 30-nation Paris summit excluding the US and Israel, and Turkey's parallel forum with Pakistan, Saudi Arabia, and Egypt represent three simultaneous diplomatic tracks ...</li><li><strong>Iran War Energy Shock Transmits Systemic Debt and Supply Chain Risk Across the Global South</strong>: Foreign Affairs identifies the primary risk as a sovereign debt crisis, not merely an energy price spike, as fuel import bills overwhelm current accounts in oil-dependent developing economies. Southea...</li><li><strong>Russia Threatens European Drone Production Sites as Ukraine's Industrial Warfare Network Expands Across the Continent</strong>: Russia's Defense Ministry has published a target list of European drone manufacturing facilities, and Medvedev has explicitly stated it should be taken literally. This transforms European industrial s...</li></ul><p><em>Published: April 17, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
         <pubDate>Fri, 17 Apr 2026 06:00:00 GMT</pubDate>
         <guid isPermaLink="false">geodaily-20260417</guid>
         <author>Geopolitical Daily Editorial Team</author>
@@ -73,7 +73,6 @@
         <category><![CDATA[Russia]]></category>
         <category><![CDATA[Middle East]]></category>
         <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-04-17.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
