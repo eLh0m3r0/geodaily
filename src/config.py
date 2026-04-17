@@ -68,6 +68,9 @@ class Config:
     LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
     LOG_FORMAT = os.getenv("LOG_FORMAT", "%(asctime)s - %(name)s - %(levelname)s - %(message)s")
     
+    # Subscribe / Newsletter delivery
+    BUTTONDOWN_USERNAME = os.getenv("BUTTONDOWN_USERNAME", "")
+
     # Notification Configuration
     ADMIN_EMAIL = os.getenv("ADMIN_EMAIL")
     SMTP_SERVER = os.getenv("SMTP_SERVER")

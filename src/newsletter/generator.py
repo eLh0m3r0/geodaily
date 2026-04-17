@@ -166,11 +166,32 @@ class NewsletterGenerator:
         for story in newsletter.stories:
             stories_html += self._generate_story_html(story)
         
+        # Build optional Buttondown subscribe form
+        subscribe_html = ""
+        if Config.BUTTONDOWN_USERNAME:
+            subscribe_html = f"""
+            <!-- Subscribe Section -->
+            <div class="subscribe-section">
+                <h4>Get this briefing in your inbox</h4>
+                <p>Daily geopolitical intelligence, delivered every morning.</p>
+                <form action="https://buttondown.com/api/emails/embed-subscribe/{Config.BUTTONDOWN_USERNAME}"
+                      method="post"
+                      target="popupwindow"
+                      onsubmit="window.open('https://buttondown.com/{Config.BUTTONDOWN_USERNAME}', 'popupwindow')"
+                      class="subscribe-form">
+                    <input type="email" name="email" placeholder="your@email.com" required />
+                    <input type="submit" value="Subscribe" class="subscribe-btn" />
+                </form>
+            </div>
+"""
+
         # Generate footer with enhanced feedback mechanisms
         footer = f"""
         <div class="footer">
             <p>{newsletter.title} - Geopolitical Intelligence for Decision Makers</p>
             {f'<p>{newsletter.footer_text}</p>' if newsletter.footer_text else ''}
+
+            {subscribe_html}
 
             <!-- Feedback Section -->
             <div class="feedback-section">
@@ -196,10 +217,8 @@ class NewsletterGenerator:
             </div>
 
             <div class="newsletter-actions">
-                <a href="#unsubscribe">Unsubscribe</a> |
                 <a href="#archive">Archive</a> |
-                <a href="#preferences">Update Preferences</a> |
-                <a href="#recommendations">Get Recommendations</a>
+                <a href="#preferences">Update Preferences</a>
             </div>
         </div>
         """
@@ -302,10 +321,16 @@ class NewsletterGenerator:
                 sources_html += f'<a href="{source}" class="source-link" target="_blank">{source}</a>'
             sources_html += '</div>'
 
+        # Region and event type display
+        region_display = story.region.replace("_", " ").title()
+        event_type_display = story.event_type.replace("_", " ").title()
+
         # Generate multi-dimensional scores
         scores_html = f"""
         <div class="story-meta">
             <div class="content-type-badge {content_type_class}">{content_type_display}</div>
+            <div class="geo-tag region-tag">{region_display}</div>
+            <div class="geo-tag event-tag">{event_type_display}</div>
             <div class="score-row">
                 <span class="score-label">Impact:</span>
                 <span class="impact-score {impact_class}">{story.impact_score}/10</span>
@@ -483,6 +508,64 @@ class NewsletterGenerator:
         .content-type-badge.breaking_news { background-color: #e74c3c; }
         .content-type-badge.analysis { background-color: #3498db; }
         .content-type-badge.trend { background-color: #9b59b6; }
+
+        .geo-tag {
+            display: inline-block;
+            padding: 2px 7px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            margin-bottom: 4px;
+        }
+        .region-tag { background-color: #ecf0f1; color: #34495e; border: 1px solid #bdc3c7; }
+        .event-tag { background-color: #fef9e7; color: #7d6608; border: 1px solid #f9e79f; }
+
+        /* Subscribe Section */
+        .subscribe-section {
+            background: linear-gradient(135deg, #1a2a4a 0%, #2c3e50 100%);
+            color: white;
+            padding: 24px;
+            border-radius: 8px;
+            margin: 24px 0;
+            text-align: center;
+        }
+        .subscribe-section h4 {
+            color: white;
+            margin: 0 0 8px 0;
+            font-size: 18px;
+        }
+        .subscribe-section p {
+            color: #bdc3c7;
+            margin: 0 0 16px 0;
+            font-size: 13px;
+        }
+        .subscribe-form {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .subscribe-form input[type="email"] {
+            padding: 10px 14px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            width: 240px;
+            max-width: 100%;
+        }
+        .subscribe-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .subscribe-btn:hover { background-color: #c0392b; }
 
         .story.breaking_news { border-left: 4px solid #e74c3c; }
         .story.analysis { border-left: 4px solid #3498db; }

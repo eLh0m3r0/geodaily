@@ -343,19 +343,16 @@ RECENT NEWSLETTER COVERAGE (Last {Config.NEWSLETTER_HISTORY_DAYS} days):
 **AVOID REPEATING RECENT TOPICS** - Select stories that complement, not duplicate, recent coverage.
 """
         
-        return f"""You are a geopolitical analyst creating a daily briefing that balances breaking news, in-depth analysis, and emerging trends.
+        return f"""You are a senior geopolitical analyst producing a structured daily intelligence briefing. Your job is to select the most strategically significant stories and tag each with structured metadata that enables regional and thematic filtering.
 {newsletter_context}
-Analyze the following {len(articles_summary.split('Article '))-1} articles and select the {target_stories} most important stories for today's geopolitical newsletter. Focus on:
+Analyze the following {len(articles_summary.split('Article '))-1} articles and select the {target_stories} most important stories for today's briefing. Prioritize:
 
-1. **Strategic significance** - Stories that impact international relations, power dynamics, or regional stability
-2. **Content diversity** - Balance of breaking news, analysis, and emerging trends  
-3. **Source quality** - Prioritize think tanks and analysis sources over regional/biased sources
-4. **Novelty and importance** - Fresh developments with meaningful geopolitical implications
+1. **Strategic significance** — impact on power balances, alliances, territorial control, or systemic stability
+2. **Regional spread** — avoid clustering all stories in one region; cover at least 2–3 distinct regions
+3. **Source quality** — weight think tanks (CSIS, ICG, Chatham House) and specialist outlets (War on the Rocks, Foreign Affairs) above wire services
+4. **Novelty** — prefer developments that shift the existing situation, not routine updates
 
-**IMPORTANT SOURCE CONSIDERATIONS:**
-- RT Today and similar sources should have lower priority due to bias
-- Think tanks (CSIS, Atlantic Council) and analysis sources (Foreign Affairs, Foreign Policy) should be prioritized
-- Look for stories that complement each other rather than overlap
+**SOURCE PRIORITY (highest to lowest):** War on the Rocks, Foreign Affairs, ICG, CSIS, Chatham House, Lawfare, The Diplomat, Foreign Policy, Atlantic Council, Al Jazeera, SCMP → mainstream wire services → regional/state media
 
 {articles_summary}
 
@@ -364,11 +361,14 @@ For each selected story, provide analysis in this exact JSON format, enclosed in
 [
   {{
     "article_index": [1-based index of selected article],
-    "story_title": "Concise, engaging title (natural length, avoid truncation)",
+    "story_title": "Concise, analytically sharp title (avoid generic phrasing like 'tensions rise')",
     "content_type": "breaking_news|analysis|trend",
-    "why_important": "Strategic significance and implications (max 80 words)",
-    "what_overlooked": "What mainstream media is missing or underemphasizing (max 40 words)",
-    "prediction": "Expected developments in next 72 hours (max 30 words)",
+    "region": "europe|middle_east|indo_pacific|americas|africa|central_asia|global",
+    "actor_type": "state|non_state|international_org|mixed",
+    "event_type": "diplomatic|military|economic|informational_cyber|humanitarian|political",
+    "why_important": "Strategic significance, second-order effects, and power implications (max 80 words)",
+    "what_overlooked": "What the headline misses: structural driver, underreported actor, or longer arc (max 40 words)",
+    "prediction": "Concrete next move or threshold to watch in the next 72 hours (max 30 words)",
     "impact_score": [1-10 integer],
     "urgency_score": [1-10 integer],
     "scope_score": [1-10 integer],
@@ -379,17 +379,37 @@ For each selected story, provide analysis in this exact JSON format, enclosed in
   }}
 ]
 
-Content Type Guidelines:
-- breaking_news: Recent events, announcements, crises requiring immediate attention
-- analysis: Deeper examination of causes, implications, strategic context
-- trend: Patterns, shifts indicating changing geopolitical landscapes
+Classification Guidelines:
+- content_type / breaking_news: Immediate event requiring attention today
+- content_type / analysis: Strategic examination of causes, alliances, or long-run implications
+- content_type / trend: Multi-week pattern that is quietly reshaping a region or sector
+
+- region / europe: EU, NATO, UK, Russia/Belarus, Balkans, Caucasus
+- region / middle_east: MENA, GCC states, Israel, Iran, Turkey
+- region / indo_pacific: China, Japan, Koreas, SE Asia, Australia, India, Pacific islands
+- region / americas: US, Canada, Latin America, Caribbean
+- region / africa: Sub-Saharan Africa, Horn, Sahel
+- region / central_asia: Former Soviet stans, Afghanistan, Pakistan
+- region / global: Simultaneous multi-region impact (use sparingly)
+
+- actor_type / state: Governments and their militaries
+- actor_type / non_state: Armed groups, terror orgs, corporations, protest movements
+- actor_type / international_org: UN, NATO, EU, WTO, IAEA, regional bodies
+- actor_type / mixed: State + non-state actors interacting
+
+- event_type / diplomatic: Treaties, summits, expulsions, formal negotiations
+- event_type / military: Armed conflict, deployments, exercises, weapons transfers
+- event_type / economic: Trade policy, energy, sanctions, financial flows
+- event_type / informational_cyber: Disinformation, hacking, information operations
+- event_type / humanitarian: Refugee flows, famine, disaster, civilian harm
+- event_type / political: Elections, coups, legislative action, protest movements
 
 Scoring Guidelines:
-- urgency_score: Time sensitivity (1=long-term, 10=immediate)
-- scope_score: Geographic/political impact (1=local, 10=global)  
-- novelty_score: Unexpectedness (1=expected, 10=unprecedented)
-- credibility_score: Source reliability (1=unverified, 10=confirmed)
-- impact_dimension_score: Geopolitical significance (1=minor, 10=world-changing)
+- urgency_score: Time sensitivity (1=long-term trend, 10=immediate action required today)
+- scope_score: Geographic/political scope (1=local, 10=global systemic)
+- novelty_score: Unexpectedness (1=fully anticipated, 10=unprecedented)
+- credibility_score: Source reliability (1=single unverified claim, 10=multiple confirmed sources)
+- impact_dimension_score: Geopolitical magnitude (1=minor, 10=potentially world-changing)
 
 Return ONLY the JSON array, no additional text. Select exactly {target_stories} stories."""
     
@@ -444,7 +464,10 @@ Return ONLY the JSON array, no additional text. Select exactly {target_stories} 
                     credibility_score=int(data.get('credibility_score', 5)),
                     impact_dimension_score=int(data.get('impact_dimension_score', 5)),
                     sources=[source_article.url],  # Single source per analysis
-                    confidence=float(data.get('confidence', 0.8))
+                    confidence=float(data.get('confidence', 0.8)),
+                    region=data.get('region', 'global'),
+                    actor_type=data.get('actor_type', 'state'),
+                    event_type=data.get('event_type', 'political'),
                 )
                 
                 analyses.append(analysis)
@@ -875,22 +898,22 @@ DIVERSITY REQUIREMENTS:
 
 """
         
-        return f"""You are a geopolitical analyst creating today's briefing with strategic diversity awareness.
+        return f"""You are a senior geopolitical analyst producing a structured intelligence brief for decision-makers.
 
-{newsletter_context}Analyze the following cluster of articles and classify the story into one of three content types:
-- breaking_news: Immediate developments, urgent events, or time-sensitive announcements
-- analysis: In-depth examination of ongoing situations, strategic implications, or policy impacts
-- trend: Emerging patterns, long-term developments, or evolving geopolitical dynamics
+{newsletter_context}Analyze the following cluster of articles. Classify the story and tag it with structured geopolitical metadata.
 
 {articles_summary}
 
 Provide analysis in this exact JSON format:
 {{
-  "story_title": "Concise, engaging title (natural length, avoid truncation)",
+  "story_title": "Analytically sharp title — avoid clichés like 'tensions rise' or 'amid uncertainty'",
   "content_type": "breaking_news|analysis|trend",
-  "why_important": "Strategic significance and implications (max 80 words)",
-  "what_overlooked": "What mainstream media is missing or underemphasizing (max 40 words)",
-  "prediction": "Expected developments in next 72 hours (max 30 words)",
+  "region": "europe|middle_east|indo_pacific|americas|africa|central_asia|global",
+  "actor_type": "state|non_state|international_org|mixed",
+  "event_type": "diplomatic|military|economic|informational_cyber|humanitarian|political",
+  "why_important": "Strategic significance, second-order effects, and power implications (max 80 words)",
+  "what_overlooked": "What the headline misses: structural driver, underreported actor, or longer arc (max 40 words)",
+  "prediction": "Concrete next move or threshold to watch in the next 72 hours (max 30 words)",
   "impact_score": [1-10 integer],
   "urgency_score": [1-10 integer],
   "scope_score": [1-10 integer],
@@ -900,24 +923,43 @@ Provide analysis in this exact JSON format:
   "confidence": [0.0-1.0 float]
 }}
 
-Content Type Classification Guidelines:
-- breaking_news: Recent events, announcements, crises, or developments requiring immediate attention
-- analysis: Deeper examination of causes, implications, or strategic context of ongoing situations
-- trend: Patterns, shifts, or developments that indicate changing geopolitical landscapes over time
+Classification Guidelines:
+- content_type / breaking_news: Immediate event requiring attention today
+- content_type / analysis: Strategic examination of causes, alliances, or long-run implications
+- content_type / trend: Multi-week pattern quietly reshaping a region or sector
+
+- region / europe: EU, NATO, UK, Russia/Belarus, Balkans, Caucasus
+- region / middle_east: MENA, GCC states, Israel, Iran, Turkey
+- region / indo_pacific: China, Japan, Koreas, SE Asia, Australia, India, Pacific islands
+- region / americas: US, Canada, Latin America, Caribbean
+- region / africa: Sub-Saharan Africa, Horn, Sahel
+- region / central_asia: Former Soviet stans, Afghanistan, Pakistan
+- region / global: Simultaneous multi-region impact (use sparingly)
+
+- actor_type / state: Governments and their militaries
+- actor_type / non_state: Armed groups, terror orgs, corporations, protest movements
+- actor_type / international_org: UN, NATO, EU, WTO, IAEA, regional bodies
+- actor_type / mixed: State + non-state actors interacting
+
+- event_type / diplomatic: Treaties, summits, expulsions, formal negotiations
+- event_type / military: Armed conflict, deployments, exercises, weapons transfers
+- event_type / economic: Trade policy, energy, sanctions, financial flows
+- event_type / informational_cyber: Disinformation, hacking, information operations
+- event_type / humanitarian: Refugee flows, famine, disaster, civilian harm
+- event_type / political: Elections, coups, legislative action, protest movements
+
+Analytical focus:
+- Second-order effects and power shifts, not just the immediate event
+- Which actors benefit or lose from this development
+- Structural drivers behind the headline
+- Alliance implications and precedent-setting effects
 
 Scoring guidelines:
-- urgency_score: How time-sensitive is this story? (1=long-term trend, 10=immediate action required)
-- scope_score: Geographic/political scope of impact (1=local, 10=global systemic)
-- novelty_score: How novel/unexpected is this development? (1=expected, 10=completely unprecedented)
-- credibility_score: Reliability of sources and information (1=unverified rumors, 10=multiple confirmed sources)
-- impact_dimension_score: Overall geopolitical significance (1=minor, 10=potentially world-changing)
-
-Focus on:
-- Second-order effects and strategic implications
-- Regional power dynamics
-- Economic/technological sovereignty issues
-- Alliance structures and partnerships
-- Information warfare and influence operations
+- urgency_score: Time sensitivity (1=long-term trend, 10=immediate action required today)
+- scope_score: Geographic/political scope (1=local, 10=global systemic)
+- novelty_score: Unexpectedness (1=fully anticipated, 10=unprecedented)
+- credibility_score: Source reliability (1=single unverified claim, 10=multiple confirmed sources)
+- impact_dimension_score: Geopolitical magnitude (1=minor, 10=potentially world-changing)
 
 Return only valid JSON, no additional text."""
     
@@ -953,9 +995,12 @@ Return only valid JSON, no additional text."""
                 credibility_score=int(data.get('credibility_score', 5)),
                 impact_dimension_score=int(data.get('impact_dimension_score', 5)),
                 sources=[article.url for article in cluster.articles],
-                confidence=float(data.get('confidence', 0.8))
+                confidence=float(data.get('confidence', 0.8)),
+                region=data.get('region', 'global'),
+                actor_type=data.get('actor_type', 'state'),
+                event_type=data.get('event_type', 'political'),
             )
-            
+
             return analysis
             
         except json.JSONDecodeError as e:

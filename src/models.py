@@ -101,6 +101,10 @@ class AIAnalysis:
     credibility_score: int = 1  # 1-10
     impact_dimension_score: int = 1  # 1-10
     confidence: float = 0.0
+    # Geopolitical structure fields
+    region: str = "global"       # europe|middle_east|indo_pacific|americas|africa|central_asia|global
+    actor_type: str = "state"    # state|non_state|international_org|mixed
+    event_type: str = "political" # diplomatic|military|economic|informational_cyber|humanitarian|political
     
     def __post_init__(self):
         # Validate word counts

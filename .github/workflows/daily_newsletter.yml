@@ -94,6 +94,9 @@ jobs:
         if [ -n "${{ secrets.SMTP_FROM_EMAIL }}" ]; then
           echo "SMTP_FROM_EMAIL=${{ secrets.SMTP_FROM_EMAIL }}" >> $GITHUB_ENV
         fi
+        if [ -n "${{ secrets.BUTTONDOWN_USERNAME }}" ]; then
+          echo "BUTTONDOWN_USERNAME=${{ secrets.BUTTONDOWN_USERNAME }}" >> $GITHUB_ENV
+        fi
 
         # System configuration
         echo "LOG_LEVEL=INFO" >> $GITHUB_ENV
