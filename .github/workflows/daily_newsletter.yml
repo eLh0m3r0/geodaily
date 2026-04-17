@@ -102,7 +102,10 @@ jobs:
         if [ -n "${{ secrets.BEEHIIV_API_KEY }}" ]; then
           echo "BEEHIIV_API_KEY=${{ secrets.BEEHIIV_API_KEY }}" >> $GITHUB_ENV
         fi
-        if [ -n "${{ secrets.BEEHIIV_PUBLICATION_ID }}" ]; then
+        # Accept BEEHIIV_PUBLICATION_ID_V2 (v2 API) or the generic fallback
+        if [ -n "${{ secrets.BEEHIIV_PUBLICATION_ID_V2 }}" ]; then
+          echo "BEEHIIV_PUBLICATION_ID=${{ secrets.BEEHIIV_PUBLICATION_ID_V2 }}" >> $GITHUB_ENV
+        elif [ -n "${{ secrets.BEEHIIV_PUBLICATION_ID }}" ]; then
           echo "BEEHIIV_PUBLICATION_ID=${{ secrets.BEEHIIV_PUBLICATION_ID }}" >> $GITHUB_ENV
         fi
         if [ -n "${{ secrets.BEEHIIV_STATUS }}" ]; then
