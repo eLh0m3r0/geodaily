@@ -58,7 +58,7 @@
       "name": "Atlantic Council",
       "url": "https://www.atlanticcouncil.org/feed/",
       "category": "think_tank",
-      "weight": 1.2
+      "weight": 0.7
     },
     {
       "name": "European Council on Foreign Relations",
@@ -70,7 +70,7 @@
       "name": "German Marshall Fund",
       "url": "https://www.gmfus.org/rss.xml",
       "category": "think_tank",
-      "weight": 1.1
+      "weight": 0.7
     },
     {
       "name": "International Crisis Group",
@@ -131,25 +131,47 @@
       "url": "https://www.al-monitor.com/rss.xml",
       "category": "regional",
       "weight": 0.9
+    },
+    {
+      "name": "Carnegie Endowment for International Peace",
+      "url": "https://carnegieendowment.org/feed/",
+      "category": "think_tank",
+      "weight": 1.1
+    },
+    {
+      "name": "Responsible Statecraft",
+      "url": "https://responsiblestatecraft.org/feed/",
+      "category": "analysis",
+      "weight": 1.0
+    },
+    {
+      "name": "The Africa Report",
+      "url": "https://www.theafricareport.com/feed/",
+      "category": "regional",
+      "weight": 1.0
+    },
+    {
+      "name": "African Arguments",
+      "url": "https://africanarguments.org/feed/",
+      "category": "regional",
+      "weight": 1.0
+    },
+    {
+      "name": "Americas Quarterly",
+      "url": "https://americasquarterly.org/feed/",
+      "category": "regional",
+      "weight": 1.0
+    },
+    {
+      "name": "The Wire (India)",
+      "url": "https://thewire.in/feed",
+      "category": "regional",
+      "weight": 1.0
     }
   ],
   "tier2_sources": [
     {
-      "name": "Foreign Policy (Fixed)",
-      "url": "https://foreignpolicy.com/latest/",
-      "method": "basic",
-      "category": "analysis",
-      "weight": 1.2,
-      "selectors": {
-        "container": ".card--article, .post-item, article",
-        "title": ".card__title, h2, h3, .headline",
-        "link": "a",
-        "summary": ".card__excerpt, .excerpt, .summary",
-        "date": ".card__date, time, .date"
-      }
-    },
-    {
-      "name": "Defense One (Fixed)",
+      "name": "Defense One",
       "url": "https://www.defenseone.com/",
       "method": "basic",
       "category": "analysis",
@@ -174,40 +196,6 @@
         "link": "a",
         "summary": ".excerpt",
         "date": "time"
-      }
-    },
-    {
-      "name": "Foreign Affairs Magazine",
-      "url": "https://www.foreignaffairs.com/articles",
-      "method": "basic",
-      "category": "analysis",
-      "weight": 1.3,
-      "selectors": {
-        "container": ".article-card, article, .card",
-        "title": "h2, h3, .headline",
-        "link": "a",
-        "summary": ".summary, .excerpt, .description",
-        "date": "time, .date"
-      }
-    },
-    {
-      "name": "Atlantic Council",
-      "url": "https://www.atlanticcouncil.org/feed/",
-      "category": "think_tank",
-      "weight": 1.1
-    },
-    {
-      "name": "Center for Strategic and International Studies",
-      "url": "https://www.csis.org/analysis/",
-      "method": "basic",
-      "category": "think_tank",
-      "weight": 1.2,
-      "selectors": {
-        "container": ".analysis-item, article, .post",
-        "title": "h2, h3, .title",
-        "link": "a",
-        "summary": ".excerpt, .summary",
-        "date": "time, .date"
       }
     }
   ]
