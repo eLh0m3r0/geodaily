@@ -1,80 +1,41 @@
 [
   {
-    "thread_title": "Hormuz: Nejhorší energetická krize v historii",
+    "thread_title": "Příměří USA-Írán expiruje: Co to znamená pro nás",
     "tweets": [
       {
         "number": 1,
-        "content": "1/6 🚨 IEA právě prohlásila NEJHORŠÍ energetickou krizi v historii. Máme 72 hodin, než vyprší příměří mezi USA a Íránem. Průliv Hormuz je stále uzavřen. Co to znamená pro Česko a Evropu? 🧵",
-        "char_count": 187
+        "content": "1/7 🚨 BREAKING: Ve středu expiruje dvoutýdenní příměří mezi USA a Íránem. Teherán nepotvrdil účast na mírových rozhovorech. Pokud selžou, ceny ropy vyletí nahoru — a my to pocítíme u pumpy i v účtech za energie.",
+        "char_count": 211
       },
       {
         "number": 2,
-        "content": "2/6 ⚡ Průlivem Hormuz prochází ~20 % světové ropy. Jeho uzavření už teď způsobuje cenové šoky. Pro ČR = zdražení energií, pohonných hmot a prakticky všeho, co se vyrábí nebo přepravuje.",
-        "char_count": 185
+        "content": "2/7 🌍 Kde se to řeší? V Pákistánu. JD Vance osobně odletěl do Islamábádu, aby zachránil diplomatický proces. Írán zatím mlčí a nevysílá žádnou delegaci. Hodiny tikají — zbývají hodiny, ne dny.",
+        "char_count": 192
       },
       {
         "number": 3,
-        "content": "3/6 🌍 Klíčový hráč? Pákistán. Islámábád hostí diplomatická jednání a poprvé za léta drží vzácnou strategickou páku. Otázka je, co za svou roli mediátora požaduje — a od koho.",
-        "char_count": 174
+        "content": "3/7 ⚡ Co se stane při kolapsu? Írán naznačuje vojenskou eskalaci v Hormuzském průlivu — kudy proudí 20 % světové ropy. IEA už nyní hovoří o nejhorší energetické krizi v historii. Eskalace by ji dramaticky prohloubila.",
+        "char_count": 217
       },
       {
         "number": 4,
-        "content": "4/6 🔍 Íránská delegace stále neodjela na jednání. Nejde ale o jednotné rozhodnutí Teheránu — uvnitř íránského vedení zuří faktický boj o to, zda vůbec vyjednávat. Čas přitom běží.",
-        "char_count": 179
+        "content": "4/7 📊 Dopad na ČR a EU: Evropa je stále zranitelná vůči ropným šokům. Vyšší ceny energií = vyšší inflace, zdražení dopravy, průmyslu i potravin. Česká ekonomika, závislá na exportu, by pocítila zpomalení velmi rychle.",
+        "char_count": 217
       },
       {
         "number": 5,
-        "content": "5/6 📊 Scénáře: A) Írán vyšle delegaci do 24h → příměří se prodlouží, trhy se uklidní. B) Příměří vyprší → okamžitý skok cen ropy, nouzové konzultace G7 a energetický chaos v EU. 🎯",
-        "char_count": 179
+        "content": "5/7 🔍 Co ostatní přehlížejí: Pákistán jako mediátor je strukturálně slabý. Islamábád sám čelí ekonomické krizi a nemůže si dovolit vypadat jako americký proxy. Jeho vliv na íránské hardlinery je tak velmi omezený.",
+        "char_count": 213
       },
       {
         "number": 6,
-        "content": "6/6 💡 Toto je nejvyšší diplomatická sázka od začátku konfliktu. Sledujte zprávy z Islámábádu v příštích 24 hodinách — rozhodne se tam o cenách energií i pro česká domácnosti.\n\n#Geopolitika #Energie #Hormuz",
-        "char_count": 205
-      }
-    ],
-    "hashtags": [
-      "#Geopolitika",
-      "#Energie",
-      "#Hormuz"
-    ],
-    "estimated_engagement": 8.7,
-    "main_topic": "Hormuz",
-    "source_analysis_id": "US-Iran Ceasefire Expiry Collides With Stalled Islamabad Talks as Hormuz Closure Deepens Global Energy Crisis",
-    "generated_at": "2026-04-21T14:11:44.189746"
-  },
-  {
-    "thread_title": "Čína mění energetickou krizi v mocenský nástroj",
-    "tweets": [
-      {
-        "number": 1,
-        "content": "1/6 🚨 Čína hraje dvojí hru: Je ZÁROVEŇ obětí i beneficientem krize v Hormuzském průlivu. Jak Peking mění energetický šok v geopolitický kapitál – a co to znamená pro zbytek světa?",
-        "char_count": 179
+        "content": "6/7 🎯 Na co se soustředit v příštích 24 hodinách: → Vyšle Írán delegaci do Islamábádu? → Oznámí USA změnu vojenského postavení v Zálivu? → Reagují ropné trhy preventivním zdražením? Každý z těchto signálů je klíčový.",
+        "char_count": 216
       },
       {
-        "number": 2,
-        "content": "2/6 ⚡ Premiér Li svolal mimořádné zasedání Státní rady – signál skutečného znepokojení. Čína dováží přes 70 % ropy přes Hormuz. Přerušení trasy by bylo bolestivé. Ale jen dočasně.",
-        "char_count": 179
-      },
-      {
-        "number": 3,
-        "content": "3/6 🎯 Peking zároveň nabídl Filipínám energetickou pomoc – výměnou za distancování od vojenských cvičení s USA. Čistá vydíratelnost: \"Chcete ropu? Omezte spolupráci s Washingtonem.\"",
-        "char_count": 181
-      },
-      {
-        "number": 4,
-        "content": "4/6 📊 Trhy to vidí jasně: čínský akciový trh drží stabilitu a juan roste jako \"bezpečný přístav\". Západ ztrácí, Peking sbírá geopolitické dividendy nedostupné pro západní konkurenty.",
-        "char_count": 182
-      },
-      {
-        "number": 5,
-        "content": "5/6 🔍 Co ostatní přehlíží: Čína masivně buduje jaderné a obnovitelné zdroje. Závislost na Hormuz je ČASOVĚ OMEZENÁ. Peking má motivaci využít toto okno TEĎ – dokud mu energetická zranitelnost dává páku.",
-        "char_count": 202
-      },
-      {
-        "number": 6,
-        "content": "6/6 🌍 Pro ČR/EU: Energetická závislost = politická zranitelnost. Čína nám ukazuje, jak se z odběratele stát vydíratelem. Sledujte, zda Manila do 72h omezí cvičení Balikatan. #Geopolitika #Energetika #Bezpečnost",
-        "char_count": 210
+        "number": 7,
+        "content": "7/7 💡 Toto je geopolitická událost s dopadem 10/10. Nesledujte jen titulky — sledujte pohyb tankerů, futures na ropu a rétorika Teheránu. Sdílejte vlákno, ať jsou lidé připraveni. #Geopolitika #Energetika #Bezpečnost",
+        "char_count": 216
       }
     ],
     "hashtags": [
@@ -82,97 +43,53 @@
       "#Energetika",
       "#Bezpečnost"
     ],
-    "estimated_engagement": 8.5,
-    "main_topic": "geopolitika",
-    "source_analysis_id": "China Converts Middle East Energy Shock Into Coercive Diplomatic Capital While Managing Structural Economic Exposure",
-    "generated_at": "2026-04-21T14:11:59.842341"
+    "estimated_engagement": 8.7,
+    "main_topic": "Iran_ceasefire",
+    "source_analysis_id": "US-Iran Ceasefire Clock Expires as Islamabad Talks Stall and Tehran Signals Battlefield Escalation",
+    "generated_at": "2026-04-21T15:02:35.224753"
   },
   {
-    "thread_title": "Čína vs. USA: Tříbodový tlak na světový řád",
+    "thread_title": "Evropská jednota praská: energie vs. politika",
     "tweets": [
       {
         "number": 1,
-        "content": "1/6 🚨 Čína právě spustila koordinovaný útok na americkou dominanci – zároveň na 3 frontách. A jedna z nich se přímo dotýká českých čipů, zbraní i energetiky. Vlákno o tom, co většina médií přehlíží 👇",
-        "char_count": 199
+        "content": "1/6 🚨 Evropská jednota se drolí hned na dvou frontách najednou. Zelenskyj váže opravu ropovodu Družba na půjčku EU 90 mld. €. Bulharsko zvolilo proruského prezidenta. A NATO to všechno musí nějak ustát. Vlákno 👇",
+        "char_count": 211
       },
       {
         "number": 2,
-        "content": "2/6 ⚡ Gallium – kov, bez kterého neexistují čipy, radary ani solární panely. Čína kontroluje ~80 % světové produkce. Nové exportní restrikce ohrožují výrobu zbraní i polovodičů na Západě. USA nemají skoro žádnou vlastní kapacitu.",
-        "char_count": 229
+        "content": "2/6 ⚡ Zelenskyj podmínil opravu ropovodu Družba tím, že EU schválí půjčku 90 mld. € pro Ukrajinu. Energetická infrastruktura se stává politickou pákou. Pro středoevropské země závislé na této trase jde o přímý tlak.",
+        "char_count": 215
       },
       {
         "number": 3,
-        "content": "3/6 🎯 Pro ČR a EU to není abstraktní problém. Evropský průmysl – včetně českých firem v obranném a elektro sektoru – závisí na galiu. Bez něj se nezastaví jen armáda USA, ale i modernizace NATO v Evropě.",
-        "char_count": 203
-      },
-      {
-        "number": 4,
-        "content": "4/6 🌍 Druhá fronta: Čína testuje drony kladoucí námořní miny – levná blokáda Tchaj-wanu bez přímého útoku. Americké letadlové lodě by měly problém proniknout. Nová doktrína mění rovnováhu sil v Indo-Pacifiku.",
-        "char_count": 208
-      },
-      {
-        "number": 5,
-        "content": "5/6 📊 Třetí fronta: diplomacie. Peking se staví do role arbitra jaderného nešíření – útočí na Japonsko za diskuse o jaderném sdílení a tlačí na USA v otázce Íránu. Cíl: narušit důvěryhodnost amerického vedení.",
+        "content": "3/6 🌍 Bulharsko: prezident Radev vyhrál volby drtivě. ECFR i GMF ho označují za strukturální riziko pro NATO. Proruská rétorika + blokační potenciál = druhé Maďarsko uvnitř Aliance? Koaliční jednání ukáží víc.",
         "char_count": 209
       },
       {
-        "number": 6,
-        "content": "6/6 💡 Co sledovat: Washington by měl během 2 týdnů oznámit nouzové gallium stockpilování nebo aliančí iniciativu. Pro ČR klíčová otázka: má EU vlastní strategii kritických surovin, nebo opakujeme chybu závislosti na Rusku – jen s Čínou? 👇\n#Geopolitika #Bezpečnost #Kritickésuroviny",
-        "char_count": 281
-      }
-    ],
-    "hashtags": [
-      "#Geopolitika",
-      "#Bezpečnost",
-      "#Kritickésuroviny"
-    ],
-    "estimated_engagement": 8.5,
-    "main_topic": "China_strategic_pressure",
-    "source_analysis_id": "China's Gallium Monopoly, Drone-Mine Doctrine, and NPT Positioning Form Interlocking Strategic Pressure Campaign Against US-Led Order",
-    "generated_at": "2026-04-21T14:12:17.737449"
-  },
-  {
-    "thread_title": "Bulharsko-Maďarsko: NATO na rozcestí",
-    "tweets": [
-      {
-        "number": 1,
-        "content": "1/6 🚨 NATO má problém. Bulharsko právě zvolilo prezidenta Radeva s 44 % — proruského euroskeptika. Zatímco Maďarsko se posouvá od Orbána, Brusel ztrácí jedno veto a získává jiné. Laterální posun, ne pokrok.",
-        "char_count": 206
-      },
-      {
-        "number": 2,
-        "content": "2/6 🌍 Kontext: Maďarsko po Orbánovi konečně odblokuje půjčku 90 mld. € pro Ukrajinu. Ale Radev v Bulharsku nastupuje jako nová brzda. Výsledek? Nula nula. Brusel si vlastně nepomohl.",
-        "char_count": 182
-      },
-      {
-        "number": 3,
-        "content": "3/6 🔍 Co je záludné: analytici z GMF varují, že Radev nebude křičet jako Orbán. Bude tiše blokovat procedurálně — jako Fico na Slovensku. Tento styl je těžší politicky izolovat. A tím pádem nebezpečnější.",
-        "char_count": 204
-      },
-      {
         "number": 4,
-        "content": "4/6 ⚡ Pro ČR klíčové: Summit NATO v Ankaře se blíží. Bulharsko bude testováno — výdaje na obranu, sankce vůči Rusku. Pokud Radev zvolí strategickou absenci místo veta, nastaví nový precedens obstrukce uvnitř Aliance.",
-        "char_count": 216
+        "content": "4/6 🔍 Co ostatní přehlíží: Radevův úspěch není jen o ideologii. Je to výsledek 5 let institucionálního selhání a únavy elit. Proto jeho proruský kurs může být odolnější než běžný populistický výkyv.",
+        "char_count": 198
       },
       {
         "number": 5,
-        "content": "5/6 📊 Sledujte v příštích 72 hodinách: Bulharsko pravděpodobně SE ZDRŽÍ hlasování o půjčce Ukrajině — ne veto, ale signál. Přesně ten taktický manévr, který ukazuje styl nové bulharské politiky.",
-        "char_count": 194
+        "content": "5/6 📊 Co sledovat v příštích 48 h: ministři zahraničí EU vydají stanovisko k balíčku 90 mld. € — signál, zda energetický nátlak funguje. Koaliční rozhovory v Sofii odhalí, zda Bulharsko zvolí maďarský scénář.",
+        "char_count": 208
       },
       {
         "number": 6,
-        "content": "6/6 💡 Závěr: Střední Evropa musí sledovat nejen otevřené rebely (Orbán), ale i tiché blokaristy (Fico, nově Radev). ČR by měla tlačit na jasná pravidla pro hlasování v NATO. Co si myslíte vy? 👇 #Geopolitika #NATO #Bezpečnost",
-        "char_count": 224
+        "content": "6/6 💡 Pro ČR klíčové: diverzifikace energetiky není jen ekonomická otázka — je to geopolitická nutnost. Čím více závislostí, tím více pák. Sledujte, jak Praha reaguje na tento vývoj. 👇 Co si myslíte vy? #geopolitika #NATO #bezpečnostEU",
+        "char_count": 235
       }
     ],
     "hashtags": [
-      "#Geopolitika",
+      "#geopolitika",
       "#NATO",
-      "#Bezpečnost"
+      "#bezpečnostEU"
     ],
-    "estimated_engagement": 8.2,
+    "estimated_engagement": 8.5,
     "main_topic": "NATO_koheze",
-    "source_analysis_id": "Bulgaria's Pro-Russia Election Result and Hungary's Post-Orbán Transition Reshape NATO's Eastern Flank Political Coherence",
-    "generated_at": "2026-04-21T14:12:34.665153"
+    "source_analysis_id": "European Cohesion Fractures Along Energy and Political Fault Lines as Ukraine Leverage and Bulgaria's Pro-Russia Turn Complicate NATO Unity",
+    "generated_at": "2026-04-21T15:03:34.603082"
   }
 ]
