@@ -74,8 +74,8 @@ class Config:
     # Beehiiv publishing
     BEEHIIV_API_KEY = os.getenv("BEEHIIV_API_KEY", "")
     BEEHIIV_PUBLICATION_ID = os.getenv("BEEHIIV_PUBLICATION_ID", "")
-    # "draft" saves without sending; "active" publishes immediately to subscribers
-    BEEHIIV_STATUS = os.getenv("BEEHIIV_STATUS", "active")
+    # "draft" saves without sending; "confirmed" publishes immediately to subscribers
+    BEEHIIV_STATUS = os.getenv("BEEHIIV_STATUS", "confirmed")
 
     # Notification Configuration
     ADMIN_EMAIL = os.getenv("ADMIN_EMAIL")

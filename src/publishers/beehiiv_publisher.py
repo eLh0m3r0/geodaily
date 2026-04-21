@@ -57,20 +57,14 @@ class BeehiivPublisher:
         body = self._prepare_html(html_content)
 
         payload = {
-            "subject": subject,
+            "title": subject,
             "preview_text": preview,
-            "content": {
-                "free": {
-                    "html": body,
-                    "web": body,
-                }
-            },
+            "body_content": body,
             "status": self.status,
-            "audience": "free",
         }
 
         headers = {
-            "Authorization": f"ApiKey {self.api_key}",
+            "Authorization": f"Bearer {self.api_key}",
             "Content-Type": "application/json",
             "Accept": "application/json",
         }
