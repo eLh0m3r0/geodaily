@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Tue, 21 Apr 2026 08:06:42 GMT</pubDate>
-        <lastBuildDate>Tue, 21 Apr 2026 08:06:42 GMT</lastBuildDate>
+        <pubDate>Tue, 21 Apr 2026 14:12:34 GMT</pubDate>
+        <lastBuildDate>Tue, 21 Apr 2026 14:12:34 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -62,7 +62,7 @@
         <item>
         <title><![CDATA[Geopolitical Daily - April 21, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-04-21.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, April 21, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US-Iran Ceasefire Clock: Hormuz Closure, Uranium Recovery, and the Islamabad Talks as Last Off-Ramp</strong>: A two-week ceasefire expires Wednesday with 415 US troops already wounded, Iran signaling readiness for decisive retaliation, and Hormuz still closed. Pakistan-mediated talks in Islamabad represent th...</li><li><strong>Autonomous Systems Cross the Rubicon: Robots Seize Territory While Drone-Mines Redefine Naval Blockade Doctrine</strong>: Ukraine's first robot-only territorial seizure and China's drone-minelaying doctrine represent simultaneous doctrinal inflection points in two separate theaters. Both validate autonomous systems as de...</li><li><strong>Bulgaria's Pro-Russia Electoral Upset Fractures EU Consensus on Ukraine, Israel, and Sanctions Architecture</strong>: Rumen Radev's 44% majority gives Russia a new veto node inside the EU alongside Hungary and Slovakia, arriving precisely as EU foreign ministers debate Ukraine support, Israel association treaty suspe...</li></ul><p><em>Published: April 21, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, April 21, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US-Iran Ceasefire Expiry Collides With Stalled Islamabad Talks as Hormuz Closure Deepens Global Energy Crisis</strong>: The IEA has declared this the worst energy crisis in history, and the 72-hour window before ceasefire expiry represents the highest-stakes diplomatic inflection point of the conflict. Iranian delegati...</li><li><strong>China Converts Middle East Energy Shock Into Coercive Diplomatic Capital While Managing Structural Economic Exposure</strong>: Beijing is simultaneously a victim of Hormuz disruption and an opportunistic exploiter of it. Tying energy assistance to the Philippines' military posture with the US reveals China's willingness to we...</li><li><strong>China's Gallium Monopoly, Drone-Mine Doctrine, and NPT Positioning Form Interlocking Strategic Pressure Campaign Against US-Led Order</strong>: Three concurrent developments reveal a coordinated Chinese strategic posture: export controls on gallium threaten US semiconductor and defense manufacturing at the foundational level; drone-laid minel...</li></ul><p><em>Published: April 21, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
         <pubDate>Tue, 21 Apr 2026 06:00:00 GMT</pubDate>
         <guid isPermaLink="false">geodaily-20260421</guid>
         <author>Geopolitical Daily Editorial Team</author>
@@ -73,6 +73,7 @@
         <category><![CDATA[Russia]]></category>
         <category><![CDATA[Middle East]]></category>
         <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-04-21.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item><item>
