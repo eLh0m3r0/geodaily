@@ -70,6 +70,7 @@ class Config:
     
     # Subscribe / Newsletter delivery
     BUTTONDOWN_USERNAME = os.getenv("BUTTONDOWN_USERNAME", "")
+    BUTTONDOWN_API_KEY = os.getenv("BUTTONDOWN_API_KEY", "")
 
     # Beehiiv publishing
     BEEHIIV_API_KEY = os.getenv("BEEHIIV_API_KEY", "")

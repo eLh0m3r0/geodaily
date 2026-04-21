@@ -23,6 +23,7 @@ from .dashboard.unified_dashboard import UnifiedDashboard
 from .newsletter.generator import NewsletterGenerator
 from .publishers.github_pages_publisher import GitHubPagesPublisher
 from .publishers.beehiiv_publisher import BeehiivPublisher
+from .publishers.buttondown_publisher import ButtondownPublisher
 from .notifications.email_notifier import EmailNotifier
 from .metrics.collector import MetricsCollector
 from .config import Config
@@ -695,6 +696,7 @@ def run_complete_pipeline() -> bool:
             publishing_start = time.time()
 
             beehiiv_url = None
+            buttondown_url = None
             try:
                 # GitHub Pages (automatic) - with Archive Manager (10 newsletter limit)
                 max_newsletters = int(os.getenv('NEWSLETTER_ARCHIVE_SIZE', '10'))
@@ -726,6 +728,23 @@ def run_complete_pipeline() -> bool:
                                   pipeline_stage=PipelineStage.PUBLISHING,
                                   run_id=run_id)
 
+                # Buttondown (email subscribers) — optional, skipped if not configured
+                buttondown_publisher = ButtondownPublisher()
+                buttondown_url = buttondown_publisher.publish(newsletter, html_content)
+                if buttondown_url:
+                    logger.info(f"✅ Published to Buttondown: {buttondown_url}",
+                               pipeline_stage=PipelineStage.PUBLISHING,
+                               run_id=run_id,
+                               structured_data={
+                                   'platform': 'buttondown',
+                                   'url': buttondown_url,
+                                   'success': True
+                               })
+                elif buttondown_publisher.enabled:
+                    logger.warning("Buttondown publish returned no URL (check API key)",
+                                  pipeline_stage=PipelineStage.PUBLISHING,
+                                  run_id=run_id)
+
                 publishing_time = time.time() - publishing_start
 
                 logger.info("Publishing completed",
@@ -753,6 +772,7 @@ def run_complete_pipeline() -> bool:
         publishing_summary = {
             "github_pages": github_url,
             "beehiiv": beehiiv_url,
+            "buttondown": buttondown_url,
             "legacy_file": file_path
         }
 

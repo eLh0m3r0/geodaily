@@ -97,6 +97,9 @@ jobs:
         if [ -n "${{ secrets.BUTTONDOWN_USERNAME }}" ]; then
           echo "BUTTONDOWN_USERNAME=${{ secrets.BUTTONDOWN_USERNAME }}" >> $GITHUB_ENV
         fi
+        if [ -n "${{ secrets.BUTTONDOWN_API_KEY }}" ]; then
+          echo "BUTTONDOWN_API_KEY=${{ secrets.BUTTONDOWN_API_KEY }}" >> $GITHUB_ENV
+        fi
 
         # Beehiiv publishing (optional — skipped if secrets not set)
         if [ -n "${{ secrets.BEEHIIV_API_KEY }}" ]; then
