@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Wed, 22 Apr 2026 16:42:18 GMT</pubDate>
-        <lastBuildDate>Wed, 22 Apr 2026 16:42:18 GMT</lastBuildDate>
+        <pubDate>Wed, 22 Apr 2026 17:00:23 GMT</pubDate>
+        <lastBuildDate>Wed, 22 Apr 2026 17:00:23 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -62,7 +62,7 @@
         <item>
         <title><![CDATA[Geopolitical Daily - April 22, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-04-22.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, April 22, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Iran's Hormuz Chokehold Persists Despite Ceasefire Extension: Command Fragmentation Undermines Diplomatic Off-Ramps</strong>: Iran's IRGC firing on ships hours after Trump's ceasefire extension signals dangerous command fragmentation between Iran's diplomatic and military tracks. This undermines negotiating coherence, raises...</li><li><strong>Druzhba Pipeline Reopening Unlocks EU's €90bn Ukraine Loan, Exposing the Transactional Limits of European Solidarity</strong>: Ukraine resuming Russian oil flows to Hungary and Slovakia to unblock its own EU war financing reveals a structural contradiction at the heart of European sanctions policy: Kyiv must sustain Russian e...</li><li><strong>Iran War Reshapes Trump-Xi Summit Agenda: China's Mediator Positioning Collides with Intercepted Arms Shipment Evidence</strong>: The upcoming Trump-Xi summit is being fundamentally reoriented by the Iran war. Trump's public dismissal of an intercepted 'gift from China' to Tehran suggests he is prioritizing summit optics over en...</li></ul><p><em>Published: April 22, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, April 22, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Iran's Hormuz Chokehold Persists Despite Ceasefire Extension: IRGC Seizes Ships as Diplomatic Track Stalls</strong>: Iran's IRGC seizure of vessels during an active ceasefire signals that hardliners are operating independently of the foreign ministry's negotiating track, fracturing Iranian decision-making. This dual...</li><li><strong>Hungary's Druzhba Veto Lifted: EU's €90bn Ukraine Loan Reveals Structural Fragility of Western Sanctions Solidarity</strong>: The deal's mechanics — Ukraine resuming Russian oil transit to Hungary and Slovakia in exchange for Hungary dropping its veto — exposes a fundamental contradiction in EU sanctions architecture: member...</li><li><strong>Iran War Distorts the Trump-Xi Summit Agenda: US Strategic Bandwidth Compression Reshapes Great Power Competition</strong>: The US war in Iran is consuming diplomatic and military bandwidth that would otherwise anchor the Trump-Xi summit agenda on Taiwan, trade, and technology competition. Trump's sanctions relief extensio...</li></ul><p><em>Published: April 22, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
         <pubDate>Wed, 22 Apr 2026 06:00:00 GMT</pubDate>
         <guid isPermaLink="false">geodaily-20260422</guid>
         <author>Geopolitical Daily Editorial Team</author>
@@ -72,7 +72,9 @@
         <category><![CDATA[China]]></category>
         <category><![CDATA[Russia]]></category>
         <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[United States]]></category>
         <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-04-22.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
