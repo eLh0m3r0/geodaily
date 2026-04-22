@@ -47,6 +47,7 @@ class ButtondownPublisher:
             "Authorization": f"Token {self.api_key}",
             "Content-Type": "application/json",
             "Accept": "application/json",
+            "Buttondown-Version": "2026-04-01",
         }
 
         # Step 1: create draft
