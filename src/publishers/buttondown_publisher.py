@@ -85,10 +85,13 @@ class ButtondownPublisher:
         return None
 
     def _send_draft(self, email_id: str, headers: dict) -> Optional[str]:
+        # v2026-04-01: use PATCH to set status=about_to_send with the live-dangerously header
+        send_headers = {**headers, "X-Buttondown-Live-Dangerously": "true"}
         try:
-            resp = requests.post(
-                f"{BUTTONDOWN_API_BASE}/emails/{email_id}/send-draft",
-                headers=headers,
+            resp = requests.patch(
+                f"{BUTTONDOWN_API_BASE}/emails/{email_id}",
+                json={"status": "about_to_send"},
+                headers=send_headers,
                 timeout=30,
             )
             resp.raise_for_status()
@@ -101,7 +104,7 @@ class ButtondownPublisher:
                     else ""
                 )
             )
-            logger.info(f"Buttondown email sent: id={email_id} url={url}")
+            logger.info(f"Buttondown email queued for send: id={email_id} url={url}")
             return url or email_id
         except requests.HTTPError as exc:
             logger.error(
