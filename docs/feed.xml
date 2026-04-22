@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Wed, 22 Apr 2026 16:16:12 GMT</pubDate>
-        <lastBuildDate>Wed, 22 Apr 2026 16:16:12 GMT</lastBuildDate>
+        <pubDate>Wed, 22 Apr 2026 16:21:39 GMT</pubDate>
+        <lastBuildDate>Wed, 22 Apr 2026 16:21:39 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -62,7 +62,7 @@
         <item>
         <title><![CDATA[Geopolitical Daily - April 22, 2026]]></title>
         <link>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-04-22.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, April 22, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Hormuz Ceasefire Extension Masks Deepening Stalemate: Iran's IRGC Seizes Ships While Negotiations Collapse</strong>: Trump's indefinite ceasefire extension signals Washington lacks a coherent endgame while Iran's IRGC continues kinetic operations, exposing a dangerous gap between political signaling and battlefield ...</li><li><strong>EU Unlocks €90bn Ukraine Loan via Druzhba Pipeline Compromise, Exposing Structural Leverage Vulnerabilities in European Solidarity</strong>: The deal reveals that Hungarian and Slovak veto power over EU financial instruments can be neutralized through energy concessions — a precedent that structurally weakens EU sanctions architecture. Ukr...</li><li><strong>Beijing's African Airspace Denial Forces Taiwan President's Retreat, While KMT Cross-Strait Diplomacy Signals Dual-Track Pressure Campaign</strong>: China successfully weaponized African overflight permissions to ground Taiwan's president — a low-cost, high-visibility coercion tool that demonstrates Beijing's deepening African diplomatic penetrati...</li></ul><p><em>Published: April 22, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, April 22, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Iran's Hormuz Chokehold Persists Despite Ceasefire Extension: IRGC Seizures Signal Hardliner Veto Over Negotiations</strong>: Iran's IRGC seizing ships hours after Trump extended the ceasefire exposes a critical fracture between Iran's negotiating government and its hardline military apparatus. This dual-track behavior struc...</li><li><strong>Iran War as Dollar-System Stress Test: Sanctions Relief, Petroyuan Acceleration, and Structural Energy Demand Destruction</strong>: The US Treasury extending sanctions relief on Russian and Iranian oil simultaneously while Russia earns record fossil fuel revenues exposes a contradiction at the core of US sanctions architecture. Co...</li><li><strong>EU's €90bn Ukraine Loan Unblocked via Druzhba Pipeline Compromise: European Solidarity Purchased at the Cost of Russian Energy Dependency</strong>: Hungary's veto was lifted only after Ukraine resumed pumping Russian oil through Druzhba — meaning EU financial solidarity for Ukraine was contingent on sustaining Russian energy revenue. This structu...</li></ul><p><em>Published: April 22, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
         <pubDate>Wed, 22 Apr 2026 06:00:00 GMT</pubDate>
         <guid isPermaLink="false">geodaily-20260422</guid>
         <author>Geopolitical Daily Editorial Team</author>
@@ -72,9 +72,8 @@
         <category><![CDATA[China]]></category>
         <category><![CDATA[Russia]]></category>
         <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[United States]]></category>
         <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
         <comments>https://yourusername.github.io/geodaily/newsletters/newsletter-2026-04-22.html#comments</comments>
         <source url="https://yourusername.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item><item>
