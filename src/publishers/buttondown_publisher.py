@@ -117,8 +117,10 @@ class ButtondownPublisher:
         return f"Geopolitical Daily — {date_str}"
 
     def _prepare_body(self, html: str) -> str:
-        """Extract inner body content so Buttondown wraps it in its own template."""
+        """Extract inner body content and strip JS event handlers (Buttondown rejects them)."""
         inner = re.search(r"<body[^>]*>(.*?)</body>", html, re.DOTALL | re.IGNORECASE)
-        if inner:
-            return inner.group(1).strip()
-        return html
+        body = inner.group(1).strip() if inner else html
+        # Strip all on* event handler attributes (onclick, onsubmit, onerror, etc.)
+        body = re.sub(r'\s+on\w+="[^"]*"', "", body, flags=re.IGNORECASE)
+        body = re.sub(r"\s+on\w+='[^']*'", "", body, flags=re.IGNORECASE)
+        return body
