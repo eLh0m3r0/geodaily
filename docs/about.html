@@ -91,16 +91,16 @@
                     <div class="subscription-option">
                         <h3>Email Newsletter</h3>
                         <p>Receive daily analysis directly in your inbox</p>
-                        <p class="note">Substack subscription launching soon &mdash; <a href="https://github.com/eLh0m3r0/geodaily">watch this space</a></p>
+                        {self._build_about_subscribe_html()}
                     </div>
                 </div>
 
                 <h2>Contact & Feedback</h2>
                 <p>We welcome feedback on our analysis and suggestions for improvement. You can:</p>
                 <ul>
-                    <li><a href="https://github.com/eLh0m3r0/geodaily/issues">Open an issue on GitHub</a> for bug reports or feature requests</li>
-                    <li><a href="https://github.com/eLh0m3r0/geodaily/discussions">Start a discussion</a> for analysis feedback</li>
-                    <li>Check our <a href="https://github.com/eLh0m3r0/geodaily">source code</a> to understand our methodology</li>
+                    <li><a href="{self.GITHUB_REPO_URL}/issues">Open an issue on GitHub</a> for bug reports or feature requests</li>
+                    <li><a href="{self.GITHUB_REPO_URL}/discussions">Start a discussion</a> for analysis feedback</li>
+                    <li>Check our <a href="{self.GITHUB_REPO_URL}">source code</a> to understand our methodology</li>
                 </ul>
             </section>
         </div>
@@ -112,7 +112,7 @@
             <p>
                 <a href="feed.xml">RSS Feed</a> |
                 <a href="archive.html">Archive</a> |
-                <a href="https://github.com/eLh0m3r0/geodaily">Source Code</a>
+                <a href="{self.GITHUB_REPO_URL}">Source Code</a>
             </p>
         </div>
     </footer>
