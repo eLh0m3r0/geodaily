@@ -35,6 +35,10 @@ class Config:
 
     # Site Configuration
     SITE_BASE_URL = os.getenv("SITE_BASE_URL", "https://elh0m3r0.github.io/geodaily")
+    GITHUB_REPO_URL = os.getenv("GITHUB_REPO_URL", "https://github.com/eLh0m3r0/geodaily")
+
+    # Substack Configuration
+    SUBSTACK_URL = os.getenv("SUBSTACK_URL", "")
 
     # AI Configuration
     AI_PROVIDER = os.getenv("AI_PROVIDER", "anthropic")

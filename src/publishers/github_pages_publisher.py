@@ -19,7 +19,10 @@ logger = get_logger(__name__)
 
 class GitHubPagesPublisher:
     """Publishes newsletters to GitHub Pages site."""
-    
+
+    SITE_BASE_URL = Config.SITE_BASE_URL.rstrip("/")
+    GITHUB_REPO_URL = Config.GITHUB_REPO_URL.rstrip("/")
+
     def __init__(self, output_dir: str = "docs", max_newsletters: int = 10):
         """Initialize GitHub Pages publisher."""
         self.output_dir = Path(output_dir)
@@ -94,7 +97,7 @@ class GitHubPagesPublisher:
     <title>{newsletter.title} - {newsletter.date.strftime('%B %d, %Y')}</title>
     <meta name="description" content="Daily geopolitical analysis focusing on underreported stories with strategic significance">
     <link rel="stylesheet" href="../assets/style.css">
-    <link rel="canonical" href="https://yourusername.github.io/geodaily/newsletters/newsletter-{newsletter.date.strftime('%Y-%m-%d')}.html">
+    <link rel="canonical" href="{self.SITE_BASE_URL}/newsletters/newsletter-{newsletter.date.strftime('%Y-%m-%d')}.html">
 </head>
 <body>
     <header class="header">
@@ -187,7 +190,7 @@ class GitHubPagesPublisher:
             <p>
                 <a href="../feed.xml">RSS Feed</a> |
                 <a href="../archive.html">Archive</a> |
-                <a href="https://github.com/yourusername/geodaily">Source Code</a>
+                <a href="{self.GITHUB_REPO_URL}">Source Code</a>
             </p>
         </div>
     </footer>
@@ -215,24 +218,42 @@ class GitHubPagesPublisher:
             return url[:50] + "..." if len(url) > 50 else url
 
     def _build_subscribe_html(self) -> str:
-        """Build Buttondown subscribe form HTML, or empty string if not configured."""
-        username = Config.BUTTONDOWN_USERNAME
-        if not username:
-            return ""
-        return f"""
+        """Build subscribe CTA HTML — Substack preferred, falls back to Buttondown."""
+        substack_url = Config.SUBSTACK_URL
+        if substack_url:
+            return f"""
                     <div class="subscribe-box">
                         <h3>Get this briefing in your inbox</h3>
                         <p>Daily geopolitical intelligence, delivered every morning.</p>
-                        <form action="https://buttondown.com/api/emails/embed-subscribe/{username}"
+                        <a href="{substack_url}?utm_source=newsletter" class="subscribe-btn" target="_blank">Subscribe on Substack</a>
+                    </div>"""
+        buttondown = Config.BUTTONDOWN_USERNAME
+        if buttondown:
+            return f"""
+                    <div class="subscribe-box">
+                        <h3>Get this briefing in your inbox</h3>
+                        <p>Daily geopolitical intelligence, delivered every morning.</p>
+                        <form action="https://buttondown.com/api/emails/embed-subscribe/{buttondown}"
                               method="post"
                               target="popupwindow"
-                              onsubmit="window.open('https://buttondown.com/{username}', 'popupwindow')"
+                              onsubmit="window.open('https://buttondown.com/{buttondown}', 'popupwindow')"
                               class="subscribe-form">
                             <input type="email" name="email" placeholder="your@email.com" required />
                             <input type="submit" value="Subscribe" class="subscribe-btn" />
                         </form>
                     </div>"""
+        return ""
     
+    def _build_about_subscribe_html(self) -> str:
+        """Subscribe CTA for the about page."""
+        substack_url = Config.SUBSTACK_URL
+        if substack_url:
+            return f'<a href="{substack_url}" class="cta-button" target="_blank">Subscribe on Substack</a>'
+        buttondown = Config.BUTTONDOWN_USERNAME
+        if buttondown:
+            return f'<a href="https://buttondown.com/{buttondown}" class="cta-button" target="_blank">Subscribe via Email</a>'
+        return '<p class="note">Email newsletter coming soon</p>'
+
     def _update_index_page(self):
         """Update the main index page with recent newsletters."""
         
@@ -309,7 +330,7 @@ class GitHubPagesPublisher:
             <p>
                 <a href="feed.xml">RSS Feed</a> |
                 <a href="archive.html">Archive</a> |
-                <a href="https://github.com/yourusername/geodaily">Source Code</a>
+                <a href="{self.GITHUB_REPO_URL}">Source Code</a>
             </p>
         </div>
     </footer>
@@ -422,7 +443,7 @@ class GitHubPagesPublisher:
             <p>
                 <a href="feed.xml">RSS Feed</a> |
                 <a href="index.html">Latest Newsletter</a> |
-                <a href="https://github.com/yourusername/geodaily">Source Code</a>
+                <a href="{self.GITHUB_REPO_URL}">Source Code</a>
             </p>
         </div>
     </footer>
@@ -528,18 +549,18 @@ class GitHubPagesPublisher:
                         <a href="feed.xml" class="cta-button">Subscribe via RSS</a>
                     </div>
                     <div class="subscription-option">
-                        <h3>Email Notifications</h3>
-                        <p>Receive email alerts when new analysis is published</p>
-                        <p class="note">Coming soon - contact us to be notified when available</p>
+                        <h3>Email Newsletter</h3>
+                        <p>Receive daily analysis directly in your inbox</p>
+                        {self._build_about_subscribe_html()}
                     </div>
                 </div>
 
                 <h2>Contact & Feedback</h2>
                 <p>We welcome feedback on our analysis and suggestions for improvement. You can:</p>
                 <ul>
-                    <li><a href="https://github.com/yourusername/geodaily/issues">Open an issue on GitHub</a> for bug reports or feature requests</li>
-                    <li><a href="https://github.com/yourusername/geodaily/discussions">Start a discussion</a> for analysis feedback</li>
-                    <li>Check our <a href="https://github.com/yourusername/geodaily">source code</a> to understand our methodology</li>
+                    <li><a href="{self.GITHUB_REPO_URL}/issues">Open an issue on GitHub</a> for bug reports or feature requests</li>
+                    <li><a href="{self.GITHUB_REPO_URL}/discussions">Start a discussion</a> for analysis feedback</li>
+                    <li>Check our <a href="{self.GITHUB_REPO_URL}">source code</a> to understand our methodology</li>
                 </ul>
             </section>
         </div>
@@ -551,7 +572,7 @@ class GitHubPagesPublisher:
             <p>
                 <a href="feed.xml">RSS Feed</a> |
                 <a href="archive.html">Archive</a> |
-                <a href="https://github.com/yourusername/geodaily">Source Code</a>
+                <a href="{self.GITHUB_REPO_URL}">Source Code</a>
             </p>
         </div>
     </footer>
@@ -626,7 +647,7 @@ class GitHubPagesPublisher:
             item_parts = [
                 f"<item>",
                 f"<title><![CDATA[{self._escape_for_cdata(title)}]]></title>",
-                f"<link>https://yourusername.github.io/geodaily/newsletters/{newsletter_file.name}</link>",
+                f"<link>{self.SITE_BASE_URL}/newsletters/{newsletter_file.name}</link>",
                 f"<description><![CDATA[{description}]]></description>",
                 f"<pubDate>{date_obj.strftime('%a, %d %b %Y 06:00:00 GMT')}</pubDate>",
                 f"<guid isPermaLink=\"false\">{guid}</guid>",
@@ -639,8 +660,8 @@ class GitHubPagesPublisher:
 
             # Add additional metadata
             item_parts.extend([
-                f"<comments>https://yourusername.github.io/geodaily/newsletters/{newsletter_file.name}#comments</comments>",
-                f"<source url=\"https://yourusername.github.io/geodaily/feed.xml\">Geopolitical Daily</source>",
+                f"<comments>{self.SITE_BASE_URL}/newsletters/{newsletter_file.name}#comments</comments>",
+                f"<source url=\"{self.SITE_BASE_URL}/feed.xml\">Geopolitical Daily</source>",
             ])
 
             item_parts.append("</item>")
@@ -653,7 +674,7 @@ class GitHubPagesPublisher:
             return f"""
         <item>
             <title><![CDATA[{self._escape_for_cdata(title)}]]></title>
-            <link>https://yourusername.github.io/geodaily/newsletters/{newsletter_file.name}</link>
+            <link>{self.SITE_BASE_URL}/newsletters/{newsletter_file.name}</link>
             <description><![CDATA[Daily geopolitical analysis focusing on underreported stories with strategic significance]]></description>
             <pubDate>{date_obj.strftime('%a, %d %b %Y 06:00:00 GMT')}</pubDate>
             <guid isPermaLink="false">{guid}</guid>
@@ -767,8 +788,8 @@ class GitHubPagesPublisher:
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title><![CDATA[Geopolitical Daily - Strategic Intelligence Beyond the Headlines]]></title>
-        <link>https://yourusername.github.io/geodaily/</link>
-        <atom:link href="https://yourusername.github.io/geodaily/feed.xml" rel="self" type="application/rss+xml" />
+        <link>{self.SITE_BASE_URL}/</link>
+        <atom:link href="{self.SITE_BASE_URL}/feed.xml" rel="self" type="application/rss+xml" />
         <description><![CDATA[AI-powered analysis of underreported geopolitical developments with strategic significance. Daily insights on international relations, security, and global power dynamics.]]></description>
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
@@ -818,9 +839,9 @@ class GitHubPagesPublisher:
 
         <!-- Image for feed readers that support it -->
         <image>
-            <url>https://yourusername.github.io/geodaily/assets/logo.png</url>
+            <url>{self.SITE_BASE_URL}/assets/logo.png</url>
             <title>Geopolitical Daily</title>
-            <link>https://yourusername.github.io/geodaily/</link>
+            <link>{self.SITE_BASE_URL}/</link>
             <description>Strategic Intelligence Beyond the Headlines</description>
         </image>
 

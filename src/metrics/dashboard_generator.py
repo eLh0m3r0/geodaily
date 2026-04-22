@@ -250,7 +250,7 @@ class DashboardGenerator:
             <p>
                 <a href="feed.xml">RSS Feed</a> |
                 <a href="archive.html">Archive</a> |
-                <a href="https://github.com/yourusername/geodaily">Source Code</a>
+                <a href="https://github.com/eLh0m3r0/geodaily">Source Code</a>
             </p>
         </div>
     </footer>
