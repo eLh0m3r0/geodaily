@@ -729,8 +729,13 @@ def run_complete_pipeline() -> bool:
                                   run_id=run_id)
 
                 # Buttondown (email subscribers) — optional, skipped if not configured
+                # Use inline-styled email HTML so styles survive head-stripping email clients
                 buttondown_publisher = ButtondownPublisher()
-                buttondown_url = buttondown_publisher.publish(newsletter, html_content)
+                try:
+                    _email_html = generator.generate_email_html(newsletter)
+                except (NameError, AttributeError):
+                    _email_html = html_content
+                buttondown_url = buttondown_publisher.publish(newsletter, _email_html)
                 if buttondown_url:
                     logger.info(f"✅ Published to Buttondown: {buttondown_url}",
                                pipeline_stage=PipelineStage.PUBLISHING,

@@ -759,6 +759,128 @@ Today's briefing includes immediate developments requiring attention, strategic 
         """Generate footer text for newsletter."""
         return """This daily briefing is generated using AI analysis of global news sources, providing balanced coverage of breaking developments, strategic analysis, and emerging trends. For questions or feedback, please contact our editorial team."""
     
+    def generate_email_html(self, newsletter: Newsletter) -> str:
+        """Generate email-safe HTML with inline styles for Buttondown delivery.
+
+        Unlike generate_html(), this version embeds all styles inline so they
+        survive email client rendering and Buttondown's head-stripping template.
+        """
+        C_NAVY   = "#1a2744"
+        C_GOLD   = "#c9a84c"
+        C_TEXT   = "#2d3748"
+        C_MUTED  = "#718096"
+        C_LIGHT  = "#f7f8fa"
+        C_BORDER = "#e2e8f0"
+        C_LINK   = "#2c5282"
+        C_WHITE  = "#ffffff"
+        TYPE_COLORS = {
+            "breaking_news": "#e74c3c",
+            "analysis": "#2b6cb0",
+            "trend": "#6b46c1",
+        }
+
+        header_html = f"""<div style="background-color:{C_NAVY};padding:32px 24px;text-align:center;">
+  <div style="font-family:Georgia,'Times New Roman',serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:{C_GOLD};margin-bottom:10px;">Intelligence Briefing</div>
+  <h1 style="font-family:Georgia,'Times New Roman',serif;font-size:28px;font-weight:bold;color:{C_WHITE};margin:0 0 10px 0;line-height:1.2;">{newsletter.title}</h1>
+  <div style="font-family:Georgia,'Times New Roman',serif;font-size:14px;color:#94a3b8;">{newsletter.date.strftime('%A, %B %-d, %Y')}</div>
+</div>
+<div style="background-color:{C_GOLD};height:3px;"></div>"""
+
+        intro_html = ""
+        if newsletter.intro_text:
+            intro_html = f"""<div style="background-color:{C_LIGHT};border-left:4px solid {C_GOLD};padding:20px 24px;margin:24px 0;font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.7;color:{C_TEXT};font-style:italic;white-space:pre-line;">{newsletter.intro_text}</div>"""
+
+        stories_html = ""
+        for i, story in enumerate(newsletter.stories):
+            is_last = (i == len(newsletter.stories) - 1)
+            stories_html += self._generate_email_story_html(
+                story, is_last, TYPE_COLORS, C_NAVY, C_TEXT, C_MUTED, C_LIGHT, C_BORDER, C_GOLD, C_LINK
+            )
+
+        footer_html = f"""<div style="border-top:2px solid {C_BORDER};margin-top:32px;padding-top:24px;text-align:center;font-family:Georgia,'Times New Roman',serif;font-size:12px;color:{C_MUTED};line-height:1.8;">
+  <p style="margin:0 0 6px 0;font-weight:bold;color:{C_TEXT};">{newsletter.title}</p>
+  <p style="margin:0 0 12px 0;">Geopolitical Intelligence for Decision Makers</p>
+  {f'<p style="margin:0 0 12px 0;">{newsletter.footer_text}</p>' if newsletter.footer_text else ''}
+  <p style="margin:0;font-size:11px;color:{C_MUTED};">You are receiving this because you subscribed to Geopolitical Daily.</p>
+</div>"""
+
+        return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{newsletter.title} — {newsletter.date.strftime('%B %-d, %Y')}</title>
+</head>
+<body style="margin:0;padding:20px;background-color:#f0f2f5;font-family:Georgia,'Times New Roman',serif;">
+<div style="max-width:600px;margin:0 auto;background-color:{C_WHITE};border-radius:6px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+  {header_html}
+  <div style="padding:0 32px 32px 32px;">
+    {intro_html}
+    {stories_html}
+    {footer_html}
+  </div>
+</div>
+</body>
+</html>"""
+
+    def _generate_email_story_html(
+        self, story, is_last: bool,
+        type_colors: dict, C_NAVY: str, C_TEXT: str, C_MUTED: str,
+        C_LIGHT: str, C_BORDER: str, C_GOLD: str, C_LINK: str
+    ) -> str:
+        """Generate inline-styled HTML for a single story in email format."""
+        if story.impact_score >= 8:
+            impact_color = "#e74c3c"
+        elif story.impact_score >= 6:
+            impact_color = "#f39c12"
+        else:
+            impact_color = "#27ae60"
+
+        content_type_val = story.content_type.value
+        content_type_color = type_colors.get(content_type_val, "#718096")
+        content_type_display = {
+            "breaking_news": "Breaking News",
+            "analysis": "Analysis",
+            "trend": "Trend",
+        }.get(content_type_val, content_type_val.replace("_", " ").title())
+
+        region_display = story.region.replace("_", " ").title()
+
+        sources_html = ""
+        if story.sources:
+            source_links = "".join(
+                f'<a href="{src}" style="color:{C_LINK};text-decoration:none;font-size:12px;display:block;margin-bottom:4px;word-break:break-all;">{src}</a>'
+                for src in story.sources
+            )
+            sources_html = f"""<div style="border-top:1px solid {C_BORDER};margin-top:16px;padding-top:12px;">
+  <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:{C_MUTED};margin-bottom:8px;">Sources</div>
+  {source_links}
+</div>"""
+
+        border_bottom = "" if is_last else f"border-bottom:1px solid {C_BORDER};"
+
+        return f"""<div style="{border_bottom}margin-bottom:32px;padding-bottom:32px;padding-top:24px;">
+  <div style="margin-bottom:12px;">
+    <span style="display:inline-block;background-color:{content_type_color};color:#ffffff;font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;padding:3px 10px;border-radius:12px;margin-right:6px;">{content_type_display}</span>
+    <span style="display:inline-block;background-color:{C_LIGHT};color:#4a5568;font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:0.5px;padding:3px 8px;border-radius:10px;border:1px solid {C_BORDER};margin-right:6px;">{region_display}</span>
+    <span style="display:inline-block;background-color:{impact_color};color:#ffffff;font-size:10px;font-weight:bold;padding:3px 8px;border-radius:10px;">Impact {story.impact_score}/10</span>
+  </div>
+  <h2 style="font-family:Georgia,'Times New Roman',serif;font-size:20px;font-weight:bold;color:{C_NAVY};margin:0 0 20px 0;line-height:1.35;">{story.story_title}</h2>
+  <div style="margin-bottom:16px;">
+    <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1.5px;color:{C_MUTED};margin-bottom:6px;">Why This Matters</div>
+    <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.7;color:{C_TEXT};">{story.why_important}</div>
+  </div>
+  <div style="margin-bottom:16px;background-color:{C_LIGHT};padding:14px 16px;border-left:3px solid {C_GOLD};">
+    <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1.5px;color:{C_MUTED};margin-bottom:6px;">What Others Are Missing</div>
+    <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.7;color:{C_TEXT};">{story.what_overlooked}</div>
+  </div>
+  <div style="margin-bottom:16px;">
+    <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1.5px;color:{C_MUTED};margin-bottom:6px;">What to Watch</div>
+    <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.7;color:{C_TEXT};">{story.prediction}</div>
+  </div>
+  {sources_html}
+</div>"""
+
     def _generate_fallback_html(self, newsletter: Newsletter) -> str:
         """Generate basic HTML if main generation fails."""
         html = f"""
