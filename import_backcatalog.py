@@ -83,7 +83,7 @@ def import_issue(api_key: str, issue_date: date, date_label: str) -> None:
     payload = {
         "subject": subject,
         "body": body,
-        "status": "sent",
+        "status": "imported",
     }
 
     try:
