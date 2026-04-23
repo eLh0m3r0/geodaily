@@ -80,13 +80,10 @@ def import_issue(api_key: str, issue_date: date, date_label: str) -> None:
         "Buttondown-Version": "2026-04-01",
     }
 
-    publish_date = f"{issue_date.strftime('%Y-%m-%d')}T06:00:00Z"
-
     payload = {
         "subject": subject,
         "body": body,
         "status": "sent",
-        "publish_date": publish_date,
     }
 
     try:
