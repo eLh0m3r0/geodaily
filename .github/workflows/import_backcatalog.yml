@@ -1,0 +1,25 @@
+name: Import Back-Catalog to Buttondown
+
+on:
+  workflow_dispatch:
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run back-catalog import
+        env:
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+        run: python import_backcatalog.py
