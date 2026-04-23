@@ -1,18 +1,23 @@
 """
-One-off Buttondown back-catalog import for geodaily.
+Fix existing Buttondown archive entries that were imported with broken HTML.
 
-Imports newsletter-2026-04-18 through newsletter-2026-04-21 as archived posts
-(status=imported, no email sent to subscribers). April 22 was already published live.
+The back-catalog entries (Apr 18-22) were imported using raw GitHub Pages HTML,
+which Buttondown rendered as Markdown code blocks. This script:
+  1. Fetches all emails from Buttondown
+  2. Matches them to local newsletter HTML files by subject
+  3. Re-generates each one with proper inline-styled email HTML
+  4. PATCHes the Buttondown entry with the corrected body
 
 Usage (from repo root, with BUTTONDOWN_API_KEY in env):
-    python import_backcatalog.py
+    python fix_buttondown_archives.py
+    python fix_buttondown_archives.py --dry-run   # preview without patching
 """
 
+import argparse
 import os
 import re
 import sys
 import time
-from datetime import date
 from pathlib import Path
 
 import requests
@@ -20,20 +25,9 @@ import requests
 BUTTONDOWN_API_BASE = "https://api.buttondown.com/v1"
 DOCS_DIR = Path(__file__).parent / "docs" / "newsletters"
 
-BACKCATALOG = [
-    (date(2026, 4, 18), "April 18, 2026"),
-    (date(2026, 4, 19), "April 19, 2026"),
-    (date(2026, 4, 20), "April 20, 2026"),
-    (date(2026, 4, 21), "April 21, 2026"),
-]
-
 
 def github_pages_to_email_html(html: str) -> str:
-    """Convert GitHub Pages newsletter HTML to inline-styled email-safe HTML.
-
-    Strips the site navigation/header/footer and re-renders the newsletter
-    article content with inline styles that survive email client rendering.
-    """
+    """Convert GitHub Pages newsletter HTML to inline-styled email-safe HTML."""
     from bs4 import BeautifulSoup
 
     C_NAVY   = "#1a2744"
@@ -201,85 +195,115 @@ def github_pages_to_email_html(html: str) -> str:
     )
 
 
-def already_exists(api_key: str, subject: str) -> bool:
+def _date_from_subject(subject: str) -> str | None:
+    """Extract YYYY-MM-DD from subject like 'Geopolitical Daily — April 22, 2026'."""
+    import calendar
+    m = re.search(r"(\w+ \d+, \d{4})$", subject)
+    if not m:
+        return None
+    try:
+        from datetime import datetime
+        d = datetime.strptime(m.group(1), "%B %d, %Y")
+        return d.strftime("%Y-%m-%d")
+    except ValueError:
+        return None
+
+
+def fetch_all_emails(api_key: str) -> list:
     headers = {
         "Authorization": f"Token {api_key}",
         "Buttondown-Version": "2026-04-01",
     }
-    try:
-        resp = requests.get(
-            f"{BUTTONDOWN_API_BASE}/emails",
-            params={"page_size": 50},
-            headers=headers,
-            timeout=15,
-        )
-        resp.raise_for_status()
-        emails = resp.json().get("results", [])
-        return any(e.get("subject", "") == subject for e in emails)
-    except Exception as exc:
-        print(f"  Warning: could not check existing emails: {exc}")
-        return False
+    emails = []
+    url = f"{BUTTONDOWN_API_BASE}/emails"
+    while url:
+        try:
+            resp = requests.get(url, params={"page_size": 50}, headers=headers, timeout=15)
+            resp.raise_for_status()
+            data = resp.json()
+            emails.extend(data.get("results", []))
+            url = data.get("next")
+        except Exception as exc:
+            print(f"ERROR fetching emails: {exc}")
+            break
+    return emails
 
 
-def import_issue(api_key: str, issue_date: date, date_label: str) -> None:
-    filename = f"newsletter-{issue_date.strftime('%Y-%m-%d')}.html"
-    html_path = DOCS_DIR / filename
-    if not html_path.exists():
-        print(f"  SKIP {filename}: file not found")
-        return
-
-    subject = f"Geopolitical Daily — {date_label}"
-
-    if already_exists(api_key, subject):
-        print(f"  SKIP {filename}: already in Buttondown")
-        return
-
-    html = html_path.read_text(encoding="utf-8")
-    body = github_pages_to_email_html(html)
-
+def patch_email(api_key: str, email_id: str, body: str, dry_run: bool) -> bool:
+    if dry_run:
+        print(f"    [DRY RUN] would PATCH email {email_id}")
+        return True
     headers = {
         "Authorization": f"Token {api_key}",
         "Content-Type": "application/json",
         "Accept": "application/json",
         "Buttondown-Version": "2026-04-01",
     }
-
-    payload = {
-        "subject": subject,
-        "body": body,
-        "status": "imported",
-    }
-
     try:
-        resp = requests.post(
-            f"{BUTTONDOWN_API_BASE}/emails",
-            json=payload,
+        resp = requests.patch(
+            f"{BUTTONDOWN_API_BASE}/emails/{email_id}",
+            json={"body": body},
             headers=headers,
             timeout=30,
         )
         resp.raise_for_status()
-        data = resp.json()
-        url = data.get("absolute_url", data.get("id", "?"))
-        print(f"  OK  {filename}: {url}")
+        return True
     except requests.HTTPError as exc:
-        print(f"  FAIL {filename}: HTTP {exc.response.status_code} — {exc.response.text[:300]}")
+        print(f"    FAIL PATCH: HTTP {exc.response.status_code} — {exc.response.text[:300]}")
+        return False
     except Exception as exc:
-        print(f"  FAIL {filename}: {exc}")
+        print(f"    FAIL PATCH: {exc}")
+        return False
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description="Fix Buttondown archive email formatting")
+    parser.add_argument("--dry-run", action="store_true", help="Preview changes without patching")
+    args = parser.parse_args()
+
     api_key = os.environ.get("BUTTONDOWN_API_KEY", "")
     if not api_key:
         print("ERROR: BUTTONDOWN_API_KEY not set")
         return 1
 
-    print("Importing back-catalog to Buttondown (status=imported, no emails to subscribers)...")
-    for issue_date, label in BACKCATALOG:
-        print(f"\nProcessing {label}...")
-        import_issue(api_key, issue_date, label)
-        time.sleep(1)
+    print("Fetching all emails from Buttondown...")
+    emails = fetch_all_emails(api_key)
+    print(f"Found {len(emails)} email(s).\n")
 
-    print("\nDone.")
+    fixed = 0
+    skipped = 0
+
+    for email in emails:
+        subject = email.get("subject", "")
+        email_id = email.get("id", "")
+        status = email.get("status", "")
+
+        if "Geopolitical Daily" not in subject:
+            continue
+
+        date_str = _date_from_subject(subject)
+        if not date_str:
+            print(f"  SKIP (no date): {subject}")
+            skipped += 1
+            continue
+
+        html_path = DOCS_DIR / f"newsletter-{date_str}.html"
+        if not html_path.exists():
+            print(f"  SKIP (no local file): {subject}")
+            skipped += 1
+            continue
+
+        print(f"  Processing: {subject} (id={email_id[:8]}… status={status})")
+        html = html_path.read_text(encoding="utf-8")
+        body = github_pages_to_email_html(html)
+
+        ok = patch_email(api_key, email_id, body, args.dry_run)
+        if ok:
+            print(f"    {'[DRY RUN] ' if args.dry_run else ''}✓ Fixed")
+            fixed += 1
+        time.sleep(0.5)
+
+    print(f"\nDone. Fixed: {fixed}, Skipped: {skipped}")
     return 0
 
 

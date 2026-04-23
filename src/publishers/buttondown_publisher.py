@@ -120,13 +120,13 @@ class ButtondownPublisher:
         return f"Geopolitical Daily — {date_str}"
 
     def _prepare_body(self, html: str) -> str:
-        """Extract body content and strip JS event handlers (Buttondown rejects them).
+        """Extract body content, strip JS handlers, and force Buttondown HTML mode.
 
-        The email HTML is generated with inline styles, so extracting the body
-        preserves all visual formatting regardless of email client head-stripping.
+        The editor-mode comment disables Buttondown's Markdown processing so
+        indented HTML is rendered as-is rather than turned into code blocks.
         """
         inner = re.search(r"<body[^>]*>(.*?)</body>", html, re.DOTALL | re.IGNORECASE)
         body = inner.group(1).strip() if inner else html
         body = re.sub(r'\s+on\w+="[^"]*"', "", body, flags=re.IGNORECASE)
         body = re.sub(r"\s+on\w+='[^']*'", "", body, flags=re.IGNORECASE)
-        return body
+        return "<!-- buttondown-editor-mode: fancy -->\n" + body
