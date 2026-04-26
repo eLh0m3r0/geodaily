@@ -779,16 +779,17 @@ Today's briefing includes immediate developments requiring attention, strategic 
             "trend": "#6b46c1",
         }
 
-        header_html = f"""<div style="background-color:{C_NAVY};padding:32px 24px;text-align:center;">
-  <div style="font-family:Georgia,'Times New Roman',serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:{C_GOLD};margin-bottom:10px;">Intelligence Briefing</div>
-  <h1 style="font-family:Georgia,'Times New Roman',serif;font-size:28px;font-weight:bold;color:{C_WHITE};margin:0 0 10px 0;line-height:1.2;">{newsletter.title}</h1>
-  <div style="font-family:Georgia,'Times New Roman',serif;font-size:14px;color:#94a3b8;">{newsletter.date.strftime('%A, %B %-d, %Y')}</div>
+        header_html = f"""<div style="background-color:{C_NAVY};padding:36px 28px;text-align:center;">
+  <div style="font-family:Georgia,'Times New Roman',serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:{C_GOLD};margin-bottom:12px;">Intelligence Briefing</div>
+  <h1 style="font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:bold;color:{C_WHITE};margin:0 0 8px 0;line-height:1.2;">{newsletter.title}</h1>
+  <div style="font-family:Georgia,'Times New Roman',serif;font-size:13px;color:#94a3b8;margin-bottom:10px;font-style:italic;">Strategic Intelligence Beyond the Headlines</div>
+  <div style="font-family:Georgia,'Times New Roman',serif;font-size:13px;color:#64748b;">{newsletter.date.strftime('%A, %B %-d, %Y')}</div>
 </div>
 <div style="background-color:{C_GOLD};height:3px;"></div>"""
 
         intro_html = ""
         if newsletter.intro_text:
-            intro_html = f"""<div style="background-color:{C_LIGHT};border-left:4px solid {C_GOLD};padding:20px 24px;margin:24px 0;font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.7;color:{C_TEXT};font-style:italic;white-space:pre-line;">{newsletter.intro_text}</div>"""
+            intro_html = f"""<div style="background-color:{C_LIGHT};border-left:4px solid {C_GOLD};padding:20px 24px;margin:28px 0;font-family:Georgia,'Times New Roman',serif;font-size:16px;line-height:1.75;color:{C_TEXT};white-space:pre-line;">{newsletter.intro_text}</div>"""
 
         stories_html = ""
         for i, story in enumerate(newsletter.stories):
@@ -848,35 +849,41 @@ Today's briefing includes immediate developments requiring attention, strategic 
 
         sources_html = ""
         if story.sources:
+            from urllib.parse import urlparse
+            def _domain(url: str) -> str:
+                try:
+                    return urlparse(url).netloc.replace("www.", "") or url
+                except Exception:
+                    return url
             source_links = "".join(
-                f'<a href="{src}" style="color:{C_LINK};text-decoration:none;font-size:12px;display:block;margin-bottom:4px;word-break:break-all;">{src}</a>'
+                f'<a href="{src}" style="color:{C_LINK};text-decoration:none;font-size:13px;display:inline-block;margin-right:12px;margin-bottom:4px;">{_domain(src)}</a>'
                 for src in story.sources
             )
-            sources_html = f"""<div style="border-top:1px solid {C_BORDER};margin-top:16px;padding-top:12px;">
+            sources_html = f"""<div style="border-top:1px solid {C_BORDER};margin-top:20px;padding-top:14px;">
   <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:{C_MUTED};margin-bottom:8px;">Sources</div>
-  {source_links}
+  <div>{source_links}</div>
 </div>"""
 
         border_bottom = "" if is_last else f"border-bottom:1px solid {C_BORDER};"
 
-        return f"""<div style="{border_bottom}margin-bottom:32px;padding-bottom:32px;padding-top:24px;">
-  <div style="margin-bottom:12px;">
-    <span style="display:inline-block;background-color:{content_type_color};color:#ffffff;font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;padding:3px 10px;border-radius:12px;margin-right:6px;">{content_type_display}</span>
-    <span style="display:inline-block;background-color:{C_LIGHT};color:#4a5568;font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:0.5px;padding:3px 8px;border-radius:10px;border:1px solid {C_BORDER};margin-right:6px;">{region_display}</span>
-    <span style="display:inline-block;background-color:{impact_color};color:#ffffff;font-size:10px;font-weight:bold;padding:3px 8px;border-radius:10px;">Impact {story.impact_score}/10</span>
+        return f"""<div style="{border_bottom}margin-bottom:36px;padding-bottom:36px;padding-top:28px;">
+  <div style="margin-bottom:14px;">
+    <span style="display:inline-block;background-color:{content_type_color};color:#ffffff;font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;padding:4px 10px;border-radius:12px;margin-right:6px;margin-bottom:4px;">{content_type_display}</span>
+    <span style="display:inline-block;background-color:{C_LIGHT};color:#4a5568;font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:0.5px;padding:4px 8px;border-radius:10px;border:1px solid {C_BORDER};margin-right:6px;margin-bottom:4px;">{region_display}</span>
+    <span style="display:inline-block;background-color:{impact_color};color:#ffffff;font-size:10px;font-weight:bold;padding:4px 8px;border-radius:10px;margin-bottom:4px;">Impact {story.impact_score}/10</span>
   </div>
-  <h2 style="font-family:Georgia,'Times New Roman',serif;font-size:20px;font-weight:bold;color:{C_NAVY};margin:0 0 20px 0;line-height:1.35;">{story.story_title}</h2>
-  <div style="margin-bottom:16px;">
-    <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1.5px;color:{C_MUTED};margin-bottom:6px;">Why This Matters</div>
-    <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.7;color:{C_TEXT};">{story.why_important}</div>
+  <h2 style="font-family:Georgia,'Times New Roman',serif;font-size:22px;font-weight:bold;color:{C_NAVY};margin:0 0 22px 0;line-height:1.35;">{story.story_title}</h2>
+  <div style="margin-bottom:20px;">
+    <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:{C_MUTED};margin-bottom:8px;">Why This Matters</div>
+    <div style="font-family:Georgia,'Times New Roman',serif;font-size:16px;line-height:1.75;color:{C_TEXT};">{story.why_important}</div>
   </div>
-  <div style="margin-bottom:16px;background-color:{C_LIGHT};padding:14px 16px;border-left:3px solid {C_GOLD};">
-    <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1.5px;color:{C_MUTED};margin-bottom:6px;">What Others Are Missing</div>
-    <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.7;color:{C_TEXT};">{story.what_overlooked}</div>
+  <div style="margin-bottom:20px;background-color:{C_LIGHT};padding:16px 18px;border-left:3px solid {C_GOLD};">
+    <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:{C_MUTED};margin-bottom:8px;">What Others Are Missing</div>
+    <div style="font-family:Georgia,'Times New Roman',serif;font-size:16px;line-height:1.75;color:{C_TEXT};">{story.what_overlooked}</div>
   </div>
-  <div style="margin-bottom:16px;">
-    <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1.5px;color:{C_MUTED};margin-bottom:6px;">What to Watch</div>
-    <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.7;color:{C_TEXT};">{story.prediction}</div>
+  <div style="margin-bottom:20px;">
+    <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:{C_MUTED};margin-bottom:8px;">What to Watch</div>
+    <div style="font-family:Georgia,'Times New Roman',serif;font-size:16px;line-height:1.75;color:{C_TEXT};">{story.prediction}</div>
   </div>
   {sources_html}
 </div>"""

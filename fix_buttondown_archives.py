@@ -53,12 +53,14 @@ def github_pages_to_email_html(html: str) -> str:
     intro_text = intro_el.get_text(strip=True) if intro_el else ""
 
     header_html = (
-        f'<div style="background-color:{C_NAVY};padding:32px 24px;text-align:center;">'
+        f'<div style="background-color:{C_NAVY};padding:36px 28px;text-align:center;">'
         f'<div style="font-family:Georgia,\'Times New Roman\',serif;font-size:10px;letter-spacing:3px;'
-        f'text-transform:uppercase;color:{C_GOLD};margin-bottom:10px;">Intelligence Briefing</div>'
-        f'<h1 style="font-family:Georgia,\'Times New Roman\',serif;font-size:28px;font-weight:bold;'
-        f'color:{C_WHITE};margin:0 0 10px 0;line-height:1.2;">{title_text}</h1>'
-        f'<div style="font-family:Georgia,\'Times New Roman\',serif;font-size:14px;color:#94a3b8;">{date_text}</div>'
+        f'text-transform:uppercase;color:{C_GOLD};margin-bottom:12px;">Intelligence Briefing</div>'
+        f'<h1 style="font-family:Georgia,\'Times New Roman\',serif;font-size:30px;font-weight:bold;'
+        f'color:{C_WHITE};margin:0 0 8px 0;line-height:1.2;">{title_text}</h1>'
+        f'<div style="font-family:Georgia,\'Times New Roman\',serif;font-size:13px;color:#94a3b8;'
+        f'margin-bottom:10px;font-style:italic;">Strategic Intelligence Beyond the Headlines</div>'
+        f'<div style="font-family:Georgia,\'Times New Roman\',serif;font-size:13px;color:#64748b;">{date_text}</div>'
         f'</div>'
         f'<div style="background-color:{C_GOLD};height:3px;"></div>'
     )
@@ -67,8 +69,8 @@ def github_pages_to_email_html(html: str) -> str:
     if intro_text:
         intro_html = (
             f'<div style="background-color:{C_LIGHT};border-left:4px solid {C_GOLD};padding:20px 24px;'
-            f'margin:24px 0;font-family:Georgia,\'Times New Roman\',serif;font-size:15px;line-height:1.7;'
-            f'color:{C_TEXT};font-style:italic;">{intro_text}</div>'
+            f'margin:28px 0;font-family:Georgia,\'Times New Roman\',serif;font-size:16px;line-height:1.75;'
+            f'color:{C_TEXT};">{intro_text}</div>'
         )
 
     # --- Stories ---
@@ -107,20 +109,20 @@ def github_pages_to_email_html(html: str) -> str:
                         sec_text = p.get_text(strip=True)
                         if "What Others Are Missing" in sec_title:
                             content_parts.append(
-                                f'<div style="margin-bottom:16px;background-color:{C_LIGHT};'
-                                f'padding:14px 16px;border-left:3px solid {C_GOLD};">'
+                                f'<div style="margin-bottom:20px;background-color:{C_LIGHT};'
+                                f'padding:16px 18px;border-left:3px solid {C_GOLD};">'
                                 f'<div style="font-size:10px;font-weight:bold;text-transform:uppercase;'
-                                f'letter-spacing:1.5px;color:{C_MUTED};margin-bottom:6px;">{sec_title}</div>'
-                                f'<div style="font-family:Georgia,\'Times New Roman\',serif;font-size:15px;'
-                                f'line-height:1.7;color:{C_TEXT};">{sec_text}</div></div>'
+                                f'letter-spacing:1px;color:{C_MUTED};margin-bottom:8px;">{sec_title}</div>'
+                                f'<div style="font-family:Georgia,\'Times New Roman\',serif;font-size:16px;'
+                                f'line-height:1.75;color:{C_TEXT};">{sec_text}</div></div>'
                             )
                         else:
                             content_parts.append(
-                                f'<div style="margin-bottom:16px;">'
+                                f'<div style="margin-bottom:20px;">'
                                 f'<div style="font-size:10px;font-weight:bold;text-transform:uppercase;'
-                                f'letter-spacing:1.5px;color:{C_MUTED};margin-bottom:6px;">{sec_title}</div>'
-                                f'<div style="font-family:Georgia,\'Times New Roman\',serif;font-size:15px;'
-                                f'line-height:1.7;color:{C_TEXT};">{sec_text}</div></div>'
+                                f'letter-spacing:1px;color:{C_MUTED};margin-bottom:8px;">{sec_title}</div>'
+                                f'<div style="font-family:Georgia,\'Times New Roman\',serif;font-size:16px;'
+                                f'line-height:1.75;color:{C_TEXT};">{sec_text}</div></div>'
                             )
 
             sources_el = section.find("div", class_="sources")
@@ -130,15 +132,15 @@ def github_pages_to_email_html(html: str) -> str:
                 if links:
                     lhtml = "".join(
                         f'<a href="{a.get("href","#")}" style="color:{C_LINK};text-decoration:none;'
-                        f'font-size:12px;display:block;margin-bottom:4px;word-break:break-all;">'
+                        f'font-size:13px;display:inline-block;margin-right:12px;margin-bottom:4px;">'
                         f'{a.get_text(strip=True)}</a>'
                         for a in links
                     )
                     src_html = (
-                        f'<div style="border-top:1px solid {C_BORDER};margin-top:16px;padding-top:12px;">'
+                        f'<div style="border-top:1px solid {C_BORDER};margin-top:20px;padding-top:14px;">'
                         f'<div style="font-size:10px;font-weight:bold;text-transform:uppercase;'
                         f'letter-spacing:1px;color:{C_MUTED};margin-bottom:8px;">Sources</div>'
-                        f'{lhtml}</div>'
+                        f'<div>{lhtml}</div></div>'
                     )
 
             border_bottom = "" if is_last else f"border-bottom:1px solid {C_BORDER};"
@@ -146,21 +148,22 @@ def github_pages_to_email_html(html: str) -> str:
             if impact_text:
                 badges += (
                     f'<span style="display:inline-block;background-color:{impact_color};color:#ffffff;'
-                    f'font-size:10px;font-weight:bold;padding:3px 8px;border-radius:10px;margin-right:6px;">'
-                    f'Impact {impact_text}</span>'
+                    f'font-size:10px;font-weight:bold;padding:4px 8px;border-radius:10px;'
+                    f'margin-right:6px;margin-bottom:4px;">Impact {impact_text}</span>'
                 )
             if region_text:
                 badges += (
                     f'<span style="display:inline-block;background-color:{C_LIGHT};color:#4a5568;'
                     f'font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:0.5px;'
-                    f'padding:3px 8px;border-radius:10px;border:1px solid {C_BORDER};">{region_text}</span>'
+                    f'padding:4px 8px;border-radius:10px;border:1px solid {C_BORDER};margin-bottom:4px;">'
+                    f'{region_text}</span>'
                 )
 
             stories_html += (
-                f'<div style="{border_bottom}margin-bottom:32px;padding-bottom:32px;padding-top:24px;">'
-                f'<div style="margin-bottom:12px;">{badges}</div>'
-                f'<h2 style="font-family:Georgia,\'Times New Roman\',serif;font-size:20px;font-weight:bold;'
-                f'color:{C_NAVY};margin:0 0 20px 0;line-height:1.35;">{story_title_text}</h2>'
+                f'<div style="{border_bottom}margin-bottom:36px;padding-bottom:36px;padding-top:28px;">'
+                f'<div style="margin-bottom:14px;">{badges}</div>'
+                f'<h2 style="font-family:Georgia,\'Times New Roman\',serif;font-size:22px;font-weight:bold;'
+                f'color:{C_NAVY};margin:0 0 22px 0;line-height:1.35;">{story_title_text}</h2>'
                 f'{"".join(content_parts)}'
                 f'{src_html}'
                 f'</div>'
