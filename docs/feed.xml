@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Wed, 29 Apr 2026 08:31:19 GMT</pubDate>
-        <lastBuildDate>Wed, 29 Apr 2026 08:31:19 GMT</lastBuildDate>
+        <pubDate>Thu, 30 Apr 2026 08:33:58 GMT</pubDate>
+        <lastBuildDate>Thu, 30 Apr 2026 08:33:58 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,23 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - April 30, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-04-30.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, April 30, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US Naval Blockade of Iran Pushes Brent Above $126, Fracturing Asian Growth Projections and European Energy Transition</strong>: Oil above $126/barrel with Trump signaling a months-long blockade creates a compounding shock: Asian economies structurally dependent on Hormuz-routed crude face stagflationary pressure, Europe's LNG ...</li><li><strong>Putin Offers to Broker Iranian Uranium Disposition as CENTCOM Prepares Escalation Options for Trump</strong>: Putin's offer to manage Iran's enriched uranium stockpile—roughly 972 lbs of highly enriched material—inserts Russia as an indispensable broker in the nuclear file at the precise moment US military op...</li><li><strong>Europe Accelerates Autonomous Defense Architecture as US Reliability Collapses: Drone Doctrine, Naval Coalitions, and Article 42.7</strong>: Three simultaneous European defense moves—a UK-led 10-nation northern naval force, serious discussion of EU Article 42.7 as a NATO substitute, and a drone doctrine built on Taiwan components now targe...</li></ul><p><em>Published: April 30, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Thu, 30 Apr 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260430</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-04-30.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - April 29, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-04-29.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, April 29, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US Missile Stockpile Depletion from Iran War Creates Exploitable Window for China and Exposes Ukraine's Air Defense Gap</strong>: The Iran war has structurally degraded US precision munitions inventories, simultaneously weakening deterrence against China in the Taiwan Strait and leaving Ukraine vulnerable to Russian ballistic mi...</li><li><strong>UAE's OPEC Exit and China's Sulphuric Acid Export Ban Accelerate Fragmentation of the Post-1945 Energy Order</strong>: The UAE's OPEC departure removes the cartel's second-largest producer and signals Gulf states are prioritizing bilateral energy relationships over collective pricing discipline, directly benefiting As...</li><li><strong>China's Deliberate Military Expansion Beyond the First Island Chain Converges with Japan-China Incident Escalation</strong>: The Diplomat's analysis of PLA power projection beyond the First Island Chain, read alongside Foreign Policy's reporting on the Japan-China near-conflict over Taiwan Strait transits, reveals Beijing e...</li></ul><p><em>Published: April 29, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -213,24 +230,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-04-21.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - April 20, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-04-20.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Monday, April 20, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US-Iran Diplomacy Fractures as Tehran Rejects Islamabad Talks While Maintaining Hormuz Leverage</strong>: Iran's refusal to attend Pakistan-brokered talks while maintaining partial Hormuz control signals a deliberate coercive strategy: extract sanctions relief without conceding nuclear demands. European a...</li><li><strong>Hormuz Disruption Transmits Systemic Shock Across Asian Supply Chains, Food Security, and Energy Markets</strong>: China's 48% import collapse from Iran and 90% export drop signal supply chain decoupling under duress, not managed diversification. One-third of global fertilizer transits the Gulf; disruption threate...</li><li><strong>Japan's Taiwan Strait Transit on Historically Charged Date Marks Deliberate Strategic Signaling Under Takaichi</strong>: The JS Ikazuchi transit on the anniversary of a treaty date freighted with Chinese nationalist meaning was almost certainly not accidental — it signals Japan under Takaichi is willing to absorb PLA rh...</li></ul><p><em>Published: April 20, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Mon, 20 Apr 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260420</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-04-20.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
