@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Thu, 07 May 2026 08:46:21 GMT</pubDate>
-        <lastBuildDate>Thu, 07 May 2026 08:46:21 GMT</lastBuildDate>
+        <pubDate>Fri, 08 May 2026 07:53:09 GMT</pubDate>
+        <lastBuildDate>Fri, 08 May 2026 07:53:09 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,24 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - May 08, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-05-08.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, May 08, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US-Iran Ceasefire Fractures Around Hormuz as Petroyuan Gambit Reshapes Energy Order</strong>: Renewed US-Iran exchanges around Hormuz test a fragile ceasefire while Iran's petroyuan reparations push signals a structural attempt to weaponize energy settlement currency against dollar primacy. Sa...</li><li><strong>Trump-Xi Beijing Summit Carries Structural Weight Beyond Trade: Iran Oil, Taiwan, and the Post-Primacy Bargain</strong>: The May 14-15 summit occurs at a moment of maximum US strategic vulnerability — active Iran war, NATO credibility erosion, and a likely Chinese-Russian UN veto on Hormuz. Beijing holds leverage on Ira...</li><li><strong>Russia's Tankless Victory Day Parade Reveals Wartime Attrition and Putin's Hardened Security Perimeter</strong>: The absence of military hardware from the May 9 parade — first time in nearly two decades — is a measurable indicator of Russian equipment attrition and operational strain in Ukraine. Combined with le...</li></ul><p><em>Published: May 08, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Fri, 08 May 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260508</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-05-08.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - May 07, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-05-07.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, May 07, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US-Iran War Enters Negotiation Phase as Hormuz Closure Reshapes Global Energy Architecture</strong>: The US-Iran war has moved from kinetic escalation to coercive diplomacy, with Trump signaling a quick end while threatening resumed bombardment. The Hormuz closure is not merely an energy shock but a ...</li><li><strong>China Deploys Sanctions Countermeasures and Arctic Pivot as Iran War Exposes US Economic Coercion Limits</strong>: Beijing is simultaneously blocking compliance with US sanctions, vetoing a $2B AI acquisition, and accelerating Arctic energy route development — a coordinated multi-domain response to US pressure rat...</li><li><strong>Russia Leverages Victory Day to Coerce Kyiv While Ukraine Exploits Front-Line Communications Failures</strong>: Russia's evacuation warning to foreign diplomats in Kyiv ahead of May 9 is a calibrated coercive signal designed to constrain Ukrainian action during a politically sensitive window, not merely a preca...</li></ul><p><em>Published: May 07, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -211,23 +229,6 @@
         <category><![CDATA[Middle East]]></category>
         <category><![CDATA[Europe]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-04-28.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - April 27, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-04-27.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Monday, April 27, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Beijing's United Front Operations Systematically Extracting Western Dual-Use Technology Through Non-Military Channels</strong>: Technology transfer via United Front networks represents a structural vulnerability that kinetic and sanctions-based countermeasures cannot address. Unlike visible military procurement, these channels...</li><li><strong>Pyongyang Institutionalizes Its Russia Alliance With a War Memorial, Signaling Permanent Military Partnership Beyond Ukraine</strong>: The Pyongyang memorial is not symbolic — it codifies North Korean battlefield sacrifice into state narrative, creating domestic political lock-in for continued Russia support. Belousov's presence sign...</li><li><strong>Iran-Russia Diplomatic Axis Consolidates as US-Iran Talks Collapse, Reshaping Middle East War Endgame</strong>: Putin receiving Araghchi while US-Iran negotiations are deadlocked signals Tehran is actively hedging toward Moscow as a security guarantor, not merely a trade partner. This forecloses near-term US di...</li></ul><p><em>Published: April 27, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Mon, 27 Apr 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260427</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-04-27.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
