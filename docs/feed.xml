@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sat, 30 May 2026 08:38:11 GMT</pubDate>
-        <lastBuildDate>Sat, 30 May 2026 08:38:11 GMT</lastBuildDate>
+        <pubDate>Sun, 31 May 2026 08:58:16 GMT</pubDate>
+        <lastBuildDate>Sun, 31 May 2026 08:58:16 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - May 31, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-05-31.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, May 31, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Israel Crosses the Litani: Ceasefire Collapse and the Structural Logic of the Lebanon Escalation</strong>: Israel's large-scale offensive crossing the Litani River and seizure of Beaufort Castle represents the deepest incursion since 1982, effectively nullifying the ceasefire framework. This signals Israel...</li><li><strong>US-Iran Nuclear Endgame: Trump's Amended Proposal, Hormuz Blockade Enforcement, and the Conditions for American Withdrawal</strong>: Trump's public claim of Iranian no-nuclear-weapons guarantees alongside Axios reporting of White House-demanded amendments reveals a deal in flux, not concluded. The US Hellfire strike on a blockade r...</li><li><strong>Shangri-La Dialogue 2026: US-China Military Signaling, Japan's Defense Posture Legitimation, and the Limits of Rhetorical De-escalation</strong>: Hegseth's 'better than in years' framing on US-China ties while simultaneously pressing allies for defense spending increases reveals a dual-track strategy: tactical diplomatic warming post-Beijing su...</li></ul><p><em>Published: May 31, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sun, 31 May 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260531</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[United States]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-05-31.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - May 30, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-05-30.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, May 30, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russian Drone Strike on Romanian Soil Forces NATO to Confront Article 5 Ambiguity on Its Eastern Flank</strong>: A Russian drone striking a NATO member's residential building in Galați is not merely a stray munition — it tests the alliance's collective defense threshold in real time. Romania's measured response ...</li><li><strong>US-Iran Ceasefire Negotiations at Decision Point as Global Economic Institutions Warn of Energy Supply Fracture</strong>: Hegseth's simultaneous threat to resume war and Trump's 'final determination' framing signals a deliberate coercive deadline strategy. The convergence of IMF, World Bank, WTO, and IEA warnings about e...</li><li><strong>Hegseth's Shangri-La Tone Shift Reveals US-China Tactical Détente That Structurally Reorders Indo-Pacific Alignments</strong>: Hegseth describing US-China ties as 'better than in years' two weeks after the Trump-Xi summit is not rhetorical softening — it signals a deliberate recalibration that forces every Indo-Pacific partne...</li></ul><p><em>Published: May 30, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -213,24 +229,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Economy]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-05-22.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - May 21, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-05-21.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, May 21, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Xi's Sequential Beijing Summits Reveal Asymmetric Depth: Substance for Moscow, Optics for Washington</strong>: Xi hosting Trump then Putin in rapid succession is a deliberate display of strategic triangulation. The China-Russia joint statement advancing a multipolar order, paired with deeper military-economic ...</li><li><strong>Iran's Ceasefire Exploitation: Rapid Military Reconstitution and Hormuz Leverage Threaten US Strategic Position</strong>: US intelligence confirms Iran has restarted drone production within a six-week ceasefire window, outpacing American reconstitution assumptions. Simultaneously, Iran is asserting jurisdictional control...</li><li><strong>China's Parallel AI Governance Offensive Constructs Institutional Lock-In Before US Regulatory Framework Solidifies</strong>: China is systematically embedding its AI governance norms into UN frameworks at the precise moment US domestic AI policy remains fragmented. By championing multilateral standards through its vice mini...</li></ul><p><em>Published: May 21, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Thu, 21 May 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260521</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[United States]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-05-21.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
