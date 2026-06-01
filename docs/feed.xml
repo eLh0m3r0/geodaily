@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sun, 31 May 2026 08:58:16 GMT</pubDate>
-        <lastBuildDate>Sun, 31 May 2026 08:58:16 GMT</lastBuildDate>
+        <pubDate>Mon, 01 Jun 2026 11:51:49 GMT</pubDate>
+        <lastBuildDate>Mon, 01 Jun 2026 11:51:49 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - June 01, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-01.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Monday, June 01, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US-Iran Military Exchange Continues While Trump Links Ceasefire to Abraham Accords Expansion</strong>: Active US-Iran strikes and counter-strikes are occurring simultaneously with ceasefire negotiations, creating a compounding escalation risk. Trump's reported linkage of peace terms to Abraham Accords ...</li><li><strong>France and UK Intercept Russian Shadow Fleet Tanker in Atlantic, Signaling Coordinated Enforcement Escalation</strong>: The Tagor interdiction in international waters marks a qualitative shift from port-based sanctions enforcement to open-ocean interception, setting a precedent that could be challenged legally by Russi...</li><li><strong>Cold War-Era Guns and AI-Guided Drones Redefine Counter-UAS Doctrine Faster Than Gulf Procurement Cycles Can Adapt</strong>: War on the Rocks analysis demonstrates that legacy kinetic systems outperform expensive platforms in drone warfare, directly challenging the procurement logic of Gulf states spending billions on F-35s...</li></ul><p><em>Published: June 01, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Mon, 01 Jun 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260601</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-01.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - May 31, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-05-31.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, May 31, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Israel Crosses the Litani: Ceasefire Collapse and the Structural Logic of the Lebanon Escalation</strong>: Israel's large-scale offensive crossing the Litani River and seizure of Beaufort Castle represents the deepest incursion since 1982, effectively nullifying the ceasefire framework. This signals Israel...</li><li><strong>US-Iran Nuclear Endgame: Trump's Amended Proposal, Hormuz Blockade Enforcement, and the Conditions for American Withdrawal</strong>: Trump's public claim of Iranian no-nuclear-weapons guarantees alongside Axios reporting of White House-demanded amendments reveals a deal in flux, not concluded. The US Hellfire strike on a blockade r...</li><li><strong>Shangri-La Dialogue 2026: US-China Military Signaling, Japan's Defense Posture Legitimation, and the Limits of Rhetorical De-escalation</strong>: Hegseth's 'better than in years' framing on US-China ties while simultaneously pressing allies for defense spending increases reveals a dual-track strategy: tactical diplomatic warming post-Beijing su...</li></ul><p><em>Published: May 31, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -212,23 +228,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-05-23.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - May 22, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-05-22.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, May 22, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US Arms Pause to Taiwan Signals Iran War Is Cannibalizing Indo-Pacific Deterrence</strong>: A confirmed pause in US arms sales to Taiwan — publicly attributed to Iran war munitions demands — directly degrades cross-strait deterrence at a moment when Beijing is watching US overextension close...</li><li><strong>China Extracts Strategic Asymmetry from Russia Dependency While Publicly Managing the Optics</strong>: Multiple converging sources confirm Russia is publicly signaling anxiety about China treating it as a junior partner, while Beijing extracts energy, rare earth, and geopolitical concessions without re...</li><li><strong>Iran War Is Producing a Structural Global Energy Shock With Divergent Adaptation Strategies</strong>: The IEA warning of an oil market 'red zone' by July-August, combined with Europe's fastest PMI contraction in two years, AIIB's $10B emergency facility, and China's pivot to Xinjiang coal-chemicals, s...</li></ul><p><em>Published: May 22, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Fri, 22 May 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260522</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-05-22.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
