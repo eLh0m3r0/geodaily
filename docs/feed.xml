@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Tue, 02 Jun 2026 10:51:00 GMT</pubDate>
-        <lastBuildDate>Tue, 02 Jun 2026 10:51:00 GMT</lastBuildDate>
+        <pubDate>Wed, 03 Jun 2026 11:18:20 GMT</pubDate>
+        <lastBuildDate>Wed, 03 Jun 2026 11:18:20 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,24 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - June 03, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-03.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, June 03, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US-Iran Military Exchange Expands to Kuwait as Hormuz Diplomacy Collapses Into Stalemate</strong>: Iranian missiles striking Kuwait's civilian airport marks a geographic escalation beyond previous exchange parameters, threatening Gulf state neutrality and triggering oil price spikes. With Rubio ins...</li><li><strong>Russia's Dual Escalation: Massive Civilian Bombardment of Ukraine Paired With St. Petersburg Drone Vulnerability Exposed</strong>: Russia's third heavy aerial assault in under a month — 73 missiles and 656 drones — signals a deliberate attrition strategy against Ukrainian air defenses and civilian morale. Ukraine's simultaneous s...</li><li><strong>Beijing's Coast Guard Expansion East of Taiwan Responds to Japan-Philippines Maritime Alignment, Redefining Indo-Pacific Security Architecture</strong>: China's first independent coast guard patrol east of Taiwan — triggered by Japan-Philippines maritime boundary talks — represents a deliberate expansion of Beijing's operational envelope beyond its tr...</li></ul><p><em>Published: June 03, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Wed, 03 Jun 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260603</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-03.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - June 02, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-02.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, June 02, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>China's Nuclear Hardening at Hami Reframes Taiwan Deterrence Calculus as Taipei Passes $25B Defense Budget</strong>: China's shift from a minimal deterrent to a survivable second-strike force directly constrains US escalation options in a Taiwan contingency. Paired with Taiwan's landmark defense budget passage after...</li><li><strong>Russia's Third Mass Strike in a Month Forces Zelenskyy to Publicly Demand Patriot Systems from Trump</strong>: A 656-drone, 73-missile salvo — the third large-scale attack in four weeks — signals Russia is executing a deliberate infrastructure attrition campaign timed to test Western resolve before any ceasefi...</li><li><strong>Israel-Hezbollah Ceasefire Collapses in Real Time as Trump Claims Credit for a Deal That Does Not Hold</strong>: Trump's public declaration that Hezbollah and Israel agreed to stop shooting is contradicted in real time by Israeli strikes on Nabatiyeh, Hezbollah's 31 claimed attacks, and Israel's announced Litani...</li></ul><p><em>Published: June 02, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -210,23 +228,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-05-25.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - May 24, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-05-24.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, May 24, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russia deploys Oreshnik hypersonic missile against Kyiv, marking qualitative escalation in nuclear-capable strike capacity</strong>: Russia's first confirmed Oreshnik deployment against Kyiv represents a deliberate escalation signal beyond conventional strikes — the missile travels at Mach 10+, is effectively uninterceptable by cur...</li><li><strong>US-Iran framework deal — HEU surrender, Hormuz reopening, 60-day ceasefire — reshapes Middle East order if finalized</strong>: A deal requiring Iran to surrender highly enriched uranium stockpiles while reopening the Strait of Hormuz would be the most consequential non-proliferation agreement since the 2015 JCPOA, with immedi...</li><li><strong>Indo-Pacific alliance architecture stress-tested: Balikatan expansion, Japan-Taiwan defense ties, and Tomahawk delivery gaps expose US extended deterrence limits</strong>: Three concurrent developments reveal structural strain in US Indo-Pacific deterrence: the largest-ever Balikatan drill now includes Japan, signaling trilateral convergence against China; Japan is expl...</li></ul><p><em>Published: May 24, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sun, 24 May 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260524</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-05-24.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
