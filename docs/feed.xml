@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sun, 14 Jun 2026 09:51:02 GMT</pubDate>
-        <lastBuildDate>Sun, 14 Jun 2026 09:51:02 GMT</lastBuildDate>
+        <pubDate>Mon, 15 Jun 2026 12:35:19 GMT</pubDate>
+        <lastBuildDate>Mon, 15 Jun 2026 12:35:19 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,23 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - June 15, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-15.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Monday, June 15, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US-Iran Framework Deal Ends 108-Day War but Leaves Core Nuclear and Regional Issues Unresolved</strong>: The US-Iran ceasefire reopens the Strait of Hormuz, immediately repricing global energy markets and removing a systemic shock to world trade. However, the deal defers nuclear negotiations, leaves Iran...</li><li><strong>Russia's Mass Drone-Missile Barrage Destroys UNESCO Heritage Site as G7 Convenes in Évian</strong>: The deliberate or reckless destruction of the Kyiv-Pechersk Lavra Dormition Cathedral — a UNESCO World Heritage site — during a G7 summit signals Moscow's intent to demonstrate escalatory resolve prec...</li><li><strong>China Advances Quantum Computing Materials, Satellite Militarization, and GaN Chip Dominance in Coordinated Technology Push</strong>: Four concurrent Chinese technology developments — mass production of silicon-28 for quantum computing, PLA warnings framing LEO satellite constellations as arms race triggers, a Supreme Court ban on I...</li></ul><p><em>Published: June 15, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Mon, 15 Jun 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260615</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Economy]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-15.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - June 14, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-14.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, June 14, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US-Iran Nuclear-Adjacent Deal Imminent: Hormuz Reopening Contingent on Agreement That Left Iran's Missile Arsenal Reconstituted</strong>: A US-Iran memorandum of understanding would reshape Gulf energy flows, oil markets, and regional security architecture simultaneously. The critical structural problem: Western intelligence assesses Ir...</li><li><strong>Kim Jong-un Leverages Xi Visit and Moscow Ties to Execute Dual-Patron Strategy, Extracting Maximum Concessions from Both Powers</strong>: North Korea is no longer a dependent client but an active strategic arbitrageur: deploying troops to Russia for battlefield experience and materiel while using Xi's visit to rehabilitate international...</li><li><strong>UK's First Unilateral Shadow Fleet Interdiction in the English Channel Establishes a Precedent for Physical Enforcement of Russia Sanctions</strong>: Britain's physical seizure of a sanctioned tanker in the English Channel marks a qualitative escalation from financial to kinetic sanctions enforcement. If normalized, this creates a legal and operati...</li></ul><p><em>Published: June 14, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -213,23 +230,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-06.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - June 05, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-05.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, June 05, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Zelensky's Direct Diplomacy Gambit: Open Letter to Putin Tests Ceasefire Architecture While Moscow Signals Conditional Openness</strong>: Zelensky's public letter to Putin — proposing direct talks in a neutral country — represents a calculated diplomatic maneuver timed to coincide with Putin's St. Petersburg forum and Ukraine's successf...</li><li><strong>Beijing's Post-Invasion Taiwan Governance Planning Reveals Strategic Timeline Calculus, Not Just Military Posturing</strong>: War on the Rocks analysis reveals Chinese think tanks are actively designing shadow governance structures for post-invasion Taiwan, shifting the analytical frame from 'if' to 'when and how.' Combined ...</li><li><strong>China's Sailless Submarine Launch Targets Undersea Infrastructure as a New Domain of Strategic Coercion</strong>: A covertly launched sailless submarine optimized for seabed operations represents a qualitative shift in China's undersea warfare capability, specifically threatening the subsea cables and sensor netw...</li></ul><p><em>Published: June 05, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Fri, 05 Jun 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260605</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-05.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
