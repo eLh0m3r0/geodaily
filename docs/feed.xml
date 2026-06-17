@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Tue, 16 Jun 2026 11:28:09 GMT</pubDate>
-        <lastBuildDate>Tue, 16 Jun 2026 11:28:09 GMT</lastBuildDate>
+        <pubDate>Wed, 17 Jun 2026 11:12:15 GMT</pubDate>
+        <lastBuildDate>Wed, 17 Jun 2026 11:12:15 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,24 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - June 17, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-17.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, June 17, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US-Iran Memorandum of Understanding: $300B Gulf Reconstruction Fund, Sanctions Relief, and Nuclear Clock Reset</strong>: The MOU represents the most significant US-Iran diplomatic realignment in decades, with Gulf states financing a $300B reconstruction fund, Iranian oil sanctions waived, and a 60-day window to negotiat...</li><li><strong>Trump's Post-Xi Meeting Taiwan Signals Expose the Limits of Taipei's Washington Bet</strong>: Trump's public distancing from Taiwan independence and ambiguity on arms sales, following the Trump-Xi meeting, signals a potential recalibration of extended deterrence commitments. Taiwan's simultane...</li><li><strong>Macron's European Nuclear Deterrent Expansion Buries Four Decades of French Strategic Orthodoxy</strong>: Macron's decision to grow France's arsenal and extend nuclear coverage beyond Paris to European partners represents the most consequential shift in European strategic autonomy since NATO's founding lo...</li></ul><p><em>Published: June 17, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Wed, 17 Jun 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260617</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[United States]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-17.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - June 16, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-16.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, June 16, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US-Iran MOU Enters Implementation: Nuclear Scope, Israeli Exclusion, and the Unresolved Architecture of a Durable Deal</strong>: The MOU framework is deliberately vague on nuclear verification scope, sanctions sequencing, and Israel's ongoing Lebanon operations — the three variables most likely to collapse the deal. Iran's insi...</li><li><strong>G7 Ukraine Diplomacy: Zelensky's Washington Summit Gambit Tests Whether Trump's 'Breakthrough' Signals Have Operational Meaning</strong>: Zelensky's proposal to host a Putin-Trump meeting in Washington reframes the negotiating geography away from European-mediated formats, directly appealing to Trump's preference for bilateral spectacle...</li><li><strong>China's Naval Supergun, Taiwan's Intelligence Portal, and the US Australia Stockpile: The Taiwan Strait Military Balance Shifts Across Multiple Vectors Simultaneously</strong>: Three concurrent developments — China's extended-range naval gun development, Taiwan's mainland intelligence recruitment portal, and the US Marine Corps establishing a permanent out-of-range weapons s...</li></ul><p><em>Published: June 16, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -214,23 +232,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-08.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - June 07, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-07.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Sunday, June 07, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US-Iran War at Day 100: Nuclear Facilities Struck, Hormuz Drones Downed, Diplomacy Frozen</strong>: The 100-day mark of active US-Iran hostilities represents a structural shift in Middle East security architecture. Iranian drones targeting Hormuz shipping threaten global energy transit chokepoints. ...</li><li><strong>Xi Visits Pyongyang as China Deploys Patriot-Equivalent Missiles Opposite Taiwan and Projects Naval Power East of the Island</strong>: Three simultaneous Chinese military-diplomatic moves constitute a coordinated signaling campaign: HQ-16F missile deployment opposite Taiwan upgrades PLA air-defense capability against US strike packag...</li><li><strong>Armenia's Election Tests Whether a Post-Soviet State Can Institutionally Exit Russia's Orbit</strong>: Armenia's parliamentary vote is a rare empirical test of whether Russian soft power can be defeated through electoral means in a former Soviet state. The pre-election arrest of six pro-Russian opposit...</li></ul><p><em>Published: June 07, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sun, 07 Jun 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260607</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-07.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
