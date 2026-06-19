@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Thu, 18 Jun 2026 10:43:16 GMT</pubDate>
-        <lastBuildDate>Thu, 18 Jun 2026 10:43:16 GMT</lastBuildDate>
+        <pubDate>Fri, 19 Jun 2026 10:52:30 GMT</pubDate>
+        <lastBuildDate>Fri, 19 Jun 2026 10:52:30 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,24 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - June 19, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-19.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, June 19, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US-Iran MOU Resets Nuclear Diplomacy From a Position of Diminished American Leverage</strong>: The US-Iran memorandum of understanding, signed after a US-Israeli military campaign that failed to destroy Iran's nuclear program, locks Washington into 60-day negotiations with Tehran's survival nar...</li><li><strong>Hegseth's NATO Review Formalizes a Conditional US Security Guarantee in Europe</strong>: Hegseth's six-month troop deployment review, framed as a pass-or-fail assessment of allied spending, structurally transforms the US commitment from unconditional to performance-based. This is not rhet...</li><li><strong>Ukraine's Drone Campaign Against Russian Logistics Signals a Shift Toward Attrition Warfare at Strategic Depth</strong>: Ukraine's expanded mid-range drone operations are systematically degrading Russian supply chains behind the front lines rather than seeking territorial gains, indicating a deliberate shift to attritio...</li></ul><p><em>Published: June 19, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Fri, 19 Jun 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260619</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[United States]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-19.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - June 18, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-18.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, June 18, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Hegseth's NATO Force Review and 'NATO 3.0' Demand Accelerates European Strategic Autonomy Calculus</strong>: A formal six-month Pentagon review of US troop presence in Europe, conditioned on allied burden-sharing, is not a rhetorical warning but a structured policy mechanism with real force posture consequen...</li><li><strong>Trump-Iran MOU Signed at Versailles: Uranium Dilution for Sanctions Relief, but Hormuz Toll Threat Reframes the Deal's Durability</strong>: The Washington-Tehran MOU represents the most significant US-Iran diplomatic breakthrough in over a decade, with Iran agreeing to dilute enriched uranium in exchange for large-scale economic relief. H...</li><li><strong>European Nuclear Deterrence Gap and Defense Outsourcing Expose Structural Dependency as US Commitment Erodes</strong>: ECFR's analysis documents Russia's deliberate expansion of nuclear-capable long-range systems designed to fracture NATO cohesion, while Ireland's de facto military outsourcing to France illustrates ho...</li></ul><p><em>Published: June 18, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -217,21 +235,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-10.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - June 09, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-09.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, June 09, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Israel-Iran Exchange Breaks Post-Ceasefire Deterrence Architecture While Lebanon Operations Continue</strong>: The first direct Israel-Iran exchange since the US-brokered ceasefire two months ago signals that the ceasefire framework is fragile and that Netanyahu is willing to defy direct Trump requests. Contin...</li><li><strong>Xi's Pyongyang Visit Repositions China as North Korea's Primary Patron After Russia Displacement</strong>: Xi's first North Korea visit in nearly seven years, sequenced after hosting both Trump and Putin in Beijing, signals China is reasserting strategic primacy over Pyongyang before any Trump-Kim summit m...</li><li><strong>Russia's Sanctions-Evasion Infrastructure Has Become a Permanent Parallel Economic System, Not a Workaround</strong>: War on the Rocks documents that Russia-North Korea sanctions evasion has evolved from opportunistic circumvention into deliberately engineered systemic architecture, making enforcement structurally im...</li></ul><p><em>Published: June 09, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Tue, 09 Jun 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260609</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-09.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
