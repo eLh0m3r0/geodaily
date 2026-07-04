@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 03 Jul 2026 09:32:09 GMT</pubDate>
-        <lastBuildDate>Fri, 03 Jul 2026 09:32:09 GMT</lastBuildDate>
+        <pubDate>Sat, 04 Jul 2026 08:35:20 GMT</pubDate>
+        <lastBuildDate>Sat, 04 Jul 2026 08:35:20 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,21 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - July 04, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-07-04.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, July 04, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Sudan's War Regionalizes as RSF-Linked Militias Forge Central African Republic Alliance Under Russian Air Cover</strong>: Hemeti's RSF network extending into CAR via a new rebel alliance, repelled only by Russian airstrikes, signals Moscow's Africa Corps deepening its stake in a widening regional war. Combined with warni...</li><li><strong>Russia's Fuel Supply Collapse Coincides With Sharpest Putin Approval Drop Since Full-Scale Invasion</strong>: Nationwide gasoline shortages — entire cities like Novorossiysk running dry, 39-hour queues — combined with a 3.4-point single-week collapse in Putin's trust rating (to 73.3%) suggest wartime economic...</li><li><strong>China's Truck-Mounted Drone Launcher Signals New Export Model for Dispersed, Deniable Airpower</strong>: A civilian-truck-disguised drone launcher, quietly showcased then scrubbed from Chinese state media, represents a blueprint for low-cost, hard-to-detect strike capability that could be exported to sta...</li></ul><p><em>Published: July 04, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sat, 04 Jul 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260704</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Europe]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-07-04.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - July 03, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-07-03.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, July 03, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russia's 11-Hour Kyiv Missile Barrage Signals Deliberate Civilian Infrastructure Targeting as War Enters New Phase</strong>: Russia's sustained 11-hour assault on Kyiv residential and infrastructure targets marks a qualitative escalation in targeting doctrine, not merely scale. This follows Ukraine's successful energy infra...</li><li><strong>NATO Ankara Summit Faces Structural Fracture: Trump's Burden-Sharing Ultimatum Collides With European Rearmament Momentum</strong>: Trump's public declaration that US-NATO relations are 'ridiculous' and 'not reciprocal' days before the Ankara summit creates a credibility crisis for the alliance at its most vulnerable moment — whil...</li><li><strong>China-Russia Strategic Convergence Deepens Beyond Rhetoric Into Operational Military-Economic Integration</strong>: The Diplomat's assessment that China-Russia cooperation has already crossed thresholds 'once unthinkable' — combined with The Diplomat's nuclear stability framing and ECFR's examination of the US-Chin...</li></ul><p><em>Published: July 03, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -214,22 +229,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-24.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - June 23, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-23.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Tuesday, June 23, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>US-Iran Islamabad Memorandum: Sanctions Relief and Nuclear Inspections Mask Unresolved Implementation Disputes</strong>: The 60-day negotiating window is the most consequential US-Iran diplomatic framework since the 2015 JCPOA. Immediate contradictions — Iran denying IAEA visit schedules Vance publicly confirmed, Tehran...</li><li><strong>China's Dual-Track Retaliation — Defense Procurement Bans and Rare Earth Export Controls — Targets US Military-Industrial Vulnerabilities</strong>: Blacklisting MP Materials and USA Rare Earth — the two primary US domestic rare earth producers — directly attacks Pentagon restocking efforts at a moment when US munitions reserves are depleted from ...</li><li><strong>Post-War Middle East Realignment: US Memorandum-as-Peace Illusion Opens Strategic Space for Chinese Influence Expansion</strong>: Asia Times analysis argues the Islamabad MoU follows a recurring US pattern of mistaking documented frameworks for durable settlements. Iran emerges as the least-damaged party, Gulf states have alread...</li></ul><p><em>Published: June 23, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Tue, 23 Jun 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260623</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-06-23.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
