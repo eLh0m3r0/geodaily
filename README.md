@@ -78,8 +78,9 @@ News Sources → Collection → AI Analysis → Publishing
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
 | `ANTHROPIC_API_KEY` | ✅ | - | Claude AI API key |
-| `AI_MODEL` | ❌ | `claude-3-haiku-20240307` | AI model |
+| `AI_MODEL` | ❌ | `claude-sonnet-5` | AI model |
 | `AI_MAX_COST_PER_DAY` | ❌ | `2.0` | Daily cost limit ($) |
+| `AI_MAX_COST_PER_MONTH` | ❌ | `30.0` | Monthly cost limit ($) |
 | `ADMIN_EMAIL` | ❌ | - | Notification email |
 | `DRY_RUN` | ❌ | `false` | Test mode (no API calls) |
 

@@ -42,10 +42,17 @@ class Config:
 
     # AI Configuration
     AI_PROVIDER = os.getenv("AI_PROVIDER", "anthropic")
-    AI_MODEL = os.getenv("AI_MODEL", "claude-sonnet-4-6")  # Sonnet 4.6 for better quality
-    AI_MAX_TOKENS = int(os.getenv("AI_MAX_TOKENS", "8000"))  # Token limit
-    AI_TEMPERATURE = float(os.getenv("AI_TEMPERATURE", "0.3"))
+    AI_MODEL = os.getenv("AI_MODEL", "claude-sonnet-5")  # Sonnet 5 for near-Opus analysis quality
+    # Sonnet 5 uses a new tokenizer (~30% more tokens for the same text) and spends
+    # adaptive-thinking tokens from the same output budget, so give it headroom.
+    AI_MAX_TOKENS = int(os.getenv("AI_MAX_TOKENS", "16000"))
+    # NOTE: Sonnet 5 rejects non-default sampling params (temperature/top_p/top_k
+    # return HTTP 400), so the analyzers no longer send temperature at all.
     AI_MAX_COST_PER_DAY = float(os.getenv("AI_MAX_COST_PER_DAY", "2.0"))  # $2/day limit
+    AI_MAX_COST_PER_MONTH = float(os.getenv("AI_MAX_COST_PER_MONTH", "30.0"))  # $30/month limit
+    # Sonnet 5 list pricing per million tokens (USD) — used for cost tracking/budgets
+    AI_INPUT_COST_PER_MTOK = float(os.getenv("AI_INPUT_COST_PER_MTOK", "3.0"))
+    AI_OUTPUT_COST_PER_MTOK = float(os.getenv("AI_OUTPUT_COST_PER_MTOK", "15.0"))
     
     # Newsletter History Configuration (for duplicate prevention)
     NEWSLETTER_HISTORY_DAYS = int(os.getenv("NEWSLETTER_HISTORY_DAYS", "2"))  # Look back 2 days

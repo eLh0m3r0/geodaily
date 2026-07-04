@@ -49,9 +49,10 @@ SMTP_PASSWORD=your_app_password
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
 | `ANTHROPIC_API_KEY` | ✅ | - | Claude AI API key |
-| `AI_MODEL` | ❌ | `claude-3-haiku-20240307` | AI model to use |
-| `AI_MAX_TOKENS` | ❌ | `5000` | Max tokens per analysis |
+| `AI_MODEL` | ❌ | `claude-sonnet-5` | AI model to use |
+| `AI_MAX_TOKENS` | ❌ | `16000` | Max tokens per analysis |
 | `AI_MAX_COST_PER_DAY` | ❌ | `2.0` | Daily cost limit ($) |
+| `AI_MAX_COST_PER_MONTH` | ❌ | `30.0` | Monthly cost limit ($) |
 | `ADMIN_EMAIL` | ❌ | - | Email for notifications |
 | `SMTP_SERVER` | ❌ | - | SMTP server for emails |
 | `DRY_RUN` | ❌ | `false` | Skip AI calls (testing) |

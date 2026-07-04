@@ -117,8 +117,8 @@ jobs:
 
         # System configuration
         echo "LOG_LEVEL=INFO" >> $GITHUB_ENV
-        echo "AI_MODEL=claude-sonnet-4-6" >> $GITHUB_ENV
-        echo "AI_MAX_TOKENS=8000" >> $GITHUB_ENV
+        echo "AI_MODEL=claude-sonnet-5" >> $GITHUB_ENV
+        echo "AI_MAX_TOKENS=16000" >> $GITHUB_ENV
         echo "CLEANUP_ENABLED=false" >> $GITHUB_ENV
         echo "DEBUG=false" >> $GITHUB_ENV
 
