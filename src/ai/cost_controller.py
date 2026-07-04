@@ -62,7 +62,7 @@ class AICostController:
         self.metrics = CostMetrics()
         self.budget = CostBudget(
             daily_limit=Config.AI_MAX_COST_PER_DAY,
-            monthly_limit=2.0,  # $2/month default
+            monthly_limit=Config.AI_MAX_COST_PER_MONTH,
             alert_threshold_percent=80.0,
             hard_limit_percent=95.0
         )
@@ -198,11 +198,9 @@ class AICostController:
         # Rough token estimation (1 token ≈ 4 characters)
         estimated_tokens = max(100, int(text_length / 4))
 
-        # Claude pricing (approximate)
-        # Input: ~$0.0008 per 1K tokens
-        # Output: ~$0.0024 per 1K tokens
-        input_cost = (estimated_tokens / 1000) * 0.0008
-        output_cost = (estimated_tokens / 1000) * 0.0024  # Assume similar output length
+        # Pricing comes from config so it tracks the configured model (Sonnet 5 default)
+        input_cost = (estimated_tokens / 1_000_000) * Config.AI_INPUT_COST_PER_MTOK
+        output_cost = (estimated_tokens / 1_000_000) * Config.AI_OUTPUT_COST_PER_MTOK  # Assume similar output length
         estimated_cost = input_cost + output_cost
 
         # Adjust based on operation type

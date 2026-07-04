@@ -264,11 +264,13 @@ class MultiStageAIAnalyzer:
             response = self.client.messages.create(
                 model=Config.AI_MODEL,
                 max_tokens=2000,
-                temperature=0.3,
                 messages=[{"role": "user", "content": prompt}]
             )
             
-            response_text = response.content[0].text
+            response_text = "".join(
+                block.text for block in response.content
+                if getattr(block, 'type', None) == 'text'
+            )
             
             # Parse Claude's response
             parsed_scores = self._parse_relevance_response(response_text, batch)

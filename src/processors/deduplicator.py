@@ -228,14 +228,15 @@ class ArticleDeduplicator:
         return url
     
     def _get_source_weight(self, article: Article) -> float:
-        """Get weight of article's source category."""
+        """Get combined weight: source-category baseline × per-source weight."""
         weights = {
             'think_tank': 1.3,
             'analysis': 1.1,
             'regional': 1.0,
             'mainstream': 0.8
         }
-        return weights.get(article.source_category.value, 1.0)
+        category_weight = weights.get(article.source_category.value, 1.0)
+        return category_weight * (getattr(article, 'source_weight', 1.0) or 1.0)
     
     def _select_best_article(self, articles: List[Article]) -> Article:
         """Select the best article from a cluster to be the main one."""

@@ -54,6 +54,7 @@ class Article:
     published_date: datetime
     cluster_id: Optional[str] = None
     relevance_score: float = 0.0
+    source_weight: float = 1.0  # per-source quality weight from sources.json
     content: Optional[str] = None
     author: Optional[str] = None
     tags: List[str] = field(default_factory=list)

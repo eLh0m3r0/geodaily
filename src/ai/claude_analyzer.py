@@ -16,6 +16,7 @@ from ..models import Article, ArticleCluster, AIAnalysis, ContentType
 from ..config import Config
 from ..logger import get_logger
 from .cost_controller import ai_cost_controller
+from .api_utils import extract_response_text, response_tokens_and_cost
 from ..archiver.ai_data_archiver import ai_archiver
 
 logger = get_logger("main_pipeline")
@@ -237,7 +238,6 @@ class ClaudeAnalyzer:
                         structured_data={
                             'model': Config.AI_MODEL,
                             'max_tokens': Config.AI_MAX_TOKENS,
-                            'temperature': Config.AI_TEMPERATURE,
                             'prompt_length': len(prompt),
                             'articles_count': len(articles),
                             'target_stories': target_stories
@@ -246,7 +246,6 @@ class ClaudeAnalyzer:
             response = self.client.messages.create(
                 model=Config.AI_MODEL,
                 max_tokens=Config.AI_MAX_TOKENS,
-                temperature=Config.AI_TEMPERATURE,
                 messages=[{
                     "role": "user",
                     "content": prompt
@@ -255,15 +254,12 @@ class ClaudeAnalyzer:
 
             response_time = time.time() - start_time
 
-            # Estimate tokens used
-            prompt_tokens = len(prompt.split()) * 1.3
-            response_tokens = len(response.content[0].text.split()) * 1.3
-            total_tokens = int(prompt_tokens + response_tokens)
+            # Parse Claude's response (skips thinking blocks on adaptive-thinking models)
+            analysis_text = extract_response_text(response)
 
-            # Estimate cost
-            input_cost = (prompt_tokens / 1000) * 0.0008
-            output_cost = (response_tokens / 1000) * 0.0024
-            total_cost = input_cost + output_cost
+            # Real token usage and cost from the API response
+            input_tokens, output_tokens, total_cost = response_tokens_and_cost(response, prompt, analysis_text)
+            total_tokens = input_tokens + output_tokens
 
             # Record actual cost
             ai_cost_controller.record_cost(total_cost, total_tokens, "multi_article_analysis")
@@ -275,9 +271,6 @@ class ClaudeAnalyzer:
                             'response_time': response_time,
                             'model': Config.AI_MODEL
                         })
-
-            # Parse Claude's response
-            analysis_text = response.content[0].text
 
             logger.info("Claude API multi-article response received",
                         structured_data={
@@ -751,7 +744,6 @@ Return ONLY the JSON array, no additional text. Select exactly {target_stories} 
                         structured_data={
                             'model': Config.AI_MODEL,
                             'max_tokens': Config.AI_MAX_TOKENS,
-                            'temperature': Config.AI_TEMPERATURE,
                             'prompt_length': len(prompt)
                         })
     
@@ -767,7 +759,6 @@ Return ONLY the JSON array, no additional text. Select exactly {target_stories} 
             response = self.client.messages.create(
                 model=Config.AI_MODEL,
                 max_tokens=Config.AI_MAX_TOKENS,
-                temperature=Config.AI_TEMPERATURE,
                 messages=[{
                     "role": "user",
                     "content": prompt
@@ -776,15 +767,12 @@ Return ONLY the JSON array, no additional text. Select exactly {target_stories} 
 
             response_time = time.time() - start_time
 
-            # Estimate tokens used (rough approximation)
-            prompt_tokens = len(prompt.split()) * 1.3  # Rough token estimation
-            response_tokens = len(response.content[0].text.split()) * 1.3
-            total_tokens = int(prompt_tokens + response_tokens)
+            # Parse Claude's response (skips thinking blocks on adaptive-thinking models)
+            analysis_text = extract_response_text(response)
 
-            # Estimate cost (Claude pricing)
-            input_cost = (prompt_tokens / 1000) * 0.0008
-            output_cost = (response_tokens / 1000) * 0.0024
-            total_cost = input_cost + output_cost
+            # Real token usage and cost from the API response
+            input_tokens, output_tokens, total_cost = response_tokens_and_cost(response, prompt, analysis_text)
+            total_tokens = input_tokens + output_tokens
 
             # Record actual cost
             ai_cost_controller.record_cost(total_cost, total_tokens, "cluster_analysis")
@@ -796,9 +784,6 @@ Return ONLY the JSON array, no additional text. Select exactly {target_stories} 
                             'response_time': response_time,
                             'model': Config.AI_MODEL
                         })
-
-            # Parse Claude's response
-            analysis_text = response.content[0].text
 
             # Log Claude's response for debugging
             logger.info("=== CLAUDE API RESPONSE DEBUG ===",
@@ -1385,14 +1370,13 @@ Return only valid JSON, no additional text."""
             response = self.client.messages.create(
                 model=Config.AI_MODEL,
                 max_tokens=50,
-                temperature=0.0,
                 messages=[{
-                    "role": "user", 
+                    "role": "user",
                     "content": "Respond with exactly: 'API connection successful'"
                 }]
             )
-            
-            result = response.content[0].text.strip()
+
+            result = extract_response_text(response).strip()
             if "API connection successful" in result:
                 logger.info("✅ Claude API connection test successful")
                 return True

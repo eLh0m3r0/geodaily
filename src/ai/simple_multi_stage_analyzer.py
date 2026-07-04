@@ -16,6 +16,8 @@ from datetime import datetime
 from ..models import Article, AIAnalysis, ContentType
 from ..config import Config
 from ..archiver.ai_data_archiver import ai_archiver
+from .cost_controller import ai_cost_controller
+from .api_utils import extract_response_text, response_tokens_and_cost, load_recent_newsletter_titles
 
 logger = logging.getLogger(__name__)
 
@@ -81,7 +83,15 @@ class SimplifiedMultiStageAnalyzer:
         
         # Build the comprehensive prompt for single API call
         prompt = self._build_single_call_prompt(sorted_articles, target_stories)
-        
+
+        # Budget check before spending API tokens
+        cost_estimate = ai_cost_controller.estimate_cost(len(prompt), "analysis")
+        budget_check = ai_cost_controller.check_budget_allowance(cost_estimate.estimated_cost)
+        if not budget_check['allowed']:
+            logger.error(f"AI analysis blocked by budget: {budget_check['reason']} "
+                         f"(daily ${budget_check['current_daily_cost']:.2f}/${budget_check['daily_limit']:.2f})")
+            return []
+
         try:
             # Archive the request
             ai_archiver.archive_ai_request(
@@ -90,27 +100,48 @@ class SimplifiedMultiStageAnalyzer:
                 cluster_index=0,
                 main_article_title="Multi-stage comprehensive analysis"
             )
-            
+
             # SINGLE API CALL - does all stages internally
             print(f"📡 Making single API call for comprehensive analysis...")
             response = self.client.messages.create(
                 model=Config.AI_MODEL,
-                max_tokens=Config.AI_MAX_TOKENS or 4000,
-                temperature=0.3,
+                max_tokens=Config.AI_MAX_TOKENS or 16000,
                 messages=[{"role": "user", "content": prompt}]
             )
-            
-            response_text = response.content[0].text
-            
+
+            response_text = extract_response_text(response)
+            input_tokens, output_tokens, cost = response_tokens_and_cost(response, prompt, response_text)
+
             # Parse the comprehensive response
             analyses = self._parse_single_response(response_text, sorted_articles)
-            
-            # Calculate approximate cost (rough estimate)
-            prompt_tokens = len(prompt.split()) * 1.3  # Rough token estimate
-            response_tokens = len(response_text.split()) * 1.3
-            total_tokens = int(prompt_tokens + response_tokens)
-            estimated_cost = total_tokens * 0.00001  # Rough cost estimate
-            
+
+            # One corrective retry if the model returned malformed JSON —
+            # far better than silently publishing mock content.
+            if not analyses:
+                logger.warning("First response was not parseable JSON, retrying with corrective message")
+                retry_response = self.client.messages.create(
+                    model=Config.AI_MODEL,
+                    max_tokens=Config.AI_MAX_TOKENS or 16000,
+                    messages=[
+                        {"role": "user", "content": prompt},
+                        {"role": "assistant", "content": response_text or "(empty)"},
+                        {"role": "user", "content": "Your previous reply was not a valid JSON array. "
+                                                    "Return ONLY the JSON array in the exact format requested — "
+                                                    "no markdown fences, no commentary."}
+                    ]
+                )
+                retry_text = extract_response_text(retry_response)
+                r_in, r_out, r_cost = response_tokens_and_cost(retry_response, prompt, retry_text)
+                input_tokens += r_in
+                output_tokens += r_out
+                cost += r_cost
+                analyses = self._parse_single_response(retry_text, sorted_articles)
+                if analyses:
+                    response_text = retry_text
+
+            total_tokens = input_tokens + output_tokens
+            ai_cost_controller.record_cost(cost, total_tokens, "single_call_analysis")
+
             # Archive the response (one entry per analysis)
             if analyses:
                 for i, analysis in enumerate(analyses):
@@ -118,8 +149,8 @@ class SimplifiedMultiStageAnalyzer:
                         response_text=response_text,
                         analysis=analysis,  # Single analysis instead of list
                         cluster_index=i,
-                        cost=estimated_cost / len(analyses) if len(analyses) > 0 else estimated_cost,
-                        tokens=total_tokens // len(analyses) if len(analyses) > 0 else total_tokens
+                        cost=cost / len(analyses),
+                        tokens=total_tokens // len(analyses)
                     )
             else:
                 # Archive empty response
@@ -127,59 +158,77 @@ class SimplifiedMultiStageAnalyzer:
                     response_text=response_text,
                     analysis=None,
                     cluster_index=0,
-                    cost=estimated_cost,
+                    cost=cost,
                     tokens=total_tokens
                 )
-            
+
             elapsed = time.time() - start_time
-            
-            print(f"✅ Analysis complete in {elapsed:.1f}s with 1 API call")
+
+            print(f"✅ Analysis complete in {elapsed:.1f}s")
             print(f"   • Input: {len(sorted_articles)} articles")
             print(f"   • Output: {len(analyses)} stories")
-            print(f"   • Tokens: ~{total_tokens:,}")
-            print(f"   • Cost: ~${estimated_cost:.4f}")
-            
-            logger.info(f"Single-call analysis completed: {len(analyses)} stories, cost: ${estimated_cost:.4f}")
-            
+            print(f"   • Tokens: {input_tokens:,} in / {output_tokens:,} out")
+            print(f"   • Cost: ${cost:.4f}")
+
+            logger.info(f"Single-call analysis completed: {len(analyses)} stories, cost: ${cost:.4f}")
+
+            if not analyses:
+                # Fail loudly rather than publish generic mock text as analysis.
+                logger.error("AI analysis produced no valid stories after retry — failing this run")
             return analyses
-            
+
         except Exception as e:
             logger.error(f"Single-call analysis failed: {e}")
             print(f"❌ Analysis failed: {e}")
-            return self._create_mock_analyses(sorted_articles[:target_stories])
+            # Do NOT fall back to mock content in production — a missed issue is
+            # better than a published newsletter full of fabricated analysis.
+            return []
     
     def _build_single_call_prompt(self, articles: List[Article], target_stories: int) -> str:
         """Build comprehensive prompt for single API call."""
-        
+
         # Prepare article summaries
         article_texts = []
         for i, article in enumerate(articles):
             # Use full_content if available, otherwise summary
             content = getattr(article, 'full_content', None) or article.summary
-            # Limit content length to save tokens
-            if len(content) > 300:
-                content = content[:297] + "..."
-            
+            # Enough context for real analytical judgment without blowing the budget
+            if len(content) > 600:
+                content = content[:597] + "..."
+
+            weight = getattr(article, 'source_weight', 1.0) or 1.0
             # Safely format article info avoiding f-string issues with braces in content
             article_info = """
 [{}] {}
-Source: {} ({})
+Source: {} ({}, editorial weight {:.1f})
 Content: {}
 URL: {}
-""".format(i, article.title, article.source, article.source_category.value, content, article.url)
+""".format(i, article.title, article.source, article.source_category.value, weight, content, article.url)
             article_texts.append(article_info)
-        
+
         articles_section = "\n".join(article_texts)
-        
+
+        # Recent coverage context so the briefing doesn't repeat itself day to day
+        history_block = ""
+        if Config.ENABLE_NEWSLETTER_HISTORY:
+            history = load_recent_newsletter_titles()
+            if history:
+                history_block = ("\nRECENT NEWSLETTER COVERAGE (do NOT re-select these topics unless "
+                                 "there is a genuinely new development):\n" + history + "\n")
+
         # Use string formatting to avoid f-string issues with article content containing braces
         template = """You are a senior geopolitical analyst producing a structured daily intelligence briefing.
-
+{}
 ARTICLES TO ANALYZE:
 {}
 
 Select the {} MOST STRATEGICALLY SIGNIFICANT stories from the above articles.
 
-SOURCE PRIORITY (highest to lowest): War on the Rocks, Foreign Affairs, ICG, CSIS, Chatham House, Lawfare, The Diplomat, Foreign Policy, Atlantic Council, Al Jazeera, SCMP, mainstream outlets.
+SOURCE HANDLING RULES:
+- Each article lists an "editorial weight" (0.7–1.3). Treat higher-weight sources (think tanks, specialist analysis) as more authoritative than wire services and state-adjacent media.
+- When several articles cover the SAME event, treat them as ONE story and list ALL supporting indices in article_indices — corroboration by 2+ independent sources is a strong plus and should raise credibility_score.
+- A story supported by only a single low-weight source needs exceptional strategic significance to be selected; reflect single-sourcing in a lower credibility_score.
+- Distinguish reporting from advocacy: state-adjacent outlets (e.g. SCMP on China, Kremlin-aligned media) can flag what a government wants amplified — useful signal, but do not take their framing at face value.
 
 For each selected story, provide analysis in this EXACT JSON format — return a JSON array, no other text:
 
@@ -217,7 +266,7 @@ SELECTION RULES:
 4. All scores must be integers 1-10
 5. Return ONLY the raw JSON array — no markdown, no explanations, no code blocks"""
 
-        return template.format(articles_section, target_stories)
+        return template.format(history_block, articles_section, target_stories)
     
     def _parse_single_response(self, response_text: str, articles: List[Article]) -> List[AIAnalysis]:
         """Parse the single API response into AIAnalysis objects."""
@@ -233,20 +282,20 @@ SELECTION RULES:
             json_match = re.search(r'\[.*\]', response_text, re.DOTALL)
             if not json_match:
                 logger.error(f"No JSON array found in response. Full response: {response_text}")
-                return self._create_mock_analyses(articles[:4])
-            
+                return []
+
             json_text = json_match.group()
             logger.info(f"Found JSON: {json_text[:500]}...")
-            
+
             try:
                 analyses_data = json.loads(json_text)
             except json.JSONDecodeError as je:
                 logger.error(f"JSON decode error: {je}. JSON text: {json_text}")
-                return self._create_mock_analyses(articles[:4])
-            
+                return []
+
             if not isinstance(analyses_data, list):
                 logger.error(f"Expected list, got {type(analyses_data)}: {analyses_data}")
-                return self._create_mock_analyses(articles[:4])
+                return []
             
             analyses = []
             
@@ -293,7 +342,7 @@ SELECTION RULES:
         except Exception as e:
             logger.error(f"Failed to parse response: {e}", exc_info=True)
             logger.error(f"Response text was: {response_text[:1000] if response_text else 'None'}")
-            return self._create_mock_analyses(articles[:4])
+            return []
     
     def _create_mock_analyses(self, articles: List[Article]) -> List[AIAnalysis]:
         """Create BETTER mock analyses as fallback."""

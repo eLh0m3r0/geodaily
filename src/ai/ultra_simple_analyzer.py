@@ -144,11 +144,13 @@ ONLY return the JSON array, nothing else."""
             response = self.client.messages.create(
                 model=Config.AI_MODEL,
                 max_tokens=min(2000, Config.AI_MAX_TOKENS or 2000),
-                temperature=0.3,
                 messages=[{"role": "user", "content": prompt}]
             )
             
-            response_text = response.content[0].text.strip()
+            response_text = "".join(
+                block.text for block in response.content
+                if getattr(block, 'type', None) == 'text'
+            ).strip()
             
             # Very basic JSON extraction
             if response_text.startswith('[') and response_text.endswith(']'):

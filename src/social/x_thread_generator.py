@@ -99,10 +99,11 @@ class XThreadGenerator:
             # Single Claude API call for everything
             logger.info(f"Generating X.com thread for: {analysis.story_title[:50]}...")
             
+            # Sonnet 5 rejects non-default sampling params (temperature), so
+            # creativity is steered via the prompt instead.
             response = api_client.messages.create(
                 model=Config.AI_MODEL,
-                max_tokens=2000,  # Threads are shorter than full analysis
-                temperature=0.7,  # Bit more creative for social media
+                max_tokens=4000,  # Headroom for adaptive thinking + thread text
                 messages=[
                     {
                         "role": "user",
@@ -110,9 +111,12 @@ class XThreadGenerator:
                     }
                 ]
             )
-            
-            # Parse response
-            response_text = response.content[0].text
+
+            # Parse response (skip thinking blocks on adaptive-thinking models)
+            response_text = "".join(
+                block.text for block in response.content
+                if getattr(block, 'type', None) == 'text'
+            )
             
             # Extract JSON from response
             try:

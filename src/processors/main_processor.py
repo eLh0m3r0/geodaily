@@ -118,7 +118,12 @@ class MainProcessor:
             # Summary quality bonus
             if article.summary and len(article.summary) > 100:
                 score += 0.3
-            
+
+            # Per-source quality weight from sources.json (0.7–1.3): scales the
+            # whole score so curated specialist sources outrank weak feeds even
+            # when keyword hits are similar.
+            score *= getattr(article, 'source_weight', 1.0) or 1.0
+
             article.relevance_score = score
         
         # Sort by relevance score
