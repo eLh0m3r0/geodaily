@@ -112,13 +112,13 @@
       "name": "South China Morning Post RSS",
       "url": "https://www.scmp.com/rss/91/feed",
       "category": "regional",
-      "weight": 1.0
+      "weight": 0.8
     },
     {
       "name": "Asia Times",
       "url": "https://asiatimes.com/feed/",
       "category": "regional",
-      "weight": 1.0
+      "weight": 0.8
     },
     {
       "name": "Middle East Eye",
@@ -165,6 +165,66 @@
     {
       "name": "The Wire (India)",
       "url": "https://thewire.in/feed",
+      "category": "regional",
+      "weight": 1.0
+    },
+    {
+      "name": "Brookings Institution",
+      "url": "https://www.brookings.edu/feed/",
+      "category": "think_tank",
+      "weight": 1.2
+    },
+    {
+      "name": "Stimson Center",
+      "url": "https://www.stimson.org/feed/",
+      "category": "think_tank",
+      "weight": 1.1
+    },
+    {
+      "name": "ASPI The Strategist",
+      "url": "https://www.aspistrategist.org.au/feed/",
+      "category": "think_tank",
+      "weight": 1.1
+    },
+    {
+      "name": "Bellingcat",
+      "url": "https://www.bellingcat.com/feed/",
+      "category": "analysis",
+      "weight": 1.2
+    },
+    {
+      "name": "Just Security",
+      "url": "https://www.justsecurity.org/feed/",
+      "category": "analysis",
+      "weight": 1.1
+    },
+    {
+      "name": "38 North",
+      "url": "https://www.38north.org/feed/",
+      "category": "analysis",
+      "weight": 1.1
+    },
+    {
+      "name": "Breaking Defense",
+      "url": "https://breakingdefense.com/feed/",
+      "category": "analysis",
+      "weight": 1.0
+    },
+    {
+      "name": "Politico Europe",
+      "url": "https://www.politico.eu/feed/",
+      "category": "mainstream",
+      "weight": 0.9
+    },
+    {
+      "name": "Meduza (English)",
+      "url": "https://meduza.io/rss/en/all",
+      "category": "regional",
+      "weight": 1.0
+    },
+    {
+      "name": "Kyiv Independent",
+      "url": "https://kyivindependent.com/rss/",
       "category": "regional",
       "weight": 1.0
     }

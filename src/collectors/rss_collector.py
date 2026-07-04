@@ -236,7 +236,8 @@ class RSSCollector:
                 url=url,
                 summary=summary,
                 published_date=published_date,
-                author=author
+                author=author,
+                source_weight=getattr(source, 'weight', 1.0)
             )
             
             return article
