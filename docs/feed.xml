@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sat, 04 Jul 2026 08:35:20 GMT</pubDate>
-        <lastBuildDate>Sat, 04 Jul 2026 08:35:20 GMT</lastBuildDate>
+        <pubDate>Sat, 04 Jul 2026 08:49:38 GMT</pubDate>
+        <lastBuildDate>Sat, 04 Jul 2026 08:49:38 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -62,7 +62,7 @@
         <item>
         <title><![CDATA[Geopolitical Daily - July 04, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-07-04.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, July 04, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Sudan's War Regionalizes as RSF-Linked Militias Forge Central African Republic Alliance Under Russian Air Cover</strong>: Hemeti's RSF network extending into CAR via a new rebel alliance, repelled only by Russian airstrikes, signals Moscow's Africa Corps deepening its stake in a widening regional war. Combined with warni...</li><li><strong>Russia's Fuel Supply Collapse Coincides With Sharpest Putin Approval Drop Since Full-Scale Invasion</strong>: Nationwide gasoline shortages — entire cities like Novorossiysk running dry, 39-hour queues — combined with a 3.4-point single-week collapse in Putin's trust rating (to 73.3%) suggest wartime economic...</li><li><strong>China's Truck-Mounted Drone Launcher Signals New Export Model for Dispersed, Deniable Airpower</strong>: A civilian-truck-disguised drone launcher, quietly showcased then scrubbed from Chinese state media, represents a blueprint for low-cost, hard-to-detect strike capability that could be exported to sta...</li></ul><p><em>Published: July 04, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, July 04, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Kremlin's 'Spirit of Anchorage' Narrative Collapses as Domestic Discontent Signals Multiply</strong>: A year-long Kremlin propaganda construct built around alleged Trump-Putin Alaska agreements is unraveling just as Putin's trust ratings post their sharpest drop since 2022 and fuel shortages spark pub...</li><li><strong>Sudan's Hemeti Exports Civil War Into Central African Republic Via New Rebel Alliance</strong>: RSF leader Hemeti's alliance with CAR rebels, repelled only by Russian airstrikes at Am-Dafock, marks the regionalization of Sudan's war into Central Africa, deepening Wagner/Russian entanglement and ...</li><li><strong>Hormuz Shock Accelerates Asia's Structural Retreat From Just-in-Time Trade</strong>: The third major supply-chain shock in five years is pushing Asian manufacturers and governments toward permanent inventory buffering and diversified sourcing, a structural shift with lasting implicati...</li></ul><p><em>Published: July 04, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
         <pubDate>Sat, 04 Jul 2026 06:00:00 GMT</pubDate>
         <guid isPermaLink="false">geodaily-20260704</guid>
         <author>Geopolitical Daily Editorial Team</author>
@@ -72,6 +72,8 @@
         <category><![CDATA[China]]></category>
         <category><![CDATA[Russia]]></category>
         <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-07-04.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item><item>
