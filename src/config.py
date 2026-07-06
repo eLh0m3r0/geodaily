@@ -62,7 +62,9 @@ class Config:
     REQUEST_TIMEOUT = int(os.getenv("REQUEST_TIMEOUT", "30"))
     MAX_RETRIES = int(os.getenv("MAX_RETRIES", "3"))
     RETRY_DELAY = int(os.getenv("RETRY_DELAY", "2"))
-    USER_AGENT = os.getenv("USER_AGENT", "Mozilla/5.0 (compatible; GeopoliticalDaily/1.0)")
+    # Full browser UA — the honest "GeopoliticalDaily/1.0" bot UA gets 403s from
+    # Cloudflare-protected feeds (Chatham House, Lawfare, Stimson, Kyiv Independent...)
+    USER_AGENT = os.getenv("USER_AGENT", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
     
     # X.com Thread Generation Configuration
     X_THREADS_ENABLED = os.getenv("X_THREADS_ENABLED", "false").lower() == "true"

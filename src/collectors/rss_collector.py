@@ -70,7 +70,7 @@ class RSSCollector:
                 try:
                     article = self._parse_rss_entry(entry, source)
                     if article:
-                        # Filter articles by publication date (only last 24 hours)
+                        # Filter articles by publication date (per-category freshness window)
                         if self._is_recent_article(article):
                             parsed_articles.append(article)
                         else:
@@ -133,7 +133,7 @@ class RSSCollector:
                     url=url,
                     method='GET',
                     headers={
-                        'User-Agent': 'GeopoliticalDaily/1.0 (RSS Reader)',
+                        'User-Agent': Config.USER_AGENT,
                         'Accept': 'application/rss+xml, application/xml, text/xml'
                     }
                 )
@@ -310,8 +310,17 @@ class RSSCollector:
 
         return text
 
+    # Freshness window per source category. Think tanks publish weekly-ish
+    # analysis that stays relevant for days — a flat 24h window left ~10
+    # high-value sources permanently contributing zero articles.
+    FRESHNESS_WINDOW_HOURS = {
+        'think_tank': 72,
+        'analysis': 48,
+    }
+    DEFAULT_FRESHNESS_HOURS = 24
+
     def _is_recent_article(self, article) -> bool:
-        """Check if article was published within the last 24 hours."""
+        """Check if article is within its source category's freshness window."""
         from datetime import datetime, timezone, timedelta
 
         if not article.published_date:
@@ -324,9 +333,11 @@ class RSSCollector:
         # Get current time in UTC
         now = datetime.now(timezone.utc)
 
-        # Check if article is from last 24 hours
+        window_hours = self.FRESHNESS_WINDOW_HOURS.get(
+            article.source_category.value, self.DEFAULT_FRESHNESS_HOURS)
+
         time_diff = now - article.published_date
-        is_recent = time_diff <= timedelta(hours=24)
+        is_recent = time_diff <= timedelta(hours=window_hours)
 
         logger.debug(f"Article age check: {article.title[:50]}... - {time_diff} - Recent: {is_recent}",
                    pipeline_stage=PipelineStage.COLLECTION,

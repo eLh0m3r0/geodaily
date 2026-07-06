@@ -1,0 +1,64 @@
+name: CI — Pipeline Dry Run
+
+# Validates code changes without publishing anything: the pipeline runs in
+# DRY_RUN mode (mock AI, no API cost), and this workflow never commits the
+# archive, never deploys Pages, and provides no publisher secrets — so nothing
+# reaches subscribers or the live site.
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'src/**'
+      - 'sources.json'
+      - 'requirements.txt'
+      - '.github/workflows/ci.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'src/**'
+      - 'sources.json'
+      - 'requirements.txt'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  dry-run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Create necessary directories
+        run: mkdir -p logs output data docs/newsletters
+
+      - name: Run pipeline in dry-run mode
+        env:
+          DRY_RUN: 'true'
+          LOG_LEVEL: INFO
+          AI_MODEL: claude-sonnet-5
+          AI_MAX_TOKENS: '16000'
+          CLEANUP_ENABLED: 'false'
+          AI_ARCHIVE_ENABLED: 'true'
+          AI_ARCHIVE_PATH: ai_archive
+          X_THREADS_ENABLED: 'false'
+          ALLOW_OVERWRITE: 'true'
+        run: python -m src.main_pipeline
+
+      - name: Summary
+        run: echo "Dry-run pipeline completed — no content was published." >> $GITHUB_STEP_SUMMARY

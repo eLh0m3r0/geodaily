@@ -14,14 +14,10 @@ on:
         options:
           - 'true'
           - 'false'
-  # Only run on pushes to main that affect source code, not generated docs
-  push:
-    branches: [ main ]
-    paths:
-      - 'src/**'
-      - 'requirements.txt'
-      - '.github/workflows/daily_newsletter.yml'
-      - '!docs/**'
+  # NOTE: no push trigger — a push-triggered run would generate and PUBLISH a
+  # second newsletter the same day (double email to subscribers, double AI
+  # spend). Code changes are validated by ci.yml (dry run, no publishing) and
+  # go live with the next scheduled run.
 
 permissions:
   contents: write

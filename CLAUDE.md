@@ -229,7 +229,9 @@ The AI analyzer now evaluates stories across multiple dimensions:
 ### Working with Sources
 - Current configuration: 40 sources (38 RSS + 2 web)
 - Each source carries a per-source `weight` (0.7–1.3) that scales relevance scoring, deduplication preference, and is passed to the AI as an editorial-quality signal
-- Validate feeds with `python scripts/validate_sources.py` (add `--strict` in CI to fail on dead feeds)
+- Validate feeds with `python scripts/validate_sources.py` (add `--strict` in CI to fail on dead feeds); a weekly `source_health.yml` workflow runs it every Monday
+- Freshness windows are per category: think_tank 72h, analysis 48h, everything else 24h (`RSSCollector.FRESHNESS_WINDOW_HOURS`)
+- The collector sends a full browser User-Agent (`USER_AGENT` in config) — Cloudflare-protected feeds return 403 to bot-style UAs
 - Add new RSS sources to `tier1_sources` in `sources.json`
 - Add web scraping sources to `tier2_sources` with CSS selectors
 - Test new sources with `test_simple_collection.py`
@@ -287,6 +289,7 @@ The AI analyzer now evaluates stories across multiple dimensions:
 ### GitHub Actions
 - Daily automation at 6:00 UTC
 - Manual trigger with dry-run option
+- No push trigger on the production workflow — pushes to `src/**` run `ci.yml` (dry-run validation, publishes nothing); code changes go live with the next scheduled run
 - Issue creation on repeated failures
 - Artifact retention for 30 days including AI archive data and dashboards
 - Automatic AI archive cleanup (30-day retention policy)
