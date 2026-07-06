@@ -179,18 +179,6 @@
       "url": "https://www.themoscowtimes.com/rss/news",
       "category": "regional",
       "weight": 1.0
-    },
-    {
-      "name": "RUSI",
-      "url": "https://rusi.org/rss.xml",
-      "category": "think_tank",
-      "weight": 1.2
-    },
-    {
-      "name": "Council on Foreign Relations",
-      "url": "https://www.cfr.org/rss.xml",
-      "category": "think_tank",
-      "weight": 1.2
     }
   ],
   "tier2_sources": [
