@@ -49,12 +49,6 @@
       "weight": 1.2
     },
     {
-      "name": "CSIS",
-      "url": "https://www.csis.org/rss.xml",
-      "category": "think_tank",
-      "weight": 1.2
-    },
-    {
       "name": "Atlantic Council",
       "url": "https://www.atlanticcouncil.org/feed/",
       "category": "think_tank",
@@ -91,18 +85,6 @@
       "weight": 1.3
     },
     {
-      "name": "Chatham House",
-      "url": "https://www.chathamhouse.org/rss.xml",
-      "category": "think_tank",
-      "weight": 1.2
-    },
-    {
-      "name": "Lawfare",
-      "url": "https://www.lawfaremedia.org/feed",
-      "category": "analysis",
-      "weight": 1.1
-    },
-    {
       "name": "France 24 English",
       "url": "https://www.france24.com/en/rss",
       "category": "regional",
@@ -133,12 +115,6 @@
       "weight": 0.9
     },
     {
-      "name": "Carnegie Endowment for International Peace",
-      "url": "https://carnegieendowment.org/feed/",
-      "category": "think_tank",
-      "weight": 1.1
-    },
-    {
       "name": "Responsible Statecraft",
       "url": "https://responsiblestatecraft.org/feed/",
       "category": "analysis",
@@ -155,30 +131,6 @@
       "url": "https://africanarguments.org/feed/",
       "category": "regional",
       "weight": 1.0
-    },
-    {
-      "name": "Americas Quarterly",
-      "url": "https://americasquarterly.org/feed/",
-      "category": "regional",
-      "weight": 1.0
-    },
-    {
-      "name": "The Wire (India)",
-      "url": "https://thewire.in/feed",
-      "category": "regional",
-      "weight": 1.0
-    },
-    {
-      "name": "Brookings Institution",
-      "url": "https://www.brookings.edu/feed/",
-      "category": "think_tank",
-      "weight": 1.2
-    },
-    {
-      "name": "Stimson Center",
-      "url": "https://www.stimson.org/feed/",
-      "category": "think_tank",
-      "weight": 1.1
     },
     {
       "name": "ASPI The Strategist",
@@ -223,8 +175,8 @@
       "weight": 1.0
     },
     {
-      "name": "Kyiv Independent",
-      "url": "https://kyivindependent.com/rss/",
+      "name": "The Moscow Times",
+      "url": "https://www.themoscowtimes.com/rss/news",
       "category": "regional",
       "weight": 1.0
     }
