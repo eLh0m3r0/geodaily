@@ -31,4 +31,8 @@ jobs:
         run: pip install feedparser
 
       - name: Validate sources
-        run: python scripts/validate_sources.py --strict | tee -a $GITHUB_STEP_SUMMARY
+        # pipefail so --strict's non-zero exit survives the tee pipe
+        shell: bash
+        run: |
+          set -o pipefail
+          python scripts/validate_sources.py --strict | tee -a $GITHUB_STEP_SUMMARY

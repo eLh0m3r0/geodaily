@@ -49,12 +49,6 @@
       "weight": 1.2
     },
     {
-      "name": "CSIS",
-      "url": "https://www.csis.org/rss.xml",
-      "category": "think_tank",
-      "weight": 1.2
-    },
-    {
       "name": "Atlantic Council",
       "url": "https://www.atlanticcouncil.org/feed/",
       "category": "think_tank",
@@ -98,7 +92,7 @@
     },
     {
       "name": "Lawfare",
-      "url": "https://www.lawfaremedia.org/feed",
+      "url": "https://www.lawfaremedia.org/rss.xml",
       "category": "analysis",
       "weight": 1.1
     },
@@ -134,7 +128,7 @@
     },
     {
       "name": "Carnegie Endowment for International Peace",
-      "url": "https://carnegieendowment.org/feed/",
+      "url": "https://carnegieendowment.org/rss/solr?fa=pubs",
       "category": "think_tank",
       "weight": 1.1
     },
@@ -157,20 +151,8 @@
       "weight": 1.0
     },
     {
-      "name": "Americas Quarterly",
-      "url": "https://americasquarterly.org/feed/",
-      "category": "regional",
-      "weight": 1.0
-    },
-    {
-      "name": "The Wire (India)",
-      "url": "https://thewire.in/feed",
-      "category": "regional",
-      "weight": 1.0
-    },
-    {
       "name": "Brookings Institution",
-      "url": "https://www.brookings.edu/feed/",
+      "url": "http://feeds.brookings.edu/BrookingsRSS/topfeeds/LatestFromBrookings",
       "category": "think_tank",
       "weight": 1.2
     },
@@ -224,7 +206,7 @@
     },
     {
       "name": "Kyiv Independent",
-      "url": "https://kyivindependent.com/rss/",
+      "url": "https://kyivindependent.com/feed",
       "category": "regional",
       "weight": 1.0
     }
