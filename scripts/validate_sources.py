@@ -30,7 +30,8 @@ except ImportError:
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 SOURCES_FILE = PROJECT_ROOT / "sources.json"
-USER_AGENT = "Mozilla/5.0 (compatible; GeopoliticalDaily/1.0; source-validator)"
+# Match the collector's browser UA so validation reflects production behavior
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 
 
 def check_feed(source: dict, max_age_days: int) -> dict:

@@ -111,7 +111,7 @@ class WebScraper:
                         'DNT': '1',
                         'Connection': 'keep-alive',
                         'Upgrade-Insecure-Requests': '1',
-                        'User-Agent': 'Mozilla/5.0 (compatible; GeopoliticalDaily/1.0)'
+                        'User-Agent': Config.USER_AGENT
                     }
                 }
 

@@ -1,0 +1,34 @@
+name: Weekly Source Health Check
+
+# Validates every RSS feed in sources.json (reachability, entry count,
+# freshness). Fails the run when any feed is dead so the repo owner gets a
+# notification and can fix or remove the source before it silently degrades
+# the newsletter's article pool.
+
+on:
+  schedule:
+    # Mondays at 5:00 UTC, an hour before the daily newsletter run
+    - cron: '0 5 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install feedparser
+        run: pip install feedparser
+
+      - name: Validate sources
+        run: python scripts/validate_sources.py --strict | tee -a $GITHUB_STEP_SUMMARY
