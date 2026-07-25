@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 24 Jul 2026 08:39:53 GMT</pubDate>
-        <lastBuildDate>Fri, 24 Jul 2026 08:39:53 GMT</lastBuildDate>
+        <pubDate>Sat, 25 Jul 2026 08:21:11 GMT</pubDate>
+        <lastBuildDate>Sat, 25 Jul 2026 08:21:11 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,24 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - July 25, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-07-25.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Saturday, July 25, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Iran War Enters Ground-Invasion Calculus as Chinese-Aided Strikes Erode US Base Defenses</strong>: Trump's refusal to rule out ground troops, combined with Chinese satellite imagery and Russian tactics boosting Iranian strike accuracy against US bases, marks a qualitative escalation beyond the nava...</li><li><strong>Kyiv's 'Cardboard Maidan' Tests Zelensky's Wartime Authority Beyond the Syrskyi Purge</strong>: Street protests invoking 2014 Maidan symbolism show the military leadership rift has moved from institutional infighting to public mobilization, threatening wartime cohesion at a moment when Western b...</li><li><strong>North Korea Constitutionalizes Nuclear Doctrine While Building a Nuclear-Armed Navy</strong>: Pyongyang's formal doctrinal shift toward naval nuclear capability signals a move toward assured second-strike survivability, complicating US-ROK extended deterrence planning and potentially accelerat...</li></ul><p><em>Published: July 25, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sat, 25 Jul 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260725</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-07-25.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - July 24, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-07-24.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Friday, July 24, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Houthi Strikes on Saudi Tankers Open Second Maritime Front as Iran War Balance Shifts</strong>: Houthi attacks on Saudi tankers extend the Iran war beyond Hormuz to the Red Sea, threatening a second global chokepoint and pushing Brent past $100. Combined with FP's assessment that Iran retains ta...</li><li><strong>Ukraine's Deep-Strike Strategy Draws Strategic Critique as Costs Spread to Kazakhstan and Crimea</strong>: Responsible Statecraft's critique challenges the Western consensus that Russia is buckling under Ukraine's deep-strike campaign, warning of strategic overreach. Simultaneously, Kazakhstan's forced oil...</li><li><strong>China Retaliates Against EU Sanctions as Beijing Braces for Western Alignment</strong>: China's export-control retaliation against 14 EU entities, following Brussels' 21st Russia sanctions package, shows Beijing directly linking European Russia policy to its own trade leverage. ASPI's ca...</li></ul><p><em>Published: July 24, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -210,22 +228,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Economy]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-07-16.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - July 15, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-07-15.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, July 15, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ankara Summit Papers Over a Structural NATO Split Over Trump's Deterrence Commitments</strong>: Four independent high-weight analyses converge on the same conclusion: the Ankara communique's Article 5 language masks a real bifurcation between US-aligned and European-autonomy factions. This shape...</li><li><strong>Ukraine's Refinery Campaign Exports a Fuel Crisis Into Russia's Central Asian Periphery</strong>: Ukraine's drone campaign against Russian refineries (Omsk, Krasnodar, Bashkortostan) is now generating a documented fuel crisis in Kyrgyzstan and Tajikistan, states dependent on Russian refined produc...</li><li><strong>Burkina Faso's Rupture With Paris Completes France's Sahel Expulsion</strong>: The formal severance of diplomatic ties marks the culmination of a multi-year collapse of French influence across the Sahel, with Burkina Faso joining Mali and Niger in explicit realignment toward Rus...</li></ul><p><em>Published: July 15, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Wed, 15 Jul 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260715</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[United States]]></category>
-        <category><![CDATA[Europe]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-07-15.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
