@@ -1,0 +1,101 @@
+[
+  {
+    "thread_title": "Únik EUV technologie ASML do Číny?",
+    "tweets": [
+      {
+        "number": 1,
+        "content": "1/7 🚨 Podezření na únik nejpřísněji střežené technologie na světě. Pokud Čína získala byť částečný přístup k EUV litografii ASML, mění se celá hra o polovodiče a vojenskou AI.",
+        "char_count": 175
+      },
+      {
+        "number": 2,
+        "content": "2/7 🔍 ASML je jediná firma na světě vyrábějící EUV stroje - klíčové pro výrobu nejpokročilejších čipů. Export do Číny je roky blokován sankcemi USA a Nizozemska.",
+        "char_count": 161
+      },
+      {
+        "number": 3,
+        "content": "3/7 📊 Celá strategie exportních kontrol USA stojí na předpokladu, že Čína tuto technologii nemá a roky nebude mít. Pokud se to změní, časový plán čínské soběstačnosti v čipech se dramaticky zkrátí.",
+        "char_count": 197
+      },
+      {
+        "number": 4,
+        "content": "4/7 🌍 Proč je to důležité pro nás? Vojenská AI kapacita Číny je klíčovým faktorem v plánování konfliktu o Tchaj-wan. Jakýkoliv posun v čipové rovnováze mění bezpečnostní kalkulace celého regionu - i pro Evropu.",
+        "char_count": 210
+      },
+      {
+        "number": 5,
+        "content": "5/7 💡 Co média přehlížejí: Únik nemusí znamenat celý skener. Dodavatelský řetězec má mnoho vrstev - subsystémy a komponenty mohou unikat i bez transferu kompletní technologie. Kontrola je děravější, než se zdá.",
+        "char_count": 210
+      },
+      {
+        "number": 6,
+        "content": "6/7 🎯 Co sledovat: Formální vyšetřování amerického ministerstva obchodu nebo přezkum exportní licence ASML v příštím týdnu. To ukáže, jak vážně to Washington bere.",
+        "char_count": 163
+      },
+      {
+        "number": 7,
+        "content": "7/7 ⚡ Impact skóre 8/10 - tohle není jen technická story, je to test limitů celé strategie technologické izolace Číny. Sledujte vývoj, dopady pocítí i evropský průmysl.",
+        "char_count": 168,
+        "hashtags_included": true
+      }
+    ],
+    "hashtags": [
+      "#geopolitika",
+      "#polovodiče",
+      "#Tchajwan"
+    ],
+    "estimated_engagement": 8.2,
+    "main_topic": "polovodiče",
+    "source_analysis_id": "Suspected ASML EUV Leakage Tests the Limits of Chip Containment",
+    "generated_at": "2026-07-29T08:53:39.158657"
+  },
+  {
+    "thread_title": "Írán: Ekonomický kolaps bez kapitulace",
+    "tweets": [
+      {
+        "number": 1,
+        "content": "1/7 🚨 Íránský rial se propadá, inflace řádí, ekonomika je v troskách po letech sankcí. A přesto Teherán nemění ani milimetr své strategické pozice. Proč sankce nefungují tak, jak si Západ myslel? 🔍",
+        "char_count": 197
+      },
+      {
+        "number": 2,
+        "content": "2/7 📊 Fakta: kolaps měny, hyperinflace, ekonomická blokáda. Přesto Írán drží svůj jaderný program i podporu Hizballáhu beze změny. Ekonomická bolest neznamená politickou kapitulaci - to je klíčové zjištění.",
+        "char_count": 206
+      },
+      {
+        "number": 3,
+        "content": "3/7 💡 Klíčová chyba v uvažování: předpokládáme ekonomickou racionalitu. Ale pro režim v Teheránu je prioritou přežití, ne HDP. Íránská elita je ochotná nést i extrémní ekonomickou bolest, pokud to zajistí kontrolu moci.",
+        "char_count": 219
+      },
+      {
+        "number": 4,
+        "content": "4/7 🌍 Toto přímo ovlivňuje probíhající jednání USA-Írán. Pokud sankce mají strukturální limity, americká vyjednávací pozice je slabší, než se zdá. A zálivové státy to vědí - odtud jejich hedging strategie.",
+        "char_count": 205
+      },
+      {
+        "number": 5,
+        "content": "5/7 ⚡ Pro Evropu a ČR to znamená: nespoléhat na to, že ekonomický tlak sám o sobě vyřeší kaspickou krizi nebo íránskou otázku. Energetické trhy a bezpečnostní kalkulace v regionu budou nadále nestabilní.",
+        "char_count": 203
+      },
+      {
+        "number": 6,
+        "content": "6/7 🎯 Co sledovat v nejbližších dnech: nová data o propadu rialu a komentáře MMF k financování íránské rekonstrukce. To ukáže, jestli tlak eskaluje, nebo Teherán najde další cestu ven.",
+        "char_count": 184
+      },
+      {
+        "number": 7,
+        "content": "7/7 Impact skóre 7/10 - toto téma bude formovat geopolitiku Blízkého východu i energetickou bezpečnost Evropy v následujících měsících. Sledujte vývoj pozorně. #geopolitika #Írán #bezpečnost",
+        "char_count": 190
+      }
+    ],
+    "hashtags": [
+      "#geopolitika",
+      "#Írán",
+      "#bezpečnost"
+    ],
+    "estimated_engagement": 7.8,
+    "main_topic": "Iran",
+    "source_analysis_id": "Iran's Economic Collapse Hasn't Bought Strategic Capitulation",
+    "generated_at": "2026-07-29T08:53:59.400174"
+  }
+]
