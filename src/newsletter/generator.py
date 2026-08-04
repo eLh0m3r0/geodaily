@@ -743,17 +743,17 @@ class NewsletterGenerator:
         """
     
     def _generate_intro_text(self, date: datetime, story_count: int) -> str:
-        """Generate intro text for newsletter."""
+        """Generate intro text for newsletter.
+
+        Kept to two short sentences — on mobile a long boilerplate intro fills
+        the entire first screen before any actual content.
+        """
         day_name = date.strftime('%A')
         date_str = date.strftime('%B %d, %Y')
 
-        intro = f"""Good morning. Today is {day_name}, {date_str}.
-
-Your daily geopolitical briefing covers {story_count} key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers.
-
-Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks."""
-
-        return intro
+        return (f"Good morning. It's {day_name}, {date_str} — today's briefing covers "
+                f"{story_count} developments shaping global affairs: breaking news, "
+                f"strategic analysis, and the trends behind the headlines.")
     
     def _generate_footer_text(self) -> str:
         """Generate footer text for newsletter."""
@@ -779,17 +779,47 @@ Today's briefing includes immediate developments requiring attention, strategic 
             "trend": "#6b46c1",
         }
 
-        header_html = f"""<div style="background-color:{C_NAVY};padding:36px 28px;text-align:center;">
-  <div style="font-family:Georgia,'Times New Roman',serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:{C_GOLD};margin-bottom:12px;">Intelligence Briefing</div>
-  <h1 style="font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:bold;color:{C_WHITE};margin:0 0 8px 0;line-height:1.2;">{newsletter.title}</h1>
-  <div style="font-family:Georgia,'Times New Roman',serif;font-size:13px;color:#94a3b8;margin-bottom:10px;font-style:italic;">Strategic Intelligence Beyond the Headlines</div>
+        # No hyphenation anywhere — email clients (and Buttondown's wrapper CSS)
+        # otherwise hyphenate aggressively on narrow screens ("immedi-ate").
+        NO_HYPHENS = "-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;"
+
+        # This <style> block lives in the BODY on purpose: Buttondown strips the
+        # <head>, but body content is passed through. It fixes two mobile issues
+        # inline styles cannot: iOS data detectors turning "9/10" into a blue
+        # link, and font/padding downscaling on small screens (!important is
+        # required to beat the inline styles).
+        style_block = """<style>
+a[x-apple-data-detectors]{color:inherit !important;text-decoration:none !important;font-size:inherit !important;font-family:inherit !important;font-weight:inherit !important;line-height:inherit !important;}
+body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyphens:none !important;}
+@media only screen and (max-width:480px){
+  .nl-body{padding:6px !important;}
+  .nl-content{padding-left:16px !important;padding-right:16px !important;}
+  .nl-header{padding:24px 16px !important;}
+  .nl-h1{font-size:23px !important;}
+  .nl-h2{font-size:19px !important;}
+  .nl-intro{padding:14px 14px !important;}
+  .nl-box{padding:12px 14px !important;}
+}
+</style>"""
+
+        header_html = f"""<div class="nl-header" style="background-color:{C_NAVY};padding:30px 24px;text-align:center;">
+  <div style="font-family:Georgia,'Times New Roman',serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:{C_GOLD};margin-bottom:10px;">Intelligence Briefing</div>
+  <h1 class="nl-h1" style="font-family:Georgia,'Times New Roman',serif;font-size:26px;font-weight:bold;color:{C_WHITE};margin:0 0 8px 0;line-height:1.25;{NO_HYPHENS}">{newsletter.title}</h1>
+  <div style="font-family:Georgia,'Times New Roman',serif;font-size:13px;color:#94a3b8;margin-bottom:8px;font-style:italic;">Strategic Intelligence Beyond the Headlines</div>
   <div style="font-family:Georgia,'Times New Roman',serif;font-size:13px;color:#64748b;">{newsletter.date.strftime('%A, %B %-d, %Y')}</div>
 </div>
 <div style="background-color:{C_GOLD};height:3px;"></div>"""
 
         intro_html = ""
         if newsletter.intro_text:
-            intro_html = f"""<div style="background-color:{C_LIGHT};border-left:4px solid {C_GOLD};padding:20px 24px;margin:28px 0;font-family:Georgia,'Times New Roman',serif;font-size:16px;line-height:1.75;color:{C_TEXT};white-space:pre-line;">{newsletter.intro_text}</div>"""
+            # Render paragraphs explicitly instead of relying on white-space:
+            # pre-line, which turns any stray newline into a ragged mobile mess.
+            paras = [p.strip() for p in newsletter.intro_text.split("\n\n") if p.strip()]
+            paragraphs = "".join(
+                f'<p style="margin:{"0" if i == len(paras) - 1 else "0 0 12px 0"};">{p}</p>'
+                for i, p in enumerate(paras)
+            )
+            intro_html = f"""<div class="nl-intro" style="background-color:{C_LIGHT};border-left:4px solid {C_GOLD};padding:16px 18px;margin:24px 0;font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.7;color:{C_TEXT};{NO_HYPHENS}">{paragraphs}</div>"""
 
         stories_html = ""
         for i, story in enumerate(newsletter.stories):
@@ -812,10 +842,11 @@ Today's briefing includes immediate developments requiring attention, strategic 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{newsletter.title} — {newsletter.date.strftime('%B %-d, %Y')}</title>
 </head>
-<body style="margin:0;padding:20px;background-color:#f0f2f5;font-family:Georgia,'Times New Roman',serif;">
+<body class="nl-body" style="margin:0;padding:12px;background-color:#f0f2f5;font-family:Georgia,'Times New Roman',serif;">
+{style_block}
 <div style="max-width:600px;margin:0 auto;background-color:{C_WHITE};border-radius:6px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
   {header_html}
-  <div style="padding:0 32px 32px 32px;">
+  <div class="nl-content" style="padding:0 24px 28px 24px;">
     {intro_html}
     {stories_html}
     {footer_html}
@@ -865,25 +896,30 @@ Today's briefing includes immediate developments requiring attention, strategic 
 </div>"""
 
         border_bottom = "" if is_last else f"border-bottom:1px solid {C_BORDER};"
+        NO_HYPHENS = "-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;"
+        # &#8203; splits the "9/10" pattern so iOS data detectors stop turning
+        # the impact score into a blue tappable "date" link (belt: the style
+        # block also neutralizes a[x-apple-data-detectors]).
+        impact_label = f"Impact {story.impact_score}&#8203;/&#8203;10"
 
-        return f"""<div style="{border_bottom}margin-bottom:36px;padding-bottom:36px;padding-top:28px;">
-  <div style="margin-bottom:14px;">
+        return f"""<div style="{border_bottom}margin-bottom:28px;padding-bottom:28px;padding-top:24px;">
+  <div style="margin-bottom:12px;">
     <span style="display:inline-block;background-color:{content_type_color};color:#ffffff;font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;padding:4px 10px;border-radius:12px;margin-right:6px;margin-bottom:4px;">{content_type_display}</span>
     <span style="display:inline-block;background-color:{C_LIGHT};color:#4a5568;font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:0.5px;padding:4px 8px;border-radius:10px;border:1px solid {C_BORDER};margin-right:6px;margin-bottom:4px;">{region_display}</span>
-    <span style="display:inline-block;background-color:{impact_color};color:#ffffff;font-size:10px;font-weight:bold;padding:4px 8px;border-radius:10px;margin-bottom:4px;">Impact {story.impact_score}/10</span>
+    <span style="display:inline-block;background-color:{impact_color};color:#ffffff;font-size:10px;font-weight:bold;padding:4px 8px;border-radius:10px;margin-bottom:4px;">{impact_label}</span>
   </div>
-  <h2 style="font-family:Georgia,'Times New Roman',serif;font-size:22px;font-weight:bold;color:{C_NAVY};margin:0 0 22px 0;line-height:1.35;">{story.story_title}</h2>
-  <div style="margin-bottom:20px;">
-    <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:{C_MUTED};margin-bottom:8px;">Why This Matters</div>
-    <div style="font-family:Georgia,'Times New Roman',serif;font-size:16px;line-height:1.75;color:{C_TEXT};">{story.why_important}</div>
+  <h2 class="nl-h2" style="font-family:Georgia,'Times New Roman',serif;font-size:21px;font-weight:bold;color:{C_NAVY};margin:0 0 16px 0;line-height:1.35;{NO_HYPHENS}">{story.story_title}</h2>
+  <div style="margin-bottom:18px;">
+    <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:{C_MUTED};margin-bottom:6px;">Why This Matters</div>
+    <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.7;color:{C_TEXT};{NO_HYPHENS}">{story.why_important}</div>
   </div>
-  <div style="margin-bottom:20px;background-color:{C_LIGHT};padding:16px 18px;border-left:3px solid {C_GOLD};">
-    <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:{C_MUTED};margin-bottom:8px;">What Others Are Missing</div>
-    <div style="font-family:Georgia,'Times New Roman',serif;font-size:16px;line-height:1.75;color:{C_TEXT};">{story.what_overlooked}</div>
+  <div class="nl-box" style="margin-bottom:18px;background-color:{C_LIGHT};padding:14px 16px;border-left:3px solid {C_GOLD};">
+    <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:{C_MUTED};margin-bottom:6px;">What Others Are Missing</div>
+    <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.7;color:{C_TEXT};{NO_HYPHENS}">{story.what_overlooked}</div>
   </div>
-  <div style="margin-bottom:20px;">
-    <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:{C_MUTED};margin-bottom:8px;">What to Watch</div>
-    <div style="font-family:Georgia,'Times New Roman',serif;font-size:16px;line-height:1.75;color:{C_TEXT};">{story.prediction}</div>
+  <div style="margin-bottom:18px;">
+    <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:{C_MUTED};margin-bottom:6px;">What to Watch</div>
+    <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.7;color:{C_TEXT};{NO_HYPHENS}">{story.prediction}</div>
   </div>
   {sources_html}
 </div>"""
