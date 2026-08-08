@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 07 Aug 2026 07:30:25 GMT</pubDate>
-        <lastBuildDate>Fri, 07 Aug 2026 07:30:25 GMT</lastBuildDate>
+        <pubDate>Sat, 08 Aug 2026 07:07:55 GMT</pubDate>
+        <lastBuildDate>Sat, 08 Aug 2026 07:07:55 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,23 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - August 08, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-08.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Saturday, August 08, 2026 — today's briefing covers 4 developments shaping global affairs: breaking news, strategic analysis, and the trends behind the headlines.</p><h3>Today's Key Stories:</h3><ul><li><strong>Senate's 100% Secondary Tariff Bill Weaponizes Trade Against Russian Oil Buyers</strong>: The bill's secondary tariffs threaten India and China directly, converting a Russia sanctions measure into a broader confrontation with Washington's two largest trading partners in Asia. This could ac...</li><li><strong>Ukraine's Strikes on Russian E-Commerce Logistics Signal Widening Deep-Strike Target Set</strong>: Hitting Wildberries warehouses 2,000km inside Russia extends Kyiv's deep-strike doctrine beyond energy infrastructure into civilian-adjacent logistics networks, eroding Russian rear-area security perc...</li><li><strong>Pentagon Moves to Loosen Nuclear Employment Guidance Amid Multipolar Deterrence Debate</strong>: A review of nuclear employment guidance under Colby signals Washington may be preparing to expand options for nuclear use amid simultaneous competition with Russia and China, intersecting with academi...</li></ul><p><em>Published: August 08, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sat, 08 Aug 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260808</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[United States]]></category>
+        <category><![CDATA[Economy]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-08.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - August 07, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-07.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Friday, August 07, 2026 — today's briefing covers 4 developments shaping global affairs: breaking news, strategic analysis, and the trends behind the headlines.</p><h3>Today's Key Stories:</h3><ul><li><strong>Mutual Blockade Effectively Terminates Black Sea Grain Corridor</strong>: Ukraine's port freeze and Russia's systematic missile/drone targeting of merchant shipping have quietly collapsed the 2023 grain corridor without formal announcement, threatening global food prices, i...</li><li><strong>Ukraine's Deep-Strike Refinery Campaign Forces Russia to Roll Back Fuel Standards</strong>: Ukrainian drones now routinely hit refineries and logistics nodes over 2,000km inside Russia, degrading refining capacity enough that Moscow is reintroducing banned low-grade Euro-2 gasoline nationwid...</li><li><strong>Saudi-Pakistan-Turkey Pact Signals Emerging Sunni Security Axis Independent of Washington</strong>: A formal trilateral defense agreement among Saudi Arabia, Pakistan, and Turkey — the latter two nuclear-capable or NATO-aligned — reshapes Middle Eastern security architecture post-Iran war, hedging a...</li></ul><p><em>Published: August 07, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -209,23 +226,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-07-30.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - July 29, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-07-29.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Wednesday, July 29, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Graham's Legacy Sanctions Bill Clears Senate Hurdle as Zelensky Watches</strong>: A bipartisan Senate deal on sweeping Russian energy sanctions, timed to Graham's funeral and Zelensky's visit, signals Congress may outpace Trump's cautious diplomacy. Passage would tighten pressure o...</li><li><strong>Hungary's Political Shift Reopens the Balkans' Strategic Fault Line</strong>: Orbán's political weakening removes Serbia's chief EU patron just as Washington formalizes a strategic dialogue with Vucic, a leader drifting toward autocracy and Chinese alignment. The Balkans remain...</li><li><strong>Suspected ASML EUV Leakage Tests the Limits of Chip Containment</strong>: If China obtained even partial EUV lithography technology, it would undercut the core premise of US-led semiconductor export controls, accelerating China's chip self-sufficiency timeline and altering ...</li></ul><p><em>Published: July 29, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Wed, 29 Jul 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260729</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[United States]]></category>
-        <category><![CDATA[Europe]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-07-29.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
