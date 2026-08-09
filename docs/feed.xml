@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sat, 08 Aug 2026 07:07:55 GMT</pubDate>
-        <lastBuildDate>Sat, 08 Aug 2026 07:07:55 GMT</lastBuildDate>
+        <pubDate>Sun, 09 Aug 2026 07:10:06 GMT</pubDate>
+        <lastBuildDate>Sun, 09 Aug 2026 07:10:06 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,22 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - August 09, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-09.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Sunday, August 09, 2026 — today's briefing covers 4 developments shaping global affairs: breaking news, strategic analysis, and the trends behind the headlines.</p><h3>Today's Key Stories:</h3><ul><li><strong>Tehran's Succession Vacuum Collides With Hormuz Brinkmanship</strong>: Doubts over the Supreme Leader's condition combine with Iran's six conditions for reopening Hormuz and a tanker attack blamed on Tehran, raising odds of miscalculation. A contested succession inside a...</li><li><strong>Hamas Disarmament Pledge Creates Narrow Opening for Gaza Endgame</strong>: A credible Hamas disarmament commitment shifts the burden onto Israel and could reshape postwar Gaza governance, regional normalization prospects, and Europe's role as guarantor. Failure to seize this...</li><li><strong>Ukrainian Drone Debris Near Bulgarian Pipeline Tests NATO's Threshold</strong>: A drone incident near the Trans-Balkan gas pipeline on NATO/EU territory, even if denied by Kyiv, illustrates the growing risk of long-range strike spillover into allied states and could strain Wester...</li></ul><p><em>Published: August 09, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sun, 09 Aug 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260809</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-09.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - August 08, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-08.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Saturday, August 08, 2026 — today's briefing covers 4 developments shaping global affairs: breaking news, strategic analysis, and the trends behind the headlines.</p><h3>Today's Key Stories:</h3><ul><li><strong>Senate's 100% Secondary Tariff Bill Weaponizes Trade Against Russian Oil Buyers</strong>: The bill's secondary tariffs threaten India and China directly, converting a Russia sanctions measure into a broader confrontation with Washington's two largest trading partners in Asia. This could ac...</li><li><strong>Ukraine's Strikes on Russian E-Commerce Logistics Signal Widening Deep-Strike Target Set</strong>: Hitting Wildberries warehouses 2,000km inside Russia extends Kyiv's deep-strike doctrine beyond energy infrastructure into civilian-adjacent logistics networks, eroding Russian rear-area security perc...</li><li><strong>Pentagon Moves to Loosen Nuclear Employment Guidance Amid Multipolar Deterrence Debate</strong>: A review of nuclear employment guidance under Colby signals Washington may be preparing to expand options for nuclear use amid simultaneous competition with Russia and China, intersecting with academi...</li></ul><p><em>Published: August 08, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -208,24 +224,6 @@
         <category><![CDATA[Middle East]]></category>
         <category><![CDATA[United States]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-07-31.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - July 30, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-07-30.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. Today is Thursday, July 30, 2026. Your daily geopolitical briefing covers 4 key developments shaping global affairs. We've balanced breaking news with in-depth analysis and emerging trends to provide comprehensive coverage for decision-makers. Today's briefing includes immediate developments requiring attention, strategic analysis of ongoing situations, and emerging patterns that will influence international relations in the coming weeks.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russian Missile Lands on Polish Territory Amid Ukraine's Deadliest Strike Wave in Weeks</strong>: A confirmed Russian missile landing on NATO member Poland during a mass strike on Ukrainian cities tests collective defense credibility beyond rhetoric, occurring precisely as the peace track stalls a...</li><li><strong>Iraq Becomes New Front as US-Saudi Strikes Hit Iran-Backed Militias</strong>: Joint US-Saudi strikes on Iran-aligned militias in Iraq widen the regional war beyond Iran itself, dragging Baghdad's fragile government into direct confrontation and undercutting parallel indirect US...</li><li><strong>Ukraine's Wildberries Campaign Marks a Pivot to Consumer-Economy Warfare</strong>: By systematically striking Russia's dominant e-commerce logistics network rather than only military-industrial targets, Kyiv is testing a new theory of attrition — degrading ordinary Russian consumer ...</li></ul><p><em>Published: July 30, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Thu, 30 Jul 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260730</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-07-30.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
