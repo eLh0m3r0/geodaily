@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 21 Aug 2026 07:00:41 GMT</pubDate>
-        <lastBuildDate>Fri, 21 Aug 2026 07:00:41 GMT</lastBuildDate>
+        <pubDate>Sat, 22 Aug 2026 06:54:58 GMT</pubDate>
+        <lastBuildDate>Sat, 22 Aug 2026 06:54:58 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,23 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - August 22, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-22.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Saturday, August 22, 2026 — today's briefing covers 4 developments shaping global affairs: breaking news, strategic analysis, and the trends behind the headlines.</p><h3>Today's Key Stories:</h3><ul><li><strong>Double-Tap Strike on Zelensky's Hometown Tests EU's Sanctions Threshold</strong>: A deliberate double-tap drone strike on a civilian mall in Kryvyi Rih, killing 16 and wounding 130, has prompted the EU's top diplomat to threaten the 'harshest sanctions yet.' The attack on rescue cr...</li><li><strong>Beijing Shifts From Visible Coercion to Deniable Pressure on Taiwan</strong>: As Washington debates abandoning strategic ambiguity, Beijing appears to be adopting its own ambiguous coercion — using methods harder to classify as military aggression. This complicates US/Taiwan re...</li><li><strong>Europe's Blind Spot: Russia's Deepening Military Foothold in Belarus</strong>: Belarus is increasingly functioning as a forward staging ground for Russian military assets, directly threatening NATO's eastern flank near Poland and the Baltics. ECFR's call for a pragmatic EU strat...</li></ul><p><em>Published: August 22, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sat, 22 Aug 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260822</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[United States]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-22.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - August 21, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-21.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Friday, August 21, 2026 — today's briefing covers 4 developments shaping global affairs: breaking news, strategic analysis, and the trends behind the headlines.</p><h3>Today's Key Stories:</h3><ul><li><strong>Washington's 'Toughest Sanctions in History' Bid to Force Iran's Economic Collapse</strong>: The US is escalating from military pressure to declared 'economic D-Day' against Iran, publicly pressuring China to comply while UAE severs ties—testing whether economic coercion can achieve what six ...</li><li><strong>Anwar's Unscripted Taiwan Alignment Signals Fraying ASEAN Neutrality</strong>: Malaysia's uncharacteristically explicit backing of Beijing's Taiwan position breaks from ASEAN's traditional hedging strategy, testing whether Southeast Asian non-alignment can survive intensifying U...</li><li><strong>US-Canada Tariff Deadline Tests North American Trade Architecture</strong>: An imminent deadline threatens renewed sweeping tariffs on steel, aluminum, autos, and lumber, with direct implications for North American supply chains, USMCA credibility, and precedent for US trade ...</li></ul><p><em>Published: August 21, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -213,22 +230,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-13.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - August 12, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-12.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Wednesday, August 12, 2026 — today's briefing covers 4 developments shaping global affairs: breaking news, strategic analysis, and the trends behind the headlines.</p><h3>Today's Key Stories:</h3><ul><li><strong>China Becomes Sanctions-Evasion Backbone for Russian LNG</strong>: China's absorption of sanctioned Russian LNG via shadow-fleet transfers demonstrates a maturing evasion architecture that could blunt future Western energy sanctions entirely, extending Moscow's war f...</li><li><strong>Russia's De Facto Blockade Turns Ukraine Into a Landlocked State</strong>: Sustained strikes denying access to Odesa's port complex achieve strategic strangulation without territorial conquest, threatening Ukraine's export economy and grain revenues while avoiding the politi...</li><li><strong>Autonomous AI Agents Conduct Unprecedented Cyber Assault on Taiwan</strong>: An AI-orchestrated, autonomous reconnaissance-and-intrusion campaign marks a qualitative leap in cyberwarfare capability, with direct implications for critical infrastructure defense worldwide and hei...</li></ul><p><em>Published: August 12, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Wed, 12 Aug 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260812</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-12.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
