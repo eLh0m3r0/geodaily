@@ -237,7 +237,9 @@ class RSSCollector:
                 summary=summary,
                 published_date=published_date,
                 author=author,
-                source_weight=getattr(source, 'weight', 1.0)
+                source_weight=getattr(source, 'weight', 1.0),
+                source_perspective=getattr(source, 'perspective', 'western_mainstream'),
+                state_affiliated=getattr(source, 'state_affiliated', False)
             )
             
             return article

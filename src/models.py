@@ -36,7 +36,17 @@ class NewsSource:
     method: str = "rss"  # rss, basic, api
     selectors: Optional[Dict[str, str]] = None
     enabled: bool = True
-    
+    # Perspective axis for multi-perspective coverage analysis, e.g.
+    # western_mainstream, western_analysis, east_asia, chinese_state,
+    # south_asia, middle_east, iranian_state, turkish_state, russian_state,
+    # russian_exile, african, latam, global_south, intl_org
+    perspective: str = "western_mainstream"
+    # True for outlets under state editorial control or state funding —
+    # cited as framing data with a visible label, never as sole source of fact
+    state_affiliated: bool = False
+    # 1 = high reliability, 2 = standard, 3 = use with care / framing-only
+    reliability_tier: int = 2
+
     def __post_init__(self):
         if isinstance(self.category, str):
             self.category = SourceCategory(self.category)
@@ -55,6 +65,8 @@ class Article:
     cluster_id: Optional[str] = None
     relevance_score: float = 0.0
     source_weight: float = 1.0  # per-source quality weight from sources.json
+    source_perspective: str = "western_mainstream"  # perspective axis of the source
+    state_affiliated: bool = False  # source under state editorial control/funding
     content: Optional[str] = None
     author: Optional[str] = None
     tags: List[str] = field(default_factory=list)
@@ -136,6 +148,34 @@ class AIAnalysis:
         self.impact_dimension_score = max(1, min(10, self.impact_dimension_score))
 
 @dataclass
+class QuickHit:
+    """One-sentence world-roundup item ("Also today" section)."""
+    text: str
+    region: str = "global"
+    url: str = ""
+
+    def __post_init__(self):
+        if len(self.text.split()) > 40:
+            self.text = " ".join(self.text.split()[:40]) + "..."
+
+
+@dataclass
+class BigNumber:
+    """Delight element: one striking number from today's news with context."""
+    value: str          # e.g. "35 %"
+    context: str        # one sentence explaining the number
+    url: str = ""
+
+
+@dataclass
+class IssueContent:
+    """Full analyzer output for one issue: deep stories + roundup + delight."""
+    stories: List[AIAnalysis] = field(default_factory=list)
+    quick_hits: List[QuickHit] = field(default_factory=list)
+    big_number: Optional[BigNumber] = None
+
+
+@dataclass
 class Newsletter:
     """Complete newsletter data."""
     date: datetime
@@ -143,7 +183,9 @@ class Newsletter:
     stories: List[AIAnalysis]
     intro_text: str = ""
     footer_text: str = ""
-    
+    quick_hits: List[QuickHit] = field(default_factory=list)
+    big_number: Optional[BigNumber] = None
+
     def __post_init__(self):
         # Sort stories by impact score (highest first)
         self.stories.sort(key=lambda s: s.impact_score, reverse=True)

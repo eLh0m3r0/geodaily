@@ -91,7 +91,10 @@ class MainCollector:
                     category=SourceCategory(source_config['category']),
                     tier=SourceTier.TIER1_RSS,
                     weight=source_config.get('weight', 1.0),
-                    method='rss'
+                    method='rss',
+                    perspective=source_config.get('perspective', 'western_mainstream'),
+                    state_affiliated=source_config.get('state_affiliated', False),
+                    reliability_tier=source_config.get('reliability_tier', 2)
                 )
                 sources.append(source)
             except Exception as e:
@@ -107,7 +110,10 @@ class MainCollector:
                     tier=SourceTier.TIER2_SCRAPING,
                     weight=source_config.get('weight', 1.0),
                     method=source_config.get('method', 'basic'),
-                    selectors=source_config.get('selectors')
+                    selectors=source_config.get('selectors'),
+                    perspective=source_config.get('perspective', 'western_mainstream'),
+                    state_affiliated=source_config.get('state_affiliated', False),
+                    reliability_tier=source_config.get('reliability_tier', 2)
                 )
                 sources.append(source)
             except Exception as e:

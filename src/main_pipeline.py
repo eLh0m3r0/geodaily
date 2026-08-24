@@ -345,9 +345,21 @@ def run_complete_pipeline() -> bool:
             processing_start = time.time()
             try:
                 processor = MainProcessor()
-                # Only do deduplication and basic scoring, skip clustering
-                deduplicated_articles = processor.deduplicator.deduplicate_articles(raw_articles)
-                
+                # Semantic event clustering + near-duplicate removal; falls back
+                # to legacy title-similarity dedup when embeddings can't load
+                deduplicated_articles = None
+                event_count = 0
+                try:
+                    from .processors.embedding_clusterer import EmbeddingClusterer
+                    clusterer = EmbeddingClusterer()
+                    if clusterer.available():
+                        deduplicated_articles, event_count = clusterer.dedupe_and_tag(raw_articles)
+                except Exception as e:
+                    logger.warning(f"Embedding clustering failed, using title dedup: {e}",
+                                   pipeline_stage=PipelineStage.PROCESSING, run_id=run_id)
+                if deduplicated_articles is None:
+                    deduplicated_articles = processor.deduplicator.deduplicate_articles(raw_articles)
+
                 # Apply basic scoring to articles
                 scored_articles = processor._score_articles_basic(deduplicated_articles)
                 
@@ -418,7 +430,8 @@ def run_complete_pipeline() -> bool:
                        pipeline_stage=PipelineStage.AI_ANALYSIS,
                        run_id=run_id,
                        structured_data={
-                           'target_stories': 4,
+                           'target_stories': 1,
+                           'format': 'big_story_plus_quick_hits',
                            'articles_input': len(scored_articles),
                            'analysis_method': 'multi_stage_transparent'
                        })
@@ -433,26 +446,37 @@ def run_complete_pipeline() -> bool:
                                  'reason': 'graceful_degradation'
                              })
                 # Use mock analysis as fallback - create mock articles
-                analyses = create_mock_analyses_from_articles(scored_articles[:4])
+                analyses = create_mock_analyses_from_articles(scored_articles[:1])
+                quick_hits, big_number = [], None
             else:
                 ai_start = time.time()
                 try:
                     # Use simplified multi-stage analyzer with SINGLE API call
                     multi_stage_analyzer = SimplifiedMultiStageAnalyzer()
-                    analyses = asyncio.run(multi_stage_analyzer.analyze_articles_single_call(scored_articles, target_stories=4))
+                    issue = asyncio.run(multi_stage_analyzer.analyze_articles_single_call(scored_articles, target_stories=1))
+                    analyses = issue.stories
+                    quick_hits = issue.quick_hits
+                    big_number = issue.big_number
                     ai_time = time.time() - ai_start
 
-                    if len(analyses) < 3:
-                        logger.error(f"Insufficient AI analyses: {len(analyses)}",
+                    if len(analyses) < 1:
+                        logger.error("AI analysis produced no big story",
                                     pipeline_stage=PipelineStage.AI_ANALYSIS,
                                     run_id=run_id,
                                     error_category=ErrorCategory.VALIDATION_ERROR,
                                     structured_data={
-                                        'threshold': 3,
-                                        'actual': len(analyses)
+                                        'threshold': 1,
+                                        'actual': len(analyses),
+                                        'quick_hits': len(quick_hits)
                                     })
                         pipeline_tracker.track_pipeline_failure(run_id, ValueError("Insufficient AI analyses"), PipelineStage.AI_ANALYSIS)
                         return False
+
+                    if len(quick_hits) < 4:
+                        logger.warning(f"Fewer quick hits than expected: {len(quick_hits)}",
+                                     pipeline_stage=PipelineStage.AI_ANALYSIS,
+                                     run_id=run_id,
+                                     structured_data={'expected_min': 4, 'actual': len(quick_hits)})
 
                     logger.info(f"AI analysis completed: {len(analyses)} stories selected",
                                 pipeline_stage=PipelineStage.AI_ANALYSIS,
@@ -529,7 +553,8 @@ def run_complete_pipeline() -> bool:
                                run_id=run_id,
                                structured_data={'fallback_mode': True})
 
-                    analyses = create_mock_analyses_from_articles(scored_articles[:4])
+                    analyses = create_mock_analyses_from_articles(scored_articles[:1])
+                    quick_hits, big_number = [], None
                     ai_time = time.time() - ai_start
 
                     # Collect metrics for fallback analysis
@@ -566,7 +591,8 @@ def run_complete_pipeline() -> bool:
             else:
                 try:
                     generator = NewsletterGenerator()
-                    newsletter = generator.generate_newsletter(analyses)
+                    newsletter = generator.generate_newsletter(
+                        analyses, quick_hits=quick_hits, big_number=big_number)
                     html_content = generator.generate_html(newsletter)
 
                     # Save newsletter (legacy format)

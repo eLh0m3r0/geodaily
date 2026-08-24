@@ -4,181 +4,605 @@
       "name": "BBC World",
       "url": "http://feeds.bbci.co.uk/news/world/rss.xml",
       "category": "mainstream",
-      "weight": 0.8
+      "weight": 0.8,
+      "perspective": "western_mainstream",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "bbc.com",
+      "display": "BBC"
     },
     {
       "name": "Guardian International",
       "url": "https://www.theguardian.com/world/rss",
       "category": "mainstream",
-      "weight": 0.8
+      "weight": 0.8,
+      "perspective": "western_mainstream",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "theguardian.com",
+      "display": "The Guardian"
     },
     {
       "name": "Al Jazeera English",
       "url": "https://www.aljazeera.com/xml/rss/all.xml",
       "category": "mainstream",
-      "weight": 0.9
+      "weight": 0.9,
+      "perspective": "middle_east",
+      "state_affiliated": true,
+      "reliability_tier": 1,
+      "site": "aljazeera.com",
+      "display": "Al Jazeera"
     },
     {
       "name": "Financial Times World",
       "url": "https://www.ft.com/world?format=rss",
       "category": "mainstream",
-      "weight": 0.9
+      "weight": 0.9,
+      "perspective": "western_mainstream",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "ft.com",
+      "display": "Financial Times"
     },
     {
       "name": "NPR World",
       "url": "https://feeds.npr.org/1004/rss.xml",
       "category": "mainstream",
-      "weight": 0.7
+      "weight": 0.7,
+      "perspective": "western_mainstream",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "npr.org",
+      "display": "NPR"
     },
     {
       "name": "Foreign Affairs",
       "url": "https://www.foreignaffairs.com/rss.xml",
       "category": "analysis",
-      "weight": 1.2
+      "weight": 1.2,
+      "perspective": "western_analysis",
+      "state_affiliated": false,
+      "reliability_tier": 1
     },
     {
       "name": "The Diplomat",
       "url": "https://thediplomat.com/feed/",
       "category": "analysis",
-      "weight": 1.1
+      "weight": 1.1,
+      "perspective": "western_analysis",
+      "state_affiliated": false,
+      "reliability_tier": 1
     },
     {
       "name": "Foreign Policy Magazine",
       "url": "https://foreignpolicy.com/feed/",
       "category": "analysis",
-      "weight": 1.2
+      "weight": 1.2,
+      "perspective": "western_analysis",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "foreignpolicy.com",
+      "display": "Foreign Policy"
     },
     {
       "name": "Atlantic Council",
       "url": "https://www.atlanticcouncil.org/feed/",
       "category": "think_tank",
-      "weight": 0.7
+      "weight": 0.7,
+      "perspective": "western_analysis",
+      "state_affiliated": false,
+      "reliability_tier": 2
     },
     {
       "name": "European Council on Foreign Relations",
       "url": "https://ecfr.eu/feed/",
       "category": "think_tank",
-      "weight": 1.1
+      "weight": 1.1,
+      "perspective": "western_analysis",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "ecfr.eu",
+      "display": "ECFR"
     },
     {
       "name": "German Marshall Fund",
       "url": "https://www.gmfus.org/rss.xml",
       "category": "think_tank",
-      "weight": 0.7
+      "weight": 0.7,
+      "perspective": "western_analysis",
+      "state_affiliated": false,
+      "reliability_tier": 2
     },
     {
       "name": "International Crisis Group",
       "url": "https://www.crisisgroup.org/rss.xml",
       "category": "think_tank",
-      "weight": 1.2
+      "weight": 1.2,
+      "perspective": "western_analysis",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "crisisgroup.org"
     },
     {
       "name": "Human Rights Watch",
       "url": "https://www.hrw.org/rss.xml",
       "category": "analysis",
-      "weight": 1.0
+      "weight": 1.0,
+      "perspective": "western_analysis",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "hrw.org"
     },
     {
       "name": "War on the Rocks",
       "url": "https://warontherocks.com/feed/",
       "category": "analysis",
-      "weight": 1.3
+      "weight": 1.3,
+      "perspective": "western_analysis",
+      "state_affiliated": false,
+      "reliability_tier": 1
     },
     {
       "name": "France 24 English",
       "url": "https://www.france24.com/en/rss",
       "category": "regional",
-      "weight": 0.8
+      "weight": 0.8,
+      "perspective": "western_mainstream",
+      "state_affiliated": true,
+      "reliability_tier": 1,
+      "site": "france24.com",
+      "display": "France 24"
     },
     {
       "name": "South China Morning Post RSS",
       "url": "https://www.scmp.com/rss/91/feed",
       "category": "regional",
-      "weight": 0.8
+      "weight": 0.8,
+      "perspective": "east_asia",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "scmp.com",
+      "display": "South China Morning Post"
     },
     {
       "name": "Asia Times",
       "url": "https://asiatimes.com/feed/",
       "category": "regional",
-      "weight": 0.8
+      "weight": 0.8,
+      "perspective": "east_asia",
+      "state_affiliated": false,
+      "reliability_tier": 2
     },
     {
       "name": "Middle East Eye",
       "url": "https://www.middleeasteye.net/rss",
       "category": "regional",
-      "weight": 0.9
+      "weight": 0.9,
+      "perspective": "middle_east",
+      "state_affiliated": false,
+      "reliability_tier": 2
     },
     {
       "name": "Al-Monitor",
       "url": "https://www.al-monitor.com/rss.xml",
       "category": "regional",
-      "weight": 0.9
+      "weight": 0.9,
+      "perspective": "middle_east",
+      "state_affiliated": false,
+      "reliability_tier": 1
     },
     {
       "name": "Responsible Statecraft",
       "url": "https://responsiblestatecraft.org/feed/",
       "category": "analysis",
-      "weight": 1.0
+      "weight": 1.0,
+      "perspective": "western_analysis",
+      "state_affiliated": false,
+      "reliability_tier": 2
     },
     {
       "name": "The Africa Report",
       "url": "https://www.theafricareport.com/feed/",
       "category": "regional",
-      "weight": 1.0
+      "weight": 1.0,
+      "perspective": "african",
+      "state_affiliated": false,
+      "reliability_tier": 1
     },
     {
       "name": "African Arguments",
       "url": "https://africanarguments.org/feed/",
       "category": "regional",
-      "weight": 1.0
+      "weight": 1.0,
+      "perspective": "african",
+      "state_affiliated": false,
+      "reliability_tier": 2
     },
     {
       "name": "ASPI The Strategist",
       "url": "https://www.aspistrategist.org.au/feed/",
       "category": "think_tank",
-      "weight": 1.1
+      "weight": 1.1,
+      "perspective": "western_analysis",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "aspistrategist.org.au",
+      "display": "ASPI Strategist"
     },
     {
       "name": "Bellingcat",
       "url": "https://www.bellingcat.com/feed/",
       "category": "analysis",
-      "weight": 1.2
+      "weight": 1.2,
+      "perspective": "western_analysis",
+      "state_affiliated": false,
+      "reliability_tier": 1
     },
     {
       "name": "Just Security",
       "url": "https://www.justsecurity.org/feed/",
       "category": "analysis",
-      "weight": 1.1
+      "weight": 1.1,
+      "perspective": "western_analysis",
+      "state_affiliated": false,
+      "reliability_tier": 1
     },
     {
       "name": "38 North",
       "url": "https://www.38north.org/feed/",
       "category": "analysis",
-      "weight": 1.1
+      "weight": 1.1,
+      "perspective": "western_analysis",
+      "state_affiliated": false,
+      "reliability_tier": 1
     },
     {
       "name": "Breaking Defense",
       "url": "https://breakingdefense.com/feed/",
       "category": "analysis",
-      "weight": 1.0
+      "weight": 1.0,
+      "perspective": "western_analysis",
+      "state_affiliated": false,
+      "reliability_tier": 2
     },
     {
       "name": "Politico Europe",
       "url": "https://www.politico.eu/feed/",
       "category": "mainstream",
-      "weight": 0.9
+      "weight": 0.9,
+      "perspective": "western_mainstream",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "politico.eu"
     },
     {
       "name": "Meduza (English)",
       "url": "https://meduza.io/rss/en/all",
       "category": "regional",
-      "weight": 1.0
+      "weight": 1.0,
+      "perspective": "russian_exile",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "meduza.io",
+      "display": "Meduza"
     },
     {
       "name": "The Moscow Times",
       "url": "https://www.themoscowtimes.com/rss/news",
       "category": "regional",
-      "weight": 1.0
+      "weight": 1.0,
+      "perspective": "russian_exile",
+      "state_affiliated": false,
+      "reliability_tier": 1
+    },
+    {
+      "name": "DW News",
+      "url": "https://rss.dw.com/rdf/rss-en-all",
+      "category": "mainstream",
+      "weight": 0.9,
+      "perspective": "western_mainstream",
+      "state_affiliated": true,
+      "reliability_tier": 1,
+      "site": "dw.com",
+      "display": "DW"
+    },
+    {
+      "name": "UN News",
+      "url": "https://news.un.org/feed/subscribe/en/news/all/rss.xml",
+      "category": "mainstream",
+      "weight": 0.8,
+      "perspective": "intl_org",
+      "state_affiliated": true,
+      "reliability_tier": 1,
+      "site": "news.un.org",
+      "display": "UN News"
+    },
+    {
+      "name": "EUobserver",
+      "url": "https://euobserver.com/rss.xml",
+      "category": "mainstream",
+      "weight": 0.9,
+      "perspective": "western_mainstream",
+      "state_affiliated": false,
+      "reliability_tier": 2
+    },
+    {
+      "name": "Balkan Insight",
+      "url": "https://balkaninsight.com/feed/",
+      "category": "regional",
+      "weight": 0.9,
+      "perspective": "western_mainstream",
+      "state_affiliated": false,
+      "reliability_tier": 2
+    },
+    {
+      "name": "Kyiv Independent",
+      "url": "https://kyivindependent.com/feed",
+      "category": "regional",
+      "weight": 1.0,
+      "perspective": "western_mainstream",
+      "state_affiliated": false,
+      "reliability_tier": 1
+    },
+    {
+      "name": "Brookings",
+      "url": "https://www.brookings.edu/feed/",
+      "category": "think_tank",
+      "weight": 1.0,
+      "perspective": "western_analysis",
+      "state_affiliated": false,
+      "reliability_tier": 1
+    },
+    {
+      "name": "Nikkei Asia",
+      "url": "https://asia.nikkei.com/rss/feed/nar",
+      "category": "regional",
+      "weight": 1.0,
+      "perspective": "east_asia",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "asia.nikkei.com",
+      "display": "Nikkei Asia"
+    },
+    {
+      "name": "The Japan Times",
+      "url": "https://www.japantimes.co.jp/feed/",
+      "category": "regional",
+      "weight": 0.9,
+      "perspective": "east_asia",
+      "state_affiliated": false,
+      "reliability_tier": 1
+    },
+    {
+      "name": "Yonhap News",
+      "url": "https://en.yna.co.kr/RSS/news.xml",
+      "category": "regional",
+      "weight": 0.8,
+      "perspective": "east_asia",
+      "state_affiliated": true,
+      "reliability_tier": 1,
+      "site": "yna.co.kr",
+      "display": "Yonhap"
+    },
+    {
+      "name": "Channel News Asia",
+      "url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
+      "category": "regional",
+      "weight": 0.8,
+      "perspective": "east_asia",
+      "state_affiliated": true,
+      "reliability_tier": 1,
+      "site": "channelnewsasia.com",
+      "display": "CNA"
+    },
+    {
+      "name": "The Straits Times World",
+      "url": "https://www.straitstimes.com/news/world/rss.xml",
+      "category": "regional",
+      "weight": 0.8,
+      "perspective": "east_asia",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "straitstimes.com",
+      "display": "The Straits Times"
+    },
+    {
+      "name": "China Daily World",
+      "url": "https://www.chinadaily.com.cn/rss/world_rss.xml",
+      "category": "regional",
+      "weight": 0.6,
+      "perspective": "chinese_state",
+      "state_affiliated": true,
+      "reliability_tier": 3,
+      "site": "chinadaily.com.cn",
+      "display": "China Daily"
+    },
+    {
+      "name": "CGTN World",
+      "url": "https://www.cgtn.com/subscribe/rss/section/world.xml",
+      "category": "regional",
+      "weight": 0.6,
+      "perspective": "chinese_state",
+      "state_affiliated": true,
+      "reliability_tier": 3,
+      "site": "cgtn.com",
+      "display": "CGTN"
+    },
+    {
+      "name": "Sixth Tone",
+      "url": "https://www.sixthtone.com/rss",
+      "category": "regional",
+      "weight": 0.7,
+      "perspective": "chinese_state",
+      "state_affiliated": true,
+      "reliability_tier": 2,
+      "site": "sixthtone.com",
+      "display": "Sixth Tone"
+    },
+    {
+      "name": "TASS",
+      "url": "https://tass.com/rss/v2.xml",
+      "category": "regional",
+      "weight": 0.6,
+      "perspective": "russian_state",
+      "state_affiliated": true,
+      "reliability_tier": 3,
+      "site": "tass.com",
+      "display": "TASS"
+    },
+    {
+      "name": "Times of India World",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms",
+      "category": "regional",
+      "weight": 0.8,
+      "perspective": "south_asia",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "timesofindia.indiatimes.com",
+      "display": "Times of India"
+    },
+    {
+      "name": "The Hindu International",
+      "url": "https://www.thehindu.com/news/international/feeder/default.rss",
+      "category": "regional",
+      "weight": 0.9,
+      "perspective": "south_asia",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "thehindu.com",
+      "display": "The Hindu"
+    },
+    {
+      "name": "Dawn",
+      "url": "https://www.dawn.com/feeds/home",
+      "category": "regional",
+      "weight": 0.9,
+      "perspective": "south_asia",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "dawn.com",
+      "display": "Dawn"
+    },
+    {
+      "name": "Arab News",
+      "url": "https://www.arabnews.com/rss.xml",
+      "category": "regional",
+      "weight": 0.7,
+      "perspective": "middle_east",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "arabnews.com",
+      "display": "Arab News"
+    },
+    {
+      "name": "Anadolu Agency",
+      "url": "https://www.aa.com.tr/en/rss/default?cat=news",
+      "category": "regional",
+      "weight": 0.6,
+      "perspective": "turkish_state",
+      "state_affiliated": true,
+      "reliability_tier": 3,
+      "site": "aa.com.tr",
+      "display": "Anadolu Agency"
+    },
+    {
+      "name": "Times of Israel",
+      "url": "https://www.timesofisrael.com/feed/",
+      "category": "regional",
+      "weight": 0.8,
+      "perspective": "middle_east",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "timesofisrael.com",
+      "display": "The Times of Israel"
+    },
+    {
+      "name": "The Jerusalem Post",
+      "url": "https://www.jpost.com/rss/rssfeedsheadlines.aspx",
+      "category": "regional",
+      "weight": 0.7,
+      "perspective": "middle_east",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "jpost.com",
+      "display": "The Jerusalem Post"
+    },
+    {
+      "name": "Tehran Times",
+      "url": "https://www.tehrantimes.com/rss",
+      "category": "regional",
+      "weight": 0.6,
+      "perspective": "iranian_state",
+      "state_affiliated": true,
+      "reliability_tier": 3,
+      "site": "tehrantimes.com",
+      "display": "Tehran Times"
+    },
+    {
+      "name": "Daily Maverick",
+      "url": "https://www.dailymaverick.co.za/dmrss/",
+      "category": "regional",
+      "weight": 0.9,
+      "perspective": "african",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "dailymaverick.co.za",
+      "display": "Daily Maverick"
+    },
+    {
+      "name": "Premium Times Nigeria",
+      "url": "https://www.premiumtimesng.com/feed",
+      "category": "regional",
+      "weight": 0.9,
+      "perspective": "african",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "premiumtimesng.com",
+      "display": "Premium Times"
+    },
+    {
+      "name": "AllAfrica Latest",
+      "url": "https://allafrica.com/tools/headlines/rdf/latest/headlines.rdf",
+      "category": "regional",
+      "weight": 0.7,
+      "perspective": "african",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "allafrica.com",
+      "display": "AllAfrica"
+    },
+    {
+      "name": "MercoPress",
+      "url": "https://en.mercopress.com/rss/",
+      "category": "regional",
+      "weight": 0.8,
+      "perspective": "latam",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "mercopress.com",
+      "display": "MercoPress"
+    },
+    {
+      "name": "Mexico News Daily",
+      "url": "https://mexiconewsdaily.com/feed/",
+      "category": "regional",
+      "weight": 0.8,
+      "perspective": "latam",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "mexiconewsdaily.com",
+      "display": "Mexico News Daily"
+    },
+    {
+      "name": "Global Voices",
+      "url": "https://globalvoices.org/feed/",
+      "category": "analysis",
+      "weight": 0.9,
+      "perspective": "global_south",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "globalvoices.org",
+      "display": "Global Voices"
     }
   ],
   "tier2_sources": [
@@ -194,7 +618,10 @@
         "link": "a",
         "summary": ".summary, .excerpt",
         "date": "time, .date"
-      }
+      },
+      "perspective": "western_analysis",
+      "state_affiliated": false,
+      "reliability_tier": 1
     },
     {
       "name": "World Politics Review",
@@ -208,7 +635,10 @@
         "link": "a",
         "summary": ".excerpt",
         "date": "time"
-      }
+      },
+      "perspective": "western_analysis",
+      "state_affiliated": false,
+      "reliability_tier": 1
     }
   ]
 }

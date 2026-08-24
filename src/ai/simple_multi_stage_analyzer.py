@@ -13,7 +13,7 @@ from typing import List, Dict, Any, Optional, Tuple
 from dataclasses import dataclass
 from datetime import datetime
 
-from ..models import Article, AIAnalysis, ContentType
+from ..models import Article, AIAnalysis, ContentType, QuickHit, BigNumber, IssueContent
 from ..config import Config
 from ..archiver.ai_data_archiver import ai_archiver
 from .cost_controller import ai_cost_controller
@@ -50,37 +50,29 @@ class SimplifiedMultiStageAnalyzer:
             self.client = None
             logger.info("Using mock mode for simplified multi-stage analyzer")
     
-    async def analyze_articles_single_call(self, articles: List[Article], target_stories: int = 4) -> List[AIAnalysis]:
+    async def analyze_articles_single_call(self, articles: List[Article], target_stories: int = 1) -> IssueContent:
         """
-        Analyze articles with transparent multi-stage process in a SINGLE API call.
-        
+        Produce one issue's content in a SINGLE API call: the big story
+        (plus optional secondary stories), 6-8 quick hits, and the big number.
+
         Args:
             articles: List of articles to analyze
-            target_stories: Number of final stories to select
-            
+            target_stories: Number of deep-analysis stories (1 = big story only)
+
         Returns:
-            List of AIAnalysis objects
+            IssueContent (stories may be empty on failure — caller decides)
         """
         print(f"🔍 Starting simplified multi-stage analysis of {len(articles)} articles")
-        logger.info(f"Simplified analysis started: {len(articles)} articles → {target_stories} stories")
-        
+        logger.info(f"Simplified analysis started: {len(articles)} articles → {target_stories} deep stories + quick hits")
+
         start_time = time.time()
-        
+
         if self.mock_mode:
-            return self._create_mock_analyses(articles[:target_stories])
-        
-        # Pre-filter articles to reduce token usage (take top 50 by relevance if available)
-        if len(articles) > 50:
-            # Sort by relevance score if available, otherwise by date
-            sorted_articles = sorted(
-                articles, 
-                key=lambda a: getattr(a, 'relevance_score', 0) or 0,
-                reverse=True
-            )[:50]
-            print(f"📊 Pre-filtered to top 50 articles for analysis")
-        else:
-            sorted_articles = articles
-        
+            return self._create_mock_issue(articles)
+
+        # Event-aware pre-filter: keep corroborated, perspective-diverse events
+        sorted_articles = self._prefilter_articles(articles, cap=60)
+
         # Build the comprehensive prompt for single API call
         prompt = self._build_single_call_prompt(sorted_articles, target_stories)
 
@@ -113,11 +105,11 @@ class SimplifiedMultiStageAnalyzer:
             input_tokens, output_tokens, cost = response_tokens_and_cost(response, prompt, response_text)
 
             # Parse the comprehensive response
-            analyses = self._parse_single_response(response_text, sorted_articles)
+            issue = self._parse_issue_response(response_text, sorted_articles)
 
             # One corrective retry if the model returned malformed JSON —
             # far better than silently publishing mock content.
-            if not analyses:
+            if not issue.stories:
                 logger.warning("First response was not parseable JSON, retrying with corrective message")
                 retry_response = self.client.messages.create(
                     model=Config.AI_MODEL,
@@ -125,9 +117,9 @@ class SimplifiedMultiStageAnalyzer:
                     messages=[
                         {"role": "user", "content": prompt},
                         {"role": "assistant", "content": response_text or "(empty)"},
-                        {"role": "user", "content": "Your previous reply was not a valid JSON array. "
-                                                    "Return ONLY the JSON array in the exact format requested — "
-                                                    "no markdown fences, no commentary."}
+                        {"role": "user", "content": "Your previous reply was not valid JSON in the requested "
+                                                    "format. Return ONLY the JSON object in the exact format "
+                                                    "requested — no markdown fences, no commentary."}
                     ]
                 )
                 retry_text = extract_response_text(retry_response)
@@ -135,14 +127,14 @@ class SimplifiedMultiStageAnalyzer:
                 input_tokens += r_in
                 output_tokens += r_out
                 cost += r_cost
-                analyses = self._parse_single_response(retry_text, sorted_articles)
-                if analyses:
+                issue = self._parse_issue_response(retry_text, sorted_articles)
+                if issue.stories:
                     response_text = retry_text
 
             # Readability gate: if the copy came back too dense, run one
             # "simplify" rewrite pass before publishing.
-            if analyses:
-                analyses, gate_in, gate_out, gate_cost = self._apply_readability_gate(analyses)
+            if issue.stories:
+                issue.stories, gate_in, gate_out, gate_cost = self._apply_readability_gate(issue.stories)
                 input_tokens += gate_in
                 output_tokens += gate_out
                 cost += gate_cost
@@ -151,14 +143,14 @@ class SimplifiedMultiStageAnalyzer:
             ai_cost_controller.record_cost(cost, total_tokens, "single_call_analysis")
 
             # Archive the response (one entry per analysis)
-            if analyses:
-                for i, analysis in enumerate(analyses):
+            if issue.stories:
+                for i, analysis in enumerate(issue.stories):
                     ai_archiver.archive_ai_response(
                         response_text=response_text,
                         analysis=analysis,  # Single analysis instead of list
                         cluster_index=i,
-                        cost=cost / len(analyses),
-                        tokens=total_tokens // len(analyses)
+                        cost=cost / len(issue.stories),
+                        tokens=total_tokens // len(issue.stories)
                     )
             else:
                 # Archive empty response
@@ -174,24 +166,70 @@ class SimplifiedMultiStageAnalyzer:
 
             print(f"✅ Analysis complete in {elapsed:.1f}s")
             print(f"   • Input: {len(sorted_articles)} articles")
-            print(f"   • Output: {len(analyses)} stories")
+            print(f"   • Output: {len(issue.stories)} stories + {len(issue.quick_hits)} quick hits")
             print(f"   • Tokens: {input_tokens:,} in / {output_tokens:,} out")
             print(f"   • Cost: ${cost:.4f}")
 
-            logger.info(f"Single-call analysis completed: {len(analyses)} stories, cost: ${cost:.4f}")
+            logger.info(f"Single-call analysis completed: {len(issue.stories)} stories, "
+                        f"{len(issue.quick_hits)} quick hits, cost: ${cost:.4f}")
 
-            if not analyses:
+            if not issue.stories:
                 # Fail loudly rather than publish generic mock text as analysis.
                 logger.error("AI analysis produced no valid stories after retry — failing this run")
-            return analyses
+            return issue
 
         except Exception as e:
             logger.error(f"Single-call analysis failed: {e}")
             print(f"❌ Analysis failed: {e}")
             # Do NOT fall back to mock content in production — a missed issue is
             # better than a published newsletter full of fabricated analysis.
-            return []
+            return IssueContent()
     
+    def _prefilter_articles(self, articles: List[Article], cap: int = 60) -> List[Article]:
+        """Event-aware pre-filter to keep the prompt affordable.
+
+        Ranks event clusters by corroboration x perspective diversity x source
+        weight, takes up to 4 articles per event (preferring distinct
+        perspectives), then fills remaining slots with the highest-relevance
+        unclustered articles.
+        """
+        if len(articles) <= cap:
+            return articles
+
+        from collections import defaultdict
+        events = defaultdict(list)
+        singles = []
+        for a in articles:
+            if getattr(a, 'cluster_id', None):
+                events[a.cluster_id].append(a)
+            else:
+                singles.append(a)
+
+        def event_score(members):
+            perspectives = {getattr(m, 'source_perspective', '') for m in members}
+            weight_sum = sum(m.source_weight or 1.0 for m in members)
+            return weight_sum * (1 + 0.5 * (len(perspectives) - 1))
+
+        selected: List[Article] = []
+        for members in sorted(events.values(), key=event_score, reverse=True):
+            if len(selected) >= cap:
+                break
+            chosen, seen_p = [], set()
+            for m in sorted(members, key=lambda m: -(m.source_weight or 1.0)):
+                p = getattr(m, 'source_perspective', '')
+                if p not in seen_p:
+                    chosen.append(m)
+                    seen_p.add(p)
+                if len(chosen) == 4:
+                    break
+            selected.extend(chosen[:max(0, cap - len(selected))])
+
+        singles.sort(key=lambda a: -(getattr(a, 'relevance_score', 0) or 0))
+        selected.extend(singles[:max(0, cap - len(selected))])
+        print(f"📊 Pre-filtered {len(articles)} articles to {len(selected)} "
+              f"({len(events)} events considered)")
+        return selected
+
     def _build_single_call_prompt(self, articles: List[Article], target_stories: int) -> str:
         """Build comprehensive prompt for single API call."""
 
@@ -205,13 +243,17 @@ class SimplifiedMultiStageAnalyzer:
                 content = content[:597] + "..."
 
             weight = getattr(article, 'source_weight', 1.0) or 1.0
+            perspective = getattr(article, 'source_perspective', 'western_mainstream')
+            state_label = ", state-affiliated" if getattr(article, 'state_affiliated', False) else ""
+            event = getattr(article, 'cluster_id', None)
+            event_line = f"Event: {event}\n" if event else ""
             # Safely format article info avoiding f-string issues with braces in content
             article_info = """
 [{}] {}
-Source: {} ({}, editorial weight {:.1f})
-Content: {}
+Source: {} (perspective: {}{}, editorial weight {:.1f})
+{}Content: {}
 URL: {}
-""".format(i, article.title, article.source, article.source_category.value, weight, content, article.url)
+""".format(i, article.title, article.source, perspective, state_label, weight, event_line, content, article.url)
             article_texts.append(article_info)
 
         articles_section = "\n".join(article_texts)
@@ -225,12 +267,12 @@ URL: {}
                                  "there is a genuinely new development):\n" + history + "\n")
 
         # Use string formatting to avoid f-string issues with article content containing braces
-        template = """You write a daily world-news brief for smart readers who are NOT foreign-policy professionals. Your job: pick the stories that matter most today and explain each one so clearly that a busy reader gets it on the first read.
+        template = """You write a daily world-news brief for smart readers who are NOT foreign-policy professionals. Each issue has three parts: THE BIG STORY (the one thing worth full attention today), ALSO TODAY (a quick world roundup so the reader feels caught up), and THE BIG NUMBER (one striking figure from today's news).
 {}
 ARTICLES TO ANALYZE:
 {}
 
-Select the {} most important stories from the above articles.
+Build today's issue from the above articles. Deep stories to select: {}.
 
 WRITING STYLE (strict — this is the product):
 - Plain English, active voice, US grade 8-9 reading level.
@@ -240,46 +282,60 @@ WRITING STYLE (strict — this is the product):
 - Direct and conversational is good. Vague is not.
 
 SOURCE RULES:
-- When several articles cover the SAME event, treat them as ONE story and list ALL supporting indices in article_indices. Corroboration by 2+ different outlets is a strong plus — raise credibility_score for it.
+- Articles marked with the same "Event:" id cover the SAME event — treat them as one story and list ALL supporting indices in article_indices.
 - article_indices must come from DIFFERENT outlets whenever possible. Never build a story on two articles from the same outlet if any alternative exists.
-- Every outlet is a lens, not an oracle. State-linked or single-perspective sourcing must lower credibility_score, and what_overlooked should say what that lens leaves out.
-- The "editorial weight" (0.7-1.3) on each article reflects past reliability — a mild tiebreaker, not a ranking rule. A well-corroborated wire story beats a single-source think-tank essay.
+- Every outlet is a lens, not an oracle. State-affiliated sources are marked — useful for what a government wants amplified, but never the sole basis of a factual claim. Reflect single-perspective sourcing in a lower credibility_score and name the gap in what_overlooked.
+- The "editorial weight" (0.7-1.3) reflects past reliability — a mild tiebreaker, not a ranking rule. A well-corroborated wire story beats a single-source think-tank essay.
 
-For each selected story, provide analysis in this EXACT JSON format — return a JSON array, no other text:
+Return this EXACT JSON structure — a single JSON object, no other text:
 
-[
-  {{
-    "article_indices": [0, 3, 5],
-    "story_title": "Clear, specific title a non-expert understands — no clichés like 'tensions rise', no jargon",
-    "content_type": "breaking_news or analysis or trend",
-    "region": "europe or middle_east or indo_pacific or americas or africa or central_asia or global",
-    "actor_type": "state or non_state or international_org or mixed",
-    "event_type": "diplomatic or military or economic or informational_cyber or humanitarian or political",
-    "why_important": "2-3 SHORT sentences: what happened and why a smart reader should care. Max 60 words.",
-    "what_overlooked": "1-2 short sentences: what most coverage (or this story's own sources) misses. Max 35 words.",
-    "prediction": "One concrete thing to watch in the next 72 hours. Max 25 words.",
-    "impact_score": 8,
-    "urgency_score": 7,
-    "scope_score": 8,
-    "novelty_score": 6,
-    "credibility_score": 9,
-    "confidence": 0.85,
-    "selection_reasoning": "Why this story over others in the same category"
+{{
+  "big_stories": [
+    {{
+      "article_indices": [0, 3, 5],
+      "story_title": "Clear, specific title a non-expert understands — no clichés like 'tensions rise', no jargon",
+      "content_type": "breaking_news or analysis or trend",
+      "region": "europe or middle_east or indo_pacific or americas or africa or central_asia or global",
+      "actor_type": "state or non_state or international_org or mixed",
+      "event_type": "diplomatic or military or economic or informational_cyber or humanitarian or political",
+      "why_important": "2-3 SHORT sentences: what happened and why a smart reader should care. Max 60 words.",
+      "what_overlooked": "1-2 short sentences: what most coverage (or this story's own sources) misses. Max 35 words.",
+      "prediction": "One concrete thing to watch in the next 72 hours. Max 25 words.",
+      "impact_score": 8,
+      "urgency_score": 7,
+      "scope_score": 8,
+      "novelty_score": 6,
+      "credibility_score": 9,
+      "confidence": 0.85,
+      "selection_reasoning": "Why this story over the other candidates"
+    }}
+  ],
+  "quick_hits": [
+    {{
+      "text": "One sentence, max 25 words, concrete facts: who did what, with a number or name in it.",
+      "region": "europe or middle_east or indo_pacific or americas or africa or central_asia or global",
+      "article_index": 7
+    }}
+  ],
+  "big_number": {{
+    "value": "35%",
+    "context": "One sentence: what this number is and why it is striking. Max 25 words.",
+    "article_index": 12
   }}
-]
+}}
+
+CONTENT RULES:
+1. big_stories: exactly the number of deep stories requested. The first is THE story of the day — the one a busy reader must know.
+2. quick_hits: 6 to 8 items, each about a DIFFERENT event than the big stories and than each other. Together they must span at least 4 distinct regions — this is the reader's "I'm caught up on the world" section, so favor geographic spread (Africa, Latin America and Asia are chronically under-covered; include them when the material exists).
+3. big_number: one genuinely striking, verifiable figure taken from one of the articles. If no article contains a striking number, use null.
+4. All scores integers 1-10. article_index values must reference the list above.
+5. Return ONLY the raw JSON object — no markdown, no explanations, no code blocks.
 
 FIELD DEFINITIONS:
 - content_type: breaking_news=event requiring attention today; analysis=strategic examination; trend=multi-week pattern
 - region: europe=EU/NATO/Russia; middle_east=MENA/GCC/Iran/Turkey; indo_pacific=China/Japan/Koreas/SE Asia/India; americas=US/LatAm; africa=SSA/Horn/Sahel; central_asia=ex-Soviet stans/Afghanistan; global=multi-region simultaneous
 - actor_type: state=governments+militaries; non_state=armed groups/corps/NGOs; international_org=UN/NATO/EU/WTO; mixed=combination
-- event_type: diplomatic=summits/treaties/negotiations; military=conflict/deployments/weapons; economic=trade/energy/sanctions; informational_cyber=disinformation/hacking; humanitarian=refugees/famine/disaster; political=elections/coups/protests
-
-SELECTION RULES:
-1. Cover at least 3 distinct regions — no geographic clustering
-2. ~25% breaking news, 75% analysis/trends
-3. Prefer corroborated, multi-outlet stories over single-source ones
-4. All scores must be integers 1-10
-5. Return ONLY the raw JSON array — no markdown, no explanations, no code blocks"""
+- event_type: diplomatic=summits/treaties/negotiations; military=conflict/deployments/weapons; economic=trade/energy/sanctions; informational_cyber=disinformation/hacking; humanitarian=refugees/famine/disaster; political=elections/coups/protests"""
 
         return template.format(history_block, articles_section, target_stories)
     
@@ -352,91 +408,160 @@ SELECTION RULES:
             logger.warning(f"Readability rewrite failed, keeping original copy: {e}")
             return analyses, 0, 0, 0.0
 
-    def _parse_single_response(self, response_text: str, articles: List[Article]) -> List[AIAnalysis]:
-        """Parse the single API response into AIAnalysis objects."""
-        try:
-            # Log the response for debugging
-            logger.info(f"API Response (first 1000 chars): {response_text[:1000]}...")
-            
-            # Extract JSON from response — use greedy match so multi-object arrays parse correctly
-            import re
-            response_text = response_text.strip()
-            # Strip markdown code fences if present
-            response_text = re.sub(r'```(?:json)?\s*', '', response_text).strip('`').strip()
-            json_match = re.search(r'\[.*\]', response_text, re.DOTALL)
-            if not json_match:
-                logger.error(f"No JSON array found in response. Full response: {response_text}")
-                return []
+    def _story_from_data(self, data: Dict[str, Any], articles: List[Article]) -> AIAnalysis:
+        """Build one AIAnalysis from a parsed story dict."""
+        from ..newsletter.source_display import registrable_domain
 
-            json_text = json_match.group()
-            logger.info(f"Found JSON: {json_text[:500]}...")
+        # Get source URLs from article indices, never citing the same
+        # outlet twice under one story (repeated domains read as bias).
+        source_urls = []
+        seen_domains = set()
+        for idx in data.get('article_indices', []):
+            if isinstance(idx, int) and 0 <= idx < len(articles):
+                url = articles[idx].url
+                domain = registrable_domain(url)
+                if domain in seen_domains:
+                    continue
+                seen_domains.add(domain)
+                source_urls.append(url)
+
+        content_type_str = data.get('content_type', 'analysis')
+        content_type = ContentType.BREAKING_NEWS if 'breaking' in content_type_str else \
+                      ContentType.TREND if 'trend' in content_type_str else \
+                      ContentType.ANALYSIS
+
+        analysis = AIAnalysis(
+            story_title=data.get('story_title', 'Untitled Story'),
+            why_important=data.get('why_important', 'Important geopolitical development'),
+            what_overlooked=data.get('what_overlooked', 'Broader strategic implications'),
+            prediction=data.get('prediction', 'Situation likely to evolve'),
+            impact_score=int(data.get('impact_score', 7)),
+            urgency_score=int(data.get('urgency_score', 5)),
+            scope_score=int(data.get('scope_score', 6)),
+            novelty_score=int(data.get('novelty_score', 5)),
+            credibility_score=int(data.get('credibility_score', 7)),
+            impact_dimension_score=int(data.get('impact_dimension_score', data.get('impact_score', 7))),
+            content_type=content_type,
+            sources=source_urls or ['No source'],
+            confidence=float(data.get('confidence', 0.7)),
+            region=data.get('region', 'global'),
+            actor_type=data.get('actor_type', 'state'),
+            event_type=data.get('event_type', 'political'),
+        )
+        reasoning = data.get('selection_reasoning', 'Selected based on impact')
+        logger.info(f"Selected story: {analysis.story_title} - {reasoning}")
+        return analysis
+
+    def _article_url(self, idx, articles: List[Article]) -> str:
+        if isinstance(idx, int) and 0 <= idx < len(articles):
+            return articles[idx].url
+        return ""
+
+    def _parse_issue_response(self, response_text: str, articles: List[Article]) -> IssueContent:
+        """Parse the issue-format response (object with big_stories/quick_hits/
+        big_number). Falls back to the legacy array-of-stories format."""
+        try:
+            logger.info(f"API Response (first 1000 chars): {response_text[:1000]}...")
+
+            import re
+            cleaned = response_text.strip()
+            cleaned = re.sub(r'```(?:json)?\s*', '', cleaned).strip('`').strip()
+
+            # Legacy fallback: a bare JSON array of stories
+            obj_match = re.search(r'\{.*\}', cleaned, re.DOTALL)
+            arr_match = re.search(r'\[.*\]', cleaned, re.DOTALL)
+            if not obj_match or (arr_match and arr_match.start() < obj_match.start()):
+                stories = self._parse_single_response(response_text, articles)
+                return IssueContent(stories=stories)
 
             try:
-                analyses_data = json.loads(json_text)
+                data = json.loads(obj_match.group())
             except json.JSONDecodeError as je:
-                logger.error(f"JSON decode error: {je}. JSON text: {json_text}")
+                logger.error(f"JSON decode error: {je}")
+                return IssueContent()
+
+            stories = [self._story_from_data(s, articles)
+                       for s in data.get('big_stories', []) if isinstance(s, dict)]
+
+            quick_hits = []
+            seen_texts = set()
+            for hit in data.get('quick_hits', []):
+                if not isinstance(hit, dict):
+                    continue
+                text = (hit.get('text') or '').strip()
+                if not text or text.lower() in seen_texts:
+                    continue
+                seen_texts.add(text.lower())
+                quick_hits.append(QuickHit(
+                    text=text,
+                    region=hit.get('region', 'global'),
+                    url=self._article_url(hit.get('article_index'), articles),
+                ))
+
+            big_number = None
+            bn = data.get('big_number')
+            if isinstance(bn, dict) and bn.get('value') and bn.get('context'):
+                big_number = BigNumber(
+                    value=str(bn['value']).strip(),
+                    context=str(bn['context']).strip(),
+                    url=self._article_url(bn.get('article_index'), articles),
+                )
+
+            return IssueContent(stories=stories, quick_hits=quick_hits, big_number=big_number)
+
+        except Exception as e:
+            logger.error(f"Failed to parse issue response: {e}", exc_info=True)
+            logger.error(f"Response text was: {response_text[:1000] if response_text else 'None'}")
+            return IssueContent()
+
+    def _parse_single_response(self, response_text: str, articles: List[Article]) -> List[AIAnalysis]:
+        """Parse the legacy array-format response into AIAnalysis objects."""
+        try:
+            import re
+            cleaned = response_text.strip()
+            cleaned = re.sub(r'```(?:json)?\s*', '', cleaned).strip('`').strip()
+            json_match = re.search(r'\[.*\]', cleaned, re.DOTALL)
+            if not json_match:
+                logger.error(f"No JSON array found in response. Full response: {cleaned[:500]}")
+                return []
+
+            try:
+                analyses_data = json.loads(json_match.group())
+            except json.JSONDecodeError as je:
+                logger.error(f"JSON decode error: {je}")
                 return []
 
             if not isinstance(analyses_data, list):
-                logger.error(f"Expected list, got {type(analyses_data)}: {analyses_data}")
+                logger.error(f"Expected list, got {type(analyses_data)}")
                 return []
-            
-            analyses = []
-            
-            from ..newsletter.source_display import registrable_domain
 
-            for data in analyses_data:
-                # Get source URLs from article indices, never citing the same
-                # outlet twice under one story (repeated domains read as bias).
-                source_urls = []
-                seen_domains = set()
-                for idx in data.get('article_indices', []):
-                    if 0 <= idx < len(articles):
-                        url = articles[idx].url
-                        domain = registrable_domain(url)
-                        if domain in seen_domains:
-                            continue
-                        seen_domains.add(domain)
-                        source_urls.append(url)
-                
-                # Determine content type
-                content_type_str = data.get('content_type', 'analysis')
-                content_type = ContentType.BREAKING_NEWS if 'breaking' in content_type_str else \
-                              ContentType.TREND if 'trend' in content_type_str else \
-                              ContentType.ANALYSIS
-                
-                analysis = AIAnalysis(
-                    story_title=data.get('story_title', 'Untitled Story'),
-                    why_important=data.get('why_important', 'Important geopolitical development'),
-                    what_overlooked=data.get('what_overlooked', 'Broader strategic implications'),
-                    prediction=data.get('prediction', 'Situation likely to evolve'),
-                    impact_score=int(data.get('impact_score', 7)),
-                    urgency_score=int(data.get('urgency_score', 5)),
-                    scope_score=int(data.get('scope_score', 6)),
-                    novelty_score=int(data.get('novelty_score', 5)),
-                    credibility_score=int(data.get('credibility_score', 7)),
-                    impact_dimension_score=int(data.get('impact_dimension_score', data.get('impact_score', 7))),
-                    content_type=content_type,
-                    sources=source_urls or ['No source'],
-                    confidence=float(data.get('confidence', 0.7)),
-                    region=data.get('region', 'global'),
-                    actor_type=data.get('actor_type', 'state'),
-                    event_type=data.get('event_type', 'political'),
-                )
-                
-                analyses.append(analysis)
-                
-                # Archive the selection reasoning for transparency
-                reasoning = data.get('selection_reasoning', 'Selected based on impact')
-                logger.info(f"Selected story: {analysis.story_title} - {reasoning}")
-            
-            return analyses
-            
+            return [self._story_from_data(d, articles) for d in analyses_data if isinstance(d, dict)]
+
         except Exception as e:
             logger.error(f"Failed to parse response: {e}", exc_info=True)
-            logger.error(f"Response text was: {response_text[:1000] if response_text else 'None'}")
             return []
     
+    def _create_mock_issue(self, articles: List[Article]) -> IssueContent:
+        """Mock issue in the new format for DRY_RUN and tests."""
+        stories = self._create_mock_analyses(articles[:1])
+        regions = ["europe", "middle_east", "indo_pacific", "americas", "africa", "central_asia", "global"]
+        quick_hits = [
+            QuickHit(
+                text=(a.title if len(a.title.split()) <= 25 else " ".join(a.title.split()[:25]) + "..."),
+                region=regions[i % len(regions)],
+                url=a.url,
+            )
+            for i, a in enumerate(articles[1:8])
+        ]
+        big_number = None
+        if len(articles) > 8:
+            big_number = BigNumber(
+                value="61",
+                context="Sources now feeding this brief across 14 global perspectives (mock).",
+                url=articles[8].url,
+            )
+        return IssueContent(stories=stories, quick_hits=quick_hits, big_number=big_number)
+
     def _create_mock_analyses(self, articles: List[Article]) -> List[AIAnalysis]:
         """Create BETTER mock analyses as fallback."""
         logger.warning("Using improved mock analyses as fallback")

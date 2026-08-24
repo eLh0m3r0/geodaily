@@ -168,6 +168,9 @@ class GitHubPagesPublisher:
                     </section>
 """
         
+        # Also Today roundup + Big Number
+        html += self._build_extras_html(newsletter)
+
         # Footer
         html += f"""
                 </div>
@@ -196,6 +199,36 @@ class GitHubPagesPublisher:
         
         return html
     
+    def _build_extras_html(self, newsletter: Newsletter) -> str:
+        """Also Today roundup + Big Number sections for the archive page."""
+        html = ""
+        quick_hits = getattr(newsletter, 'quick_hits', None) or []
+        big_number = getattr(newsletter, 'big_number', None)
+        if quick_hits:
+            items = ""
+            for hit in quick_hits:
+                region = hit.region.replace("_", " ").title()
+                arrow = f' <a href="{hit.url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>' if hit.url else ""
+                items += (f'                        <li><span class="quick-hit-region">{region}</span> '
+                          f'{hit.text}{arrow}</li>\n')
+            html += f"""
+                    <section class="also-today">
+                        <h2 class="section-heading">Also Today</h2>
+                        <ul class="quick-hits">
+{items}                        </ul>
+                    </section>
+"""
+        if big_number:
+            arrow = f' <a href="{big_number.url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>' if big_number.url else ""
+            html += f"""
+                    <section class="big-number">
+                        <h2 class="section-heading">The Big Number</h2>
+                        <div class="big-number-value">{big_number.value}</div>
+                        <p class="big-number-context">{big_number.context}{arrow}</p>
+                    </section>
+"""
+        return html
+
     def _get_impact_class(self, score: int) -> str:
         """Get CSS class based on impact score."""
         if score >= 8:
@@ -1122,6 +1155,23 @@ body {
     font-size: 0.9rem; font-weight: 600; cursor: pointer;
 }
 .subscribe-btn:hover { background: #c53030; }
+.also-today, .big-number {
+    margin: 2rem 0; padding: 1.25rem 1.5rem;
+    background: var(--bg-light); border-radius: 8px;
+}
+.section-heading {
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 2px; color: var(--text-light); margin: 0 0 0.75rem 0;
+}
+.quick-hits { margin: 0; padding-left: 1.1rem; }
+.quick-hits li { margin-bottom: 0.6rem; line-height: 1.5; }
+.quick-hit-region {
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; color: var(--accent-color); margin-right: 0.35rem;
+}
+.quick-hit-link { text-decoration: none; color: var(--accent-color); }
+.big-number-value { font-size: 2.5rem; font-weight: 700; color: var(--primary-color); line-height: 1.1; }
+.big-number-context { color: var(--text-light); margin: 0.4rem 0 0 0; }
 .subscribe-frequency {
     display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap;
     width: 100%; margin: 0.35rem 0; color: #cbd5e0; font-size: 0.85rem;

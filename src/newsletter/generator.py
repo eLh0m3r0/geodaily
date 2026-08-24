@@ -20,13 +20,16 @@ class NewsletterGenerator:
         """Initialize newsletter generator."""
         pass
     
-    def generate_newsletter(self, analyses: List[AIAnalysis], date: Optional[datetime] = None) -> Newsletter:
+    def generate_newsletter(self, analyses: List[AIAnalysis], date: Optional[datetime] = None,
+                            quick_hits=None, big_number=None) -> Newsletter:
         """
         Generate newsletter from AI analyses with balanced content types.
 
         Args:
-            analyses: List of AI analysis results
+            analyses: List of AI analysis results (deep stories)
             date: Newsletter date (defaults to current date)
+            quick_hits: optional list of QuickHit roundup items
+            big_number: optional BigNumber delight element
 
         Returns:
             Newsletter object with generated content
@@ -34,7 +37,9 @@ class NewsletterGenerator:
         if date is None:
             date = datetime.now()
 
-        logger.info(f"Generating newsletter with {len(analyses)} stories for {date.strftime('%Y-%m-%d')}")
+        quick_hits = quick_hits or []
+        logger.info(f"Generating newsletter with {len(analyses)} stories and "
+                    f"{len(quick_hits)} quick hits for {date.strftime('%Y-%m-%d')}")
 
         # Balance content types: aim for 20-30% breaking news, rest analysis/trends
         selected_stories = self._select_balanced_stories(analyses)
@@ -44,8 +49,10 @@ class NewsletterGenerator:
             date=date,
             title=Config.NEWSLETTER_TITLE,
             stories=selected_stories,
-            intro_text=self._generate_intro_text(date, len(selected_stories)),
-            footer_text=self._generate_footer_text()
+            intro_text=self._generate_intro_text(date, len(selected_stories), len(quick_hits)),
+            footer_text=self._generate_footer_text(),
+            quick_hits=quick_hits,
+            big_number=big_number
         )
 
         return newsletter
@@ -165,6 +172,9 @@ class NewsletterGenerator:
         stories_html = ""
         for story in newsletter.stories:
             stories_html += self._generate_story_html(story)
+
+        # "Also today" roundup + "The big number" delight element
+        stories_html += self._generate_extras_html(newsletter)
         
         # Build optional Buttondown subscribe form (username resolved from the
         # API when the env var is missing, so the form can't silently vanish)
@@ -354,6 +364,36 @@ class NewsletterGenerator:
 
         return story_html
     
+    def _generate_extras_html(self, newsletter: Newsletter) -> str:
+        """Render the Also Today roundup and Big Number sections (web)."""
+        html = ""
+        if newsletter.quick_hits:
+            items = ""
+            for hit in newsletter.quick_hits:
+                region = hit.region.replace("_", " ").title()
+                text = hit.text
+                if hit.url:
+                    text = f'{text} <a href="{hit.url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>'
+                items += f'<li><span class="quick-hit-region">{region}</span> {text}</li>\n'
+            html += f"""
+        <div class="also-today">
+            <div class="section-heading">Also Today</div>
+            <ul class="quick-hits">
+{items}            </ul>
+        </div>
+"""
+        if newsletter.big_number:
+            bn = newsletter.big_number
+            link = f' <a href="{bn.url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>' if bn.url else ""
+            html += f"""
+        <div class="big-number">
+            <div class="section-heading">The Big Number</div>
+            <div class="big-number-value">{bn.value}</div>
+            <div class="big-number-context">{bn.context}{link}</div>
+        </div>
+"""
+        return html
+
     def _get_newsletter_css(self) -> str:
         """Get CSS styles for newsletter."""
         return """
@@ -679,6 +719,41 @@ class NewsletterGenerator:
             background-color: #229954;
         }
 
+        /* Also Today roundup */
+        .also-today, .big-number {
+            margin: 30px 0;
+            padding: 20px 24px;
+            background-color: #f7f8fa;
+            border-radius: 8px;
+        }
+        .section-heading {
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #7f8c8d;
+            margin-bottom: 12px;
+        }
+        .quick-hits { margin: 0; padding-left: 18px; }
+        .quick-hits li { margin-bottom: 10px; line-height: 1.5; }
+        .quick-hit-region {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #2c5282;
+            margin-right: 6px;
+        }
+        .quick-hit-link { text-decoration: none; color: #3498db; }
+        .big-number-value {
+            font-size: 40px;
+            font-weight: bold;
+            color: #2c3e50;
+            line-height: 1.1;
+        }
+        .big-number-context { color: #4a5568; margin-top: 6px; }
+
         .newsletter-actions {
             margin-top: 20px;
             padding-top: 15px;
@@ -710,7 +785,7 @@ class NewsletterGenerator:
         }
         """
     
-    def _generate_intro_text(self, date: datetime, story_count: int) -> str:
+    def _generate_intro_text(self, date: datetime, story_count: int, quick_hit_count: int = 0) -> str:
         """Generate intro text for newsletter.
 
         Kept to two short sentences — on mobile a long boilerplate intro fills
@@ -719,9 +794,12 @@ class NewsletterGenerator:
         day_name = date.strftime('%A')
         date_str = date.strftime('%B %d, %Y')
 
+        if quick_hit_count:
+            return (f"Good morning. It's {day_name}, {date_str} — one story worth your "
+                    f"full attention today, plus {quick_hit_count} quick updates from "
+                    f"around the world.")
         return (f"Good morning. It's {day_name}, {date_str} — today's briefing covers "
-                f"{story_count} developments shaping global affairs: breaking news, "
-                f"strategic analysis, and the trends behind the headlines.")
+                f"{story_count} developments shaping global affairs.")
     
     def _generate_footer_text(self) -> str:
         """Generate footer text for newsletter.
@@ -805,6 +883,9 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
             stories_html += self._generate_email_story_html(
                 story, is_last, TYPE_COLORS, C_NAVY, C_TEXT, C_MUTED, C_LIGHT, C_BORDER, C_GOLD, C_LINK
             )
+        stories_html += self._generate_email_extras_html(
+            newsletter, C_NAVY, C_TEXT, C_MUTED, C_LIGHT, C_BORDER, C_GOLD, C_LINK
+        )
 
         footer_html = f"""<div style="border-top:2px solid {C_BORDER};margin-top:32px;padding-top:24px;text-align:center;font-family:Georgia,'Times New Roman',serif;font-size:12px;color:{C_MUTED};line-height:1.8;">
   <p style="margin:0 0 6px 0;font-weight:bold;color:{C_TEXT};">{newsletter.title}</p>
@@ -886,6 +967,44 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
   </div>
   {sources_html}
 </div>"""
+
+    def _generate_email_extras_html(
+        self, newsletter: Newsletter,
+        C_NAVY: str, C_TEXT: str, C_MUTED: str, C_LIGHT: str,
+        C_BORDER: str, C_GOLD: str, C_LINK: str
+    ) -> str:
+        """Inline-styled Also Today + Big Number sections for the email."""
+        NO_HYPHENS = "-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;"
+        heading_style = (f"font-size:10px;font-weight:bold;text-transform:uppercase;"
+                         f"letter-spacing:2px;color:{C_MUTED};margin-bottom:12px;")
+        html = ""
+        if newsletter.quick_hits:
+            items = ""
+            for hit in newsletter.quick_hits:
+                region = hit.region.replace("_", " ").title()
+                arrow = (f' <a href="{hit.url}" style="color:{C_LINK};text-decoration:none;">&rarr;</a>'
+                         if hit.url else "")
+                items += (f'<div style="margin-bottom:10px;font-family:Georgia,\'Times New Roman\',serif;'
+                          f'font-size:14px;line-height:1.6;color:{C_TEXT};{NO_HYPHENS}">'
+                          f'<span style="font-size:10px;font-weight:bold;text-transform:uppercase;'
+                          f'letter-spacing:0.5px;color:{C_LINK};margin-right:6px;">{region}</span>'
+                          f'{hit.text}{arrow}</div>')
+            html += (f'<div class="nl-box" style="margin:26px 0;background-color:{C_LIGHT};'
+                     f'padding:16px 18px;border-left:3px solid {C_NAVY};">'
+                     f'<div style="{heading_style}">Also Today</div>{items}</div>')
+        if newsletter.big_number:
+            bn = newsletter.big_number
+            arrow = (f' <a href="{bn.url}" style="color:{C_LINK};text-decoration:none;">&rarr;</a>'
+                     if bn.url else "")
+            html += (f'<div class="nl-box" style="margin:26px 0;background-color:{C_LIGHT};'
+                     f'padding:16px 18px;border-left:3px solid {C_GOLD};">'
+                     f'<div style="{heading_style}">The Big Number</div>'
+                     f'<div style="font-family:Georgia,\'Times New Roman\',serif;font-size:34px;'
+                     f'font-weight:bold;color:{C_NAVY};line-height:1.1;">{bn.value}</div>'
+                     f'<div style="font-family:Georgia,\'Times New Roman\',serif;font-size:14px;'
+                     f'line-height:1.6;color:{C_TEXT};margin-top:6px;{NO_HYPHENS}">{bn.context}{arrow}</div>'
+                     f'</div>')
+        return html
 
     def _generate_fallback_html(self, newsletter: Newsletter) -> str:
         """Generate basic HTML if main generation fails."""
