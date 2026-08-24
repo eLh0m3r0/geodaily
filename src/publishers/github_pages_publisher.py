@@ -54,8 +54,23 @@ class GitHubPagesPublisher:
 
             # Use Archive Manager to add newsletter (handles rotation automatically)
             newsletter_path = self.archive_manager.add_newsletter(html_content, newsletter.date)
-            
+
             logger.info(f"Newsletter added to archive: {newsletter_path}")
+
+            # Persist the machine-readable issue (feeds the weekly digest and
+            # story pages) and drop JSONs for rotated-out issues
+            try:
+                from ..newsletter.issue_store import save_issue_json, prune_orphaned_json
+                save_issue_json(newsletter, self.output_dir / "newsletters")
+                prune_orphaned_json(self.output_dir / "newsletters")
+            except Exception as e:
+                logger.warning(f"Issue JSON persistence failed: {e}")
+
+            # Evergreen per-story SEO page with the perspective grid
+            try:
+                self._publish_story_page(newsletter, analyses)
+            except Exception as e:
+                logger.warning(f"Story page generation failed: {e}")
 
             # Update all site pages with archive-aware content
             self._update_index_page()
@@ -285,6 +300,92 @@ class GitHubPagesPublisher:
                     </section>
 """
         return html
+
+    def _publish_story_page(self, newsletter: Newsletter, analyses: List[AIAnalysis]) -> Optional[str]:
+        """Write an evergreen per-story SEO page for the big story.
+
+        Unlike the newsletter archive (rotated, max N issues), story pages
+        accumulate: each carries the perspective grid — content no other
+        outlet publishes — which is the SEO play.
+        """
+        if not analyses:
+            return None
+        from ..newsletter.issue_store import story_slug
+        story = analyses[0]
+        date_str = newsletter.date.strftime('%Y-%m-%d')
+        slug = f"{date_str}-{story_slug(story.story_title)}"
+        stories_dir = self.output_dir / "stories"
+        stories_dir.mkdir(exist_ok=True)
+
+        from ..newsletter.source_display import dedupe_sources
+        sources_html = "".join(
+            f'<li><a href="{url}" target="_blank" rel="noopener">{name}</a></li>\n'
+            for url, name in dedupe_sources(story.sources, limit=4)
+        )
+        description = (story.why_important or "")[:155].replace('"', "'")
+
+        # Reuse the extras builder for the grid; hide roundup/number here
+        grid_only = Newsletter(
+            date=newsletter.date, title=newsletter.title, stories=[],
+            perspective_grid=getattr(newsletter, 'perspective_grid', None),
+        )
+        grid_html = self._build_extras_html(grid_only)
+
+        html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{story.story_title} - {newsletter.title}</title>
+    <meta name="description" content="{description}">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="canonical" href="{self.SITE_BASE_URL}/stories/{slug}.html">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="site-title">{newsletter.title}</h1>
+            <p class="tagline">{Config.NEWSLETTER_TAGLINE}</p>
+            <nav class="nav">
+                <a href="../index.html">Home</a>
+                <a href="../archive.html">Archive</a>
+                <a href="../about.html">About</a>
+                <a href="../feed.xml">RSS</a>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <article class="newsletter">
+                <header class="newsletter-header">
+                    <h1 class="newsletter-title">{story.story_title}</h1>
+                    <time class="newsletter-date" datetime="{newsletter.date.isoformat()}">{newsletter.date.strftime('%B %d, %Y')}</time>
+                </header>
+                <div class="stories">
+                    <section class="story">
+                        <div class="story-content">
+                            <div class="analysis-section"><h3>Why This Matters</h3><p>{story.why_important}</p></div>
+                            <div class="analysis-section"><h3>What Others Are Missing</h3><p>{story.what_overlooked}</p></div>
+                            <div class="analysis-section"><h3>What to Watch</h3><p>{story.prediction}</p></div>
+                            <div class="sources"><h4>Sources</h4><ul>{sources_html}</ul></div>
+                        </div>
+                    </section>
+{grid_html}
+                </div>
+                <footer class="newsletter-footer">
+                    <p>From the <a href="../newsletters/newsletter-{date_str}.html">{newsletter.date.strftime('%B %d, %Y')} edition</a> of {newsletter.title}.</p>
+                    {self._build_subscribe_html()}
+                </footer>
+            </article>
+        </div>
+    </main>
+</body>
+</html>"""
+        path = stories_dir / f"{slug}.html"
+        with open(path, 'w', encoding='utf-8') as f:
+            f.write(html)
+        logger.info(f"Story page published: stories/{slug}.html")
+        return f"stories/{slug}.html"
 
     def _get_impact_class(self, score: int) -> str:
         """Get CSS class based on impact score."""

@@ -41,6 +41,9 @@ python test_archiver_suite.py         # Test complete archiver functionality
 python tests/test_archiver.py         # Test AI data archiver core features
 python tests/test_archive_utilities.py # Test cleanup and dashboard utilities
 
+# Weekly digest (Sundays via weekly_digest.yml; DRY_RUN builds without sending)
+python -m src.weekly_digest
+
 # Test X.com thread generation
 python test_x_threads.py              # Test thread generation (mock + real if API key available)
 
@@ -88,10 +91,10 @@ python src/sitemap_generator.py             # Generate sitemap for GitHub Pages
 ## Architecture Overview
 
 ### Pipeline Flow
-1. **Collection Layer** (`src/collectors/`): Collects from 40 sources (38 RSS + 2 web scraping)
-2. **Processing Layer** (`src/processors/`): Deduplicates, clusters, and scores articles
-3. **AI Analysis Layer** (`src/ai/`): Claude API with cost controls and fallback mechanisms
-4. **Newsletter Generation** (`src/newsletter/`): Professional HTML newsletter creation
+1. **Collection Layer** (`src/collectors/`): Collects from 61 sources (59 RSS + 2 web scraping) across 14 global perspectives
+2. **Processing Layer** (`src/processors/`): Semantic event clustering (fastembed MiniLM + HDBSCAN in `embedding_clusterer.py`, title-similarity fallback), dedup and scoring
+3. **AI Analysis Layer** (`src/ai/`): Claude API with cost controls — one issue call (big story + quick hits + big number, `simple_multi_stage_analyzer.py`) plus one perspective-grid call (`perspective_analyzer.py`), with a Flesch-Kincaid readability gate (`readability.py`)
+4. **Newsletter Generation** (`src/newsletter/`): Issue format = THE BIG STORY (with 'How the World Covers It' perspective grid, blindspot, signals) + ALSO TODAY quick hits + THE BIG NUMBER; web + email-safe renderers, named source links (`source_display.py`), machine-readable issue JSON (`issue_store.py`)
 5. **AI Archive Layer** (`src/archiver/`): Comprehensive data archiving and retention management
 6. **Unified Dashboard Layer** (`src/dashboard/`): Single streamlined dashboard for GitHub Pages
 7. **Publishing Layer** (`src/publishers/`): GitHub Pages deployment and email notifications
@@ -203,6 +206,10 @@ The AI analyzer now evaluates stories across multiple dimensions:
 - `AI_MAX_TOKENS=16000` for Sonnet 5 production (new tokenizer uses ~30% more tokens; adaptive thinking spends from the same budget)
 - `AI_MAX_COST_PER_MONTH=30.0` monthly budget cap for AI spend
 - `ALLOW_OVERWRITE=true` to regenerate existing newsletters
+- `NEWSLETTER_EDITOR_NAME` named human curator for the footer persona ("drafted with AI, curated by X") — set it; anonymous AI footers measurably hurt trust
+- `NEWSLETTER_TAGLINE` (default "The world's news from every side")
+- `READABILITY_MAX_GRADE=9.5` Flesch-Kincaid gate; denser copy triggers one simplify rewrite
+- `BUTTONDOWN_WEEKLY_TAG=weekly` tag for Sunday-digest subscribers (excluded from daily sends)
 - Configurable AI provider support
 - `FETCH_FULL_CONTENT=true` to enable enhanced article content extraction (default: true)
 - `MAX_PARALLEL_FETCHES=5` maximum concurrent content fetches
@@ -227,7 +234,8 @@ The AI analyzer now evaluates stories across multiple dimensions:
 ## Development Notes
 
 ### Working with Sources
-- Current configuration: 40 sources (38 RSS + 2 web)
+- Current configuration: 61 sources (59 RSS + 2 web)
+- Each source carries `perspective` (one of 14 axes, see `src/perspectives.py`), `state_affiliated` (state media are cited as framing data with a visible label, never as sole source of fact) and `reliability_tier` (1-3); optional `site` (article domain when it differs from the feed domain) and `display` (clean outlet name)
 - Each source carries a per-source `weight` (0.7–1.3) that scales relevance scoring, deduplication preference, and is passed to the AI as an editorial-quality signal
 - Validate feeds with `python scripts/validate_sources.py` (add `--strict` in CI to fail on dead feeds); a weekly `source_health.yml` workflow runs it every Monday
 - Freshness windows are per category: think_tank 72h, analysis 48h, everything else 24h (`RSSCollector.FRESHNESS_WINDOW_HOURS`)

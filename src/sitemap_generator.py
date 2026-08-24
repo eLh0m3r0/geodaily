@@ -109,6 +109,14 @@ class SitemapGenerator:
                     if page_info:
                         pages.append(page_info)
 
+            # Add evergreen story pages (per-story perspective grids)
+            stories_dir = self.output_dir / "stories"
+            if stories_dir.exists():
+                for story_file in sorted(stories_dir.glob("*.html"), reverse=True):
+                    page_info = self._get_page_info(story_file, f"stories/{story_file.name}")
+                    if page_info:
+                        pages.append(page_info)
+
             # Add feed.xml if it exists
             feed_path = self.output_dir / "feed.xml"
             if feed_path.exists():

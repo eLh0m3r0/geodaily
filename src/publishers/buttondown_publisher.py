@@ -34,14 +34,25 @@ class ButtondownPublisher:
 
     def publish(self, newsletter: Newsletter, html_content: str) -> Optional[str]:
         """
-        Create and send a Buttondown email for the given newsletter edition.
+        Create and send the daily Buttondown email for a newsletter edition.
+        Weekly-digest subscribers (tagged) are excluded — they get the
+        Sunday digest instead.
 
         Returns the archive URL on success, None if disabled or on error.
         """
+        return self.send_email(
+            subject=self._build_subject(newsletter),
+            html_content=html_content,
+            excluded_tags=[Config.BUTTONDOWN_WEEKLY_TAG],
+        )
+
+    def send_email(self, subject: str, html_content: str,
+                   included_tags: Optional[list] = None,
+                   excluded_tags: Optional[list] = None) -> Optional[str]:
+        """Create and send one Buttondown email, optionally targeted by tags."""
         if not self.enabled:
             return None
 
-        subject = self._build_subject(newsletter)
         body = self._prepare_body(html_content)
         headers = {
             "Authorization": f"Token {self.api_key}",
@@ -51,26 +62,27 @@ class ButtondownPublisher:
         }
 
         # Step 1: create draft
-        email_id = self._create_draft(subject, body, headers)
+        email_id = self._create_draft(subject, body, headers,
+                                      included_tags=included_tags,
+                                      excluded_tags=excluded_tags)
         if not email_id:
             return None
 
-        # Step 2: send draft to all subscribers
+        # Step 2: send draft to the targeted subscribers
         return self._send_draft(email_id, headers)
 
     # ------------------------------------------------------------------
     # Internal helpers
     # ------------------------------------------------------------------
 
-    def _create_draft(self, subject: str, body: str, headers: dict) -> Optional[str]:
-        # Subscribers who chose the weekly digest are tagged and excluded from
-        # daily sends (the Sunday digest targets that tag instead).
-        payload = {
-            "subject": subject,
-            "body": body,
-            "status": "draft",
-            "excluded_tags": [Config.BUTTONDOWN_WEEKLY_TAG],
-        }
+    def _create_draft(self, subject: str, body: str, headers: dict,
+                      included_tags: Optional[list] = None,
+                      excluded_tags: Optional[list] = None) -> Optional[str]:
+        payload = {"subject": subject, "body": body, "status": "draft"}
+        if included_tags:
+            payload["included_tags"] = included_tags
+        if excluded_tags:
+            payload["excluded_tags"] = excluded_tags
         try:
             resp = requests.post(
                 f"{BUTTONDOWN_API_BASE}/emails",
