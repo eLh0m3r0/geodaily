@@ -168,6 +168,37 @@ class BigNumber:
 
 
 @dataclass
+class PerspectiveView:
+    """How one perspective group covers the big story."""
+    perspective: str                 # axis key, e.g. "chinese_state"
+    outlets: List[str] = field(default_factory=list)
+    article_count: int = 0
+    framing: str = ""                # one sentence: how this group frames it
+    quote: str = ""                  # verbatim quote from one of the articles
+    quote_outlet: str = ""
+    quote_url: str = ""
+    state_affiliated: bool = False
+
+
+@dataclass
+class PerspectiveGrid:
+    """Coverage-transparency block for the big story."""
+    views: List[PerspectiveView] = field(default_factory=list)
+    total_outlets: int = 0
+    counts: Dict[str, int] = field(default_factory=dict)  # perspective -> outlet count
+    blindspot: str = ""              # 1-2 sentences on what almost nobody covers
+    blindspot_url: str = ""
+
+
+@dataclass
+class Signal:
+    """External data point (prediction market odds, news-volume trend)."""
+    text: str
+    url: str = ""
+    source: str = ""                 # "Polymarket", "GDELT"
+
+
+@dataclass
 class IssueContent:
     """Full analyzer output for one issue: deep stories + roundup + delight."""
     stories: List[AIAnalysis] = field(default_factory=list)
@@ -185,6 +216,8 @@ class Newsletter:
     footer_text: str = ""
     quick_hits: List[QuickHit] = field(default_factory=list)
     big_number: Optional[BigNumber] = None
+    perspective_grid: Optional[PerspectiveGrid] = None
+    signals: List[Signal] = field(default_factory=list)
 
     def __post_init__(self):
         # Sort stories by impact score (highest first)

@@ -95,7 +95,7 @@ class GitHubPagesPublisher:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{newsletter.title} - {newsletter.date.strftime('%B %d, %Y')}</title>
-    <meta name="description" content="Daily geopolitical analysis focusing on underreported stories with strategic significance">
+    <meta name="description" content="World news from every side: how Western, Asian, Middle Eastern, African and Latin American media cover the same stories - every source linked, state media labeled.">
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="canonical" href="{self.SITE_BASE_URL}/newsletters/newsletter-{newsletter.date.strftime('%Y-%m-%d')}.html">
 </head>
@@ -103,7 +103,7 @@ class GitHubPagesPublisher:
     <header class="header">
         <div class="container">
             <h1 class="site-title">Geopolitical Daily</h1>
-            <p class="tagline">Strategic Intelligence Beyond the Headlines</p>
+            <p class="tagline">{Config.NEWSLETTER_TAGLINE}</p>
             <nav class="nav">
                 <a href="../index.html">Home</a>
                 <a href="../archive.html">Archive</a>
@@ -200,10 +200,67 @@ class GitHubPagesPublisher:
         return html
     
     def _build_extras_html(self, newsletter: Newsletter) -> str:
-        """Also Today roundup + Big Number sections for the archive page."""
+        """Perspective grid, signals, Also Today and Big Number for the archive page."""
         html = ""
         quick_hits = getattr(newsletter, 'quick_hits', None) or []
         big_number = getattr(newsletter, 'big_number', None)
+
+        grid = getattr(newsletter, 'perspective_grid', None)
+        if grid and grid.counts:
+            from ..perspectives import summarize_grid, GROUP_COLORS, label_of
+            parts, _legend = summarize_grid(grid)
+            bar_spans = "".join(
+                f'<span style="flex:{p["count"]};background-color:{p["color"]};" title="{p["label"]}: {p["count"]}"></span>'
+                for p in parts
+            )
+            legend_html = " &middot; ".join(f'{p["pct"]}% {p["label"]}' for p in parts)
+            rows = ""
+            for view in grid.views:
+                if not view.framing:
+                    continue
+                color = GROUP_COLORS.get(view.perspective, "#6B7280")
+                state = ' <span class="state-label">state-affiliated</span>' if view.state_affiliated else ""
+                quote_html = ""
+                if view.quote:
+                    outlet = view.quote_outlet or ""
+                    link = (f'<a href="{view.quote_url}" target="_blank" rel="noopener">{outlet}</a>'
+                            if view.quote_url else outlet)
+                    quote_html = f'<div class="persp-quote">&ldquo;{view.quote}&rdquo; &mdash; {link}</div>'
+                rows += f"""
+                        <div class="persp-row">
+                            <span class="persp-dot" style="background-color:{color};"></span>
+                            <div><span class="persp-name">{label_of(view.perspective)} ({view.article_count})</span>{state}
+                            &mdash; {view.framing}{quote_html}</div>
+                        </div>"""
+            blindspot_html = ""
+            if grid.blindspot:
+                arrow = (f' <a href="{grid.blindspot_url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>'
+                         if grid.blindspot_url else "")
+                blindspot_html = f'<div class="blindspot">&#9888; <strong>Blindspot:</strong> {grid.blindspot}{arrow}</div>'
+            html += f"""
+                    <section class="perspective-grid">
+                        <h2 class="section-heading">How the World Covers It</h2>
+                        <div class="coverage-bar">{bar_spans}</div>
+                        <div class="coverage-legend">{grid.total_outlets} outlets &middot; {legend_html}</div>
+                        {rows}
+                        {blindspot_html}
+                    </section>
+"""
+
+        signals = getattr(newsletter, 'signals', None) or []
+        if signals:
+            items = ""
+            for signal in signals:
+                arrow = (f' <a href="{signal.url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>'
+                         if signal.url else "")
+                items += f'                        <li>{signal.text}{arrow}</li>\n'
+            html += f"""
+                    <section class="signals">
+                        <h2 class="section-heading">Signals</h2>
+                        <ul class="quick-hits">
+{items}                        </ul>
+                    </section>
+"""
         if quick_hits:
             items = ""
             for hit in quick_hits:
@@ -285,13 +342,13 @@ class GitHubPagesPublisher:
         # Get list of newsletters from Archive Manager (already sorted, newest first)
         newsletter_list = self.archive_manager.get_newsletter_list(limit=10)
         
-        html = """<!DOCTYPE html>
+        html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geopolitical Daily - Strategic Intelligence Beyond the Headlines</title>
-    <meta name="description" content="Daily geopolitical analysis focusing on underreported stories with strategic significance">
+    <title>Geopolitical Daily - The World's News From Every Side</title>
+    <meta name="description" content="World news from every side: how Western, Asian, Middle Eastern, African and Latin American media cover the same stories - every source linked, state media labeled.">
     <link rel="stylesheet" href="assets/style.css">
     <link rel="alternate" type="application/rss+xml" title="Geopolitical Daily RSS" href="feed.xml">
 </head>
@@ -299,8 +356,8 @@ class GitHubPagesPublisher:
     <header class="header">
         <div class="container">
             <h1 class="site-title">Geopolitical Daily</h1>
-            <p class="tagline">Strategic Intelligence Beyond the Headlines</p>
-            <p class="description">AI-powered analysis of underreported geopolitical developments with strategic significance</p>
+            <p class="tagline">{Config.NEWSLETTER_TAGLINE}</p>
+            <p class="description">World news from every side: how Western, Asian, Middle Eastern, African and Latin American media cover the same stories - every source linked, state media labeled.</p>
             <nav class="nav">
                 <a href="index.html">Home</a>
                 <a href="archive.html">Archive</a>
@@ -328,20 +385,20 @@ class GitHubPagesPublisher:
                     </article>
 """
         
-        html += """
+        html += f"""
                 </div>
             </section>
 
             <section class="about-section">
                 <h2>About This Newsletter</h2>
-                <p>Geopolitical Daily provides AI-powered analysis of underreported stories with strategic significance. Our focus is on second-order effects, regional power dynamics, and developments that mainstream media might overlook.</p>
+                <p>Most world-news briefs show you one lens. Geopolitical Daily reads 60+ sources across Western, Asian, Middle Eastern, African and Latin American media every day &mdash; and shows you how each part of the world covers the same story, with every source linked and state media clearly labeled.</p>
                 
                 <h3>What Makes Us Different</h3>
                 <ul>
-                    <li><strong>Underreported Focus:</strong> We identify stories that deserve more attention</li>
-                    <li><strong>Strategic Analysis:</strong> Beyond headlines to implications and predictions</li>
-                    <li><strong>Multiple Sources:</strong> Drawing from think tanks, regional outlets, and specialized publications</li>
-                    <li><strong>Daily Updates:</strong> Fresh analysis every day at 6:00 UTC</li>
+                    <li><strong>Every side of the story:</strong> How Western, Chinese, Russian, regional and Global South media frame the same event &mdash; quoted, not paraphrased</li>
+                    <li><strong>Blindspots:</strong> Stories one part of the world covers heavily while the rest ignores them</li>
+                    <li><strong>Receipts included:</strong> Every claim links to its source; state-affiliated outlets are labeled</li>
+                    <li><strong>Five minutes, daily or weekly:</strong> One big story, a world roundup, and one number worth knowing</li>
                 </ul>
                 
             </section>
@@ -397,7 +454,7 @@ class GitHubPagesPublisher:
                 'relative_path': newsletter['relative_path']
             })
 
-        html = """<!DOCTYPE html>
+        html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -410,7 +467,7 @@ class GitHubPagesPublisher:
     <header class="header">
         <div class="container">
             <h1 class="site-title">Geopolitical Daily</h1>
-            <p class="tagline">Strategic Intelligence Beyond the Headlines</p>
+            <p class="tagline">{Config.NEWSLETTER_TAGLINE}</p>
             <nav class="nav">
                 <a href="index.html">Home</a>
                 <a href="archive.html">Archive</a>
@@ -459,7 +516,7 @@ class GitHubPagesPublisher:
             </section>
 """
 
-        html += """
+        html += f"""
         </div>
     </main>
 
@@ -484,7 +541,7 @@ class GitHubPagesPublisher:
     def _update_about_page(self):
         """Generate about page with project information."""
 
-        html = """<!DOCTYPE html>
+        html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -497,7 +554,7 @@ class GitHubPagesPublisher:
     <header class="header">
         <div class="container">
             <h1 class="site-title">Geopolitical Daily</h1>
-            <p class="tagline">Strategic Intelligence Beyond the Headlines</p>
+            <p class="tagline">{Config.NEWSLETTER_TAGLINE}</p>
             <nav class="nav">
                 <a href="index.html">Home</a>
                 <a href="archive.html">Archive</a>
@@ -512,7 +569,7 @@ class GitHubPagesPublisher:
         <div class="container">
             <section class="about-hero">
                 <h1>About Geopolitical Daily</h1>
-                <p class="about-intro">AI-powered analysis of underreported geopolitical developments with strategic significance</p>
+                <p class="about-intro">World news from every side: how Western, Asian, Middle Eastern, African and Latin American media cover the same stories - every source linked, state media labeled.</p>
             </section>
 
             <section class="about-content">
@@ -813,7 +870,7 @@ class GitHubPagesPublisher:
         rss_content = f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
-        <title><![CDATA[Geopolitical Daily - Strategic Intelligence Beyond the Headlines]]></title>
+        <title><![CDATA[Geopolitical Daily - The World's News From Every Side]]></title>
         <link>{self.SITE_BASE_URL}/</link>
         <atom:link href="{self.SITE_BASE_URL}/feed.xml" rel="self" type="application/rss+xml" />
         <description><![CDATA[AI-powered analysis of underreported geopolitical developments with strategic significance. Daily insights on international relations, security, and global power dynamics.]]></description>
@@ -1155,6 +1212,24 @@ body {
     font-size: 0.9rem; font-weight: 600; cursor: pointer;
 }
 .subscribe-btn:hover { background: #c53030; }
+.perspective-grid, .signals {
+    margin: 2rem 0; padding: 1.25rem 1.5rem;
+    background: var(--bg-light); border-radius: 8px;
+}
+.coverage-bar { display: flex; height: 6px; border-radius: 3px; overflow: hidden; margin-bottom: 0.5rem; }
+.coverage-legend { font-size: 0.75rem; color: var(--text-light); margin-bottom: 1rem; }
+.persp-row { display: flex; gap: 0.6rem; align-items: flex-start; margin-bottom: 0.75rem; line-height: 1.5; }
+.persp-dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 0.4rem; flex-shrink: 0; }
+.persp-name { font-weight: 700; }
+.state-label {
+    font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.5px;
+    background: #f5e6c8; color: #8a6d1a; border-radius: 8px; padding: 1px 7px; margin-left: 4px;
+}
+.persp-quote { font-style: italic; color: var(--text-light); margin-top: 0.25rem; font-size: 0.9rem; }
+.blindspot {
+    background: #fdf3e3; color: #8a5a17; border-radius: 6px;
+    padding: 0.6rem 0.9rem; margin-top: 0.9rem; font-size: 0.9rem;
+}
 .also-today, .big-number {
     margin: 2rem 0; padding: 1.25rem 1.5rem;
     background: var(--bg-light); border-radius: 8px;

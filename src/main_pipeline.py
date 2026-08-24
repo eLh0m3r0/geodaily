@@ -562,6 +562,41 @@ def run_complete_pipeline() -> bool:
                         analyses, ai_time, "mock_fallback", True, 0, 0.0
                     )
         
+        # Step 4.5: Perspective grid + signals for the big story
+        perspective_grid = None
+        signals = []
+        if analyses:
+            with PerformanceProfiler.profile_operation("perspective_enrichment", logger):
+                try:
+                    from .ai.perspective_analyzer import PerspectiveAnalyzer
+                    perspective_grid = PerspectiveAnalyzer().build_grid(analyses[0], scored_articles)
+                    if perspective_grid:
+                        logger.info("Perspective grid built",
+                                   pipeline_stage=PipelineStage.AI_ANALYSIS,
+                                   run_id=run_id,
+                                   structured_data={
+                                       'groups': list(perspective_grid.counts.keys()),
+                                       'views_with_framing': len(perspective_grid.views),
+                                       'total_outlets': perspective_grid.total_outlets,
+                                       'has_blindspot': bool(perspective_grid.blindspot)
+                                   })
+                except Exception as e:
+                    logger.warning(f"Perspective grid failed (issue ships without it): {e}",
+                                 pipeline_stage=PipelineStage.AI_ANALYSIS,
+                                 run_id=run_id)
+                try:
+                    from .enrichment.signals import collect_signals
+                    signals = collect_signals(analyses[0])
+                    if signals:
+                        logger.info(f"Signals collected: {len(signals)}",
+                                   pipeline_stage=PipelineStage.AI_ANALYSIS,
+                                   run_id=run_id,
+                                   structured_data={'sources': [s.source for s in signals]})
+                except Exception as e:
+                    logger.warning(f"Signals collection failed (issue ships without them): {e}",
+                                 pipeline_stage=PipelineStage.AI_ANALYSIS,
+                                 run_id=run_id)
+
         # Step 5: Generate newsletter
         with PerformanceProfiler.profile_operation("newsletter_generation", logger):
             logger.info("Step 5: Generating newsletter...",
@@ -592,7 +627,8 @@ def run_complete_pipeline() -> bool:
                 try:
                     generator = NewsletterGenerator()
                     newsletter = generator.generate_newsletter(
-                        analyses, quick_hits=quick_hits, big_number=big_number)
+                        analyses, quick_hits=quick_hits, big_number=big_number,
+                        perspective_grid=perspective_grid, signals=signals)
                     html_content = generator.generate_html(newsletter)
 
                     # Save newsletter (legacy format)

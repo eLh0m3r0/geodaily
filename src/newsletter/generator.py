@@ -21,7 +21,8 @@ class NewsletterGenerator:
         pass
     
     def generate_newsletter(self, analyses: List[AIAnalysis], date: Optional[datetime] = None,
-                            quick_hits=None, big_number=None) -> Newsletter:
+                            quick_hits=None, big_number=None,
+                            perspective_grid=None, signals=None) -> Newsletter:
         """
         Generate newsletter from AI analyses with balanced content types.
 
@@ -52,7 +53,9 @@ class NewsletterGenerator:
             intro_text=self._generate_intro_text(date, len(selected_stories), len(quick_hits)),
             footer_text=self._generate_footer_text(),
             quick_hits=quick_hits,
-            big_number=big_number
+            big_number=big_number,
+            perspective_grid=perspective_grid,
+            signals=signals or []
         )
 
         return newsletter
@@ -364,9 +367,81 @@ class NewsletterGenerator:
 
         return story_html
     
+    def _generate_perspective_grid_html(self, newsletter: Newsletter) -> str:
+        """Render the How the World Covers It block (web)."""
+        grid = getattr(newsletter, 'perspective_grid', None)
+        if not grid or not grid.counts:
+            return ""
+        from ..perspectives import summarize_grid
+        parts, _legend = summarize_grid(grid)
+
+        bar_spans = "".join(
+            f'<span style="flex:{p["count"]};background-color:{p["color"]};" title="{p["label"]}: {p["count"]}"></span>'
+            for p in parts
+        )
+        legend_html = " &middot; ".join(f'{p["pct"]}% {p["label"]}' for p in parts)
+
+        rows = ""
+        for view in grid.views:
+            if not view.framing:
+                continue
+            from ..perspectives import GROUP_COLORS, label_of
+            color = GROUP_COLORS.get(view.perspective, "#6B7280")
+            state = ' <span class="state-label">state-affiliated</span>' if view.state_affiliated else ""
+            quote_html = ""
+            if view.quote:
+                outlet = view.quote_outlet or ""
+                link = (f'<a href="{view.quote_url}" target="_blank" rel="noopener">{outlet}</a>'
+                        if view.quote_url else outlet)
+                quote_html = f'<div class="persp-quote">&ldquo;{view.quote}&rdquo; &mdash; {link}</div>'
+            rows += f"""
+                <div class="persp-row">
+                    <span class="persp-dot" style="background-color:{color};"></span>
+                    <div>
+                        <span class="persp-name">{label_of(view.perspective)} ({view.article_count})</span>{state}
+                        &mdash; {view.framing}
+                        {quote_html}
+                    </div>
+                </div>"""
+
+        blindspot_html = ""
+        if grid.blindspot:
+            arrow = (f' <a href="{grid.blindspot_url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>'
+                     if grid.blindspot_url else "")
+            blindspot_html = f'<div class="blindspot">&#9888; <strong>Blindspot:</strong> {grid.blindspot}{arrow}</div>'
+
+        return f"""
+        <div class="perspective-grid">
+            <div class="section-heading">How the World Covers It</div>
+            <div class="coverage-bar">{bar_spans}</div>
+            <div class="coverage-legend">{grid.total_outlets} outlets &middot; {legend_html}</div>
+            {rows}
+            {blindspot_html}
+        </div>
+"""
+
+    def _generate_signals_html(self, newsletter: Newsletter) -> str:
+        """Render the Signals block (web)."""
+        signals = getattr(newsletter, 'signals', None) or []
+        if not signals:
+            return ""
+        items = ""
+        for signal in signals:
+            arrow = (f' <a href="{signal.url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>'
+                     if signal.url else "")
+            items += f'<li>{signal.text}{arrow}</li>\n'
+        return f"""
+        <div class="signals">
+            <div class="section-heading">Signals</div>
+            <ul class="quick-hits">
+{items}            </ul>
+        </div>
+"""
+
     def _generate_extras_html(self, newsletter: Newsletter) -> str:
-        """Render the Also Today roundup and Big Number sections (web)."""
-        html = ""
+        """Render perspective grid, signals, Also Today and Big Number (web)."""
+        html = self._generate_perspective_grid_html(newsletter)
+        html += self._generate_signals_html(newsletter)
         if newsletter.quick_hits:
             items = ""
             for hit in newsletter.quick_hits:
@@ -719,6 +794,65 @@ class NewsletterGenerator:
             background-color: #229954;
         }
 
+        /* Perspective grid */
+        .perspective-grid, .signals {
+            margin: 30px 0;
+            padding: 20px 24px;
+            background-color: #f7f8fa;
+            border-radius: 8px;
+        }
+        .coverage-bar {
+            display: flex;
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+        .coverage-legend {
+            font-size: 12px;
+            color: #7f8c8d;
+            margin-bottom: 16px;
+        }
+        .persp-row {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .persp-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-top: 6px;
+            flex-shrink: 0;
+        }
+        .persp-name { font-weight: bold; }
+        .state-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background-color: #f5e6c8;
+            color: #8a6d1a;
+            border-radius: 8px;
+            padding: 1px 7px;
+            margin-left: 4px;
+        }
+        .persp-quote {
+            font-style: italic;
+            color: #4a5568;
+            margin-top: 4px;
+            font-size: 14px;
+        }
+        .blindspot {
+            background-color: #fdf3e3;
+            color: #8a5a17;
+            border-radius: 6px;
+            padding: 10px 14px;
+            margin-top: 14px;
+            font-size: 14px;
+        }
+
         /* Also Today roundup */
         .also-today, .big-number {
             margin: 30px 0;
@@ -861,7 +995,7 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
         header_html = f"""<div class="nl-header" style="background-color:{C_NAVY};padding:30px 24px;text-align:center;">
   <div style="font-family:Georgia,'Times New Roman',serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:{C_GOLD};margin-bottom:10px;">Intelligence Briefing</div>
   <h1 class="nl-h1" style="font-family:Georgia,'Times New Roman',serif;font-size:26px;font-weight:bold;color:{C_WHITE};margin:0 0 8px 0;line-height:1.25;{NO_HYPHENS}">{newsletter.title}</h1>
-  <div style="font-family:Georgia,'Times New Roman',serif;font-size:13px;color:#94a3b8;margin-bottom:8px;font-style:italic;">Strategic Intelligence Beyond the Headlines</div>
+  <div style="font-family:Georgia,'Times New Roman',serif;font-size:13px;color:#94a3b8;margin-bottom:8px;font-style:italic;">{Config.NEWSLETTER_TAGLINE}</div>
   <div style="font-family:Georgia,'Times New Roman',serif;font-size:13px;color:#64748b;">{newsletter.date.strftime('%A, %B %-d, %Y')}</div>
 </div>
 <div style="background-color:{C_GOLD};height:3px;"></div>"""
@@ -977,7 +1111,61 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
         NO_HYPHENS = "-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;"
         heading_style = (f"font-size:10px;font-weight:bold;text-transform:uppercase;"
                          f"letter-spacing:2px;color:{C_MUTED};margin-bottom:12px;")
+        body_font = "font-family:Georgia,'Times New Roman',serif;"
         html = ""
+
+        grid = getattr(newsletter, 'perspective_grid', None)
+        if grid and grid.counts:
+            from ..perspectives import summarize_grid, GROUP_COLORS, label_of
+            parts, legend = summarize_grid(grid)
+            rows = ""
+            for view in grid.views:
+                if not view.framing:
+                    continue
+                color = GROUP_COLORS.get(view.perspective, "#6B7280")
+                state = (' <span style="font-size:9px;text-transform:uppercase;letter-spacing:0.5px;'
+                         'background-color:#f5e6c8;color:#8a6d1a;border-radius:8px;padding:1px 6px;">'
+                         'state-affiliated</span>') if view.state_affiliated else ""
+                quote_html = ""
+                if view.quote:
+                    outlet = view.quote_outlet or ""
+                    link = (f'<a href="{view.quote_url}" style="color:{C_LINK};text-decoration:none;">{outlet}</a>'
+                            if view.quote_url else outlet)
+                    quote_html = (f'<div style="{body_font}font-size:13px;font-style:italic;'
+                                  f'color:#4a5568;margin-top:3px;{NO_HYPHENS}">'
+                                  f'&ldquo;{view.quote}&rdquo; &mdash; {link}</div>')
+                rows += (f'<div style="margin-bottom:12px;{body_font}font-size:14px;'
+                         f'line-height:1.6;color:{C_TEXT};{NO_HYPHENS}">'
+                         f'<span style="color:{color};font-size:15px;">&#9679;</span> '
+                         f'<strong>{label_of(view.perspective)} ({view.article_count})</strong>{state}'
+                         f' &mdash; {view.framing}{quote_html}</div>')
+            blindspot_html = ""
+            if grid.blindspot:
+                arrow = (f' <a href="{grid.blindspot_url}" style="color:{C_LINK};text-decoration:none;">&rarr;</a>'
+                         if grid.blindspot_url else "")
+                blindspot_html = (f'<div style="background-color:#fdf3e3;color:#8a5a17;border-radius:6px;'
+                                  f'padding:10px 14px;margin-top:12px;{body_font}font-size:13px;'
+                                  f'line-height:1.6;{NO_HYPHENS}">&#9888; <strong>Blindspot:</strong> '
+                                  f'{grid.blindspot}{arrow}</div>')
+            html += (f'<div class="nl-box" style="margin:26px 0;background-color:{C_LIGHT};'
+                     f'padding:16px 18px;border-left:3px solid {C_NAVY};">'
+                     f'<div style="{heading_style}">How the World Covers It</div>'
+                     f'<div style="font-size:12px;color:{C_MUTED};margin-bottom:12px;">'
+                     f'{grid.total_outlets} outlets &middot; {legend}</div>'
+                     f'{rows}{blindspot_html}</div>')
+
+        signals = getattr(newsletter, 'signals', None) or []
+        if signals:
+            items = ""
+            for signal in signals:
+                arrow = (f' <a href="{signal.url}" style="color:{C_LINK};text-decoration:none;">&rarr;</a>'
+                         if signal.url else "")
+                items += (f'<div style="margin-bottom:8px;{body_font}font-size:14px;'
+                          f'line-height:1.6;color:{C_TEXT};{NO_HYPHENS}">{signal.text}{arrow}</div>')
+            html += (f'<div class="nl-box" style="margin:26px 0;background-color:{C_LIGHT};'
+                     f'padding:16px 18px;border-left:3px solid {C_GOLD};">'
+                     f'<div style="{heading_style}">Signals</div>{items}</div>')
+
         if newsletter.quick_hits:
             items = ""
             for hit in newsletter.quick_hits:
