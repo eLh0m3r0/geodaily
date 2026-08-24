@@ -21,3 +21,6 @@ tests/*.json
 geodaily-env/
 # Environment variables
 .env
+# Runtime data (written by pipeline runs and tests, cleaned by cleanup_archives.py)
+ai_archive/
+dashboards/
