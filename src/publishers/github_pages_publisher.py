@@ -141,8 +141,12 @@ class GitHubPagesPublisher:
                 <div class="stories">
 """
         
-        # Stories
+        # Stories — grid and signals render inside the big story's flow
+        grid_block = self._build_grid_html(newsletter)
+        signals_block = self._build_signals_html(newsletter)
         for i, analysis in enumerate(analyses, 1):
+            if i == 1:
+                html += '                    <div class="section-label">The Big Story</div>\n'
             html += f"""
                     <section class="story" id="story-{i}">
                         <header class="story-header">
@@ -159,6 +163,8 @@ class GitHubPagesPublisher:
                                 <p>{analysis.why_important}</p>
                             </div>
 
+                            {grid_block if i == 1 else ""}
+
                             <div class="analysis-section">
                                 <h3>What Others Are Missing</h3>
                                 <p>{analysis.what_overlooked}</p>
@@ -168,6 +174,8 @@ class GitHubPagesPublisher:
                                 <h3>What to Watch</h3>
                                 <p>{analysis.prediction}</p>
                             </div>
+
+                            {signals_block if i == 1 else ""}
 
                             <div class="sources">
                                 <h4>Sources</h4>
@@ -214,68 +222,76 @@ class GitHubPagesPublisher:
         
         return html
     
-    def _build_extras_html(self, newsletter: Newsletter) -> str:
-        """Perspective grid, signals, Also Today and Big Number for the archive page."""
-        html = ""
-        quick_hits = getattr(newsletter, 'quick_hits', None) or []
-        big_number = getattr(newsletter, 'big_number', None)
-
+    def _build_grid_html(self, newsletter: Newsletter) -> str:
+        """How the World Covers It block (grid + blindspot) for page output."""
         grid = getattr(newsletter, 'perspective_grid', None)
-        if grid and grid.counts:
-            from ..perspectives import summarize_grid, GROUP_COLORS, label_of
-            parts, _legend = summarize_grid(grid)
-            bar_spans = "".join(
-                f'<span style="flex:{p["count"]};background-color:{p["color"]};" title="{p["label"]}: {p["count"]}"></span>'
-                for p in parts
-            )
-            legend_html = " &middot; ".join(f'{p["pct"]}% {p["label"]}' for p in parts)
-            rows = ""
-            for view in grid.views:
-                if not view.framing:
-                    continue
-                color = GROUP_COLORS.get(view.perspective, "#6B7280")
-                state = ' <span class="state-label">state-affiliated</span>' if view.state_affiliated else ""
-                quote_html = ""
-                if view.quote:
-                    outlet = view.quote_outlet or ""
-                    link = (f'<a href="{view.quote_url}" target="_blank" rel="noopener">{outlet}</a>'
-                            if view.quote_url else outlet)
-                    quote_html = f'<div class="persp-quote">&ldquo;{view.quote}&rdquo; &mdash; {link}</div>'
-                rows += f"""
+        if not grid or not grid.counts:
+            return ""
+        from ..perspectives import summarize_grid, GROUP_COLORS, label_of
+        parts, _legend = summarize_grid(grid)
+        bar_spans = "".join(
+            f'<span style="flex:{p["count"]};background-color:{p["color"]};" title="{p["label"]}: {p["count"]}"></span>'
+            for p in parts
+        )
+        legend_html = " &middot; ".join(f'{p["pct"]}% {p["label"]}' for p in parts)
+        rows = ""
+        for view in grid.views:
+            if not view.framing:
+                continue
+            color = GROUP_COLORS.get(view.perspective, "#6B7280")
+            state = ' <span class="state-label">state-affiliated</span>' if view.state_affiliated else ""
+            quote_html = ""
+            if view.quote:
+                outlet = view.quote_outlet or ""
+                link = (f'<a href="{view.quote_url}" target="_blank" rel="noopener">{outlet}</a>'
+                        if view.quote_url else outlet)
+                quote_html = f'<div class="persp-quote">&ldquo;{view.quote}&rdquo; &mdash; {link}</div>'
+            rows += f"""
                         <div class="persp-row">
                             <span class="persp-dot" style="background-color:{color};"></span>
                             <div><span class="persp-name">{label_of(view.perspective)} ({view.article_count})</span>{state}
                             &mdash; {view.framing}{quote_html}</div>
                         </div>"""
-            blindspot_html = ""
-            if grid.blindspot:
-                arrow = (f' <a href="{grid.blindspot_url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>'
-                         if grid.blindspot_url else "")
-                blindspot_html = f'<div class="blindspot">&#9888; <strong>Blindspot:</strong> {grid.blindspot}{arrow}</div>'
-            html += f"""
-                    <section class="perspective-grid">
-                        <h2 class="section-heading">How the World Covers It</h2>
+        blindspot_html = ""
+        if grid.blindspot:
+            arrow = (f' <a href="{grid.blindspot_url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>'
+                     if grid.blindspot_url else "")
+            blindspot_html = f'<div class="blindspot">&#9888; <strong>Blindspot:</strong> {grid.blindspot}{arrow}</div>'
+        return f"""
+                    <div class="perspective-grid">
+                        <h3 class="section-heading">How the World Covers It</h3>
                         <div class="coverage-bar">{bar_spans}</div>
                         <div class="coverage-legend">{grid.total_outlets} outlets &middot; {legend_html}</div>
                         {rows}
                         {blindspot_html}
-                    </section>
+                    </div>
 """
 
+    def _build_signals_html(self, newsletter: Newsletter) -> str:
+        """Signals lines under What to Watch."""
         signals = getattr(newsletter, 'signals', None) or []
-        if signals:
-            items = ""
-            for signal in signals:
-                arrow = (f' <a href="{signal.url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>'
-                         if signal.url else "")
-                items += f'                        <li>{signal.text}{arrow}</li>\n'
-            html += f"""
-                    <section class="signals">
-                        <h2 class="section-heading">Signals</h2>
+        if not signals:
+            return ""
+        items = ""
+        for signal in signals:
+            arrow = (f' <a href="{signal.url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>'
+                     if signal.url else "")
+            items += f'                        <li>{signal.text}{arrow}</li>\n'
+        return f"""
+                    <div class="signals-inline">
                         <ul class="quick-hits">
 {items}                        </ul>
-                    </section>
+                    </div>
 """
+
+    def _build_extras_html(self, newsletter: Newsletter) -> str:
+        """Also Today roundup + Big Number after the stories.
+
+        The perspective grid and signals render inside the big story instead.
+        """
+        html = ""
+        quick_hits = getattr(newsletter, 'quick_hits', None) or []
+        big_number = getattr(newsletter, 'big_number', None)
         if quick_hits:
             items = ""
             for hit in quick_hits:
@@ -285,7 +301,7 @@ class GitHubPagesPublisher:
                           f'{hit.text}{arrow}</li>\n')
             html += f"""
                     <section class="also-today">
-                        <h2 class="section-heading">Also Today</h2>
+                        <h2 class="section-label">Also Today</h2>
                         <ul class="quick-hits">
 {items}                        </ul>
                     </section>
@@ -294,7 +310,7 @@ class GitHubPagesPublisher:
             arrow = f' <a href="{big_number.url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>' if big_number.url else ""
             html += f"""
                     <section class="big-number">
-                        <h2 class="section-heading">The Big Number</h2>
+                        <h2 class="section-label">The Big Number</h2>
                         <div class="big-number-value">{big_number.value}</div>
                         <p class="big-number-context">{big_number.context}{arrow}</p>
                     </section>
@@ -324,12 +340,7 @@ class GitHubPagesPublisher:
         )
         description = (story.why_important or "")[:155].replace('"', "'")
 
-        # Reuse the extras builder for the grid; hide roundup/number here
-        grid_only = Newsletter(
-            date=newsletter.date, title=newsletter.title, stories=[],
-            perspective_grid=getattr(newsletter, 'perspective_grid', None),
-        )
-        grid_html = self._build_extras_html(grid_only)
+        grid_html = self._build_grid_html(newsletter)
 
         html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -1331,6 +1342,15 @@ body {
     background: #fdf3e3; color: #8a5a17; border-radius: 6px;
     padding: 0.6rem 0.9rem; margin-top: 0.9rem; font-size: 0.9rem;
 }
+.section-label {
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 3px; color: #b8962e; text-align: center;
+    border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;
+    margin: 2.25rem 0 0.75rem 0;
+}
+.big-number { text-align: center; }
+.signals-inline { margin: -0.5rem 0 1.25rem 0; }
+.signals-inline .quick-hits { list-style: none; padding-left: 0.25rem; }
 .also-today, .big-number {
     margin: 2rem 0; padding: 1.25rem 1.5rem;
     background: var(--bg-light); border-radius: 8px;

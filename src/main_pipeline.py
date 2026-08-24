@@ -453,7 +453,8 @@ def run_complete_pipeline() -> bool:
                 try:
                     # Use simplified multi-stage analyzer with SINGLE API call
                     multi_stage_analyzer = SimplifiedMultiStageAnalyzer()
-                    issue = asyncio.run(multi_stage_analyzer.analyze_articles_single_call(scored_articles, target_stories=1))
+                    issue = asyncio.run(multi_stage_analyzer.analyze_articles_single_call(
+                        scored_articles, target_stories=Config.NEWSLETTER_TARGET_STORIES))
                     analyses = issue.stories
                     quick_hits = issue.quick_hits
                     big_number = issue.big_number

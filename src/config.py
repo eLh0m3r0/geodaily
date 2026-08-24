@@ -98,6 +98,10 @@ class Config:
     # Readability gate: max Flesch-Kincaid grade for generated copy before a
     # one-shot "simplify" retry is triggered (mass-news targets ~grade 8-9).
     READABILITY_MAX_GRADE = float(os.getenv("READABILITY_MAX_GRADE", "9.5"))
+    # Deep stories per issue (1 = big story only; 2-3 adds compact secondary
+    # stories). The winning daily-brief pattern is one deep dive + breadth,
+    # but this stays tunable for A/B testing.
+    NEWSLETTER_TARGET_STORIES = max(1, min(3, int(os.getenv("NEWSLETTER_TARGET_STORIES", "1"))))
 
     # Beehiiv publishing
     BEEHIIV_API_KEY = os.getenv("BEEHIIV_API_KEY", "")

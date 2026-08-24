@@ -171,10 +171,18 @@ class NewsletterGenerator:
         if newsletter.intro_text:
             intro = f'<div class="intro">{newsletter.intro_text}</div>'
         
-        # Generate stories
+        # Generate stories — the perspective grid and signals live inside the
+        # big story's flow, not as trailing boxes after it
+        grid_block = self._generate_perspective_grid_html(newsletter)
+        signals_block = self._generate_signals_html(newsletter)
         stories_html = ""
-        for story in newsletter.stories:
-            stories_html += self._generate_story_html(story)
+        for i, story in enumerate(newsletter.stories):
+            if i == 0:
+                stories_html += '<div class="section-label">The Big Story</div>'
+            stories_html += self._generate_story_html(
+                story,
+                mid_block=grid_block if i == 0 else "",
+                after_watch_block=signals_block if i == 0 else "")
 
         # "Also today" roundup + "The big number" delight element
         stories_html += self._generate_extras_html(newsletter)
@@ -303,7 +311,8 @@ class NewsletterGenerator:
         
         return html
     
-    def _generate_story_html(self, story: AIAnalysis) -> str:
+    def _generate_story_html(self, story: AIAnalysis, mid_block: str = "",
+                             after_watch_block: str = "") -> str:
         """Generate HTML for a single story."""
 
         # Content type styling
@@ -351,6 +360,8 @@ class NewsletterGenerator:
                 <div class="section-content">{story.why_important}</div>
             </div>
 
+            {mid_block}
+
             <div class="story-section">
                 <div class="section-title">What Others Are Missing</div>
                 <div class="section-content">{story.what_overlooked}</div>
@@ -360,6 +371,8 @@ class NewsletterGenerator:
                 <div class="section-title">What to Watch</div>
                 <div class="section-content">{story.prediction}</div>
             </div>
+
+            {after_watch_block}
 
             {sources_html}
         </div>
@@ -439,9 +452,11 @@ class NewsletterGenerator:
 """
 
     def _generate_extras_html(self, newsletter: Newsletter) -> str:
-        """Render perspective grid, signals, Also Today and Big Number (web)."""
-        html = self._generate_perspective_grid_html(newsletter)
-        html += self._generate_signals_html(newsletter)
+        """Render Also Today and Big Number after the stories (web).
+
+        The perspective grid and signals render inside the big story, not here.
+        """
+        html = ""
         if newsletter.quick_hits:
             items = ""
             for hit in newsletter.quick_hits:
@@ -794,6 +809,19 @@ class NewsletterGenerator:
             background-color: #229954;
         }
 
+        .section-label {
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #b8962e;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin: 34px 0 10px 0;
+        }
+        .big-number { text-align: center; }
+
         /* Perspective grid */
         .perspective-grid, .signals {
             margin: 30px 0;
@@ -1011,14 +1039,27 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
             )
             intro_html = f"""<div class="nl-intro" style="background-color:{C_LIGHT};border-left:4px solid {C_GOLD};padding:16px 18px;margin:24px 0;font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.7;color:{C_TEXT};{NO_HYPHENS}">{paragraphs}</div>"""
 
+        # The perspective grid and signals belong INSIDE the big story's flow
+        # (what happened -> how the world covers it -> what's missed -> what's
+        # next + odds -> sources), not as trailing boxes after it.
+        grid_block = self._email_grid_block(newsletter, C_NAVY, C_TEXT, C_MUTED, C_LIGHT, C_BORDER, C_LINK)
+        signals_block = self._email_signals_block(newsletter, C_TEXT, C_MUTED, C_LINK)
+
+        section_label = (f'<div style="font-size:11px;font-weight:bold;text-transform:uppercase;'
+                         f'letter-spacing:3px;color:{C_GOLD};text-align:center;'
+                         f'border-bottom:1px solid {C_BORDER};padding-bottom:8px;margin-top:24px;">')
         stories_html = ""
         for i, story in enumerate(newsletter.stories):
             is_last = (i == len(newsletter.stories) - 1)
+            if i == 0:
+                stories_html += f'{section_label}The Big Story</div>'
             stories_html += self._generate_email_story_html(
-                story, is_last, TYPE_COLORS, C_NAVY, C_TEXT, C_MUTED, C_LIGHT, C_BORDER, C_GOLD, C_LINK
+                story, is_last, TYPE_COLORS, C_NAVY, C_TEXT, C_MUTED, C_LIGHT, C_BORDER, C_GOLD, C_LINK,
+                mid_block=grid_block if i == 0 else "",
+                after_watch_block=signals_block if i == 0 else ""
             )
         stories_html += self._generate_email_extras_html(
-            newsletter, C_NAVY, C_TEXT, C_MUTED, C_LIGHT, C_BORDER, C_GOLD, C_LINK
+            newsletter, C_NAVY, C_TEXT, C_MUTED, C_LIGHT, C_BORDER, C_GOLD, C_LINK, section_label
         )
 
         footer_html = f"""<div style="border-top:2px solid {C_BORDER};margin-top:32px;padding-top:24px;text-align:center;font-family:Georgia,'Times New Roman',serif;font-size:12px;color:{C_MUTED};line-height:1.8;">
@@ -1052,7 +1093,8 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
     def _generate_email_story_html(
         self, story, is_last: bool,
         type_colors: dict, C_NAVY: str, C_TEXT: str, C_MUTED: str,
-        C_LIGHT: str, C_BORDER: str, C_GOLD: str, C_LINK: str
+        C_LIGHT: str, C_BORDER: str, C_GOLD: str, C_LINK: str,
+        mid_block: str = "", after_watch_block: str = ""
     ) -> str:
         """Generate inline-styled HTML for a single story in email format."""
         content_type_val = story.content_type.value
@@ -1091,6 +1133,7 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
     <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:{C_MUTED};margin-bottom:6px;">Why This Matters</div>
     <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.7;color:{C_TEXT};{NO_HYPHENS}">{story.why_important}</div>
   </div>
+  {mid_block}
   <div class="nl-box" style="margin-bottom:18px;background-color:{C_LIGHT};padding:14px 16px;border-left:3px solid {C_GOLD};">
     <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:{C_MUTED};margin-bottom:6px;">What Others Are Missing</div>
     <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.7;color:{C_TEXT};{NO_HYPHENS}">{story.what_overlooked}</div>
@@ -1099,97 +1142,109 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
     <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:{C_MUTED};margin-bottom:6px;">What to Watch</div>
     <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.7;color:{C_TEXT};{NO_HYPHENS}">{story.prediction}</div>
   </div>
+  {after_watch_block}
   {sources_html}
 </div>"""
+
+    def _email_grid_block(self, newsletter: Newsletter, C_NAVY: str, C_TEXT: str,
+                          C_MUTED: str, C_LIGHT: str, C_BORDER: str, C_LINK: str) -> str:
+        """How the World Covers It — rendered inside the big story's flow."""
+        grid = getattr(newsletter, 'perspective_grid', None)
+        if not grid or not grid.counts:
+            return ""
+        NO_HYPHENS = "-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;"
+        body_font = "font-family:Georgia,'Times New Roman',serif;"
+        from ..perspectives import summarize_grid, GROUP_COLORS, label_of
+        parts, legend = summarize_grid(grid)
+        rows = ""
+        for view in grid.views:
+            if not view.framing:
+                continue
+            color = GROUP_COLORS.get(view.perspective, "#6B7280")
+            state = (' <span style="font-size:9px;text-transform:uppercase;letter-spacing:0.5px;'
+                     'background-color:#f5e6c8;color:#8a6d1a;border-radius:8px;padding:1px 6px;">'
+                     'state-affiliated</span>') if view.state_affiliated else ""
+            quote_html = ""
+            if view.quote:
+                outlet = view.quote_outlet or ""
+                link = (f'<a href="{view.quote_url}" style="color:{C_LINK};text-decoration:none;">{outlet}</a>'
+                        if view.quote_url else outlet)
+                quote_html = (f'<div style="{body_font}font-size:13px;font-style:italic;'
+                              f'color:#4a5568;margin:3px 0 0 14px;{NO_HYPHENS}">'
+                              f'&ldquo;{view.quote}&rdquo; &mdash; {link}</div>')
+            rows += (f'<div style="margin-bottom:11px;{body_font}font-size:14px;'
+                     f'line-height:1.6;color:{C_TEXT};{NO_HYPHENS}">'
+                     f'<span style="color:{color};font-size:15px;">&#9679;</span> '
+                     f'<strong>{label_of(view.perspective)} ({view.article_count})</strong>{state}'
+                     f' &mdash; {view.framing}{quote_html}</div>')
+        blindspot_html = ""
+        if grid.blindspot:
+            arrow = (f' <a href="{grid.blindspot_url}" style="color:{C_LINK};text-decoration:none;">&rarr;</a>'
+                     if grid.blindspot_url else "")
+            blindspot_html = (f'<div style="background-color:#fdf3e3;color:#8a5a17;border-radius:6px;'
+                              f'padding:10px 14px;margin-top:12px;{body_font}font-size:13px;'
+                              f'line-height:1.6;{NO_HYPHENS}">&#9888; <strong>Blindspot:</strong> '
+                              f'{grid.blindspot}{arrow}</div>')
+        return (f'<div class="nl-box" style="margin:0 0 18px 0;background-color:{C_LIGHT};'
+                f'padding:14px 16px;border-radius:6px;">'
+                f'<div style="font-size:10px;font-weight:bold;text-transform:uppercase;'
+                f'letter-spacing:1px;color:{C_MUTED};margin-bottom:8px;">How the World Covers It</div>'
+                f'<div style="font-size:12px;color:{C_MUTED};margin-bottom:12px;">'
+                f'{grid.total_outlets} outlets &middot; {legend}</div>'
+                f'{rows}{blindspot_html}</div>')
+
+    def _email_signals_block(self, newsletter: Newsletter, C_TEXT: str,
+                             C_MUTED: str, C_LINK: str) -> str:
+        """Signals — small lines directly under What to Watch, no box."""
+        signals = getattr(newsletter, 'signals', None) or []
+        if not signals:
+            return ""
+        NO_HYPHENS = "-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;"
+        body_font = "font-family:Georgia,'Times New Roman',serif;"
+        items = ""
+        for signal in signals:
+            arrow = (f' <a href="{signal.url}" style="color:{C_LINK};text-decoration:none;">&rarr;</a>'
+                     if signal.url else "")
+            items += (f'<div style="margin-bottom:6px;{body_font}font-size:13px;'
+                      f'line-height:1.6;color:{C_TEXT};{NO_HYPHENS}">'
+                      f'<span style="color:{C_MUTED};">&#9656;</span> {signal.text}{arrow}</div>')
+        return f'<div style="margin:-8px 0 18px 0;padding-left:2px;">{items}</div>'
 
     def _generate_email_extras_html(
         self, newsletter: Newsletter,
         C_NAVY: str, C_TEXT: str, C_MUTED: str, C_LIGHT: str,
-        C_BORDER: str, C_GOLD: str, C_LINK: str
+        C_BORDER: str, C_GOLD: str, C_LINK: str, section_label: str = ""
     ) -> str:
-        """Inline-styled Also Today + Big Number sections for the email."""
+        """Also Today (hairline list) + Big Number (centered) after the story."""
         NO_HYPHENS = "-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;"
-        heading_style = (f"font-size:10px;font-weight:bold;text-transform:uppercase;"
-                         f"letter-spacing:2px;color:{C_MUTED};margin-bottom:12px;")
         body_font = "font-family:Georgia,'Times New Roman',serif;"
+        if not section_label:
+            section_label = (f'<div style="font-size:11px;font-weight:bold;text-transform:uppercase;'
+                             f'letter-spacing:3px;color:{C_GOLD};text-align:center;'
+                             f'border-bottom:1px solid {C_BORDER};padding-bottom:8px;margin-top:24px;">')
         html = ""
-
-        grid = getattr(newsletter, 'perspective_grid', None)
-        if grid and grid.counts:
-            from ..perspectives import summarize_grid, GROUP_COLORS, label_of
-            parts, legend = summarize_grid(grid)
-            rows = ""
-            for view in grid.views:
-                if not view.framing:
-                    continue
-                color = GROUP_COLORS.get(view.perspective, "#6B7280")
-                state = (' <span style="font-size:9px;text-transform:uppercase;letter-spacing:0.5px;'
-                         'background-color:#f5e6c8;color:#8a6d1a;border-radius:8px;padding:1px 6px;">'
-                         'state-affiliated</span>') if view.state_affiliated else ""
-                quote_html = ""
-                if view.quote:
-                    outlet = view.quote_outlet or ""
-                    link = (f'<a href="{view.quote_url}" style="color:{C_LINK};text-decoration:none;">{outlet}</a>'
-                            if view.quote_url else outlet)
-                    quote_html = (f'<div style="{body_font}font-size:13px;font-style:italic;'
-                                  f'color:#4a5568;margin-top:3px;{NO_HYPHENS}">'
-                                  f'&ldquo;{view.quote}&rdquo; &mdash; {link}</div>')
-                rows += (f'<div style="margin-bottom:12px;{body_font}font-size:14px;'
-                         f'line-height:1.6;color:{C_TEXT};{NO_HYPHENS}">'
-                         f'<span style="color:{color};font-size:15px;">&#9679;</span> '
-                         f'<strong>{label_of(view.perspective)} ({view.article_count})</strong>{state}'
-                         f' &mdash; {view.framing}{quote_html}</div>')
-            blindspot_html = ""
-            if grid.blindspot:
-                arrow = (f' <a href="{grid.blindspot_url}" style="color:{C_LINK};text-decoration:none;">&rarr;</a>'
-                         if grid.blindspot_url else "")
-                blindspot_html = (f'<div style="background-color:#fdf3e3;color:#8a5a17;border-radius:6px;'
-                                  f'padding:10px 14px;margin-top:12px;{body_font}font-size:13px;'
-                                  f'line-height:1.6;{NO_HYPHENS}">&#9888; <strong>Blindspot:</strong> '
-                                  f'{grid.blindspot}{arrow}</div>')
-            html += (f'<div class="nl-box" style="margin:26px 0;background-color:{C_LIGHT};'
-                     f'padding:16px 18px;border-left:3px solid {C_NAVY};">'
-                     f'<div style="{heading_style}">How the World Covers It</div>'
-                     f'<div style="font-size:12px;color:{C_MUTED};margin-bottom:12px;">'
-                     f'{grid.total_outlets} outlets &middot; {legend}</div>'
-                     f'{rows}{blindspot_html}</div>')
-
-        signals = getattr(newsletter, 'signals', None) or []
-        if signals:
-            items = ""
-            for signal in signals:
-                arrow = (f' <a href="{signal.url}" style="color:{C_LINK};text-decoration:none;">&rarr;</a>'
-                         if signal.url else "")
-                items += (f'<div style="margin-bottom:8px;{body_font}font-size:14px;'
-                          f'line-height:1.6;color:{C_TEXT};{NO_HYPHENS}">{signal.text}{arrow}</div>')
-            html += (f'<div class="nl-box" style="margin:26px 0;background-color:{C_LIGHT};'
-                     f'padding:16px 18px;border-left:3px solid {C_GOLD};">'
-                     f'<div style="{heading_style}">Signals</div>{items}</div>')
-
         if newsletter.quick_hits:
             items = ""
-            for hit in newsletter.quick_hits:
+            for i, hit in enumerate(newsletter.quick_hits):
                 region = hit.region.replace("_", " ").title()
                 arrow = (f' <a href="{hit.url}" style="color:{C_LINK};text-decoration:none;">&rarr;</a>'
                          if hit.url else "")
-                items += (f'<div style="margin-bottom:10px;font-family:Georgia,\'Times New Roman\',serif;'
-                          f'font-size:14px;line-height:1.6;color:{C_TEXT};{NO_HYPHENS}">'
+                border = "" if i == len(newsletter.quick_hits) - 1 else f"border-bottom:1px solid {C_BORDER};"
+                items += (f'<div style="padding:9px 2px;{border}{body_font}font-size:14px;'
+                          f'line-height:1.6;color:{C_TEXT};{NO_HYPHENS}">'
                           f'<span style="font-size:10px;font-weight:bold;text-transform:uppercase;'
                           f'letter-spacing:0.5px;color:{C_LINK};margin-right:6px;">{region}</span>'
                           f'{hit.text}{arrow}</div>')
-            html += (f'<div class="nl-box" style="margin:26px 0;background-color:{C_LIGHT};'
-                     f'padding:16px 18px;border-left:3px solid {C_NAVY};">'
-                     f'<div style="{heading_style}">Also Today</div>{items}</div>')
+            html += f'{section_label}Also Today</div><div style="margin:14px 0 26px 0;">{items}</div>'
         if newsletter.big_number:
             bn = newsletter.big_number
             arrow = (f' <a href="{bn.url}" style="color:{C_LINK};text-decoration:none;">&rarr;</a>'
                      if bn.url else "")
-            html += (f'<div class="nl-box" style="margin:26px 0;background-color:{C_LIGHT};'
-                     f'padding:16px 18px;border-left:3px solid {C_GOLD};">'
-                     f'<div style="{heading_style}">The Big Number</div>'
-                     f'<div style="font-family:Georgia,\'Times New Roman\',serif;font-size:34px;'
+            html += (f'{section_label}The Big Number</div>'
+                     f'<div style="text-align:center;margin:16px 0 26px 0;">'
+                     f'<div style="{body_font}font-size:40px;'
                      f'font-weight:bold;color:{C_NAVY};line-height:1.1;">{bn.value}</div>'
-                     f'<div style="font-family:Georgia,\'Times New Roman\',serif;font-size:14px;'
+                     f'<div style="{body_font}font-size:14px;'
                      f'line-height:1.6;color:{C_TEXT};margin-top:6px;{NO_HYPHENS}">{bn.context}{arrow}</div>'
                      f'</div>')
         return html
