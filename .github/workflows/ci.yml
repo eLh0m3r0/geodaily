@@ -19,6 +19,9 @@ on:
       - 'src/**'
       - 'sources.json'
       - 'requirements.txt'
+  # Manual E2E test on any branch: real feed collection + clustering with
+  # mock AI — needs no secrets, publishes nothing, uploads outputs as artifacts
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -41,6 +44,14 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
 
+      - name: Cache embedding model
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/fastembed
+            ~/.cache/huggingface
+          key: fastembed-all-minilm-l6-v2
+
       - name: Install dependencies
         run: pip install -r requirements.txt
 
@@ -60,5 +71,26 @@ jobs:
           ALLOW_OVERWRITE: 'true'
         run: python -m src.main_pipeline
 
-      - name: Summary
-        run: echo "Dry-run pipeline completed — no content was published." >> $GITHUB_STEP_SUMMARY
+      - name: Collection summary
+        if: always()
+        run: |
+          echo "## E2E dry run" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          grep -h -o '"message": "Collection completed[^"]*"' logs/*.log 2>/dev/null | tail -1 >> $GITHUB_STEP_SUMMARY || true
+          grep -h -o '"message": "Embedding clustering[^"]*"' logs/*.log 2>/dev/null | tail -1 >> $GITHUB_STEP_SUMMARY || true
+          ls -la docs/newsletters/ >> $GITHUB_STEP_SUMMARY 2>/dev/null || true
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "Dry-run pipeline completed — no content was published." >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload generated outputs
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: e2e-dry-run-outputs
+          path: |
+            docs/newsletters/
+            docs/stories/
+            output/
+            logs/
+          retention-days: 7
+          if-no-files-found: ignore
