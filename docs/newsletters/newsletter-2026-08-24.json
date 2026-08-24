@@ -1,0 +1,162 @@
+{
+ "date": "2026-08-24",
+ "title": "Geopolitical Daily",
+ "intro_text": "Good morning. It's Monday, August 24, 2026 — one story worth your full attention today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "US Rolls Out 'Economic D-Day' Sanctions on Iran, Tehran Threatens Anyone Who Joins In",
+   "why_important": "The US just launched its toughest sanctions push yet against Iran. Treasury Secretary Bessent calls it the biggest financial attack ever on one country. Iran says any nation that helps will face consequences, putting India, China and Russia on the spot.",
+   "what_overlooked": "Most coverage just repeats official statements from both sides. No one has shown yet whether the sanctions are actually cutting Iran's oil sales.",
+   "prediction": "Watch whether India, China or the UAE quietly reduce Iran trade in the next 72 hours.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.thehindu.com/news/international/us-treasury-secretary-scott-bessent-economic-sanctions-threat-on-iran-washington-tehran/article71383499.ece",
+    "https://www.dw.com/en/us-to-unveil-new-iran-sanctions-says-war-entering-endgame/a-78483909?maca=en-rss-en-all-1573-rdf",
+    "https://www.aljazeera.com/economy/2026/8/24/us-threat-of-economic-d-day-for-iran-tests-trumps-china-detente?traffic_source=rss",
+    "https://www.middleeasteye.net/live-blog/live-blog-update/iran-warns-consequences-countries-joining-us-economic-sanctions",
+    "https://tass.com/world/2176877"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 9,
+   "novelty_score": 5,
+   "credibility_score": 7,
+   "impact_dimension_score": 8,
+   "confidence": 0.78,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "economic"
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Wildfires in Siberia's Krasnoyarsk and Sakha regions have burned 3.5 million acres, an area the size of Connecticut.",
+   "region": "europe",
+   "url": "https://www.themoscowtimes.com/2026/08/24/siberian-wildfires-reach-35m-acres-across-krasnoyarsk-and-sakha-republic-a93565"
+  },
+  {
+   "text": "The Hawk Fire near Reno, Nevada forced about 42,000 people to evacuate and destroyed homes.",
+   "region": "americas",
+   "url": "https://www.dw.com/en/us-wildfire-forces-mass-evacuations-near-reno-nevada/a-78480080?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "More than 1,280 Palestinians have died in Gaza since the October 2025 ceasefire began, France 24 reports.",
+   "region": "middle_east",
+   "url": "https://www.france24.com/en/despite-ceasefire-israeli-strikes-still-kill-in-gaza-and-the-west-bank"
+  },
+  {
+   "text": "New Zealand introduced a bill to ban children under 16 from social media, following Australia's lead.",
+   "region": "indo_pacific",
+   "url": "https://www.dw.com/en/new-zealand-proposes-social-media-ban-for-under-16s/a-78480389?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "Kazakhstan's new pro-government Adilet party won parliamentary elections after opposition parties were barred from running.",
+   "region": "central_asia",
+   "url": "https://www.aljazeera.com/news/2026/8/24/kazakhstans-newly-formed-pro-government-party-wins-parliamentary-election?traffic_source=rss"
+  },
+  {
+   "text": "South Africa's electricity market reform is opening new business opportunities beyond the usual Eskom debate, Daily Maverick reports.",
+   "region": "africa",
+   "url": "https://www.dailymaverick.co.za/opinionista/2026-08-23-sa-s-electricity-reform-is-opening-new-markets-for-savvy-entrepreneurs/"
+  },
+  {
+   "text": "Twenty-one former cricket captains urged Pakistan to give jailed ex-PM Imran Khan proper medical care.",
+   "region": "indo_pacific",
+   "url": "https://www.bbc.co.uk/news/articles/cx2z889l0dxo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "text": "A new poll shows France's Jean-Luc Melenchon could face Marine Le Pen in the 2027 presidential runoff.",
+   "region": "europe",
+   "url": "https://www.straitstimes.com/world/europe/french-far-left-leader-melenchon-seen-reaching-presidential-runoff-poll-shows"
+  }
+ ],
+ "big_number": {
+  "value": "3.5 million acres",
+  "context": "Siberian wildfires have burned an area roughly the size of Connecticut, one of the year's biggest fire outbreaks.",
+  "url": "https://www.themoscowtimes.com/2026/08/24/siberian-wildfires-reach-35m-acres-across-krasnoyarsk-and-sakha-republic-a93565"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW News",
+     "France 24 English",
+     "Guardian International"
+    ],
+    "article_count": 4,
+    "framing": "Focuses on whether US sanctions pressure will be credible to major powers like India, China, Russia.",
+    "quote": "Test of US rhetoric will rest on whether nations such as India, China and Russia view economic threats as credible",
+    "quote_outlet": "Guardian International",
+    "quote_url": "https://www.theguardian.com/world/2026/aug/24/iran-vows-retaliate-countries-cooperate-fresh-us-sanctions",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "The Straits Times World"
+    ],
+    "article_count": 2,
+    "framing": "Highlights Iran's defiant response, especially its threat to halt all Gulf oil exports.",
+    "quote": "Iran in turn vowed to shut down all oil exports from the Gulf",
+    "quote_outlet": "The Straits Times World",
+    "quote_url": "https://www.straitstimes.com/world/middle-east/us-vows-economic-d-day-as-iran-threatens-to-halt-all-oil-exports",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "The Hindu International"
+    ],
+    "article_count": 2,
+    "framing": "Balances US sanction rhetoric with Iran's dismissive, 'desperate' framing of Washington's move.",
+    "quote": "the single greatest financial offensive ever marshaled against an adversary",
+    "quote_outlet": "The Hindu International",
+    "quote_url": "https://www.thehindu.com/news/international/us-treasury-secretary-scott-bessent-economic-sanctions-threat-on-iran-washington-tehran/article71383499.ece",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera English",
+     "Middle East Eye"
+    ],
+    "article_count": 3,
+    "framing": "Stresses Iran's warning of consequences for nations that cooperate with US sanctions.",
+    "quote": "any complicity with America in implementing its aggressive actions against Iran will undoubtedly have consequences",
+    "quote_outlet": "Middle East Eye",
+    "quote_url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-warns-consequences-countries-joining-us-economic-sanctions",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "TASS"
+    ],
+    "article_count": 1,
+    "framing": "Frames the story around US military threats and its goal to fully isolate Iran economically.",
+    "quote": "the US goal at this stage is to completely isolate Iran economically",
+    "quote_outlet": "TASS",
+    "quote_url": "https://tass.com/world/2176877",
+    "state_affiliated": true
+   }
+  ],
+  "total_outlets": 9,
+  "counts": {
+   "middle_east": 3,
+   "south_asia": 2,
+   "western": 4,
+   "russian_state": 1,
+   "east_asia": 2
+  },
+  "blindspot": "Western media ignored the India-Russia logistics agreement, a deal that could reshape military and trade cooperation between two major powers.",
+  "blindspot_url": "https://www.thehindu.com/news/international/what-does-the-india-russia-logistics-agreement-allow-explained/article71113567.ece"
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Putin out as President of Russia by December 31, 2026?\" at 8%.",
+   "url": "https://polymarket.com/market/putin-out-before-2027-346",
+   "source": "Polymarket"
+  }
+ ]
+}

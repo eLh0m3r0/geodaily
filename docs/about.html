@@ -11,7 +11,7 @@
     <header class="header">
         <div class="container">
             <h1 class="site-title">Geopolitical Daily</h1>
-            <p class="tagline">Strategic Intelligence Beyond the Headlines</p>
+            <p class="tagline">The world's news from every side</p>
             <nav class="nav">
                 <a href="index.html">Home</a>
                 <a href="archive.html">Archive</a>
@@ -26,7 +26,7 @@
         <div class="container">
             <section class="about-hero">
                 <h1>About Geopolitical Daily</h1>
-                <p class="about-intro">AI-powered analysis of underreported geopolitical developments with strategic significance</p>
+                <p class="about-intro">World news from every side: how Western, Asian, Middle Eastern, African and Latin American media cover the same stories - every source linked, state media labeled.</p>
             </section>
 
             <section class="about-content">
@@ -91,16 +91,27 @@
                     <div class="subscription-option">
                         <h3>Email Newsletter</h3>
                         <p>Receive daily analysis directly in your inbox</p>
-                        {self._build_about_subscribe_html()}
+                        
+        <form action="https://buttondown.com/api/emails/embed-subscribe/geodaily"
+              method="post"
+              target="popupwindow"
+              onsubmit="window.open('https://buttondown.com/geodaily', 'popupwindow')"
+              class="subscribe-form">
+            <input type="email" name="email" placeholder="your@email.com" required />
+        <div class="subscribe-frequency">
+            <label><input type="checkbox" name="tag" value="weekly" /> Send me one Sunday digest instead of daily emails</label>
+        </div>
+            <input type="submit" value="Subscribe" class="subscribe-btn" />
+        </form>
                     </div>
                 </div>
 
                 <h2>Contact & Feedback</h2>
                 <p>We welcome feedback on our analysis and suggestions for improvement. You can:</p>
                 <ul>
-                    <li><a href="{self.GITHUB_REPO_URL}/issues">Open an issue on GitHub</a> for bug reports or feature requests</li>
-                    <li><a href="{self.GITHUB_REPO_URL}/discussions">Start a discussion</a> for analysis feedback</li>
-                    <li>Check our <a href="{self.GITHUB_REPO_URL}">source code</a> to understand our methodology</li>
+                    <li><a href="https://github.com/eLh0m3r0/geodaily/issues">Open an issue on GitHub</a> for bug reports or feature requests</li>
+                    <li><a href="https://github.com/eLh0m3r0/geodaily/discussions">Start a discussion</a> for analysis feedback</li>
+                    <li>Check our <a href="https://github.com/eLh0m3r0/geodaily">source code</a> to understand our methodology</li>
                 </ul>
             </section>
         </div>
@@ -112,7 +123,7 @@
             <p>
                 <a href="feed.xml">RSS Feed</a> |
                 <a href="archive.html">Archive</a> |
-                <a href="{self.GITHUB_REPO_URL}">Source Code</a>
+                <a href="https://github.com/eLh0m3r0/geodaily">Source Code</a>
             </p>
         </div>
     </footer>
