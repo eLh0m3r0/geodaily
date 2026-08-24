@@ -49,7 +49,15 @@ class ButtondownPublisher:
     def send_email(self, subject: str, html_content: str,
                    included_tags: Optional[list] = None,
                    excluded_tags: Optional[list] = None) -> Optional[str]:
-        """Create and send one Buttondown email, optionally targeted by tags."""
+        """Create and send one Buttondown email, optionally targeted by tags.
+
+        Failure semantics of tag targeting differ by direction:
+        - excluded_tags (daily send): if the filter is rejected, retry
+          untargeted — a weekly subscriber getting one extra daily beats
+          nobody getting anything.
+        - included_tags (weekly digest): if the filter is rejected, ABORT —
+          never widen a targeted send to the whole list.
+        """
         if not self.enabled:
             return None
 
@@ -65,11 +73,31 @@ class ButtondownPublisher:
         email_id = self._create_draft(subject, body, headers,
                                       included_tags=included_tags,
                                       excluded_tags=excluded_tags)
+        if not email_id and excluded_tags and not included_tags:
+            logger.warning("Buttondown rejected the tag filter — retrying daily send untargeted")
+            email_id = self._create_draft(subject, body, headers)
         if not email_id:
+            if included_tags:
+                logger.error("Buttondown draft with included-tag filter failed — "
+                             "aborting rather than sending to the whole list")
             return None
 
         # Step 2: send draft to the targeted subscribers
         return self._send_draft(email_id, headers)
+
+    @staticmethod
+    def _tag_filters(included_tags: Optional[list],
+                     excluded_tags: Optional[list]) -> Optional[dict]:
+        """Audience filter object (API versions after 2024-08-15 replaced the
+        flat included_tags/excluded_tags fields with this structure)."""
+        filters = []
+        for tag in included_tags or []:
+            filters.append({"field": "subscriber.tags", "operator": "contains", "value": tag})
+        for tag in excluded_tags or []:
+            filters.append({"field": "subscriber.tags", "operator": "not_contains", "value": tag})
+        if not filters:
+            return None
+        return {"filters": filters, "groups": [], "predicate": "and"}
 
     # ------------------------------------------------------------------
     # Internal helpers
@@ -79,10 +107,9 @@ class ButtondownPublisher:
                       included_tags: Optional[list] = None,
                       excluded_tags: Optional[list] = None) -> Optional[str]:
         payload = {"subject": subject, "body": body, "status": "draft"}
-        if included_tags:
-            payload["included_tags"] = included_tags
-        if excluded_tags:
-            payload["excluded_tags"] = excluded_tags
+        filters = self._tag_filters(included_tags, excluded_tags)
+        if filters:
+            payload["filters"] = filters
         try:
             resp = requests.post(
                 f"{BUTTONDOWN_API_BASE}/emails",

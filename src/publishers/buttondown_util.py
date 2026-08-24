@@ -68,10 +68,12 @@ def build_subscribe_form_html(username: str, css_class: str = "subscribe-form",
     weekly_tag = Config.BUTTONDOWN_WEEKLY_TAG
     frequency_html = ""
     if with_frequency_choice:
+        # Checkbox, not radio: unchecked submits no tag field at all (daily
+        # default), checked submits tag=<weekly> which Buttondown appends to
+        # the subscriber. An empty-value radio would post tag="" instead.
         frequency_html = f"""
         <div class="subscribe-frequency">
-            <label><input type="radio" name="tag" value="" checked /> Daily brief</label>
-            <label><input type="radio" name="tag" value="{weekly_tag}" /> Weekly digest (Sundays)</label>
+            <label><input type="checkbox" name="tag" value="{weekly_tag}" /> Send me one Sunday digest instead of daily emails</label>
         </div>"""
     return f"""
         <form action="https://buttondown.com/api/emails/embed-subscribe/{username}"
