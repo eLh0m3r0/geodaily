@@ -84,6 +84,26 @@ def label_of(group: str) -> str:
     return GROUP_LABELS.get(group, group.replace("_", " ").title())
 
 
+# Brand stripe: the perspective spectrum in one bar — the visual identity of
+# "every side of the story". Order picked for hue contrast between neighbors.
+SPECTRUM = [
+    GROUP_COLORS["western"], GROUP_COLORS["east_asia"], GROUP_COLORS["chinese_state"],
+    GROUP_COLORS["south_asia"], GROUP_COLORS["middle_east"], GROUP_COLORS["russian_state"],
+    GROUP_COLORS["african"], GROUP_COLORS["latam"],
+]
+
+
+def spectrum_bar_html(height: int = 4) -> str:
+    """Email-safe spectrum stripe (inline-block spans; no flex, no gradients)."""
+    width = round(100.0 / len(SPECTRUM), 2)
+    spans = "".join(
+        f'<span style="display:inline-block;width:{width}%;height:{height}px;'
+        f'background-color:{color};"></span>'
+        for color in SPECTRUM
+    )
+    return f'<div style="font-size:0;line-height:0;">{spans}</div>'
+
+
 def summarize_grid(grid) -> tuple:
     """Render-ready view of a PerspectiveGrid's coverage distribution.
 

@@ -1126,16 +1126,16 @@ class GitHubPagesPublisher:
         css_content = """/* Geopolitical Daily Newsletter Styles */
 
 :root {
-    --primary-color: #1a365d;
-    --secondary-color: #2d3748;
-    --accent-color: #3182ce;
-    --text-color: #2d3748;
-    --text-light: #4a5568;
-    --border-color: #e2e8f0;
-    --bg-light: #f7fafc;
-    --impact-high: #e53e3e;
-    --impact-medium: #dd6b20;
-    --impact-low: #38a169;
+    --primary-color: #14181D;
+    --secondary-color: #2A323B;
+    --accent-color: #1F6FEB;
+    --text-color: #14181D;
+    --text-light: #57616B;
+    --border-color: #E6E9EC;
+    --bg-light: #F5F7F9;
+    --impact-high: #D6453A;
+    --impact-medium: #B26B00;
+    --impact-low: #3E8A5A;
 }
 
 * {
@@ -1157,30 +1157,44 @@ body {
     padding: 0 20px;
 }
 
-/* Header */
+/* Header: ink on white with the perspective-spectrum brand stripe */
 .header {
-    background: var(--primary-color);
-    color: white;
-    padding: 2rem 0;
+    background: #ffffff;
+    color: var(--text-color);
+    padding: 1.75rem 0 1.25rem 0;
     text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+}
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg,
+        #3E6DB5 0 12.5%, #2E8B8B 0 25%, #C24C3A 0 37.5%, #B8862E 0 50%,
+        #8A6D3B 0 62.5%, #7A5AA0 0 75%, #3E8A5A 0 87.5%, #C77B3F 0 100%);
 }
 
 .site-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 0.35rem;
 }
 
 .tagline {
-    font-size: 1.2rem;
+    font-size: 0.95rem;
+    color: var(--text-light);
     margin-bottom: 0.5rem;
-    opacity: 0.9;
 }
 
 .description {
-    font-size: 1rem;
-    opacity: 0.8;
-    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: var(--text-light);
+    max-width: 620px;
+    margin: 0 auto 1rem auto;
 }
 
 .nav {
@@ -1188,16 +1202,21 @@ body {
 }
 
 .nav a {
-    color: white;
+    color: var(--text-color);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     text-decoration: none;
-    margin: 0 1rem;
-    padding: 0.5rem 1rem;
+    margin: 0 0.75rem;
+    padding: 0.4rem 0.6rem;
     border-radius: 4px;
-    transition: background 0.3s;
+    transition: color 0.2s, background 0.2s;
 }
 
 .nav a:hover {
-    background: rgba(255,255,255,0.1);
+    color: var(--accent-color);
+    background: var(--bg-light);
 }
 
 /* Main content */
@@ -1221,6 +1240,8 @@ body {
 
 .newsletter-title {
     font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
     margin-bottom: 0.5rem;
 }
 
@@ -1304,12 +1325,11 @@ body {
 .event-tag  { background: #fefce8; color: #713f12; border: 1px solid #fde68a; }
 
 .subscribe-box {
-    margin-top: 2rem;
-    padding: 1.5rem 2rem;
-    background: linear-gradient(135deg, #1a2a4a 0%, #2c3e50 100%);
-    border-radius: 8px;
+    background: var(--primary-color);
+    border-radius: 10px;
+    padding: 1.75rem 1.5rem;
     text-align: center;
-    color: white;
+    margin: 2rem 0;
 }
 .subscribe-box h3 { color: white; margin: 0 0 0.4rem 0; font-size: 1.1rem; }
 .subscribe-box p  { color: #a0aec0; margin: 0 0 1rem 0; font-size: 0.9rem; }

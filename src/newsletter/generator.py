@@ -255,7 +255,7 @@ class NewsletterGenerator:
 
             // Visual feedback
             const buttons = document.querySelectorAll('.feedback-btn');
-            buttons.forEach(btn => btn.style.backgroundColor = '#3498db');
+            buttons.forEach(btn => btn.style.backgroundColor = '#1F6FEB');
 
             // Show thank you message
             const feedbackSection = document.querySelector('.feedback-section');
@@ -488,13 +488,13 @@ class NewsletterGenerator:
         """Get CSS styles for newsletter."""
         return """
         body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 600px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.65;
+            color: #14181D;
+            max-width: 640px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f8f9fa;
+            background-color: #EEF1F4;
         }
         
         .container {
@@ -506,20 +506,20 @@ class NewsletterGenerator:
         
         .header {
             text-align: center;
-            border-bottom: 3px solid #2c3e50;
+            border-bottom: 3px solid #14181D;
             padding-bottom: 20px;
             margin-bottom: 30px;
         }
         
         .header h1 {
-            color: #2c3e50;
+            color: #14181D;
             font-size: 28px;
             margin: 0;
             font-weight: bold;
         }
         
         .header .date {
-            color: #7f8c8d;
+            color: #9AA3AB;
             font-size: 14px;
             margin-top: 5px;
         }
@@ -527,7 +527,7 @@ class NewsletterGenerator:
         .intro {
             background-color: #ecf0f1;
             padding: 20px;
-            border-left: 4px solid #3498db;
+            border-left: 4px solid #1F6FEB;
             margin-bottom: 30px;
             font-style: italic;
             white-space: pre-line;
@@ -545,7 +545,7 @@ class NewsletterGenerator:
         }
         
         .story-title {
-            color: #2c3e50;
+            color: #14181D;
             font-size: 20px;
             font-weight: bold;
             margin: 0 0 10px 0;
@@ -553,7 +553,7 @@ class NewsletterGenerator:
         }
         
         .story-meta {
-            color: #7f8c8d;
+            color: #9AA3AB;
             font-size: 12px;
             margin-bottom: 15px;
             display: flex;
@@ -586,7 +586,7 @@ class NewsletterGenerator:
         .impact-score.low { background-color: #27ae60; }
 
         .urgency-score { background-color: #9b59b6; }
-        .scope-score { background-color: #3498db; }
+        .scope-score { background-color: #1F6FEB; }
         .novelty-score { background-color: #e67e22; }
         .credibility-score { background-color: #2ecc71; }
         .impact-dimension-score { background-color: #95a5a6; }
@@ -604,7 +604,7 @@ class NewsletterGenerator:
         }
 
         .content-type-badge.breaking_news { background-color: #e74c3c; }
-        .content-type-badge.analysis { background-color: #3498db; }
+        .content-type-badge.analysis { background-color: #1F6FEB; }
         .content-type-badge.trend { background-color: #9b59b6; }
 
         .geo-tag {
@@ -622,7 +622,7 @@ class NewsletterGenerator:
 
         /* Subscribe Section */
         .subscribe-section {
-            background: linear-gradient(135deg, #1a2a4a 0%, #2c3e50 100%);
+            background: #14181D;
             color: white;
             padding: 24px;
             border-radius: 8px;
@@ -666,7 +666,7 @@ class NewsletterGenerator:
         .subscribe-btn:hover { background-color: #c0392b; }
 
         .story.breaking_news { border-left: 4px solid #e74c3c; }
-        .story.analysis { border-left: 4px solid #3498db; }
+        .story.analysis { border-left: 4px solid #1F6FEB; }
         .story.trend { border-left: 4px solid #9b59b6; }
         
         .story-section {
@@ -683,7 +683,7 @@ class NewsletterGenerator:
         }
         
         .section-content {
-            color: #2c3e50;
+            color: #14181D;
             line-height: 1.6;
         }
         
@@ -694,7 +694,7 @@ class NewsletterGenerator:
         }
         
         .sources-title {
-            color: #7f8c8d;
+            color: #9AA3AB;
             font-size: 12px;
             font-weight: bold;
             margin-bottom: 8px;
@@ -702,7 +702,7 @@ class NewsletterGenerator:
         
         .source-link {
             display: block;
-            color: #3498db;
+            color: #1F6FEB;
             text-decoration: none;
             font-size: 12px;
             margin-bottom: 3px;
@@ -718,12 +718,12 @@ class NewsletterGenerator:
             padding-top: 20px;
             border-top: 2px solid #ecf0f1;
             text-align: center;
-            color: #7f8c8d;
+            color: #9AA3AB;
             font-size: 12px;
         }
         
         .footer a {
-            color: #3498db;
+            color: #1F6FEB;
             text-decoration: none;
         }
         
@@ -741,7 +741,7 @@ class NewsletterGenerator:
         }
 
         .feedback-section h4 {
-            color: #2c3e50;
+            color: #14181D;
             margin: 0 0 15px 0;
             font-size: 16px;
         }
@@ -760,7 +760,7 @@ class NewsletterGenerator:
         }
 
         .feedback-btn {
-            background-color: #3498db;
+            background-color: #1F6FEB;
             color: white;
             border: none;
             padding: 8px 16px;
@@ -810,14 +810,14 @@ class NewsletterGenerator:
         }
 
         .section-label {
-            font-size: 12px;
-            font-weight: bold;
+            font-size: 11px;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #b8962e;
-            text-align: center;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 8px;
+            letter-spacing: 2px;
+            color: #14181D;
+            border-top: 3px solid #14181D;
+            display: inline-block;
+            padding-top: 7px;
             margin: 34px 0 10px 0;
         }
         .big-number { text-align: center; }
@@ -838,7 +838,7 @@ class NewsletterGenerator:
         }
         .coverage-legend {
             font-size: 12px;
-            color: #7f8c8d;
+            color: #9AA3AB;
             margin-bottom: 16px;
         }
         .persp-row {
@@ -893,7 +893,7 @@ class NewsletterGenerator:
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #7f8c8d;
+            color: #9AA3AB;
             margin-bottom: 12px;
         }
         .quick-hits { margin: 0; padding-left: 18px; }
@@ -904,14 +904,14 @@ class NewsletterGenerator:
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: #2c5282;
+            color: #1F6FEB;
             margin-right: 6px;
         }
-        .quick-hit-link { text-decoration: none; color: #3498db; }
+        .quick-hit-link { text-decoration: none; color: #1F6FEB; }
         .big-number-value {
             font-size: 40px;
             font-weight: bold;
-            color: #2c3e50;
+            color: #14181D;
             line-height: 1.1;
         }
         .big-number-context { color: #4a5568; margin-top: 6px; }
@@ -925,7 +925,7 @@ class NewsletterGenerator:
 
         .newsletter-actions a {
             margin: 0 10px;
-            color: #3498db;
+            color: #1F6FEB;
             text-decoration: none;
             font-size: 12px;
         }
@@ -980,94 +980,83 @@ class NewsletterGenerator:
     def generate_email_html(self, newsletter: Newsletter) -> str:
         """Generate email-safe HTML with inline styles for Buttondown delivery.
 
-        Unlike generate_html(), this version embeds all styles inline so they
-        survive email client rendering and Buttondown's head-stripping template.
+        Design language: ink on white, the perspective spectrum as the only
+        brand color, system sans stack. No serif-briefing cosplay, no beige.
+        All styles inline so they survive email-client head-stripping.
         """
-        C_NAVY   = "#1a2744"
-        C_GOLD   = "#c9a84c"
-        C_TEXT   = "#2d3748"
-        C_MUTED  = "#718096"
-        C_LIGHT  = "#f7f8fa"
-        C_BORDER = "#e2e8f0"
-        C_LINK   = "#2c5282"
-        C_WHITE  = "#ffffff"
-        TYPE_COLORS = {
-            "breaking_news": "#e74c3c",
-            "analysis": "#2b6cb0",
-            "trend": "#6b46c1",
-        }
+        INK    = "#14181D"
+        SUB    = "#57616B"
+        FAINT  = "#9AA3AB"
+        LINE   = "#E6E9EC"
+        WASH   = "#F5F7F9"
+        ACCENT = "#1F6FEB"
+        RED    = "#D6453A"
+        SANS   = "font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;"
 
-        # No hyphenation anywhere — email clients (and Buttondown's wrapper CSS)
-        # otherwise hyphenate aggressively on narrow screens ("immedi-ate").
         NO_HYPHENS = "-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;"
 
-        # This <style> block lives in the BODY on purpose: Buttondown strips the
-        # <head>, but body content is passed through. It fixes two mobile issues
-        # inline styles cannot: iOS data detectors turning "9/10" into a blue
-        # link, and font/padding downscaling on small screens (!important is
-        # required to beat the inline styles).
+        # Body <style>: Buttondown strips <head>, body styles pass through.
+        # Fixes iOS data detectors and downsizes type on small screens.
         style_block = """<style>
 a[x-apple-data-detectors]{color:inherit !important;text-decoration:none !important;font-size:inherit !important;font-family:inherit !important;font-weight:inherit !important;line-height:inherit !important;}
 body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyphens:none !important;}
 @media only screen and (max-width:480px){
   .nl-body{padding:6px !important;}
-  .nl-content{padding-left:16px !important;padding-right:16px !important;}
-  .nl-header{padding:24px 16px !important;}
+  .nl-content{padding-left:18px !important;padding-right:18px !important;}
   .nl-h1{font-size:23px !important;}
-  .nl-h2{font-size:19px !important;}
-  .nl-intro{padding:14px 14px !important;}
   .nl-box{padding:12px 14px !important;}
+  .nl-num{font-size:42px !important;}
 }
 </style>"""
 
-        header_html = f"""<div class="nl-header" style="background-color:{C_NAVY};padding:30px 24px;text-align:center;">
-  <div style="font-family:Georgia,'Times New Roman',serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:{C_GOLD};margin-bottom:10px;">Intelligence Briefing</div>
-  <h1 class="nl-h1" style="font-family:Georgia,'Times New Roman',serif;font-size:26px;font-weight:bold;color:{C_WHITE};margin:0 0 8px 0;line-height:1.25;{NO_HYPHENS}">{newsletter.title}</h1>
-  <div style="font-family:Georgia,'Times New Roman',serif;font-size:13px;color:#94a3b8;margin-bottom:8px;font-style:italic;">{Config.NEWSLETTER_TAGLINE}</div>
-  <div style="font-family:Georgia,'Times New Roman',serif;font-size:13px;color:#64748b;">{newsletter.date.strftime('%A, %B %-d, %Y')}</div>
-</div>
-<div style="background-color:{C_GOLD};height:3px;"></div>"""
+        from ..perspectives import spectrum_bar_html
+        header_html = f"""{spectrum_bar_html(5)}
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="padding:22px 24px 0 24px;">
+  <tr>
+    <td style="{SANS}font-size:14px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:{INK};">{newsletter.title}</td>
+    <td align="right" style="{SANS}font-size:12px;color:{FAINT};">{newsletter.date.strftime('%a, %b %-d, %Y')}</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="{SANS}font-size:12px;color:{FAINT};padding-top:3px;">{Config.NEWSLETTER_TAGLINE}</td>
+  </tr>
+</table>"""
 
         intro_html = ""
         if newsletter.intro_text:
-            # Render paragraphs explicitly instead of relying on white-space:
-            # pre-line, which turns any stray newline into a ragged mobile mess.
             paras = [p.strip() for p in newsletter.intro_text.split("\n\n") if p.strip()]
             paragraphs = "".join(
-                f'<p style="margin:{"0" if i == len(paras) - 1 else "0 0 12px 0"};">{p}</p>'
+                f'<p style="margin:{"0" if i == len(paras) - 1 else "0 0 10px 0"};">{p}</p>'
                 for i, p in enumerate(paras)
             )
-            intro_html = f"""<div class="nl-intro" style="background-color:{C_LIGHT};border-left:4px solid {C_GOLD};padding:16px 18px;margin:24px 0;font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.7;color:{C_TEXT};{NO_HYPHENS}">{paragraphs}</div>"""
+            intro_html = (f'<div style="{SANS}font-size:15px;line-height:1.65;color:{SUB};'
+                          f'margin:20px 0 6px 0;{NO_HYPHENS}">{paragraphs}</div>')
 
-        # The perspective grid and signals belong INSIDE the big story's flow
-        # (what happened -> how the world covers it -> what's missed -> what's
-        # next + odds -> sources), not as trailing boxes after it.
-        grid_block = self._email_grid_block(newsletter, C_NAVY, C_TEXT, C_MUTED, C_LIGHT, C_BORDER, C_LINK)
-        signals_block = self._email_signals_block(newsletter, C_TEXT, C_MUTED, C_LINK)
+        def kicker(text):
+            return (f'<div style="margin-top:28px;">'
+                    f'<div style="width:28px;height:3px;background-color:{INK};margin-bottom:7px;font-size:0;line-height:0;">&nbsp;</div>'
+                    f'<div style="{SANS}font-size:11px;font-weight:800;letter-spacing:2px;'
+                    f'text-transform:uppercase;color:{INK};margin-bottom:12px;">{text}</div></div>')
 
-        section_label = (f'<div style="font-size:11px;font-weight:bold;text-transform:uppercase;'
-                         f'letter-spacing:3px;color:{C_GOLD};text-align:center;'
-                         f'border-bottom:1px solid {C_BORDER};padding-bottom:8px;margin-top:24px;">')
+        grid_block = self._email_grid_block(newsletter, INK, SUB, FAINT, LINE, WASH, ACCENT, SANS)
+        signals_block = self._email_signals_block(newsletter, SUB, FAINT, ACCENT, SANS)
+
         stories_html = ""
         for i, story in enumerate(newsletter.stories):
-            is_last = (i == len(newsletter.stories) - 1)
             if i == 0:
-                stories_html += f'{section_label}The Big Story</div>'
+                stories_html += kicker("The Big Story")
             stories_html += self._generate_email_story_html(
-                story, is_last, TYPE_COLORS, C_NAVY, C_TEXT, C_MUTED, C_LIGHT, C_BORDER, C_GOLD, C_LINK,
+                story, INK, SUB, FAINT, LINE, WASH, ACCENT, RED, SANS,
                 mid_block=grid_block if i == 0 else "",
                 after_watch_block=signals_block if i == 0 else ""
             )
         stories_html += self._generate_email_extras_html(
-            newsletter, C_NAVY, C_TEXT, C_MUTED, C_LIGHT, C_BORDER, C_GOLD, C_LINK, section_label
+            newsletter, INK, SUB, FAINT, LINE, ACCENT, SANS, kicker
         )
 
-        footer_html = f"""<div style="border-top:2px solid {C_BORDER};margin-top:32px;padding-top:24px;text-align:center;font-family:Georgia,'Times New Roman',serif;font-size:12px;color:{C_MUTED};line-height:1.8;">
-  <p style="margin:0 0 6px 0;font-weight:bold;color:{C_TEXT};">{newsletter.title}</p>
-  <p style="margin:0 0 12px 0;">Geopolitical Intelligence for Decision Makers</p>
-  {f'<p style="margin:0 0 12px 0;">{newsletter.footer_text}</p>' if newsletter.footer_text else ''}
-  <p style="margin:0 0 6px 0;font-size:11px;color:{C_MUTED};">Too much email? Reply with the word "weekly" and we'll switch you to the Sunday digest.</p>
-  <p style="margin:0;font-size:11px;color:{C_MUTED};">You are receiving this because you subscribed to {newsletter.title}.</p>
+        footer_html = f"""<div style="border-top:1px solid {LINE};margin-top:30px;padding-top:18px;{SANS}font-size:12px;color:{FAINT};line-height:1.8;">
+  <p style="margin:0 0 8px 0;color:{SUB};">{newsletter.footer_text}</p>
+  <p style="margin:0 0 4px 0;">Too much email? Reply with the word "weekly" and we'll switch you to the Sunday digest.</p>
+  <p style="margin:0;">You are receiving this because you subscribed to {newsletter.title}.</p>
 </div>"""
 
         return f"""<!DOCTYPE html>
@@ -1077,11 +1066,11 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{newsletter.title} — {newsletter.date.strftime('%B %-d, %Y')}</title>
 </head>
-<body class="nl-body" style="margin:0;padding:12px;background-color:#f0f2f5;font-family:Georgia,'Times New Roman',serif;">
+<body class="nl-body" style="margin:0;padding:14px;background-color:#EEF1F4;{SANS}">
 {style_block}
-<div style="max-width:600px;margin:0 auto;background-color:{C_WHITE};border-radius:6px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+<div style="max-width:600px;margin:0 auto;background-color:#ffffff;border:1px solid {LINE};border-radius:8px;overflow:hidden;">
   {header_html}
-  <div class="nl-content" style="padding:0 24px 28px 24px;">
+  <div class="nl-content" style="padding:0 24px 26px 24px;">
     {intro_html}
     {stories_html}
     {footer_html}
@@ -1089,166 +1078,167 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
 </div>
 </body>
 </html>"""
-
     def _generate_email_story_html(
-        self, story, is_last: bool,
-        type_colors: dict, C_NAVY: str, C_TEXT: str, C_MUTED: str,
-        C_LIGHT: str, C_BORDER: str, C_GOLD: str, C_LINK: str,
+        self, story, INK: str, SUB: str, FAINT: str, LINE: str, WASH: str,
+        ACCENT: str, RED: str, SANS: str,
         mid_block: str = "", after_watch_block: str = ""
     ) -> str:
-        """Generate inline-styled HTML for a single story in email format."""
+        """Inline-styled HTML for one story in the email."""
+        NO_HYPHENS = "-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;"
+
         content_type_val = story.content_type.value
-        content_type_color = type_colors.get(content_type_val, "#718096")
-        content_type_display = {
-            "breaking_news": "Breaking News",
+        type_display = {
+            "breaking_news": "Breaking",
             "analysis": "Analysis",
             "trend": "Trend",
         }.get(content_type_val, content_type_val.replace("_", " ").title())
-
+        type_color = RED if content_type_val == "breaking_news" else FAINT
         region_display = story.region.replace("_", " ").title()
+        meta_line = (f'<div style="{SANS}font-size:11px;font-weight:700;letter-spacing:1.5px;'
+                     f'text-transform:uppercase;margin-bottom:8px;">'
+                     f'<span style="color:{type_color};">{type_display}</span>'
+                     f'<span style="color:{FAINT};"> &middot; {region_display}</span></div>')
+
+        def label(text):
+            return (f'<div style="{SANS}font-size:10.5px;font-weight:700;letter-spacing:1.2px;'
+                    f'text-transform:uppercase;color:{FAINT};margin-bottom:5px;">{text}</div>')
+
+        body_style = f'{SANS}font-size:15px;line-height:1.65;color:{INK};{NO_HYPHENS}'
 
         sources_html = ""
         from .source_display import dedupe_sources
         named_sources = dedupe_sources(story.sources)
         if named_sources:
-            source_links = "".join(
-                f'<a href="{src}" style="color:{C_LINK};text-decoration:none;font-size:13px;display:inline-block;margin-right:12px;margin-bottom:4px;">{name}</a>'
+            links = f'<span style="color:{FAINT};"> &middot; </span>'.join(
+                f'<a href="{src}" style="color:{ACCENT};text-decoration:none;">{name}</a>'
                 for src, name in named_sources
             )
-            sources_html = f"""<div style="border-top:1px solid {C_BORDER};margin-top:20px;padding-top:14px;">
-  <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:{C_MUTED};margin-bottom:8px;">Sources</div>
-  <div>{source_links}</div>
-</div>"""
+            sources_html = (f'<div style="margin-top:16px;">{label("Sources")}'
+                            f'<div style="{SANS}font-size:13.5px;line-height:1.7;">{links}</div></div>')
 
-        border_bottom = "" if is_last else f"border-bottom:1px solid {C_BORDER};"
-        NO_HYPHENS = "-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;"
-
-        return f"""<div style="{border_bottom}margin-bottom:28px;padding-bottom:28px;padding-top:24px;">
-  <div style="margin-bottom:12px;">
-    <span style="display:inline-block;background-color:{content_type_color};color:#ffffff;font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;padding:4px 10px;border-radius:12px;margin-right:6px;margin-bottom:4px;">{content_type_display}</span>
-    <span style="display:inline-block;background-color:{C_LIGHT};color:#4a5568;font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:0.5px;padding:4px 8px;border-radius:10px;border:1px solid {C_BORDER};margin-right:6px;margin-bottom:4px;">{region_display}</span>
-  </div>
-  <h2 class="nl-h2" style="font-family:Georgia,'Times New Roman',serif;font-size:21px;font-weight:bold;color:{C_NAVY};margin:0 0 16px 0;line-height:1.35;{NO_HYPHENS}">{story.story_title}</h2>
-  <div style="margin-bottom:18px;">
-    <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:{C_MUTED};margin-bottom:6px;">Why This Matters</div>
-    <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.7;color:{C_TEXT};{NO_HYPHENS}">{story.why_important}</div>
+        return f"""<div style="margin-bottom:6px;">
+  {meta_line}
+  <h1 class="nl-h1" style="{SANS}font-size:26px;font-weight:800;letter-spacing:-0.3px;color:{INK};margin:0 0 14px 0;line-height:1.25;{NO_HYPHENS}">{story.story_title}</h1>
+  <div style="margin-bottom:16px;">
+    {label("Why This Matters")}
+    <div style="{body_style}">{story.why_important}</div>
   </div>
   {mid_block}
-  <div class="nl-box" style="margin-bottom:18px;background-color:{C_LIGHT};padding:14px 16px;border-left:3px solid {C_GOLD};">
-    <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:{C_MUTED};margin-bottom:6px;">What Others Are Missing</div>
-    <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.7;color:{C_TEXT};{NO_HYPHENS}">{story.what_overlooked}</div>
+  <div class="nl-box" style="margin-bottom:16px;background-color:{WASH};border-radius:6px;padding:12px 14px;">
+    {label("What Others Are Missing")}
+    <div style="{body_style}">{story.what_overlooked}</div>
   </div>
-  <div style="margin-bottom:18px;">
-    <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:{C_MUTED};margin-bottom:6px;">What to Watch</div>
-    <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.7;color:{C_TEXT};{NO_HYPHENS}">{story.prediction}</div>
+  <div style="margin-bottom:14px;">
+    {label("What to Watch")}
+    <div style="{body_style}">{story.prediction}</div>
   </div>
   {after_watch_block}
   {sources_html}
 </div>"""
-
-    def _email_grid_block(self, newsletter: Newsletter, C_NAVY: str, C_TEXT: str,
-                          C_MUTED: str, C_LIGHT: str, C_BORDER: str, C_LINK: str) -> str:
-        """How the World Covers It — rendered inside the big story's flow."""
+    def _email_grid_block(self, newsletter: Newsletter, INK: str, SUB: str,
+                          FAINT: str, LINE: str, WASH: str, ACCENT: str, SANS: str) -> str:
+        """How the World Covers It — inside the big story's flow."""
         grid = getattr(newsletter, 'perspective_grid', None)
         if not grid or not grid.counts:
             return ""
         NO_HYPHENS = "-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;"
-        body_font = "font-family:Georgia,'Times New Roman',serif;"
         from ..perspectives import summarize_grid, GROUP_COLORS, label_of
         parts, legend = summarize_grid(grid)
+
+        total = sum(p["count"] for p in parts) or 1
+        bar = "".join(
+            f'<span style="display:inline-block;width:{max(4, round(100 * p["count"] / total, 1))}%;'
+            f'height:6px;background-color:{p["color"]};"></span>'
+            for p in parts
+        )
+
         rows = ""
         for view in grid.views:
             if not view.framing:
                 continue
             color = GROUP_COLORS.get(view.perspective, "#6B7280")
-            state = (' <span style="font-size:9px;text-transform:uppercase;letter-spacing:0.5px;'
-                     'background-color:#f5e6c8;color:#8a6d1a;border-radius:8px;padding:1px 6px;">'
-                     'state-affiliated</span>') if view.state_affiliated else ""
+            state = (f' <span style="{SANS}font-size:9px;font-weight:700;letter-spacing:0.5px;'
+                     f'text-transform:uppercase;color:{SUB};border:1px solid {LINE};'
+                     f'border-radius:3px;padding:1px 5px;">state media</span>') if view.state_affiliated else ""
             quote_html = ""
             if view.quote:
                 outlet = view.quote_outlet or ""
-                link = (f'<a href="{view.quote_url}" style="color:{C_LINK};text-decoration:none;">{outlet}</a>'
+                link = (f'<a href="{view.quote_url}" style="color:{ACCENT};text-decoration:none;">{outlet}</a>'
                         if view.quote_url else outlet)
-                quote_html = (f'<div style="{body_font}font-size:13px;font-style:italic;'
-                              f'color:#4a5568;margin:3px 0 0 14px;{NO_HYPHENS}">'
+                quote_html = (f'<div style="{SANS}font-size:13.5px;line-height:1.6;color:{SUB};'
+                              f'border-left:2px solid {color};padding-left:10px;margin:5px 0 0 15px;{NO_HYPHENS}">'
                               f'&ldquo;{view.quote}&rdquo; &mdash; {link}</div>')
-            rows += (f'<div style="margin-bottom:11px;{body_font}font-size:14px;'
-                     f'line-height:1.6;color:{C_TEXT};{NO_HYPHENS}">'
-                     f'<span style="color:{color};font-size:15px;">&#9679;</span> '
+            rows += (f'<div style="margin-bottom:12px;{SANS}font-size:14px;'
+                     f'line-height:1.6;color:{INK};{NO_HYPHENS}">'
+                     f'<span style="color:{color};">&#9679;</span> '
                      f'<strong>{label_of(view.perspective)} ({view.article_count})</strong>{state}'
-                     f' &mdash; {view.framing}{quote_html}</div>')
+                     f' &mdash; <span style="color:{SUB};">{view.framing}</span>{quote_html}</div>')
+
         blindspot_html = ""
         if grid.blindspot:
-            arrow = (f' <a href="{grid.blindspot_url}" style="color:{C_LINK};text-decoration:none;">&rarr;</a>'
+            arrow = (f' <a href="{grid.blindspot_url}" style="color:{ACCENT};text-decoration:none;">&rarr;</a>'
                      if grid.blindspot_url else "")
-            blindspot_html = (f'<div style="background-color:#fdf3e3;color:#8a5a17;border-radius:6px;'
-                              f'padding:10px 14px;margin-top:12px;{body_font}font-size:13px;'
-                              f'line-height:1.6;{NO_HYPHENS}">&#9888; <strong>Blindspot:</strong> '
-                              f'{grid.blindspot}{arrow}</div>')
-        return (f'<div class="nl-box" style="margin:0 0 18px 0;background-color:{C_LIGHT};'
-                f'padding:14px 16px;border-radius:6px;">'
-                f'<div style="font-size:10px;font-weight:bold;text-transform:uppercase;'
-                f'letter-spacing:1px;color:{C_MUTED};margin-bottom:8px;">How the World Covers It</div>'
-                f'<div style="font-size:12px;color:{C_MUTED};margin-bottom:12px;">'
-                f'{grid.total_outlets} outlets &middot; {legend}</div>'
-                f'{rows}{blindspot_html}</div>')
+            blindspot_html = (f'<div style="border-left:3px solid #B26B00;padding:2px 0 2px 12px;margin-top:14px;">'
+                              f'<span style="{SANS}font-size:10px;font-weight:800;letter-spacing:1.5px;'
+                              f'text-transform:uppercase;color:#B26B00;">Blindspot</span>'
+                              f'<div style="{SANS}font-size:13.5px;line-height:1.6;color:{INK};'
+                              f'margin-top:3px;{NO_HYPHENS}">{grid.blindspot}{arrow}</div></div>')
 
-    def _email_signals_block(self, newsletter: Newsletter, C_TEXT: str,
-                             C_MUTED: str, C_LINK: str) -> str:
-        """Signals — small lines directly under What to Watch, no box."""
+        return (f'<div style="margin:0 0 18px 0;border-top:1px solid {LINE};padding-top:14px;">'
+                f'<div style="{SANS}font-size:10.5px;font-weight:700;letter-spacing:1.2px;'
+                f'text-transform:uppercase;color:{FAINT};margin-bottom:8px;">How the World Covers It</div>'
+                f'<div style="font-size:0;line-height:0;margin-bottom:6px;">{bar}</div>'
+                f'<div style="{SANS}font-size:12px;color:{FAINT};margin-bottom:14px;">'
+                f'{grid.total_outlets} outlets &middot; {legend}</div>'
+                f'{rows}{blindspot_html}'
+                f'<div style="border-bottom:1px solid {LINE};margin-top:16px;font-size:0;">&nbsp;</div></div>')
+    def _email_signals_block(self, newsletter: Newsletter, SUB: str,
+                             FAINT: str, ACCENT: str, SANS: str) -> str:
+        """Signals — compact lines directly under What to Watch."""
         signals = getattr(newsletter, 'signals', None) or []
         if not signals:
             return ""
         NO_HYPHENS = "-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;"
-        body_font = "font-family:Georgia,'Times New Roman',serif;"
         items = ""
         for signal in signals:
-            arrow = (f' <a href="{signal.url}" style="color:{C_LINK};text-decoration:none;">&rarr;</a>'
+            arrow = (f' <a href="{signal.url}" style="color:{ACCENT};text-decoration:none;">&rarr;</a>'
                      if signal.url else "")
-            items += (f'<div style="margin-bottom:6px;{body_font}font-size:13px;'
-                      f'line-height:1.6;color:{C_TEXT};{NO_HYPHENS}">'
-                      f'<span style="color:{C_MUTED};">&#9656;</span> {signal.text}{arrow}</div>')
-        return f'<div style="margin:-8px 0 18px 0;padding-left:2px;">{items}</div>'
-
+            items += (f'<div style="margin-bottom:5px;{SANS}font-size:13.5px;'
+                      f'line-height:1.6;color:{SUB};{NO_HYPHENS}">'
+                      f'<span style="color:{FAINT};">&#9656;</span> {signal.text}{arrow}</div>')
+        return f'<div style="margin:-4px 0 14px 0;">{items}</div>'
     def _generate_email_extras_html(
-        self, newsletter: Newsletter,
-        C_NAVY: str, C_TEXT: str, C_MUTED: str, C_LIGHT: str,
-        C_BORDER: str, C_GOLD: str, C_LINK: str, section_label: str = ""
+        self, newsletter: Newsletter, INK: str, SUB: str, FAINT: str,
+        LINE: str, ACCENT: str, SANS: str, kicker
     ) -> str:
         """Also Today (hairline list) + Big Number (centered) after the story."""
         NO_HYPHENS = "-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;"
-        body_font = "font-family:Georgia,'Times New Roman',serif;"
-        if not section_label:
-            section_label = (f'<div style="font-size:11px;font-weight:bold;text-transform:uppercase;'
-                             f'letter-spacing:3px;color:{C_GOLD};text-align:center;'
-                             f'border-bottom:1px solid {C_BORDER};padding-bottom:8px;margin-top:24px;">')
         html = ""
         if newsletter.quick_hits:
             items = ""
             for i, hit in enumerate(newsletter.quick_hits):
                 region = hit.region.replace("_", " ").title()
-                arrow = (f' <a href="{hit.url}" style="color:{C_LINK};text-decoration:none;">&rarr;</a>'
+                arrow = (f' <a href="{hit.url}" style="color:{ACCENT};text-decoration:none;">&rarr;</a>'
                          if hit.url else "")
-                border = "" if i == len(newsletter.quick_hits) - 1 else f"border-bottom:1px solid {C_BORDER};"
-                items += (f'<div style="padding:9px 2px;{border}{body_font}font-size:14px;'
-                          f'line-height:1.6;color:{C_TEXT};{NO_HYPHENS}">'
-                          f'<span style="font-size:10px;font-weight:bold;text-transform:uppercase;'
-                          f'letter-spacing:0.5px;color:{C_LINK};margin-right:6px;">{region}</span>'
+                border = "" if i == len(newsletter.quick_hits) - 1 else f"border-bottom:1px solid {LINE};"
+                items += (f'<div style="padding:9px 0;{border}{SANS}font-size:14.5px;'
+                          f'line-height:1.6;color:{INK};{NO_HYPHENS}">'
+                          f'<span style="font-size:10px;font-weight:800;text-transform:uppercase;'
+                          f'letter-spacing:1px;color:{ACCENT};margin-right:7px;">{region}</span>'
                           f'{hit.text}{arrow}</div>')
-            html += f'{section_label}Also Today</div><div style="margin:14px 0 26px 0;">{items}</div>'
+            html += f'{kicker("Also Today")}<div style="margin-bottom:8px;">{items}</div>'
         if newsletter.big_number:
             bn = newsletter.big_number
-            arrow = (f' <a href="{bn.url}" style="color:{C_LINK};text-decoration:none;">&rarr;</a>'
+            arrow = (f' <a href="{bn.url}" style="color:{ACCENT};text-decoration:none;">&rarr;</a>'
                      if bn.url else "")
-            html += (f'{section_label}The Big Number</div>'
-                     f'<div style="text-align:center;margin:16px 0 26px 0;">'
-                     f'<div style="{body_font}font-size:40px;'
-                     f'font-weight:bold;color:{C_NAVY};line-height:1.1;">{bn.value}</div>'
-                     f'<div style="{body_font}font-size:14px;'
-                     f'line-height:1.6;color:{C_TEXT};margin-top:6px;{NO_HYPHENS}">{bn.context}{arrow}</div>'
+            html += (f'{kicker("The Big Number")}'
+                     f'<div style="text-align:center;margin:6px 0 10px 0;">'
+                     f'<div class="nl-num" style="{SANS}font-size:54px;font-weight:800;'
+                     f'letter-spacing:-1px;color:{INK};line-height:1.05;">{bn.value}</div>'
+                     f'<div style="{SANS}font-size:14px;line-height:1.6;color:{SUB};'
+                     f'margin-top:8px;{NO_HYPHENS}">{bn.context}{arrow}</div>'
                      f'</div>')
         return html
-
     def _generate_fallback_html(self, newsletter: Newsletter) -> str:
         """Generate basic HTML if main generation fails."""
         html = f"""
