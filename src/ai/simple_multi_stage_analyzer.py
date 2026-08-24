@@ -139,6 +139,14 @@ class SimplifiedMultiStageAnalyzer:
                 if analyses:
                     response_text = retry_text
 
+            # Readability gate: if the copy came back too dense, run one
+            # "simplify" rewrite pass before publishing.
+            if analyses:
+                analyses, gate_in, gate_out, gate_cost = self._apply_readability_gate(analyses)
+                input_tokens += gate_in
+                output_tokens += gate_out
+                cost += gate_cost
+
             total_tokens = input_tokens + output_tokens
             ai_cost_controller.record_cost(cost, total_tokens, "single_call_analysis")
 
@@ -217,32 +225,39 @@ URL: {}
                                  "there is a genuinely new development):\n" + history + "\n")
 
         # Use string formatting to avoid f-string issues with article content containing braces
-        template = """You are a senior geopolitical analyst producing a structured daily intelligence briefing.
+        template = """You write a daily world-news brief for smart readers who are NOT foreign-policy professionals. Your job: pick the stories that matter most today and explain each one so clearly that a busy reader gets it on the first read.
 {}
 ARTICLES TO ANALYZE:
 {}
 
-Select the {} MOST STRATEGICALLY SIGNIFICANT stories from the above articles.
+Select the {} most important stories from the above articles.
 
-SOURCE HANDLING RULES:
-- Each article lists an "editorial weight" (0.7–1.3). Treat higher-weight sources (think tanks, specialist analysis) as more authoritative than wire services and state-adjacent media.
-- When several articles cover the SAME event, treat them as ONE story and list ALL supporting indices in article_indices — corroboration by 2+ independent sources is a strong plus and should raise credibility_score.
-- A story supported by only a single low-weight source needs exceptional strategic significance to be selected; reflect single-sourcing in a lower credibility_score.
-- Distinguish reporting from advocacy: state-adjacent outlets (e.g. SCMP on China, Kremlin-aligned media) can flag what a government wants amplified — useful signal, but do not take their framing at face value.
+WRITING STYLE (strict — this is the product):
+- Plain English, active voice, US grade 8-9 reading level.
+- Short sentences: at most ~18 words each. One idea per sentence. Two or three short sentences beat one long one — never pack multiple clauses into a single sentence.
+- Banned jargon: "inflection point", "strategic calculus", "paradigm", "escalatory dynamics", "operational tempo", "recalibrate", "posture", "leverage" (as a verb), "signal" (as a verb), "underscore". Say what happened in real words.
+- Concrete beats abstract: "Iran said it will stop all Gulf oil exports" beats "Tehran signaled export disruption".
+- Direct and conversational is good. Vague is not.
+
+SOURCE RULES:
+- When several articles cover the SAME event, treat them as ONE story and list ALL supporting indices in article_indices. Corroboration by 2+ different outlets is a strong plus — raise credibility_score for it.
+- article_indices must come from DIFFERENT outlets whenever possible. Never build a story on two articles from the same outlet if any alternative exists.
+- Every outlet is a lens, not an oracle. State-linked or single-perspective sourcing must lower credibility_score, and what_overlooked should say what that lens leaves out.
+- The "editorial weight" (0.7-1.3) on each article reflects past reliability — a mild tiebreaker, not a ranking rule. A well-corroborated wire story beats a single-source think-tank essay.
 
 For each selected story, provide analysis in this EXACT JSON format — return a JSON array, no other text:
 
 [
   {{
     "article_indices": [0, 3, 5],
-    "story_title": "Analytically sharp title — no clichés like 'tensions rise' or 'amid uncertainty'",
+    "story_title": "Clear, specific title a non-expert understands — no clichés like 'tensions rise', no jargon",
     "content_type": "breaking_news or analysis or trend",
     "region": "europe or middle_east or indo_pacific or americas or africa or central_asia or global",
     "actor_type": "state or non_state or international_org or mixed",
     "event_type": "diplomatic or military or economic or informational_cyber or humanitarian or political",
-    "why_important": "Strategic significance, second-order effects, power implications — max 80 words",
-    "what_overlooked": "What the headline misses: structural driver, underreported actor, longer arc — max 40 words",
-    "prediction": "Concrete observable threshold or next move in the next 72 hours — max 30 words",
+    "why_important": "2-3 SHORT sentences: what happened and why a smart reader should care. Max 60 words.",
+    "what_overlooked": "1-2 short sentences: what most coverage (or this story's own sources) misses. Max 35 words.",
+    "prediction": "One concrete thing to watch in the next 72 hours. Max 25 words.",
     "impact_score": 8,
     "urgency_score": 7,
     "scope_score": 8,
@@ -260,14 +275,83 @@ FIELD DEFINITIONS:
 - event_type: diplomatic=summits/treaties/negotiations; military=conflict/deployments/weapons; economic=trade/energy/sanctions; informational_cyber=disinformation/hacking; humanitarian=refugees/famine/disaster; political=elections/coups/protests
 
 SELECTION RULES:
-1. Cover at least 2-3 distinct regions — no geographic clustering
-2. 25% breaking news, 75% analysis/trends
-3. Weight think tanks and specialist outlets heavily over wire services
+1. Cover at least 3 distinct regions — no geographic clustering
+2. ~25% breaking news, 75% analysis/trends
+3. Prefer corroborated, multi-outlet stories over single-source ones
 4. All scores must be integers 1-10
 5. Return ONLY the raw JSON array — no markdown, no explanations, no code blocks"""
 
         return template.format(history_block, articles_section, target_stories)
     
+    def _apply_readability_gate(self, analyses: List[AIAnalysis]) -> Tuple[List[AIAnalysis], int, int, float]:
+        """Rewrite the generated copy in plainer language when it tests too dense.
+
+        Returns (analyses, extra_input_tokens, extra_output_tokens, extra_cost).
+        One rewrite attempt only; on any failure the original copy is kept.
+        """
+        from .readability import combined_grade
+
+        texts = []
+        for a in analyses:
+            texts.extend([a.why_important, a.what_overlooked, a.prediction])
+        grade = combined_grade(texts)
+        if grade is None:
+            return analyses, 0, 0, 0.0
+        if grade <= Config.READABILITY_MAX_GRADE:
+            logger.info(f"Readability gate passed: grade {grade:.1f} <= {Config.READABILITY_MAX_GRADE}")
+            return analyses, 0, 0, 0.0
+
+        logger.warning(f"Readability gate triggered: grade {grade:.1f} > {Config.READABILITY_MAX_GRADE}, requesting rewrite")
+        payload = [
+            {
+                "index": i,
+                "why_important": a.why_important,
+                "what_overlooked": a.what_overlooked,
+                "prediction": a.prediction,
+            }
+            for i, a in enumerate(analyses)
+        ]
+        rewrite_prompt = (
+            "These newsletter passages test at US reading grade {:.1f}. Rewrite each field "
+            "in plain English at grade 8-9 for smart non-expert readers.\n"
+            "Rules: keep every fact, name and number. Short sentences (max ~18 words). "
+            "Active voice. No jargon. Word limits: why_important max 60, what_overlooked "
+            "max 35, prediction max 25.\n\n{}\n\n"
+            "Return ONLY a JSON array of objects with fields: index, why_important, "
+            "what_overlooked, prediction. No markdown, no commentary."
+        ).format(grade, json.dumps(payload, ensure_ascii=False, indent=1))
+
+        try:
+            response = self.client.messages.create(
+                model=Config.AI_MODEL,
+                max_tokens=Config.AI_MAX_TOKENS or 16000,
+                messages=[{"role": "user", "content": rewrite_prompt}],
+            )
+            text = extract_response_text(response)
+            in_tok, out_tok, cost = response_tokens_and_cost(response, rewrite_prompt, text)
+
+            import re
+            cleaned = re.sub(r'```(?:json)?\s*', '', text.strip()).strip('`').strip()
+            match = re.search(r'\[.*\]', cleaned, re.DOTALL)
+            if not match:
+                logger.warning("Readability rewrite returned no JSON — keeping original copy")
+                return analyses, in_tok, out_tok, cost
+            for item in json.loads(match.group()):
+                idx = item.get("index")
+                if isinstance(idx, int) and 0 <= idx < len(analyses):
+                    analyses[idx].why_important = item.get("why_important") or analyses[idx].why_important
+                    analyses[idx].what_overlooked = item.get("what_overlooked") or analyses[idx].what_overlooked
+                    analyses[idx].prediction = item.get("prediction") or analyses[idx].prediction
+
+            new_grade = combined_grade(
+                [t for a in analyses for t in (a.why_important, a.what_overlooked, a.prediction)]
+            )
+            logger.info(f"Readability rewrite applied: grade {grade:.1f} -> {new_grade if new_grade is None else round(new_grade, 1)}")
+            return analyses, in_tok, out_tok, cost
+        except Exception as e:
+            logger.warning(f"Readability rewrite failed, keeping original copy: {e}")
+            return analyses, 0, 0, 0.0
+
     def _parse_single_response(self, response_text: str, articles: List[Article]) -> List[AIAnalysis]:
         """Parse the single API response into AIAnalysis objects."""
         try:
@@ -299,12 +383,21 @@ SELECTION RULES:
             
             analyses = []
             
+            from ..newsletter.source_display import registrable_domain
+
             for data in analyses_data:
-                # Get source URLs from article indices
+                # Get source URLs from article indices, never citing the same
+                # outlet twice under one story (repeated domains read as bias).
                 source_urls = []
+                seen_domains = set()
                 for idx in data.get('article_indices', []):
                     if 0 <= idx < len(articles):
-                        source_urls.append(articles[idx].url)
+                        url = articles[idx].url
+                        domain = registrable_domain(url)
+                        if domain in seen_domains:
+                            continue
+                        seen_domains.add(domain)
+                        source_urls.append(url)
                 
                 # Determine content type
                 content_type_str = data.get('content_type', 'analysis')

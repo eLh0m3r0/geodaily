@@ -63,7 +63,14 @@ class ButtondownPublisher:
     # ------------------------------------------------------------------
 
     def _create_draft(self, subject: str, body: str, headers: dict) -> Optional[str]:
-        payload = {"subject": subject, "body": body, "status": "draft"}
+        # Subscribers who chose the weekly digest are tagged and excluded from
+        # daily sends (the Sunday digest targets that tag instead).
+        payload = {
+            "subject": subject,
+            "body": body,
+            "status": "draft",
+            "excluded_tags": [Config.BUTTONDOWN_WEEKLY_TAG],
+        }
         try:
             resp = requests.post(
                 f"{BUTTONDOWN_API_BASE}/emails",
@@ -116,8 +123,18 @@ class ButtondownPublisher:
         return None
 
     def _build_subject(self, newsletter: Newsletter) -> str:
-        date_str = newsletter.date.strftime("%B %-d, %Y")
-        return f"Geopolitical Daily — {date_str}"
+        """Subject line led by the top story, not the date.
+
+        "Geopolitical Daily — August 24" tells the reader nothing; the lead
+        story's title is the reason to open. Date-only remains the fallback.
+        """
+        date_str = newsletter.date.strftime("%b %-d")
+        if newsletter.stories:
+            title = newsletter.stories[0].story_title.strip()
+            if len(title) > 70:
+                title = title[:67].rstrip() + "..."
+            return f"🌍 {title} — {date_str}"
+        return f"Geopolitical Daily — {newsletter.date.strftime('%B %-d, %Y')}"
 
     def _prepare_body(self, html: str) -> str:
         """Extract body content, strip JS handlers, and force Buttondown HTML mode.

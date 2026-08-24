@@ -166,22 +166,18 @@ class NewsletterGenerator:
         for story in newsletter.stories:
             stories_html += self._generate_story_html(story)
         
-        # Build optional Buttondown subscribe form
+        # Build optional Buttondown subscribe form (username resolved from the
+        # API when the env var is missing, so the form can't silently vanish)
+        from ..publishers.buttondown_util import resolve_buttondown_username, build_subscribe_form_html
         subscribe_html = ""
-        if Config.BUTTONDOWN_USERNAME:
+        username = resolve_buttondown_username()
+        if username:
             subscribe_html = f"""
             <!-- Subscribe Section -->
             <div class="subscribe-section">
                 <h4>Get this briefing in your inbox</h4>
-                <p>Daily geopolitical intelligence, delivered every morning.</p>
-                <form action="https://buttondown.com/api/emails/embed-subscribe/{Config.BUTTONDOWN_USERNAME}"
-                      method="post"
-                      target="popupwindow"
-                      onsubmit="window.open('https://buttondown.com/{Config.BUTTONDOWN_USERNAME}', 'popupwindow')"
-                      class="subscribe-form">
-                    <input type="email" name="email" placeholder="your@email.com" required />
-                    <input type="submit" value="Subscribe" class="subscribe-btn" />
-                </form>
+                <p>World news from every side — daily or once a week, your choice.</p>
+                {build_subscribe_form_html(username)}
             </div>
 """
 
@@ -297,14 +293,6 @@ class NewsletterGenerator:
     def _generate_story_html(self, story: AIAnalysis) -> str:
         """Generate HTML for a single story."""
 
-        # Determine impact score class
-        if story.impact_score >= 8:
-            impact_class = "high"
-        elif story.impact_score >= 6:
-            impact_class = "medium"
-        else:
-            impact_class = "low"
-
         # Content type styling
         content_type_class = story.content_type.value
         content_type_display = {
@@ -313,48 +301,28 @@ class NewsletterGenerator:
             "trend": "Trend"
         }.get(story.content_type.value, story.content_type.value.replace("_", " ").title())
 
-        # Generate sources
+        # Generate sources as named outlet links, one per outlet
+        from .source_display import dedupe_sources
         sources_html = ""
-        if story.sources:
+        named_sources = dedupe_sources(story.sources)
+        if named_sources:
             sources_html = '<div class="sources"><div class="sources-title">Sources:</div>'
-            for source in story.sources:
-                sources_html += f'<a href="{source}" class="source-link" target="_blank">{source}</a>'
+            for url, name in named_sources:
+                sources_html += f'<a href="{url}" class="source-link" target="_blank" rel="noopener">{name}</a>'
             sources_html += '</div>'
 
         # Region and event type display
         region_display = story.region.replace("_", " ").title()
         event_type_display = story.event_type.replace("_", " ").title()
 
-        # Generate multi-dimensional scores
+        # Story metadata: type + region + event only. Numeric scores stay
+        # internal — unexplained "9/10 82%" chips read as pseudo-quantitative
+        # noise to readers; priority is expressed by story order instead.
         scores_html = f"""
         <div class="story-meta">
             <div class="content-type-badge {content_type_class}">{content_type_display}</div>
             <div class="geo-tag region-tag">{region_display}</div>
             <div class="geo-tag event-tag">{event_type_display}</div>
-            <div class="score-row">
-                <span class="score-label">Impact:</span>
-                <span class="impact-score {impact_class}">{story.impact_score}/10</span>
-            </div>
-            <div class="score-row">
-                <span class="score-label">Urgency:</span>
-                <span class="urgency-score">{story.urgency_score}/10</span>
-            </div>
-            <div class="score-row">
-                <span class="score-label">Scope:</span>
-                <span class="scope-score">{story.scope_score}/10</span>
-            </div>
-            <div class="score-row">
-                <span class="score-label">Novelty:</span>
-                <span class="novelty-score">{story.novelty_score}/10</span>
-            </div>
-            <div class="score-row">
-                <span class="score-label">Credibility:</span>
-                <span class="credibility-score">{story.credibility_score}/10</span>
-            </div>
-            <div class="score-row">
-                <span class="score-label">Impact Dim.:</span>
-                <span class="impact-dimension-score">{story.impact_dimension_score}/10</span>
-            </div>
         </div>
         """
 
@@ -756,8 +724,18 @@ class NewsletterGenerator:
                 f"strategic analysis, and the trends behind the headlines.")
     
     def _generate_footer_text(self) -> str:
-        """Generate footer text for newsletter."""
-        return """This daily briefing is generated using AI analysis of global news sources, providing balanced coverage of breaking developments, strategic analysis, and emerging trends. For questions or feedback, please contact our editorial team."""
+        """Generate footer text for newsletter.
+
+        Honest human-in-the-loop framing: readers accept AI-assisted news when
+        a named human is visibly responsible (Reuters Institute DNR 2025) —
+        never an anonymous "generated by AI" line pointing at a fake team.
+        """
+        curator = Config.NEWSLETTER_EDITOR_NAME
+        if curator:
+            drafted = f"Drafted with AI from the sources linked above, curated and reviewed by {curator}."
+        else:
+            drafted = "Drafted with AI from the sources linked above, with human review before sending."
+        return f"{drafted} Spotted an error or have a tip? Just reply — a human reads every response."
     
     def generate_email_html(self, newsletter: Newsletter) -> str:
         """Generate email-safe HTML with inline styles for Buttondown delivery.
@@ -832,7 +810,8 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
   <p style="margin:0 0 6px 0;font-weight:bold;color:{C_TEXT};">{newsletter.title}</p>
   <p style="margin:0 0 12px 0;">Geopolitical Intelligence for Decision Makers</p>
   {f'<p style="margin:0 0 12px 0;">{newsletter.footer_text}</p>' if newsletter.footer_text else ''}
-  <p style="margin:0;font-size:11px;color:{C_MUTED};">You are receiving this because you subscribed to Geopolitical Daily.</p>
+  <p style="margin:0 0 6px 0;font-size:11px;color:{C_MUTED};">Too much email? Reply with the word "weekly" and we'll switch you to the Sunday digest.</p>
+  <p style="margin:0;font-size:11px;color:{C_MUTED};">You are receiving this because you subscribed to {newsletter.title}.</p>
 </div>"""
 
         return f"""<!DOCTYPE html>
@@ -861,13 +840,6 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
         C_LIGHT: str, C_BORDER: str, C_GOLD: str, C_LINK: str
     ) -> str:
         """Generate inline-styled HTML for a single story in email format."""
-        if story.impact_score >= 8:
-            impact_color = "#e74c3c"
-        elif story.impact_score >= 6:
-            impact_color = "#f39c12"
-        else:
-            impact_color = "#27ae60"
-
         content_type_val = story.content_type.value
         content_type_color = type_colors.get(content_type_val, "#718096")
         content_type_display = {
@@ -879,16 +851,12 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
         region_display = story.region.replace("_", " ").title()
 
         sources_html = ""
-        if story.sources:
-            from urllib.parse import urlparse
-            def _domain(url: str) -> str:
-                try:
-                    return urlparse(url).netloc.replace("www.", "") or url
-                except Exception:
-                    return url
+        from .source_display import dedupe_sources
+        named_sources = dedupe_sources(story.sources)
+        if named_sources:
             source_links = "".join(
-                f'<a href="{src}" style="color:{C_LINK};text-decoration:none;font-size:13px;display:inline-block;margin-right:12px;margin-bottom:4px;">{_domain(src)}</a>'
-                for src in story.sources
+                f'<a href="{src}" style="color:{C_LINK};text-decoration:none;font-size:13px;display:inline-block;margin-right:12px;margin-bottom:4px;">{name}</a>'
+                for src, name in named_sources
             )
             sources_html = f"""<div style="border-top:1px solid {C_BORDER};margin-top:20px;padding-top:14px;">
   <div style="font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:{C_MUTED};margin-bottom:8px;">Sources</div>
@@ -897,16 +865,11 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
 
         border_bottom = "" if is_last else f"border-bottom:1px solid {C_BORDER};"
         NO_HYPHENS = "-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;"
-        # &#8203; splits the "9/10" pattern so iOS data detectors stop turning
-        # the impact score into a blue tappable "date" link (belt: the style
-        # block also neutralizes a[x-apple-data-detectors]).
-        impact_label = f"Impact {story.impact_score}&#8203;/&#8203;10"
 
         return f"""<div style="{border_bottom}margin-bottom:28px;padding-bottom:28px;padding-top:24px;">
   <div style="margin-bottom:12px;">
     <span style="display:inline-block;background-color:{content_type_color};color:#ffffff;font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;padding:4px 10px;border-radius:12px;margin-right:6px;margin-bottom:4px;">{content_type_display}</span>
     <span style="display:inline-block;background-color:{C_LIGHT};color:#4a5568;font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:0.5px;padding:4px 8px;border-radius:10px;border:1px solid {C_BORDER};margin-right:6px;margin-bottom:4px;">{region_display}</span>
-    <span style="display:inline-block;background-color:{impact_color};color:#ffffff;font-size:10px;font-weight:bold;padding:4px 8px;border-radius:10px;margin-bottom:4px;">{impact_label}</span>
   </div>
   <h2 class="nl-h2" style="font-family:Georgia,'Times New Roman',serif;font-size:21px;font-weight:bold;color:{C_NAVY};margin:0 0 16px 0;line-height:1.35;{NO_HYPHENS}">{story.story_title}</h2>
   <div style="margin-bottom:18px;">

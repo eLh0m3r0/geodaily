@@ -128,15 +128,11 @@ class GitHubPagesPublisher:
         
         # Stories
         for i, analysis in enumerate(analyses, 1):
-            impact_class = self._get_impact_class(analysis.impact_score)
-            
             html += f"""
                     <section class="story" id="story-{i}">
                         <header class="story-header">
                             <h2 class="story-title">{analysis.story_title}</h2>
                             <div class="story-meta">
-                                <span class="impact-score impact-{impact_class}" title="Impact Score">{analysis.impact_score}/10</span>
-                                <span class="confidence" title="Analysis Confidence">{int(analysis.confidence * 100)}%</span>
                                 <span class="geo-tag region-tag">{getattr(analysis, 'region', 'global').replace('_', ' ').title()}</span>
                                 <span class="geo-tag event-tag">{getattr(analysis, 'event_type', 'political').replace('_', ' ').title()}</span>
                             </div>
@@ -162,8 +158,9 @@ class GitHubPagesPublisher:
                                 <h4>Sources</h4>
                                 <ul>"""
             
-            for url in analysis.sources[:3]:  # Limit to 3 sources for readability
-                html += f'                                    <li><a href="{url}" target="_blank">{self._extract_domain(url)}</a></li>\n'
+            from ..newsletter.source_display import dedupe_sources
+            for url, name in dedupe_sources(analysis.sources, limit=4):
+                html += f'                                    <li><a href="{url}" target="_blank" rel="noopener">{name}</a></li>\n'
             
             html += """                                </ul>
                             </div>
@@ -176,7 +173,7 @@ class GitHubPagesPublisher:
                 </div>
 
                 <footer class="newsletter-footer">
-                    <p>{newsletter.footer_text or 'This newsletter is generated using AI analysis of geopolitical news sources.'}</p>
+                    <p>{newsletter.footer_text or 'Drafted with AI from the sources linked above, with human review. Spotted an error? Open an issue or reply to the email — a human reads every response.'}</p>
                     <p class="timestamp">Generated on {datetime.now().strftime('%Y-%m-%d at %H:%M UTC')}</p>
                     {self._build_subscribe_html()}
                 </footer>
@@ -227,20 +224,14 @@ class GitHubPagesPublisher:
                         <p>Daily geopolitical intelligence, delivered every morning.</p>
                         <a href="{substack_url}?utm_source=newsletter" class="subscribe-btn" target="_blank">Subscribe on Substack</a>
                     </div>"""
-        buttondown = Config.BUTTONDOWN_USERNAME
-        if buttondown:
+        from .buttondown_util import resolve_buttondown_username, build_subscribe_form_html
+        username = resolve_buttondown_username()
+        if username:
             return f"""
                     <div class="subscribe-box">
                         <h3>Get this briefing in your inbox</h3>
-                        <p>Daily geopolitical intelligence, delivered every morning.</p>
-                        <form action="https://buttondown.com/api/emails/embed-subscribe/{buttondown}"
-                              method="post"
-                              target="popupwindow"
-                              onsubmit="window.open('https://buttondown.com/{buttondown}', 'popupwindow')"
-                              class="subscribe-form">
-                            <input type="email" name="email" placeholder="your@email.com" required />
-                            <input type="submit" value="Subscribe" class="subscribe-btn" />
-                        </form>
+                        <p>World news from every side — daily or once a week, your choice.</p>
+                        {build_subscribe_form_html(username)}
                     </div>"""
         return ""
     
@@ -249,9 +240,10 @@ class GitHubPagesPublisher:
         substack_url = Config.SUBSTACK_URL
         if substack_url:
             return f'<a href="{substack_url}" class="cta-button" target="_blank">Subscribe on Substack</a>'
-        buttondown = Config.BUTTONDOWN_USERNAME
-        if buttondown:
-            return f'<a href="https://buttondown.com/{buttondown}" class="cta-button" target="_blank">Subscribe via Email</a>'
+        from .buttondown_util import resolve_buttondown_username, build_subscribe_form_html
+        username = resolve_buttondown_username()
+        if username:
+            return build_subscribe_form_html(username)
         return '<p class="note">Email newsletter coming soon</p>'
 
     def _update_index_page(self):
@@ -319,8 +311,9 @@ class GitHubPagesPublisher:
                     <li><strong>Daily Updates:</strong> Fresh analysis every day at 6:00 UTC</li>
                 </ul>
                 
-                <p><a href="feed.xml" class="cta-button">Subscribe via RSS</a></p>
             </section>
+{self._build_subscribe_html()}
+            <p class="rss-alt">Prefer a feed reader? <a href="feed.xml">Subscribe via RSS</a>.</p>
         </div>
     </main>
 
@@ -1129,6 +1122,13 @@ body {
     font-size: 0.9rem; font-weight: 600; cursor: pointer;
 }
 .subscribe-btn:hover { background: #c53030; }
+.subscribe-frequency {
+    display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap;
+    width: 100%; margin: 0.35rem 0; color: #cbd5e0; font-size: 0.85rem;
+}
+.subscribe-frequency label { cursor: pointer; }
+.subscribe-frequency input { margin-right: 0.3rem; }
+.rss-alt { text-align: center; font-size: 0.85rem; color: var(--text-light); margin-top: 0.75rem; }
 
 .story-content {
     display: grid;
