@@ -1075,6 +1075,11 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
                               f'max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">'
                               f'{preheader_text}{pad}</div>')
 
+        # Centering must be table-based: Buttondown's minimal templates and
+        # several clients (Outlook above all) ignore margin:0 auto on divs,
+        # and our <body> styles are stripped before sending — so both the
+        # canvas background and the centering live on tables that survive
+        # body extraction.
         return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1082,17 +1087,27 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{newsletter.title} — {newsletter.date.strftime('%B %-d, %Y')}</title>
 </head>
-<body class="nl-body" style="margin:0;padding:14px;background-color:#EEF1F4;{SANS}">
+<body class="nl-body" style="margin:0;padding:0;background-color:#EEF1F4;{SANS}">
 {preheader_html}
 {style_block}
-<div style="max-width:600px;margin:0 auto;background-color:#ffffff;border:1px solid {LINE};border-radius:8px;overflow:hidden;">
-  {header_html}
-  <div class="nl-content" style="padding:0 24px 26px 24px;">
-    {intro_html}
-    {stories_html}
-    {footer_html}
-  </div>
-</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#EEF1F4" style="background-color:#EEF1F4;">
+  <tr>
+    <td align="center" style="padding:14px 10px;">
+      <table role="presentation" width="600" align="center" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;">
+        <tr>
+          <td style="background-color:#ffffff;border:1px solid {LINE};border-radius:8px;overflow:hidden;">
+            {header_html}
+            <div class="nl-content" style="padding:0 24px 26px 24px;">
+              {intro_html}
+              {stories_html}
+              {footer_html}
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
 </body>
 </html>"""
     def _generate_email_story_html(
