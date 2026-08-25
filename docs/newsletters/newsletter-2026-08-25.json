@@ -1,0 +1,139 @@
+{
+ "date": "2026-08-25",
+ "title": "Geopolitical Daily",
+ "intro_text": "Good morning. It's Tuesday, August 25, 2026 — one story worth your full attention today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "A Tanker Just Got Hit in Hormuz — and Gulf Shipping Is Grinding to a Halt",
+   "why_important": "A projectile struck an oil tanker off Oman early Tuesday. Only one commodity ship crossed the Strait of Hormuz on Monday, the lowest count since May. Iran's blockade threat is now backed by real attacks, not just words.",
+   "what_overlooked": "Most coverage still frames this as sanctions drama. The real story is that physical oil shipping has nearly stopped, which hits markets faster than any sanctions rule.",
+   "prediction": "Watch oil prices and tanker insurance rates this week, plus whether more ships get hit or reroute entirely.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.middleeasteye.net/live-blog/live-blog-update/commodity-vessel-transits-through-hormuz-strait-drop-three-month-low",
+    "https://www.thehindu.com/news/international/yemens-houthis-claim-attack-on-saudi-oil-tanker-in-red-sea/article71385806.ece",
+    "https://www.france24.com/en/middle-east/20260825-mideast-live-oil-tanker-struck-by-projectile-in-strait-of-hormuz-off-oman",
+    "https://tass.com/world/2177223"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 7,
+   "impact_dimension_score": 9,
+   "confidence": 0.78,
+   "region": "middle_east",
+   "actor_type": "mixed",
+   "event_type": "military"
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Trump says Canada will face 50% tariffs on cars, trucks and steel starting January 1 after trade talks collapsed.",
+   "region": "americas",
+   "url": "https://www.dw.com/en/trump-says-canada-to-face-50-auto-steel-tariffs-from-2027/a-78487268?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "Gang attack in Kenscoff near Port-au-Prince killed at least 47 people, the UN says, some execution-style.",
+   "region": "americas",
+   "url": "https://www.thehindu.com/news/international/many-dead-in-gang-attack-near-haitis-capital/article71386361.ece"
+  },
+  {
+   "text": "Two Ethiopian UN peacekeepers were killed in an ambush in South Sudan's Jonglei State, the ninth such death this year.",
+   "region": "africa",
+   "url": "https://www.dailymaverick.co.za/article/2026-08-24-two-u-n-peacekeepers-from-ethiopia-killed-in-south-sudan-ambush/"
+  },
+  {
+   "text": "Thailand is fast-tracking gun control legislation after a string of deadly mass shootings.",
+   "region": "indo_pacific",
+   "url": "https://asia.nikkei.com/spotlight/society/crime/thailand-asia-s-gun-ownership-leader-cracks-down-after-deadly-shootings"
+  },
+  {
+   "text": "Netanyahu claims Iran tried to assassinate one of his sons, offering no evidence or timeline.",
+   "region": "middle_east",
+   "url": "https://www.al-monitor.com/originals/2026/08/israels-netanyahu-says-iran-tried-kill-one-his-sons"
+  },
+  {
+   "text": "Amnesty International says Indian police used lethal force against youth-led 'Cockroach' protesters in Delhi and Bihar.",
+   "region": "indo_pacific",
+   "url": "https://www.aljazeera.com/video/newsfeed/2026/8/25/amnesty-says-india-used-lethal-weapons-on-cockroach-protesters?traffic_source=rss"
+  },
+  {
+   "text": "Putin signed a decree letting Russia seize infrastructure whose owners fail to protect it from drone strikes.",
+   "region": "europe",
+   "url": "https://www.straitstimes.com/world/europe/putin-allows-russia-to-take-control-of-infrastructure-deemed-vulnerable-to-drone-attacks"
+  },
+  {
+   "text": "The Trump administration plans to revoke up to 200,000 visas from asylum seekers, a potential record.",
+   "region": "americas",
+   "url": "https://www.aljazeera.com/news/2026/8/25/us-plans-to-revoke-business-tourism-visas-of-200000-asylum-seekers?traffic_source=rss"
+  }
+ ],
+ "big_number": {
+  "value": "6,500+",
+  "context": "Venezuela's earthquake death toll has passed 6,500, with 25,000 homes badly damaged and recovery still underway.",
+  "url": "https://www.thehindu.com/news/international/venezuela-quake-death-toll-surpasses-6500/article71387096.ece"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "France 24 English"
+    ],
+    "article_count": 1,
+    "framing": "Frames attack as part of Iran's ongoing blockade and wider US-Israel-Iran conflict",
+    "quote": "Tehran has imposed an effective blockade of the strait since the United States and Israel struck Iran in late February",
+    "quote_outlet": "France 24 English",
+    "quote_url": "https://www.france24.com/en/middle-east/20260825-mideast-live-oil-tanker-struck-by-projectile-in-strait-of-hormuz-off-oman",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "The Hindu International"
+    ],
+    "article_count": 1,
+    "framing": "Focuses on Houthi rebels' own claim of a successful strike on a Saudi tanker",
+    "quote": "The strike was accurate and direct, resulting in a fire breaking out aboard the vessel",
+    "quote_outlet": "The Hindu International",
+    "quote_url": "https://www.thehindu.com/news/international/yemens-houthis-claim-attack-on-saudi-oil-tanker-in-red-sea/article71385806.ece",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Middle East Eye"
+    ],
+    "article_count": 2,
+    "framing": "Stresses factual shipping data and official UKMTO details over political blame",
+    "quote": "struck by an unknown projectile\" nine nautical miles northeast of Oman's Ash Shishah",
+    "quote_outlet": "Middle East Eye",
+    "quote_url": "https://www.middleeasteye.net/live-blog/live-blog-update/ukmto-says-it-received-report-tanker-struck-unknown-projectile-gulf-oman",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "TASS"
+    ],
+    "article_count": 1,
+    "framing": "Gives a brief, neutral safety update with no geopolitical commentary",
+    "quote": "The crew are safe and no environmental impact has been reported",
+    "quote_outlet": "TASS",
+    "quote_url": "https://tass.com/world/2177223",
+    "state_affiliated": true
+   }
+  ],
+  "total_outlets": 4,
+  "counts": {
+   "middle_east": 2,
+   "south_asia": 1,
+   "western": 1,
+   "russian_state": 1
+  },
+  "blindspot": "Putin's new decree lets the state seize infrastructure from owners who fail to defend it from drone strikes, a major shift in property control that Western media ignored.",
+  "blindspot_url": "https://meduza.io/en/news/2026/08/24/putin-signs-decree-allowing-state-takeover-of-russian-infrastructure-whose-owners-fail-to-protect-it-from-drone-attacks"
+ },
+ "signals": []
+}
