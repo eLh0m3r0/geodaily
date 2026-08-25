@@ -290,6 +290,8 @@ SOURCE RULES:
 Return this EXACT JSON structure — a single JSON object, no other text:
 
 {{
+  "email_subject": "Inbox subject line for the issue, max 45 CHARACTERS. Concrete and curiosity-driven, but NOT a copy of the big story title — say the sharpest fact or stake in fewer words. No emoji, no date, no ALL CAPS.",
+  "preheader": "The snippet shown next to the subject in inboxes, max 85 characters. One sentence that CONTINUES the subject with new information — never repeats it.",
   "big_stories": [
     {{
       "article_indices": [0, 3, 5],
@@ -507,7 +509,11 @@ FIELD DEFINITIONS:
                     url=self._article_url(bn.get('article_index'), articles),
                 )
 
-            return IssueContent(stories=stories, quick_hits=quick_hits, big_number=big_number)
+            email_subject = str(data.get('email_subject') or "").strip().strip('"')[:60]
+            preheader = str(data.get('preheader') or "").strip().strip('"')[:110]
+
+            return IssueContent(stories=stories, quick_hits=quick_hits, big_number=big_number,
+                                email_subject=email_subject, preheader=preheader)
 
         except Exception as e:
             logger.error(f"Failed to parse issue response: {e}", exc_info=True)
@@ -560,7 +566,10 @@ FIELD DEFINITIONS:
                 context="Sources now feeding this brief across 14 global perspectives (mock).",
                 url=articles[8].url,
             )
-        return IssueContent(stories=stories, quick_hits=quick_hits, big_number=big_number)
+        title_words = (stories[0].story_title.split() if stories else ["World", "brief"])
+        return IssueContent(stories=stories, quick_hits=quick_hits, big_number=big_number,
+                            email_subject=" ".join(title_words[:6])[:45],
+                            preheader="Plus a world roundup and one number worth knowing (mock).")
 
     def _create_mock_analyses(self, articles: List[Article]) -> List[AIAnalysis]:
         """Create BETTER mock analyses as fallback."""

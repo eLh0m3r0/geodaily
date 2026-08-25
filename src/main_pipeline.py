@@ -448,6 +448,7 @@ def run_complete_pipeline() -> bool:
                 # Use mock analysis as fallback - create mock articles
                 analyses = create_mock_analyses_from_articles(scored_articles[:1])
                 quick_hits, big_number = [], None
+                email_subject, preheader = "", ""
             else:
                 ai_start = time.time()
                 try:
@@ -458,6 +459,8 @@ def run_complete_pipeline() -> bool:
                     analyses = issue.stories
                     quick_hits = issue.quick_hits
                     big_number = issue.big_number
+                    email_subject = issue.email_subject
+                    preheader = issue.preheader
                     ai_time = time.time() - ai_start
 
                     if len(analyses) < 1:
@@ -556,6 +559,7 @@ def run_complete_pipeline() -> bool:
 
                     analyses = create_mock_analyses_from_articles(scored_articles[:1])
                     quick_hits, big_number = [], None
+                    email_subject, preheader = "", ""
                     ai_time = time.time() - ai_start
 
                     # Collect metrics for fallback analysis
@@ -629,7 +633,8 @@ def run_complete_pipeline() -> bool:
                     generator = NewsletterGenerator()
                     newsletter = generator.generate_newsletter(
                         analyses, quick_hits=quick_hits, big_number=big_number,
-                        perspective_grid=perspective_grid, signals=signals)
+                        perspective_grid=perspective_grid, signals=signals,
+                        email_subject=email_subject, preheader=preheader)
                     html_content = generator.generate_html(newsletter)
 
                     # Save newsletter (legacy format)

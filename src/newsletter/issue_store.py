@@ -41,6 +41,8 @@ def save_issue_json(newsletter: Newsletter, newsletters_dir: Path) -> Path:
     payload = {
         "date": newsletter.date.strftime('%Y-%m-%d'),
         "title": newsletter.title,
+        "email_subject": getattr(newsletter, 'email_subject', ""),
+        "preheader": getattr(newsletter, 'preheader', ""),
         "intro_text": newsletter.intro_text,
         "stories": [asdict(s) for s in newsletter.stories],
         "quick_hits": [asdict(h) for h in (newsletter.quick_hits or [])],

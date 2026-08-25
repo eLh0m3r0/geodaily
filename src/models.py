@@ -204,6 +204,10 @@ class IssueContent:
     stories: List[AIAnalysis] = field(default_factory=list)
     quick_hits: List[QuickHit] = field(default_factory=list)
     big_number: Optional[BigNumber] = None
+    # Inbox craft: a dedicated short subject (not the headline) and a
+    # preheader teaser — subject/headline/snippet must not repeat each other
+    email_subject: str = ""
+    preheader: str = ""
 
 
 @dataclass
@@ -218,6 +222,8 @@ class Newsletter:
     big_number: Optional[BigNumber] = None
     perspective_grid: Optional[PerspectiveGrid] = None
     signals: List[Signal] = field(default_factory=list)
+    email_subject: str = ""
+    preheader: str = ""
 
     def __post_init__(self):
         # Sort stories by impact score (highest first)
