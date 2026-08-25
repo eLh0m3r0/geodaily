@@ -22,7 +22,8 @@ class NewsletterGenerator:
     
     def generate_newsletter(self, analyses: List[AIAnalysis], date: Optional[datetime] = None,
                             quick_hits=None, big_number=None,
-                            perspective_grid=None, signals=None) -> Newsletter:
+                            perspective_grid=None, signals=None,
+                            email_subject: str = "", preheader: str = "") -> Newsletter:
         """
         Generate newsletter from AI analyses with balanced content types.
 
@@ -55,7 +56,9 @@ class NewsletterGenerator:
             quick_hits=quick_hits,
             big_number=big_number,
             perspective_grid=perspective_grid,
-            signals=signals or []
+            signals=signals or [],
+            email_subject=email_subject,
+            preheader=preheader
         )
 
         return newsletter
@@ -1059,6 +1062,19 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
   <p style="margin:0;">You are receiving this because you subscribed to {newsletter.title}.</p>
 </div>"""
 
+        # Hidden preheader: the FIRST text in the body controls the inbox
+        # snippet. Without it clients re-show the subject/title; the padding
+        # run keeps them from pulling further body text after the teaser.
+        preheader_text = (getattr(newsletter, 'preheader', "") or "").strip()
+        if not preheader_text and newsletter.stories:
+            preheader_text = newsletter.stories[0].why_important.split(". ")[0].strip().rstrip(".") + "."
+        preheader_html = ""
+        if preheader_text:
+            pad = "&nbsp;&zwnj;" * 96
+            preheader_html = (f'<div style="display:none;font-size:1px;line-height:1px;'
+                              f'max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">'
+                              f'{preheader_text}{pad}</div>')
+
         return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1067,6 +1083,7 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
 <title>{newsletter.title} — {newsletter.date.strftime('%B %-d, %Y')}</title>
 </head>
 <body class="nl-body" style="margin:0;padding:14px;background-color:#EEF1F4;{SANS}">
+{preheader_html}
 {style_block}
 <div style="max-width:600px;margin:0 auto;background-color:#ffffff;border:1px solid {LINE};border-radius:8px;overflow:hidden;">
   {header_html}

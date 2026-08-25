@@ -98,6 +98,7 @@ def build_digest_html(issues) -> str:
 <html lang="en">
 <head><meta charset="UTF-8"><title>{Config.NEWSLETTER_TITLE} — Weekly Digest</title></head>
 <body style="margin:0;padding:14px;background-color:#EEF1F4;{BODY_FONT}">
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">The week's big stories, the blindspots the world missed, and the numbers that mattered.{"&nbsp;&zwnj;" * 96}</div>
 <div style="max-width:600px;margin:0 auto;background-color:#ffffff;border:1px solid {LINE};border-radius:8px;overflow:hidden;">
 {spectrum_bar_html(5)}
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="padding:22px 24px 0 24px;">

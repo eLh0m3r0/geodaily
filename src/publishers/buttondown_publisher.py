@@ -198,19 +198,29 @@ class ButtondownPublisher:
             logger.error(f"Buttondown send failed: {exc}")
         return None
 
-    def _build_subject(self, newsletter: Newsletter) -> str:
-        """Subject line led by the top story, not the date.
+    @staticmethod
+    def _truncate_at_word(text: str, limit: int) -> str:
+        """Cut at a word boundary; ellipsis only when something was cut."""
+        text = text.strip()
+        if len(text) <= limit:
+            return text
+        cut = text[:limit].rsplit(" ", 1)[0].rstrip(",;:—- ")
+        return cut + "…"
 
-        "Geopolitical Daily — August 24" tells the reader nothing; the lead
-        story's title is the reason to open. Date-only remains the fallback.
+    def _build_subject(self, newsletter: Newsletter) -> str:
+        """Inbox subject: the dedicated AI-written subject, never the full
+        headline and never a date suffix.
+
+        Subject, headline and preheader are three different jobs: the client
+        already shows the date, the headline lives inside the email, and a
+        title + " — Aug 25" combo just truncates mid-word in every inbox.
         """
-        date_str = newsletter.date.strftime("%b %-d")
-        if newsletter.stories:
-            title = newsletter.stories[0].story_title.strip()
-            if len(title) > 70:
-                title = title[:67].rstrip() + "..."
-            return f"🌍 {title} — {date_str}"
-        return f"Geopolitical Daily — {newsletter.date.strftime('%B %-d, %Y')}"
+        subject = (getattr(newsletter, 'email_subject', "") or "").strip()
+        if not subject and newsletter.stories:
+            subject = self._truncate_at_word(newsletter.stories[0].story_title, 56)
+        if not subject:
+            return f"Geopolitical Daily — {newsletter.date.strftime('%B %-d, %Y')}"
+        return f"🌍 {self._truncate_at_word(subject, 60)}"
 
     def _prepare_body(self, html: str) -> str:
         """Extract body content, strip JS handlers, and force Buttondown HTML mode.
