@@ -1,0 +1,171 @@
+{
+ "date": "2026-08-26",
+ "title": "Geopolitical Daily",
+ "email_subject": "Hormuz Still Shut, Despite Talks",
+ "preheader": "Iran and Oman float a mine-clearing deal, but Tehran says the strait stays closed.",
+ "intro_text": "Good morning. It's Wednesday, August 26, 2026 — one story worth your full attention today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "Iran Won't Reopen Hormuz Until the US Ends the War",
+   "why_important": "Iran and Oman are talking about a temporary safe path and a plan to clear mines from the Strait of Hormuz. Iran says it won't reopen the waterway until the US ends the war. This keeps a fifth of the world's oil supply blocked.",
+   "what_overlooked": "Most news treats this as just a shipping issue. It misses that Iran is using the strait to pressure the US over sanctions.",
+   "prediction": "Watch for Iran and Oman to jointly announce real mine-clearing work within 72 hours.",
+   "impact_score": 9,
+   "sources": [
+    "https://responsiblestatecraft.org/iran-war-oil-prices/",
+    "https://www.al-monitor.com/originals/2026/08/iran-says-hormuz-strait-still-closed-despite-transit-corridor-talks",
+    "https://www.dawn.com/news/2025343/fresh-efforts-at-mediation-revive-hopes-for-us-iran-climbdown",
+    "https://www.france24.com/en/middle-east/20260826-middle-east-live-iran-says-hormuz-strait-still-closed-despite-transit-corridor-talks-with-oman"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 9,
+   "novelty_score": 6,
+   "credibility_score": 8,
+   "impact_dimension_score": 9,
+   "confidence": 0.8,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "diplomatic"
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Canada slapped tariffs of 15% to 50% on over 700 US goods, hitting steel, dairy and electronics from September 8.",
+   "region": "americas",
+   "url": "https://www.scmp.com/news/us/economy-trade-business/article/3365250/canada-hits-us-goods-tariffs-50-cent-trade-war-escalates?utm_source=rss_feed"
+  },
+  {
+   "text": "Syria's Kurdish-led SDF officially dissolved, folding its fighters into the national army under a Damascus deal.",
+   "region": "middle_east",
+   "url": "https://www.straitstimes.com/world/europe/syrias-kurdish-led-sdf-dissolves-as-part-of-integration-with-damascus"
+  },
+  {
+   "text": "The UN said Myanmar's human rights crisis hit a 'new low,' citing worsening abuse of Rohingya and resource exploitation.",
+   "region": "indo_pacific",
+   "url": "https://www.aljazeera.com/news/2026/8/26/rights-abuses-in-myanmar-plummets-to-new-low-un-says?traffic_source=rss"
+  },
+  {
+   "text": "A faulty air conditioner sparked a fire that killed at least 15 newborns in an Islamabad hospital maternity ward.",
+   "region": "indo_pacific",
+   "url": "https://www.dw.com/en/pakistan-islamabad-hospital-fire-kills-15-infants/a-78503056?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "Trump sent a civil nuclear deal with Saudi Arabia to Congress, tying it to Riyadh recognizing Israel.",
+   "region": "middle_east",
+   "url": "https://www.thehindu.com/news/international/trump-submits-civil-nuclear-agreement-with-saudi-arabia-to-congress-for-review/article71391270.ece"
+  },
+  {
+   "text": "Darline Graham won South Carolina's Senate primary, keeping her late brother Lindsey Graham's seat with Trump's backing.",
+   "region": "americas",
+   "url": "https://www.ft.com/content/5bd905f6-5460-4e76-890f-20746a4c16a8?syn-25a6b1a6=1"
+  },
+  {
+   "text": "Volkswagen faces worker anger this week over plans that could cut up to 100,000 jobs at German plants.",
+   "region": "europe",
+   "url": "https://www.dw.com/en/will-volkswagen-s-crunch-week-decide-germany-s-auto-future/a-78483715?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "Typhoon Narra forced over 15,000 evacuations in China's Guangxi region as Typhoon Saudel bears down on Japan and Taiwan.",
+   "region": "indo_pacific",
+   "url": "https://www.theguardian.com/world/2026/aug/26/typhoon-narra-floods-evacuations-china"
+  }
+ ],
+ "big_number": {
+  "value": "20%",
+  "context": "Share of global oil supply that normally moves through the Strait of Hormuz, still shut down after six months of war.",
+  "url": "https://responsiblestatecraft.org/iran-war-oil-prices/"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "France 24 English",
+     "Guardian International",
+     "Responsible Statecraft"
+    ],
+    "article_count": 3,
+    "framing": "Focuses on oil market impact and the strait's declining strategic leverage over Iran.",
+    "quote": "For decades, the potential closure of the Strait of Hormuz has been considered the ultimate doomsday scenario for global oil markets.",
+    "quote_outlet": "Responsible Statecraft",
+    "quote_url": "https://responsiblestatecraft.org/iran-war-oil-prices/",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "The Straits Times World"
+    ],
+    "article_count": 2,
+    "framing": "Brief, neutral factual updates on the strait's status as a war flashpoint.",
+    "quote": "The Strait of Hormuz became a flashpoint early in the Middle East war.",
+    "quote_outlet": "The Straits Times World",
+    "quote_url": "https://www.straitstimes.com/world/middle-east/iran-oman-say-discussed-temporary-hormuz-corridor-mine-clearing",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Dawn",
+     "The Hindu International"
+    ],
+    "article_count": 2,
+    "framing": "Highlights regional mediation efforts, including Pakistani military diplomacy, behind the deal.",
+    "quote": "Back-to-back Tehran trips by CDF Munir, Omani FM yield progress on key issues",
+    "quote_outlet": "Dawn",
+    "quote_url": "https://www.dawn.com/news/2025343/fresh-efforts-at-mediation-revive-hopes-for-us-iran-climbdown",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera English",
+     "Al-Monitor"
+    ],
+    "article_count": 4,
+    "framing": "Details the practical mechanics of the new corridor route through Iranian waters.",
+    "quote": "Deputy foreign minster says the route's entry as well as part of the exit would run through Iranian territorial waters.",
+    "quote_outlet": "Al Jazeera English",
+    "quote_url": "https://www.aljazeera.com/economy/2026/8/26/top-official-says-iran-oman-have-agreed-new-temporary-hormuz-route?traffic_source=rss",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east_state",
+    "outlets": [
+     "Tehran Times"
+    ],
+    "article_count": 1,
+    "framing": "Presents the talks as Iranian diplomatic outreach and cooperation with Oman.",
+    "quote": "Foreign Minister Abbas Araghchi met with his Omani counterpart Sayyid Badr bin Hamad bin Hamood Al-Busaidi in Tehran on Tuesday.",
+    "quote_outlet": "Tehran Times",
+    "quote_url": "https://www.tehrantimes.com/news/529435/Joint-Iran-Oman-statement-on-Strait-of-Hormuz-Proposal-for-temporary",
+    "state_affiliated": true
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "TASS"
+    ],
+    "article_count": 2,
+    "framing": "Stresses Iran's continued control and strength despite ongoing negotiations.",
+    "quote": "the waterway will remain closed and that Iran has full control of the area",
+    "quote_outlet": "TASS",
+    "quote_url": "https://tass.com/world/2177675",
+    "state_affiliated": true
+   }
+  ],
+  "total_outlets": 10,
+  "counts": {
+   "western": 3,
+   "middle_east": 4,
+   "south_asia": 2,
+   "east_asia": 2,
+   "russian_state": 2,
+   "middle_east_state": 1
+  },
+  "blindspot": "Western media skipped Mayor Mamdani's public clash with a Hindu nationalist leader over an NYC event, a story covered widely in Asian and Middle Eastern press.",
+  "blindspot_url": "https://www.dawn.com/news/2025391/mayor-mamdani-opposes-nyc-event-with-leader-of-indias-hindu-nationalist-group"
+ },
+ "signals": []
+}
