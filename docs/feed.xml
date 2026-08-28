@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Wed, 26 Aug 2026 07:05:13 GMT</pubDate>
-        <lastBuildDate>Wed, 26 Aug 2026 07:05:13 GMT</lastBuildDate>
+        <pubDate>Fri, 28 Aug 2026 15:24:01 GMT</pubDate>
+        <lastBuildDate>Fri, 28 Aug 2026 15:24:01 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,18 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - August 28, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-28.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Friday, August 28, 2026 — one story worth your full attention today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Himalayan Flash Flood Kills Hundreds, Leaves Over 1,400 Missing</strong>: A flash flood on the Nepal-Tibet border has killed more than 360 people. Over 1,400 are missing, including 700 foreigners from more than 30 countries. Rescue crews had to pause work when an overflowin...</li></ul><p><em>Published: August 28, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Fri, 28 Aug 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260828</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-28.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - August 26, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-26.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Wednesday, August 26, 2026 — one story worth your full attention today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Iran Won't Reopen Hormuz Until the US Ends the War</strong>: Iran and Oman are talking about a temporary safe path and a plan to clear mines from the Strait of Hormuz. Iran says it won't reopen the waterway until the US ends the war. This keeps a fifth of the w...</li></ul><p><em>Published: August 26, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -200,25 +212,6 @@
         <category><![CDATA[United States]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-18.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - August 17, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-17.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Monday, August 17, 2026 — today's briefing covers 4 developments shaping global affairs: breaking news, strategic analysis, and the trends behind the headlines.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump's Korea Drill Cutback Signals Alliance Discount for North Korea Goodwill</strong>: Scaling back Ulchi Freedom Shield over Seoul's refusal to join Iran denuclearization efforts links an unrelated Middle East dispute to core Pacific deterrence, unsettling allies already anxious about ...</li><li><strong>Hormuz Tanker Traffic Collapses to Near-Zero as US-Iran Talks Stall</strong>: A drop from 31 transits to zero on a single weekend day is a concrete, measurable escalation of the chokepoint risk that Trump's Hormuz rhetoric only gestured at; it signals markets and shippers are p...</li><li><strong>Saudi-Turkiye-Pakistan 'Mecca' Defense Pact Reshapes Middle East Security Architecture</strong>: A trilateral defense agreement linking a nuclear-armed state (Pakistan) with Gulf and Turkish military capacity signals a post-US-guarantee security bloc forming amid the Iran war's strain on American...</li></ul><p><em>Published: August 17, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Mon, 17 Aug 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260817</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[United States]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-17.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>

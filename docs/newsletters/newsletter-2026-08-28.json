@@ -1,0 +1,157 @@
+{
+ "date": "2026-08-28",
+ "title": "Geopolitical Daily",
+ "email_subject": "700 foreigners missing in flood",
+ "preheader": "Nepal's death toll passes 360 as a swollen glacial lake threatens more flooding.",
+ "intro_text": "Good morning. It's Friday, August 28, 2026 — one story worth your full attention today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "Himalayan Flash Flood Kills Hundreds, Leaves Over 1,400 Missing",
+   "why_important": "A flash flood on the Nepal-Tibet border has killed more than 360 people. Over 1,400 are missing, including 700 foreigners from more than 30 countries. Rescue crews had to pause work when an overflowing lake threatened new floods.",
+   "what_overlooked": "Coverage focuses on the death toll but gives little detail on the glacial lake that triggered the flood or the risk of it happening again.",
+   "prediction": "Watch for an updated death toll and word on the fate of missing foreign tourists within 72 hours.",
+   "impact_score": 8,
+   "sources": [
+    "https://foreignpolicy.com/2026/08/27/nepal-tibet-flash-floods-death-toll-missing-glacier-global-warming/",
+    "https://asia.nikkei.com/photos/through-the-lens-deadly-flood-hits-nepal-and-tibet-in-himalayan-valley",
+    "https://www.thehindu.com/news/international/flash-floods-in-nepal-china-people-from-many-countries-missing/article71395993.ece",
+    "https://www.dw.com/en/nepal-tibet-flood-death-toll-passes-500-as-rescue-resumes/a-78539559?maca=en-rss-en-all-1573-rdf"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 7,
+   "novelty_score": 6,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "indo_pacific",
+   "actor_type": "mixed",
+   "event_type": "humanitarian"
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Trump signed an order renaming Lake Ontario 'Lake America' amid a 50% tariff fight with Canada.",
+   "region": "americas",
+   "url": "https://www.japantimes.co.jp/news/2026/08/28/world/politics/trump-us-canada-lake-ontario/"
+  },
+  {
+   "text": "Norway's King Harald V, Europe's oldest monarch, died at 89; his son becomes King Haakon VIII.",
+   "region": "europe",
+   "url": "https://www.ft.com/content/20dcffee-58f9-4e75-a3a1-d76da2998cba?syn-25a6b1a6=1"
+  },
+  {
+   "text": "Ratko Mladic, convicted of the Srebrenica genocide, died in UN custody after serving a life sentence.",
+   "region": "europe",
+   "url": "https://www.dailymaverick.co.za/article/2026-08-27-ratko-mladic-genocidal-butcher-of-bosnia-dies-in-prison/"
+  },
+  {
+   "text": "Uganda's King Oyo Nyimba, crowned at age 3 in 1995, has died at 34, the Tooro kingdom announced.",
+   "region": "africa",
+   "url": "https://www.dailymaverick.co.za/article/2026-08-28-ugandan-king-oyo-nyimba-once-world-s-youngest-monarch-dies-at-34/"
+  },
+  {
+   "text": "Pakistan's PM Shehbaz Sharif said the Mecca defense pact with Saudi Arabia and Turkey sends a 'message of peace.'",
+   "region": "middle_east",
+   "url": "https://www.dawn.com/news/2025714/pm-shehbaz-says-makkah-defence-pact-has-sent-message-of-peace-unity-throughout-region"
+  },
+  {
+   "text": "A Dutch court gave a 66-year-old man life in prison for the 1994 massacre of 3,000 Tutsis in a Rwandan stadium.",
+   "region": "africa",
+   "url": "https://www.scmp.com/news/world/europe/article/3365618/dutch-court-jails-man-life-over-role-rwanda-genocide?utm_source=rss_feed"
+  },
+  {
+   "text": "The US designated UK-based Palestine Action, plus two other groups, as foreign terrorist organizations.",
+   "region": "europe",
+   "url": "https://www.thehindu.com/news/international/us-designates-uk-based-palestine-action-as-foreign-terrorist-group/article71397639.ece"
+  },
+  {
+   "text": "PM Modi will meet Putin and other leaders at the SCO summit in Kyrgyzstan next week.",
+   "region": "central_asia",
+   "url": "https://www.thehindu.com/news/national/pm-modi-to-undertake-4-day-visit-to-uzbekistan-kyrgyzstan/article71397369.ece"
+  }
+ ],
+ "big_number": {
+  "value": "93,000",
+  "context": "The Red Cross says this many people are affected by the Nepal-Tibet floods and landslides.",
+  "url": "https://www.dw.com/en/nepal-tibet-flood-death-toll-passes-500-as-rescue-resumes/a-78539559?maca=en-rss-en-all-1573-rdf"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW News",
+     "Foreign Policy Magazine",
+     "The Diplomat"
+    ],
+    "article_count": 14,
+    "framing": "Focuses on rising death toll and large number of missing foreign tourists.",
+    "quote": "at least 360 people have been killed, and more than 1,400 others remain missing, including around 700 foreigners",
+    "quote_outlet": "Foreign Policy Magazine",
+    "quote_url": "https://foreignpolicy.com/2026/08/27/nepal-tibet-flash-floods-death-toll-missing-glacier-global-warming/",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "Channel News Asia",
+     "Nikkei Asia"
+    ],
+    "article_count": 4,
+    "framing": "Highlights resumption of joint China-Nepal rescue operations and survivor testimonies.",
+    "quote": "Nepal and China resumed rescue operations that had been suspended briefly in the flood-hit Himalayas on Friday",
+    "quote_outlet": "Channel News Asia",
+    "quote_url": "https://www.channelnewsasia.com/asia/nepal-china-flood-tibet-border-death-toll-6348161",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "The Hindu International"
+    ],
+    "article_count": 3,
+    "framing": "Centers on the fate of Indian nationals among the missing.",
+    "quote": "more than 750, including 133 Indian nationals, missing after a massive deluge swept through central Nepal.",
+    "quote_outlet": "The Hindu International",
+    "quote_url": "https://www.thehindu.com/news/international/nepal-flash-floods-increasing-death-toll-many-missing-rescuers-search-for-survivors-live-updates-august-27-2026/article71394802.ece",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera English"
+    ],
+    "article_count": 1,
+    "framing": "Emphasizes the emotional agony of families awaiting news of missing loved ones.",
+    "quote": "Families are waiting for news of their loved ones as rescue teams race to reach survivors",
+    "quote_outlet": "Al Jazeera English",
+    "quote_url": "https://www.aljazeera.com/video/newsfeed/2026/8/28/nepal-tibet-flood-families-of-missing-people-endure-agonising-wait?traffic_source=rss",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "TASS"
+    ],
+    "article_count": 1,
+    "framing": "Gives a brief, official police-sourced casualty and rescue count.",
+    "quote": "1,545 people have been wounded and rescued",
+    "quote_outlet": "TASS",
+    "quote_url": "https://tass.com/emergencies/2178639",
+    "state_affiliated": true
+   }
+  ],
+  "total_outlets": 12,
+  "counts": {
+   "western": 14,
+   "east_asia": 4,
+   "south_asia": 3,
+   "middle_east": 1,
+   "russian_state": 1
+  },
+  "blindspot": "South Korea's push to align with the US on North Korea nuclear talks is ignored by Western outlets, despite its impact on regional security policy.",
+  "blindspot_url": "https://en.yna.co.kr/view/AEN20260828004800315"
+ },
+ "signals": []
+}
