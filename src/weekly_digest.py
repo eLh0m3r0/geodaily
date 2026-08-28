@@ -157,6 +157,11 @@ def main() -> int:
     if not publisher.enabled:
         print("⏭️  Buttondown not configured — digest built but not sent")
         return 0
+    if not publisher.has_tag(Config.BUTTONDOWN_WEEKLY_TAG):
+        # Nobody has opted into weekly yet (or the Buttondown plan doesn't
+        # include tags) — nothing to send to, and that's not a failure.
+        print(f"⏭️  No '{Config.BUTTONDOWN_WEEKLY_TAG}' subscribers yet — digest built, not sent")
+        return 0
     url = publisher.send_email(subject, html,
                                included_tags=[Config.BUTTONDOWN_WEEKLY_TAG])
     if url:

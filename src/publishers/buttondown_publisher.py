@@ -70,7 +70,7 @@ class ButtondownPublisher:
         }
 
         filters, unresolved = self._tag_filters(included_tags, excluded_tags, headers)
-        if unresolved and included_tags:
+        if unresolved:
             logger.error(f"Could not resolve tag ids for {unresolved} — "
                          "aborting targeted send rather than emailing the whole list")
             return None
@@ -90,12 +90,15 @@ class ButtondownPublisher:
         return self._send_draft(email_id, headers)
 
     def _resolve_tag_id(self, name: str, headers: dict) -> Optional[str]:
-        """Tag id for a tag name; creates the tag when it doesn't exist yet.
+        """Tag id for a tag name, or None when it doesn't exist or can't be read.
 
         Filter values must be tag IDENTIFIERS, not names (the production 422:
-        "Tag filters must be valid tag identifiers"). The weekly tag may not
-        exist before the first subscriber picks it, so create-on-miss keeps
-        the daily exclusion working from day one.
+        "Tag filters must be valid tag identifiers"). Tags are never created
+        here: excluding a nonexistent tag is a no-op anyway, and including one
+        would target zero subscribers — the tag comes into existence when the
+        first subscriber picks "weekly" on the signup form. Note the tags API
+        itself needs Buttondown's Basic plan or higher; on the free plan it
+        answers 422 and every send stays untargeted.
         """
         cache = getattr(self, "_tag_id_cache", None)
         if cache is None:
@@ -109,31 +112,52 @@ class ButtondownPublisher:
                 if (tag.get("name") or "").lower() == name.lower():
                     cache[name] = tag.get("id")
                     return cache[name]
-            created = requests.post(f"{BUTTONDOWN_API_BASE}/tags",
-                                    json={"name": name}, headers=headers, timeout=15)
-            created.raise_for_status()
-            cache[name] = created.json().get("id")
-            logger.info(f"Created Buttondown tag '{name}' (id={cache[name]})")
-            return cache[name]
-        except Exception as e:
-            logger.warning(f"Could not resolve Buttondown tag '{name}': {e}")
+            logger.info(f"Buttondown tag '{name}' doesn't exist yet (no subscriber has it)")
             return None
+        except Exception as e:
+            detail = ""
+            body = getattr(getattr(e, "response", None), "text", "")
+            if body:
+                detail = f" — {body[:200]}"
+            logger.warning(f"Could not resolve Buttondown tag '{name}': {e}{detail}"
+                           " (tags need Buttondown's Basic plan or higher)")
+            return None
+
+    def has_tag(self, name: str) -> bool:
+        """True when the tag exists and is addressable — gate for targeted sends."""
+        if not self.enabled:
+            return False
+        headers = {
+            "Authorization": f"Token {self.api_key}",
+            "Accept": "application/json",
+            "Buttondown-Version": "2026-04-01",
+        }
+        return self._resolve_tag_id(name, headers) is not None
 
     def _tag_filters(self, included_tags: Optional[list], excluded_tags: Optional[list],
                      headers: dict) -> tuple:
-        """(filters object or None, list of tag names that failed to resolve).
+        """(filters object or None, list of INCLUDED tag names that failed to resolve).
 
         API versions after 2024-08-15 replaced flat included_tags/excluded_tags
-        with this filter structure, keyed by tag id."""
+        with this filter structure, keyed by tag id. An exclusion that fails to
+        resolve is dropped silently — while the tag has no subscribers, sending
+        untargeted is equivalent. A failed inclusion is reported so the caller
+        aborts instead of widening the audience."""
         filters = []
         unresolved = []
-        for tag, operator in ([(t, "contains") for t in included_tags or []]
-                              + [(t, "not_contains") for t in excluded_tags or []]):
+        for tag in included_tags or []:
             tag_id = self._resolve_tag_id(tag, headers)
             if tag_id:
-                filters.append({"field": "subscriber.tags", "operator": operator, "value": tag_id})
+                filters.append({"field": "subscriber.tags", "operator": "contains", "value": tag_id})
             else:
                 unresolved.append(tag)
+        for tag in excluded_tags or []:
+            tag_id = self._resolve_tag_id(tag, headers)
+            if tag_id:
+                filters.append({"field": "subscriber.tags", "operator": "not_contains", "value": tag_id})
+            else:
+                logger.info(f"Exclusion tag '{tag}' unresolved — sending untargeted "
+                            "(equivalent while nobody carries the tag)")
         if not filters:
             return None, unresolved
         return {"filters": filters, "groups": [], "predicate": "and"}, unresolved
