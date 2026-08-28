@@ -34,6 +34,8 @@ jobs:
   dry-run:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      FASTEMBED_CACHE_PATH: /home/runner/.cache/fastembed
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -50,7 +52,7 @@ jobs:
           path: |
             ~/.cache/fastembed
             ~/.cache/huggingface
-          key: fastembed-all-minilm-l6-v2
+          key: fastembed-all-minilm-l6-v2-2
 
       - name: Install dependencies
         run: pip install -r requirements.txt

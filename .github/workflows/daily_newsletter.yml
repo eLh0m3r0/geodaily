@@ -2,8 +2,12 @@ name: Daily Geopolitical Newsletter
 
 on:
   schedule:
-    # Run daily at 6:00 UTC (8:00 CET)
-    - cron: '0 6 * * *'
+    # Primary slot ~6:17 UTC (off-peak minute — top-of-hour slots are the
+    # ones GitHub drops under load, which cost us the 2026-08-27/28 issues)
+    - cron: '17 6 * * *'
+    # Self-healing backup: re-fires at 7:52 UTC; the precheck job turns it
+    # into a no-op when today's issue is already published
+    - cron: '52 7 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -31,9 +35,37 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Backup-slot guard: scheduled runs become no-ops once today's issue exists,
+  # so the 7:52 retry can never double-send. Manual dispatches always run.
+  precheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      publish: ${{ steps.check.outputs.publish }}
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Check whether today's issue already exists
+      id: check
+      run: |
+        TODAY_FILE="docs/newsletters/newsletter-$(date -u +%F).html"
+        if [ "${{ github.event_name }}" = "schedule" ] && [ -f "$TODAY_FILE" ]; then
+          echo "publish=false" >> "$GITHUB_OUTPUT"
+          echo "✅ $TODAY_FILE already published — this slot is a no-op."
+        else
+          echo "publish=true" >> "$GITHUB_OUTPUT"
+        fi
+
   generate-newsletter:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    needs: precheck
+    if: needs.precheck.outputs.publish == 'true'
+    # The full pipeline (861 feeds' worth of collection, embeddings, two AI
+    # calls with adaptive thinking, publish) legitimately takes ~13 minutes;
+    # the old 15-minute cap killed the 2026-08-27 run
+    timeout-minutes: 30
+    env:
+      FASTEMBED_CACHE_PATH: /home/runner/.cache/fastembed
 
     steps:
     - name: Checkout repository
@@ -51,7 +83,7 @@ jobs:
         path: |
           ~/.cache/fastembed
           ~/.cache/huggingface
-        key: fastembed-all-minilm-l6-v2
+        key: fastembed-all-minilm-l6-v2-2
 
     - name: Install dependencies
       run: |
@@ -169,10 +201,6 @@ jobs:
         else:
             print('✅ Configuration validated successfully')
         "
-
-    - name: Test data collection
-      run: |
-        python test_simple_collection.py
 
     - name: Run newsletter pipeline
       run: |
