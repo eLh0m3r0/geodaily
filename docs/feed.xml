@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 28 Aug 2026 15:24:01 GMT</pubDate>
-        <lastBuildDate>Fri, 28 Aug 2026 15:24:01 GMT</lastBuildDate>
+        <pubDate>Sat, 29 Aug 2026 08:18:06 GMT</pubDate>
+        <lastBuildDate>Sat, 29 Aug 2026 08:18:06 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,20 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - August 29, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-29.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Saturday, August 29, 2026 — one story worth your full attention today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>US Claims Control of a Fifth of Venezuela's Oil Reserves</strong>: Trump says the US now controls over 65 billion barrels of Venezuelan oil. He calls it the biggest oil deal ever. This could change US fuel prices and give America more power over Venezuela's economy. ...</li></ul><p><em>Published: August 29, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sat, 29 Aug 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260829</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[United States]]></category>
+        <category><![CDATA[Economy]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-29.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - August 28, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-28.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Friday, August 28, 2026 — one story worth your full attention today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Himalayan Flash Flood Kills Hundreds, Leaves Over 1,400 Missing</strong>: A flash flood on the Nepal-Tibet border has killed more than 360 people. Over 1,400 are missing, including 700 foreigners from more than 30 countries. Rescue crews had to pause work when an overflowin...</li></ul><p><em>Published: August 28, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -195,23 +209,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-19.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - August 18, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-18.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Tuesday, August 18, 2026 — today's briefing covers 4 developments shaping global affairs: breaking news, strategic analysis, and the trends behind the headlines.</p><h3>Today's Key Stories:</h3><ul><li><strong>Kremlin Eliminates Last Anti-War Party From Ballot as Shlosberg Gets 11 Years</strong>: Russia's Supreme Court ban on Yabloko and the 11-year sentence for its deputy chair Shlosberg close off the last legal channel for anti-war dissent ahead of September's Duma elections, signaling that ...</li><li><strong>Beijing's Layered Legal Arsenal Turns Extraterritoriality Into a Two-Way Weapon</strong>: China's stacking of six overlapping laws (Export Control, Unreliable Entity List, Anti-Foreign Sanctions, Blocking Rules, Counter-Extraterritorial Regulation, Supply Chain Security) creates a mirror-i...</li><li><strong>Arctic 'Ice Silk Road' Emerges as China-Russia Hedge Against Chokepoint Vulnerability</strong>: The Northern Sea Route's growing use by Chinese container ships, accelerated by Houthi disruption of Suez traffic, deepens Sino-Russian strategic alignment and offers an alternative to Hormuz/Suez cho...</li></ul><p><em>Published: August 18, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Tue, 18 Aug 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260818</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[United States]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-18.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>

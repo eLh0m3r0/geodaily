@@ -1,0 +1,172 @@
+{
+ "date": "2026-08-29",
+ "title": "Geopolitical Daily",
+ "email_subject": "Trump Claims Venezuela's Oil Wealth",
+ "preheader": "The deal covers 65 billion barrels of oil, but Trump gave almost no details.",
+ "intro_text": "Good morning. It's Saturday, August 29, 2026 — one story worth your full attention today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "US Claims Control of a Fifth of Venezuela's Oil Reserves",
+   "why_important": "Trump says the US now controls over 65 billion barrels of Venezuelan oil. He calls it the biggest oil deal ever. This could change US fuel prices and give America more power over Venezuela's economy. Trump shared almost no details about the terms or legality.",
+   "what_overlooked": "No one explained who owns what, how Venezuela's interim government agreed, or what happens to regular Venezuelans' oil money.",
+   "prediction": "Watch for contract details, OPEC's response, and whether Venezuela's opposition challenges if the deal is legal.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.dawn.com/news/2025926/trump-says-us-is-taking-partial-control-of-venezuelas-vast-oil-reserves-but-offers-few-details-about-agreement",
+    "https://www.middleeasteye.net/live-blog/live-blog-update/trump-claims-biggest-oil-deal-world-history-signed-venezuela",
+    "https://www.japantimes.co.jp/business/2026/08/29/economy/us-control-venezuelan-oil/",
+    "https://www.dw.com/en/us-venezuela-announce-historic-oil-deal/a-78553607?maca=en-rss-en-all-1573-rdf"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 6,
+   "impact_dimension_score": 9,
+   "confidence": 0.7,
+   "region": "americas",
+   "actor_type": "state",
+   "event_type": "economic"
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Gunfire and explosions hit Niger's capital Niamey overnight, near the airport and presidential palace.",
+   "region": "africa",
+   "url": "https://www.aljazeera.com/news/2026/8/29/gunfire-blasts-heard-in-several-areas-of-niger-capital-niamey?traffic_source=rss"
+  },
+  {
+   "text": "Norway's King Harald V died at 89; his son takes the throne as King Haakon VIII.",
+   "region": "europe",
+   "url": "https://www.dw.com/en/norway-s-king-harald-dies-at-89/a-78524572?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "Icelanders vote Saturday on restarting EU membership talks, with Trump's Greenland threats looming over the race.",
+   "region": "europe",
+   "url": "https://www.aljazeera.com/news/2026/8/29/why-is-iceland-considering-joining-the-eu?traffic_source=rss"
+  },
+  {
+   "text": "Israel killed a Hamas operative and two others in a rare air strike near Jenin in the West Bank.",
+   "region": "middle_east",
+   "url": "https://www.al-monitor.com/originals/2026/08/israel-kills-hamas-operative-rare-west-bank-air-strike-military-says"
+  },
+  {
+   "text": "Iran's leaders admit the war with the US has cut the country's foreign trade by 35%.",
+   "region": "middle_east",
+   "url": "https://www.scmp.com/news/world/middle-east/article/3365679/iranian-leaders-admit-economic-toll-war-us-trade-drops-35?utm_source=rss_feed"
+  },
+  {
+   "text": "US immigration agents detained far-right commentator Milo Yiannopoulos in New Orleans for deportation to the UK.",
+   "region": "americas",
+   "url": "https://www.scmp.com/news/world/united-states-canada/article/3365669/uk-far-right-provocateur-milo-yiannopoulos-arrested-us-immigration?utm_source=rss_feed"
+  },
+  {
+   "text": "The number of people missing after the Nepal-Tibet flood soared to nearly 3,000, with 633 bodies recovered.",
+   "region": "indo_pacific",
+   "url": "https://www.dawn.com/news/2025932/number-of-missing-in-nepal-china-floods-soars-to-nearly-3000"
+  },
+  {
+   "text": "Congo began Ebola vaccinations as the outbreak spread to 60 areas, killing 2,786 people so far.",
+   "region": "africa",
+   "url": "https://www.aljazeera.com/news/2026/8/28/ebola-spreads-to-two-new-zones-in-drc-60-areas-now-affected?traffic_source=rss"
+  }
+ ],
+ "big_number": {
+  "value": "35%",
+  "context": "Iran's president says the war with the US has shrunk the country's foreign trade by more than a third.",
+  "url": "https://www.al-monitor.com/originals/2026/08/war-weighs-irans-economy-us-intensifies-sanctions"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW News",
+     "Financial Times World",
+     "Guardian International"
+    ],
+    "article_count": 7,
+    "framing": "Highlights domestic backlash calling the deal exploitative and unconstitutional",
+    "quote": "critics describing the move as “predatory” and a “rapacious” land grab",
+    "quote_outlet": "Guardian International",
+    "quote_url": "https://www.theguardian.com/world/2026/aug/28/us-venezuela-oil-gas-stake",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "The Japan Times",
+     "The Straits Times World"
+    ],
+    "article_count": 5,
+    "framing": "Frames deal as US expanding geopolitical dominance in the Western Hemisphere",
+    "quote": "President Donald Trump's latest push to establish U.S. dominance over the Western Hemisphere.",
+    "quote_outlet": "The Japan Times",
+    "quote_url": "https://www.japantimes.co.jp/business/2026/08/29/economy/us-control-venezuelan-oil/",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Dawn",
+     "The Hindu International"
+    ],
+    "article_count": 2,
+    "framing": "Stresses vague, undisclosed terms behind Trump's oil control announcement",
+    "quote": "Trump provided few details about the agreement, saying only that the US had secured majority control",
+    "quote_outlet": "Dawn",
+    "quote_url": "https://www.dawn.com/news/2025926/trump-says-us-is-taking-partial-control-of-venezuelas-vast-oil-reserves-but-offers-few-details-about-agreement",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera English",
+     "Middle East Eye"
+    ],
+    "article_count": 3,
+    "framing": "Focuses on Trump's grandiose framing as history's biggest oil deal",
+    "quote": "Washington has accomplished the \"biggest oil deal in world history\", after entering into an agreement with Venezuela.",
+    "quote_outlet": "Middle East Eye",
+    "quote_url": "https://www.middleeasteye.net/live-blog/live-blog-update/trump-claims-biggest-oil-deal-world-history-signed-venezuela",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "TASS"
+    ],
+    "article_count": 3,
+    "framing": "Emphasizes economic benefits and investment touted by Venezuelan and US officials",
+    "quote": "the country’s economic growth, the energy security of the hemisphere, and greater balance in international markets",
+    "quote_outlet": "TASS",
+    "quote_url": "https://tass.com/economy/2179189",
+    "state_affiliated": true
+   },
+   {
+    "perspective": "latam",
+    "outlets": [
+     "MercoPress"
+    ],
+    "article_count": 2,
+    "framing": "Details concrete ownership percentages and lease terms of the agreement",
+    "quote": "granting Washington majority control over more than 65 billion barrels of proven Venezuelan crude reserves, around 21% of the country's total",
+    "quote_outlet": "MercoPress",
+    "quote_url": "https://en.mercopress.com/2026/08/29/the-us-will-control-55-of-output-from-the-new-oil-company-in-venezuela?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss",
+    "state_affiliated": false
+   }
+  ],
+  "total_outlets": 15,
+  "counts": {
+   "south_asia": 2,
+   "middle_east": 3,
+   "east_asia": 5,
+   "western": 7,
+   "latam": 2,
+   "russian_state": 3
+  },
+  "blindspot": "Western outlets ignored China's new cotton law tightening state control over Uyghur farmers' land and labor, a major human rights issue lacking global coverage.",
+  "blindspot_url": "https://globalvoices.org/2026/08/28/chinas-new-cotton-law-deepens-control-over-uyghur-farmers-land-and-labor/"
+ },
+ "signals": []
+}
