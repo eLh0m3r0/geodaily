@@ -1,0 +1,153 @@
+{
+ "date": "2026-08-30",
+ "title": "Geopolitical Daily",
+ "email_subject": "Nepal flood toll surges past 680",
+ "preheader": "Rescuers race to find 3,000 missing as another landslide dam threatens to burst.",
+ "intro_text": "Good morning. It's Sunday, August 30, 2026 — one story worth your full attention today, plus 7 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "Nepal-Tibet Flood Death Toll Nearly Doubles, 3,000 Still Missing",
+   "why_important": "The confirmed death toll jumped from around 359 to at least 682 in just days. Nepal now says 3,000 people are still missing, more than double earlier estimates. Rescuers are also racing to save hydropower workers trapped in flooded tunnels as a landslide dam threatens fresh flooding.",
+   "what_overlooked": "Little coverage explains why an upstream landslide dam could trigger a second wave of flooding before rescue teams finish their work.",
+   "prediction": "Watch for whether the landslide dam breaches, which could send a new flood surge downstream within days.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.dawn.com/news/2025932/rescuers-claw-through-mud-as-nepal-china-flood-death-toll-climbs-to-675",
+    "https://www.dw.com/en/nepal-issues-fresh-flood-warning-as-3-000-still-missing/a-78561068?maca=en-rss-en-all-1573-rdf",
+    "https://www.sixthtone.com/news/1018953/Hundreds Still Missing After Deadly China-Nepal Border Mudslide",
+    "https://asia.nikkei.com/photos/through-the-lens-deadly-flood-hits-nepal-and-tibet-in-himalayan-valley"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 7,
+   "novelty_score": 5,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "indo_pacific",
+   "actor_type": "mixed",
+   "event_type": "humanitarian"
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "A Russian drone strike on an ammo depot near Kyiv killed at least 37 people, including care home residents.",
+   "region": "europe",
+   "url": "https://www.politico.eu/article/russia-kills-27-as-drone-hits-ammo-warehouse-near-homes-in-ukraine/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
+  },
+  {
+   "text": "Mutinying soldiers clashed with troops near Niger's presidential palace before the junta said it regained control.",
+   "region": "africa",
+   "url": "https://www.dw.com/en/niger-s-defense-ministry-says-soldiers-attempted-mutiny/a-78554001?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "Venezuela's interim president says the country keeps 'sovereignty' despite a deal sending $19 a barrel to the US.",
+   "region": "americas",
+   "url": "https://www.aljazeera.com/news/2026/8/30/venezuela-says-it-retains-sovereignty-following-us-oil-deal?traffic_source=rss"
+  },
+  {
+   "text": "Putin, Xi and Iran's Pezeshkian head to Kyrgyzstan for a two-day Shanghai Cooperation Organization summit.",
+   "region": "central_asia",
+   "url": "https://www.france24.com/en/asia-pacific/20260830-putin-xi-set-for-central-asia-summit-as-russia-china-seek-to-counter-western-influence"
+  },
+  {
+   "text": "North Korea dismissed and demoted its defense minister, naming Kim Song Gi as replacement, state media says.",
+   "region": "indo_pacific",
+   "url": "https://www.japantimes.co.jp/news/2026/08/30/asia-pacific/politics/north-korea-dismisses-defense-minister-in/"
+  },
+  {
+   "text": "Icelanders voted 'no' by 52.5% on reopening EU membership talks, despite Trump's threats toward Greenland.",
+   "region": "europe",
+   "url": "https://www.aljazeera.com/news/2026/8/30/iceland-rejects-eu-membership-plan-in-referendum?traffic_source=rss"
+  },
+  {
+   "text": "B'Tselem says Israeli forces and settlers have killed 235 children in the West Bank since October 2023.",
+   "region": "middle_east",
+   "url": "https://www.thehindu.com/news/international/killing-of-palestinian-children-and-teens-by-israel-surges-in-west-bank/article71406972.ece"
+  }
+ ],
+ "big_number": {
+  "value": "235",
+  "context": "Palestinian children killed by Israeli forces or settlers in the West Bank since October 2023, a rights group reports.",
+  "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-forces-settlers-killed-235-children-west-bank-7-oct-2023-report"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW News",
+     "France 24 English"
+    ],
+    "article_count": 9,
+    "framing": "Focuses on rising missing/death tolls and ongoing binational rescue race.",
+    "quote": "Rescuers in Nepal and China on Saturday continued to search for the nearly 3,000 people missing after devastating flooding along the border with China engulfed entire villages earlier this week.",
+    "quote_outlet": "France 24 English",
+    "quote_url": "https://www.france24.com/en/asia-pacific/20260829-missing-toll-from-nepal-china-flood-nears-3-000-as-race-for-survivors-continues",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "Nikkei Asia",
+     "South China Morning Post RSS",
+     "The Japan Times"
+    ],
+    "article_count": 6,
+    "framing": "Highlights tunnel rescues and detailed nationality breakdown of missing foreigners.",
+    "quote": "The Tibetan authorities said that the missing foreigners were from 23 different countries and included 104 Nepalese citizens.",
+    "quote_outlet": "South China Morning Post RSS",
+    "quote_url": "https://www.scmp.com/news/china/politics/article/3365730/china-nepal-floods-hundreds-foreigners-missing-tibet-after-disaster?utm_source=rss_feed",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "chinese_state",
+    "outlets": [
+     "Sixth Tone"
+    ],
+    "article_count": 1,
+    "framing": "Emphasizes ongoing search efforts and risk from an upstream landslide dam.",
+    "quote": "Search teams are still working through deep mud and broken roads as an upstream landslide dam raises fears of further flooding.",
+    "quote_outlet": "Sixth Tone",
+    "quote_url": "https://www.sixthtone.com/news/1018953/Hundreds Still Missing After Deadly China-Nepal Border Mudslide",
+    "state_affiliated": true
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Dawn",
+     "The Hindu International"
+    ],
+    "article_count": 9,
+    "framing": "Stresses national death toll updates and cross-border rescue cooperation with China and India.",
+    "quote": "China sent 5 tunnel experts to assist Nepalese rescue teams, while 114 Indian nationals rescued",
+    "quote_outlet": "The Hindu International",
+    "quote_url": "https://www.thehindu.com/news/international/nepal-flash-floods-death-toll-rises-number-of-missing-jumps-to-more-than-2000/article71403649.ece",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "TASS"
+    ],
+    "article_count": 3,
+    "framing": "Delivers concise, numeric casualty and injury updates without narrative framing.",
+    "quote": "219 people have been injured",
+    "quote_outlet": "TASS",
+    "quote_url": "https://tass.com/emergencies/2179319",
+    "state_affiliated": true
+   }
+  ],
+  "total_outlets": 13,
+  "counts": {
+   "east_asia": 6,
+   "south_asia": 9,
+   "western": 9,
+   "chinese_state": 1,
+   "russian_state": 3
+  },
+  "blindspot": "Western outlets missed Kim Jong Un's major military shake-up, including firing his defense minister, a signal of internal power shifts in North Korea.",
+  "blindspot_url": "https://timesofindia.indiatimes.com/world/rest-of-world/kim-jong-un-shakes-up-north-koreas-military-dismisses-defence-minister-no-kwang-chol/articleshow/133622383.cms"
+ },
+ "signals": []
+}
