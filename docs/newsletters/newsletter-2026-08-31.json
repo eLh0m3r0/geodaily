@@ -1,0 +1,127 @@
+{
+ "date": "2026-08-31",
+ "title": "Geopolitical Daily",
+ "email_subject": "Iran claims strike on UAE, UAE denies",
+ "preheader": "The claim follows US strikes on Iranian rocket launchers near the Strait of Hormuz.",
+ "intro_text": "Good morning. It's Monday, August 31, 2026 — one story worth your full attention today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "Iran Says It Hit a UAE Air Base; UAE Says That Never Happened",
+   "why_important": "Iran's army says it fired drones at a UAE air base early Monday. The UAE calls that false. The dispute comes right after US strikes on Iranian rocket launchers, showing the war could pull in more Gulf states.",
+   "what_overlooked": "Coverage rarely mentions Al-Minhad hosts US troops, so any real strike there risks direct US-Iran combat.",
+   "prediction": "Watch for UAE or US confirmation, satellite proof, or new Iranian strikes within 72 hours.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.thehindu.com/news/international/west-asia-war-us-attack-on-iran-live-updates-donald-trump-strait-of-hormuz-news-august-31-2026/article71409553.ece",
+    "https://www.middleeasteye.net/live-blog/live-blog-update/uae-denies-reports-al-minhad-air-base-being-targeted-missiles",
+    "https://www.straitstimes.com/world/middle-east/irans-army-says-it-attacked-uaes-al-minhad-air-base-with-drones-state-tv-reports"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 6,
+   "impact_dimension_score": 8,
+   "confidence": 0.6,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military"
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Venezuela's interim leader says the new U.S. energy deal runs 25 years, targeting 1.5 million barrels a day.",
+   "region": "americas",
+   "url": "https://www.thehindu.com/news/international/venezuelas-interim-president-says-us-energy-deal-will-last-25-years/article71406965.ece"
+  },
+  {
+   "text": "Nicolás Maduro posted his first photos from a Brooklyn jail, smiling in a gray tracksuit two months after capture.",
+   "region": "americas",
+   "url": "https://en.mercopress.com/2026/08/30/maduro-releases-his-first-images-from-the-brooklyn-jail-taken-two-months-ago?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss"
+  },
+  {
+   "text": "Icelandic voters rejected reopening EU membership talks, 52.8% to 47.2%, keeping the fisheries fight closed for now.",
+   "region": "europe",
+   "url": "https://www.dw.com/en/iceland-voters-reject-eu-accession-talks/a-78560633?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "NASA launched the Nancy Grace Roman Space Telescope, its first named for a female scientist, to hunt dark matter.",
+   "region": "global",
+   "url": "https://www.dw.com/en/nasa-launches-first-telescope-named-after-female-scientist/a-78565941?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "Turkey, Saudi Arabia and Pakistan held their first meeting under the Mecca Joint Defence Agreement, signed August 7.",
+   "region": "middle_east",
+   "url": "https://www.al-monitor.com/originals/2026/08/turkey-saudi-arabia-pakistan-hold-first-defence-pact-meeting-source-says"
+  },
+  {
+   "text": "Leaders of China, Russia, India and Iran arrived in Kyrgyzstan for the Shanghai Cooperation Organization's 25th-year summit.",
+   "region": "central_asia",
+   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/shanghai-cooperation-organization-summit-semicon-taiwan-shein-listing"
+  },
+  {
+   "text": "German Chancellor Friedrich Merz warned an AfD win in Saxony-Anhalt's election would scare off foreign investors.",
+   "region": "europe",
+   "url": "https://www.straitstimes.com/world/europe/germanys-merz-says-victory-for-afd-in-saxony-anhalt-would-deter-foreign-investors"
+  },
+  {
+   "text": "Pakistan will honor nurse Razia Noreen, who saved a newborn from a hospital fire that killed 14 infants.",
+   "region": "indo_pacific",
+   "url": "https://www.scmp.com/news/asia/south-asia/article/3365802/pakistani-nurse-be-honoured-saving-newborn-deadly-hospital-fire?utm_source=rss_feed"
+  }
+ ],
+ "big_number": {
+  "value": "~15",
+  "context": "Around 15 people are missing after a flash flood hit the Grand Canyon, damaging the park's only water pipeline.",
+  "url": "https://www.scmp.com/news/world/united-states-canada/article/3365783/least-20-missing-dozens-evacuated-grand-canyon-after-flash-flood-hits-creek?utm_source=rss_feed"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "The Straits Times World"
+    ],
+    "article_count": 1,
+    "framing": "Focuses on Iran's own claim of striking the UAE base via state media.",
+    "quote": "Iran's army said it attacked the United Arab Emirates' Al Minhad Air Base with drones early on Monday, Iranian state TV reported, citing a statement from the army.",
+    "quote_outlet": "The Straits Times World",
+    "quote_url": "https://www.straitstimes.com/world/middle-east/irans-army-says-it-attacked-uaes-al-minhad-air-base-with-drones-state-tv-reports",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "The Hindu International"
+    ],
+    "article_count": 1,
+    "framing": "Frames the incident within a wider regional conflict involving US strikes and Hormuz tensions.",
+    "quote": "Follow The Hindu for LIVE updates on West Asia conflict as U.S. forces strike IRGC rocket launchers on Larak Island.",
+    "quote_outlet": "The Hindu International",
+    "quote_url": "https://www.thehindu.com/news/international/west-asia-war-us-attack-on-iran-live-updates-donald-trump-strait-of-hormuz-news-august-31-2026/article71409553.ece",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Middle East Eye"
+    ],
+    "article_count": 3,
+    "framing": "Highlights the UAE's official denial and downplaying of the attack claims.",
+    "quote": "UAE denies reports of Al-Minhad Air Base being targeted with missiles",
+    "quote_outlet": "Middle East Eye",
+    "quote_url": "https://www.middleeasteye.net/live-blog/live-blog-update/uae-denies-reports-al-minhad-air-base-being-targeted-missiles",
+    "state_affiliated": false
+   }
+  ],
+  "total_outlets": 3,
+  "counts": {
+   "south_asia": 1,
+   "middle_east": 3,
+   "east_asia": 1
+  },
+  "blindspot": "Iran's supreme leader urging all Muslim nations to unite against the US is a major political signal ignored by Western media, missing insight into Iran's broader mobilization strategy.",
+  "blindspot_url": "https://tass.com/world/2179473"
+ },
+ "signals": []
+}

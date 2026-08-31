@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sun, 30 Aug 2026 08:25:38 GMT</pubDate>
-        <lastBuildDate>Sun, 30 Aug 2026 08:25:38 GMT</lastBuildDate>
+        <pubDate>Mon, 31 Aug 2026 08:27:10 GMT</pubDate>
+        <lastBuildDate>Mon, 31 Aug 2026 08:27:10 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,19 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - August 31, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-31.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Monday, August 31, 2026 — one story worth your full attention today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Iran Says It Hit a UAE Air Base; UAE Says That Never Happened</strong>: Iran's army says it fired drones at a UAE air base early Monday. The UAE calls that false. The dispute comes right after US strikes on Iranian rocket launchers, showing the war could pull in more Gulf...</li></ul><p><em>Published: August 31, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Mon, 31 Aug 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260831</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-31.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - August 30, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-30.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Sunday, August 30, 2026 — one story worth your full attention today, plus 7 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Nepal-Tibet Flood Death Toll Nearly Doubles, 3,000 Still Missing</strong>: The confirmed death toll jumped from around 359 to at least 682 in just days. Nepal now says 3,000 people are still missing, more than double earlier estimates. Rescuers are also racing to save hydrop...</li></ul><p><em>Published: August 30, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -189,22 +202,6 @@
         <category><![CDATA[Economy]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-21.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - August 20, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-20.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Thursday, August 20, 2026 — today's briefing covers 4 developments shaping global affairs: breaking news, strategic analysis, and the trends behind the headlines.</p><h3>Today's Key Stories:</h3><ul><li><strong>Corruption Probe Reaches Zelensky's Inner Circle as Election Pressure Mounts</strong>: A deputy head of Zelensky's own office is now named in a money-laundering probe just as his fired defense minister publicly demands wartime elections. This convergence of corruption allegations and le...</li><li><strong>Washington Pivots From Regime Change to Economic Strangulation as Iran War Drags Past Six Months</strong>: Vance's admission that the war goal is now merely 'lower energy prices' reveals strategic failure of the military campaign. Trump's 'crushing' economic operation risks confrontation with China as a ma...</li><li><strong>Seoul Drops Denuclearization Precondition as US Reduces Joint Exercises</strong>: South Korea's abandonment of complete denuclearization as a starting point marks a historic shift in peninsula diplomacy, occurring simultaneously with Trump's push to cut joint military exercises — t...</li></ul><p><em>Published: August 20, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Thu, 20 Aug 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260820</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[United States]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-20.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
