@@ -1,0 +1,155 @@
+{
+ "date": "2026-09-01",
+ "title": "Geopolitical Daily",
+ "email_subject": "Army's civilian boss quits mid-war",
+ "preheader": "Driscoll clashed with Hegseth over purged generals as Iran strikes flare again.",
+ "intro_text": "Good morning. It's Tuesday, September 01, 2026 — one story worth your full attention today, plus 7 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "Army Secretary Dan Driscoll Resigns After Rift With Hegseth",
+   "why_important": "The Army just lost its top civilian leader during a live conflict with Iran. Driscoll and Defense Secretary Hegseth had clashed for months over Hegseth's push to cut top generals. The Army now has a leadership gap at a dangerous moment.",
+   "what_overlooked": "Most reports lean on one Wall Street Journal story. The White House has not confirmed the real reason Driscoll left.",
+   "prediction": "Watch for Trump to name a replacement Army Secretary within days.",
+   "impact_score": 7,
+   "sources": [
+    "https://breakingdefense.com/2026/08/army-secretary-dan-driscoll-resigns-reports/",
+    "https://www.middleeasteye.net/live-blog/live-blog-update/us-army-secretary-dan-driscoll-resigns-after-months-tension-hegseth",
+    "https://www.dawn.com/news/2026573/us-army-secretary-submits-resignation-amid-reports-of-tensions-with-pentagon-chief-hegseth",
+    "https://www.japantimes.co.jp/news/2026/09/01/world/politics/us-army-secretary-resigns/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 5,
+   "novelty_score": 7,
+   "credibility_score": 7,
+   "impact_dimension_score": 7,
+   "confidence": 0.78,
+   "region": "americas",
+   "actor_type": "state",
+   "event_type": "political"
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Nepal-Tibet flood deaths topped 1,000; nearly 4,500 people are still missing after last week's glacial floods.",
+   "region": "indo_pacific",
+   "url": "https://www.aljazeera.com/news/2026/9/1/death-toll-from-devastating-floods-in-china-and-nepal-surpasses-1000?traffic_source=rss"
+  },
+  {
+   "text": "US forces struck Iranian rocket launchers on Larak Island; Iran fired missiles and drones at Jordan and the UAE.",
+   "region": "middle_east",
+   "url": "https://www.thehindu.com/news/international/donald-trump-vows-to-hit-iran-hard-after-first-exchange-of-fire-in-weeks/article71413458.ece"
+  },
+  {
+   "text": "Kenya's aviation workers ended a strike that grounded thousands of passengers at Nairobi's main airport.",
+   "region": "africa",
+   "url": "https://www.straitstimes.com/world/kenya-aviation-workers-end-strike-that-disrupted-flights-officials-say"
+  },
+  {
+   "text": "Xi Jinping and Vladimir Putin met in Bishkek at a Shanghai Cooperation Organization summit marking its 25th year.",
+   "region": "central_asia",
+   "url": "https://www.france24.com/en/tv-shows/business/20260831-xi-putin-hold-talks-ahead-of-shanghai-cooperation-organization-summit"
+  },
+  {
+   "text": "Lionel Messi, 39, announced his retirement from Argentina's national team in a handwritten letter to fans.",
+   "region": "americas",
+   "url": "https://en.mercopress.com/2026/08/31/i-gave-everything-i-have-nothing-left-messi-ends-twenty-years-with-argentina?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss"
+  },
+  {
+   "text": "Russian strikes killed at least 9 people in Kyiv, the sixth straight night of attacks on the capital.",
+   "region": "europe",
+   "url": "https://www.scmp.com/news/world/europe/article/3365931/russia-strikes-ukraine-capital-sixth-straight-day-killing-least-9?utm_source=rss_feed"
+  },
+  {
+   "text": "The US invited Russia's Anton Siluanov back to G20 finance talks, angering European officials.",
+   "region": "global",
+   "url": "https://www.straitstimes.com/world/europe/us-irks-g20-ministers-by-inviting-russia-barring-some-journalists"
+  }
+ ],
+ "big_number": {
+  "value": "100 years",
+  "context": "Venezuela's interim president gave a new US company 100-year rights to more than 17 oil fields.",
+  "url": "https://www.aljazeera.com/news/2026/9/1/white-house-unveils-more-details-of-trumps-venezuela-oil-deal?traffic_source=rss"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "BBC World",
+     "Breaking Defense",
+     "Politico Europe"
+    ],
+    "article_count": 3,
+    "framing": "Focuses on personal rift and institutional tension driving Driscoll's resignation.",
+    "quote": "brought up concerns with the direction of the Army.",
+    "quote_outlet": "Politico Europe",
+    "quote_url": "https://www.politico.com/news/2026/08/31/army-secretary-resigns-01058326?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "South China Morning Post RSS",
+     "The Japan Times",
+     "The Straits Times World"
+    ],
+    "article_count": 4,
+    "framing": "Highlights the resignation's impact on military leadership gaps amid the Iran conflict.",
+    "quote": "leaves the service without several top leaders even as the conflict with Iran continues.",
+    "quote_outlet": "The Japan Times",
+    "quote_url": "https://www.japantimes.co.jp/news/2026/09/01/world/politics/us-army-secretary-resigns/",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Dawn",
+     "The Hindu International"
+    ],
+    "article_count": 2,
+    "framing": "Stresses the resulting leadership vacuum in the Army during an ongoing war.",
+    "quote": "the resignation could effectively leave the Army without permanent civilian or uniformed leadership.",
+    "quote_outlet": "The Hindu International",
+    "quote_url": "https://www.thehindu.com/news/international/us-army-secretary-driscoll-submits-resignation-white-house/article71413517.ece",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera English",
+     "Middle East Eye"
+    ],
+    "article_count": 2,
+    "framing": "Centers on the policy dispute over purging top army generals.",
+    "quote": "over the ousting of several top army generals amid a controversial push to shrink the number of high-ranking army generals in the US army",
+    "quote_outlet": "Middle East Eye",
+    "quote_url": "https://www.middleeasteye.net/live-blog/live-blog-update/us-army-secretary-dan-driscoll-resigns-after-months-tension-hegseth",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "TASS"
+    ],
+    "article_count": 1,
+    "framing": "Delivers a brief factual report on the official's imminent departure timing.",
+    "quote": "the official is expected to leave the Pentagon in the coming days",
+    "quote_outlet": "TASS",
+    "quote_url": "https://tass.com/world/2180115",
+    "state_affiliated": true
+   }
+  ],
+  "total_outlets": 11,
+  "counts": {
+   "western": 3,
+   "middle_east": 2,
+   "south_asia": 2,
+   "east_asia": 4,
+   "russian_state": 1
+  },
+  "blindspot": "South Korea is sending a disaster relief team to Nepal after severe floods, a humanitarian effort Western outlets ignored while focusing on U.S. political news.",
+  "blindspot_url": "https://en.yna.co.kr/view/AEN20260901003551315"
+ },
+ "signals": []
+}

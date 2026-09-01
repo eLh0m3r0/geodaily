@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Mon, 31 Aug 2026 08:27:10 GMT</pubDate>
-        <lastBuildDate>Mon, 31 Aug 2026 08:27:10 GMT</lastBuildDate>
+        <pubDate>Tue, 01 Sep 2026 08:27:30 GMT</pubDate>
+        <lastBuildDate>Tue, 01 Sep 2026 08:27:30 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,20 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - September 01, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-01.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Tuesday, September 01, 2026 — one story worth your full attention today, plus 7 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Army Secretary Dan Driscoll Resigns After Rift With Hegseth</strong>: The Army just lost its top civilian leader during a live conflict with Iran. Driscoll and Defense Secretary Hegseth had clashed for months over Hegseth's push to cut top generals. The Army now has a l...</li></ul><p><em>Published: September 01, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Tue, 01 Sep 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260901</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-01.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - August 31, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-31.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Monday, August 31, 2026 — one story worth your full attention today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Iran Says It Hit a UAE Air Base; UAE Says That Never Happened</strong>: Iran's army says it fired drones at a UAE air base early Monday. The UAE calls that false. The dispute comes right after US strikes on Iranian rocket launchers, showing the war could pull in more Gulf...</li></ul><p><em>Published: August 31, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -183,25 +197,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-22.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - August 21, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-21.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Friday, August 21, 2026 — today's briefing covers 4 developments shaping global affairs: breaking news, strategic analysis, and the trends behind the headlines.</p><h3>Today's Key Stories:</h3><ul><li><strong>Washington's 'Toughest Sanctions in History' Bid to Force Iran's Economic Collapse</strong>: The US is escalating from military pressure to declared 'economic D-Day' against Iran, publicly pressuring China to comply while UAE severs ties—testing whether economic coercion can achieve what six ...</li><li><strong>Anwar's Unscripted Taiwan Alignment Signals Fraying ASEAN Neutrality</strong>: Malaysia's uncharacteristically explicit backing of Beijing's Taiwan position breaks from ASEAN's traditional hedging strategy, testing whether Southeast Asian non-alignment can survive intensifying U...</li><li><strong>US-Canada Tariff Deadline Tests North American Trade Architecture</strong>: An imminent deadline threatens renewed sweeping tariffs on steel, aluminum, autos, and lumber, with direct implications for North American supply chains, USMCA credibility, and precedent for US trade ...</li></ul><p><em>Published: August 21, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Fri, 21 Aug 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260821</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[United States]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Economy]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-21.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
