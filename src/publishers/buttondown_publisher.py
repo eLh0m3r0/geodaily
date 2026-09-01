@@ -232,19 +232,26 @@ class ButtondownPublisher:
         return cut + "…"
 
     def _build_subject(self, newsletter: Newsletter) -> str:
-        """Inbox subject: the dedicated AI-written subject, never the full
-        headline and never a date suffix.
+        """Inbox subject: the dedicated AI-written subject with the newsletter
+        name appended, never the full headline and never a date suffix.
 
         Subject, headline and preheader are three different jobs: the client
         already shows the date, the headline lives inside the email, and a
         title + " — Aug 25" combo just truncates mid-word in every inbox.
+        The brand goes LAST so the hook owns the first ~40 chars mobile
+        clients show — on desktop it adds recognition, on mobile it simply
+        truncates away.
         """
+        title = Config.NEWSLETTER_TITLE
         subject = (getattr(newsletter, 'email_subject', "") or "").strip()
         if not subject and newsletter.stories:
             subject = self._truncate_at_word(newsletter.stories[0].story_title, 56)
         if not subject:
-            return f"Geopolitical Daily — {newsletter.date.strftime('%B %-d, %Y')}"
-        return f"🌍 {self._truncate_at_word(subject, 60)}"
+            return f"{title} — {newsletter.date.strftime('%B %-d, %Y')}"
+        subject = self._truncate_at_word(subject, 60)
+        if title.lower() not in subject.lower():
+            subject = f"{subject} — {title}"
+        return f"🌍 {subject}"
 
     def _prepare_body(self, html: str) -> str:
         """Extract body content, strip JS handlers, and force Buttondown HTML mode.

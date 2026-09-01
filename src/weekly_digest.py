@@ -141,7 +141,7 @@ def main() -> int:
         return 0
 
     html = build_digest_html(issues)
-    subject = f"🌍 Your week in world news — {datetime.now().strftime('%b %-d')}"
+    subject = f"🌍 Your week in world news — {Config.NEWSLETTER_TITLE}"
 
     out = Config.PROJECT_ROOT / "output"
     out.mkdir(exist_ok=True)
