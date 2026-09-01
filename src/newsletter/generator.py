@@ -857,10 +857,17 @@ class NewsletterGenerator:
             text-transform: uppercase;
             letter-spacing: 2px;
             color: #14181D;
-            border-top: 3px solid #14181D;
-            display: inline-block;
-            padding-top: 7px;
-            margin: 34px 0 10px 0;
+            border-top: 1px solid #E6E9EC;
+            padding-top: 15px;
+            margin: 36px 0 14px 0;
+        }
+        .section-label::before {
+            content: "";
+            display: block;
+            width: 28px;
+            height: 3px;
+            background-color: #14181D;
+            margin-bottom: 7px;
         }
         .big-number { text-align: center; }
 
@@ -1084,10 +1091,13 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
                           f'margin:20px 0 6px 0;{NO_HYPHENS}">{paragraphs}</div>')
 
         def kicker(text):
-            return (f'<div style="margin-top:28px;">'
+            # Section head: full-width hairline + ink dash + label. The
+            # hairline is what visually separates the issue's chapters —
+            # without it the five sections blur into one column of text.
+            return (f'<div style="margin-top:34px;border-top:1px solid {LINE};padding-top:16px;">'
                     f'<div style="width:28px;height:3px;background-color:{INK};margin-bottom:7px;font-size:0;line-height:0;">&nbsp;</div>'
                     f'<div style="{SANS}font-size:11px;font-weight:800;letter-spacing:2px;'
-                    f'text-transform:uppercase;color:{INK};margin-bottom:12px;">{text}</div></div>')
+                    f'text-transform:uppercase;color:{INK};margin-bottom:14px;">{text}</div></div>')
 
         grid_block = self._email_grid_block(newsletter, INK, SUB, FAINT, LINE, WASH, ACCENT, SANS)
         signals_block = self._email_signals_block(newsletter, SUB, FAINT, ACCENT, SANS)

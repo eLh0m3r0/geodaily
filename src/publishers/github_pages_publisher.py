@@ -1403,8 +1403,12 @@ body {
 .section-label {
     font-size: 0.7rem; font-weight: 800; text-transform: uppercase;
     letter-spacing: 2px; color: var(--primary-color);
-    border-top: 3px solid var(--primary-color); width: fit-content;
-    padding-top: 0.4rem; margin: 2.25rem 0 0.75rem 0;
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.9rem; margin: 2.5rem 0 0.9rem 0;
+}
+.section-label::before {
+    content: ""; display: block; width: 28px; height: 3px;
+    background-color: var(--primary-color); margin-bottom: 0.45rem;
 }
 .story.compact .story-title { font-size: 1.1rem; }
 .coverage-mini { margin: 0.25rem 0 0.75rem 0; }
