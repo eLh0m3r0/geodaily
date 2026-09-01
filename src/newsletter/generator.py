@@ -43,8 +43,9 @@ class NewsletterGenerator:
         logger.info(f"Generating newsletter with {len(analyses)} stories and "
                     f"{len(quick_hits)} quick hits for {date.strftime('%Y-%m-%d')}")
 
-        # Balance content types: aim for 20-30% breaking news, rest analysis/trends
-        selected_stories = self._select_balanced_stories(analyses)
+        # Keep the analyzer's editorial order: story #1 is the day's flagship
+        # (it carries the perspective grid), the rest are ranked after it.
+        selected_stories = list(analyses)
 
         # Create newsletter object
         newsletter = Newsletter(
@@ -175,19 +176,24 @@ class NewsletterGenerator:
             intro = f'<div class="intro">{newsletter.intro_text}</div>'
         
         # Generate stories — the perspective grid and signals live inside the
-        # big story's flow, not as trailing boxes after it
+        # big story's flow; secondary stories run compact with a coverage
+        # mini-bar instead of the full grid
         grid_block = self._generate_perspective_grid_html(newsletter)
         signals_block = self._generate_signals_html(newsletter)
         stories_html = ""
         for i, story in enumerate(newsletter.stories):
             if i == 0:
                 stories_html += '<div class="section-label">The Big Story</div>'
+            elif i == 1:
+                stories_html += '<div class="section-label">More Top Stories</div>'
             stories_html += self._generate_story_html(
                 story,
                 mid_block=grid_block if i == 0 else "",
-                after_watch_block=signals_block if i == 0 else "")
+                after_watch_block=signals_block if i == 0 else "",
+                compact=i > 0,
+                coverage_line=self._generate_coverage_mini_html(story) if i > 0 else "")
 
-        # "Also today" roundup + "The big number" delight element
+        # "Also today" roundup + blindspot + "The big number"
         stories_html += self._generate_extras_html(newsletter)
         
         # Build optional Buttondown subscribe form (username resolved from the
@@ -315,8 +321,9 @@ class NewsletterGenerator:
         return html
     
     def _generate_story_html(self, story: AIAnalysis, mid_block: str = "",
-                             after_watch_block: str = "") -> str:
-        """Generate HTML for a single story."""
+                             after_watch_block: str = "", compact: bool = False,
+                             coverage_line: str = "") -> str:
+        """Generate HTML for a single story (compact = secondary story)."""
 
         # Content type styling
         content_type_class = story.content_type.value
@@ -351,11 +358,13 @@ class NewsletterGenerator:
         </div>
         """
 
+        compact_class = " compact" if compact else ""
         story_html = f"""
-        <div class="story {content_type_class}">
+        <div class="story {content_type_class}{compact_class}">
             <div class="story-header">
                 <h2 class="story-title">{story.story_title}</h2>
                 {scores_html}
+                {coverage_line}
             </div>
 
             <div class="story-section">
@@ -420,19 +429,49 @@ class NewsletterGenerator:
                     </div>
                 </div>"""
 
-        blindspot_html = ""
-        if grid.blindspot:
-            arrow = (f' <a href="{grid.blindspot_url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>'
-                     if grid.blindspot_url else "")
-            blindspot_html = f'<div class="blindspot">&#9888; <strong>Blindspot:</strong> {grid.blindspot}{arrow}</div>'
-
         return f"""
         <div class="perspective-grid">
             <div class="section-heading">How the World Covers It</div>
             <div class="coverage-bar">{bar_spans}</div>
             <div class="coverage-legend">{grid.total_outlets} outlets &middot; {legend_html}</div>
             {rows}
-            {blindspot_html}
+        </div>
+"""
+
+    def _generate_coverage_mini_html(self, story: AIAnalysis) -> str:
+        """One-line coverage DNA for stories without the full grid: a small
+        proportional bar plus outlet counts per perspective group."""
+        counts = getattr(story, 'coverage_counts', None) or {}
+        outlets = getattr(story, 'coverage_outlets', 0) or 0
+        if not counts or outlets < 2:
+            return ""
+        from ..perspectives import GROUP_COLORS, GROUP_ORDER, label_of
+        ordered = sorted(counts.items(),
+                         key=lambda kv: GROUP_ORDER.index(kv[0]) if kv[0] in GROUP_ORDER else 99)
+        bar_spans = "".join(
+            f'<span style="flex:{c};background-color:{GROUP_COLORS.get(g, "#6B7280")};" title="{label_of(g)}: {c}"></span>'
+            for g, c in ordered
+        )
+        legend = " &middot; ".join(f'{label_of(g)} {c}' for g, c in ordered)
+        return (f'<div class="coverage-mini">'
+                f'<div class="coverage-bar">{bar_spans}</div>'
+                f'<div class="coverage-legend">{outlets} outlets &middot; {legend}</div>'
+                f'</div>')
+
+    def _generate_blindspot_html(self, newsletter: Newsletter) -> str:
+        """The Blindspot — its own section: a story one part of the world
+        covers heavily while the rest ignores it. Deliberately OUTSIDE the
+        big story's flow, because it is a different event by construction."""
+        grid = getattr(newsletter, 'perspective_grid', None)
+        if not grid or not grid.blindspot:
+            return ""
+        arrow = (f' <a href="{grid.blindspot_url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>'
+                 if grid.blindspot_url else "")
+        return f"""
+        <div class="blindspot-section">
+            <div class="section-heading">The Blindspot</div>
+            <div class="blindspot-note">A story covered heavily in one part of the world &mdash; and barely mentioned in the rest.</div>
+            <div class="blindspot">{grid.blindspot}{arrow}</div>
         </div>
 """
 
@@ -455,9 +494,8 @@ class NewsletterGenerator:
 """
 
     def _generate_extras_html(self, newsletter: Newsletter) -> str:
-        """Render Also Today and Big Number after the stories (web).
-
-        The perspective grid and signals render inside the big story, not here.
+        """Render Also Today, the Blindspot and Big Number after the stories
+        (web). The perspective grid and signals render inside the big story.
         """
         html = ""
         if newsletter.quick_hits:
@@ -475,6 +513,7 @@ class NewsletterGenerator:
 {items}            </ul>
         </div>
 """
+        html += self._generate_blindspot_html(newsletter)
         if newsletter.big_number:
             bn = newsletter.big_number
             link = f' <a href="{bn.url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>' if bn.url else ""
@@ -876,16 +915,24 @@ class NewsletterGenerator:
             font-size: 14px;
         }
         .blindspot {
-            background-color: #fdf3e3;
-            color: #8a5a17;
-            border-radius: 6px;
-            padding: 10px 14px;
-            margin-top: 14px;
-            font-size: 14px;
+            border-left: 3px solid #B26B00;
+            padding: 2px 0 2px 12px;
+            color: #14181D;
+            font-size: 14.5px;
+            line-height: 1.6;
         }
+        .blindspot-note {
+            font-size: 12px;
+            color: #9AA3AB;
+            margin: -6px 0 10px 0;
+        }
+        .story.compact .story-title { font-size: 17px; }
+        .coverage-mini { margin: 2px 0 14px 0; }
+        .coverage-mini .coverage-bar { height: 5px; margin-bottom: 5px; }
+        .coverage-mini .coverage-legend { margin-bottom: 0; }
 
         /* Also Today roundup */
-        .also-today, .big-number {
+        .also-today, .big-number, .blindspot-section {
             margin: 30px 0;
             padding: 20px 24px;
             background-color: #f7f8fa;
@@ -959,10 +1006,11 @@ class NewsletterGenerator:
         day_name = date.strftime('%A')
         date_str = date.strftime('%B %d, %Y')
 
+        story_phrase = ("one story worth your full attention" if story_count <= 1
+                        else f"the {story_count} stories that matter most")
         if quick_hit_count:
-            return (f"Good morning. It's {day_name}, {date_str} — one story worth your "
-                    f"full attention today, plus {quick_hit_count} quick updates from "
-                    f"around the world.")
+            return (f"Good morning. It's {day_name}, {date_str} — {story_phrase} today, "
+                    f"plus {quick_hit_count} quick updates from around the world.")
         return (f"Good morning. It's {day_name}, {date_str} — today's briefing covers "
                 f"{story_count} developments shaping global affairs.")
     
@@ -1007,6 +1055,7 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
   .nl-body{padding:6px !important;}
   .nl-content{padding-left:18px !important;padding-right:18px !important;}
   .nl-h1{font-size:23px !important;}
+  .nl-h2{font-size:19px !important;}
   .nl-box{padding:12px 14px !important;}
   .nl-num{font-size:42px !important;}
 }
@@ -1047,10 +1096,17 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
         for i, story in enumerate(newsletter.stories):
             if i == 0:
                 stories_html += kicker("The Big Story")
+            elif i == 1:
+                stories_html += kicker("More Top Stories")
+            else:
+                stories_html += (f'<div style="border-top:1px solid {LINE};'
+                                 f'margin:6px 0 18px 0;font-size:0;line-height:0;">&nbsp;</div>')
             stories_html += self._generate_email_story_html(
                 story, INK, SUB, FAINT, LINE, WASH, ACCENT, RED, SANS,
                 mid_block=grid_block if i == 0 else "",
-                after_watch_block=signals_block if i == 0 else ""
+                after_watch_block=signals_block if i == 0 else "",
+                compact=i > 0,
+                coverage_line=(self._email_coverage_line(story, FAINT, SANS) if i > 0 else "")
             )
         stories_html += self._generate_email_extras_html(
             newsletter, INK, SUB, FAINT, LINE, ACCENT, SANS, kicker
@@ -1113,9 +1169,10 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
     def _generate_email_story_html(
         self, story, INK: str, SUB: str, FAINT: str, LINE: str, WASH: str,
         ACCENT: str, RED: str, SANS: str,
-        mid_block: str = "", after_watch_block: str = ""
+        mid_block: str = "", after_watch_block: str = "",
+        compact: bool = False, coverage_line: str = ""
     ) -> str:
-        """Inline-styled HTML for one story in the email."""
+        """Inline-styled HTML for one story in the email (compact = secondary)."""
         NO_HYPHENS = "-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;"
 
         content_type_val = story.content_type.value
@@ -1148,9 +1205,13 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
             sources_html = (f'<div style="margin-top:16px;">{label("Sources")}'
                             f'<div style="{SANS}font-size:13.5px;line-height:1.7;">{links}</div></div>')
 
+        title_class = "nl-h2" if compact else "nl-h1"
+        title_size = "20px" if compact else "26px"
+        title_margin = "0 0 10px 0" if compact else "0 0 14px 0"
         return f"""<div style="margin-bottom:6px;">
   {meta_line}
-  <h1 class="nl-h1" style="{SANS}font-size:26px;font-weight:800;letter-spacing:-0.3px;color:{INK};margin:0 0 14px 0;line-height:1.25;{NO_HYPHENS}">{story.story_title}</h1>
+  <h1 class="{title_class}" style="{SANS}font-size:{title_size};font-weight:800;letter-spacing:-0.3px;color:{INK};margin:{title_margin};line-height:1.25;{NO_HYPHENS}">{story.story_title}</h1>
+  {coverage_line}
   <div style="margin-bottom:16px;">
     {label("Why This Matters")}
     <div style="{body_style}">{story.why_important}</div>
@@ -1206,24 +1267,53 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
                      f'<strong>{label_of(view.perspective)} ({view.article_count})</strong>{state}'
                      f' &mdash; <span style="color:{SUB};">{view.framing}</span>{quote_html}</div>')
 
-        blindspot_html = ""
-        if grid.blindspot:
-            arrow = (f' <a href="{grid.blindspot_url}" style="color:{ACCENT};text-decoration:none;">&rarr;</a>'
-                     if grid.blindspot_url else "")
-            blindspot_html = (f'<div style="border-left:3px solid #B26B00;padding:2px 0 2px 12px;margin-top:14px;">'
-                              f'<span style="{SANS}font-size:10px;font-weight:800;letter-spacing:1.5px;'
-                              f'text-transform:uppercase;color:#B26B00;">Blindspot</span>'
-                              f'<div style="{SANS}font-size:13.5px;line-height:1.6;color:{INK};'
-                              f'margin-top:3px;{NO_HYPHENS}">{grid.blindspot}{arrow}</div></div>')
-
         return (f'<div style="margin:0 0 18px 0;border-top:1px solid {LINE};padding-top:14px;">'
                 f'<div style="{SANS}font-size:10.5px;font-weight:700;letter-spacing:1.2px;'
                 f'text-transform:uppercase;color:{FAINT};margin-bottom:8px;">How the World Covers It</div>'
                 f'<div style="font-size:0;line-height:0;margin-bottom:6px;">{bar}</div>'
                 f'<div style="{SANS}font-size:12px;color:{FAINT};margin-bottom:14px;">'
                 f'{grid.total_outlets} outlets &middot; {legend}</div>'
-                f'{rows}{blindspot_html}'
+                f'{rows}'
                 f'<div style="border-bottom:1px solid {LINE};margin-top:16px;font-size:0;">&nbsp;</div></div>')
+
+    def _email_coverage_line(self, story, FAINT: str, SANS: str) -> str:
+        """Coverage DNA mini-bar for secondary stories (email): proportional
+        color bar + per-group outlet counts, computed without any AI call."""
+        counts = getattr(story, 'coverage_counts', None) or {}
+        outlets = getattr(story, 'coverage_outlets', 0) or 0
+        if not counts or outlets < 2:
+            return ""
+        from ..perspectives import GROUP_COLORS, GROUP_ORDER, label_of
+        ordered = sorted(counts.items(),
+                         key=lambda kv: GROUP_ORDER.index(kv[0]) if kv[0] in GROUP_ORDER else 99)
+        total = sum(c for _, c in ordered) or 1
+        bar = "".join(
+            f'<span style="display:inline-block;width:{max(4, round(100 * c / total, 1))}%;'
+            f'height:5px;background-color:{GROUP_COLORS.get(g, "#6B7280")};"></span>'
+            for g, c in ordered
+        )
+        legend = " &middot; ".join(f'{label_of(g)} {c}' for g, c in ordered)
+        return (f'<div style="margin:0 0 12px 0;">'
+                f'<div style="font-size:0;line-height:0;margin-bottom:4px;">{bar}</div>'
+                f'<div style="{SANS}font-size:11.5px;color:{FAINT};">{outlets} outlets &middot; {legend}</div>'
+                f'</div>')
+
+    def _email_blindspot_block(self, newsletter: Newsletter, INK: str, SUB: str,
+                               FAINT: str, ACCENT: str, SANS: str, kicker) -> str:
+        """The Blindspot as its own section — by construction a DIFFERENT
+        event than the big story, so it must not render inside the story."""
+        grid = getattr(newsletter, 'perspective_grid', None)
+        if not grid or not grid.blindspot:
+            return ""
+        NO_HYPHENS = "-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;"
+        arrow = (f' <a href="{grid.blindspot_url}" style="color:{ACCENT};text-decoration:none;">&rarr;</a>'
+                 if grid.blindspot_url else "")
+        return (f'{kicker("The Blindspot")}'
+                f'<div style="{SANS}font-size:12px;color:{FAINT};margin:-6px 0 10px 0;">'
+                f'A story covered heavily in one part of the world &mdash; and barely mentioned in the rest.</div>'
+                f'<div style="border-left:3px solid #B26B00;padding:2px 0 2px 12px;margin-bottom:8px;'
+                f'{SANS}font-size:14.5px;line-height:1.6;color:{INK};{NO_HYPHENS}">'
+                f'{grid.blindspot}{arrow}</div>')
     def _email_signals_block(self, newsletter: Newsletter, SUB: str,
                              FAINT: str, ACCENT: str, SANS: str) -> str:
         """Signals — compact lines directly under What to Watch."""
@@ -1243,7 +1333,7 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
         self, newsletter: Newsletter, INK: str, SUB: str, FAINT: str,
         LINE: str, ACCENT: str, SANS: str, kicker
     ) -> str:
-        """Also Today (hairline list) + Big Number (centered) after the story."""
+        """Also Today (hairline list) + Blindspot + Big Number after the stories."""
         NO_HYPHENS = "-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;"
         html = ""
         if newsletter.quick_hits:
@@ -1259,6 +1349,7 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
                           f'letter-spacing:1px;color:{ACCENT};margin-right:7px;">{region}</span>'
                           f'{hit.text}{arrow}</div>')
             html += f'{kicker("Also Today")}<div style="margin-bottom:8px;">{items}</div>'
+        html += self._email_blindspot_block(newsletter, INK, SUB, FAINT, ACCENT, SANS, kicker)
         if newsletter.big_number:
             bn = newsletter.big_number
             arrow = (f' <a href="{bn.url}" style="color:{ACCENT};text-decoration:none;">&rarr;</a>'

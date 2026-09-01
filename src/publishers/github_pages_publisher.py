@@ -147,14 +147,19 @@ class GitHubPagesPublisher:
         for i, analysis in enumerate(analyses, 1):
             if i == 1:
                 html += '                    <div class="section-label">The Big Story</div>\n'
+            elif i == 2:
+                html += '                    <div class="section-label">More Top Stories</div>\n'
+            compact_class = "" if i == 1 else " compact"
+            coverage_mini = "" if i == 1 else self._build_coverage_mini_html(analysis)
             html += f"""
-                    <section class="story" id="story-{i}">
+                    <section class="story{compact_class}" id="story-{i}">
                         <header class="story-header">
                             <h2 class="story-title">{analysis.story_title}</h2>
                             <div class="story-meta">
                                 <span class="geo-tag region-tag">{getattr(analysis, 'region', 'global').replace('_', ' ').title()}</span>
                                 <span class="geo-tag event-tag">{getattr(analysis, 'event_type', 'political').replace('_', ' ').title()}</span>
                             </div>
+                            {coverage_mini}
                         </header>
 
                         <div class="story-content">
@@ -252,19 +257,46 @@ class GitHubPagesPublisher:
                             <div><span class="persp-name">{label_of(view.perspective)} ({view.article_count})</span>{state}
                             &mdash; {view.framing}{quote_html}</div>
                         </div>"""
-        blindspot_html = ""
-        if grid.blindspot:
-            arrow = (f' <a href="{grid.blindspot_url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>'
-                     if grid.blindspot_url else "")
-            blindspot_html = f'<div class="blindspot">&#9888; <strong>Blindspot:</strong> {grid.blindspot}{arrow}</div>'
         return f"""
                     <div class="perspective-grid">
                         <h3 class="section-heading">How the World Covers It</h3>
                         <div class="coverage-bar">{bar_spans}</div>
                         <div class="coverage-legend">{grid.total_outlets} outlets &middot; {legend_html}</div>
                         {rows}
-                        {blindspot_html}
                     </div>
+"""
+
+    def _build_coverage_mini_html(self, analysis: AIAnalysis) -> str:
+        """Coverage DNA mini-bar for stories without the full grid."""
+        counts = getattr(analysis, 'coverage_counts', None) or {}
+        outlets = getattr(analysis, 'coverage_outlets', 0) or 0
+        if not counts or outlets < 2:
+            return ""
+        from ..perspectives import GROUP_COLORS, GROUP_ORDER, label_of
+        ordered = sorted(counts.items(),
+                         key=lambda kv: GROUP_ORDER.index(kv[0]) if kv[0] in GROUP_ORDER else 99)
+        bar_spans = "".join(
+            f'<span style="flex:{c};background-color:{GROUP_COLORS.get(g, "#6B7280")};" title="{label_of(g)}: {c}"></span>'
+            for g, c in ordered
+        )
+        legend = " &middot; ".join(f'{label_of(g)} {c}' for g, c in ordered)
+        return (f'<div class="coverage-mini"><div class="coverage-bar">{bar_spans}</div>'
+                f'<div class="coverage-legend">{outlets} outlets &middot; {legend}</div></div>')
+
+    def _build_blindspot_html(self, newsletter: Newsletter) -> str:
+        """The Blindspot as its own section — a different event by design,
+        so it must not sit inside the big story's flow."""
+        grid = getattr(newsletter, 'perspective_grid', None)
+        if not grid or not grid.blindspot:
+            return ""
+        arrow = (f' <a href="{grid.blindspot_url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>'
+                 if grid.blindspot_url else "")
+        return f"""
+                    <section class="blindspot-section">
+                        <h2 class="section-label">The Blindspot</h2>
+                        <p class="blindspot-note">A story covered heavily in one part of the world &mdash; and barely mentioned in the rest.</p>
+                        <div class="blindspot">{grid.blindspot}{arrow}</div>
+                    </section>
 """
 
     def _build_signals_html(self, newsletter: Newsletter) -> str:
@@ -285,7 +317,7 @@ class GitHubPagesPublisher:
 """
 
     def _build_extras_html(self, newsletter: Newsletter) -> str:
-        """Also Today roundup + Big Number after the stories.
+        """Also Today roundup + Blindspot + Big Number after the stories.
 
         The perspective grid and signals render inside the big story instead.
         """
@@ -306,6 +338,7 @@ class GitHubPagesPublisher:
 {items}                        </ul>
                     </section>
 """
+        html += self._build_blindspot_html(newsletter)
         if big_number:
             arrow = f' <a href="{big_number.url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>' if big_number.url else ""
             html += f"""
@@ -318,31 +351,33 @@ class GitHubPagesPublisher:
         return html
 
     def _publish_story_page(self, newsletter: Newsletter, analyses: List[AIAnalysis]) -> Optional[str]:
-        """Write an evergreen per-story SEO page for the big story.
+        """Write an evergreen per-story SEO page for EVERY selected story.
 
         Unlike the newsletter archive (rotated, max N issues), story pages
-        accumulate: each carries the perspective grid — content no other
-        outlet publishes — which is the SEO play.
+        accumulate — each day's topics stay indexable. The big story's page
+        carries the perspective grid; secondary stories carry the coverage
+        mini-bar. Three stories a day means three indexable topic pages.
         """
         if not analyses:
             return None
         from ..newsletter.issue_store import story_slug
-        story = analyses[0]
+        from ..newsletter.source_display import dedupe_sources
         date_str = newsletter.date.strftime('%Y-%m-%d')
-        slug = f"{date_str}-{story_slug(story.story_title)}"
         stories_dir = self.output_dir / "stories"
         stories_dir.mkdir(exist_ok=True)
 
-        from ..newsletter.source_display import dedupe_sources
-        sources_html = "".join(
-            f'<li><a href="{url}" target="_blank" rel="noopener">{name}</a></li>\n'
-            for url, name in dedupe_sources(story.sources, limit=4)
-        )
-        description = (story.why_important or "")[:155].replace('"', "'")
+        first_path = None
+        for i, story in enumerate(analyses):
+            slug = f"{date_str}-{story_slug(story.story_title)}"
+            sources_html = "".join(
+                f'<li><a href="{url}" target="_blank" rel="noopener">{name}</a></li>\n'
+                for url, name in dedupe_sources(story.sources, limit=4)
+            )
+            description = (story.why_important or "")[:155].replace('"', "'")
+            extra_block = self._build_grid_html(newsletter) if i == 0 \
+                else self._build_coverage_mini_html(story)
 
-        grid_html = self._build_grid_html(newsletter)
-
-        html = f"""<!DOCTYPE html>
+            html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -381,7 +416,7 @@ class GitHubPagesPublisher:
                             <div class="sources"><h4>Sources</h4><ul>{sources_html}</ul></div>
                         </div>
                     </section>
-{grid_html}
+{extra_block}
                 </div>
                 <footer class="newsletter-footer">
                     <p>From the <a href="../newsletters/newsletter-{date_str}.html">{newsletter.date.strftime('%B %d, %Y')} edition</a> of {newsletter.title}.</p>
@@ -392,11 +427,13 @@ class GitHubPagesPublisher:
     </main>
 </body>
 </html>"""
-        path = stories_dir / f"{slug}.html"
-        with open(path, 'w', encoding='utf-8') as f:
-            f.write(html)
-        logger.info(f"Story page published: stories/{slug}.html")
-        return f"stories/{slug}.html"
+            path = stories_dir / f"{slug}.html"
+            with open(path, 'w', encoding='utf-8') as f:
+                f.write(html)
+            logger.info(f"Story page published: stories/{slug}.html")
+            if first_path is None:
+                first_path = f"stories/{slug}.html"
+        return first_path
 
     def _get_impact_class(self, score: int) -> str:
         """Get CSS class based on impact score."""
@@ -1359,19 +1396,24 @@ body {
 }
 .persp-quote { font-style: italic; color: var(--text-light); margin-top: 0.25rem; font-size: 0.9rem; }
 .blindspot {
-    background: #fdf3e3; color: #8a5a17; border-radius: 6px;
-    padding: 0.6rem 0.9rem; margin-top: 0.9rem; font-size: 0.9rem;
+    border-left: 3px solid #B26B00; padding: 2px 0 2px 12px;
+    color: var(--primary-color); font-size: 0.95rem; line-height: 1.6;
 }
+.blindspot-note { font-size: 0.8rem; color: var(--text-light); margin: -0.25rem 0 0.75rem 0; }
 .section-label {
-    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 3px; color: #b8962e; text-align: center;
-    border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;
-    margin: 2.25rem 0 0.75rem 0;
+    font-size: 0.7rem; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 2px; color: var(--primary-color);
+    border-top: 3px solid var(--primary-color); width: fit-content;
+    padding-top: 0.4rem; margin: 2.25rem 0 0.75rem 0;
 }
+.story.compact .story-title { font-size: 1.1rem; }
+.coverage-mini { margin: 0.25rem 0 0.75rem 0; }
+.coverage-mini .coverage-bar { height: 5px; margin-bottom: 0.3rem; }
+.coverage-mini .coverage-legend { margin-bottom: 0; font-size: 0.72rem; }
 .big-number { text-align: center; }
 .signals-inline { margin: -0.5rem 0 1.25rem 0; }
 .signals-inline .quick-hits { list-style: none; padding-left: 0.25rem; }
-.also-today, .big-number {
+.also-today, .big-number, .blindspot-section {
     margin: 2rem 0; padding: 1.25rem 1.5rem;
     background: var(--bg-light); border-radius: 8px;
 }
