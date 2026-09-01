@@ -75,15 +75,22 @@ class PerspectiveAnalyzer:
                 groups[g].append(a)
         return dict(groups)
 
-    def _blindspot_candidates(self, story: AIAnalysis, articles: List[Article],
+    def _blindspot_candidates(self, stories: List[AIAnalysis], articles: List[Article],
                               limit: int = 2) -> List[List[Article]]:
-        """Events well covered outside Western media but absent from it
-        (and not the big story itself)."""
-        story_urls = set(story.sources or [])
+        """Events well covered outside Western media but absent from it —
+        and not any of the issue's selected stories (excluded by cited URL
+        AND by whole event cluster, so an uncited cluster member can't
+        resurface the story as its own blindspot)."""
+        story_urls = set()
+        for s in stories:
+            story_urls.update(s.sources or [])
+        story_clusters = {getattr(a, 'cluster_id', None) for a in articles
+                          if a.url in story_urls and getattr(a, 'cluster_id', None)}
         events = defaultdict(list)
         for a in articles:
-            if getattr(a, 'cluster_id', None) and a.url not in story_urls:
-                events[a.cluster_id].append(a)
+            cid = getattr(a, 'cluster_id', None)
+            if cid and cid not in story_clusters and a.url not in story_urls:
+                events[cid].append(a)
         candidates = []
         for members in events.values():
             if len(members) < 2:
@@ -94,11 +101,22 @@ class PerspectiveAnalyzer:
         candidates.sort(key=lambda ms: -sum(m.source_weight or 1.0 for m in ms))
         return candidates[:limit]
 
+    def coverage_counts(self, story: AIAnalysis, articles: List[Article]) -> Tuple[Dict[str, int], int]:
+        """(perspective group -> article count, distinct outlet count) for one
+        story's event cluster. Pure computation — no API call — so every
+        story can carry the coverage mini-bar for free."""
+        members = self._story_articles(story, articles)
+        counts: Dict[str, int] = defaultdict(int)
+        for a in members:
+            counts[group_of(getattr(a, 'source_perspective', 'western_mainstream'))] += 1
+        return dict(counts), len({a.source for a in members})
+
     # ------------------------------------------------------------------
     # Grid construction
     # ------------------------------------------------------------------
 
-    def build_grid(self, story: AIAnalysis, articles: List[Article]) -> Optional[PerspectiveGrid]:
+    def build_grid(self, story: AIAnalysis, articles: List[Article],
+                   all_stories: Optional[List[AIAnalysis]] = None) -> Optional[PerspectiveGrid]:
         members = self._story_articles(story, articles)
         if not members:
             return None
@@ -109,7 +127,7 @@ class PerspectiveAnalyzer:
                   for g in groups}
         grid = PerspectiveGrid(total_outlets=len({a.source for a in members}), counts=counts)
 
-        blindspot_events = self._blindspot_candidates(story, articles)
+        blindspot_events = self._blindspot_candidates(all_stories or [story], articles)
 
         if self.mock_mode:
             return self._mock_grid(grid, groups, blindspot_events)

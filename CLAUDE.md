@@ -93,8 +93,8 @@ python src/sitemap_generator.py             # Generate sitemap for GitHub Pages
 ### Pipeline Flow
 1. **Collection Layer** (`src/collectors/`): Collects from 61 sources (59 RSS + 2 web scraping) across 14 global perspectives
 2. **Processing Layer** (`src/processors/`): Semantic event clustering (fastembed MiniLM + HDBSCAN in `embedding_clusterer.py`, title-similarity fallback), dedup and scoring
-3. **AI Analysis Layer** (`src/ai/`): Claude API with cost controls — one issue call (big story + quick hits + big number, `simple_multi_stage_analyzer.py`) plus one perspective-grid call (`perspective_analyzer.py`), with a Flesch-Kincaid readability gate (`readability.py`)
-4. **Newsletter Generation** (`src/newsletter/`): Issue format = THE BIG STORY (with 'How the World Covers It' perspective grid, blindspot, signals) + ALSO TODAY quick hits + THE BIG NUMBER; web + email-safe renderers, named source links (`source_display.py`), machine-readable issue JSON (`issue_store.py`)
+3. **AI Analysis Layer** (`src/ai/`): Claude API with cost controls — one issue call (3 ranked stories + quick hits + big number, `simple_multi_stage_analyzer.py`; no sports/celebrity, quick hits deduped against story events by URL/cluster/title-overlap) plus one perspective-grid call (`perspective_analyzer.py`), with a Flesch-Kincaid readability gate (`readability.py`)
+4. **Newsletter Generation** (`src/newsletter/`): Hybrid issue format = THE BIG STORY (full treatment: 'How the World Covers It' perspective grid + signals) + MORE TOP STORIES (2 compact stories, each with a computed coverage mini-bar — no extra AI call) + ALSO TODAY quick hits + THE BLINDSPOT (own section — by construction a DIFFERENT event than the stories, never rendered inside a story) + THE BIG NUMBER; story order is editorial (analyzer ranking, never re-sorted by score); web + email-safe renderers, named source links (`source_display.py`), machine-readable issue JSON (`issue_store.py`)
 5. **AI Archive Layer** (`src/archiver/`): Comprehensive data archiving and retention management
 6. **Unified Dashboard Layer** (`src/dashboard/`): Single streamlined dashboard for GitHub Pages
 7. **Publishing Layer** (`src/publishers/`): GitHub Pages deployment and email notifications
@@ -208,6 +208,7 @@ The AI analyzer now evaluates stories across multiple dimensions:
 - `ALLOW_OVERWRITE=true` to regenerate existing newsletters
 - `NEWSLETTER_EDITOR_NAME` named human curator for the footer persona ("drafted with AI, curated by X") — set it; anonymous AI footers measurably hurt trust
 - `NEWSLETTER_TAGLINE` (default "The world's news from every side")
+- `NEWSLETTER_TARGET_STORIES=3` hybrid default: big story (full treatment) + 2 compact stories; evergreen SEO story page is published for EVERY story (3 indexable topics/day)
 - `READABILITY_MAX_GRADE=9.5` Flesch-Kincaid gate; denser copy triggers one simplify rewrite
 - `BUTTONDOWN_WEEKLY_TAG=weekly` tag for Sunday-digest subscribers (excluded from daily sends)
 - Configurable AI provider support

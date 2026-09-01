@@ -118,6 +118,11 @@ class AIAnalysis:
     region: str = "global"       # europe|middle_east|indo_pacific|americas|africa|central_asia|global
     actor_type: str = "state"    # state|non_state|international_org|mixed
     event_type: str = "political" # diplomatic|military|economic|informational_cyber|humanitarian|political
+    # Coverage DNA, computed from the story's event cluster without any AI
+    # call: perspective group -> article count, and distinct outlet total.
+    # Rendered as the mini coverage bar on stories without the full grid.
+    coverage_counts: Dict[str, int] = field(default_factory=dict)
+    coverage_outlets: int = 0
     
     def __post_init__(self):
         # Validate word counts
@@ -226,8 +231,9 @@ class Newsletter:
     preheader: str = ""
 
     def __post_init__(self):
-        # Sort stories by impact score (highest first)
-        self.stories.sort(key=lambda s: s.impact_score, reverse=True)
+        # Story order is editorial: the analyzer ranks them and the first
+        # carries the perspective grid — never re-sort by score here.
+        pass
 
 @dataclass
 class ProcessingStats:

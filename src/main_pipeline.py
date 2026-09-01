@@ -574,7 +574,18 @@ def run_complete_pipeline() -> bool:
             with PerformanceProfiler.profile_operation("perspective_enrichment", logger):
                 try:
                     from .ai.perspective_analyzer import PerspectiveAnalyzer
-                    perspective_grid = PerspectiveAnalyzer().build_grid(analyses[0], scored_articles)
+                    perspective_analyzer = PerspectiveAnalyzer()
+                    # Coverage DNA for every story (pure computation, no AI):
+                    # feeds the mini coverage bar on stories without the grid.
+                    for story_item in analyses:
+                        try:
+                            counts, outlets = perspective_analyzer.coverage_counts(story_item, scored_articles)
+                            story_item.coverage_counts = counts
+                            story_item.coverage_outlets = outlets
+                        except Exception:
+                            pass
+                    perspective_grid = perspective_analyzer.build_grid(
+                        analyses[0], scored_articles, all_stories=analyses)
                     if perspective_grid:
                         logger.info("Perspective grid built",
                                    pipeline_stage=PipelineStage.AI_ANALYSIS,

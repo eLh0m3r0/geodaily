@@ -68,7 +68,7 @@ class SimplifiedMultiStageAnalyzer:
         start_time = time.time()
 
         if self.mock_mode:
-            return self._create_mock_issue(articles)
+            return self._create_mock_issue(articles, target_stories)
 
         # Event-aware pre-filter: keep corroborated, perspective-diverse events
         sorted_articles = self._prefilter_articles(articles, cap=60)
@@ -82,7 +82,7 @@ class SimplifiedMultiStageAnalyzer:
         if not budget_check['allowed']:
             logger.error(f"AI analysis blocked by budget: {budget_check['reason']} "
                          f"(daily ${budget_check['current_daily_cost']:.2f}/${budget_check['daily_limit']:.2f})")
-            return []
+            return IssueContent()
 
         try:
             # Archive the request
@@ -267,7 +267,7 @@ URL: {}
                                  "there is a genuinely new development):\n" + history + "\n")
 
         # Use string formatting to avoid f-string issues with article content containing braces
-        template = """You write a daily world-news brief for smart readers who are NOT foreign-policy professionals. Each issue has three parts: THE BIG STORY (the one thing worth full attention today), ALSO TODAY (a quick world roundup so the reader feels caught up), and THE BIG NUMBER (one striking figure from today's news).
+        template = """You write a daily world-news brief for smart readers who are NOT foreign-policy professionals. Each issue has: THE BIG STORY (the one thing worth full attention today), MORE TOP STORIES (the next most consequential distinct events, covered more briefly), ALSO TODAY (a quick world roundup so the reader feels caught up), and THE BIG NUMBER (one striking figure from today's news).
 {}
 ARTICLES TO ANALYZE:
 {}
@@ -327,11 +327,12 @@ Return this EXACT JSON structure — a single JSON object, no other text:
 }}
 
 CONTENT RULES:
-1. big_stories: exactly the number of deep stories requested. The first is THE story of the day — the one a busy reader must know.
-2. quick_hits: 6 to 8 items, each about a DIFFERENT event than the big stories and than each other. Together they must span at least 4 distinct regions — this is the reader's "I'm caught up on the world" section, so favor geographic spread (Africa, Latin America and Asia are chronically under-covered; include them when the material exists).
+1. big_stories: exactly the number of deep stories requested, ranked by geopolitical consequence — most consequential FIRST. Each must cover a DIFFERENT event. The first is THE story of the day — the one a busy reader must know; give it your fullest why_important. For stories after the first, keep why_important to max 50 words.
+2. quick_hits: 6 to 8 items, each about a DIFFERENT event than ALL of the big_stories and than each other — never restate any selected story as a quick hit, not even from a different angle. Together they must span at least 4 distinct regions — this is the reader's "I'm caught up on the world" section, so favor geographic spread (Africa, Latin America and Asia are chronically under-covered; include them when the material exists).
 3. big_number: one genuinely striking, verifiable figure taken from one of the articles. If no article contains a striking number, use null.
-4. All scores integers 1-10. article_index values must reference the list above.
-5. Return ONLY the raw JSON object — no markdown, no explanations, no code blocks.
+4. NO sports, entertainment, celebrity or human-interest items ANYWHERE in the issue — not as a story, not as a quick hit, not as the big number — unless the event has direct geopolitical consequences (state action, sanctions, boycotts, diplomatic fallout). An athlete retiring or a film winning awards is never news for this brief.
+5. All scores integers 1-10. article_index values must reference the list above.
+6. Return ONLY the raw JSON object — no markdown, no explanations, no code blocks.
 
 FIELD DEFINITIONS:
 - content_type: breaking_news=event requiring attention today; analysis=strategic examination; trend=multi-week pattern
@@ -459,6 +460,45 @@ FIELD DEFINITIONS:
             return articles[idx].url
         return ""
 
+    @staticmethod
+    def _content_words(text: str) -> set:
+        import re
+        return {w for w in re.findall(r"[a-z]+", (text or "").lower()) if len(w) > 3}
+
+    def _filter_hits_against_stories(self, quick_hits: List[QuickHit],
+                                     stories: List[AIAnalysis],
+                                     articles: List[Article]) -> List[QuickHit]:
+        """Belt-and-suspenders dedup: the prompt forbids restating a selected
+        story as a quick hit, but models drift — so also drop any hit that
+        (a) links a URL cited by a story, (b) links into a story's event
+        cluster, or (c) shares most of its content words with a story title."""
+        if not stories or not quick_hits:
+            return quick_hits
+        story_urls = set()
+        for s in stories:
+            story_urls.update(s.sources or [])
+        url_cluster = {a.url: getattr(a, 'cluster_id', None) for a in articles}
+        story_clusters = {url_cluster.get(u) for u in story_urls} - {None}
+        title_words = [self._content_words(s.story_title) for s in stories]
+
+        kept = []
+        for hit in quick_hits:
+            if hit.url and (hit.url in story_urls or url_cluster.get(hit.url) in story_clusters):
+                logger.info(f"Quick hit dropped (same event as a story): {hit.text[:70]}")
+                continue
+            hit_words = self._content_words(hit.text)
+            overlap = False
+            for tw in title_words:
+                base = min(len(tw), len(hit_words))
+                if base >= 3 and len(tw & hit_words) / base >= 0.6:
+                    overlap = True
+                    break
+            if overlap:
+                logger.info(f"Quick hit dropped (restates a story title): {hit.text[:70]}")
+                continue
+            kept.append(hit)
+        return kept
+
     def _parse_issue_response(self, response_text: str, articles: List[Article]) -> IssueContent:
         """Parse the issue-format response (object with big_stories/quick_hits/
         big_number). Falls back to the legacy array-of-stories format."""
@@ -499,6 +539,7 @@ FIELD DEFINITIONS:
                     region=hit.get('region', 'global'),
                     url=self._article_url(hit.get('article_index'), articles),
                 ))
+            quick_hits = self._filter_hits_against_stories(quick_hits, stories, articles)
 
             big_number = None
             bn = data.get('big_number')
@@ -547,9 +588,22 @@ FIELD DEFINITIONS:
             logger.error(f"Failed to parse response: {e}", exc_info=True)
             return []
     
-    def _create_mock_issue(self, articles: List[Article]) -> IssueContent:
-        """Mock issue in the new format for DRY_RUN and tests."""
-        stories = self._create_mock_analyses(articles[:1])
+    def _create_mock_issue(self, articles: List[Article], target_stories: int = 1) -> IssueContent:
+        """Mock issue in the new format for DRY_RUN and tests.
+
+        Mirrors real selection: one story per DISTINCT event cluster, and
+        quick hits run through the same dedup filter as production."""
+        n = max(1, min(3, target_stories))
+        story_articles, seen_clusters, leftovers = [], set(), []
+        for a in articles:
+            cid = getattr(a, 'cluster_id', None)
+            if len(story_articles) < n and (cid is None or cid not in seen_clusters):
+                story_articles.append(a)
+                if cid:
+                    seen_clusters.add(cid)
+            else:
+                leftovers.append(a)
+        stories = self._create_mock_analyses(story_articles)
         regions = ["europe", "middle_east", "indo_pacific", "americas", "africa", "central_asia", "global"]
         quick_hits = [
             QuickHit(
@@ -557,14 +611,15 @@ FIELD DEFINITIONS:
                 region=regions[i % len(regions)],
                 url=a.url,
             )
-            for i, a in enumerate(articles[1:8])
+            for i, a in enumerate(leftovers[:10])
         ]
+        quick_hits = self._filter_hits_against_stories(quick_hits, stories, articles)[:8]
         big_number = None
-        if len(articles) > 8:
+        if len(leftovers) > 10:
             big_number = BigNumber(
                 value="61",
                 context="Sources now feeding this brief across 14 global perspectives (mock).",
-                url=articles[8].url,
+                url=leftovers[10].url,
             )
         title_words = (stories[0].story_title.split() if stories else ["World", "brief"])
         return IssueContent(stories=stories, quick_hits=quick_hits, big_number=big_number,
