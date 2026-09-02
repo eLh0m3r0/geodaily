@@ -303,6 +303,7 @@ Return this EXACT JSON structure — a single JSON object, no other text:
       "why_important": "2-3 SHORT sentences: what happened and why a smart reader should care. Max 60 words.",
       "what_overlooked": "1-2 short sentences: what most coverage (or this story's own sources) misses. Max 35 words.",
       "prediction": "One concrete thing to watch in the next 72 hours. Max 25 words.",
+      "signal_terms": ["2-4 proper nouns that identify THIS event the way a prediction market or news search would name it: countries, leaders, places, organizations (e.g. Iran, Strait of Hormuz). Never generic words like US, war, strikes, talks."],
       "impact_score": 8,
       "urgency_score": 7,
       "scope_score": 8,
@@ -451,6 +452,10 @@ FIELD DEFINITIONS:
             actor_type=data.get('actor_type', 'state'),
             event_type=data.get('event_type', 'political'),
         )
+        raw_terms = data.get('signal_terms') or []
+        if isinstance(raw_terms, list):
+            analysis.signal_terms = [str(t).strip() for t in raw_terms
+                                     if isinstance(t, str) and len(t.strip()) >= 3][:4]
         reasoning = data.get('selection_reasoning', 'Selected based on impact')
         logger.info(f"Selected story: {analysis.story_title} - {reasoning}")
         return analysis

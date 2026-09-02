@@ -123,6 +123,10 @@ class AIAnalysis:
     # Rendered as the mini coverage bar on stories without the full grid.
     coverage_counts: Dict[str, int] = field(default_factory=dict)
     coverage_outlets: int = 0
+    # Proper nouns naming this event (countries, leaders, places, bodies) as
+    # a prediction market or news search would phrase them — supplied by the
+    # analyzer, used to match external signals precisely.
+    signal_terms: List[str] = field(default_factory=list)
     
     def __post_init__(self):
         # Validate word counts
