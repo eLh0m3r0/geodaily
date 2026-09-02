@@ -234,19 +234,28 @@ body {
 }
 .persp-quote { font-style: italic; color: var(--text-light); margin-top: 0.25rem; font-size: 0.9rem; }
 .blindspot {
-    background: #fdf3e3; color: #8a5a17; border-radius: 6px;
-    padding: 0.6rem 0.9rem; margin-top: 0.9rem; font-size: 0.9rem;
+    border-left: 3px solid #B26B00; padding: 2px 0 2px 12px;
+    color: var(--primary-color); font-size: 0.95rem; line-height: 1.6;
 }
+.blindspot-note { font-size: 0.8rem; color: var(--text-light); margin: -0.25rem 0 0.75rem 0; }
 .section-label {
-    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 3px; color: #b8962e; text-align: center;
-    border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;
-    margin: 2.25rem 0 0.75rem 0;
+    font-size: 0.7rem; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 2px; color: var(--primary-color);
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.9rem; margin: 2.5rem 0 0.9rem 0;
 }
+.section-label::before {
+    content: ""; display: block; width: 28px; height: 3px;
+    background-color: var(--primary-color); margin-bottom: 0.45rem;
+}
+.story.compact .story-title { font-size: 1.1rem; }
+.coverage-mini { margin: 0.25rem 0 0.75rem 0; }
+.coverage-mini .coverage-bar { height: 5px; margin-bottom: 0.3rem; }
+.coverage-mini .coverage-legend { margin-bottom: 0; font-size: 0.72rem; }
 .big-number { text-align: center; }
 .signals-inline { margin: -0.5rem 0 1.25rem 0; }
 .signals-inline .quick-hits { list-style: none; padding-left: 0.25rem; }
-.also-today, .big-number {
+.also-today, .big-number, .blindspot-section {
     margin: 2rem 0; padding: 1.25rem 1.5rem;
     background: var(--bg-light); border-radius: 8px;
 }

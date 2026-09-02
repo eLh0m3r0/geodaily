@@ -1,0 +1,277 @@
+{
+ "date": "2026-09-02",
+ "title": "Geopolitical Daily",
+ "email_subject": "US-Iran War Flares Up Again",
+ "preheader": "Germany blames Russia for airport sabotage; Nepal flood toll tops 1,100.",
+ "intro_text": "Good morning. It's Wednesday, September 02, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "US and Iran Trade New Strikes as Six-Month War Escalates",
+   "why_important": "US forces struck Iran's Larak Island. Iran fired missiles back at US bases in Jordan and other Gulf targets. Trump had said the war was ending, but fighting just grew again. Oil prices and global bond rates are already reacting.",
+   "what_overlooked": "Most reports on Iranian deaths and strikes come from Iran's state media. No one outside Iran has confirmed these details.",
+   "prediction": "Watch for Iran to strike Gulf shipping or a base in an allied Gulf state within 72 hours.",
+   "impact_score": 9,
+   "sources": [
+    "https://foreignpolicy.com/2026/08/31/us-iran-strikes-fighting-resumes-larak-island-jordan-uae-kharg/",
+    "https://www.al-monitor.com/originals/2026/09/iran-strikes-back-against-latest-us-attacks",
+    "https://www.dawn.com/news/2026830/iran-targets-american-assets-in-middle-east-after-vowing-severe-consequences-for-fresh-wave-of-us-strikes",
+    "https://www.dailymaverick.co.za/article/2026-09-02-us-launches-new-strikes-on-iran-and-tehran-hits-back-in-widening-conflict/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 8,
+   "novelty_score": 6,
+   "credibility_score": 7,
+   "impact_dimension_score": 9,
+   "confidence": 0.8,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "western": 8,
+    "middle_east": 5,
+    "south_asia": 2,
+    "african": 1,
+    "east_asia": 1,
+    "chinese_state": 1,
+    "middle_east_state": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 16
+  },
+  {
+   "story_title": "Germany Blames Russia for Airport Sabotage, Expels Diplomats",
+   "why_important": "Germany says Russia tried to blow up a Ukrainian cargo plane at Leipzig airport using a drone packed with explosives. Berlin kicked out diplomats and tightened visa rules. This is Germany's strongest public claim yet about Russian sabotage on its own soil.",
+   "what_overlooked": "Germany hasn't shown lab evidence linking the drone to Russian intelligence. The claim relies only on official statements.",
+   "prediction": "Watch for other EU countries to follow Germany by expelling diplomats or tightening airport security.",
+   "impact_score": 7,
+   "sources": [
+    "https://meduza.io/en/feature/2026/09/01/germany-blames-russia-for-leipzig-plane-sabotage-attempt-expels-diplomats-and-restricts-visas",
+    "https://www.aljazeera.com/video/newsfeed/2026/9/2/germany-says-russia-preparing-hybrid-attacks-over-ukraine-support?traffic_source=rss",
+    "https://www.premiumtimesng.com/news/top-news/906891-germany-accuses-russia-of-drone-attack-on-leipzig-airport.html",
+    "https://www.thehindu.com/news/international/germany-says-russia-responsible-for-drone-attack-at-leipzig-airport/article71416636.ece"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 6,
+   "novelty_score": 7,
+   "credibility_score": 6,
+   "impact_dimension_score": 7,
+   "confidence": 0.72,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "russian_exile": 2,
+    "middle_east": 2,
+    "african": 1,
+    "south_asia": 2,
+    "western": 7,
+    "east_asia": 2,
+    "russian_state": 2
+   },
+   "coverage_outlets": 13
+  },
+  {
+   "story_title": "Nepal Flood Death Toll Passes 1,100, Thousands Still Missing",
+   "why_important": "Nepal's flash flood death toll has risen to 1,127. Nearly 4,000 people are still missing. Rescuers are still searching collapsed hydropower sites a week later. This is now one of the deadliest disasters in Nepal's history.",
+   "what_overlooked": "News focuses on the death count. It gives less attention to trapped hydropower workers and health risks facing women and girls, as the UN warns.",
+   "prediction": "Expect the confirmed death toll to keep rising as officials use DNA tests to identify unnamed bodies.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.thehindu.com/news/international/nepal-flash-flood-death-toll-rescue-operations-relief-and-missing-persons-updates-on-september-2-2026/article71418066.ece",
+    "https://www.japantimes.co.jp/news/2026/09/02/asia-pacific/nepal-flood-10000-death-rescuers/",
+    "https://www.theguardian.com/world/2026/sep/01/nepal-tibet-flood-deaths-police-relatives-dna-identification",
+    "https://news.un.org/feed/view/en/story/2026/09/1168234"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 6,
+   "novelty_score": 4,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.8,
+   "region": "indo_pacific",
+   "actor_type": "mixed",
+   "event_type": "humanitarian",
+   "coverage_counts": {
+    "south_asia": 4,
+    "east_asia": 1,
+    "western": 1,
+    "intl_org": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 5
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "China's Xi Jinping arrived in Cairo, his first Egypt visit in a decade, as Iran war reshapes regional alliances.",
+   "region": "middle_east",
+   "url": "https://www.japantimes.co.jp/news/2026/09/02/world/politics/xi-jinping-egypt-middle-east/"
+  },
+  {
+   "text": "Hong Kong democracy activist Joshua Wong pleaded guilty to colluding with foreign entities, facing a lengthy prison term.",
+   "region": "indo_pacific",
+   "url": "https://www.dw.com/en/hong-kong-activist-joshua-wong-pleads-guilty-to-collusion/a-78657525?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "Taiwan's foreign minister accused China of 'bullying' after Beijing warned of consequences for Taipei's Pacific forum attendance.",
+   "region": "indo_pacific",
+   "url": "https://asia.nikkei.com/politics/international-relations/taiwan-foreign-minister-decries-chinese-bullying-at-pacific-forum"
+  },
+  {
+   "text": "The White House named North American Blue Energy Partners to run Venezuelan oil fields once operated by Chinese and Russian firms.",
+   "region": "americas",
+   "url": "https://www.france24.com/en/us-firm-to-take-over-some-venezuela-oilfields-previously-run-by-chinese-russian-firms"
+  },
+  {
+   "text": "Canada's PM Mark Carney told Washington to 'stop doing memes' and get serious as the US-Canada tariff fight escalates.",
+   "region": "americas",
+   "url": "https://www.theguardian.com/us-news/2026/sep/01/trump-mark-carney-trade-war-canada"
+  },
+  {
+   "text": "European officials protested Russia's finance minister attending the G20 meeting in North Carolina, calling his presence 'discomfort.'",
+   "region": "global",
+   "url": "https://www.dw.com/en/us-irks-germany-europe-with-russian-g20-invite-press-bans/a-78583919?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "New UK PM Andy Burnham made his first Commons debut, pledging to 'restore hope' amid wars in Europe and the Middle East.",
+   "region": "europe",
+   "url": "https://www.politico.eu/article/andy-burnham-first-uk-pm-statement-parliament-promises/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
+  },
+  {
+   "text": "The USS Abraham Lincoln aircraft carrier docked in Thailand after 286 days at sea, a modern record tied to the Iran war.",
+   "region": "indo_pacific",
+   "url": "https://www.france24.com/en/asia-pacific/20260902-uss-abraham-lincoln-aircraft-carrier-docks-in-thailand-after-nine-months-at-sea"
+  }
+ ],
+ "big_number": {
+  "value": "4,000",
+  "context": "Nearly 4,000 people remain missing a week after Nepal's catastrophic flash floods killed over 1,100.",
+  "url": "https://www.japantimes.co.jp/news/2026/09/02/asia-pacific/nepal-flood-10000-death-rescuers/"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW News",
+     "Foreign Policy Magazine",
+     "Politico Europe"
+    ],
+    "article_count": 8,
+    "framing": "Focuses on doubts over White House claims that the conflict is ending soon.",
+    "quote": "once against casting doubt on the White House’s repeated claims that the monthslong conflict is nearing its end",
+    "quote_outlet": "Foreign Policy Magazine",
+    "quote_url": "https://foreignpolicy.com/2026/08/31/us-iran-strikes-fighting-resumes-larak-island-jordan-uae-kharg/",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "South China Morning Post RSS"
+    ],
+    "article_count": 1,
+    "framing": "Frames the strikes as part of a long, six-month war of shifting US tactics.",
+    "quote": "marking the latest escalation in a six-month war that has seen President Donald Trump alternate between threats, economic sanctions and force",
+    "quote_outlet": "South China Morning Post RSS",
+    "quote_url": "https://www.scmp.com/news/us/diplomacy/article/3366032/us-military-carries-out-new-strikes-iranian-targets-hostilities-flare?utm_source=rss_feed",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "chinese_state",
+    "outlets": [
+     "CGTN World"
+    ],
+    "article_count": 1,
+    "framing": "Presents both sides as equally escalating and trading blame, without US justification.",
+    "quote": "trading accusations and threats of further military action.",
+    "quote_outlet": "CGTN World",
+    "quote_url": "https://news.cgtn.com/news/2026-09-02/Iran-hits-back-after-US-launches-new-strikes-1Q6rP6bAqY0/p.html?UTM_Source=cgtn&UTM_Medium=rss&UTM_Campaign=World",
+    "state_affiliated": true
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Dawn",
+     "The Hindu International"
+    ],
+    "article_count": 2,
+    "framing": "Highlights Iran's vow of severe retaliation against fresh US attacks.",
+    "quote": "Iran pushed ahead with strikes targeting American interests around the Middle East on Wednesday after vowing “severe” consequences",
+    "quote_outlet": "Dawn",
+    "quote_url": "https://www.dawn.com/news/2026830/iran-targets-american-assets-in-middle-east-after-vowing-severe-consequences-for-fresh-wave-of-us-strikes",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al-Monitor"
+    ],
+    "article_count": 5,
+    "framing": "Stresses Iran's retaliation and the widening of the war to US allies and bases.",
+    "quote": "Iran struck US interests around the Middle East on Wednesday, vowing \"severe\" consequences for renewed American attacks on the Islamic republic",
+    "quote_outlet": "Al-Monitor",
+    "quote_url": "https://www.al-monitor.com/originals/2026/09/iran-strikes-back-against-latest-us-attacks",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east_state",
+    "outlets": [
+     "Tehran Times"
+    ],
+    "article_count": 1,
+    "framing": "Portrays the US strikes as unprovoked aggression against Iranian territory.",
+    "quote": "The United States has launched a fresh wave of military aggression against Iranian territory.",
+    "quote_outlet": "Tehran Times",
+    "quote_url": "https://www.tehrantimes.com/news/529611/US-launches-new-strikes-against-Iran",
+    "state_affiliated": true
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "TASS"
+    ],
+    "article_count": 1,
+    "framing": "Reports tersely on Iran's retaliatory strike using missiles and drones.",
+    "quote": "The attack is carried out with the use of missiles and UAVs",
+    "quote_outlet": "TASS",
+    "quote_url": "https://tass.com/world/2180693",
+    "state_affiliated": true
+   },
+   {
+    "perspective": "african",
+    "outlets": [
+     "Daily Maverick"
+    ],
+    "article_count": 1,
+    "framing": "Emphasizes the global economic fallout and domestic political cost for Trump.",
+    "quote": "in the most serious escalation in weeks in a conflict that has driven up global energy prices and weighed on President Donald Trump's popularity at home",
+    "quote_outlet": "Daily Maverick",
+    "quote_url": "https://www.dailymaverick.co.za/article/2026-09-02-us-launches-new-strikes-on-iran-and-tehran-hits-back-in-widening-conflict/",
+    "state_affiliated": false
+   }
+  ],
+  "total_outlets": 16,
+  "counts": {
+   "western": 8,
+   "middle_east": 5,
+   "south_asia": 2,
+   "african": 1,
+   "east_asia": 1,
+   "chinese_state": 1,
+   "middle_east_state": 1,
+   "russian_state": 1
+  },
+  "blindspot": "Xi Jinping's visit to Egypt amid the Iran war signals shifting Middle East alliances toward China, a major diplomatic development Western outlets ignored.",
+  "blindspot_url": "https://www.al-monitor.com/originals/2026/09/chinas-xi-lands-egypt-iran-war-reshapes-middle-east-alliances"
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Will Jesus Christ return before 2027?\" at 2%.",
+   "url": "https://polymarket.com/market/will-jesus-christ-return-before-2027",
+   "source": "Polymarket"
+  }
+ ]
+}

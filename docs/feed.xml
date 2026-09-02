@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Tue, 01 Sep 2026 08:27:30 GMT</pubDate>
-        <lastBuildDate>Tue, 01 Sep 2026 08:27:30 GMT</lastBuildDate>
+        <pubDate>Wed, 02 Sep 2026 08:29:02 GMT</pubDate>
+        <lastBuildDate>Wed, 02 Sep 2026 08:29:02 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,20 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - September 02, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-02.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Wednesday, September 02, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>US and Iran Trade New Strikes as Six-Month War Escalates</strong>: US forces struck Iran's Larak Island. Iran fired missiles back at US bases in Jordan and other Gulf targets. Trump had said the war was ending, but fighting just grew again. Oil prices and global bond...</li></ul><p><em>Published: September 02, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Wed, 02 Sep 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260902</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Economy]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-02.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - September 01, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-01.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Tuesday, September 01, 2026 — one story worth your full attention today, plus 7 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Army Secretary Dan Driscoll Resigns After Rift With Hegseth</strong>: The Army just lost its top civilian leader during a live conflict with Iran. Driscoll and Defense Secretary Hegseth had clashed for months over Hegseth's push to cut top generals. The Army now has a l...</li></ul><p><em>Published: September 01, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -180,23 +194,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-23.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - August 22, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-22.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Saturday, August 22, 2026 — today's briefing covers 4 developments shaping global affairs: breaking news, strategic analysis, and the trends behind the headlines.</p><h3>Today's Key Stories:</h3><ul><li><strong>Double-Tap Strike on Zelensky's Hometown Tests EU's Sanctions Threshold</strong>: A deliberate double-tap drone strike on a civilian mall in Kryvyi Rih, killing 16 and wounding 130, has prompted the EU's top diplomat to threaten the 'harshest sanctions yet.' The attack on rescue cr...</li><li><strong>Beijing Shifts From Visible Coercion to Deniable Pressure on Taiwan</strong>: As Washington debates abandoning strategic ambiguity, Beijing appears to be adopting its own ambiguous coercion — using methods harder to classify as military aggression. This complicates US/Taiwan re...</li><li><strong>Europe's Blind Spot: Russia's Deepening Military Foothold in Belarus</strong>: Belarus is increasingly functioning as a forward staging ground for Russian military assets, directly threatening NATO's eastern flank near Poland and the Baltics. ECFR's call for a pragmatic EU strat...</li></ul><p><em>Published: August 22, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sat, 22 Aug 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260822</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[United States]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-22.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
