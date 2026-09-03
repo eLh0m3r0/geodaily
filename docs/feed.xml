@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Wed, 02 Sep 2026 08:29:02 GMT</pubDate>
-        <lastBuildDate>Wed, 02 Sep 2026 08:29:02 GMT</lastBuildDate>
+        <pubDate>Thu, 03 Sep 2026 08:29:23 GMT</pubDate>
+        <lastBuildDate>Thu, 03 Sep 2026 08:29:23 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,19 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - September 03, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-03.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Thursday, September 03, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>US Missile Strike on Iranian Wedding Kills Civilians, Deepens War</strong>: A US missile hit a wedding party in Kuhestak, Iran, killing at least four people, including two children. Iran calls it a war crime. Total deaths from recent US strikes now stand at 18, with 142 wound...</li></ul><p><em>Published: September 03, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Thu, 03 Sep 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260903</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-03.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - September 02, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-02.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Wednesday, September 02, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>US and Iran Trade New Strikes as Six-Month War Escalates</strong>: US forces struck Iran's Larak Island. Iran fired missiles back at US bases in Jordan and other Gulf targets. Trump had said the war was ending, but fighting just grew again. Oil prices and global bond...</li></ul><p><em>Published: September 02, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -176,24 +189,6 @@
         <category><![CDATA[International Relations]]></category>
         <category><![CDATA[Middle East]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-24.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - August 23, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-23.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Sunday, August 23, 2026 — today's briefing covers 4 developments shaping global affairs: breaking news, strategic analysis, and the trends behind the headlines.</p><h3>Today's Key Stories:</h3><ul><li><strong>Iran's Cyber Counterstrike and Trump's Hormuz Territorial Claims Escalate the Economic War</strong>: Washington's sanctions campaign has provoked direct retaliation: Iranian hackers reportedly disabled a UK power plant for four days, while Trump's repeated public claims over the Strait of Hormuz sign...</li><li><strong>Okinotori Dispute Reveals China's Layered Pressure Across Japan's Maritime Claims</strong>: Sino-Russian live-fire drills inside Japan's claimed EEZ around Okinotori test the legal and military boundaries of a rock-based sovereignty claim underpinning a 150,000-square-mile zone. This exposes...</li><li><strong>Middle East Entanglement Is Quietly Sinking Washington's Asia Pivot</strong>: A decade-old bipartisan strategy to downscale Middle East commitments in favor of countering China is being undone by renewed US military and economic entanglement in Iran and the Gulf. This resource ...</li></ul><p><em>Published: August 23, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sun, 23 Aug 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260823</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[United States]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-23.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>

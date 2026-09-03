@@ -1,0 +1,267 @@
+{
+ "date": "2026-09-03",
+ "title": "Geopolitical Daily",
+ "email_subject": "Wedding Strike Deepens Iran War",
+ "preheader": "Netanyahu vows to topple Tehran, and Ukraine says Russian skies aren't safe.",
+ "intro_text": "Good morning. It's Thursday, September 03, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "US Missile Strike on Iranian Wedding Kills Civilians, Deepens War",
+   "why_important": "A US missile hit a wedding party in Kuhestak, Iran, killing at least four people, including two children. Iran calls it a war crime. Total deaths from recent US strikes now stand at 18, with 142 wounded, six months into the war. Killing civilians like this could make Iran fight harder and spread the war across the Gulf.",
+   "what_overlooked": "Most reports use Iranian state media for death counts. No one has independently checked the targets or the intent behind the strike.",
+   "prediction": "Watch for Iran to strike back or for the UN Security Council to meet on the war crime claim within 72 hours.",
+   "impact_score": 9,
+   "sources": [
+    "https://foreignpolicy.com/2026/09/02/iran-war-crime-us-strike-wedding-renewed-fighting/",
+    "https://www.bbc.co.uk/news/articles/cj06q4ynpmjo?at_medium=RSS&at_campaign=rss",
+    "https://www.scmp.com/news/world/middle-east/article/3366168/iranian-town-wedding-party-was-shattered-deadly-strike-during-us-air-attack?utm_source=rss_feed",
+    "https://www.tehrantimes.com/news/529642/They-came-for-a-wedding-dance-Trump-gave-them-the-dance-of-death",
+    "https://www.middleeasteye.net/live-blog/live-blog-update/us-attacks-iran-leave-18-killed-142-wounded-health-official-says"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 8,
+   "novelty_score": 6,
+   "credibility_score": 7,
+   "impact_dimension_score": 9,
+   "confidence": 0.8,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "western": 3,
+    "middle_east": 2,
+    "east_asia": 2,
+    "middle_east_state": 1,
+    "intl_org": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 10,
+   "signal_terms": [
+    "Iran",
+    "Kuhestak",
+    "Strait of Hormuz",
+    "US military"
+   ]
+  },
+  {
+   "story_title": "Netanyahu Says Israel Is Working to Overthrow Iran's Government",
+   "why_important": "Netanyahu says all of Israel's forces are working to remove Iran's government. This is a big shift from just defense to trying to change the regime. He is also trying to unite Israel's far-right before next month's election. Meanwhile, his defense minister says Israel is ready to move Palestinians out of Gaza once the US agrees.",
+   "what_overlooked": "Few reports ask if trying to change Iran's government is legal, or how Israel would actually move over a million people out of Gaza.",
+   "prediction": "Watch for Israeli coalition talks before the election and any US response to the Gaza relocation plan.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.foreignaffairs.com/israel/can-israel-end-its-forever-wars",
+    "https://www.ft.com/content/e694b2e3-67e9-405b-a502-b51db2a9a6fd",
+    "https://www.middleeasteye.net/live-blog/live-blog-update/netanyahu-says-israel-working-overthrow-irans-government",
+    "https://www.scmp.com/news/world/middle-east/article/3366150/israel-ready-remove-palestinians-gaza-once-us-approves-minister-says?utm_source=rss_feed"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 7,
+   "novelty_score": 7,
+   "credibility_score": 7,
+   "impact_dimension_score": 8,
+   "confidence": 0.75,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "political",
+   "coverage_counts": {
+    "western": 5,
+    "middle_east": 1,
+    "east_asia": 1,
+    "middle_east_state": 2,
+    "chinese_state": 1
+   },
+   "coverage_outlets": 9,
+   "signal_terms": [
+    "Netanyahu",
+    "Iran",
+    "Gaza",
+    "Israel election"
+   ]
+  },
+  {
+   "story_title": "Zelensky Warns Airlines Russian Skies Are No Longer Safe",
+   "why_important": "Zelensky says more Ukrainian drone strikes have basically shut down Russian airspace for civilian flights. Ukraine has hit oil terminals, refineries, and air bases deep inside Russia. The UN's aviation agency is now warning airlines to be careful.",
+   "what_overlooked": "Few reports look at how these strikes on refineries and oil terminals could raise global oil prices or squeeze supply.",
+   "prediction": "Watch for airlines to change flight routes or for a formal safety warning from the UN aviation agency soon.",
+   "impact_score": 7,
+   "sources": [
+    "https://meduza.io/en/feature/2026/09/02/what-does-zelensky-s-threat-to-close-russia-s-skies-mean-and-what-targets-could-ukraine-hit-next",
+    "https://www.thehindu.com/news/international/ukraine-tells-un-aviation-watchdog-that-russian-airspace-not-safe/article71421217.ece",
+    "https://www.dw.com/en/ukraine-zelenskyy-warns-airlines-to-avoid-russian-airspace/live-78755199?maca=en-rss-en-all-1573-rdf",
+    "https://www.straitstimes.com/world/europe/un-agency-urges-civilian-aircraft-safety-after-zelensky-warns-russian-airspace-not-safe"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 7,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.78,
+   "region": "europe",
+   "actor_type": "mixed",
+   "event_type": "military",
+   "coverage_counts": {
+    "russian_exile": 2,
+    "south_asia": 1,
+    "western": 3,
+    "east_asia": 1,
+    "russian_state": 2
+   },
+   "coverage_outlets": 6,
+   "signal_terms": [
+    "Zelensky",
+    "Russia",
+    "ICAO",
+    "Ust-Luga"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Nepal's flood death toll passed 1,250, with nearly 4,875 people still listed as missing.",
+   "region": "indo_pacific",
+   "url": "https://www.thehindu.com/news/international/nepal-flash-floods-live-updates-death-toll-rescue-operations-missing-persons-helpline-number-september-3-2026/article71422150.ece"
+  },
+  {
+   "text": "Ebola deaths in Congo topped 3,000 as the WHO prepares to test three vaccines.",
+   "region": "africa",
+   "url": "https://allafrica.com/stories/202609030094.html"
+  },
+  {
+   "text": "Nicolás Maduro asked a US judge to dismiss drug trafficking charges, citing head-of-state immunity.",
+   "region": "americas",
+   "url": "https://www.politico.com/news/2026/09/02/nicolas-maduro-indictment-tossed-out-of-court-01063162?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
+  },
+  {
+   "text": "Russia will shut Germany's Goethe-Institut centers after Berlin closed a Russian cultural center over an airport drone plot.",
+   "region": "europe",
+   "url": "https://www.themoscowtimes.com/2026/09/03/russia-will-close-germanys-goethe-institut-cultural-centers-lavrov-says-a93625"
+  },
+  {
+   "text": "A UN report says global warming will breach 1.5C, with a best-case peak of 1.8C.",
+   "region": "global",
+   "url": "https://www.thehindu.com/sci-tech/energy-and-environment/global-warming-will-exceed-limit-un-says-in-a-report-that-maps-path-to-get-back-below-danger-zone/article71418475.ece"
+  },
+  {
+   "text": "A Maltese court acquitted tycoon Yorgen Fenech in the 2017 car-bomb killing of journalist Daphne Caruana Galizia.",
+   "region": "europe",
+   "url": "https://www.aljazeera.com/video/newsfeed/2026/9/3/maltese-tycoon-acquitted-of-killing-journalist-daphne-caruana-galizia?traffic_source=rss"
+  },
+  {
+   "text": "Uber will cut about 10% of its global workforce, its CEO announced.",
+   "region": "global",
+   "url": "https://www.thehindu.com/sci-tech/technology/uber-says-laying-off-about-10-of-workforce-worldwide/article71422253.ece"
+  },
+  {
+   "text": "Pakistan's Punjab province now allows secret terrorism trials with anonymous judges and no time limit.",
+   "region": "indo_pacific",
+   "url": "https://www.aljazeera.com/news/2026/9/3/pakistans-punjab-allows-secret-terrorism-trials-why-its-controversial?traffic_source=rss"
+  }
+ ],
+ "big_number": {
+  "value": "3,007",
+  "context": "Confirmed Ebola deaths in the Democratic Republic of Congo as the outbreak keeps outpacing containment efforts.",
+  "url": "https://www.japantimes.co.jp/news/2026/09/03/world/congo-ebola-payment-struggle/"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "BBC World",
+     "Foreign Policy Magazine",
+     "Guardian International"
+    ],
+    "article_count": 3,
+    "framing": "Focuses on Iran's war crime accusation and US denial amid escalation fears.",
+    "quote": "Iran has accused the US of a war crime after a missile blast killed at least four people and injured 68",
+    "quote_outlet": "Guardian International",
+    "quote_url": "https://www.theguardian.com/world/2026/sep/02/iran-us-missile-blast-wedding",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "South China Morning Post RSS",
+     "The Straits Times World"
+    ],
+    "article_count": 2,
+    "framing": "Highlights the human tragedy of a wedding celebration turned deadly.",
+    "quote": "A US missile hit a home in southern Iran where dozens were gathered to celebrate the wedding of a fisherman’s daughter",
+    "quote_outlet": "South China Morning Post RSS",
+    "quote_url": "https://www.scmp.com/news/world/middle-east/article/3366168/iranian-town-wedding-party-was-shattered-deadly-strike-during-us-air-attack?utm_source=rss_feed",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al-Monitor",
+     "Middle East Eye"
+    ],
+    "article_count": 2,
+    "framing": "Stresses official casualty statistics and health ministry figures.",
+    "quote": "US attacks on Iran leave 18 killed, 142 wounded, health official says",
+    "quote_outlet": "Middle East Eye",
+    "quote_url": "https://www.middleeasteye.net/live-blog/live-blog-update/us-attacks-iran-leave-18-killed-142-wounded-health-official-says",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east_state",
+    "outlets": [
+     "Tehran Times"
+    ],
+    "article_count": 1,
+    "framing": "Frames the strike as a moral outrage demanding international accountability.",
+    "quote": "They came for a wedding dance, Trump gave them the dance of death",
+    "quote_outlet": "Tehran Times",
+    "quote_url": "https://www.tehrantimes.com/news/529642/They-came-for-a-wedding-dance-Trump-gave-them-the-dance-of-death",
+    "state_affiliated": true
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "TASS"
+    ],
+    "article_count": 1,
+    "framing": "Focuses on technical investigation into the weapons used in the strike.",
+    "quote": "An expert of arms intelligence firm Armament Research Services said that, in his opinion, the attack probably involved US air-delivered precision guided weapons",
+    "quote_outlet": "TASS",
+    "quote_url": "https://tass.com/world/2181517",
+    "state_affiliated": true
+   },
+   {
+    "perspective": "intl_org",
+    "outlets": [
+     "UN News"
+    ],
+    "article_count": 1,
+    "framing": "Presents the strike as part of a broader dangerous escalation with humanitarian risk.",
+    "quote": "Fighting between the United States and Iran has sharply escalated after a month-long lull, with the two sides exchanging strikes as fears grow over further civilian casualties.",
+    "quote_outlet": "UN News",
+    "quote_url": "https://news.un.org/feed/view/en/story/2026/09/1168268",
+    "state_affiliated": false
+   }
+  ],
+  "total_outlets": 10,
+  "counts": {
+   "western": 3,
+   "middle_east": 2,
+   "east_asia": 2,
+   "middle_east_state": 1,
+   "intl_org": 1,
+   "russian_state": 1
+  },
+  "blindspot": "Congo's struggle to pay Ebola outbreak workers is ignored by Western outlets, despite being a life-or-death funding crisis affecting disease control.",
+  "blindspot_url": "https://www.japantimes.co.jp/news/2026/09/03/world/congo-ebola-payment-struggle/"
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Will the U.S. invade Iran before 2027?\" at 16%.",
+   "url": "https://polymarket.com/market/will-the-us-invade-iran-before-2027",
+   "source": "Polymarket"
+  }
+ ]
+}
