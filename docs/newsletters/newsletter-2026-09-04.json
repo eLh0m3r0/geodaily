@@ -1,0 +1,219 @@
+{
+ "date": "2026-09-04",
+ "title": "Geopolitical Daily",
+ "email_subject": "Zelensky's Support Craters as Talks Begin",
+ "preheader": "US brokers separate talks in Moscow and Kyiv as Sudan's war rages on.",
+ "intro_text": "Good morning. It's Friday, September 04, 2026 — the 3 stories that matter most today, plus 7 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "Zelensky's Support Collapses as US Sets Up Peace Talks in Moscow and Kyiv",
+   "why_important": "Zelensky's approval has crashed after corruption scandals and a shootout between his own security agencies. Now the US says it will hold separate talks in both Moscow and Kyiv within days. A weakened Zelensky negotiating an endgame to the war could change what Ukraine is forced to accept, with consequences for European security for decades.",
+   "what_overlooked": "Coverage focuses on Zelensky's poll numbers, not on what Kyiv might have to give up to get a deal.",
+   "prediction": "Watch for a confirmed date for Witkoff and Kushner's visit to Kyiv.",
+   "impact_score": 9,
+   "sources": [
+    "https://foreignpolicy.com/2026/09/03/ukraine-war-zelensky-corrupton-scandal-cabinet-election/",
+    "https://www.straitstimes.com/world/europe/ukraines-zelenskiy-says-investigation-underway-after-clash-between-two-security-agencies",
+    "https://news.cgtn.com/news/2026-09-04/Zelenskyy-says-US-to-hold-separate-talks-in-Moscow-and-Kyiv-1Q9QSbDbrTa/p.html?UTM_Source=cgtn&UTM_Medium=rss&UTM_Campaign=World",
+    "https://tass.com/world/2182371"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 6,
+   "impact_dimension_score": 9,
+   "confidence": 0.75,
+   "region": "europe",
+   "actor_type": "mixed",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "western": 1,
+    "east_asia": 2,
+    "chinese_state": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 4,
+   "signal_terms": [
+    "Zelensky",
+    "Witkoff",
+    "Kushner",
+    "Moscow"
+   ]
+  },
+  {
+   "story_title": "UN Investigators Say Foreign Weapons Are Fueling Sudan's War",
+   "why_important": "Sudan's war has killed at least 150,000 people and displaced 13 million. A new UN probe says foreign fighters and arms shipments are making the violence worse, with mounting evidence of war crimes.",
+   "what_overlooked": "The report doesn't name which countries are supplying weapons, so no one faces real pressure to stop.",
+   "prediction": "Watch whether any UN Security Council member formally proposes a Sudan arms embargo this week.",
+   "impact_score": 8,
+   "sources": [
+    "https://foreignpolicy.com/2026/09/03/sudan-war-united-nations-security-council-arms-weapons-embargo-trump-administration-united-states-foreign-policy/",
+    "https://www.al-monitor.com/originals/2026/09/uns-sudan-probe-says-foreign-fighters-fuelling-conflict",
+    "https://www.thehindu.com/news/international/foreign-support-drones-fuel-sudan-war-and-possible-war-crimes-un-probe-says/article71425349.ece",
+    "https://news.un.org/feed/view/en/story/2026/09/1168270"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 7,
+   "novelty_score": 6,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.8,
+   "region": "africa",
+   "actor_type": "mixed",
+   "event_type": "humanitarian",
+   "coverage_counts": {
+    "western": 1,
+    "middle_east": 1,
+    "south_asia": 1,
+    "intl_org": 1,
+    "african": 3
+   },
+   "coverage_outlets": 5,
+   "signal_terms": [
+    "Sudan",
+    "Rapid Support Forces",
+    "UN Security Council"
+   ]
+  },
+  {
+   "story_title": "Trump-Linked Insiders Cash In as US Takes Control of Venezuela's Oil",
+   "why_important": "A US-backed company now controls Venezuelan oil fields holding 65 billion barrels, locked in for 100 years. Trump appointees and donors are among those securing new deals in the sector. Analysts say the deal won't cut fuel prices despite White House claims.",
+   "what_overlooked": "Little scrutiny yet on how insiders got access to these contracts before the public did.",
+   "prediction": "Watch for the first named companies or contracts tied to Trump-linked figures to surface.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.ft.com/content/939e55ad-1d5c-45cf-995d-1db6754c8f6b?syn-25a6b1a6=1",
+    "https://www.straitstimes.com/world/how-the-us-is-taking-direct-control-of-venezuelan-oil",
+    "https://en.mercopress.com/2026/09/03/investment-banks-warn-the-venezuela-deal-will-not-bring-down-fuel-prices?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss",
+    "https://www.atlanticcouncil.org/blogs/energysource/four-questions-on-the-us-venezuelan-oil-deal/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 5,
+   "scope_score": 6,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.72,
+   "region": "americas",
+   "actor_type": "mixed",
+   "event_type": "economic",
+   "coverage_counts": {
+    "western": 5,
+    "east_asia": 2,
+    "latam": 1
+   },
+   "coverage_outlets": 6,
+   "signal_terms": [
+    "Venezuela",
+    "Trump",
+    "oil reserves"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Ratko Mladic's body arrived in Belgrade with full military honors, overshadowing Bosnia's new election campaign.",
+   "region": "europe",
+   "url": "https://balkaninsight.com/2026/09/04/old-script-new-ghost-mladics-death-looms-large-as-bosnia-election-campaign-opens/bi/"
+  },
+  {
+   "text": "UN peacekeepers say Israeli forces are expanding their military footprint along Lebanon's Blue Line, violating a Security Council resolution.",
+   "region": "middle_east",
+   "url": "https://news.un.org/feed/view/en/story/2026/09/1168275"
+  },
+  {
+   "text": "Tunisia's top court upheld sentences up to 45 years for 34 opposition figures convicted of conspiracy.",
+   "region": "africa",
+   "url": "https://allafrica.com/stories/202609040018.html"
+  },
+  {
+   "text": "A think tank urged Thailand and Cambodia to clear mines and enforce a ceasefire to secure their disputed border.",
+   "region": "indo_pacific",
+   "url": "https://thediplomat.com/2026/09/security-is-the-key-to-resolving-the-thai-cambodia-border-conflict/"
+  },
+  {
+   "text": "Volkswagen's board approved cutting up to 100,000 of its 630,000 jobs to fight Chinese EV competition and tariffs.",
+   "region": "europe",
+   "url": "https://www.dw.com/en/how-volkswagen-s-huge-workforce-became-a-costly-burden/a-77766154?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "The WMO warned El Nino could be the strongest in four decades, lasting through February 2027.",
+   "region": "global",
+   "url": "https://news.un.org/feed/view/en/story/2026/09/1168265"
+  },
+  {
+   "text": "Canadian shoppers are boycotting American goods as trade war tensions with the US deepen, CNA reports.",
+   "region": "americas",
+   "url": "https://www.channelnewsasia.com/world/us-canada-trade-war-tensions-patriotism-consumers-6362266"
+  }
+ ],
+ "big_number": {
+  "value": "65 billion barrels",
+  "context": "Size of Venezuelan oil reserves now controlled by a US-backed company under a 100-year deal.",
+  "url": "https://en.mercopress.com/2026/09/03/investment-banks-warn-the-venezuela-deal-will-not-bring-down-fuel-prices?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "Foreign Policy Magazine"
+    ],
+    "article_count": 1,
+    "framing": "Focuses on Zelensky's collapsing domestic approval amid war fatigue and scandals.",
+    "quote": "Zelensky appears to have lost the nation’s political support",
+    "quote_outlet": "Foreign Policy Magazine",
+    "quote_url": "https://foreignpolicy.com/2026/09/03/ukraine-war-zelensky-corrupton-scandal-cabinet-election/",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "The Straits Times World"
+    ],
+    "article_count": 2,
+    "framing": "Highlights internal Ukrainian security clashes and the stalled diplomatic push for peace.",
+    "quote": "an investigation would determine what caused a dispute between two of Ukraine's security agencies to escalate into a shootout in Kyiv",
+    "quote_outlet": "The Straits Times World",
+    "quote_url": "https://www.straitstimes.com/world/europe/ukraines-zelenskiy-says-investigation-underway-after-clash-between-two-security-agencies",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "chinese_state",
+    "outlets": [
+     "CGTN World"
+    ],
+    "article_count": 1,
+    "framing": "Presents US diplomacy neutrally, noting parallel talks planned in both Moscow and Kyiv.",
+    "quote": "US officials have confirmed plans to hold separate talks in Moscow and Kyiv",
+    "quote_outlet": "CGTN World",
+    "quote_url": "https://news.cgtn.com/news/2026-09-04/Zelenskyy-says-US-to-hold-separate-talks-in-Moscow-and-Kyiv-1Q9QSbDbrTa/p.html?UTM_Source=cgtn&UTM_Medium=rss&UTM_Campaign=World",
+    "state_affiliated": true
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "TASS"
+    ],
+    "article_count": 1,
+    "framing": "Emphasizes specific US envoys' upcoming visit to Kiev, stressing agreed diplomatic scheduling.",
+    "quote": "The preliminary date of Steve Witkoff and Jared Kushner’s visit has been agreed upon",
+    "quote_outlet": "TASS",
+    "quote_url": "https://tass.com/world/2182371",
+    "state_affiliated": true
+   }
+  ],
+  "total_outlets": 4,
+  "counts": {
+   "western": 1,
+   "east_asia": 2,
+   "chinese_state": 1,
+   "russian_state": 1
+  },
+  "blindspot": "Western outlets missed reports urging the UK to strip Chinese-made parts from its military supply chain, a security risk story covered widely in Asia.",
+  "blindspot_url": "https://asia.nikkei.com/politics/defense/uk-urged-to-overhaul-military-procurement-to-remove-china-made-parts"
+ },
+ "signals": []
+}
