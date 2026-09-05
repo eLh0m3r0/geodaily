@@ -1,0 +1,224 @@
+{
+ "date": "2026-09-05",
+ "title": "Geopolitical Daily",
+ "email_subject": "120 Dead as Houthis Fight for a Chokepoint",
+ "preheader": "Plus Germany's far right nears a historic win, and a Bolivia base blast kills dozens.",
+ "intro_text": "Good morning. It's Saturday, September 05, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "Houthi Offensive Near Red Sea Strait Leaves 120+ Dead",
+   "why_important": "Houthi fighters launched a ground assault to grab control of Bab al-Mandab, the strait guarding the Red Sea's southern entrance. More than 120 people died in two days, the worst fighting there in years. If Houthis win, they could again threaten commercial ships passing through, disrupting global trade routes that took months to reopen.",
+   "what_overlooked": "Most coverage counts bodies but skips what a Houthi win would mean for shipping. Yemeni government sources dominate casualty claims.",
+   "prediction": "Watch for more government reinforcements reaching Taiz, and possible Houthi attacks on ships within 72 hours.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.middleeasteye.net/live-blog/live-blog-update/yemens-army-claims-air-strikes-against-houthis-taiz",
+    "https://www.thehindu.com/news/international/more-than-120-killed-in-yemens-worst-clashes-in-years-sources/article71429714.ece",
+    "https://www.dw.com/en/yemen-fighting-intensifies-amid-houthi-push-in-the-west/a-79039588?maca=en-rss-en-all-1573-rdf",
+    "https://tass.com/world/2182987"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 7,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.8,
+   "region": "middle_east",
+   "actor_type": "mixed",
+   "event_type": "military",
+   "coverage_counts": {
+    "middle_east": 2,
+    "south_asia": 1,
+    "western": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 5,
+   "signal_terms": [
+    "Houthis",
+    "Yemen",
+    "Bab al-Mandab",
+    "Taiz"
+   ]
+  },
+  {
+   "story_title": "Germany's Far Right Could Win Its First State Government",
+   "why_important": "The AfD leads polls ahead of Sunday's Saxony-Anhalt election. A win would give the far-right party control of a German state for the first time since World War Two. It would test how far the political center can hold in Europe's biggest economy.",
+   "what_overlooked": "Coverage focuses on the AfD's rise in the east but underplays how a state win boosts the party's push nationally next year.",
+   "prediction": "Expect exit polls Sunday night showing AfD near or above 35-40%, triggering new coalition scrambles.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.dw.com/en/germany-news-thousands-expected-at-saxony-anhalt-rallies/live-79041302?maca=en-rss-en-all-1573-rdf",
+    "https://www.scmp.com/news/world/europe/article/3366471/why-former-east-germany-became-stronghold-far-right-afd?utm_source=rss_feed",
+    "https://www.atlanticcouncil.org/in-depth-research-reports/report/the-right-wing-takes-aim-at-the-eus-linchpin/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 6,
+   "novelty_score": 6,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.75,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "political",
+   "coverage_counts": {
+    "western": 10,
+    "east_asia": 1
+   },
+   "coverage_outlets": 8,
+   "signal_terms": [
+    "AfD",
+    "Saxony-Anhalt",
+    "Germany",
+    "Magdeburg"
+   ]
+  },
+  {
+   "story_title": "Explosion at Bolivia Military Base Kills Dozens",
+   "why_important": "A blast tore through a fireworks stockpile at Bolivia's Viacha army base, killing at least 10 people. Dozens more are hurt and some remain missing. The disaster raises hard questions about storing explosives near a populated area.",
+   "what_overlooked": "Death tolls vary wildly between outlets, from 2 to 10 dead, showing how confused the first reports were.",
+   "prediction": "Expect Bolivia's defense ministry to release an updated casualty count and cause within days.",
+   "impact_score": 6,
+   "sources": [
+    "https://www.thehindu.com/news/international/explosion-at-bolivia-military-base-kills-several-september-4-2026/article71430958.ece",
+    "https://www.aljazeera.com/video/newsfeed/2026/9/5/bolivian-military-barracks-explosion-kills-at-least-10?traffic_source=rss",
+    "https://www.dw.com/en/bolivia-deadly-explosion-rocks-military-base-in-viacha/a-79040892?maca=en-rss-en-all-1573-rdf",
+    "https://www.scmp.com/news/world/americas/article/3366452/least-10-dead-62-injured-after-explosion-bolivian-army-base?utm_source=rss_feed"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 4,
+   "novelty_score": 7,
+   "credibility_score": 6,
+   "impact_dimension_score": 6,
+   "confidence": 0.6,
+   "region": "americas",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "south_asia": 3,
+    "middle_east": 2,
+    "western": 2,
+    "east_asia": 2,
+    "russian_state": 1
+   },
+   "coverage_outlets": 9,
+   "signal_terms": [
+    "Bolivia",
+    "Viacha",
+    "La Paz"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "US envoys Witkoff and Kushner will visit Moscow and Kyiv this weekend, their first Kyiv trip under Trump.",
+   "region": "europe",
+   "url": "https://www.dw.com/en/us-envoys-to-visit-russia-ukraine-with-plan-to-end-war/a-79040773?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "Argentina's Milei threatened sanctions on oil firms drilling near the Falklands, citing a shift in US policy.",
+   "region": "americas",
+   "url": "https://www.dailymaverick.co.za/article/2026-09-04-argentinas-milei-vows-falklands-oil-sanctions-in-sovereignty-push/"
+  },
+  {
+   "text": "Trump said the US may strike Iran's fortified Pickaxe Mountain site 'very soon.'",
+   "region": "middle_east",
+   "url": "https://www.al-monitor.com/originals/2026/09/trump-says-us-may-hit-irans-pickaxe-mountain-soon"
+  },
+  {
+   "text": "UN says Israel's displacement of 33,000 Palestinians from West Bank camps may be a crime against humanity.",
+   "region": "middle_east",
+   "url": "https://news.un.org/feed/view/en/story/2026/09/1168282"
+  },
+  {
+   "text": "China arrested 52 Singaporeans in Guangxi over an alleged pyramid scheme, Singapore's government says.",
+   "region": "indo_pacific",
+   "url": "https://www.dailymaverick.co.za/article/2026-09-04-china-arrests-52-singaporeans-for-alleged-pyramid-scheme-activities-singapore-minister-says/"
+  },
+  {
+   "text": "The USS Abraham Lincoln docked in Thailand looking rusty after a 286-day deployment tied to the Iran war.",
+   "region": "indo_pacific",
+   "url": "https://www.bbc.co.uk/news/videos/c4gr9y1ny3xo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "text": "Trump brushed off questions about Russian drone sabotage in Germany, saying Putin won't attack NATO.",
+   "region": "europe",
+   "url": "https://www.politico.com/news/2026/09/04/trump-russia-nato-espionage-allegations-01066120?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
+  },
+  {
+   "text": "Two Israeli ministers renewed calls to remove Palestinians from Gaza ahead of upcoming elections.",
+   "region": "middle_east",
+   "url": "https://www.straitstimes.com/world/middle-east/netanyahu-partners-renew-calls-for-removal-of-gazans-as-israeli-election-nears"
+  }
+ ],
+ "big_number": {
+  "value": "33,000",
+  "context": "Palestinians the UN says Israel forcibly displaced from three West Bank refugee camps, still barred from returning.",
+  "url": "https://news.un.org/feed/view/en/story/2026/09/1168282"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW News"
+    ],
+    "article_count": 1,
+    "framing": "Focuses on Houthi military gains and strategic control of Red Sea entry.",
+    "quote": "Houthi forces are trying to secure high ground and solidify their control of the entry to the Red Sea in the southwest.",
+    "quote_outlet": "DW News",
+    "quote_url": "https://www.dw.com/en/yemen-fighting-intensifies-amid-houthi-push-in-the-west/a-79039588?maca=en-rss-en-all-1573-rdf",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "The Hindu International"
+    ],
+    "article_count": 1,
+    "framing": "Highlights the human toll, calling it Yemen's deadliest clashes in years.",
+    "quote": "More than 120 killed in Yemen's worst clashes in years: sources",
+    "quote_outlet": "The Hindu International",
+    "quote_url": "https://www.thehindu.com/news/international/more-than-120-killed-in-yemens-worst-clashes-in-years-sources/article71429714.ece",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al-Monitor",
+     "Middle East Eye"
+    ],
+    "article_count": 2,
+    "framing": "Centers on the government's military response, citing official airstrike claims against Houthis.",
+    "quote": "Yemen's internationally recognised government has said that its air force carried out more than 15 air strikes",
+    "quote_outlet": "Middle East Eye",
+    "quote_url": "https://www.middleeasteye.net/live-blog/live-blog-update/yemens-army-claims-air-strikes-against-houthis-taiz",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "TASS"
+    ],
+    "article_count": 1,
+    "framing": "Frames the conflict around the Yemeni leader's defiant vow against Iran and the Houthis.",
+    "quote": "Rashad al-Alimi says Houthis \"will face major losses\" if they approach the strait",
+    "quote_outlet": "TASS",
+    "quote_url": "https://tass.com/world/2182987",
+    "state_affiliated": true
+   }
+  ],
+  "total_outlets": 5,
+  "counts": {
+   "middle_east": 2,
+   "south_asia": 1,
+   "western": 1,
+   "russian_state": 1
+  },
+  "blindspot": "A Nigerian political dispute over party control of Ebonyi state ahead of 2027 elections is ignored by Western media, missing regional power shifts.",
+  "blindspot_url": "https://www.premiumtimesng.com/news/headlines/907549-2027-pdp-responds-to-nwifuru-says-ebonyi-doesnt-belong-to-one-party.html"
+ },
+ "signals": []
+}
