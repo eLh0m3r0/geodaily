@@ -1,0 +1,219 @@
+{
+ "date": "2026-09-06",
+ "title": "Geopolitical Daily",
+ "email_subject": "Iran Tankers Hit, Tehran Vows Revenge",
+ "preheader": "US Central Command struck three tankers near Kharg Island as Iran's six-month war drags on.",
+ "intro_text": "Good morning. It's Sunday, September 06, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "US Destroys Three Iranian Oil Tankers, Iran Vows Harsher Response",
+   "why_important": "The US says it destroyed three Iranian oil tankers, including one near the Kharg Island export hub. Iran's Revolutionary Guards say they hit back at US-linked ships. This is a sharp jump in a six-month war that has stalled around the Strait of Hormuz, a route for a fifth of the world's oil.",
+   "what_overlooked": "Coverage focuses on the strikes but says little about oil prices or shipping insurance costs already rising through Hormuz.",
+   "prediction": "Watch for Iran targeting more tankers or a spike in Hormuz oil prices within 72 hours.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.al-monitor.com/originals/2026/09/us-military-strikes-oil-tankers-iran-vows-tougher-reprisals",
+    "https://www.politico.com/news/2026/09/05/centcom-announces-strikes-on-three-iranian-oil-tankers-01066475?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "https://www.japantimes.co.jp/news/2026/09/06/world/us-iran-fire-at-vessels/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 8,
+   "novelty_score": 6,
+   "credibility_score": 8,
+   "impact_dimension_score": 9,
+   "confidence": 0.85,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "middle_east": 1,
+    "western": 6,
+    "east_asia": 3
+   },
+   "coverage_outlets": 9,
+   "signal_terms": [
+    "Iran",
+    "Strait of Hormuz",
+    "US Central Command",
+    "Kharg Island"
+   ]
+  },
+  {
+   "story_title": "Putin Halts Kyiv Strikes for 72 Hours as US Envoys Push Peace Talks",
+   "why_important": "Putin ordered a three-day pause on strikes against Kyiv as US envoys Steve Witkoff and Jared Kushner visited Moscow and Kyiv. It's the clearest sign yet the US push for peace talks has some traction, even as Zelensky's political support wavers at home.",
+   "what_overlooked": "The pause only covers Kyiv; fighting continues elsewhere in Ukraine, and past pauses have collapsed quickly.",
+   "prediction": "Watch if the pause holds past September 8 and whether Kushner and Witkoff secure a wider truce.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.thehindu.com/news/international/russian-president-vladimir-putin-orders-72-hour-pause-in-strikes-on-kyiv/article71432032.ece",
+    "https://www.france24.com/en/video/20260905-war-in-ukraine-putin-zelensky-order-pause-in-strikes",
+    "https://news.cgtn.com/news/2026-09-05/news-1Qc9Td0eL5u/p.html?UTM_Source=cgtn&UTM_Medium=rss&UTM_Campaign=World",
+    "https://tass.com/politics/2183123"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 8,
+   "novelty_score": 5,
+   "credibility_score": 7,
+   "impact_dimension_score": 8,
+   "confidence": 0.75,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "south_asia": 1,
+    "western": 1,
+    "chinese_state": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 4,
+   "signal_terms": [
+    "Putin",
+    "Zelensky",
+    "Witkoff",
+    "Kushner"
+   ]
+  },
+  {
+   "story_title": "Nepal Flood Death Toll Passes 1,300 as Thousands Remain Missing",
+   "why_important": "Nepal's death toll from flash floods has climbed to 1,344, with about 5,500 people still missing ten days on. Rescuers, including Chinese and South Korean teams, are still pulling survivors from collapsed tunnels and buried homes.",
+   "what_overlooked": "Rescue stories overshadow questions about why hydropower and road infrastructure failed so badly in the flood zone.",
+   "prediction": "Watch for the missing count to shrink or grow sharply as search teams reach remote valleys this week.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.thehindu.com/news/international/nepal-flash-floods-death-toll-rises-september-5-2026/article71431209.ece",
+    "https://www.theguardian.com/world/2026/sep/05/rescuers-nepal-find-two-more-people-alive-flood-disaster",
+    "https://www.scmp.com/news/asia/south-asia/article/3366486/chinese-man-nepali-woman-found-alive-10-days-after-flood?utm_source=rss_feed"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 6,
+   "novelty_score": 6,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.8,
+   "region": "indo_pacific",
+   "actor_type": "state",
+   "event_type": "humanitarian",
+   "coverage_counts": {
+    "south_asia": 3,
+    "western": 3,
+    "east_asia": 1
+   },
+   "coverage_outlets": 4,
+   "signal_terms": [
+    "Nepal",
+    "Rasuwa",
+    "Trishuli",
+    "flash floods"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Germans in Saxony-Anhalt voted Sunday in an election that could hand the far-right AfD its first state government since WWII.",
+   "region": "europe",
+   "url": "https://www.straitstimes.com/world/europe/germanys-far-right-afd-seeks-landmark-state-victory-as-saxony-anhalt-votes"
+  },
+  {
+   "text": "US ambassador Mike Huckabee called violent West Bank settlers 'terrorists' after visiting a targeted Palestinian-American family.",
+   "region": "middle_east",
+   "url": "https://www.scmp.com/news/world/middle-east/article/3366501/us-ambassador-calls-violent-israeli-settlers-terrorists-after-weeks-west-bank-unrest?utm_source=rss_feed"
+  },
+  {
+   "text": "The DRC unveiled a 180-day Ebola response plan seeking $1.3 billion as the Bundibugyo strain outbreak continues.",
+   "region": "africa",
+   "url": "https://newsaf.cgtn.com/news/2026-09-05/DRC-launches-180-day-Ebola-plan-seeks-1-3-billion-funding-1QbSXiUZ5QY/p.html?UTM_Source=cgtn&UTM_Medium=rss&UTM_Campaign=World"
+  },
+  {
+   "text": "Argentina's Milei ordered sanctions probes into oil firms drilling near the Falkland Islands, reviving the sovereignty dispute.",
+   "region": "americas",
+   "url": "https://www.scmp.com/news/world/americas/article/3366511/argentina-threatens-sanction-oil-projects-around-falkland-islands?utm_source=rss_feed"
+  },
+  {
+   "text": "Indonesia canceled flights at Jakarta's main airport after Anak Krakatau volcano erupted, spreading ash over the region.",
+   "region": "indo_pacific",
+   "url": "https://www.aljazeera.com/news/2026/9/6/indonesias-main-airport-suspends-flights-due-to-anak-krakatoa-eruption?traffic_source=rss"
+  },
+  {
+   "text": "The UN General Assembly backed a resolution favoring maps that show Africa's true size, with only the US voting no.",
+   "region": "global",
+   "url": "https://www.politico.eu/article/un-backs-effort-to-depict-africa-correctly-on-maps-despite-us-opposition/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
+  },
+  {
+   "text": "Masked protesters blocked Britain's Dover ferry port for hours, chanting 'stop the boats' amid rising migration tensions.",
+   "region": "europe",
+   "url": "https://www.dw.com/en/masked-anti-migrant-protesters-block-uk-s-dover-terminal/a-79046929?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "Fresh fighting in Yemen killed more than 60 people, including 26 government troops, as Houthi forces pushed their coastal offensive.",
+   "region": "middle_east",
+   "url": "https://www.theguardian.com/world/2026/sep/05/yemen-ground-fighting-escalates-houthi-rebels-government-forces"
+  }
+ ],
+ "big_number": {
+  "value": "5,500",
+  "context": "Number of people still missing in Nepal ten days after flash floods killed at least 1,344.",
+  "url": "https://www.scmp.com/news/asia/south-asia/article/3366486/chinese-man-nepali-woman-found-alive-10-days-after-flood?utm_source=rss_feed"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "Financial Times World",
+     "Guardian International",
+     "Politico Europe"
+    ],
+    "article_count": 6,
+    "framing": "Focuses on US military justification and threats of further retaliation against Iran's oil fleet.",
+    "quote": "if necessary, destroy Iran’s limited and exposed oil fleet",
+    "quote_outlet": "Guardian International",
+    "quote_url": "https://www.theguardian.com/world/2026/sep/05/us-military-iran-tankers",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "South China Morning Post RSS",
+     "The Japan Times",
+     "The Straits Times World"
+    ],
+    "article_count": 3,
+    "framing": "Highlights CENTCOM's operational details and explicit warning message to Iran's Revolutionary Guard.",
+    "quote": "Let the message to the IRGC be clear: If you shoot at two of our ships, we will impose an even higher economic cost",
+    "quote_outlet": "South China Morning Post RSS",
+    "quote_url": "https://www.scmp.com/news/world/middle-east/article/3366498/us-disables-or-destroys-3-iran-oil-tankers-after-warships-targeted?utm_source=rss_feed",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al-Monitor"
+    ],
+    "article_count": 1,
+    "framing": "Frames the strikes within the wider six-month war and Iran's own retaliatory claims.",
+    "quote": "with Iran's Revolutionary Guards saying they targeted US-linked ships in response",
+    "quote_outlet": "Al-Monitor",
+    "quote_url": "https://www.al-monitor.com/originals/2026/09/us-military-strikes-oil-tankers-iran-vows-tougher-reprisals",
+    "state_affiliated": false
+   }
+  ],
+  "total_outlets": 9,
+  "counts": {
+   "middle_east": 1,
+   "western": 6,
+   "east_asia": 3
+  },
+  "blindspot": "An Israeli strike killed two people in Arab Salim, Lebanon, but no Western outlet covered it, missing a deadly escalation elsewhere in the region.",
+  "blindspot_url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-strike-kills-two-people-arab-salim-town-lebanon"
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Will the U.S. invade Iran before 2027?\" at 14%.",
+   "url": "https://polymarket.com/market/will-the-us-invade-iran-before-2027",
+   "source": "Polymarket"
+  }
+ ]
+}
