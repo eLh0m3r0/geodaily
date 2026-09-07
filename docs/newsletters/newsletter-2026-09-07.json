@@ -1,0 +1,253 @@
+{
+ "date": "2026-09-07",
+ "title": "Geopolitical Daily",
+ "email_subject": "AfD's historic win rattles Europe",
+ "preheader": "Ukraine peace push stalls, Zelensky warns of a winter war, and Yemen's death toll tops 300.",
+ "intro_text": "Good morning. It's Monday, September 07, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "Far-right AfD wins German state election, first since WWII",
+   "why_important": "The AfD won over 44% of the vote in Saxony-Anhalt. It could soon lead a German state government for the first time since the Nazi era. Sweden's center-left leader also warned that Russia is now shaping her country's election. Together, these show far-right, Russia-linked politics gaining real power in Europe.",
+   "what_overlooked": "Coverage focuses on the shock win. It skips whether other parties can form a coalition to block AfD.",
+   "prediction": "Watch if mainstream parties in Saxony-Anhalt can team up to keep AfD out of power.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.dawn.com/news/2027934/germanys-far-right-afd-emerges-as-landslide-winner-in-eastern-state-vote",
+    "https://www.dailymaverick.co.za/article/2026-09-07-far-right-afd-wins-historic-victory-in-german-state-election/",
+    "https://www.aljazeera.com/video/newsfeed/2026/9/6/06-09-sv-germany-afd-wins-saxony-de-fm?traffic_source=rss",
+    "https://www.politico.eu/article/russia-sweden-election-campaign-magdalena-andersson/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 9,
+   "confidence": 0.85,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "political",
+   "coverage_counts": {
+    "western": 31,
+    "south_asia": 2,
+    "african": 1,
+    "middle_east": 1,
+    "east_asia": 3,
+    "chinese_state": 1
+   },
+   "coverage_outlets": 16,
+   "signal_terms": [
+    "AfD",
+    "Saxony-Anhalt",
+    "Sweden Democrats",
+    "Magdalena Andersson"
+   ]
+  },
+  {
+   "story_title": "US envoys leave Kyiv with no breakthrough on ending the war",
+   "why_important": "Kushner and Witkoff met Zelensky after visiting Putin in Moscow. Both sides made hopeful comments but announced no real deal. Zelensky said the war will likely continue into winter, lowering hopes for quick peace.",
+   "what_overlooked": "We still don't know what Putin actually offered Witkoff in Moscow before the Kyiv visit.",
+   "prediction": "Watch for a new Trump statement or envoy trip within a week if talks are to continue.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.themoscowtimes.com/2026/09/06/us-envoys-make-first-kyiv-visit-amid-ukraine-peace-push-a93648",
+    "https://www.thehindu.com/news/international/us-envoys-hold-talks-with-zelensky-on-first-kyiv-visit/article71435478.ece",
+    "https://www.dw.com/en/us-envoys-witkoff-and-kushner-hold-ukraine-talks-after-meeting-putin/a-79054779?maca=en-rss-en-all-1573-rdf",
+    "https://www.scmp.com/news/world/europe/article/3366544/us-envoys-witkoff-kushner-arrive-kyiv-after-talks-putin-moscow?utm_source=rss_feed"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 7,
+   "novelty_score": 5,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.8,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "russian_exile": 3,
+    "south_asia": 1,
+    "western": 8,
+    "east_asia": 3,
+    "chinese_state": 1
+   },
+   "coverage_outlets": 11,
+   "signal_terms": [
+    "Zelensky",
+    "Witkoff",
+    "Kushner",
+    "Kyiv"
+   ]
+  },
+  {
+   "story_title": "Yemen's deadliest fighting since 2022 truce kills over 300",
+   "why_important": "Government forces and Houthi rebels have killed over 300 people in days of fighting. It's the worst violence since the 2022 truce ended. Families are fleeing, and the war risks fully reigniting Yemen's civil conflict.",
+   "what_overlooked": "Death tolls come only from military sources on both sides. Independent checks and civilian counts are missing.",
+   "prediction": "Watch for a UN Security Council statement or new Saudi-led ceasefire push within days.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.middleeasteye.net/live-blog/live-blog-update/more-300-killed-amid-fighting-yemen",
+    "https://www.scmp.com/news/world/middle-east/article/3366595/hundreds-killed-deadliest-yemen-fighting-2022-truce-collapsed?utm_source=rss_feed"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 6,
+   "novelty_score": 6,
+   "credibility_score": 6,
+   "impact_dimension_score": 7,
+   "confidence": 0.7,
+   "region": "middle_east",
+   "actor_type": "mixed",
+   "event_type": "military",
+   "coverage_counts": {
+    "middle_east": 4,
+    "east_asia": 1
+   },
+   "coverage_outlets": 3,
+   "signal_terms": [
+    "Yemen",
+    "Houthi",
+    "Saudi-backed government"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "An Amazon Prime Air Boeing 767 overran a Miami runway and crashed, killing at least five people.",
+   "region": "americas",
+   "url": "https://www.japantimes.co.jp/news/2026/09/07/world/amazon-plane-crash-miami/"
+  },
+  {
+   "text": "Crowds gathered in Belgrade for the funeral of convicted genocide war criminal Ratko Mladic.",
+   "region": "europe",
+   "url": "https://www.channelnewsasia.com/world/ratko-mladic-serbia-belgrade-funeral-6366931"
+  },
+  {
+   "text": "Israeli strikes on a south Lebanon town killed at least 11 people, including two children.",
+   "region": "middle_east",
+   "url": "https://www.al-monitor.com/originals/2026/09/israeli-strikes-southern-lebanese-town-kill-11-state-news-agency-says"
+  },
+  {
+   "text": "An armed man, Patrick Havas, 38, attacked Ohio Democratic governor candidate Amy Acton at a fair.",
+   "region": "americas",
+   "url": "https://www.scmp.com/news/world/united-states-canada/article/3366574/armed-man-arrested-after-charging-towards-ohio-governor-candidate?utm_source=rss_feed"
+  },
+  {
+   "text": "Australia will let citizens opt out of social media algorithms under a new 'digital duty of care' bill.",
+   "region": "indo_pacific",
+   "url": "https://www.scmp.com/news/asia/australasia/article/3366588/australians-could-opt-out-social-media-algorithms-under-proposed-law?utm_source=rss_feed"
+  },
+  {
+   "text": "Kim Jong Un says North Korea's new destroyer is part of its nuclear response system.",
+   "region": "indo_pacific",
+   "url": "https://www.japantimes.co.jp/news/2026/09/07/asia-pacific/north-korea-destroyer-nuclear-response/"
+  },
+  {
+   "text": "Jamaica will petition King Charles III over legal responsibility for slavery reparations.",
+   "region": "global",
+   "url": "https://www.aljazeera.com/news/2026/9/7/jamaica-to-file-slavery-reparations-petition-during-uk-visit?traffic_source=rss"
+  },
+  {
+   "text": "A fireworks blast at a Mexican religious festival killed 10 people and injured 64 others.",
+   "region": "americas",
+   "url": "https://www.aljazeera.com/video/newsfeed/2026/9/7/ten-killed-and-dozens-injured-in-mexico-fireworks-blast?traffic_source=rss"
+  }
+ ],
+ "big_number": {
+  "value": "$53 billion",
+  "context": "China is injecting this much into state banks and insurers to shore up their finances, rattling their share prices.",
+  "url": "https://www.ft.com/content/8012b60e-c74e-49bc-9200-d37f13b4a135?syn-25a6b1a6=1"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "Financial Times World",
+     "Politico Europe"
+    ],
+    "article_count": 31,
+    "framing": "Focuses on political threat to mainstream parties and Russia ties.",
+    "quote": "An anti-immigrant, pro-Russian party is on the threshold of holding significant power for the first time.",
+    "quote_outlet": "Politico Europe",
+    "quote_url": "https://www.politico.eu/article/exit-polls-germany-far-right-alternative-for-germany-afd-lead-saxony-anhalt-election/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "South China Morning Post RSS",
+     "The Straits Times World"
+    ],
+    "article_count": 3,
+    "framing": "Highlights the landslide as a rebuke to Chancellor Merz's government.",
+    "quote": "a result seen as a stinging rebuke for Chancellor Friedrich Merz",
+    "quote_outlet": "South China Morning Post RSS",
+    "quote_url": "https://www.scmp.com/news/world/europe/article/3366562/germanys-far-right-afd-landslide-winner-eastern-state-vote-exit-polls-indicate?utm_source=rss_feed",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "chinese_state",
+    "outlets": [
+     "CGTN World"
+    ],
+    "article_count": 1,
+    "framing": "Neutral factual reporting of vote percentage without political commentary.",
+    "quote": "has won Sunday's state election in Saxony-Anhalt with a record 44.4% of the vote, according to an exit poll released by public broadcaster ARD.",
+    "quote_outlet": "CGTN World",
+    "quote_url": "https://news.cgtn.com/news/2026-09-07/Far-right-AfD-scores-record-win-in-German-state-election-1QeEbQMShOg/p.html?UTM_Source=cgtn&UTM_Medium=rss&UTM_Campaign=World",
+    "state_affiliated": true
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Dawn",
+     "The Hindu International"
+    ],
+    "article_count": 2,
+    "framing": "Stresses historic nature of win while noting it fell short of majority.",
+    "quote": "We have made history today",
+    "quote_outlet": "Dawn",
+    "quote_url": "https://www.dawn.com/news/2027934/germanys-far-right-afd-emerges-as-landslide-winner-in-eastern-state-vote",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera English"
+    ],
+    "article_count": 1,
+    "framing": "Frames story as question of AfD forming first far-right state government since WWII.",
+    "quote": "Can AfD form Germany’s first far-right state government since World War II?",
+    "quote_outlet": "Al Jazeera English",
+    "quote_url": "https://www.aljazeera.com/video/newsfeed/2026/9/6/06-09-sv-germany-afd-wins-saxony-de-fm?traffic_source=rss",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "african",
+    "outlets": [
+     "Daily Maverick"
+    ],
+    "article_count": 1,
+    "framing": "Emphasizes historic milestone of far-right nearing power since World War Two.",
+    "quote": "putting a far-right party on the cusp of power at state level for the first time since World War Two.",
+    "quote_outlet": "Daily Maverick",
+    "quote_url": "https://www.dailymaverick.co.za/article/2026-09-07-far-right-afd-wins-historic-victory-in-german-state-election/",
+    "state_affiliated": false
+   }
+  ],
+  "total_outlets": 16,
+  "counts": {
+   "western": 31,
+   "south_asia": 2,
+   "african": 1,
+   "middle_east": 1,
+   "east_asia": 3,
+   "chinese_state": 1
+  },
+  "blindspot": "A massive mudslide on the China-Nepal border left hundreds missing, a major humanitarian crisis that Western media ignored entirely.",
+  "blindspot_url": "https://www.sixthtone.com/news/1018953/Hundreds Still Missing After Deadly China-Nepal Border Mudslide"
+ },
+ "signals": []
+}
