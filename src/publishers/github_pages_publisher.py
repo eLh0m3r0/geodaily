@@ -4,6 +4,7 @@ GitHub Pages publisher for the newsletter.
 
 import json
 import shutil
+from html import escape as html_escape
 from datetime import datetime
 from pathlib import Path
 from typing import List, Optional
@@ -474,6 +475,22 @@ class GitHubPagesPublisher:
                     </div>"""
         return ""
     
+    def _issue_lead(self, newsletter: dict) -> str:
+        """Headline strip for an index card: the issue's story titles from its
+        JSON (every card used to carry the same filler sentence)."""
+        titles = []
+        try:
+            json_path = (self.output_dir / "newsletters" /
+                         Path(newsletter['filename']).with_suffix('.json').name)
+            data = json.loads(json_path.read_text(encoding='utf-8'))
+            titles = [s.get('story_title', '') for s in (data.get('stories') or [])
+                      if s.get('story_title')]
+        except Exception:
+            titles = []
+        if not titles:
+            return "Three stories that matter, from every side of the world."
+        return " &middot; ".join(html_escape(t) for t in titles[:3])
+
     def _build_about_subscribe_html(self) -> str:
         """Subscribe CTA for the about page."""
         substack_url = Config.SUBSTACK_URL
@@ -519,18 +536,26 @@ class GitHubPagesPublisher:
 
     <main class="main">
         <div class="container">
+            <section class="hero">
+{self._build_subscribe_html()}
+                <ul class="hero-points">
+                    <li>60+ outlets across 14 perspectives, every source linked</li>
+                    <li>State media labeled, never the sole source of a fact</li>
+                    <li>Five minutes a day &mdash; or one Sunday digest</li>
+                </ul>
+            </section>
+
             <section class="recent-newsletters">
-                <h2>Recent Newsletters</h2>
+                <h2>Recent Issues</h2>
                 <div class="newsletter-list">
 """
         
-        # Add recent newsletters (up to 10)
+        # Add recent newsletters (up to 10), each with its real headlines
         for newsletter in newsletter_list:
             html += f"""
                     <article class="newsletter-preview">
-                        <h3><a href="{newsletter['relative_path']}">{newsletter['formatted_date']} Edition</a></h3>
-                        <p class="newsletter-date">{newsletter['formatted_date']}</p>
-                        <p>Strategic analysis of today's most significant underreported geopolitical developments.</p>
+                        <h3><a href="{newsletter['relative_path']}">{newsletter['formatted_date']}</a></h3>
+                        <p class="newsletter-lead">{self._issue_lead(newsletter)}</p>
                     </article>
 """
         
@@ -1441,6 +1466,15 @@ body {
 .subscribe-frequency label { cursor: pointer; }
 .subscribe-frequency input { margin-right: 0.3rem; }
 .rss-alt { text-align: center; font-size: 0.85rem; color: var(--text-light); margin-top: 0.75rem; }
+.hero { margin: 1.75rem 0 0.75rem 0; }
+.hero .subscribe-box { margin: 0; }
+.hero-points {
+    list-style: none; display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 0.35rem 1.5rem; margin: 0.9rem 0 0 0; padding: 0;
+    font-size: 0.85rem; color: var(--text-light);
+}
+.hero-points li::before { content: "\\2713\\00a0"; color: var(--impact-low); font-weight: 700; }
+.newsletter-lead { color: var(--text-light); font-size: 0.9rem; line-height: 1.5; }
 
 .story-content {
     display: grid;

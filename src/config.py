@@ -135,6 +135,10 @@ class Config:
     OUTPUT_DIR = PROJECT_ROOT / "output"
     NEWSLETTERS_DIR = PROJECT_ROOT / "docs" / "newsletters"
     METRICS_DB_PATH = PROJECT_ROOT / "data" / "metrics.db"
+    # First-seen dates for undated feed entries; under docs/ so the daily
+    # workflow's archive commit persists it between runs
+    FIRST_SEEN_FILE = Path(os.getenv('FIRST_SEEN_FILE',
+                                     str(PROJECT_ROOT / "docs" / "data" / "first_seen.json")))
     
     @classmethod
     def load_sources(cls) -> Dict[str, List[Dict[str, Any]]]:

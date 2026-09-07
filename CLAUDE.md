@@ -240,6 +240,7 @@ The AI analyzer now evaluates stories across multiple dimensions:
 - Each source carries a per-source `weight` (0.7–1.3) that scales relevance scoring, deduplication preference, and is passed to the AI as an editorial-quality signal
 - Validate feeds with `python scripts/validate_sources.py` (add `--strict` in CI to fail on dead feeds); a weekly `source_health.yml` workflow runs it every Monday
 - Freshness windows are per category: think_tank 72h, analysis 48h, everything else 24h (`RSSCollector.FRESHNESS_WINDOW_HOURS`)
+- Feeds without publication dates (Sixth Tone, Nikkei Asia) are dated by first sighting, not by "now": `src/collectors/first_seen.py` persists url → first-seen in `docs/data/first_seen.json` (committed by the daily workflow with the rest of docs/), so an undated entry is fresh for exactly one issue; blindspot candidates are additionally capped at 36h (`PerspectiveAnalyzer.BLINDSPOT_MAX_AGE_HOURS`)
 - The collector sends a full browser User-Agent (`USER_AGENT` in config) — Cloudflare-protected feeds return 403 to bot-style UAs
 - Add new RSS sources to `tier1_sources` in `sources.json`
 - Add web scraping sources to `tier2_sources` with CSS selectors

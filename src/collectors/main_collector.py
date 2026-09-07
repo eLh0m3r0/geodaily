@@ -62,6 +62,10 @@ class MainCollector:
 
             # Collect articles from healthy sources in parallel
             all_articles = self._collect_parallel(healthy_sources)
+            try:
+                self.rss_collector.first_seen.save()
+            except Exception as e:
+                logger.warning(f"First-seen store not saved: {e}")
 
             # Update stats
             self.stats.total_articles_collected = len(all_articles)

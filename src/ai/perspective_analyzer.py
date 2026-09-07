@@ -17,6 +17,7 @@ import logging
 import re
 import time
 from collections import defaultdict
+from datetime import datetime, timedelta, timezone
 from typing import Dict, List, Optional, Tuple
 
 from ..models import Article, AIAnalysis, PerspectiveGrid, PerspectiveView
@@ -75,12 +76,27 @@ class PerspectiveAnalyzer:
                 groups[g].append(a)
         return dict(groups)
 
+    # A blindspot is today's news, not a backlog item: members older than
+    # this (or undated) are never candidates, whatever the collector let in.
+    BLINDSPOT_MAX_AGE_HOURS = 36
+
+    @classmethod
+    def _is_fresh(cls, article: Article, now: datetime) -> bool:
+        published = getattr(article, 'published_date', None)
+        if not published:
+            return False
+        if published.tzinfo is None:
+            published = published.replace(tzinfo=timezone.utc)
+        return now - published <= timedelta(hours=cls.BLINDSPOT_MAX_AGE_HOURS)
+
     def _blindspot_candidates(self, stories: List[AIAnalysis], articles: List[Article],
                               limit: int = 2) -> List[List[Article]]:
         """Events well covered outside Western media but absent from it —
         and not any of the issue's selected stories (excluded by cited URL
         AND by whole event cluster, so an uncited cluster member can't
-        resurface the story as its own blindspot)."""
+        resurface the story as its own blindspot). Only fresh articles
+        (BLINDSPOT_MAX_AGE_HOURS) take part."""
+        now = datetime.now(timezone.utc)
         story_urls = set()
         for s in stories:
             story_urls.update(s.sources or [])
@@ -89,7 +105,8 @@ class PerspectiveAnalyzer:
         events = defaultdict(list)
         for a in articles:
             cid = getattr(a, 'cluster_id', None)
-            if cid and cid not in story_clusters and a.url not in story_urls:
+            if (cid and cid not in story_clusters and a.url not in story_urls
+                    and self._is_fresh(a, now)):
                 events[cid].append(a)
         candidates = []
         for members in events.values():
