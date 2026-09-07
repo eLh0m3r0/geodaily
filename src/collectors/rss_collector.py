@@ -17,6 +17,7 @@ from ..logging_system import get_structured_logger, ErrorCategory, PipelineStage
 from .source_health_monitor import source_health_monitor
 from ..performance.connection_pool import connection_pool_manager
 from .article_content_fetcher import article_content_fetcher
+from .first_seen import FirstSeenStore
 
 logger = get_structured_logger(__name__)
 
@@ -29,6 +30,8 @@ class RSSCollector:
             'User-Agent': Config.USER_AGENT
         })
         self.fetch_full_content = fetch_full_content
+        # Publication dates for entries whose feed carries none (see first_seen.py)
+        self.first_seen = FirstSeenStore(Config.FIRST_SEEN_FILE)
     
     def collect_from_source(self, source: NewsSource) -> List[Article]:
         """
@@ -66,9 +69,9 @@ class RSSCollector:
 
             # Process each entry and collect valid articles
             parsed_articles = []
-            for entry in feed.entries:
+            for position, entry in enumerate(feed.entries):
                 try:
-                    article = self._parse_rss_entry(entry, source)
+                    article = self._parse_rss_entry(entry, source, position)
                     if article:
                         # Filter articles by publication date (per-category freshness window)
                         if self._is_recent_article(article):
@@ -198,8 +201,9 @@ class RSSCollector:
 
         return None
     
-    def _parse_rss_entry(self, entry, source: NewsSource) -> Optional[Article]:
-        """Parse a single RSS entry into an Article."""
+    def _parse_rss_entry(self, entry, source: NewsSource, position: int = 0) -> Optional[Article]:
+        """Parse a single RSS entry into an Article. `position` is the entry's
+        index in the feed (newest first), used to date undated entries."""
         try:
             # Extract title
             title = self._clean_text(getattr(entry, 'title', ''))
@@ -222,8 +226,12 @@ class RSSCollector:
             summary = self._clean_html(summary)
             summary = self._clean_text(summary)
             
-            # Extract published date
+            # Extract published date; an undated entry is dated by the moment it
+            # was first seen in the feed, never by "now" (which made every item
+            # of an undated feed look fresh on every run)
             published_date = self._parse_date(entry)
+            if published_date is None:
+                published_date = self.first_seen.date_for(url, source.name, position)
             
             # Extract author
             author = getattr(entry, 'author', None)
@@ -254,8 +262,8 @@ class RSSCollector:
                        })
             return None
     
-    def _parse_date(self, entry) -> datetime:
-        """Parse publication date from RSS entry."""
+    def _parse_date(self, entry) -> Optional[datetime]:
+        """Parse publication date from RSS entry; None when the entry has no date."""
         # Try different date fields
         date_fields = ['published_parsed', 'updated_parsed', 'created_parsed']
         
@@ -280,12 +288,10 @@ class RSSCollector:
                 except:
                     continue
         
-        # Default to current time if no date found
-        logger.warning("No valid date found in RSS entry, using current time",
+        logger.debug("No valid date found in RSS entry",
                      pipeline_stage=PipelineStage.COLLECTION,
-                     error_category=ErrorCategory.VALIDATION_ERROR,
-                     structured_data={'fallback_action': 'current_time'})
-        return datetime.now(timezone.utc)
+                     structured_data={'fallback_action': 'first_seen'})
+        return None
     
     def _clean_html(self, text: str) -> str:
         """Remove HTML tags from text."""

@@ -78,9 +78,8 @@ class TestRSSCollector:
         
         date = self.collector._parse_date(mock_entry)
         
-        assert isinstance(date, datetime)
-        # Should default to current time
-        assert abs((datetime.now(timezone.utc) - date).total_seconds()) < 60
+        # No fake "now": undated entries are dated by first sighting instead
+        assert date is None
     
     @patch('src.performance.connection_pool.connection_pool_manager.make_request')
     def test_fetch_feed_with_retry_success(self, mock_make_request):
