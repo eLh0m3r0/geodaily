@@ -10,6 +10,11 @@ on:
     # Mondays at 5:00 UTC, an hour before the daily newsletter run
     - cron: '0 5 * * 1'
   workflow_dispatch:
+    inputs:
+      file:
+        description: 'Sources file to validate (e.g. sources.candidates.json to vet new feeds)'
+        required: false
+        default: 'sources.json'
 
 permissions:
   contents: read
@@ -35,4 +40,4 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
-          python scripts/validate_sources.py --strict | tee -a $GITHUB_STEP_SUMMARY
+          python scripts/validate_sources.py --strict --file "${{ github.event.inputs.file || 'sources.json' }}" | tee -a $GITHUB_STEP_SUMMARY

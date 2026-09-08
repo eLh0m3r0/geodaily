@@ -585,7 +585,8 @@ def run_complete_pipeline() -> bool:
                         except Exception:
                             pass
                     perspective_grid = perspective_analyzer.build_grid(
-                        analyses[0], scored_articles, all_stories=analyses)
+                        analyses[0], scored_articles, all_stories=analyses,
+                        exclude_urls=[h.url for h in quick_hits if getattr(h, 'url', '')])
                     if perspective_grid:
                         logger.info("Perspective grid built",
                                    pipeline_stage=PipelineStage.AI_ANALYSIS,
