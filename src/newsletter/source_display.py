@@ -17,8 +17,12 @@ from ..config import Config
 # Multi-part TLDs where the registrable domain needs three labels.
 _TWO_LEVEL_TLDS = {
     "co.uk", "org.uk", "ac.uk", "com.au", "org.au", "net.au", "co.nz",
-    "co.za", "com.br", "com.cn", "com.hk", "com.sg", "co.in", "co.jp",
-    "or.jp", "com.tr", "com.pk", "co.ke",
+    "co.za", "org.za", "com.br", "com.cn", "com.hk", "com.sg", "co.in",
+    "co.jp", "or.jp", "ne.jp", "com.tr", "com.pk", "co.ke", "co.kr",
+    "com.ua", "com.ar", "com.mx", "com.co", "com.pe", "com.ve", "com.uy",
+    "com.eg", "org.eg", "co.il", "org.il", "com.sa", "com.qa", "com.ng",
+    "com.gh", "co.tz", "co.ug", "com.et", "co.th", "co.id", "com.my",
+    "com.ph", "com.vn", "com.tw", "org.tw", "com.bd", "com.np",
 }
 
 # Fallback names for article domains that can't be derived from sources.json
