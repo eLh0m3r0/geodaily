@@ -558,17 +558,6 @@
       "display": "Global Times"
     },
     {
-      "name": "Daily Sabah",
-      "url": "https://www.dailysabah.com/rssFeed/world",
-      "category": "mainstream",
-      "weight": 0.6,
-      "perspective": "turkish_state",
-      "state_affiliated": true,
-      "reliability_tier": 3,
-      "site": "dailysabah.com",
-      "display": "Daily Sabah"
-    },
-    {
       "name": "Haaretz",
       "url": "https://www.haaretz.com/srv/haaretz-latest-headlines",
       "category": "mainstream",
@@ -589,17 +578,6 @@
       "reliability_tier": 2,
       "site": "ynetnews.com",
       "display": "Ynetnews"
-    },
-    {
-      "name": "Middle East Monitor",
-      "url": "https://www.middleeastmonitor.com/feed/",
-      "category": "regional",
-      "weight": 0.6,
-      "perspective": "middle_east",
-      "state_affiliated": false,
-      "reliability_tier": 3,
-      "site": "middleeastmonitor.com",
-      "display": "Middle East Monitor"
     },
     {
       "name": "Iran International",
