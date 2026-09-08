@@ -72,9 +72,12 @@ def main() -> int:
     parser.add_argument("--strict", action="store_true", help="exit 1 if any feed is dead")
     parser.add_argument("--max-age-days", type=int, default=14,
                         help="mark feed stale if newest entry is older (default 14)")
+    parser.add_argument("--file", default=str(SOURCES_FILE),
+                        help="sources file to validate (default sources.json; use a "
+                             "candidates file to vet feeds before adding them)")
     args = parser.parse_args()
 
-    with open(SOURCES_FILE, encoding="utf-8") as f:
+    with open(args.file, encoding="utf-8") as f:
         sources = json.load(f)
 
     tier1 = sources.get("tier1_sources", [])
