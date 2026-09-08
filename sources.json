@@ -318,15 +318,6 @@
       "reliability_tier": 2
     },
     {
-      "name": "Brookings",
-      "url": "https://www.brookings.edu/feed/",
-      "category": "think_tank",
-      "weight": 1.0,
-      "perspective": "western_analysis",
-      "state_affiliated": false,
-      "reliability_tier": 1
-    },
-    {
       "name": "Nikkei Asia",
       "url": "https://asia.nikkei.com/rss/feed/nar",
       "category": "regional",
