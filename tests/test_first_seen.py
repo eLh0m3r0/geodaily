@@ -108,3 +108,18 @@ class TestBlindspotFreshness(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestBlindspotExcludesQuickHits(unittest.TestCase):
+    def test_quick_hit_event_is_not_a_candidate(self):
+        mk = TestBlindspotFreshness._article
+        hit_event = [mk("https://h/1", "c1", "chinese_state", 3), mk("https://h/2", "c1", "east_asia", 4)]
+        other = [mk("https://o/1", "c2", "middle_east", 3), mk("https://o/2", "c2", "african", 5)]
+        story = AIAnalysis(story_title="x", why_important="w", what_overlooked="o",
+                           prediction="p", impact_score=8, sources=["https://w/1"])
+        analyzer = PerspectiveAnalyzer()
+        both = analyzer._blindspot_candidates([story], hit_event + other)
+        self.assertEqual({m.cluster_id for ms in both for m in ms}, {"c1", "c2"})
+        filtered = analyzer._blindspot_candidates([story], hit_event + other,
+                                                  exclude_urls=["https://h/2"])
+        self.assertEqual({m.cluster_id for ms in filtered for m in ms}, {"c2"})

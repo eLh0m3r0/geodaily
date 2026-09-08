@@ -23,6 +23,7 @@ from typing import Dict, List, Optional, Tuple
 from ..models import Article, AIAnalysis, PerspectiveGrid, PerspectiveView
 from ..config import Config
 from ..perspectives import group_of, label_of, STATE_GROUPS, NON_WESTERN_GROUPS, GROUP_ORDER
+from ..newsletter.source_display import source_display_name
 from ..archiver.ai_data_archiver import ai_archiver
 from .cost_controller import ai_cost_controller
 from .api_utils import extract_response_text, response_tokens_and_cost
@@ -90,14 +91,15 @@ class PerspectiveAnalyzer:
         return now - published <= timedelta(hours=cls.BLINDSPOT_MAX_AGE_HOURS)
 
     def _blindspot_candidates(self, stories: List[AIAnalysis], articles: List[Article],
-                              limit: int = 2) -> List[List[Article]]:
+                              limit: int = 2,
+                              exclude_urls: Optional[List[str]] = None) -> List[List[Article]]:
         """Events well covered outside Western media but absent from it —
         and not any of the issue's selected stories (excluded by cited URL
         AND by whole event cluster, so an uncited cluster member can't
         resurface the story as its own blindspot). Only fresh articles
         (BLINDSPOT_MAX_AGE_HOURS) take part."""
         now = datetime.now(timezone.utc)
-        story_urls = set()
+        story_urls = set(exclude_urls or [])
         for s in stories:
             story_urls.update(s.sources or [])
         story_clusters = {getattr(a, 'cluster_id', None) for a in articles
@@ -133,7 +135,10 @@ class PerspectiveAnalyzer:
     # ------------------------------------------------------------------
 
     def build_grid(self, story: AIAnalysis, articles: List[Article],
-                   all_stories: Optional[List[AIAnalysis]] = None) -> Optional[PerspectiveGrid]:
+                   all_stories: Optional[List[AIAnalysis]] = None,
+                   exclude_urls: Optional[List[str]] = None) -> Optional[PerspectiveGrid]:
+        """`exclude_urls`: articles already used elsewhere in the issue (quick
+        hits) — their events are never offered as the blindspot."""
         members = self._story_articles(story, articles)
         if not members:
             return None
@@ -144,7 +149,8 @@ class PerspectiveAnalyzer:
                   for g in groups}
         grid = PerspectiveGrid(total_outlets=len({a.source for a in members}), counts=counts)
 
-        blindspot_events = self._blindspot_candidates(all_stories or [story], articles)
+        blindspot_events = self._blindspot_candidates(all_stories or [story], articles,
+                                                      exclude_urls=exclude_urls)
 
         if self.mock_mode:
             return self._mock_grid(grid, groups, blindspot_events)
@@ -166,7 +172,7 @@ class PerspectiveAnalyzer:
         for g, members in groups.items():
             grid.views.append(PerspectiveView(
                 perspective=g,
-                outlets=sorted({m.source for m in members}),
+                outlets=sorted({source_display_name(m.url) for m in members}),
                 article_count=len(members),
                 framing=f"(mock) How {label_of(g)} frames this story.",
                 state_affiliated=g in STATE_GROUPS,
@@ -207,15 +213,26 @@ class PerspectiveAnalyzer:
             + "\n\n".join(sections)
             + "\n" + blindspot_section +
             "\nFor EACH perspective group above, give:\n"
-            "1. framing: ONE short sentence (max 20 words) describing what this group's "
-            "coverage emphasizes — the angle, not a summary of the event.\n"
+            "1. framing: ONE short sentence (max 20 words) naming this group's editorial "
+            "angle in political terms: what it treats as the cause, whom it holds "
+            "responsible, what it stresses or leaves out compared with the other groups. "
+            "Never describe writing style, tone, vividness, level of detail or imagery "
+            "(\"vivid detail on smoke\", \"precise factual account\" are NOT framings). "
+            "If a group only runs agency/wire copy with no discernible angle, write "
+            "exactly: \"Runs wire copy: reports the facts without an editorial angle.\"\n"
             "2. quote: a VERBATIM quote of 8-30 words copied EXACTLY from one article's "
-            "Text above, that shows the framing. Copy the characters exactly — do not fix, "
-            "trim inside, or paraphrase. If no clean quote exists, use \"\".\n"
+            "Text above, that shows the framing. It must be a complete sentence or "
+            "self-contained clause starting with a capital letter, and it must carry a "
+            "claim, an attribution or a number — never scene-setting (smoke, fires, "
+            "sirens, weather). Copy the characters exactly — do not fix, trim inside, "
+            "or paraphrase. If no such quote exists, use \"\".\n"
             "3. quote_article_index: the [index] of the article the quote is from.\n\n"
             + ("Also pick the single most significant blindspot candidate and write 1-2 plain "
-               "sentences (max 35 words) on what it is and why the gap matters. Use the "
-               "candidate's index.\n\n" if blindspot_section else "")
+               "sentences (max 35 words): what happened, who is reporting it, and why the "
+               "gap matters. Attribute claims to their source (\"Hamas says\", \"TASS "
+               "reports\"). Say that no Western outlet in today's pool covered it; do not "
+               "say Western media \"ignored\" it. Use the candidate's index.\n\n"
+               if blindspot_section else "")
             + "Plain English, active voice, no jargon.\n"
             "Return ONLY this JSON object, no markdown fences:\n"
             '{"views": [{"group": "western", "framing": "...", "quote": "...", '
@@ -266,7 +283,7 @@ class PerspectiveAnalyzer:
             if quote and isinstance(q_idx, int) and 0 <= q_idx < len(indexed):
                 src_article = indexed[q_idx]
                 if self._verify_quote(quote, src_article):
-                    quote_outlet, quote_url = src_article.source, src_article.url
+                    quote_outlet, quote_url = source_display_name(src_article.url), src_article.url
                 else:
                     logger.warning(f"Quote failed verbatim check, dropping: {quote[:60]}")
                     quote = ""
@@ -274,7 +291,7 @@ class PerspectiveAnalyzer:
                 quote = ""
             grid.views.append(PerspectiveView(
                 perspective=g,
-                outlets=sorted({m.source for m in members}),
+                outlets=sorted({source_display_name(m.url) for m in members}),
                 article_count=grid.counts.get(g, len(members)),
                 framing=(view_data.get("framing") or "").strip(),
                 quote=quote,
