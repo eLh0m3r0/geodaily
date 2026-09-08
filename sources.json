@@ -165,15 +165,6 @@
       "display": "South China Morning Post"
     },
     {
-      "name": "Asia Times",
-      "url": "https://asiatimes.com/feed/",
-      "category": "regional",
-      "weight": 0.8,
-      "perspective": "east_asia",
-      "state_affiliated": false,
-      "reliability_tier": 2
-    },
-    {
       "name": "Middle East Eye",
       "url": "https://www.middleeasteye.net/rss",
       "category": "regional",
@@ -318,15 +309,6 @@
       "display": "UN News"
     },
     {
-      "name": "EUobserver",
-      "url": "https://euobserver.com/rss.xml",
-      "category": "mainstream",
-      "weight": 0.9,
-      "perspective": "western_mainstream",
-      "state_affiliated": false,
-      "reliability_tier": 2
-    },
-    {
       "name": "Balkan Insight",
       "url": "https://balkaninsight.com/feed/",
       "category": "regional",
@@ -334,15 +316,6 @@
       "perspective": "western_mainstream",
       "state_affiliated": false,
       "reliability_tier": 2
-    },
-    {
-      "name": "Kyiv Independent",
-      "url": "https://kyivindependent.com/feed",
-      "category": "regional",
-      "weight": 1.0,
-      "perspective": "western_mainstream",
-      "state_affiliated": false,
-      "reliability_tier": 1
     },
     {
       "name": "Brookings",
@@ -405,17 +378,6 @@
       "reliability_tier": 2,
       "site": "straitstimes.com",
       "display": "The Straits Times"
-    },
-    {
-      "name": "China Daily World",
-      "url": "https://www.chinadaily.com.cn/rss/world_rss.xml",
-      "category": "regional",
-      "weight": 0.6,
-      "perspective": "chinese_state",
-      "state_affiliated": true,
-      "reliability_tier": 3,
-      "site": "chinadaily.com.cn",
-      "display": "China Daily"
     },
     {
       "name": "CGTN World",
@@ -484,19 +446,8 @@
       "display": "Dawn"
     },
     {
-      "name": "Arab News",
-      "url": "https://www.arabnews.com/rss.xml",
-      "category": "regional",
-      "weight": 0.7,
-      "perspective": "middle_east",
-      "state_affiliated": false,
-      "reliability_tier": 2,
-      "site": "arabnews.com",
-      "display": "Arab News"
-    },
-    {
       "name": "Anadolu Agency",
-      "url": "https://www.aa.com.tr/en/rss/default?cat=news",
+      "url": "https://www.aa.com.tr/en/rss/default?cat=world",
       "category": "regional",
       "weight": 0.6,
       "perspective": "turkish_state",
@@ -504,28 +455,6 @@
       "reliability_tier": 3,
       "site": "aa.com.tr",
       "display": "Anadolu Agency"
-    },
-    {
-      "name": "Times of Israel",
-      "url": "https://www.timesofisrael.com/feed/",
-      "category": "regional",
-      "weight": 0.8,
-      "perspective": "middle_east",
-      "state_affiliated": false,
-      "reliability_tier": 2,
-      "site": "timesofisrael.com",
-      "display": "The Times of Israel"
-    },
-    {
-      "name": "The Jerusalem Post",
-      "url": "https://www.jpost.com/rss/rssfeedsheadlines.aspx",
-      "category": "regional",
-      "weight": 0.7,
-      "perspective": "middle_east",
-      "state_affiliated": false,
-      "reliability_tier": 2,
-      "site": "jpost.com",
-      "display": "The Jerusalem Post"
     },
     {
       "name": "Tehran Times",
@@ -603,6 +532,391 @@
       "reliability_tier": 1,
       "site": "globalvoices.org",
       "display": "Global Voices"
+    },
+    {
+      "name": "RT",
+      "url": "https://www.rt.com/rss/",
+      "category": "mainstream",
+      "weight": 0.6,
+      "perspective": "russian_state",
+      "state_affiliated": true,
+      "reliability_tier": 3,
+      "site": "rt.com",
+      "display": "RT"
+    },
+    {
+      "name": "CGTN China",
+      "url": "https://www.cgtn.com/subscribe/rss/section/china.xml",
+      "category": "mainstream",
+      "weight": 0.6,
+      "perspective": "chinese_state",
+      "state_affiliated": true,
+      "reliability_tier": 3,
+      "site": "cgtn.com",
+      "display": "CGTN"
+    },
+    {
+      "name": "Global Times",
+      "url": "https://www.globaltimes.cn/rss/outbrain.xml",
+      "category": "mainstream",
+      "weight": 0.6,
+      "perspective": "chinese_state",
+      "state_affiliated": true,
+      "reliability_tier": 3,
+      "site": "globaltimes.cn",
+      "display": "Global Times"
+    },
+    {
+      "name": "Daily Sabah",
+      "url": "https://www.dailysabah.com/rssFeed/world",
+      "category": "mainstream",
+      "weight": 0.6,
+      "perspective": "turkish_state",
+      "state_affiliated": true,
+      "reliability_tier": 3,
+      "site": "dailysabah.com",
+      "display": "Daily Sabah"
+    },
+    {
+      "name": "Haaretz",
+      "url": "https://www.haaretz.com/srv/haaretz-latest-headlines",
+      "category": "mainstream",
+      "weight": 0.9,
+      "perspective": "middle_east",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "haaretz.com",
+      "display": "Haaretz"
+    },
+    {
+      "name": "Ynetnews",
+      "url": "https://www.ynetnews.com/Integration/StoryRss3082.xml",
+      "category": "mainstream",
+      "weight": 0.8,
+      "perspective": "middle_east",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "ynetnews.com",
+      "display": "Ynetnews"
+    },
+    {
+      "name": "Middle East Monitor",
+      "url": "https://www.middleeastmonitor.com/feed/",
+      "category": "regional",
+      "weight": 0.6,
+      "perspective": "middle_east",
+      "state_affiliated": false,
+      "reliability_tier": 3,
+      "site": "middleeastmonitor.com",
+      "display": "Middle East Monitor"
+    },
+    {
+      "name": "Iran International",
+      "url": "https://www.iranintl.com/en/feed",
+      "category": "mainstream",
+      "weight": 0.7,
+      "perspective": "middle_east",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "iranintl.com",
+      "display": "Iran International"
+    },
+    {
+      "name": "Egypt Independent",
+      "url": "https://www.egyptindependent.com/feed/",
+      "category": "regional",
+      "weight": 0.6,
+      "perspective": "middle_east",
+      "state_affiliated": false,
+      "reliability_tier": 3,
+      "site": "egyptindependent.com",
+      "display": "Egypt Independent"
+    },
+    {
+      "name": "Buenos Aires Times",
+      "url": "https://www.batimes.com.ar/feed",
+      "category": "mainstream",
+      "weight": 0.8,
+      "perspective": "latam",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "batimes.com.ar",
+      "display": "Buenos Aires Times"
+    },
+    {
+      "name": "The Rio Times",
+      "url": "https://www.riotimesonline.com/feed/",
+      "category": "mainstream",
+      "weight": 0.7,
+      "perspective": "latam",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "riotimesonline.com",
+      "display": "The Rio Times"
+    },
+    {
+      "name": "El Pais English",
+      "url": "https://feeds.elpais.com/mrss-s/pages/ep/site/english.elpais.com/portada",
+      "category": "mainstream",
+      "weight": 0.9,
+      "perspective": "latam",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "elpais.com",
+      "display": "El País"
+    },
+    {
+      "name": "Folha International",
+      "url": "https://feeds.folha.uol.com.br/internacional/en/rss091.xml",
+      "category": "mainstream",
+      "weight": 0.8,
+      "perspective": "latam",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "folha.uol.com.br",
+      "display": "Folha de S.Paulo"
+    },
+    {
+      "name": "Express Tribune",
+      "url": "https://tribune.com.pk/feed/home",
+      "category": "mainstream",
+      "weight": 0.8,
+      "perspective": "south_asia",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "tribune.com.pk",
+      "display": "The Express Tribune"
+    },
+    {
+      "name": "Hindustan Times World",
+      "url": "https://www.hindustantimes.com/feeds/rss/world-news/rssfeed.xml",
+      "category": "mainstream",
+      "weight": 0.8,
+      "perspective": "south_asia",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "hindustantimes.com",
+      "display": "Hindustan Times"
+    },
+    {
+      "name": "NDTV World",
+      "url": "https://feeds.feedburner.com/ndtvnews-world-news",
+      "category": "mainstream",
+      "weight": 0.8,
+      "perspective": "south_asia",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "ndtv.com",
+      "display": "NDTV"
+    },
+    {
+      "name": "Korea Times",
+      "url": "https://www.koreatimes.co.kr/www/rss/world.xml",
+      "category": "mainstream",
+      "weight": 0.8,
+      "perspective": "east_asia",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "koreatimes.co.kr",
+      "display": "The Korea Times"
+    },
+    {
+      "name": "Korea Herald",
+      "url": "https://www.koreaherald.com/rss/newsAll",
+      "category": "mainstream",
+      "weight": 0.8,
+      "perspective": "east_asia",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "koreaherald.com",
+      "display": "The Korea Herald"
+    },
+    {
+      "name": "Taipei Times",
+      "url": "https://www.taipeitimes.com/xml/index.rss",
+      "category": "mainstream",
+      "weight": 0.8,
+      "perspective": "east_asia",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "taipeitimes.com",
+      "display": "Taipei Times"
+    },
+    {
+      "name": "Bangkok Post World",
+      "url": "https://www.bangkokpost.com/rss/data/world.xml",
+      "category": "mainstream",
+      "weight": 0.8,
+      "perspective": "east_asia",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "bangkokpost.com",
+      "display": "Bangkok Post"
+    },
+    {
+      "name": "Nation Africa",
+      "url": "https://nation.africa/kenya/rss.xml",
+      "category": "mainstream",
+      "weight": 0.8,
+      "perspective": "african",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "nation.africa",
+      "display": "Nation"
+    },
+    {
+      "name": "Punch Nigeria",
+      "url": "https://punchng.com/feed/",
+      "category": "mainstream",
+      "weight": 0.7,
+      "perspective": "african",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "punchng.com",
+      "display": "Punch"
+    },
+    {
+      "name": "Africanews",
+      "url": "https://www.africanews.com/feed/rss",
+      "category": "mainstream",
+      "weight": 0.8,
+      "perspective": "african",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "africanews.com",
+      "display": "Africanews"
+    },
+    {
+      "name": "Mail & Guardian",
+      "url": "https://mg.co.za/rss/",
+      "category": "mainstream",
+      "weight": 0.9,
+      "perspective": "african",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "mg.co.za",
+      "display": "Mail & Guardian"
+    },
+    {
+      "name": "IPS News",
+      "url": "http://www.ipsnews.net/feed/",
+      "category": "analysis",
+      "weight": 0.8,
+      "perspective": "global_south",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "ipsnews.net",
+      "display": "Inter Press Service"
+    },
+    {
+      "name": "Semafor",
+      "url": "https://www.semafor.com/rss.xml",
+      "category": "mainstream",
+      "weight": 0.8,
+      "perspective": "western_mainstream",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "semafor.com",
+      "display": "Semafor"
+    },
+    {
+      "name": "The Conversation Global",
+      "url": "https://theconversation.com/global/articles.atom",
+      "category": "analysis",
+      "weight": 0.9,
+      "perspective": "western_analysis",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "theconversation.com",
+      "display": "The Conversation"
+    },
+    {
+      "name": "Le Monde English",
+      "url": "https://www.lemonde.fr/en/rss/une.xml",
+      "category": "mainstream",
+      "weight": 1.0,
+      "perspective": "western_mainstream",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "lemonde.fr",
+      "display": "Le Monde"
+    },
+    {
+      "name": "Der Spiegel International",
+      "url": "https://www.spiegel.de/international/index.rss",
+      "category": "mainstream",
+      "weight": 1.0,
+      "perspective": "western_mainstream",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "spiegel.de",
+      "display": "Der Spiegel"
+    },
+    {
+      "name": "Euronews",
+      "url": "https://www.euronews.com/rss?level=theme&name=news",
+      "category": "mainstream",
+      "weight": 0.8,
+      "perspective": "western_mainstream",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "euronews.com",
+      "display": "Euronews"
+    },
+    {
+      "name": "ANSA English",
+      "url": "https://www.ansa.it/english/english_rss.xml",
+      "category": "mainstream",
+      "weight": 0.8,
+      "perspective": "western_mainstream",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "ansa.it",
+      "display": "ANSA"
+    },
+    {
+      "name": "Ukrainska Pravda",
+      "url": "https://www.pravda.com.ua/eng/rss/",
+      "category": "mainstream",
+      "weight": 0.9,
+      "perspective": "western_mainstream",
+      "state_affiliated": false,
+      "reliability_tier": 2,
+      "site": "pravda.com.ua",
+      "display": "Ukrainska Pravda"
+    },
+    {
+      "name": "Ukrinform",
+      "url": "https://www.ukrinform.net/rss/block-lastnews",
+      "category": "mainstream",
+      "weight": 0.6,
+      "perspective": "western_mainstream",
+      "state_affiliated": true,
+      "reliability_tier": 3,
+      "site": "ukrinform.net",
+      "display": "Ukrinform"
+    },
+    {
+      "name": "Novaya Gazeta Europe",
+      "url": "https://novayagazeta.eu/feed/rss",
+      "category": "mainstream",
+      "weight": 0.9,
+      "perspective": "russian_exile",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "novayagazeta.eu",
+      "display": "Novaya Gazeta Europe"
+    },
+    {
+      "name": "Lowy Interpreter",
+      "url": "https://www.lowyinstitute.org/the-interpreter/rss.xml",
+      "category": "think_tank",
+      "weight": 1.0,
+      "perspective": "western_analysis",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "lowyinstitute.org",
+      "display": "Lowy Institute"
     }
   ],
   "tier2_sources": [

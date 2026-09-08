@@ -91,7 +91,7 @@ python src/sitemap_generator.py             # Generate sitemap for GitHub Pages
 ## Architecture Overview
 
 ### Pipeline Flow
-1. **Collection Layer** (`src/collectors/`): Collects from 61 sources (59 RSS + 2 web scraping) across 14 global perspectives
+1. **Collection Layer** (`src/collectors/`): Collects from 89 sources (87 RSS + 2 web scraping) across 14 global perspectives — 54 of the RSS feeds are non-Western
 2. **Processing Layer** (`src/processors/`): Semantic event clustering (fastembed MiniLM + HDBSCAN in `embedding_clusterer.py`, title-similarity fallback), dedup and scoring
 3. **AI Analysis Layer** (`src/ai/`): Claude API with cost controls — one issue call (3 ranked stories + quick hits + big number, `simple_multi_stage_analyzer.py`; no sports/celebrity, quick hits deduped against story events by URL/cluster/title-overlap) plus one perspective-grid call (`perspective_analyzer.py`), with a Flesch-Kincaid readability gate (`readability.py`)
 4. **Newsletter Generation** (`src/newsletter/`): Hybrid issue format = THE BIG STORY (full treatment: 'How the World Covers It' perspective grid + signals) + MORE TOP STORIES (2 compact stories, each with a computed coverage mini-bar — no extra AI call) + ALSO TODAY quick hits + THE BLINDSPOT (own section — by construction a DIFFERENT event than the stories, never rendered inside a story) + THE BIG NUMBER; story order is editorial (analyzer ranking, never re-sorted by score); web + email-safe renderers, named source links (`source_display.py`), machine-readable issue JSON (`issue_store.py`)
@@ -103,7 +103,7 @@ python src/sitemap_generator.py             # Generate sitemap for GitHub Pages
 ### Key Components
 
 #### Data Collection
-- **RSS Collector** (`src/collectors/rss_collector.py`): Handles 38 tier1 RSS feeds with enhanced content extraction
+- **RSS Collector** (`src/collectors/rss_collector.py`): Handles the 87 tier1 RSS feeds with enhanced content extraction
 - **Web Scraper** (`src/collectors/web_scraper.py`): Scrapes 2 tier2 sources with SSL bypass for certificate issues
 - **Main Collector** (`src/collectors/main_collector.py`): Parallel collection orchestration
 - **Article Content Fetcher** (`src/collectors/article_content_fetcher.py`): Advanced full-text extraction from URLs
@@ -170,7 +170,7 @@ The AI analyzer now evaluates stories across multiple dimensions:
 
 #### Configuration
 - **Config** (`src/config.py`): Centralized configuration with env variables
-- **Sources** (`sources.json`): 26 news sources configuration
+- **Sources** (`sources.json`): 89 news sources configuration
 - **Models** (`src/models.py`): Data classes (Article, NewsSource, AIAnalysis, etc.)
 
 ### Important Patterns
@@ -235,7 +235,7 @@ The AI analyzer now evaluates stories across multiple dimensions:
 ## Development Notes
 
 ### Working with Sources
-- Current configuration: 61 sources (59 RSS + 2 web)
+- Current configuration: 89 sources (87 RSS + 2 web); expanded 2026-09-08 with 35 vetted non-Western/European feeds (RT, CGTN China, Global Times, Daily Sabah, Haaretz, Ynetnews, El País, Folha, Hindustan Times, NDTV, Korea Times/Herald, Taipei Times, Bangkok Post, Nation, Punch, Africanews, Mail & Guardian, IPS, Le Monde, Der Spiegel, Euronews, ANSA, Ukrainska Pravda, Ukrinform, Novaya Gazeta Europe, Lowy …) after removing 7 dead feeds (Arab News, Asia Times, EUobserver, Kyiv Independent, Times of Israel, China Daily, Jerusalem Post). Feeds behind Cloudflare bot protection (Indian Express, Times of Israel, Arab News, Al Arabiya, Rest of World, Chatham House) return 403 to datacenter IPs and cannot be used
 - Each source carries `perspective` (one of 14 axes, see `src/perspectives.py`), `state_affiliated` (state media are cited as framing data with a visible label, never as sole source of fact) and `reliability_tier` (1-3); optional `site` (article domain when it differs from the feed domain) and `display` (clean outlet name)
 - Each source carries a per-source `weight` (0.7–1.3) that scales relevance scoring, deduplication preference, and is passed to the AI as an editorial-quality signal
 - Validate feeds with `python scripts/validate_sources.py` (add `--strict` in CI to fail on dead feeds); a weekly `source_health.yml` workflow runs it every Monday. To vet feeds before adding them, put them in `sources.candidates.json` and run the validator with `--file sources.candidates.json` (or dispatch `source_health.yml` with the `file` input on any branch — the sandbox cannot reach news sites, the Actions runner can)
