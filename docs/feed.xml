@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Mon, 07 Sep 2026 08:32:09 GMT</pubDate>
-        <lastBuildDate>Mon, 07 Sep 2026 08:32:09 GMT</lastBuildDate>
+        <pubDate>Tue, 08 Sep 2026 08:28:14 GMT</pubDate>
+        <lastBuildDate>Tue, 08 Sep 2026 08:28:14 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,19 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - September 08, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-08.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Tuesday, September 08, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russia Strikes Kyiv Again as Peace Push Truce Ends</strong>: Russia's three-day pause ended with missile and drone strikes on Kyiv, killing two people and damaging schools and homes. The attack came right after US envoys Witkoff and Kushner left claiming progre...</li></ul><p><em>Published: September 08, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Tue, 08 Sep 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260908</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Russia]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-08.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - September 07, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-07.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Monday, September 07, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Far-right AfD wins German state election, first since WWII</strong>: The AfD won over 44% of the vote in Saxony-Anhalt. It could soon lead a German state government for the first time since the Nazi era. Sweden's center-left leader also warned that Russia is now shapin...</li></ul><p><em>Published: September 07, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -176,20 +189,6 @@
         <category><![CDATA[Strategic Analysis]]></category>
         <category><![CDATA[International Relations]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-30.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - August 29, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-29.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Saturday, August 29, 2026 — one story worth your full attention today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>US Claims Control of a Fifth of Venezuela's Oil Reserves</strong>: Trump says the US now controls over 65 billion barrels of Venezuelan oil. He calls it the biggest oil deal ever. This could change US fuel prices and give America more power over Venezuela's economy. ...</li></ul><p><em>Published: August 29, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sat, 29 Aug 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260829</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[United States]]></category>
-        <category><![CDATA[Economy]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-29.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>

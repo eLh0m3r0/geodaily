@@ -1,0 +1,248 @@
+{
+ "date": "2026-09-08",
+ "title": "Geopolitical Daily",
+ "email_subject": "Kyiv Pause Ends, Trade Wars Erupt",
+ "preheader": "Canada slaps tariffs on the US; UK moves to ban trade with Israeli settlements.",
+ "intro_text": "Good morning. It's Tuesday, September 08, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "Russia Strikes Kyiv Again as Peace Push Truce Ends",
+   "why_important": "Russia's three-day pause ended with missile and drone strikes on Kyiv, killing two people and damaging schools and homes. The attack came right after US envoys Witkoff and Kushner left claiming progress. It shows Moscow's actions still don't match the diplomatic talk, raising doubts about any real ceasefire before winter.",
+   "what_overlooked": "Coverage focuses on the death toll but underplays Ukrainian officials' open distrust of the envoys' upbeat framing.",
+   "prediction": "Watch whether Russia agrees to another pause or ramps up strikes as US envoys plan next steps.",
+   "impact_score": 9,
+   "sources": [
+    "https://meduza.io/en/news/2026/09/08/russian-forces-resume-strikes-on-kyiv-killing-two",
+    "https://www.thehindu.com/news/international/russian-drone-missile-strikes-on-kyiv-kill-2-end-pause-in-attacks/article71441601.ece",
+    "https://www.dw.com/en/ukraine-updates-two-killed-in-kyiv-as-3-day-truce-ends/live-79153168?maca=en-rss-en-all-1573-rdf",
+    "https://www.aljazeera.com/news/2026/9/8/russia-strikes-kyiv-as-three-day-pause-during-us-envoy-visits-ends?traffic_source=rss"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 7,
+   "novelty_score": 5,
+   "credibility_score": 8,
+   "impact_dimension_score": 9,
+   "confidence": 0.85,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "russian_exile": 1,
+    "south_asia": 1,
+    "western": 4,
+    "middle_east": 1,
+    "east_asia": 3
+   },
+   "coverage_outlets": 8,
+   "signal_terms": [
+    "Kyiv",
+    "Russia",
+    "Witkoff",
+    "Kushner"
+   ]
+  },
+  {
+   "story_title": "UK to Ban Trade With Israeli Settlements in West Bank",
+   "why_important": "Britain is set to become one of the first major Western powers to formally ban trade with Israeli settlements, following a 2024 ICJ ruling. It could strain US-UK relations and signals a real Western split over Israel's West Bank policy.",
+   "what_overlooked": "Reports don't fully weigh how limited the ban's actual trade impact will be against its symbolic weight.",
+   "prediction": "Expect a sharp rebuke from Washington and Israel once the ban is formally announced.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.middleeasteye.net/live-blog/live-blog-update/uk-sanctions-should-target-activity-supporting-or-maintaining",
+    "https://www.ft.com/content/1f71d2d0-d2e2-46da-a96f-99d20936223e?syn-25a6b1a6=1",
+    "https://www.straitstimes.com/world/europe/britain-set-to-impose-trade-ban-on-israeli-west-bank-settlements",
+    "https://tass.com/world/2183873"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 7,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.8,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "middle_east": 3,
+    "western": 3,
+    "east_asia": 2,
+    "russian_state": 1
+   },
+   "coverage_outlets": 6,
+   "signal_terms": [
+    "Israel",
+    "West Bank",
+    "Ed Miliband"
+   ]
+  },
+  {
+   "story_title": "Canada Hits Back With Tariffs on $20 Billion of US Goods",
+   "why_important": "Canada imposed tariffs up to 50% on US steel, autos and other goods after trade talks collapsed. It's dollar-for-dollar retaliation against Trump's earlier tariffs, hitting swing-state industries before US midterms.",
+   "what_overlooked": "Little attention to how consumers on both sides of the border will feel higher prices first.",
+   "prediction": "Watch for Trump's response or fresh tariff threats within the next few days.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.dawn.com/news/2028326/canadas-retaliatory-tariffs-take-effect-as-us-trade-talks-stall",
+    "https://www.japantimes.co.jp/business/2026/09/08/markets/canada-50-tariffs-us-trade-war/",
+    "https://www.aljazeera.com/news/2026/9/8/canadas-retaliatory-tariffs-on-20bn-of-us-goods-take-effect?traffic_source=rss",
+    "https://www.france24.com/en/americas/20260908-canada-s-counter-tariffs-take-effect-on-several-us-goods-as-trade-war-reignites"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 6,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "americas",
+   "actor_type": "state",
+   "event_type": "economic",
+   "coverage_counts": {
+    "south_asia": 1,
+    "east_asia": 3,
+    "middle_east": 1,
+    "western": 4
+   },
+   "coverage_outlets": 9,
+   "signal_terms": [
+    "Canada",
+    "United States",
+    "Mark Carney",
+    "tariffs"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Serbia buried convicted war criminal Ratko Mladic with military honors in Belgrade, days before elections.",
+   "region": "europe",
+   "url": "https://www.dw.com/en/war-criminal-ratko-mladic-buried-with-military-honors-in-belgrade-serbia/a-79148678?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "Russia ordered Germany's St. Petersburg consulate closed by Sept. 18, retaliating for Germany's own closures.",
+   "region": "europe",
+   "url": "https://www.dw.com/en/russia-announces-it-is-closing-germany-s-consulate-in-st-petersburg/a-79149908?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "China's exports jumped 25% in August, pushing its yearly trade surplus past $800 billion.",
+   "region": "indo_pacific",
+   "url": "https://asia.nikkei.com/economy/trade/china-s-exports-soar-25-in-august-trade-surplus-tops-800bn-for-year"
+  },
+  {
+   "text": "Indonesia reopened Jakarta's airport after Anak Krakatau's ash cleared, but seven airports had been shut.",
+   "region": "indo_pacific",
+   "url": "https://www.japantimes.co.jp/news/2026/09/08/asia-pacific/indonesia-jakarta-airport-volcano-ash/"
+  },
+  {
+   "text": "Ukraine's prosecutor general Ruslan Kravchenko resigned after a subordinate was accused of shielding fraud call centers.",
+   "region": "europe",
+   "url": "https://meduza.io/en/news/2026/09/08/ukraine-s-prosecutor-general-submits-resignation-after-senior-subordinate-is-accused-of-shielding-fraudulent-call-centers"
+  },
+  {
+   "text": "A UN expert warned Israel's removal of Gaza rubble risks erasing evidence of atrocity crimes.",
+   "region": "middle_east",
+   "url": "https://www.scmp.com/news/world/middle-east/article/3366684/un-expert-warns-evidence-israels-atrocity-crimes-risks-being-removed?utm_source=rss_feed"
+  },
+  {
+   "text": "An Argentine court ordered a Nazi-looted painting returned to a Jewish family, 90 years after it vanished.",
+   "region": "americas",
+   "url": "https://en.mercopress.com/2026/09/07/an-argentine-court-returns-an-18th-century-work-to-the-heirs-of-a-jewish-art-dealer?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss"
+  },
+  {
+   "text": "The EU pledged $232 million to Greenland as Trump pushes for US control of the Arctic island.",
+   "region": "europe",
+   "url": "https://www.dw.com/en/eu-s-von-der-leyen-pledges-232-million-greenland-investment/a-79109197?maca=en-rss-en-all-1573-rdf"
+  }
+ ],
+ "big_number": {
+  "value": "$800 billion",
+  "context": "China's trade surplus for the year has topped $800 billion after a 25% export surge in August.",
+  "url": "https://asia.nikkei.com/economy/trade/china-s-exports-soar-25-in-august-trade-surplus-tops-800bn-for-year"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW News",
+     "Financial Times World",
+     "France 24 English"
+    ],
+    "article_count": 4,
+    "framing": "Frames strikes as diplomatic failure following Witkoff-Kushner peace envoy visit",
+    "quote": "Overnight attacks come after Ukraine visit by Steve Witkoff and Jared Kushner fails to deliver breakthrough",
+    "quote_outlet": "Financial Times World",
+    "quote_url": "https://www.ft.com/content/0815cd34-bf4c-4771-8bf5-710eff286763?syn-25a6b1a6=1",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "South China Morning Post RSS",
+     "The Straits Times World"
+    ],
+    "article_count": 3,
+    "framing": "Emphasizes scale of destruction with vivid detail on fires and smoke over Kyiv",
+    "quote": "Russian missiles and drones pounded Kyiv overnight, killing two people and sending smoke billowing above the Ukrainian capital",
+    "quote_outlet": "South China Morning Post RSS",
+    "quote_url": "https://www.scmp.com/news/world/europe/article/3366714/russia-resumes-strikes-kyiv-after-pause-trump-envoys-visit?utm_source=rss_feed",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "The Hindu International"
+    ],
+    "article_count": 1,
+    "framing": "Highlights envoys' first official visit as part of a renewed peace push",
+    "quote": "U.S. envoys Jared Kushner and Steve Witkoff arrived in Kyiv for their first official visit in a renewed push to end the war",
+    "quote_outlet": "The Hindu International",
+    "quote_url": "https://www.thehindu.com/news/international/russian-drone-missile-strikes-on-kyiv-kill-2-end-pause-in-attacks/article71441601.ece",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera English"
+    ],
+    "article_count": 1,
+    "framing": "Focuses on US envoy's optimistic statements despite the deadly strikes",
+    "quote": "US envoy says 'encouraged' by talks as White House official told Reuters next steps to be announced in coming weeks.",
+    "quote_outlet": "Al Jazeera English",
+    "quote_url": "https://www.aljazeera.com/news/2026/9/8/russia-strikes-kyiv-as-three-day-pause-during-us-envoy-visits-ends?traffic_source=rss",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "russian_exile",
+    "outlets": [
+     "Meduza (English)"
+    ],
+    "article_count": 1,
+    "framing": "Gives precise factual account of damaged infrastructure cited by Kyiv's mayor",
+    "quote": "damaging administrative buildings, warehouses, schools, and residential buildings in six districts of the city, according to Kyiv Mayor Vitali Klitschko",
+    "quote_outlet": "Meduza (English)",
+    "quote_url": "https://meduza.io/en/news/2026/09/08/russian-forces-resume-strikes-on-kyiv-killing-two",
+    "state_affiliated": false
+   }
+  ],
+  "total_outlets": 8,
+  "counts": {
+   "russian_exile": 1,
+   "south_asia": 1,
+   "western": 4,
+   "middle_east": 1,
+   "east_asia": 3
+  },
+  "blindspot": "Hamas accuses Israel of destroying evidence of Gaza crimes, a serious allegation ignored by Western outlets today, leaving a major accountability story uncovered.",
+  "blindspot_url": "https://www.middleeasteye.net/live-blog/live-blog-update/hamas-accuses-israel-attempts-obliterating-evidence-crimes-gaza"
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Putin out as President of Russia by December 31, 2026?\" at 6%.",
+   "url": "https://polymarket.com/market/putin-out-before-2027-346",
+   "source": "Polymarket"
+  }
+ ]
+}
