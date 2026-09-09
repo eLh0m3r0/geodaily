@@ -1,0 +1,238 @@
+{
+ "date": "2026-09-09",
+ "title": "Geopolitical Daily",
+ "email_subject": "Saudi Oil Attack Sends Crude to $100",
+ "preheader": "Iran also says it seized a US spy submarine in the Gulf today.",
+ "intro_text": "Good morning. It's Wednesday, September 09, 2026 — the 3 stories that matter most today, plus 7 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "Houthi Missiles Hit Saudi Oil Sites, Oil Prices Jump",
+   "why_important": "Yemen's Houthis fired missiles into Saudi Arabia, hitting an airport, an air base and Aramco oil facilities. It's their heaviest attack on the kingdom in years, wounding 73 people. Brent crude jumped past $100 a barrel for the first time since July on fears of a wider Gulf war.",
+   "what_overlooked": "This follows the deadliest Yemen civil war fighting since 2022. The conflict is widening, not staying contained inside Yemen.",
+   "prediction": "Watch for Saudi retaliatory strikes on Houthi positions in Yemen within days.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.bbc.co.uk/news/articles/cp849n2nz01o?at_medium=RSS&at_campaign=rss",
+    "https://www.taipeitimes.com/News/front/archives/2026/09/09/2003863933",
+    "http://www.africanews.com/2026/09/08/houthi-strikes-set-fire-to-saudi-oil-sites-wounding-73/",
+    "https://www.hindustantimes.com/world-news/yemen-houthis-hit-aramco-saudi-energy-sites-73-injured-operations-disrupted-101788853295991.html"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 8,
+   "novelty_score": 6,
+   "credibility_score": 8,
+   "impact_dimension_score": 9,
+   "confidence": 0.85,
+   "region": "middle_east",
+   "actor_type": "mixed",
+   "event_type": "military",
+   "coverage_counts": {
+    "western": 3,
+    "east_asia": 1,
+    "african": 1,
+    "south_asia": 1,
+    "middle_east": 1
+   },
+   "coverage_outlets": 7,
+   "signal_terms": [
+    "Houthis",
+    "Saudi Arabia",
+    "Aramco",
+    "Yemen"
+   ]
+  },
+  {
+   "story_title": "Putin and Trump Hold Hour-Long Call on Ukraine",
+   "why_important": "Putin and Trump spoke for an hour after US envoys Witkoff and Kushner visited Moscow and Kyiv. Both sides called it constructive, but no deal was announced. This is the most direct US-Russia contact since the failed peace push.",
+   "what_overlooked": "The Kremlin readout gives few real details on concessions, and it's unclear Kyiv was consulted before the call.",
+   "prediction": "Watch for an announcement of a Trump-Putin or Putin-Zelensky summit within a week.",
+   "impact_score": 8,
+   "sources": [
+    "https://meduza.io/en/news/2026/09/08/putin-and-trump-discussed-u-s-negotiators-trips-to-moscow-and-kyiv-in-one-hour-call-kremlin-says",
+    "https://www.japantimes.co.jp/news/2026/09/09/world/politics/putin-trump-ukraine-call/",
+    "https://tass.com/world/2184527"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 8,
+   "novelty_score": 6,
+   "credibility_score": 7,
+   "impact_dimension_score": 8,
+   "confidence": 0.7,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "russian_exile": 1,
+    "east_asia": 2,
+    "russian_state": 4,
+    "middle_east_state": 1
+   },
+   "coverage_outlets": 6,
+   "signal_terms": [
+    "Putin",
+    "Trump",
+    "Witkoff",
+    "Kushner"
+   ]
+  },
+  {
+   "story_title": "Iran Says It Captured a US Navy Drone Submarine",
+   "why_important": "Iran's Revolutionary Guards say they seized a US uncrewed submarine near the Strait of Hormuz. The drone, reportedly built by Anduril, can do mine-hunting and seabed mapping. It's a rare, direct seizure of US military hardware in a critical oil chokepoint.",
+   "what_overlooked": "The US has not confirmed the loss or the drone's mission, and Iran's claims remain unverified outside its own state media.",
+   "prediction": "Watch for a Pentagon response or denial, and whether Iran releases the promised video.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.al-monitor.com/originals/2026/09/iran-says-it-captured-us-submarine-drone-strait-hormuz",
+    "https://www.scmp.com/news/world/middle-east/article/3366849/iran-says-captured-us-underwater-drone-strait-hormuz?utm_source=rss_feed",
+    "https://www.hindustantimes.com/world-news/iran-guards-claim-capture-of-one-of-smartest-us-submarines-in-strait-of-hormuz-101788879994387.html",
+    "https://www.rt.com/news/645295-iran-seize-us-submarine-drone/?utm_source=rss&utm_medium=rss&utm_campaign=RSS"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 7,
+   "novelty_score": 8,
+   "credibility_score": 6,
+   "impact_dimension_score": 7,
+   "confidence": 0.6,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "middle_east": 1,
+    "east_asia": 3,
+    "south_asia": 2,
+    "russian_state": 2,
+    "middle_east_state": 1,
+    "chinese_state": 1
+   },
+   "coverage_outlets": 10,
+   "signal_terms": [
+    "Iran",
+    "Strait of Hormuz",
+    "IRGC",
+    "Anduril"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "UK airports scrapped 177 more flights Wednesday after a Tuesday air traffic control glitch axed 1,300.",
+   "region": "europe",
+   "url": "https://www.ft.com/content/88614cc3-6769-47c2-8fcb-76784cef5fca?syn-25a6b1a6=1"
+  },
+  {
+   "text": "Hungary expelled 10 Russian diplomats, accusing Moscow's mission of 'unacceptable' activity under the Vienna Convention.",
+   "region": "europe",
+   "url": "https://www.bbc.co.uk/news/articles/cddvzd1z53lo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "text": "Argentina is now investigating 60 people and companies over unauthorized oil drilling near the Falklands.",
+   "region": "americas",
+   "url": "https://en.mercopress.com/2026/09/09/argentina-probes-60-people-and-companies-over-falklands-oil-without-disclosing-new-names?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss"
+  },
+  {
+   "text": "Volkswagen and Israel's Rafael are building a defense plant in Germany, structured to dodge Qatari shareholder opposition.",
+   "region": "middle_east",
+   "url": "https://www.haaretz.com/israel-news/israel-security/2026-09-08/ty-article/.premium/from-cars-to-iron-dome-how-a-volkswagen-plant-is-sidestepping-qatari-opposition/000001a0-8091-d9e5-a9ba-cad5c1090000"
+  },
+  {
+   "text": "New Zealand will let wealthy migrant investors fund build-to-rent housing starting December, tapping foreign capital.",
+   "region": "indo_pacific",
+   "url": "https://www.dailymaverick.co.za/article/2026-09-09-new-zealand-to-allow-wealthy-migrants-to-build-rental-housing/"
+  },
+  {
+   "text": "Tung Chee-hwa, Hong Kong's first post-handover leader, died Tuesday at age 89.",
+   "region": "indo_pacific",
+   "url": "https://www.thehindu.com/news/international/tung-chee-hwa-hong-kongs-first-post-colonial-leader-dies-at-age-89/article71445663.ece"
+  },
+  {
+   "text": "Brazilian authorities intercepted a nearly 100kg cocaine shipment headed for Durban, South Africa.",
+   "region": "africa",
+   "url": "https://www.dailymaverick.co.za/article/2026-09-08-brazils-cocaine-traffickers-still-targeting-durban-harbour-despite-madlanga-focus/"
+  }
+ ],
+ "big_number": {
+  "value": "$100",
+  "context": "Brent crude broke $100 a barrel for the first time since July after Houthi strikes hit Saudi oil facilities.",
+  "url": "https://www.al-monitor.com/originals/2026/09/brent-crude-rises-above-100-barrel-middle-east-conflict-escalates"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "BBC",
+     "Euronews",
+     "NPR"
+    ],
+    "article_count": 3,
+    "framing": "Frames the attacks as fueling a broader regional escalation and collapse of Yemen's civil war truce.",
+    "quote": "Saudi Arabia launched strikes on Taiz and Marib provinces, as analysts said Riyadh now faced a \"spiral of escalation\".",
+    "quote_outlet": "Euronews",
+    "quote_url": "http://www.euronews.com/2026/09/08/saudi-arabia-strikes-back-after-houthis-hit-oil-sites-in-heaviest-attack-in-years",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "Taipei Times"
+    ],
+    "article_count": 1,
+    "framing": "Runs wire copy: reports the facts without an editorial angle.",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Hindustan Times"
+    ],
+    "article_count": 1,
+    "framing": "Focuses on the specific infrastructure hit—airport, airbase, Aramco sites—without assigning political blame.",
+    "quote": "The Houthis targeted several sites, including Abha International Airport, King Khalid air base and Aramco facilities in Abha and Jazan, in Saudi Arabia.",
+    "quote_outlet": "Hindustan Times",
+    "quote_url": "https://www.hindustantimes.com/world-news/yemen-houthis-hit-aramco-saudi-energy-sites-73-injured-operations-disrupted-101788853295991.html",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Iran International"
+    ],
+    "article_count": 1,
+    "framing": "Explicitly labels the Houthis as Iran-backed and stresses the risk of a wider regional war, implicating Iran.",
+    "quote": "Yemen’s Iran-backed Houthis attacked energy facilities and cities in southern Saudi Arabia on Tuesday, wounding at least 73 people and raising fears of a wider regional war.",
+    "quote_outlet": "Iran International",
+    "quote_url": "https://www.iranintl.com/en/202609083749",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "african",
+    "outlets": [
+     "Africanews"
+    ],
+    "article_count": 1,
+    "framing": "Runs wire copy: reports the facts without an editorial angle.",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false
+   }
+  ],
+  "total_outlets": 7,
+  "counts": {
+   "western": 3,
+   "east_asia": 1,
+   "african": 1,
+   "south_asia": 1,
+   "middle_east": 1
+  },
+  "blindspot": "Korea Herald and Yonhap News report that Seoul's stock market rose despite the Middle East tensions from the Houthi attacks, showing limited investor concern. No Western outlet in today's pool covered this market reaction.",
+  "blindspot_url": "https://www.koreaherald.com/article/10868005"
+ },
+ "signals": []
+}
