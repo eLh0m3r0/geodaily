@@ -1,0 +1,192 @@
+{
+ "date": "2026-09-10",
+ "title": "Geopolitical Daily",
+ "email_subject": "Oil Tops $100 as Iran-US Fight Escalates",
+ "preheader": "Biggest wave of Gulf ship attacks yet, plus Germany's far-right earthquake.",
+ "intro_text": "Good morning. It's Thursday, September 10, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "Iran and US Trade Biggest Wave of Attacks Yet on Gulf Shipping",
+   "why_important": "Iran says it hit 10 ships near the Strait of Hormuz after the US sank five Iranian tankers. Brent crude broke $100 a barrel for the first time since July. This is the biggest tit-for-tat shipping attack since the war began six months ago, and it puts a critical oil route at real risk.",
+   "what_overlooked": "Much of the ship and casualty count comes from Iran's own military, with little independent confirmation of the damage claimed.",
+   "prediction": "Watch for oil prices to keep rising and shippers to start avoiding the Strait of Hormuz.",
+   "impact_score": 9,
+   "sources": [
+    "https://foreignpolicy.com/2026/09/09/iran-strikes-shipping-strait-hormuz-jordan-us-oil-prices/",
+    "https://tribune.com.pk/story/2628405/the-impact-of-irans-military-operations-on-the-us",
+    "https://www.koreatimes.co.kr/world/20260910/iran-and-us-hit-tankers-in-biggest-wave-of-attacks-on-shipping-since-war-began?utm_source=rss",
+    "http://www.africanews.com/2026/09/09/iran-claims-strike-on-us-warships-and-oil-tankers/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 8,
+   "novelty_score": 6,
+   "credibility_score": 7,
+   "impact_dimension_score": 9,
+   "confidence": 0.8,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "western": 1,
+    "south_asia": 1,
+    "east_asia": 2,
+    "african": 1,
+    "middle_east": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 7,
+   "signal_terms": [
+    "Iran",
+    "Strait of Hormuz",
+    "Persian Gulf",
+    "Brent crude"
+   ]
+  },
+  {
+   "story_title": "Far-Right AfD's Landslide Win Rattles Germany and Europe",
+   "why_important": "The AfD nearly doubled its 2021 result to take 43.8% in Saxony-Anhalt. The win pressures Chancellor Merz and could push Berlin toward a softer line on China and looser EU ties.",
+   "what_overlooked": "Coverage dwells on shockwaves in Berlin and Paris but says little about the economic grievances driving voters to the AfD.",
+   "prediction": "Watch for Merz's coalition to debate migration and China policy within days.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.lemonde.fr/en/opinion/article/2026/09/10/afd-victory-it-is-highly-likely-that-the-german-shockwave-will-amplify-the-europhobic-tendencies-already-at-work-in-france_6757368_23.html",
+    "https://www.haaretz.com/israel-news/podcasts/2026-09-10/ty-article-podcast/behind-the-the-far-rights-political-rise-in-germany/000001a0-8a69-d865-abbd-dbf9869e0000",
+    "https://www.scmp.com/news/china/diplomacy/article/3367059/far-right-afd-party-won-big-saxony-anhalt-will-it-change-germanys-approach-china?utm_source=rss_feed",
+    "https://ecfr.eu/podcasts/episode/emergency-room-the-afds-victory-in-saxony-anhalt/"
+   ],
+   "content_type": "analysis",
+   "urgency_score": 6,
+   "scope_score": 7,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.75,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "political",
+   "coverage_counts": {
+    "western": 6,
+    "middle_east": 2,
+    "east_asia": 1,
+    "south_asia": 1,
+    "middle_east_state": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 11,
+   "signal_terms": [
+    "AfD",
+    "Saxony-Anhalt",
+    "Friedrich Merz",
+    "Germany"
+   ]
+  },
+  {
+   "story_title": "Trump Promises $5,000 Checks to Every American If GOP Wins Midterms",
+   "why_important": "Trump pledged a $5,000 payment to every US adult, a plan that would cost roughly $1.35 trillion. It's unclear how he would pay for it or whether it is even legal.",
+   "what_overlooked": "No outlet explains where the money would come from or whether Congress would ever approve such a payout.",
+   "prediction": "Watch for economists and lawmakers to challenge the plan's cost and legality this week.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/09/10/trump-again-promises-cash-to-voters-at-lackluster-republican-convention_6757373_4.html",
+    "https://www.middleeasteye.net/live-blog/live-blog-update/trump-promises-every-american-adult-5000-if-republicans-win-congress",
+    "https://www.dawn.com/news/2028825/trump-dividend-us-president-offers-5000-to-every-american-if-republicans-win-midterm-elections",
+    "https://www.premiumtimesng.com/news/top-news/908585-trump-offers-to-pay-each-american-5000-if-republicans-win-midterm-elections.html"
+   ],
+   "content_type": "analysis",
+   "urgency_score": 5,
+   "scope_score": 6,
+   "novelty_score": 8,
+   "credibility_score": 7,
+   "impact_dimension_score": 7,
+   "confidence": 0.7,
+   "region": "americas",
+   "actor_type": "state",
+   "event_type": "political",
+   "coverage_counts": {
+    "western": 14,
+    "middle_east": 2,
+    "south_asia": 5,
+    "african": 2,
+    "east_asia": 5,
+    "latam": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 24,
+   "signal_terms": [
+    "Trump",
+    "midterms",
+    "Trump dividend",
+    "Republicans"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "A ferry fire off Palawan killed 5 people and left more than 80 missing, Philippine Coast Guard said.",
+   "region": "indo_pacific",
+   "url": "https://www.dailymaverick.co.za/article/2026-09-10-five-dead-more-than-80-missing-after-philippine-ferry-fire/"
+  },
+  {
+   "text": "Anthropic researcher Jacob Coxon quit, saying AI could kill all humans and both his former employers are 'gambling with our lives.'",
+   "region": "global",
+   "url": "https://www.france24.com/en/video/20260910-ai-could-kill-all-humans-ai-researcher-quits-anthropic"
+  },
+  {
+   "text": "Copernicus says August was the joint-hottest month on record, with temperatures 1.5°C above pre-industrial levels.",
+   "region": "global",
+   "url": "https://www.dailymaverick.co.za/article/2026-09-10-august-was-worlds-joint-hottest-month-on-record-scientists-say/"
+  },
+  {
+   "text": "Russia and Vietnam signed 17 deals, including a strategic oil reserve pact, during President To Lam's Moscow visit.",
+   "region": "indo_pacific",
+   "url": "https://tass.com/politics/2185091"
+  },
+  {
+   "text": "Zelensky's plane was delayed leaving Moldova after Norway's PM said it nearly collided with a drone.",
+   "region": "europe",
+   "url": "https://www.dw.com/en/norway-s-pm-zelenskyy-s-plane-almost-hit-by-drone/a-79207528?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "Syria condemned Netanyahu's visit to Israeli troops on Mount Hermon in Syrian territory as an illegal incursion.",
+   "region": "middle_east",
+   "url": "https://www.lemonde.fr/en/international/article/2026/09/09/syria-condemns-netanyahu-s-illegal-entry-into-its-territory_6757360_4.html"
+  },
+  {
+   "text": "Houthi rebels say Saudi forces launched 54 air raids in 12 hours, killing three children, as Yemen's war deepens.",
+   "region": "middle_east",
+   "url": "https://www.aljazeera.com/news/2026/9/10/fighting-escalates-in-yemen-houthi-attacks-trigger-alerts-in-saudi-arabia?traffic_source=rss"
+  },
+  {
+   "text": "Macron called on Europe to build its own crewed spaceflight program within a decade.",
+   "region": "europe",
+   "url": "https://www.bangkokpost.com/world/3317304/macron-urges-europe-to-develop-crewed-spaceflight-programme"
+  }
+ ],
+ "big_number": {
+  "value": "$1.35 trillion",
+  "context": "The estimated cost of Trump's promised $5,000 payment to every US adult if Republicans win the midterms.",
+  "url": "https://www.middleeasteye.net/live-blog/live-blog-update/trump-promises-every-american-adult-5000-if-republicans-win-congress"
+ },
+ "perspective_grid": {
+  "views": [],
+  "total_outlets": 7,
+  "counts": {
+   "western": 1,
+   "south_asia": 1,
+   "east_asia": 2,
+   "african": 1,
+   "middle_east": 1,
+   "russian_state": 1
+  },
+  "blindspot": "",
+  "blindspot_url": ""
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Will the U.S. invade Iran before 2027?\" at 14%.",
+   "url": "https://polymarket.com/market/will-the-us-invade-iran-before-2027",
+   "source": "Polymarket"
+  }
+ ]
+}

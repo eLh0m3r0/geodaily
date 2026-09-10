@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Wed, 09 Sep 2026 08:29:24 GMT</pubDate>
-        <lastBuildDate>Wed, 09 Sep 2026 08:29:24 GMT</lastBuildDate>
+        <pubDate>Thu, 10 Sep 2026 11:36:21 GMT</pubDate>
+        <lastBuildDate>Thu, 10 Sep 2026 11:36:21 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,20 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - September 10, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-10.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Thursday, September 10, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Iran and US Trade Biggest Wave of Attacks Yet on Gulf Shipping</strong>: Iran says it hit 10 ships near the Strait of Hormuz after the US sank five Iranian tankers. Brent crude broke $100 a barrel for the first time since July. This is the biggest tit-for-tat shipping atta...</li></ul><p><em>Published: September 10, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Thu, 10 Sep 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260910</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Economy]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-10.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - September 09, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-09.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Wednesday, September 09, 2026 — the 3 stories that matter most today, plus 7 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Houthi Missiles Hit Saudi Oil Sites, Oil Prices Jump</strong>: Yemen's Houthis fired missiles into Saudi Arabia, hitting an airport, an air base and Aramco oil facilities. It's their heaviest attack on the kingdom in years, wounding 73 people. Brent crude jumped ...</li></ul><p><em>Published: September 09, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -177,19 +191,6 @@
         <category><![CDATA[Middle East]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-01.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - August 31, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-31.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Monday, August 31, 2026 — one story worth your full attention today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Iran Says It Hit a UAE Air Base; UAE Says That Never Happened</strong>: Iran's army says it fired drones at a UAE air base early Monday. The UAE calls that false. The dispute comes right after US strikes on Iranian rocket launchers, showing the war could pull in more Gulf...</li></ul><p><em>Published: August 31, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Mon, 31 Aug 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260831</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-08-31.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
