@@ -1,0 +1,271 @@
+{
+ "date": "2026-09-11",
+ "title": "Geopolitical Daily",
+ "email_subject": "Putin, Xi and Iran Meet in India",
+ "preheader": "BRICS opens as Houthi rebels seize a key Red Sea port and Hong Kong jails activists.",
+ "intro_text": "Good morning. It's Friday, September 11, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "Putin, Xi, and Iran's President Gather in Delhi for BRICS Summit",
+   "why_important": "India is hosting Russia's Putin, China's Xi, and Iran's Pezeshkian for the BRICS summit this weekend. Wars are still happening in Ukraine and the Middle East. This shows unity among countries that disagree with Washington. Modi is balancing ties with Moscow and Beijing. Iran's leader joining shows how much the world's power map is changing.",
+   "what_overlooked": "News shows leader photos but skips real trade or defense deals signed at the summit.",
+   "prediction": "Watch for a joint BRICS statement on Ukraine or Iran, and new India-Russia energy or defense deals.",
+   "impact_score": 8,
+   "sources": [
+    "https://foreignpolicy.com/2026/09/09/india-brics-summit-new-delhi-global-south/",
+    "https://www.al-monitor.com/originals/2026/09/india-welcomes-russia-iran-leaders-brics-summit-overshadowed-war",
+    "https://www.dw.com/en/india-news-putin-modi-to-hold-talks-ahead-of-brics-summit/live-79224239?maca=en-rss-en-all-1573-rdf",
+    "https://www.dawn.com/news/2029086/modi-putin-hold-talks-in-new-delhi-discussion-expected-to-be-focused-on-trade-defence"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 9,
+   "novelty_score": 6,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.8,
+   "region": "indo_pacific",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "western": 9,
+    "middle_east": 2,
+    "south_asia": 8,
+    "east_asia": 4,
+    "middle_east_state": 1,
+    "russian_state": 8
+   },
+   "coverage_outlets": 20,
+   "signal_terms": [
+    "BRICS",
+    "Modi",
+    "Putin",
+    "Xi Jinping"
+   ]
+  },
+  {
+   "story_title": "Houthi Rebels Seize Yemen's Mokha Port, Threaten Key Shipping Strait",
+   "why_important": "Houthi forces took over the port city of Mokha. This broke Yemen's shaky 2022 truce. The move brings them closer to controlling the Bab el-Mandeb strait, a route used for 12% of world trade.",
+   "what_overlooked": "Few reports ask if Saudi-backed government forces can fight back, or if war has fully returned.",
+   "prediction": "Watch if Houthi forces move toward the Bab el-Mandeb strait, and how Saudi Arabia reacts militarily.",
+   "impact_score": 8,
+   "sources": [
+    "https://foreignpolicy.com/2026/09/10/houthis-yemen-mokha-port-red-sea-bab-el-mandeb-iran-saudi-arabia-strait-hormuz/",
+    "https://www.dw.com/en/yemen-houthis-tighten-control-of-strategic-red-sea-towns/a-79220628?maca=en-rss-en-all-1573-rdf",
+    "https://www.haaretz.com/middle-east-news/2026-09-10/ty-article/.premium/iran-backed-houthis-close-in-on-bab-el-mandeb-strait-in-new-threat-to-shipping/000001a0-8b3a-d532-a9ba-8f3e07270000",
+    "https://www.thehindu.com/news/international/iran-backed-houthi-rebels-take-over-a-strategic-port-city-in-yemen-posing-a-new-threat-to-shipping/article71452799.ece"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 7,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.8,
+   "region": "middle_east",
+   "actor_type": "non_state",
+   "event_type": "military",
+   "coverage_counts": {
+    "western": 3,
+    "middle_east": 1,
+    "south_asia": 1
+   },
+   "coverage_outlets": 5,
+   "signal_terms": [
+    "Houthi",
+    "Mokha",
+    "Bab el-Mandeb",
+    "Yemen"
+   ]
+  },
+  {
+   "story_title": "Hong Kong Jails Tiananmen Vigil Leaders Up to 7 Years",
+   "why_important": "Hong Kong sentenced three pro-democracy activists for organizing Tiananmen vigils. Officials used the national security law. This shows Beijing's crackdown on dissent keeps getting stronger, years after 2020.",
+   "what_overlooked": "Reports rarely mention the vigils were legal for decades before this newer security law banned them.",
+   "prediction": "Watch for the US, UK, or EU to condemn these sentences in coming days.",
+   "impact_score": 7,
+   "sources": [
+    "https://asia.nikkei.com/spotlight/hong-kong-security-law/hong-kong-tiananmen-vigil-organizers-sentenced-to-up-to-7-years-3-months",
+    "https://www.lemonde.fr/en/international/article/2026/09/11/hong-kong-court-sentences-tiananmen-vigil-activists-up-to-seven-years_6757405_4.html",
+    "https://www.thehindu.com/news/international//article71454950.ece",
+    "https://www.aljazeera.com/news/2026/9/11/hong-kong-court-hands-stiff-jail-sentences-to-tiananmen-vigil-activists?traffic_source=rss"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 5,
+   "scope_score": 6,
+   "novelty_score": 6,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.8,
+   "region": "indo_pacific",
+   "actor_type": "state",
+   "event_type": "political",
+   "coverage_counts": {
+    "east_asia": 5,
+    "western": 7,
+    "south_asia": 1,
+    "middle_east": 1
+   },
+   "coverage_outlets": 14,
+   "signal_terms": [
+    "Hong Kong",
+    "Tiananmen",
+    "Lee Cheuk-yan",
+    "Chow Hang-tung"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Israel says it destroyed Hezbollah tunnels in south Lebanon, with blasts strong enough to trigger a 4.1 magnitude tremor.",
+   "region": "middle_east",
+   "url": "https://www.straitstimes.com/world/middle-east/israel-says-it-destroyed-hezbollah-underground-complex-at-lebanons-ali-al-taher"
+  },
+  {
+   "text": "A Dutch tour bus overturned in Switzerland's Alps, killing 5 and injuring 40 of the 45 passengers aboard.",
+   "region": "europe",
+   "url": "https://www.dw.com/en/switzerland-five-killed-in-tourist-bus-crash/a-79221766?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "A ferry fire off Palawan, Philippines killed 5 people, with 84 still missing days later.",
+   "region": "indo_pacific",
+   "url": "https://www.taipeitimes.com/News/front/archives/2026/09/11/2003864065"
+  },
+  {
+   "text": "Morocco denied any role in July's Ceuta migrant surge, when 70,000 people crossed into Spain in two days.",
+   "region": "africa",
+   "url": "http://www.africanews.com/2026/09/10/ceuta-morocco-denies-involvement-in-mass-migrant-crossing/"
+  },
+  {
+   "text": "Cilia Flores, ex-Venezuelan first lady, is seeking release from US detention, citing heart problems.",
+   "region": "americas",
+   "url": "https://www.hindustantimes.com/world-news/us-news/exvenezuelan-first-lady-cilia-flores-seeks-release-from-jail-citing-heart-ailment-101789073498939.html"
+  },
+  {
+   "text": "Anthropic says China, Iran, and West African state-linked groups used its AI models to spy on dissidents and minorities.",
+   "region": "global",
+   "url": "https://www.france24.com/en/technology/20260911-anthropic-ai-surveillance-targeting-dissidents-china-iran-west-africa"
+  },
+  {
+   "text": "The US sanctioned Turkish, Kazakh, and Malaysian firms for acting as sales agents for Iran's Mahan Air.",
+   "region": "middle_east",
+   "url": "https://thediplomat.com/2026/09/turkish-kazakh-and-malaysian-companies-hit-with-new-us-sanctions-over-iran/"
+  },
+  {
+   "text": "JD Vance closed the GOP's Dallas convention to chants of '48,' fueling talk of a 2028 presidential run.",
+   "region": "americas",
+   "url": "https://en.mercopress.com/2026/09/11/vance-positions-himself-for-2028-as-the-republican-convention-closes-in-dallas?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss"
+  }
+ ],
+ "big_number": {
+  "value": "70,000",
+  "context": "Migrants who crossed into Spain's Ceuta enclave from Morocco in just two days last July.",
+  "url": "https://www.al-monitor.com/originals/2026/09/morocco-says-not-involved-ceuta-migrant-influx"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW",
+     "Foreign Policy",
+     "Responsible Statecraft"
+    ],
+    "article_count": 9,
+    "framing": "Frames Iran war and US-Israel actions as destabilizing India's summit diplomacy and BRICS unity.",
+    "quote": "Now, the U.S.-Israeli campaign against Iran has dramatically complicated this effort, throwing the global economy into uncertainty",
+    "quote_outlet": "Responsible Statecraft",
+    "quote_url": "https://responsiblestatecraft.org/brics-summit-2026/",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "Bangkok Post",
+     "South China Morning Post",
+     "The Korea Times"
+    ],
+    "article_count": 4,
+    "framing": "Stresses geopolitical strain from Ukraine, Middle East wars and US-China tensions testing bloc cohesion.",
+    "quote": "Leaders of the BRICS nations will meet in New Delhi this weekend as wars in Ukraine and the Middle East and U.S.-China tensions test the group's ability to act together.",
+    "quote_outlet": "The Korea Times",
+    "quote_url": "https://www.koreatimes.co.kr/world/20260911/brics-leaders-gather-in-new-delhi-as-wars-strain-bloc?utm_source=rss",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Dawn",
+     "The Hindu"
+    ],
+    "article_count": 8,
+    "framing": "Centers India's bilateral ties with Russia and China, emphasizing trade, defence and strategic partnership.",
+    "quote": "China seeks a strategic, long-term partnership with India as Xi Jinping visits for the BRICS Summit, enhancing bilateral relations.",
+    "quote_outlet": "The Hindu",
+    "quote_url": "https://www.thehindu.com/news/international/as-xi-heads-to-india-china-calls-for-strategic-and-long-term-view-of-ties/article71455301.ece",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera",
+     "Al-Monitor"
+    ],
+    "article_count": 2,
+    "framing": "Frames summit as a geopolitical counterweight, questioning whether BRICS challenges Western dominance.",
+    "quote": "Some experts say BRICS need not replace the West to succeed - only make Western dominance harder to exercise.",
+    "quote_outlet": "Al Jazeera",
+    "quote_url": "https://www.aljazeera.com/news/2026/9/11/bric-by-bric-has-brics-challenged-the-western-dominated-world?traffic_source=rss",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east_state",
+    "outlets": [
+     "Anadolu Agency"
+    ],
+    "article_count": 1,
+    "framing": "Runs wire copy: reports the facts without an editorial angle.",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": true
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "RT",
+     "TASS"
+    ],
+    "article_count": 8,
+    "framing": "Highlights Russia-India cooperation and Russian-backed BRICS initiatives, casting Putin as a constructive leader.",
+    "quote": "Russian Ambassador to India Denis Alipov cited progress on cross-border payments, a grain exchange, and a new investment platform as the BRICS summit kicks off in New Delhi",
+    "quote_outlet": "RT",
+    "quote_url": "https://www.rt.com/india/645437-india-brics-russia-initiatives/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+    "state_affiliated": true
+   }
+  ],
+  "total_outlets": 20,
+  "counts": {
+   "western": 9,
+   "middle_east": 2,
+   "south_asia": 8,
+   "east_asia": 4,
+   "middle_east_state": 1,
+   "russian_state": 8
+  },
+  "blindspot": "Asian outlets including Nikkei, Yonhap and Taipei Times report on Apple's costly new foldable iPhone, a consumer tech story no Western outlet in today's pool covered, highlighting a gap in business/tech coverage.",
+  "blindspot_url": "https://asia.nikkei.com/editor-s-picks/editor-in-chief-s-picks/editor-s-choice-apple-s-not-so-surprising-hard-to-afford-foldable-phone"
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Putin out as President of Russia by December 31, 2026?\" at 6%.",
+   "url": "https://polymarket.com/market/putin-out-before-2027-346",
+   "source": "Polymarket"
+  },
+  {
+   "text": "Global news coverage of BRICS is up 4.2x week-over-week.",
+   "url": "https://api.gdeltproject.org/api/v2/doc/doc?query=BRICS%20Modi&mode=timelinevol&timespan=14d",
+   "source": "GDELT"
+  }
+ ]
+}

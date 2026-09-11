@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Thu, 10 Sep 2026 11:36:21 GMT</pubDate>
-        <lastBuildDate>Thu, 10 Sep 2026 11:36:21 GMT</lastBuildDate>
+        <pubDate>Fri, 11 Sep 2026 11:37:21 GMT</pubDate>
+        <lastBuildDate>Fri, 11 Sep 2026 11:37:21 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,21 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - September 11, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-11.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Friday, September 11, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Putin, Xi, and Iran's President Gather in Delhi for BRICS Summit</strong>: India is hosting Russia's Putin, China's Xi, and Iran's Pezeshkian for the BRICS summit this weekend. Wars are still happening in Ukraine and the Middle East. This shows unity among countries that dis...</li></ul><p><em>Published: September 11, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Fri, 11 Sep 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260911</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-11.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - September 10, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-10.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Thursday, September 10, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Iran and US Trade Biggest Wave of Attacks Yet on Gulf Shipping</strong>: Iran says it hit 10 ships near the Strait of Hormuz after the US sank five Iranian tankers. Brent crude broke $100 a barrel for the first time since July. This is the biggest tit-for-tat shipping atta...</li></ul><p><em>Published: September 10, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -177,20 +192,6 @@
         <category><![CDATA[Middle East]]></category>
         <category><![CDATA[Economy]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-02.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - September 01, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-01.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Tuesday, September 01, 2026 — one story worth your full attention today, plus 7 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Army Secretary Dan Driscoll Resigns After Rift With Hegseth</strong>: The Army just lost its top civilian leader during a live conflict with Iran. Driscoll and Defense Secretary Hegseth had clashed for months over Hegseth's push to cut top generals. The Army now has a l...</li></ul><p><em>Published: September 01, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Tue, 01 Sep 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260901</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-01.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
