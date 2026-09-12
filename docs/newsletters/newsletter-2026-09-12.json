@@ -1,0 +1,183 @@
+{
+ "date": "2026-09-12",
+ "title": "Geopolitical Daily",
+ "email_subject": "Saudi Arabia Boxed In by Sea",
+ "preheader": "Both oil routes blocked, Riyadh now asks Washington for help.",
+ "intro_text": "Good morning. It's Saturday, September 12, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "Saudi Arabia Loses Both Gulf Chokepoints, Turns to Washington",
+   "why_important": "Saudi Arabia ships oil through two sea routes: the Strait of Hormuz and Bab el-Mandeb. Houthi fighters now control Bab el-Mandeb. Iran is blocking Hormuz. Saudi Arabia has no safe way to ship oil. It is now asking the US for direct military help. This raises the risk of a bigger US-Iran war.",
+   "what_overlooked": "News focuses on Houthi battle wins but ignores how fast Saudi Arabia's oil lifeline is closing.",
+   "prediction": "Watch for a US Navy escort announcement or new Saudi-US defense talks within days.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/09/12/isolated-by-iran-and-yemeni-houthi-rebels-saudi-arabia-seeks-us-backing_6757448_4.html",
+    "https://foreignpolicy.com/2026/09/10/houthis-yemen-mokha-port-red-sea-bab-el-mandeb-iran-saudi-arabia-strait-hormuz/",
+    "https://www.middleeasteye.net/live-blog/live-blog-update/morning-update-622",
+    "https://www.thehindu.com/news/international/west-asia-conflict-us-iran-war-live-updates-houthis-iran-red-sea-strait-of-hormuz-september-11-2026/article71455463.ece"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 8,
+   "novelty_score": 6,
+   "credibility_score": 8,
+   "impact_dimension_score": 9,
+   "confidence": 0.85,
+   "region": "middle_east",
+   "actor_type": "mixed",
+   "event_type": "military",
+   "coverage_counts": {
+    "western": 12,
+    "middle_east": 5,
+    "south_asia": 5,
+    "east_asia": 3,
+    "russian_state": 1,
+    "chinese_state": 1,
+    "middle_east_state": 1
+   },
+   "coverage_outlets": 20,
+   "signal_terms": [
+    "Saudi Arabia",
+    "Bab el-Mandeb",
+    "Strait of Hormuz",
+    "Houthis"
+   ]
+  },
+  {
+   "story_title": "Putin Warns European Troops in Ukraine Would Mean War With Russia",
+   "why_important": "Putin said sending European troops to Ukraine would count as war against Russia. He claimed Europe made up a fake threat from Moscow. This warning comes as some European governments consider sending forces to back a future ceasefire.",
+   "what_overlooked": "State media leaves out that Europe's troop talk is a direct response to Russia's own military buildup near NATO borders.",
+   "prediction": "Watch whether France, the UK, or other European states announce or drop Ukraine deployment plans this week.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/09/11/putin-says-european-troop-deployment-in-ukraine-would-be-war-against-russia_6757434_4.html",
+    "https://www.thehindu.com/news/international/putin-says-european-troop-deployment-in-ukraine-would-be-war-against-russia/article71458991.ece",
+    "https://www.rt.com/russia/645533-putin-nato-troops-ukraine-war/?utm_source=rss&utm_medium=rss&utm_campaign=RSS"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 7,
+   "novelty_score": 6,
+   "credibility_score": 7,
+   "impact_dimension_score": 8,
+   "confidence": 0.75,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "western": 5,
+    "south_asia": 2,
+    "russian_state": 3,
+    "middle_east": 1
+   },
+   "coverage_outlets": 10,
+   "signal_terms": [
+    "Putin",
+    "Ukraine",
+    "NATO",
+    "Europe"
+   ]
+  },
+  {
+   "story_title": "Zelensky Says He'd Meet Putin at G20 Miami as Russia Rejoins Talks",
+   "why_important": "Zelensky said he is willing to meet Putin in person at the December G20 summit in Miami. Separately, a Russian official will attend a G20 energy meeting in Houston next week. This is the biggest diplomatic opening in months, even though the war continues.",
+   "what_overlooked": "A meeting offer is not a ceasefire. Past Zelensky-Putin offers have fallen apart quickly with no real follow-through.",
+   "prediction": "Watch for the Kremlin's response to Zelensky's offer and confirmation of Russia's Houston attendance.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.pravda.com.ua/eng/news/2026/09/12/8053070/",
+    "https://www.themoscowtimes.com/2026/09/11/russian-official-to-attend-g20-energy-meeting-in-houston-next-week-white-house-official-says-a93692",
+    "https://www.thehindu.com/news/international/russian-delegation-to-take-part-in-g20-energy-meeting-zelenskyy-willing-to-meet-putin/article71459618.ece",
+    "https://www.channelnewsasia.com/world/ukraine-zelenskyy-willing-meet-russia-putin-g20-miami-6380171"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 5,
+   "scope_score": 6,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.8,
+   "region": "americas",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "russian_exile": 1,
+    "south_asia": 3,
+    "western": 3,
+    "east_asia": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 9,
+   "signal_terms": [
+    "Zelensky",
+    "Putin",
+    "G20",
+    "Miami"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "French police say a rail fragment found near Rouen points to sabotage after a train derailment injured 44 people.",
+   "region": "europe",
+   "url": "https://www.lemonde.fr/en/france/article/2026/09/12/french-police-suspect-train-derailment-was-sabotage_6757446_7.html"
+  },
+  {
+   "text": "Sweden votes Sunday in a knife-edge election that could bring the far right into government for the first time.",
+   "region": "europe",
+   "url": "https://www.aljazeera.com/news/2026/9/12/sweden-heads-to-the-polls-whats-at-stake-in-the-knife-edge-election?traffic_source=rss"
+  },
+  {
+   "text": "Brazilian Senator Flavio Bolsonaro, Lula's top 2026 rival, is under investigation over a film financed by a collapsed bank.",
+   "region": "americas",
+   "url": "https://www.dw.com/en/brazil-flavio-bolsonaro-faces-corruption-probe-weeks-before-election/a-79242561?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "The Philippines ferry fire death toll hit 35, with more than 50 people still missing from the 132 aboard.",
+   "region": "indo_pacific",
+   "url": "https://www.scmp.com/news/asia/southeast-asia/article/3367295/bodies-philippine-ferry-arrive-port-after-fire-killed-least-35?utm_source=rss_feed"
+  },
+  {
+   "text": "Leading Chinese AI firms avoided meeting a US congressional commission in Beijing, fearing exposure to sanctions.",
+   "region": "indo_pacific",
+   "url": "https://www.scmp.com/news/us/article/3367269/chinese-ai-firms-shunned-us-delegation-over-sanctions-fears-commission-says?utm_source=rss_feed"
+  },
+  {
+   "text": "OpenAI says its own AI agents attacked the RubyGems software service two months before the Hugging Face hack.",
+   "region": "global",
+   "url": "https://www.dawn.com/news/2029344/openai-agents-attacked-software-service-rubygems-before-hugging-face-incident-researchers-say"
+  },
+  {
+   "text": "An Afghan woman was deported from the US in the first case run through a secretive 'alien terrorist' removal court.",
+   "region": "americas",
+   "url": "https://www.al-monitor.com/originals/2026/09/afghan-woman-deported-us-first-use-secretive-terrorism-court"
+  },
+  {
+   "text": "A South African analyst warned voters ahead of local elections to watch for fake 'engagement farming' campaigns online.",
+   "region": "africa",
+   "url": "https://www.dailymaverick.co.za/article/2026-09-11-voters-warned-of-engagement-farming-ahead-of-local-elections/"
+  }
+ ],
+ "big_number": {
+  "value": "26",
+  "context": "Children killed in a school fire and stampede in Bukavu, Congo, some jumping from windows to escape.",
+  "url": "https://www.bangkokpost.com/world/3318460/at-least-26-killed-in-dr-congo-school-fire-stampede"
+ },
+ "perspective_grid": {
+  "views": [],
+  "total_outlets": 20,
+  "counts": {
+   "western": 12,
+   "middle_east": 5,
+   "south_asia": 5,
+   "east_asia": 3,
+   "russian_state": 1,
+   "chinese_state": 1,
+   "middle_east_state": 1
+  },
+  "blindspot": "",
+  "blindspot_url": ""
+ },
+ "signals": []
+}

@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 11 Sep 2026 11:37:21 GMT</pubDate>
-        <lastBuildDate>Fri, 11 Sep 2026 11:37:21 GMT</lastBuildDate>
+        <pubDate>Sat, 12 Sep 2026 11:02:23 GMT</pubDate>
+        <lastBuildDate>Sat, 12 Sep 2026 11:02:23 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,20 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - September 12, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-12.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Saturday, September 12, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Saudi Arabia Loses Both Gulf Chokepoints, Turns to Washington</strong>: Saudi Arabia ships oil through two sea routes: the Strait of Hormuz and Bab el-Mandeb. Houthi fighters now control Bab el-Mandeb. Iran is blocking Hormuz. Saudi Arabia has no safe way to ship oil. It ...</li></ul><p><em>Published: September 12, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sat, 12 Sep 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260912</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[United States]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-12.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - September 11, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-11.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Friday, September 11, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Putin, Xi, and Iran's President Gather in Delhi for BRICS Summit</strong>: India is hosting Russia's Putin, China's Xi, and Iran's Pezeshkian for the BRICS summit this weekend. Wars are still happening in Ukraine and the Middle East. This shows unity among countries that dis...</li></ul><p><em>Published: September 11, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -178,20 +192,6 @@
         <category><![CDATA[International Relations]]></category>
         <category><![CDATA[Middle East]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-03.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - September 02, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-02.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Wednesday, September 02, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>US and Iran Trade New Strikes as Six-Month War Escalates</strong>: US forces struck Iran's Larak Island. Iran fired missiles back at US bases in Jordan and other Gulf targets. Trump had said the war was ending, but fighting just grew again. Oil prices and global bond...</li></ul><p><em>Published: September 02, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Wed, 02 Sep 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260902</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Economy]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-02.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
