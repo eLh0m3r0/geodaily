@@ -183,13 +183,38 @@ class PerspectiveAnalyzer:
             grid.blindspot_url = first.url
         return grid
 
+    # With 80+ sources a big story can carry 20+ articles; the model only needs
+    # a few per group to name the angle, and quotes are verified against
+    # exactly the excerpts shown, so the prompt is bounded here.
+    MAX_ARTICLES_PER_GROUP = 5
+
+    @classmethod
+    def _top_members(cls, members: List[Article]) -> List[Article]:
+        """Highest-weight outlets first, one article per outlet where possible."""
+        ranked = sorted(members, key=lambda a: (-(getattr(a, 'source_weight', 1.0) or 1.0),
+                                                 getattr(a, 'source', '')))
+        picked, seen_sources = [], set()
+        for a in ranked:
+            if a.source in seen_sources:
+                continue
+            seen_sources.add(a.source)
+            picked.append(a)
+            if len(picked) >= cls.MAX_ARTICLES_PER_GROUP:
+                return picked
+        for a in ranked:
+            if len(picked) >= cls.MAX_ARTICLES_PER_GROUP:
+                break
+            if a not in picked:
+                picked.append(a)
+        return picked
+
     def _build_grid_api(self, grid: PerspectiveGrid, groups: Dict[str, List[Article]],
                         blindspot_events: List[List[Article]]) -> PerspectiveGrid:
         indexed: List[Article] = []
         sections = []
         for g in sorted(groups, key=lambda g: GROUP_ORDER.index(g) if g in GROUP_ORDER else 99):
             lines = [f"PERSPECTIVE GROUP: {g} ({label_of(g)})"]
-            for a in groups[g]:
+            for a in self._top_members(groups[g]):
                 idx = len(indexed)
                 indexed.append(a)
                 text = (getattr(a, 'full_content', None) or a.summary or "")[:EXCERPT_CHARS]
@@ -254,19 +279,28 @@ class PerspectiveAnalyzer:
             main_article_title="Perspective grid"
         )
 
-        start = time.time()
-        response = self.client.messages.create(
-            model=Config.AI_MODEL,
-            max_tokens=4000,
-            messages=[{"role": "user", "content": prompt}],
-        )
-        text = extract_response_text(response)
-        in_tok, out_tok, cost = response_tokens_and_cost(response, prompt, text)
-        ai_cost_controller.record_cost(cost, in_tok + out_tok, "perspective_extraction")
-        logger.info(f"Perspective extraction: {in_tok}+{out_tok} tokens, ${cost:.4f}, "
-                    f"{time.time() - start:.1f}s")
-
-        data = self._parse_json_object(text)
+        data = None
+        for attempt in (1, 2):
+            start = time.time()
+            # Same budget as the issue call: adaptive thinking spends from
+            # max_tokens, and a 4000 cap left no room for the JSON on busy days.
+            response = self.client.messages.create(
+                model=Config.AI_MODEL,
+                max_tokens=Config.AI_MAX_TOKENS or 16000,
+                messages=[{"role": "user", "content": prompt}],
+            )
+            text = extract_response_text(response)
+            in_tok, out_tok, cost = response_tokens_and_cost(response, prompt, text)
+            ai_cost_controller.record_cost(cost, in_tok + out_tok, "perspective_extraction")
+            stop = getattr(response, 'stop_reason', None)
+            logger.info(f"Perspective extraction (attempt {attempt}): {in_tok}+{out_tok} tokens, "
+                        f"${cost:.4f}, {time.time() - start:.1f}s, stop_reason={stop}")
+            data = self._parse_json_object(text)
+            if data:
+                break
+            logger.warning(f"Perspective response unusable (stop_reason={stop}, "
+                           f"{len(text)} chars of text) — "
+                           + ("retrying once" if attempt == 1 else "shipping counts-only grid"))
         if not data:
             return grid
 
