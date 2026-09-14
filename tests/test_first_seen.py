@@ -138,3 +138,13 @@ class TestGridPromptBounded(unittest.TestCase):
         self.assertEqual(len(picked), PerspectiveAnalyzer.MAX_ARTICLES_PER_GROUP)
         self.assertEqual([p.source for p in picked[:3]], ["Outlet 2", "Outlet 1", "Outlet 0"])
         self.assertEqual(len({p.url for p in picked}), len(picked))
+
+
+    def test_news_outlets_outrank_heavier_analysis(self):
+        mk = TestBlindspotFreshness._article
+        think = mk("https://think/1", "c1", "western_analysis", 2)
+        think.source, think.source_weight, think.source_category = "Think Tank", 1.3, SourceCategory.THINK_TANK
+        paper = mk("https://paper/1", "c1", "western_mainstream", 2)
+        paper.source, paper.source_weight, paper.source_category = "Daily Paper", 0.8, SourceCategory.MAINSTREAM
+        picked = PerspectiveAnalyzer._top_members([think, paper])
+        self.assertEqual([p.source for p in picked], ["Daily Paper", "Think Tank"])

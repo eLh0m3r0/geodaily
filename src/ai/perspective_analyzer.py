@@ -184,15 +184,24 @@ class PerspectiveAnalyzer:
         return grid
 
     # With 80+ sources a big story can carry 20+ articles; the model only needs
-    # a few per group to name the angle, and quotes are verified against
-    # exactly the excerpts shown, so the prompt is bounded here.
-    MAX_ARTICLES_PER_GROUP = 5
+    # a representative sample per group to name the angle, and quotes are
+    # verified against exactly the excerpts shown, so the prompt is bounded
+    # here. Only the Western row usually exceeds this (9-12 outlets on busy
+    # days); the rendered counts and outlet lists still use the whole group.
+    MAX_ARTICLES_PER_GROUP = 8
 
     @classmethod
     def _top_members(cls, members: List[Article]) -> List[Article]:
-        """Highest-weight outlets first, one article per outlet where possible."""
-        ranked = sorted(members, key=lambda a: (-(getattr(a, 'source_weight', 1.0) or 1.0),
-                                                 getattr(a, 'source', '')))
+        """A representative sample: news outlets (mainstream/regional) before
+        analysis and think tanks — a group's framing is how it REPORTS the
+        event, not how its commentators discuss it — then by source weight,
+        one article per outlet where possible."""
+        def rank(a: Article):
+            category = getattr(getattr(a, 'source_category', None), 'value',
+                               str(getattr(a, 'source_category', '') or ''))
+            news_first = 0 if category in ('mainstream', 'regional') else 1
+            return (news_first, -(getattr(a, 'source_weight', 1.0) or 1.0), getattr(a, 'source', ''))
+        ranked = sorted(members, key=rank)
         picked, seen_sources = [], set()
         for a in ranked:
             if a.source in seen_sources:
