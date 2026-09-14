@@ -123,3 +123,18 @@ class TestBlindspotExcludesQuickHits(unittest.TestCase):
         filtered = analyzer._blindspot_candidates([story], hit_event + other,
                                                   exclude_urls=["https://h/2"])
         self.assertEqual({m.cluster_id for ms in filtered for m in ms}, {"c2"})
+
+
+class TestGridPromptBounded(unittest.TestCase):
+    def test_top_members_prefers_weight_and_distinct_outlets(self):
+        mk = TestBlindspotFreshness._article
+        members = []
+        for i in range(9):
+            a = mk(f"https://s{i % 3}/{i}", "c1", "east_asia", 2)
+            a.source = f"Outlet {i % 3}"          # three outlets, three articles each
+            a.source_weight = 0.5 + 0.1 * (i % 3)
+            members.append(a)
+        picked = PerspectiveAnalyzer._top_members(members)
+        self.assertEqual(len(picked), PerspectiveAnalyzer.MAX_ARTICLES_PER_GROUP)
+        self.assertEqual([p.source for p in picked[:3]], ["Outlet 2", "Outlet 1", "Outlet 0"])
+        self.assertEqual(len({p.url for p in picked}), len(picked))
