@@ -27,13 +27,9 @@ from ..newsletter.source_display import source_display_name
 from ..archiver.ai_data_archiver import ai_archiver
 from .cost_controller import ai_cost_controller
 from .api_utils import extract_response_text, response_tokens_and_cost
+from .llm_client import build_llm_client, ai_credentials_present
 
 logger = logging.getLogger(__name__)
-
-try:
-    from anthropic import Anthropic
-except ImportError:
-    Anthropic = None
 
 MAX_ARTICLES_PER_GROUP = 3
 EXCERPT_CHARS = 450
@@ -43,11 +39,11 @@ class PerspectiveAnalyzer:
     """Builds the perspective grid for the big story in one API call."""
 
     def __init__(self):
-        self.mock_mode = Config.DRY_RUN or not Config.ANTHROPIC_API_KEY or Anthropic is None
+        self.mock_mode = Config.DRY_RUN or not ai_credentials_present()
         self.client = None
         if not self.mock_mode:
             try:
-                self.client = Anthropic(api_key=Config.ANTHROPIC_API_KEY)
+                self.client = build_llm_client()
             except Exception as e:
                 logger.error(f"Perspective analyzer client init failed: {e}")
                 self.mock_mode = True

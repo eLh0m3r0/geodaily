@@ -98,6 +98,9 @@ jobs:
       run: |
         # Required API keys from GitHub secrets
         echo "ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }}" >> $GITHUB_ENV
+        echo "OPENROUTER_API_KEY=${{ secrets.OPENROUTER_API_KEY }}" >> $GITHUB_ENV
+        echo "AI_PROVIDER=${{ vars.AI_PROVIDER || 'openrouter' }}" >> $GITHUB_ENV
+        echo "AI_MODEL=${{ vars.AI_MODEL || 'deepseek/deepseek-v4.1-flash' }}" >> $GITHUB_ENV
 
         # Optional API keys
         if [ -n "${{ secrets.GEMINI_API_KEY }}" ]; then
@@ -170,6 +173,11 @@ jobs:
         
         # X.com Thread Generation configuration
         echo "X_THREADS_ENABLED=true" >> $GITHUB_ENV
+        # Vlakna jsou CESKY a na DeepSeeku netestovana - zustavaji na puvodnim
+        # modelu, aby se menila jen jedna promenna. Az se cestina overi, staci
+        # tyhle dva radky smazat (prevezmou pak hlavni AI_PROVIDER/AI_MODEL).
+        echo "X_THREADS_AI_PROVIDER=anthropic" >> $GITHUB_ENV
+        echo "X_THREADS_MODEL=claude-sonnet-5" >> $GITHUB_ENV
         echo "X_THREADS_MAX_DAILY=4" >> $GITHUB_ENV
         echo "X_THREADS_MIN_IMPACT_SCORE=7.0" >> $GITHUB_ENV
 

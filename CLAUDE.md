@@ -248,12 +248,15 @@ The AI analyzer now evaluates stories across multiple dimensions:
 - Validate with `src/processors/content_quality_validator.py`
 
 ### AI Integration
-- Claude API key in `ANTHROPIC_API_KEY` environment variable
+- AI provider is configurable: `AI_PROVIDER=openrouter` (default, DeepSeek V4.1 Flash) or `anthropic`
+- Keys: `OPENROUTER_API_KEY` for OpenRouter, `ANTHROPIC_API_KEY` for Anthropic — the unused one can stay set, it is the rollback path
+- All calls go through `src/ai/llm_client.py`, which mimics the Anthropic Messages API response shape so `api_utils` and the analyzers need no provider-specific code
+- Switching providers is one env var; no code revert
 - Cost controls via `src/ai/cost_controller.py`
 - Token limit: 16000 for production with Sonnet 5 (configurable)
 - Sampling params (temperature/top_p/top_k) are NOT sent — Sonnet 5 rejects non-default values with HTTP 400
 - Responses are parsed via `src/ai/api_utils.extract_response_text()` — adaptive-thinking models may emit thinking blocks before the text block, so never read `response.content[0].text` directly
-- Costs are tracked from real `response.usage` token counts at Sonnet 5 pricing ($3/$15 per MTok, configurable via `AI_INPUT_COST_PER_MTOK`/`AI_OUTPUT_COST_PER_MTOK`)
+- Costs come from the provider's actually billed amount when it reports one (OpenRouter does); the `AI_INPUT_COST_PER_MTOK`/`AI_OUTPUT_COST_PER_MTOK` rates are only a fallback — for Anthropic they were 20x off the real OpenRouter charge
 - Mock analysis automatic fallback with realistic simulations
 - Prompt customization in `claude_analyzer.py` (line 217-261)
 - Multi-dimensional scoring for better story selection
@@ -329,7 +332,9 @@ The AI analyzer now evaluates stories across multiple dimensions:
 
 ### Known Issues & Workarounds
 - SSL certificate verification disabled for web scraping (line 121 in `web_scraper.py`) - required for some sources with certificate issues
-- AI model upgraded to Claude Sonnet 5 (`claude-sonnet-5`) with 16000 token limit for better analysis quality
+- AI model is `deepseek/deepseek-v4.1-flash` via OpenRouter since 2026-09-15, chosen in a blind test over 11 production days (beat claude-sonnet-5 by 8.7 points at 1/15th the cost); rollback is `AI_PROVIDER=anthropic AI_MODEL=claude-sonnet-5`
+- Do NOT set a `reasoning` cap for DeepSeek — limiting it measurably lowered quality in the test
+- X.com threads generate CZECH and were never tested on DeepSeek; `X_THREADS_AI_PROVIDER`/`X_THREADS_MODEL` keep them on a separate model if needed
 - ALLOW_OVERWRITE environment variable for debugging duplicate prevention
 - Archive cleanup required for long-running installations to manage disk space
 

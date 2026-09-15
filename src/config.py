@@ -26,6 +26,7 @@ class Config:
     
     # API Configuration
     ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+    OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
     GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
     # Newsletter Configuration
@@ -70,6 +71,11 @@ class Config:
     X_THREADS_ENABLED = os.getenv("X_THREADS_ENABLED", "false").lower() == "true"
     X_THREADS_MAX_DAILY = int(os.getenv("X_THREADS_MAX_DAILY", "4"))
     X_THREADS_MIN_IMPACT_SCORE = float(os.getenv("X_THREADS_MIN_IMPACT_SCORE", "7.0"))
+    # Vlakna se generuji CESKY. Kvalita jineho nez puvodniho modelu v cestine
+    # nebyla overena, proto jdou nechat na vlastnim poskytovateli i kdyz
+    # zbytek pipeline prejde jinam.
+    X_THREADS_AI_PROVIDER = os.getenv("X_THREADS_AI_PROVIDER", os.getenv("AI_PROVIDER", "anthropic"))
+    X_THREADS_MODEL = os.getenv("X_THREADS_MODEL", os.getenv("AI_MODEL", "claude-sonnet-5"))
     
     # Content Enhancement Configuration
     FETCH_FULL_CONTENT = os.getenv("FETCH_FULL_CONTENT", "true").lower() == "true"
@@ -162,6 +168,8 @@ class Config:
             # Check required API keys based on provider
             if cls.AI_PROVIDER == "anthropic" and not cls.ANTHROPIC_API_KEY:
                 missing.append("ANTHROPIC_API_KEY")
+            elif cls.AI_PROVIDER == "openrouter" and not cls.OPENROUTER_API_KEY:
+                missing.append("OPENROUTER_API_KEY")
             elif cls.AI_PROVIDER == "gemini" and not cls.GEMINI_API_KEY:
                 missing.append("GEMINI_API_KEY")
 

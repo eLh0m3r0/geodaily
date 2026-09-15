@@ -102,7 +102,7 @@ class XThreadGenerator:
             # Sonnet 5 rejects non-default sampling params (temperature), so
             # creativity is steered via the prompt instead.
             response = api_client.messages.create(
-                model=Config.AI_MODEL,
+                model=Config.X_THREADS_MODEL,
                 max_tokens=4000,  # Headroom for adaptive thinking + thread text
                 messages=[
                     {

@@ -717,9 +717,13 @@ def run_complete_pipeline() -> bool:
                                       run_id=run_id,
                                       structured_data={'api_mode': True, 'stories_count': len(thread_analyses)})
                             
-                            # Import Claude client if needed
-                            from anthropic import Anthropic
-                            api_client = Anthropic(api_key=Config.ANTHROPIC_API_KEY)
+                            # POZOR: vlakna se generuji CESKY a kvalita jineho
+                            # nez puvodniho modelu v cestine overena neni.
+                            # X_THREADS_AI_PROVIDER umoznuje nechat je na
+                            # puvodnim poskytovateli, i kdyz zbytek pipeline
+                            # bezi jinde.
+                            from .ai.llm_client import build_llm_client
+                            api_client = build_llm_client(Config.X_THREADS_AI_PROVIDER)
                             
                             for analysis in thread_analyses:
                                 thread_data = thread_generator.generate_thread_from_analysis(analysis, api_client)

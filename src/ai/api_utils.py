@@ -45,6 +45,13 @@ def response_tokens_and_cost(response, prompt: str = "", response_text: str = ""
     if output_tokens is None:
         output_tokens = int(len(response_text.split()) * 1.3)
 
+    # Nekteri poskytovatele (OpenRouter) vrati skutecne uctovanou castku. Ta je
+    # presnejsi nez prepocet ze sazeb v konfiguraci: zohledni cache, slevy i to,
+    # ze reasoning tokeny se uctuji jinak. Merene odchylky byly i 20-nasobne.
+    real_cost = getattr(usage, 'cost_usd', None) if usage else None
+    if isinstance(real_cost, (int, float)) and real_cost > 0:
+        return int(input_tokens), int(output_tokens), float(real_cost)
+
     cost = (input_tokens / 1_000_000) * Config.AI_INPUT_COST_PER_MTOK \
          + (output_tokens / 1_000_000) * Config.AI_OUTPUT_COST_PER_MTOK
     return int(input_tokens), int(output_tokens), cost

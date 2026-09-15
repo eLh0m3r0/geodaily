@@ -64,7 +64,8 @@ jobs:
         env:
           DRY_RUN: 'true'
           LOG_LEVEL: INFO
-          AI_MODEL: claude-sonnet-5
+          AI_PROVIDER: openrouter
+          AI_MODEL: deepseek/deepseek-v4.1-flash
           AI_MAX_TOKENS: '16000'
           CLEANUP_ENABLED: 'false'
           AI_ARCHIVE_ENABLED: 'true'

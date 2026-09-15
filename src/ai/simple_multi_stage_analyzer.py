@@ -18,14 +18,9 @@ from ..config import Config
 from ..archiver.ai_data_archiver import ai_archiver
 from .cost_controller import ai_cost_controller
 from .api_utils import extract_response_text, response_tokens_and_cost, load_recent_newsletter_titles
+from .llm_client import build_llm_client, ai_credentials_present
 
 logger = logging.getLogger(__name__)
-
-try:
-    from anthropic import Anthropic
-except ImportError:
-    logger.warning("Anthropic library not installed, using mock mode")
-    Anthropic = None
 
 
 class SimplifiedMultiStageAnalyzer:
@@ -35,14 +30,18 @@ class SimplifiedMultiStageAnalyzer:
     """
     
     def __init__(self):
-        self.mock_mode = Config.DRY_RUN or not Config.ANTHROPIC_API_KEY
-        
-        if not self.mock_mode and Anthropic:
+        # Poznamka: drive tu byla primo kontrola ANTHROPIC_API_KEY. Po prechodu
+        # na konfigurovatelneho poskytovatele by takova kontrola poslala celou
+        # analyzu do mock rezimu a vydani by vyslo s vymyslenym obsahem.
+        self.mock_mode = Config.DRY_RUN or not ai_credentials_present()
+
+        if not self.mock_mode:
             try:
-                self.client = Anthropic(api_key=Config.ANTHROPIC_API_KEY)
-                logger.info("Initialized simplified multi-stage analyzer with Claude API")
+                self.client = build_llm_client()
+                logger.info(f"Initialized simplified multi-stage analyzer "
+                            f"({Config.AI_PROVIDER}, model {Config.AI_MODEL})")
             except Exception as e:
-                logger.error(f"Failed to initialize Claude client: {e}")
+                logger.error(f"Failed to initialize AI client: {e}")
                 self.mock_mode = True
                 self.client = None
         else:
