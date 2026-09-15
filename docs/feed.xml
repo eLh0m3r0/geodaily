@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Mon, 14 Sep 2026 08:30:25 GMT</pubDate>
-        <lastBuildDate>Mon, 14 Sep 2026 08:30:25 GMT</lastBuildDate>
+        <pubDate>Tue, 15 Sep 2026 08:30:05 GMT</pubDate>
+        <lastBuildDate>Tue, 15 Sep 2026 08:30:05 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,19 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - September 15, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-15.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Tuesday, September 15, 2026 — the 3 stories that matter most today, plus 7 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Houthis Seize Key Red Sea Islands, Squeezing a Vital Shipping Route</strong>: Iran-backed Houthi fighters took two more islands near the Bab el-Mandeb Strait. Ships carrying oil and cargo must pass through this narrow route. Saudi Arabia depends on it for exports. This week's a...</li></ul><p><em>Published: September 15, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Tue, 15 Sep 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260915</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-15.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - September 14, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-14.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Monday, September 14, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Oil Jumps to $108 as Middle East Attacks Multiply</strong>: Brent crude jumped more than $3 in a day after new strikes hit Saudi Arabia and a ship in the Strait of Hormuz. That is the fastest oil spike in months. Higher oil means higher prices everywhere, from...</li></ul><p><em>Published: September 14, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -179,18 +192,6 @@
         <category><![CDATA[International Relations]]></category>
         <category><![CDATA[Middle East]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-06.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - September 05, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-05.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Saturday, September 05, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Houthi Offensive Near Red Sea Strait Leaves 120+ Dead</strong>: Houthi fighters launched a ground assault to grab control of Bab al-Mandab, the strait guarding the Red Sea's southern entrance. More than 120 people died in two days, the worst fighting there in year...</li></ul><p><em>Published: September 05, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sat, 05 Sep 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260905</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-05.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
