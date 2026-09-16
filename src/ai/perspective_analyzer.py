@@ -76,6 +76,21 @@ class PerspectiveAnalyzer:
     # A blindspot is today's news, not a backlog item: members older than
     # this (or undated) are never candidates, whatever the collector let in.
     BLINDSPOT_MAX_AGE_HOURS = 36
+    # Never a blindspot: sports, entertainment, celebrity and lifestyle
+    # events (the issue rule "no sports/celebrity" applies here too — the
+    # 2026-09-16 blindspot was a World Athletics hosting bid).
+    _OFF_TOPIC = re.compile(
+        r"\b(athletics|olympic|olympics|world cup|championship|championships|"
+        r"tournament|football|soccer|cricket|rugby|tennis|basketball|golf|"
+        r"formula ?1|grand prix|marathon|medal|medals|fifa|uefa|ioc|premier league|"
+        r"la liga|nba|nfl|mlb|nhl|ipl|stadium|coach|striker|goalkeeper|"
+        r"celebrity|celebrities|actor|actress|singer|rapper|pop star|box office|"
+        r"film festival|album|concert|grammy|oscar|oscars|emmy|netflix|k-pop|"
+        r"royal wedding|miss universe|beauty pageant)\b", re.I)
+
+    @classmethod
+    def _off_topic(cls, article: Article) -> bool:
+        return bool(cls._OFF_TOPIC.search(getattr(article, 'title', '') or ''))
 
     @classmethod
     def _is_fresh(cls, article: Article, now: datetime) -> bool:
@@ -87,7 +102,7 @@ class PerspectiveAnalyzer:
         return now - published <= timedelta(hours=cls.BLINDSPOT_MAX_AGE_HOURS)
 
     def _blindspot_candidates(self, stories: List[AIAnalysis], articles: List[Article],
-                              limit: int = 2,
+                              limit: int = 4,
                               exclude_urls: Optional[List[str]] = None) -> List[List[Article]]:
         """Events well covered outside Western media but absent from it —
         and not any of the issue's selected stories (excluded by cited URL
@@ -104,7 +119,7 @@ class PerspectiveAnalyzer:
         for a in articles:
             cid = getattr(a, 'cluster_id', None)
             if (cid and cid not in story_clusters and a.url not in story_urls
-                    and self._is_fresh(a, now)):
+                    and self._is_fresh(a, now) and not self._off_topic(a)):
                 events[cid].append(a)
         candidates = []
         for members in events.values():
@@ -261,7 +276,10 @@ class PerspectiveAnalyzer:
                "sentences (max 35 words): what happened, who is reporting it, and why the "
                "gap matters. Attribute claims to their source (\"Hamas says\", \"TASS "
                "reports\"). Say that no Western outlet in today's pool covered it; do not "
-               "say Western media \"ignored\" it. Use the candidate's index.\n\n"
+               "say Western media \"ignored\" it. Use the candidate's index. Only "
+               "political, economic, security or humanitarian events qualify: never sports, "
+               "entertainment, celebrities or lifestyle — if no candidate qualifies, "
+               "return \"blindspot\": null.\n\n"
                if blindspot_section else "")
             + "Plain English, active voice, no jargon.\n"
             "Return ONLY this JSON object, no markdown fences:\n"

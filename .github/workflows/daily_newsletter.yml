@@ -156,7 +156,9 @@ jobs:
 
         # System configuration
         echo "LOG_LEVEL=INFO" >> $GITHUB_ENV
-        echo "AI_MODEL=claude-sonnet-5" >> $GITHUB_ENV
+        # AI_PROVIDER / AI_MODEL are set above (vars or the DeepSeek default);
+        # a hard-coded AI_MODEL here would silently override them — it did on
+        # 2026-09-16, when the first "DeepSeek" issue actually ran on Sonnet.
         echo "AI_MAX_TOKENS=16000" >> $GITHUB_ENV
         echo "CLEANUP_ENABLED=false" >> $GITHUB_ENV
         echo "DEBUG=false" >> $GITHUB_ENV

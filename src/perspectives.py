@@ -20,6 +20,7 @@ GROUP_OF: Dict[str, str] = {
     "turkish_state": "middle_east_state",
     "russian_state": "russian_state",
     "russian_exile": "russian_exile",
+    "ukrainian": "ukrainian",
     "african": "african",
     "latam": "latam",
     "global_south": "global_south",
@@ -35,6 +36,7 @@ GROUP_LABELS: Dict[str, str] = {
     "middle_east_state": "Regional state media",
     "russian_state": "Russian state media",
     "russian_exile": "Russian independent media",
+    "ukrainian": "Ukrainian media",
     "african": "African media",
     "latam": "Latin American media",
     "global_south": "Global South voices",
@@ -48,15 +50,15 @@ STATE_GROUPS = {"chinese_state", "russian_state", "middle_east_state"}
 # invisible to a Western reader — that's the interesting asymmetry)
 NON_WESTERN_GROUPS = {
     "east_asia", "chinese_state", "south_asia", "middle_east",
-    "middle_east_state", "russian_state", "russian_exile",
+    "middle_east_state", "russian_state", "russian_exile", "ukrainian",
     "african", "latam", "global_south",
 }
 
 # Render order for grid rows
 GROUP_ORDER: List[str] = [
     "western", "east_asia", "chinese_state", "south_asia", "middle_east",
-    "middle_east_state", "russian_state", "russian_exile", "african",
-    "latam", "global_south", "intl_org",
+    "middle_east_state", "russian_state", "russian_exile", "ukrainian",
+    "african", "latam", "global_south", "intl_org",
 ]
 
 # Web/pages coverage-bar colors per group (email uses text proportions)
@@ -69,6 +71,7 @@ GROUP_COLORS: Dict[str, str] = {
     "middle_east_state": "#A0522D",
     "russian_state": "#7A5AA0",
     "russian_exile": "#9B7EBD",
+    "ukrainian": "#D4A017",
     "african": "#3E8A5A",
     "latam": "#C77B3F",
     "global_south": "#5A8A3E",

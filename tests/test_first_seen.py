@@ -148,3 +148,18 @@ class TestGridPromptBounded(unittest.TestCase):
         paper.source, paper.source_weight, paper.source_category = "Daily Paper", 0.8, SourceCategory.MAINSTREAM
         picked = PerspectiveAnalyzer._top_members([think, paper])
         self.assertEqual([p.source for p in picked], ["Daily Paper", "Think Tank"])
+
+
+class TestBlindspotSkipsSportsAndEntertainment(unittest.TestCase):
+    def test_sports_cluster_is_not_a_candidate(self):
+        mk = TestBlindspotFreshness._article
+        sport = [mk("https://s/1", "c1", "african", 3), mk("https://s/2", "c1", "chinese_state", 4)]
+        for a in sport:
+            a.title = "Kenya wins bid to host 2029 World Athletics Championships"
+        politics = [mk("https://p/1", "c2", "african", 3), mk("https://p/2", "c2", "east_asia", 5)]
+        for a in politics:
+            a.title = "Nairobi senator emerges as challenger to President Ruto"
+        story = AIAnalysis(story_title="x", why_important="w", what_overlooked="o",
+                           prediction="p", impact_score=8, sources=["https://w/1"])
+        candidates = PerspectiveAnalyzer()._blindspot_candidates([story], sport + politics)
+        self.assertEqual({m.cluster_id for ms in candidates for m in ms}, {"c2"})
