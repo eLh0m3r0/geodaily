@@ -1,0 +1,230 @@
+{
+ "date": "2026-09-16",
+ "title": "Geopolitical Daily",
+ "email_subject": "US Unmasks Russian Kill Plot",
+ "preheader": "Plus: Dutch rail sabotage, a $2.8B Israel arms deal, and Zelensky's Moldova drone scare.",
+ "intro_text": "Good morning. It's Wednesday, September 16, 2026 — the 3 stories that matter most today, plus 7 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "US Charges Five People in Russian Plot to Kill a Dissident and Bomb Targets in Europe",
+   "why_important": "US prosecutors say Russian spies recruited people to kill a Russian dissident in Washington. They also planned bombings in Europe. This is the strongest US proof yet that Moscow runs killing and sabotage missions in the West. It happened the same week as rail sabotage in the Netherlands and a flare incident near a Danish ship.",
+   "what_overlooked": "Most news reports don't link this case to the same week's Dutch rail sabotage and Baltic drone incidents as one pattern.",
+   "prediction": "Expect more indictments or extradition requests linked to this network within 72 hours.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.themoscowtimes.com/2026/09/16/united-states-charges-5-people-in-alleged-russian-backed-murder-plots-a93718",
+    "https://www.pravda.com.ua/eng/news/2026/09/16/8053628/",
+    "https://www.aljazeera.com/news/2026/9/16/us-charges-five-people-over-alleged-russian-assassination-plots?traffic_source=rss",
+    "https://www.straitstimes.com/world/united-states/us-charges-5-people-in-alleged-russian-backed-murder-plots"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 7,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.82,
+   "region": "global",
+   "actor_type": "state",
+   "event_type": "informational_cyber",
+   "coverage_counts": {
+    "russian_exile": 2,
+    "western": 3,
+    "middle_east": 1,
+    "east_asia": 1
+   },
+   "coverage_outlets": 7,
+   "signal_terms": [
+    "Russia",
+    "United States",
+    "Washington D.C.",
+    "Todd Blanche"
+   ]
+  },
+  {
+   "story_title": "Suspected Sabotage Cripples Dutch Rail Network at Rush Hour",
+   "why_important": "Someone placed metal pipes at about 30 spots on Dutch train tracks. This stopped train service across the country. ProRail, the rail operator, says it thinks someone did this on purpose. It happened during a string of similar incidents across Europe blamed on people linked to Russia.",
+   "what_overlooked": "No news outlet has named a suspect yet. No one has confirmed if a country was involved.",
+   "prediction": "Dutch police may name a suspect or country within days.",
+   "impact_score": 6,
+   "sources": [
+    "https://meduza.io/en/news/2026/09/15/train-service-across-much-of-the-netherlands-was-disrupted-after-metal-pipes-were-placed-on-the-tracks-the-rail-operator-suspects-sabotage",
+    "https://www.thehindu.com/news/international/suspected-sabotage-triggers-major-dutch-rail-outage-during-morning-rush-hour/article71467461.ece",
+    "https://www.dw.com/en/netherlands-suspected-sabotage-disrupts-train-services/a-79269600?maca=en-rss-en-all-1573-rdf",
+    "https://www.scmp.com/news/world/europe/article/3367641/dutch-rail-network-crippled-suspected-sabotage?utm_source=rss_feed"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 6,
+   "novelty_score": 7,
+   "credibility_score": 7,
+   "impact_dimension_score": 6,
+   "confidence": 0.75,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "informational_cyber",
+   "coverage_counts": {
+    "russian_exile": 1,
+    "south_asia": 2,
+    "western": 2,
+    "east_asia": 2
+   },
+   "coverage_outlets": 7,
+   "signal_terms": [
+    "Netherlands",
+    "ProRail",
+    "NOS",
+    "Dutch rail"
+   ]
+  },
+  {
+   "story_title": "US Plans $2.8 Billion Bomb Sale to Israel, Including 40,000 Heavy Bombs",
+   "why_important": "The US told Congress about a deal to send Israel 40,000 more MK-84 bombs. Each bomb weighs 2,000 pounds. This sale would help Israel strike targets linked to Iran more easily. It comes as Houthi attacks on Saudi Arabia and Mecca push the region closer to a bigger war.",
+   "what_overlooked": "Most reports rely on unnamed officials and one Washington Post story. Israel has barely confirmed this.",
+   "prediction": "Expect a Congressional vote or challenge to this sale within a week.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.thehindu.com/news/international/trump-admin-approves-sending-2000-pound-bombs-to-israel-in-upcoming-weapons-deal/article71470869.ece",
+    "https://www.al-monitor.com/originals/2026/09/trump-administration-plans-28b-arms-sale-israel-including-2000-lb-bombs",
+    "https://punchng.com/us-to-approve-2-8bn-arms-deal-for-israel-reports/?utm_source=rss.punchng.com&utm_medium=web",
+    "https://tass.com/world/2188147"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 7,
+   "novelty_score": 6,
+   "credibility_score": 6,
+   "impact_dimension_score": 8,
+   "confidence": 0.72,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "south_asia": 2,
+    "middle_east": 3,
+    "african": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 7,
+   "signal_terms": [
+    "Israel",
+    "United States",
+    "MK-84",
+    "Congress"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Canada's PM Mark Carney pitched Canada as an investment haven to Gulf and Chinese funds at a Toronto summit.",
+   "region": "americas",
+   "url": "https://www.scmp.com/news/world/united-states-canada/article/3367648/carney-sells-canada-global-investors-says-us-ties-still-key?utm_source=rss_feed"
+  },
+  {
+   "text": "Maduro ally Alex Saab pleaded guilty in a Miami court to laundering money from Venezuela's CLAP food program.",
+   "region": "americas",
+   "url": "https://english.elpais.com/usa/2026-09-15/maduro-ally-alex-saab-pleads-guilty-in-us-money-laundering-case.html"
+  },
+  {
+   "text": "Hong Kong unveiled its first-ever five-year plan, aligning its economic goals directly with Beijing's playbook.",
+   "region": "indo_pacific",
+   "url": "https://www.ft.com/content/f082ea1d-112a-4278-aa4a-8783a9077755?syn-25a6b1a6=1"
+  },
+  {
+   "text": "A Seoul court ordered North Korea to pay $32.5 million for blowing up the Inter-Korean Liaison Office in 2020.",
+   "region": "indo_pacific",
+   "url": "https://www.scmp.com/news/asia/east-asia/article/3367655/south-korean-court-orders-pyongyang-pay-us325m-destroying-border-office?utm_source=rss_feed"
+  },
+  {
+   "text": "The Hague tribunal is set to rule on ex-Kosovo president Hashim Thaci, who faces a 45-year sentence request for war crimes.",
+   "region": "europe",
+   "url": "https://www.straitstimes.com/world/europe/kosovo-ex-president-thaci-faces-war-crimes-verdict-in-the-hague"
+  },
+  {
+   "text": "Zelensky says Russian drones entered Moldovan airspace twice on September 14 while his presidential plane was there.",
+   "region": "europe",
+   "url": "https://www.straitstimes.com/world/europe/ukraines-zelenskiy-says-russian-drones-attacked-moldova-twice-while-he-was-in-transit"
+  },
+  {
+   "text": "Houthi officials denied Saudi Arabia's claim that its coalition destroyed a Houthi drone heading toward Mecca.",
+   "region": "middle_east",
+   "url": "http://www.france24.com/en/middle-east/20260916-middle-east-live-saudi-arabia-accuses-houthi-rebels-of-launching-a-drone-strike-on-mecca"
+  }
+ ],
+ "big_number": {
+  "value": "40,000",
+  "context": "The number of additional 2,000-pound bombs the US plans to sell Israel in a $2.8 billion deal.",
+  "url": "https://www.al-monitor.com/originals/2026/09/trump-administration-plans-28b-arms-sale-israel-including-2000-lb-bombs"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "Financial Times",
+     "Ukrainska Pravda",
+     "Ukrinform"
+    ],
+    "article_count": 3,
+    "framing": "Frames case as Kremlin-directed plot reaching U.S. soil, stressing threat to America itself.",
+    "quote": "Indictment marks a rare accusation of Kremlin-backed plots on American soil",
+    "quote_outlet": "Financial Times",
+    "quote_url": "https://www.ft.com/content/30b8d485-dfce-4b0e-912b-d32a4b5f9018?syn-25a6b1a6=1",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "The Straits Times"
+    ],
+    "article_count": 1,
+    "framing": "Runs wire copy: reports the facts without an editorial angle.",
+    "quote": "The five people allegedly worked for Russian intelligence services to \"conduct attacks and murders around the world\".",
+    "quote_outlet": "The Straits Times",
+    "quote_url": "https://www.straitstimes.com/world/united-states/us-charges-5-people-in-alleged-russian-backed-murder-plots",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera"
+    ],
+    "article_count": 1,
+    "framing": "Runs wire copy: reports the facts without an editorial angle.",
+    "quote": "Prosecutors said that the group worked on behalf of Russian intelligence services to carry out attacks and murders.",
+    "quote_outlet": "Al Jazeera",
+    "quote_url": "https://www.aljazeera.com/news/2026/9/16/us-charges-five-people-over-alleged-russian-assassination-plots?traffic_source=rss",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "russian_exile",
+    "outlets": [
+     "Meduza",
+     "The Moscow Times"
+    ],
+    "article_count": 2,
+    "framing": "Centers on U.S. officials' announcement and the targeting of a Russian dissident, highlighting the human target over broader terror plot.",
+    "quote": "U.S. Attorney General Todd Blanche said New York prosecutors had charged several Russian nationals who worked for Russian intelligence.",
+    "quote_outlet": "Meduza",
+    "quote_url": "https://meduza.io/en/news/2026/09/15/new-york-prosecutors-charge-suspected-russian-intelligence-agents-who-allegedly-plotted-to-kill-a-russian-dissident-they-believed-was-in-washington",
+    "state_affiliated": false
+   }
+  ],
+  "total_outlets": 7,
+  "counts": {
+   "russian_exile": 2,
+   "western": 3,
+   "middle_east": 1,
+   "east_asia": 1
+  },
+  "blindspot": "Africanews, CGTN, Nation Africa, Premium Times, Punch Nigeria and RT report Kenya won the bid to host the 2029 World Athletics Championships; no Western outlet in today's pool covered this, leaving a gap in global sports coverage.",
+  "blindspot_url": "https://www.premiumtimesng.com/foreign/909956-kenya-wins-bid-to-host-2029-world-athletics-championships.html"
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Putin out as President of Russia by December 31, 2026?\" at 6%.",
+   "url": "https://polymarket.com/market/putin-out-before-2027-346",
+   "source": "Polymarket"
+  }
+ ]
+}
