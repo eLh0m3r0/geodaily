@@ -20,8 +20,21 @@ on:
       - 'sources.json'
       - 'requirements.txt'
   # Manual E2E test on any branch: real feed collection + clustering with
-  # mock AI — needs no secrets, publishes nothing, uploads outputs as artifacts
+  # mock AI — needs no secrets, publishes nothing, uploads outputs as artifacts.
+  # With shadow_ai=true the real provider is called (OpenRouter key from
+  # secrets, ~$0.01 per run) to produce a same-day issue for model comparison;
+  # it still publishes nothing: no Buttondown key, no archive commit, no Pages
+  # deploy — the generated issue is printed to the job log and uploaded.
   workflow_dispatch:
+    inputs:
+      shadow_ai:
+        description: 'Call the real AI provider instead of mock (still publishes nothing)'
+        required: false
+        default: 'false'
+      ai_model:
+        description: 'Model id for the shadow run (OpenRouter id)'
+        required: false
+        default: 'deepseek/deepseek-v4.1-flash'
 
 permissions:
   contents: read
@@ -62,10 +75,11 @@ jobs:
 
       - name: Run pipeline in dry-run mode
         env:
-          DRY_RUN: 'true'
+          DRY_RUN: ${{ github.event.inputs.shadow_ai == 'true' && 'false' || 'true' }}
+          OPENROUTER_API_KEY: ${{ github.event.inputs.shadow_ai == 'true' && secrets.OPENROUTER_API_KEY || '' }}
           LOG_LEVEL: INFO
           AI_PROVIDER: openrouter
-          AI_MODEL: deepseek/deepseek-v4.1-flash
+          AI_MODEL: ${{ github.event.inputs.ai_model || 'deepseek/deepseek-v4.1-flash' }}
           AI_MAX_TOKENS: '16000'
           CLEANUP_ENABLED: 'false'
           AI_ARCHIVE_ENABLED: 'true'
@@ -84,6 +98,20 @@ jobs:
           ls -la docs/newsletters/ >> $GITHUB_STEP_SUMMARY 2>/dev/null || true
           echo '```' >> $GITHUB_STEP_SUMMARY
           echo "Dry-run pipeline completed — no content was published." >> $GITHUB_STEP_SUMMARY
+
+      - name: Show generated issue (shadow run)
+        if: always() && github.event.inputs.shadow_ai == 'true'
+        run: |
+          f="docs/newsletters/newsletter-$(date -u +%F).json"
+          echo "=== SHADOW ISSUE $f (model: ${{ github.event.inputs.ai_model || 'deepseek/deepseek-v4.1-flash' }}) ==="
+          python - "$f" <<'PY'
+          import json, sys
+          d = json.load(open(sys.argv[1], encoding='utf-8'))
+          keep = ('date', 'email_subject', 'preheader', 'stories', 'quick_hits', 'big_number', 'perspective_grid', 'signals')
+          print("SHADOW_ISSUE_JSON " + json.dumps({k: d[k] for k in keep if k in d}, ensure_ascii=False))
+          PY
+          grep -h -o '"message": "[^"]*Cost[^"]*"' logs/*.log 2>/dev/null | tail -3 || true
+          grep -h -o '"message": "Quote failed[^"]*"' logs/*.log 2>/dev/null | wc -l || true
 
       - name: Upload generated outputs
         uses: actions/upload-artifact@v4
