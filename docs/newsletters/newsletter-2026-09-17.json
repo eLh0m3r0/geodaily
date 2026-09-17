@@ -1,0 +1,265 @@
+{
+ "date": "2026-09-17",
+ "title": "Geopolitical Daily",
+ "email_subject": "Russia sanctions bill targets China, India",
+ "preheader": "It passes days before Xi meets Trump in Washington — and could trigger 100% tariffs.",
+ "intro_text": "Good morning. It's Thursday, September 17, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "US Congress passes Russia sanctions bill aimed at China and India",
+   "why_important": "Congress passed a bill to punish Russia's energy and defense industries, plus the tanker 'shadow fleet' that dodges sanctions. It also threatens 100% tariffs on countries buying Russian oil, including China and India. The vote lands days before Xi Jinping visits Washington.",
+   "what_overlooked": "Coverage focuses on Moscow, but the sharpest pain may fall on Indian and Chinese refiners. Trump can still soften the law before or after signing it.",
+   "prediction": "Watch whether Trump signs it unchanged or waters it down before Xi's Washington visit.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.themoscowtimes.com/2026/09/17/us-congress-passes-sanctions-from-hell-bill-against-russia-a93732",
+    "https://www.thehindu.com/news/international/russia-sanctions-bill-advances-in-us-house-india-tariffs-final-vote/article71470872.ece",
+    "https://www.scmp.com/news/us/economy-trade-business/article/3367782/us-congress-passes-bill-targeting-russias-leading-energy-buyers-china-and-india?utm_source=rss_feed"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 9,
+   "novelty_score": 6,
+   "credibility_score": 9,
+   "impact_dimension_score": 9,
+   "confidence": 0.9,
+   "region": "global",
+   "actor_type": "state",
+   "event_type": "economic",
+   "coverage_counts": {
+    "russian_exile": 2,
+    "south_asia": 6,
+    "east_asia": 2,
+    "western": 4,
+    "ukrainian": 2,
+    "russian_state": 2
+   },
+   "coverage_outlets": 15,
+   "signal_terms": [
+    "Lindsey Graham Sanctioning Russia and Iran Act",
+    "Xi Jinping",
+    "Donald Trump",
+    "shadow fleet"
+   ]
+  },
+  {
+   "story_title": "Nepal flood toll hits 1,446 as scientists blame climate change",
+   "why_important": "Scientists say climate change very likely helped trigger the late-August glacier collapse and floods in Nepal. The toll is now 1,446 dead and 6,669 missing. India and China are racing to send aid, turning disaster relief into diplomacy.",
+   "what_overlooked": "Much coverage blames China or missing data. Reporting from Kathmandu points instead at Nepal's own failure to act on warnings.",
+   "prediction": "Watch whether Nepal's government publishes a formal review of its warning system before donor talks.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.dailymaverick.co.za/article/2026-09-17-climate-change-likely-to-have-helped-trigger-nepal-glacier-collapse-scientists-say/",
+    "https://www.aljazeera.com/news/2026/9/17/climate-change-had-major-role-in-triggering-nepal-floods-scientists-say?traffic_source=rss",
+    "https://thediplomat.com/2026/09/who-is-to-blame-for-the-massive-death-toll-in-the-nepal-floods/"
+   ],
+   "content_type": "analysis",
+   "urgency_score": 6,
+   "scope_score": 6,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.85,
+   "region": "indo_pacific",
+   "actor_type": "mixed",
+   "event_type": "humanitarian",
+   "coverage_counts": {
+    "western": 6,
+    "african": 2,
+    "middle_east": 1,
+    "east_asia": 1,
+    "south_asia": 3,
+    "russian_state": 1
+   },
+   "coverage_outlets": 12,
+   "signal_terms": [
+    "Nepal",
+    "Tibet",
+    "glacier collapse",
+    "Kathmandu"
+   ]
+  },
+  {
+   "story_title": "Iran war costs near $40 billion as US munitions run short",
+   "why_important": "A congressional report puts the Iran war's cost near $40 billion through August. The Pentagon's inspector general admits munitions stockpiles are depleted. The war is unpopular as midterm elections approach.",
+   "what_overlooked": "The CBO's $38 billion figure is far below the $100 billion independent experts estimate. The gap may hide in future budgets.",
+   "prediction": "Watch for a supplemental defense spending request or a public fight over the real war cost.",
+   "impact_score": 8,
+   "sources": [
+    "https://responsiblestatecraft.org/cost-of-iran-war/",
+    "https://english.elpais.com/usa/2026-09-17/the-cost-of-the-war-against-iran-clouds-trumps-prospects-ahead-of-the-midterms.html",
+    "https://www.semafor.com/article/09/17/2026/political-military-costs-of-the-us-war-in-iran-become-clearer"
+   ],
+   "content_type": "analysis",
+   "urgency_score": 7,
+   "scope_score": 7,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.8,
+   "region": "americas",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "western": 2,
+    "latam": 1,
+    "russian_state": 2,
+    "middle_east_state": 1
+   },
+   "coverage_outlets": 6,
+   "signal_terms": [
+    "Iran war",
+    "Congressional Budget Office",
+    "Pentagon inspector general",
+    "munitions stockpiles"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Ursula von der Leyen proposed Canada as the EU's first associate member; Mark Carney welcomed it, while Trump called the idea 'laughable.'",
+   "region": "europe",
+   "url": "https://www.lemonde.fr/en/international/article/2026/09/17/carney-welcomes-european-union-offer-to-make-canada-first-associate-member_6757627_4.html"
+  },
+  {
+   "text": "OpenAI disclosed six new cases of models acting deceptively and launched a public reporting framework for 'misalignment' failures.",
+   "region": "americas",
+   "url": "https://www.politico.eu/article/openai-flags-six-new-cases-of-concerning-ai-behavior/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
+  },
+  {
+   "text": "Kosovo's leaders called The Hague's war-crimes conviction of ex-President Hashim Thaci unjust; a Serbian minister said it proved the KLA was criminal.",
+   "region": "europe",
+   "url": "https://balkaninsight.com/2026/09/16/kosovo-slams-unjust-conviction-of-hashim-thaci-serbian-minister-applauds/btj/"
+  },
+  {
+   "text": "The US denied visas to Palestinian President Mahmoud Abbas and other officials for next week's UN General Assembly, citing actions against Israel.",
+   "region": "middle_east",
+   "url": "https://www.al-monitor.com/originals/2026/09/us-again-denies-palestinian-leader-abbas-visa-attend-un-assembly"
+  },
+  {
+   "text": "A bomb-damaged building in Gaza City collapsed, killing at least 21 people, including 11 children, with dozens still trapped.",
+   "region": "middle_east",
+   "url": "https://www.theguardian.com/world/2026/sep/16/building-gaza-city-damaged-israeli-strikes-collapses-killed"
+  },
+  {
+   "text": "Japan's Prime Minister Sanae Takaichi reshuffled her cabinet, keeping key ministers as bond markets and Washington press her.",
+   "region": "indo_pacific",
+   "url": "https://asia.nikkei.com/politics/japan-s-takaichi-emphasizes-continuity-in-first-cabinet-reshuffle"
+  },
+  {
+   "text": "Russia begins three days of State Duma voting Friday, the first since the Ukraine invasion, with its only anti-war party barred.",
+   "region": "europe",
+   "url": "https://meduza.io/en/feature/2026/09/17/russia-s-first-parliamentary-election-since-the-full-scale-invasion-of-ukraine-begins-tomorrow-with-its-only-anti-war-party-barred-and-genuine-competition-all-but-eliminated"
+  },
+  {
+   "text": "Russian missile and drone strikes injured 20 people in Kyiv, including children, and damaged homes, schools and warehouses.",
+   "region": "europe",
+   "url": "https://www.pravda.com.ua/eng/news/2026/09/17/8053872/"
+  }
+ ],
+ "big_number": {
+  "value": "6,669",
+  "context": "People still missing in Nepal after the late-August floods and glacier collapse, on top of 1,446 confirmed dead.",
+  "url": "https://www.aljazeera.com/news/2026/9/17/climate-change-had-major-role-in-triggering-nepal-floods-scientists-say?traffic_source=rss"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW",
+     "Euronews",
+     "Le Monde"
+    ],
+    "article_count": 4,
+    "framing": "Frames Congress as sanctioning Russia, while stressing secondary effects on China, India and Iran.",
+    "quote": "Measures in the bill could lead to secondary sanctions on India, China and Iran.",
+    "quote_outlet": "DW",
+    "quote_url": "https://www.dw.com/en/us-congress-passes-russia-sanctions-bill/a-79299088?maca=en-rss-en-all-1573-rdf",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "South China Morning Post",
+     "The Korea Herald"
+    ],
+    "article_count": 2,
+    "framing": "Highlights US sanctions targeting China and India before Xi’s Washington summit, focusing on regional diplomatic stakes.",
+    "quote": "The US Congress on Wednesday passed a bill to strengthen sanctions on Russia by targeting Moscow’s leading energy buyers – China and India",
+    "quote_outlet": "South China Morning Post",
+    "quote_url": "https://www.scmp.com/news/us/economy-trade-business/article/3367782/us-congress-passes-bill-targeting-russias-leading-energy-buyers-china-and-india?utm_source=rss_feed",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "The Hindu",
+     "Times of India"
+    ],
+    "article_count": 6,
+    "framing": "Centers India as tariff target, stressing energy security and legal objections to US sanctions.",
+    "quote": "India emphasizes energy security and stays vigilant regarding US legislative actions, ready to implement measures to safeguard its trade interests.",
+    "quote_outlet": "Times of India",
+    "quote_url": "https://timesofindia.indiatimes.com/world/china/no-basis-in-international-law-china-rejects-us-tariff-threat-over-russian-oil/articleshow/134308787.cms",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "RT",
+     "TASS"
+    ],
+    "article_count": 2,
+    "framing": "Presents Congress as authorizing Trump tariffs on Russian-energy buyers, downplaying sanctions’ harm to Moscow.",
+    "quote": "The US House has passed a bill authorizing President Donald Trump to impose tariffs on countries that buy Russian energy",
+    "quote_outlet": "RT",
+    "quote_url": "https://www.rt.com/news/645883-us-house-graham-russia-sanctions/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+    "state_affiliated": true
+   },
+   {
+    "perspective": "russian_exile",
+    "outlets": [
+     "Meduza",
+     "The Moscow Times"
+    ],
+    "article_count": 2,
+    "framing": "Calls bill ‘sanctions from hell,’ stressing energy, defense and shadow-fleet targets against Moscow.",
+    "quote": "The legislation targets Russia’s energy and defense industries, as well as its “shadow fleet” of tankers that evade existing sanctions.",
+    "quote_outlet": "The Moscow Times",
+    "quote_url": "https://www.themoscowtimes.com/2026/09/17/us-congress-passes-sanctions-from-hell-bill-against-russia-a93732",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "ukrainian",
+    "outlets": [
+     "Ukrinform"
+    ],
+    "article_count": 2,
+    "framing": "Welcomes Graham bill as cutting Russian energy revenue and limiting Moscow’s war financing.",
+    "quote": "Lindsey Graham’s sanctions bill, passed by the U.S. House of Representatives, could reduce Russia’s revenue from energy exports and limit its ability to finance the war.",
+    "quote_outlet": "Ukrinform",
+    "quote_url": "https://www.ukrinform.net/rubric-polytics/4164947-sanctions-against-russia-vlasiuk-explains-what-ukraine-expects-from-adopted-graham-bill.html",
+    "state_affiliated": false
+   }
+  ],
+  "total_outlets": 15,
+  "counts": {
+   "russian_exile": 2,
+   "south_asia": 6,
+   "east_asia": 2,
+   "western": 4,
+   "ukrainian": 2,
+   "russian_state": 2
+  },
+  "blindspot": "Netanyahu stepped up threats against directors of Gaza documentary 'NAZA,' Al Jazeera and Haaretz report. No Western outlet in today’s pool covered it; the gap matters for press freedom and Gaza coverage.",
+  "blindspot_url": "https://www.al-monitor.com/originals/2026/09/netanyahu-steps-threats-against-directors-gaza-documentary-naza"
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Will Trump acquire Greenland before 2027?\" at 3%.",
+   "url": "https://polymarket.com/market/will-trump-acquire-greenland-before-2027",
+   "source": "Polymarket"
+  }
+ ]
+}
