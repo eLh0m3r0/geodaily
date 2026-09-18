@@ -1,0 +1,248 @@
+{
+ "date": "2026-09-18",
+ "title": "Geopolitical Daily",
+ "email_subject": "Saudi Arabia cleared for 48 F-35s",
+ "preheader": "Israel opposes the $24.3 billion deal, the first F-35s sold to an Arab state.",
+ "intro_text": "Good morning. It's Friday, September 18, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "US approves $24.3 billion F-35 sale to Saudi Arabia",
+   "why_important": "The State Department approved selling up to 48 F-35 stealth jets to Saudi Arabia, a deal worth $24.3 billion. Congress can still block it. It would be the first time an Arab state gets America's top fighter, and Israel opposes it.",
+   "what_overlooked": "Congress can still block the sale, and Israel's objections have not been settled. Riyadh also has no formal US defense treaty.",
+   "prediction": "Watch whether pro-Israel lawmakers move to block the sale in Congress within days.",
+   "impact_score": 8,
+   "sources": [
+    "https://breakingdefense.com/2026/09/us-clears-24b-f-35-sale-for-saudi-arabia/",
+    "https://www.lemonde.fr/en/international/article/2026/09/18/us-approves-sale-of-48-f-35-fighter-jets-to-saudi-arabia_6757656_4.html",
+    "https://www.middleeasteye.net/live-blog/live-blog-update/us-says-it-will-sell-48-f-35s-saudi-arabia",
+    "https://www.thehindu.com/news/international/us-approves-sale-of-48-f-35-jets-to-saudi-arabia/article71478233.ece"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.88,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "western": 3,
+    "middle_east": 3,
+    "south_asia": 2,
+    "east_asia": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 10,
+   "signal_terms": [
+    "Saudi Arabia",
+    "F-35",
+    "State Department",
+    "Congress"
+   ]
+  },
+  {
+   "story_title": "EU floats Canada as its first associate member",
+   "why_important": "EU chief Ursula von der Leyen suggested Canada could become the bloc's first associate member. Canada's Prime Minister Mark Carney then told the European Parliament that Europe and Canada are stronger together. The push follows new US tariff threats.",
+   "what_overlooked": "Nobody has spelled out what associate membership would mean in law, and EU rules say members must be European states.",
+   "prediction": "Watch whether EU lawyers or member states challenge whether Canada can join under current treaties.",
+   "impact_score": 7,
+   "sources": [
+    "https://foreignpolicy.com/2026/09/16/eu-canada-associate-member-von-der-leyen-carney-trade-trump/",
+    "https://www.lemonde.fr/en/opinion/article/2026/09/18/thierry-chopin-political-scientist-amid-the-current-upheaval-in-international-relations-canada-and-the-eu-need-to-move-closer-together_6757646_23.html",
+    "https://english.elpais.com/international/2026-09-17/mark-carney-after-trumps-new-tariff-threats-europe-and-canada-are-stronger-together.html",
+    "https://www.thehindu.com/news/international/canadas-carney-pushes-new-alliance-with-eu-despite-trump-threats/article71478031.ece"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 5,
+   "scope_score": 8,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.8,
+   "region": "europe",
+   "actor_type": "mixed",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "western": 12,
+    "latam": 1,
+    "south_asia": 3,
+    "east_asia": 2,
+    "middle_east_state": 1,
+    "chinese_state": 2,
+    "russian_state": 1
+   },
+   "coverage_outlets": 17,
+   "signal_terms": [
+    "Canada",
+    "European Union",
+    "Ursula von der Leyen",
+    "Mark Carney"
+   ]
+  },
+  {
+   "story_title": "Protests in Nigeria after 37 mining suspects die in custody",
+   "why_important": "Thirty-seven detainees died in a poorly ventilated cell after a paramilitary raid on illegal gold mines in Niger State. Officials blame disease, but a survivor says they suffocated. Protesters marched overnight.",
+   "what_overlooked": "Illegal mining deaths in Nigeria rarely draw national attention, and no independent autopsy results have been released.",
+   "prediction": "Watch whether Nigeria's government orders an independent investigation into the Niger State deaths this week.",
+   "impact_score": 6,
+   "sources": [
+    "https://www.dailymaverick.co.za/article/2026-09-18-protests-erupt-in-nigeria-after-37-miners-die-in-custody-of-paramilitary-agency/",
+    "https://www.thehindu.com/news/international/nigeria-illegal-mining-suspects-death-toll-suspected-disease-outbreak/article71478385.ece",
+    "https://www.dw.com/en/nigeria-protests-erupt-over-deaths-of-37-miners-in-custody/a-79316847?maca=en-rss-en-all-1573-rdf",
+    "https://www.aljazeera.com/news/2026/9/18/nigerian-police-probe-death-in-custody-of-37-illegal-mining-suspects?traffic_source=rss"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 5,
+   "novelty_score": 7,
+   "credibility_score": 7,
+   "impact_dimension_score": 6,
+   "confidence": 0.78,
+   "region": "africa",
+   "actor_type": "state",
+   "event_type": "political",
+   "coverage_counts": {
+    "african": 5,
+    "south_asia": 2,
+    "western": 3,
+    "middle_east": 1,
+    "east_asia": 1
+   },
+   "coverage_outlets": 11,
+   "signal_terms": [
+    "Nigeria",
+    "Niger State",
+    "illegal gold mining"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Russia seized the local businesses of Nestlé, Auchan and Leroy Merlin, calling firms from 'unfriendly countries' fair targets.",
+   "region": "europe",
+   "url": "https://www.lemonde.fr/en/international/article/2026/09/18/russia-seizes-assets-of-french-firms-auchan-and-leroy-merlin_6757662_4.html"
+  },
+  {
+   "text": "Russia and China vetoed a US plan to keep UN experts monitoring Iran sanctions; the vote was 11-2, and the panel's mandate ends.",
+   "region": "global",
+   "url": "https://www.thehindu.com/news/international/russia-china-veto-us-proposal-for-un-experts-to-keep-monitoring-sanctions-on-iran/article71478218.ece"
+  },
+  {
+   "text": "South Korea's president ruled out sending troops to the Middle East, defying US pressure, but may still help guard the Strait of Hormuz.",
+   "region": "indo_pacific",
+   "url": "https://www.theguardian.com/world/2026/sep/18/south-korea-will-not-send-military-to-support-us-war-on-iran-defying-trump-pressure"
+  },
+  {
+   "text": "At least 21 people, including 11 children, died when a war-damaged building collapsed in Gaza City.",
+   "region": "middle_east",
+   "url": "https://newsus.cgtn.com/news/2026-09-18/21-killed-including-11-children-in-Gaza-building-collapse-1QwAhrVMnsI/p.html?UTM_Source=cgtn&UTM_Medium=rss&UTM_Campaign=World"
+  },
+  {
+   "text": "Africa's top public health body says Congo's Ebola outbreak is still serious, with gaps in infection prevention and control.",
+   "region": "africa",
+   "url": "https://www.straitstimes.com/world/ebola-outbreak-in-congo-is-still-serious-african-health-body-says"
+  },
+  {
+   "text": "Trump said a permanent US Army base in Poland is close, promising to announce the location 'very soon.'",
+   "region": "europe",
+   "url": "https://www.dw.com/en/trump-hails-major-progress-in-setting-up-us-base-in-poland/a-79316328?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "The US will let Iran's president and foreign minister attend next week's UN General Assembly, even as the two countries remain at war.",
+   "region": "global",
+   "url": "https://www.al-monitor.com/originals/2026/09/us-allow-iranian-leaders-attend-un-general-assembly"
+  },
+  {
+   "text": "The US denied Palestinian President Mahmoud Abbas a visa again; the UN voted 152-3 to let him speak by video.",
+   "region": "middle_east",
+   "url": "https://www.thehindu.com/news/international/us-again-denies-palestinian-leader-abbas-visa-to-attend-un-assembly/article71476349.ece"
+  }
+ ],
+ "big_number": {
+  "value": "$24.3 billion",
+  "context": "The price tag on the US plan to sell 48 F-35 stealth jets to Saudi Arabia, pending approval in Congress.",
+  "url": "https://www.thehindu.com/news/international/us-approves-sale-of-48-f-35-jets-to-saudi-arabia/article71478233.ece"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "Breaking Defense",
+     "France 24",
+     "Le Monde"
+    ],
+    "article_count": 3,
+    "framing": "US-led arms sale, stressing congressional approval and Israeli concerns, not Saudi strategic gain.",
+    "quote": "Israel has previously voiced concerns about Riyadh buying F-35s, despite a push to normalise relations.",
+    "quote_outlet": "France 24",
+    "quote_url": "https://www.france24.com/en/middle-east/20260918-us-approves-24-3-billion-sale-of-48-f-35-warplanes-to-saudi-arabia",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "The Straits Times"
+    ],
+    "article_count": 1,
+    "framing": "Runs wire copy: reports the facts without an editorial angle.",
+    "quote": "The sale would include 48 Lockheed Martin's F-35 Lightning II fighter jets, which are considered the world’s most advanced military aircraft.",
+    "quote_outlet": "The Straits Times",
+    "quote_url": "https://www.straitstimes.com/world/united-states/us-clears-way-for-24-3-billion-fighter-jet-sale-to-saudi-arabia",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Hindustan Times",
+     "The Hindu"
+    ],
+    "article_count": 2,
+    "framing": "US sale framed as boosting Saudi and regional defense, pending Congress, omitting Israeli objections.",
+    "quote": "U.S. approves $24.3 billion sale of 48 F-35 jets to Saudi Arabia, pending Congressional approval, enhancing regional defense capabilities.",
+    "quote_outlet": "The Hindu",
+    "quote_url": "https://www.thehindu.com/news/international/us-approves-sale-of-48-f-35-jets-to-saudi-arabia/article71478233.ece",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al-Monitor",
+     "Middle East Eye",
+     "Ynetnews"
+    ],
+    "article_count": 3,
+    "framing": "US-approved sale seen as regional power shift; Israel opposition and China-tech risks stressed.",
+    "quote": "The historic sale could total $24.3bn and would mark the first time an Arab state gains access to the US’s fifth-generation jet fighter.",
+    "quote_outlet": "Middle East Eye",
+    "quote_url": "https://www.middleeasteye.net/live-blog/live-blog-update/us-says-it-will-sell-48-f-35s-saudi-arabia",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "TASS"
+    ],
+    "article_count": 1,
+    "framing": "US seeks lucrative arms deal; TASS stresses technical package, omitting Israeli objections and regional risks.",
+    "quote": "For each fighter jet, the United States will provide a Pratt & Whitney F135-PW-100 engine, as well as one additional spare engine, along with secure communications, navigation, and encryption equipment",
+    "quote_outlet": "TASS",
+    "quote_url": "https://tass.com/world/2189315",
+    "state_affiliated": true
+   }
+  ],
+  "total_outlets": 10,
+  "counts": {
+   "western": 3,
+   "middle_east": 3,
+   "south_asia": 2,
+   "east_asia": 1,
+   "russian_state": 1
+  },
+  "blindspot": "Novaya Gazeta Europe reports hundreds of election observers were barred from polling stations in Moscow, St. Petersburg and other Russian regions. No Western outlet in today's pool covered it, leaving a political crackdown underreported.",
+  "blindspot_url": "https://novayagazeta.eu/articles/2026/09/18/v-moskve-peterburge-i-drugikh-regionakh-na-izbiratelnye-uchastki-ne-puskaiut-sotni-nabliudatelei-news"
+ },
+ "signals": []
+}
