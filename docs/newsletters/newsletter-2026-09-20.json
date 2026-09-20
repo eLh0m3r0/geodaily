@@ -1,0 +1,226 @@
+{
+ "date": "2026-09-20",
+ "title": "Geopolitical Daily",
+ "email_subject": "Houthis fire missile at Riyadh",
+ "preheader": "Saudi air defenses say they intercepted it; smoke was seen near Riyadh's airport.",
+ "intro_text": "Good morning. It's Sunday, September 20, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "Houthis fire a ballistic missile at Riyadh for the first time since the war reignited",
+   "why_important": "Yemen's Houthis tried to hit Riyadh with a ballistic missile, and the Saudi-led coalition says it intercepted the attack. Residents heard an explosion and saw smoke near the airport. This is the first strike on the Saudi capital since fighting reopened, opening a new front in the wider Iran war.",
+   "what_overlooked": "Saudi Arabia confirmed the attack only hours later. Nobody has said what kind of missile it was, where it launched from, or what the intercept damaged.",
+   "prediction": "Watch whether the Saudi-led coalition strikes Houthi launch sites inside Yemen within the next few days.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.ft.com/content/07fd42b5-0610-470c-8fb8-4840b5401271?syn-25a6b1a6=1",
+    "https://www.thehindu.com/news/international/saudi-arabia-confirms-yemens-houthi-rebels-tried-to-attack-its-capital-with-ballistic-missile/article71486051.ece",
+    "https://www.koreatimes.co.kr/world/20260920/saudi-arabia-confirms-yemens-houthi-rebels-tried-to-attack-its-capital-with-ballistic-missile?utm_source=rss"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 6,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "middle_east",
+   "actor_type": "mixed",
+   "event_type": "military",
+   "coverage_counts": {
+    "south_asia": 2,
+    "western": 4,
+    "east_asia": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 8,
+   "signal_terms": [
+    "Houthis",
+    "Riyadh",
+    "Saudi-led coalition",
+    "Yemen"
+   ]
+  },
+  {
+   "story_title": "Germans vote in two states as far-right and far-left gains threaten Chancellor Merz",
+   "why_important": "About 3.8 million voters in Berlin and Mecklenburg-Western Pomerania are choosing state parliaments. Polls show the far-right AfD and the radical left gaining. A bad result would further weaken Chancellor Friedrich Merz, whose support was already wobbling after a defeat two weeks ago.",
+   "what_overlooked": "These are state votes, not national ones. But they are the clearest test yet of whether Merz's coalition can survive the year.",
+   "prediction": "Watch the AfD's vote share in Mecklenburg-Western Pomerania and whether CDU lawmakers start questioning Merz openly.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/09/20/germans-vote-in-state-elections-threatening-fresh-blow-to-merz_6757733_4.html",
+    "https://www.japantimes.co.jp/news/2026/09/20/world/politics/germany-elections-threat-merz/",
+    "https://www.aljazeera.com/news/2026/9/20/two-german-states-go-to-the-polls-after-far-right-gains?traffic_source=rss"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 6,
+   "novelty_score": 6,
+   "credibility_score": 9,
+   "impact_dimension_score": 7,
+   "confidence": 0.85,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "political",
+   "coverage_counts": {
+    "western": 12,
+    "east_asia": 3,
+    "middle_east": 1,
+    "african": 1
+   },
+   "coverage_outlets": 11,
+   "signal_terms": [
+    "Friedrich Merz",
+    "AfD",
+    "Mecklenburg-Western Pomerania",
+    "Berlin"
+   ]
+  },
+  {
+   "story_title": "Trump blocks CNN, MS NOW and Politico reporters from the White House",
+   "why_important": "Journalists from three outlets were denied entry to White House grounds after Trump announced bans on them. Other US newsrooms called the move unconstitutional and an attack on a free press. It tests how far a president can legally restrict coverage of himself.",
+   "what_overlooked": "The White House has published no written rules for the ban. It is unclear who is next or how an outlet could appeal.",
+   "prediction": "Watch whether a banned outlet sues, and whether the White House press corps pushes back as a group.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.dw.com/en/cnn-ms-now-and-politico-denied-access-to-white-house/a-79339055?maca=en-rss-en-all-1573-rdf",
+    "https://www.aljazeera.com/video/newsfeed/2026/9/20/journalists-locked-out-of-the-white-house-after-trump-ban?traffic_source=rss",
+    "https://www.straitstimes.com/world/united-states/us-news-outlets-express-solidarity-after-trump-bars-some-reporters-from-white-house"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 5,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.85,
+   "region": "americas",
+   "actor_type": "state",
+   "event_type": "political",
+   "coverage_counts": {
+    "middle_east": 1,
+    "western": 7,
+    "east_asia": 6,
+    "south_asia": 3
+   },
+   "coverage_outlets": 10,
+   "signal_terms": [
+    "CNN",
+    "MS NOW",
+    "Politico",
+    "Donald Trump"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "North Korea fired a ballistic missile into the East Sea, Seoul said — eight days after its last launch and after rejecting a UN nuclear resolution.",
+   "region": "indo_pacific",
+   "url": "https://www.lemonde.fr/en/international/article/2026/09/20/north-korea-fires-two-projectiles-into-east-sea_6757734_4.html"
+  },
+  {
+   "text": "Iran handed Washington seven conditions for restarting talks, including ending hostilities and unfreezing assets, and says Trump's threats will not work.",
+   "region": "middle_east",
+   "url": "https://timesofindia.indiatimes.com/world/middle-east/iran-gives-us-3-conditions-to-restart-talks-says-trumps-threats-will-not-achieve-results/articleshow/134360212.cms"
+  },
+  {
+   "text": "Trump said he will create an 'AI Force' and appoint an 'AI czar', calling AI safety warnings a hoax amid the race with China.",
+   "region": "americas",
+   "url": "https://www.straitstimes.com/world/united-states/trump-says-he-will-create-ai-force-name-ai-czar"
+  },
+  {
+   "text": "Macron visited Saint Pierre and Miquelon to reaffirm French sovereignty, meeting Canada's Mark Carney as Ottawa distances itself from Washington.",
+   "region": "europe",
+   "url": "https://www.lemonde.fr/en/international/article/2026/09/20/macron-reaffirms-french-sovereignty-over-saint-pierre-and-miquelon-against-trump-s-ambitions_6757732_4.html"
+  },
+  {
+   "text": "Michelle Bachelet dropped out of the race to lead the UN after weak Security Council support, ending her bid to be the first woman secretary-general.",
+   "region": "global",
+   "url": "https://www.aljazeera.com/news/2026/9/20/michelle-bachelet-exits-un-chief-race-after-low-poll-support?traffic_source=rss"
+  },
+  {
+   "text": "Hundreds marched in Buenos Aires in a 'March of Anger' against President Javier Milei's austerity cuts, demanding higher wages and more public spending.",
+   "region": "americas",
+   "url": "https://www.france24.com/en/argentines-protest-milei-s-austerity-demanding-higher-wages-and-public-spending"
+  },
+  {
+   "text": "Russia's multi-day elections entered a third day, with officials reporting 49.63% turnout by midday and 3.5 million online votes already cast.",
+   "region": "europe",
+   "url": "https://novayagazeta.eu/articles/2026/09/20/v-rossii-nachalsia-tretii-den-golosovaniia-news"
+  },
+  {
+   "text": "Opposition to AI is spreading, with El Pais describing a growing movement of protest and sabotage as safety warnings from researchers mount.",
+   "region": "global",
+   "url": "https://english.elpais.com/technology/2026-09-21/resistance-to-ai-gathers-strength.html"
+  }
+ ],
+ "big_number": {
+  "value": "49.63%",
+  "context": "Reported turnout by midday on day three of Russia's elections — unusually high for a vote with no real opposition on the ballot.",
+  "url": "https://novayagazeta.eu/articles/2026/09/20/v-rossii-nachalsia-tretii-den-golosovaniia-news"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "BBC",
+     "Financial Times",
+     "France 24"
+    ],
+    "article_count": 4,
+    "framing": "Frames Iran-backed Houthi attack as escalation against Saudi Arabia, stressing rebel aggression in widening regional war.",
+    "quote": "Fighting between Iran-backed Houthi rebels and Saudi Arabia continues to intensify.",
+    "quote_outlet": "France 24",
+    "quote_url": "https://www.france24.com/en/yemen-s-houthis-strike-saudi-capital-riyadh-for-the-first-time",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "The Korea Times"
+    ],
+    "article_count": 1,
+    "framing": "Runs wire copy: reports the facts without an editorial angle.",
+    "quote": "Saudi Arabia on Saturday confirmed that Yemen’s Houthi rebels tried to attack its capital with a ballistic missile",
+    "quote_outlet": "The Korea Times",
+    "quote_url": "https://www.koreatimes.co.kr/world/20260920/saudi-arabia-confirms-yemens-houthi-rebels-tried-to-attack-its-capital-with-ballistic-missile?utm_source=rss",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "The Hindu",
+     "Times of India"
+    ],
+    "article_count": 2,
+    "framing": "Runs wire copy: reports the facts without an editorial angle.",
+    "quote": "The statement by the Saudi-led coalition fighting the Houthis came long after the dawn attempt, which the coalition said was intercepted",
+    "quote_outlet": "The Hindu",
+    "quote_url": "https://www.thehindu.com/news/international/saudi-arabia-confirms-yemens-houthi-rebels-tried-to-attack-its-capital-with-ballistic-missile/article71486051.ece",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "TASS"
+    ],
+    "article_count": 1,
+    "framing": "Presents Saudi coalition claim that Houthis attack civilian targets, stressing Saudi defense against rebel escalation.",
+    "quote": "Brigadier General Turki al-Maliki said that the Houthis had stepped up their attempts to attack civilian targets in the capital",
+    "quote_outlet": "TASS",
+    "quote_url": "https://tass.com/world/2190145",
+    "state_affiliated": true
+   }
+  ],
+  "total_outlets": 8,
+  "counts": {
+   "south_asia": 2,
+   "western": 4,
+   "east_asia": 1,
+   "russian_state": 1
+  },
+  "blindspot": "Slovak PM Fico says some Western politicians are stoking a NATO-Russia clash as Ukraine war strategy falters. TASS and non-Western outlets report it; no Western outlet in today's pool covered it, hiding escalation risk.",
+  "blindspot_url": "https://www.scmp.com/news/world/europe/article/3368137/some-western-politicians-stoking-nato-russia-clash-ukraine-war-strategy-falters-fico?utm_source=rss_feed"
+ },
+ "signals": []
+}
