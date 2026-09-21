@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sun, 20 Sep 2026 11:45:31 GMT</pubDate>
-        <lastBuildDate>Sun, 20 Sep 2026 11:45:31 GMT</lastBuildDate>
+        <pubDate>Mon, 21 Sep 2026 13:17:21 GMT</pubDate>
+        <lastBuildDate>Mon, 21 Sep 2026 13:17:21 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,18 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - September 21, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-21.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Monday, September 21, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Pakistan strikes targets in Afghanistan, and the death tolls do not match</strong>: Pakistan's warplanes hit three sites in eastern Afghanistan on Monday. Islamabad says it killed 28 militants and suicide bombers. The Taliban says three civilians died, including a family in Kunar. Th...</li></ul><p><em>Published: September 21, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Mon, 21 Sep 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20260921</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-21.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - September 20, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-20.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Sunday, September 20, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Houthis fire a ballistic missile at Riyadh for the first time since the war reignited</strong>: Yemen's Houthis tried to hit Riyadh with a ballistic missile, and the Saudi-led coalition says it intercepted the attack. Residents heard an explosion and saw smoke near the airport. This is the first...</li></ul><p><em>Published: September 20, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -183,21 +195,6 @@
         <category><![CDATA[Middle East]]></category>
         <category><![CDATA[United States]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-12.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - September 11, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-11.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Friday, September 11, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Putin, Xi, and Iran's President Gather in Delhi for BRICS Summit</strong>: India is hosting Russia's Putin, China's Xi, and Iran's Pezeshkian for the BRICS summit this weekend. Wars are still happening in Ukraine and the Middle East. This shows unity among countries that dis...</li></ul><p><em>Published: September 11, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Fri, 11 Sep 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260911</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-11.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>

@@ -1,0 +1,226 @@
+{
+ "date": "2026-09-21",
+ "title": "Geopolitical Daily",
+ "email_subject": "Pakistan strikes Afghanistan, 28 vs 3 dead",
+ "preheader": "Islamabad calls them militants; the Taliban says a family of three died in Kunar.",
+ "intro_text": "Good morning. It's Monday, September 21, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "Pakistan strikes targets in Afghanistan, and the death tolls do not match",
+   "why_important": "Pakistan's warplanes hit three sites in eastern Afghanistan on Monday. Islamabad says it killed 28 militants and suicide bombers. The Taliban says three civilians died, including a family in Kunar. These are the first such strikes since June.",
+   "what_overlooked": "Neither side lets independent reporters verify the damage. Pakistan has not described the police-post attack that triggered the strikes, or who it blames.",
+   "prediction": "Watch whether Kabul shows the funerals publicly and whether Pakistan launches a second wave within days.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.al-monitor.com/originals/2026/09/pakistan-says-28-killed-airstrikes-three-targets-afghanistan",
+    "https://www.thehindu.com/news/international/three-killed-in-pakistani-airstrikes-on-afghanistan-officials-say/article71490209.ece",
+    "https://www.dw.com/en/taliban-says-three-killed-in-new-pakistan-airstrikes-on-afghanistan/a-79350604?maca=en-rss-en-all-1573-rdf",
+    "https://www.koreatimes.co.kr/world/20260921/pakistan-launches-deadly-strikes-on-afghanistan?utm_source=rss"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 6,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "central_asia",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "middle_east": 3,
+    "south_asia": 2,
+    "western": 1,
+    "east_asia": 1
+   },
+   "coverage_outlets": 6,
+   "signal_terms": [
+    "Pakistan",
+    "Afghanistan",
+    "Kunar",
+    "Taliban"
+   ]
+  },
+  {
+   "story_title": "Trump tells Zelensky to stop striking Russian refineries",
+   "why_important": "In a phone call Sunday night, Trump asked Ukraine's president to stop hitting Russian oil refineries, saying it is 'all about diesel.' The two leaders will meet in New York on Sept. 22. Ukraine uses those strikes to cut Russia's war money.",
+   "what_overlooked": "Trump wants lower fuel prices. Ukraine's drone strikes on refineries were its best tool for hurting Russia's war economy. Nothing was said about what Ukraine gets back.",
+   "prediction": "Watch whether Ukraine pauses refinery strikes this week and what Trump offers Zelensky at their New York meeting.",
+   "impact_score": 8,
+   "sources": [
+    "https://meduza.io/en/news/2026/09/21/axios-trump-and-zelensky-agree-to-meet-in-new-york-as-u-s-president-again-asks-ukraine-to-halt-strikes-on-russian-refineries",
+    "https://www.ft.com/content/adb80fa3-b54a-4b3d-8ed2-0ebe55a5e05e?syn-25a6b1a6=1",
+    "https://www.pravda.com.ua/eng/news/2026/09/21/8054449/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 7,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "russian_exile": 1,
+    "western": 1,
+    "ukrainian": 1,
+    "east_asia": 1,
+    "middle_east_state": 1
+   },
+   "coverage_outlets": 5,
+   "signal_terms": [
+    "Volodymyr Zelensky",
+    "Donald Trump",
+    "Russian refineries",
+    "UN General Assembly"
+   ]
+  },
+  {
+   "story_title": "US and China agree to keep talking about AI before Xi visits Washington",
+   "why_important": "US and Chinese delegations met in New York Sunday and discussed a formal channel for AI talks. They also worked on trade, with a truce expiring in November. Xi Jinping arrives in Washington this week.",
+   "what_overlooked": "Both sides call the talks 'successful,' but neither described what a joint AI channel would do, who would run it, or how it would be enforced.",
+   "prediction": "Watch for an announced AI working group and any extension of the November tariff truce when Xi lands in Washington.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.thehindu.com/news/international/us-seeks-ai-dialogue-with-china-as-officials-set-stage-for-trump-xi-summit/article71490031.ece",
+    "https://www.japantimes.co.jp/business/2026/09/21/bessent-china-talks-ai-trade/",
+    "https://www.france24.com/en/tv-shows/business/20260921-us-china-discuss-ai-dialogue-mechanism-and-trade-ahead-of-trump-xi-summit"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 8,
+   "novelty_score": 6,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.8,
+   "region": "indo_pacific",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "south_asia": 1,
+    "east_asia": 2,
+    "western": 3
+   },
+   "coverage_outlets": 6,
+   "signal_terms": [
+    "Xi Jinping",
+    "China",
+    "artificial intelligence",
+    "trade truce"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "An ICE agent shot a Venezuelan man in Austin on Sunday, sparking protests. He has left the hospital and is now in ICE custody.",
+   "region": "americas",
+   "url": "https://www.lemonde.fr/en/international/article/2026/09/21/man-hospitalized-in-texas-after-being-shot-by-ice-agent_6757752_4.html"
+  },
+  {
+   "text": "CNN, MS NOW and Politico sued the Trump administration over their White House ban and asked for emergency hearings this week.",
+   "region": "americas",
+   "url": "https://www.dawn.com/news/2031607/ms-now-cnn-and-politico-to-sue-over-white-house-ban"
+  },
+  {
+   "text": "German state elections handed Chancellor Merz's CDU a historic defeat, while the far-right AfD made big gains in both states.",
+   "region": "europe",
+   "url": "https://www.dw.com/en/german-state-elections-deal-a-blow-to-chancellor-friedrich-merz/a-79348585?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "Typhoon Dujuan triggered evacuation advisories and hundreds of flight cancellations in eastern Japan, with record rain possible during a five-day holiday.",
+   "region": "indo_pacific",
+   "url": "https://www.dw.com/en/japan-typhoon-dujuan-sparks-flood-landslide-warnings/a-79349957?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "Pakistan detained three sisters of jailed ex-PM Imran Khan for 30 days under a public order law, ahead of a planned march on Islamabad.",
+   "region": "indo_pacific",
+   "url": "https://www.thehindu.com/news/international/pakistan-ex-pm-imran-khans-three-sisters-arrested-in-lahore/article71490800.ece"
+  },
+  {
+   "text": "Three South Korean soldiers were hurt by an unexplained explosion in the Demilitarised Zone; officials have not said whose mine it was.",
+   "region": "indo_pacific",
+   "url": "https://www.japantimes.co.jp/news/2026/09/21/asia-pacific/south-korean-soldiers-dmz-blast/"
+  },
+  {
+   "text": "Dubai declared 10 days of mourning after Sheikh Ahmed bin Rashid Al Maktoum, brother of the emirate's ruler, died at 76.",
+   "region": "middle_east",
+   "url": "https://timesofindia.indiatimes.com/world/middle-east/dubai-rulers-brother-sheikh-ahmed-bin-rashid-dies-at-76-10-day-mourning-declared/articleshow/134385863.cms"
+  },
+  {
+   "text": "The US flew 18 suspects in the 2021 assassination of Haiti's president to Florida to face trial.",
+   "region": "americas",
+   "url": "https://www.straitstimes.com/world/suspects-in-2021-killing-of-haitian-president-flown-to-u-s-to-face-trial"
+  }
+ ],
+ "big_number": {
+  "value": "€403 million",
+  "context": "Ireland's privacy regulator fined Google that amount for using location data without proper consent and keeping it too long.",
+  "url": "https://www.lemonde.fr/en/international/article/2026/09/21/european-union-fines-google-403-million-for-data-location-breach_6757763_4.html"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW"
+    ],
+    "article_count": 1,
+    "framing": "Frames Pakistan's new strikes as cross-border escalation, stressing Taliban casualty reports and June precedent.",
+    "quote": "Pakistan last carried out deadly strikes on Afghanistan in June.",
+    "quote_outlet": "DW",
+    "quote_url": "https://www.dw.com/en/taliban-says-three-killed-in-new-pakistan-airstrikes-on-afghanistan/a-79350604?maca=en-rss-en-all-1573-rdf",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "The Korea Times"
+    ],
+    "article_count": 1,
+    "framing": "Runs wire copy: reports the facts without an editorial angle.",
+    "quote": "Pakistani bombardment has killed three civilians in eastern Afghanistan, the Taliban authorities said on Monday, with Islamabad saying its forces had targeted \"terrorist hubs\" along the border.",
+    "quote_outlet": "The Korea Times",
+    "quote_url": "https://www.koreatimes.co.kr/world/20260921/pakistan-launches-deadly-strikes-on-afghanistan?utm_source=rss",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Hindustan Times",
+     "The Hindu"
+    ],
+    "article_count": 2,
+    "framing": "Links Pakistan's strikes to an earlier attack on its police, while noting Taliban disputes the militant death toll.",
+    "quote": "The Taliban said a house in Kunar province was hit, killing three members of one family, days after an attack on a police facility in Pakistan",
+    "quote_outlet": "The Hindu",
+    "quote_url": "https://www.thehindu.com/news/international/three-killed-in-pakistani-airstrikes-on-afghanistan-officials-say/article71490209.ece",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera",
+     "Al-Monitor"
+    ],
+    "article_count": 3,
+    "framing": "Balances Pakistan's claim of killing 28 militants with Taliban's report of three civilian deaths, stressing disputed toll.",
+    "quote": "Pakistan's government said on Monday that airstrikes killed at least 28 militants in the Afghanistan-Pakistan border region",
+    "quote_outlet": "Al-Monitor",
+    "quote_url": "https://www.al-monitor.com/originals/2026/09/pakistan-says-it-killed-28-militants-taliban-reports-three-civilian-deaths",
+    "state_affiliated": false
+   }
+  ],
+  "total_outlets": 6,
+  "counts": {
+   "middle_east": 3,
+   "south_asia": 2,
+   "western": 1,
+   "east_asia": 1
+  },
+  "blindspot": "Bangkok Post, Dawn, and others report Xi will visit the US from Sept. 23-25 for talks with Trump. No Western outlet in today's pool covered it, leaving major US-China diplomacy outside Western coverage.",
+  "blindspot_url": "https://www.dawn.com/news/2031585/chinese-president-xi-to-visit-us-from-sept-23-25-for-talks-with-trump"
+ },
+ "signals": []
+}
