@@ -1,0 +1,237 @@
+{
+ "date": "2026-09-22",
+ "title": "Geopolitical Daily",
+ "email_subject": "US tells airports: serve Iran, lose dollars",
+ "preheader": "Bessent says Iran's airlines will shut down within days; China calls it illegal.",
+ "intro_text": "Good morning. It's Tuesday, September 22, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "US threatens to cut off any airport or airline that serves Iran",
+   "why_important": "Treasury Secretary Scott Bessent says Iran's airlines will be shut down worldwide within days. Any airport or company that fuels or services them could lose access to the dollar system. China buys most of Iran's oil and calls the move illegal.",
+   "what_overlooked": "Most coverage frames this as an Iran story. The real target is Chinese refiners, shippers and banks. Washington must punish China or back down.",
+   "prediction": "Watch whether any airline or airport stops serving Iran by September 23, and whether Chinese refiners keep buying Iranian crude.",
+   "impact_score": 9,
+   "sources": [
+    "https://foreignpolicy.com/2026/09/22/operation-economic-outcast-trump-united-states-iran-china-sanctions-oil-markets-bessent/",
+    "https://www.middleeasteye.net/live-blog/live-blog-update/china-hits-back-us-threat-sanctions-iranian-airlines",
+    "https://www.premiumtimesng.com/foreign/911451-us-threatens-the-world-not-to-provide-services-to-iranian-planes.html",
+    "https://www.thehindu.com/news/international/us-treasury-chief-says-iran-airlines-to-be-shut-down-sept-23/article71491890.ece"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 9,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 9,
+   "confidence": 0.85,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "economic",
+   "coverage_counts": {
+    "western": 1,
+    "middle_east": 6,
+    "african": 1,
+    "south_asia": 4
+   },
+   "coverage_outlets": 8,
+   "signal_terms": [
+    "Iran",
+    "Scott Bessent",
+    "Operation Economic Outcast",
+    "Iranian airlines"
+   ]
+  },
+  {
+   "story_title": "Xi Jinping's Washington state visit starts Wednesday",
+   "why_important": "Xi Jinping arrives Wednesday for his second meeting with Trump in six months. Washington plans a rare airport welcome. Both sides call ties stable, but pressure is building under the surface.",
+   "what_overlooked": "Japan-China ties are worsening fast, and Europe has no seat at this table. Both will live with whatever the two presidents decide.",
+   "prediction": "Watch for any announced deal on tariffs, AI rules or Taiwan language during the September 23-25 visit.",
+   "impact_score": 9,
+   "sources": [
+    "https://asia.nikkei.com/politics/international-relations/japan-china-tensions/japan-china-ties-wither-as-trump-readies-red-carpet-for-xi-jinping",
+    "https://responsiblestatecraft.org/trump-and-xi-meeting-dc/",
+    "https://www.dw.com/en/as-trump-xi-summit-nears-europe-is-caught-in-middle-of-us-china-rivalry/a-79356540?maca=en-rss-en-all-1573-rdf",
+    "https://news.cgtn.com/news/2026-09-21/How-head-of-state-diplomacy-steers-China-US-ties-toward-stability-1QCoZfsshTG/p.html?UTM_Source=cgtn&UTM_Medium=rss&UTM_Campaign=China"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 9,
+   "novelty_score": 6,
+   "credibility_score": 8,
+   "impact_dimension_score": 9,
+   "confidence": 0.8,
+   "region": "indo_pacific",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "east_asia": 3,
+    "western": 2,
+    "chinese_state": 1
+   },
+   "coverage_outlets": 5,
+   "signal_terms": [
+    "Xi Jinping",
+    "Washington state visit",
+    "Japan-China relations",
+    "Trump"
+   ]
+  },
+  {
+   "story_title": "United Russia wins a record Duma majority as the EU prepares sanctions",
+   "why_important": "United Russia won 57.83% of the vote, up from 49.8% in 2021. The EU says the election was not free and will sanction organizers and candidates who ran in occupied Ukrainian territory.",
+   "what_overlooked": "The anti-war Yabloko party won a small foothold in one regional parliament, a detail most coverage skipped.",
+   "prediction": "Watch when the EU names the sanctioned officials, and whether Moscow answers with its own measures against European monitors.",
+   "impact_score": 6,
+   "sources": [
+    "https://meduza.io/en/news/2026/09/21/the-veneer-of-democracy-is-all-that-remains-in-russia-eu-foreign-policy-chief-kallas-says-brussels-pledges-new-sanctions-after-state-duma-elections",
+    "https://www.thehindu.com/news/international/russias-ruling-pro-putin-party-wins-wartime-election-with-over-57-of-vote-near-complete-results-show/article71491436.ece",
+    "https://www.euronews.com/2026/09/21/putins-party-wins-record-duma-majority-in-kremlin-controlled-elections-as-eu-vows-sanction",
+    "https://www.taipeitimes.com/News/world/archives/2026/09/22/2003864694"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 6,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 6,
+   "confidence": 0.88,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "political",
+   "coverage_counts": {
+    "russian_exile": 6,
+    "south_asia": 1,
+    "western": 1,
+    "east_asia": 1,
+    "african": 1,
+    "middle_east": 1,
+    "russian_state": 2
+   },
+   "coverage_outlets": 8,
+   "signal_terms": [
+    "United Russia",
+    "State Duma",
+    "Kaja Kallas",
+    "Yabloko"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Russian missiles and drones hit Dnipro, Kryvyi Rih and Pavlohrad overnight, killing at least four people and damaging railway lines.",
+   "region": "europe",
+   "url": "https://www.scmp.com/news/world/russia-central-asia/article/3368406/4-dead-ukraine-after-russian-missile-and-drone-attacks-industrial-cities?utm_source=rss_feed"
+  },
+  {
+   "text": "Lula and Flavio Bolsonaro are statistically tied in runoff polling ahead of October's election, with Bolsonaro promising to tilt Brazil toward Washington.",
+   "region": "americas",
+   "url": "https://www.dailymaverick.co.za/article/2026-09-22-lula-and-bolsonaro-statistically-tied-in-potential-brazil-runoff-polls-suggest/"
+  },
+  {
+   "text": "Britain charged Vincent Brown with genocide offences over Rwanda's 1994 massacres, its first-ever prosecution tied to the killings.",
+   "region": "africa",
+   "url": "http://www.africanews.com/2026/09/22/prosecutors-bring-uks-first-ever-charges-over-rwanda-genocide/"
+  },
+  {
+   "text": "A Venezuelan man shot by an ICE agent in Austin is jailed with the bullet still in his back, his lawyer says.",
+   "region": "americas",
+   "url": "https://english.elpais.com/usa/2026-09-22/venezuelan-migrant-shot-by-ice-in-austin-cites-lack-of-medical-care-how-are-they-going-to-leave-the-bullet-in-me.html"
+  },
+  {
+   "text": "Cambodia let journalists into a former scam compound, but it is unclear whether it will charge the powerful people who profited.",
+   "region": "indo_pacific",
+   "url": "https://thediplomat.com/2026/09/cambodian-government-grants-journalists-access-to-giant-former-scamming-compound/"
+  },
+  {
+   "text": "Record diesel and fuel prices are feeding voter anger in the US, Brazil and Europe ahead of elections.",
+   "region": "global",
+   "url": "https://www.semafor.com/article/09/21/2026/surging-fuel-prices-heat-up-polls-across-us-brazil-and-eu"
+  },
+  {
+   "text": "Latvia blocked an EU sanctions decision because it would have removed Russian businessmen Alisher Usmanov and Mikhail Fridman from the list.",
+   "region": "europe",
+   "url": "https://novayagazeta.eu/articles/2026/09/22/latviia-zablokirovala-reshenie-es-o-sniatii-sanktsii-s-usmanova-i-fridmana-news"
+  },
+  {
+   "text": "CNN, MS NOW and Politico sued Trump over their White House ban, as major TV networks paused pool coverage in protest.",
+   "region": "americas",
+   "url": "https://www.dailymaverick.co.za/article/2026-09-22-cnn-ms-now-and-politico-sue-trump-challenging-white-house-ban/"
+  }
+ ],
+ "big_number": {
+  "value": "1,189",
+  "context": "Work-related deaths in Italy in 2025 — down 3% from 2024, but still more than three every day.",
+  "url": "https://www.ansa.it/english/news/general_news/2026/09/22/italy-had-1189-work-related-deaths-in-2025-says-inail_d8e35cfe-a206-4928-99bc-80abb8d5ad37.html"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "Foreign Policy"
+    ],
+    "article_count": 1,
+    "framing": "Treats China’s oil buying as the key obstacle to U.S. sanctions, stressing risks to U.S.-China ties.",
+    "quote": "China buys most of Iran’s oil—more than 90 percent by some estimates .",
+    "quote_outlet": "Foreign Policy",
+    "quote_url": "https://foreignpolicy.com/2026/09/22/operation-economic-outcast-trump-united-states-iran-china-sanctions-oil-markets-bessent/",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Hindustan Times",
+     "NDTV",
+     "The Hindu"
+    ],
+    "article_count": 4,
+    "framing": "Reports U.S. plan to ground Iranian airlines globally, noting China as Iran’s top economic backer.",
+    "quote": "Scott Bessent previously vowed the United States would declare “economic D-Day” on Iran and pledged to choke off Tehran financially.",
+    "quote_outlet": "The Hindu",
+    "quote_url": "https://www.thehindu.com/news/international/us-treasury-chief-says-iran-airlines-to-be-shut-down-sept-23/article71491890.ece",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera",
+     "Middle East Eye"
+    ],
+    "article_count": 6,
+    "framing": "Frames U.S. sanctions as coercive threat, stressing Iranian resilience, Chinese pushback and harm to Iranians.",
+    "quote": "Analysts say new sweeping US sanctions stand to worsen lives of millions of Iranians struggling in battered economy.",
+    "quote_outlet": "Al Jazeera",
+    "quote_url": "https://www.aljazeera.com/features/2026/9/22/can-the-us-ban-iranian-airlines-worldwide-and-what-would-it-mean?traffic_source=rss",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "african",
+    "outlets": [
+     "Premium Times"
+    ],
+    "article_count": 1,
+    "framing": "Treats U.S. sanctions as global threat, stressing dollar-system punishment for any airport or company serving Iran.",
+    "quote": "Mr Bessent also said any airport or company that provides them fuel, landing services or ticket sales will be \"knocked out of the dollar system.",
+    "quote_outlet": "Premium Times",
+    "quote_url": "https://www.premiumtimesng.com/foreign/911451-us-threatens-the-world-not-to-provide-services-to-iranian-planes.html",
+    "state_affiliated": false
+   }
+  ],
+  "total_outlets": 8,
+  "counts": {
+   "western": 1,
+   "middle_east": 6,
+   "african": 1,
+   "south_asia": 4
+  },
+  "blindspot": "Al Jazeera and Middle East Eye report a Vermont man was found guilty of shooting three Palestinian students in 2023; no Western outlet in today's pool covered it. The verdict matters for U.S. justice.",
+  "blindspot_url": "https://www.middleeasteye.net/news/vermont-man-found-guilty-shooting-three-palestinian-students-2023"
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Will the U.S. invade Iran before 2027?\" at 14%.",
+   "url": "https://polymarket.com/market/will-the-us-invade-iran-before-2027",
+   "source": "Polymarket"
+  }
+ ]
+}
