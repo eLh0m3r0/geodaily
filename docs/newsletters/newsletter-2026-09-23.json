@@ -1,0 +1,250 @@
+{
+ "date": "2026-09-23",
+ "title": "Geopolitical Daily",
+ "email_subject": "Greenland's wary yes to a US military deal",
+ "preheader": "Trump calls it 'permanent control over security' and says US troops will move in.",
+ "intro_text": "Good morning. It's Wednesday, September 23, 2026 — the 3 stories that matter most today, plus 7 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "Trump signs deal for a permanent US security role in Greenland",
+   "why_important": "Trump says the US won 'permanent control over security' in Greenland. It will build a large military presence there. Greenland is a Danish territory on the shortest route between Russia and the US. The deal ends months of threats to seize the island.",
+   "what_overlooked": "Coverage focuses on the signing. Greenlanders say trust in Washington is still shaky, and nobody has explained what 'permanent control' means in practice.",
+   "prediction": "Watch whether Washington names specific bases or troop numbers in Greenland this week, and how Russia and Denmark respond.",
+   "impact_score": 8,
+   "sources": [
+    "https://foreignpolicy.com/2026/09/21/greenland-security-trump-united-states-denmark-nato-ukraine-russia-pakistan-afghanistan-ethiopia/",
+    "https://www.dw.com/en/trump-signs-tremendous-greenland-security-deal/a-79381148?maca=en-rss-en-all-1573-rdf",
+    "https://www.koreatimes.co.kr/world/20260923/greenland-welcomes-us-military-pact-but-trust-still-shaky?utm_source=rss",
+    "https://www.hindustantimes.com/world-news/us-news/trump-greenland-denmark-sign-deal-in-bid-to-end-arctic-standoff-going-to-be-a-fantastic-relationship-101790094085850.html"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 8,
+   "novelty_score": 9,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "western": 8,
+    "east_asia": 6,
+    "south_asia": 2,
+    "russian_state": 9,
+    "chinese_state": 1
+   },
+   "coverage_outlets": 13,
+   "signal_terms": [
+    "Greenland",
+    "Denmark",
+    "Donald Trump",
+    "Arctic"
+   ]
+  },
+  {
+   "story_title": "Trump threatens to 'annihilate' Iran while UN talks continue",
+   "why_important": "Trump told the UN that Iran can make a deal or face being 'annihilated.' He also said an agreement could come soon. Iran's armed forces dismissed the threat as propaganda. Diplomats are still pushing for a deal at the General Assembly.",
+   "what_overlooked": "The speech mixed a threat experts call a possible war crime with hints of a near deal. Iran has not publicly accepted any terms.",
+   "prediction": "Watch for another US-Iran meeting at the UN this week, and whether Tehran softens its demands.",
+   "impact_score": 8,
+   "sources": [
+    "https://foreignpolicy.com/2026/09/22/trump-unga-speech-annihilate-iran-icc-rogue-war-crimes/",
+    "https://www.aljazeera.com/news/2026/9/23/annihilate-vs-crushing-attacks-why-iran-us-up-rhetoric-amid-talks?traffic_source=rss",
+    "https://www.dailymaverick.co.za/article/2026-09-23-trump-threatens-to-annihilate-iran-as-diplomats-push-for-deal-at-un/",
+    "https://www.japantimes.co.jp/news/2026/09/23/world/politics/trump-iran-diplomats-deal-un/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 8,
+   "novelty_score": 6,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "western": 3,
+    "middle_east": 1,
+    "african": 2,
+    "east_asia": 2,
+    "south_asia": 1,
+    "chinese_state": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 11,
+   "signal_terms": [
+    "Iran",
+    "Donald Trump",
+    "UN General Assembly",
+    "Tehran"
+   ]
+  },
+  {
+   "story_title": "Yemen battle kills up to 169 as Houthis push toward the Red Sea",
+   "why_important": "Houthi forces and the Saudi-backed Yemeni government are fighting for strategic heights near the Red Sea. Up to 169 people have been killed in three days. Thousands of families are fleeing, many for the second or third time.",
+   "what_overlooked": "Death tolls differ by source and are hard to check. Saudi Arabia's king called the Houthis a 'terrorist militia,' and Britain is now refuelling Saudi jets.",
+   "prediction": "Watch whether the Houthis take the Taiz heights and if attacks on Red Sea shipping restart.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.dawn.com/news/2032005/saudi-king-denounces-houthis-in-rare-rebuke",
+    "https://www.japantimes.co.jp/news/2026/09/23/world/yemeni-families-flee-fighting/",
+    "https://www.aljazeera.com/news/2026/9/23/yemen-government-forces-claim-control-of-mount-qarfan-in-taiz?traffic_source=rss",
+    "https://www.theguardian.com/world/2026/sep/22/yemen-houthis-battle-strategic-red-sea-heights"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 6,
+   "novelty_score": 5,
+   "credibility_score": 7,
+   "impact_dimension_score": 7,
+   "confidence": 0.8,
+   "region": "middle_east",
+   "actor_type": "mixed",
+   "event_type": "military",
+   "coverage_counts": {
+    "south_asia": 3,
+    "east_asia": 3,
+    "middle_east": 1,
+    "western": 3,
+    "intl_org": 1,
+    "african": 1,
+    "russian_state": 1,
+    "chinese_state": 1,
+    "middle_east_state": 1
+   },
+   "coverage_outlets": 13,
+   "signal_terms": [
+    "Houthis",
+    "Yemen",
+    "Taiz",
+    "Red Sea"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "The US refused a UN visa for Sudan's army chief, angering allies; Saudi Arabia threatens to quit the Sudan peace group.",
+   "region": "africa",
+   "url": "https://www.theafricareport.com/431448/saudis-threaten-quad-exit-as-us-sudan-diplomacy-implodes-at-the-un/"
+  },
+  {
+   "text": "Gunmen killed 11 people, including a pregnant woman, at a house party near Durban. Police suspect a gang feud.",
+   "region": "africa",
+   "url": "https://mg.co.za/news/south-africa/2026-09-23-bloodbath-as-11-people-are-shot-dead-in-gang-related-feud-in-kwamakhutha-outside-durban/"
+  },
+  {
+   "text": "The EU removed Russian billionaires Alisher Usmanov and Mikhail Fridman from its sanctions list at France's request. Ukraine called it unacceptable.",
+   "region": "europe",
+   "url": "https://www.lemonde.fr/en/international/article/2026/09/22/usmanov-and-fridman-two-oligarchs-close-to-putin-are-exempted-from-eu-sanctions_6757821_4.html"
+  },
+  {
+   "text": "Russian drones hit two petrol stations in Kyiv, killing one person, hours after Zelensky met Trump in the US.",
+   "region": "europe",
+   "url": "https://www.straitstimes.com/world/europe/russia-hits-kyiv-petrol-stations-kills-one"
+  },
+  {
+   "text": "A Sri Lankan court convicted 15 men over the 2019 Easter bombings that killed 267 people, jailing each for at least 200 years.",
+   "region": "indo_pacific",
+   "url": "https://www.koreaherald.com/article/10883272"
+  },
+  {
+   "text": "China is cracking down on cyber-scam centres in Myanmar, where trafficked workers help defraud Americans of almost $10 billion a year.",
+   "region": "indo_pacific",
+   "url": "https://www.france24.com/en/tv-shows/focus/20260923-china-cracks-down-on-scam-centres-in-neighbouring-myanmar"
+  },
+  {
+   "text": "In his farewell speech, UN chief António Guterres warned leaders that power has split the world and urged cooperation on climate and AI.",
+   "region": "global",
+   "url": "https://www.koreatimes.co.kr/world/20260923/un-chief-says-power-has-polarized-the-world-and-urges-leaders-to-cooperate?utm_source=rss"
+  }
+ ],
+ "big_number": {
+  "value": "450,000",
+  "context": "Scientists say a powerful El Niño could cause more than 450,000 deaths, mostly in poorer countries already short of food.",
+  "url": "https://www.aljazeera.com/news/2026/9/23/powerful-el-nino-could-cause-450000-deaths-scientists-say?traffic_source=rss"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW",
+     "Foreign Policy"
+    ],
+    "article_count": 8,
+    "framing": "Treats Trump's Greenland deal as securing permanent US military control, stressing strategic Arctic presence and his earlier threats.",
+    "quote": "Trump said the United States would immediately begin “developing a large Military presence” on the island, which has strategic importance for Arctic security.",
+    "quote_outlet": "Foreign Policy",
+    "quote_url": "https://foreignpolicy.com/2026/09/21/greenland-security-trump-united-states-denmark-nato-ukraine-russia-pakistan-afghanistan-ethiopia/",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "The Korea Times"
+    ],
+    "article_count": 6,
+    "framing": "Focuses on Greenlanders' relief mixed with distrust, and details US military bases despite Trump's threats to seize the island.",
+    "quote": "Greenland's government and residents expressed relief that a military pact with the US and Denmark may end anxiety over President Donald Trump's threats to seize their Arctic island",
+    "quote_outlet": "The Korea Times",
+    "quote_url": "https://www.koreatimes.co.kr/world/20260923/greenland-welcomes-us-military-pact-but-trust-still-shaky?utm_source=rss",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "chinese_state",
+    "outlets": [
+     "CGTN"
+    ],
+    "article_count": 1,
+    "framing": "Reports US military expansion in strategic Arctic under three-way deal, omitting Greenlandic distrust and Trump's threats.",
+    "quote": "The United States, Denmark and its autonomous territory of Greenland on Tuesday signed an agreement in New York to expand the US military presence on the strategic Arctic island.",
+    "quote_outlet": "CGTN",
+    "quote_url": "https://news.cgtn.com/news/2026-09-23/US-to-expand-military-presence-in-Greenland-under-three-way-deal-1QFeIvffn4k/p.html?UTM_Source=cgtn&UTM_Medium=rss&UTM_Campaign=World",
+    "state_affiliated": true
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Hindustan Times"
+    ],
+    "article_count": 2,
+    "framing": "Presents deal as diplomatic end to Arctic standoff, stressing months of negotiation and Trump's positive relationship rhetoric.",
+    "quote": "Officials from the US, Greenland and Denmark reportedly negotiated for months before the deal was finalised.",
+    "quote_outlet": "Hindustan Times",
+    "quote_url": "https://www.hindustantimes.com/world-news/us-news/trump-greenland-denmark-sign-deal-in-bid-to-end-arctic-standoff-going-to-be-a-fantastic-relationship-101790094085850.html",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "TASS"
+    ],
+    "article_count": 9,
+    "framing": "Highlights US and NATO Arctic expansion and Trump's threats damaging trust, focusing on military installations and formal consent.",
+    "quote": "According to the agreement, the US request \"to establish unmanned military installations in Greenland\" will be considered under an accelerated procedure",
+    "quote_outlet": "TASS",
+    "quote_url": "https://tass.com/world/2191309",
+    "state_affiliated": true
+   }
+  ],
+  "total_outlets": 13,
+  "counts": {
+   "western": 8,
+   "east_asia": 6,
+   "south_asia": 2,
+   "russian_state": 9,
+   "chinese_state": 1
+  },
+  "blindspot": "Syrian president says Israeli policy on Syria endangers regional security, Al-Monitor, Haaretz, Middle East Eye and The Straits Times World report. No Western outlet in today's pool covered it, leaving a regional security claim absent.",
+  "blindspot_url": "https://www.haaretz.com/israel-news/israel-politics/2026-09-23/ty-article-live/syrian-president-israeli-policy-on-syria-endangers-regional-security/000001a0-cbe5-d06e-afab-fbfd8b550000"
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Will Trump acquire Greenland before 2027?\" at 3%.",
+   "url": "https://polymarket.com/market/will-trump-acquire-greenland-before-2027",
+   "source": "Polymarket"
+  }
+ ]
+}
