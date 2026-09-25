@@ -1,0 +1,286 @@
+{
+ "date": "2026-09-25",
+ "title": "Geopolitical Daily",
+ "email_subject": "Dozens walk out of Netanyahu's UN speech",
+ "preheader": "Record Category 4 storm nears Mexico; Kyiv gets Patriot license",
+ "intro_text": "Good morning. It's Friday, September 25, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "Delegates walk out as Netanyahu dismisses Gaza genocide charge at UN",
+   "why_important": "Dozens of delegates walked out of the UN General Assembly on Thursday. This happened as Netanyahu began speaking. He called accusations of genocide in Gaza 'the biggest lie of the century.' He called those who left 'moral cowards.' The walkout shows Israel is isolated. An election in weeks could end Netanyahu's career.",
+   "what_overlooked": "Most coverage focuses on the walkout drama. Fewer note that Netanyahu downplayed settler violence in the West Bank. He defended strikes on Iran as needed for national survival.",
+   "prediction": "Watch if more European states recognize Palestinian statehood. Also watch if Netanyahu's Gaza policy changes before Israel's October election.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.al-monitor.com/originals/2026/09/dozens-delegates-walk-out-un-hall-start-netanyahu-speech",
+    "https://www.haaretz.com/israel-news/2026-09-24/ty-article/.premium/netanyahu-at-un-downplays-israeli-settler-violence-rebuts-gaza-genocide-claim/000001a0-d211-de22-a3b8-f653ed380000",
+    "https://english.elpais.com/international/2026-09-25/netanyahu-challenges-half-empty-un-general-assembly-accusing-israel-of-genocide-is-the-biggest-lie-of-the-century.html",
+    "https://news.un.org/feed/view/en/story/2026/09/1168431"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 8,
+   "novelty_score": 6,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.88,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "middle_east": 2,
+    "latam": 2,
+    "intl_org": 1,
+    "south_asia": 5,
+    "african": 2,
+    "western": 3,
+    "east_asia": 1,
+    "chinese_state": 1
+   },
+   "coverage_outlets": 15,
+   "signal_terms": [
+    "Netanyahu",
+    "UN General Assembly",
+    "Gaza",
+    "walkout"
+   ]
+  },
+  {
+   "story_title": "Record-strong Hurricane Polo shuts Acapulco and aims at Baja California",
+   "why_important": "Hurricane Polo is a Category 4 storm. It sits off Mexico's Pacific coast. On September 22, its pressure hit 892 millibars. That makes it the second-most intense east Pacific hurricane on record. Acapulco has shut down. Alerts cover Guerrero, Michoacan, Colima and Oaxaca. Very warm Pacific water is fueling the storm.",
+   "what_overlooked": "Reports focus on Acapulco. They miss that Hawaii is tracking its third hurricane threat this year. This Pacific season is unusually busy and tied to record-warm water.",
+   "prediction": "Watch Polo's path toward Baja California. Also watch if Hawaii's third storm, Nolo, shifts toward the islands.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.aljazeera.com/news/2026/9/25/hurricane-polo-lashes-mexico-as-nolo-strengthens-near-hawaii?traffic_source=rss",
+    "https://english.elpais.com/international/2026-09-24/acapulco-shuts-down-amid-fear-of-hurricane-polo-three-days-not-knowing-whats-going-to-happen.html",
+    "https://www.theguardian.com/world/2026/sep/25/weather-tracker-hurricane-polo-baja-california-mexico"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 6,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.9,
+   "region": "americas",
+   "actor_type": "state",
+   "event_type": "humanitarian",
+   "coverage_counts": {
+    "middle_east": 1,
+    "latam": 2,
+    "western": 3,
+    "east_asia": 2,
+    "south_asia": 1
+   },
+   "coverage_outlets": 7,
+   "signal_terms": [
+    "Hurricane Polo",
+    "Acapulco",
+    "Baja California",
+    "Nolo"
+   ]
+  },
+  {
+   "story_title": "Trump grants Ukraine license to build Patriot missiles at home",
+   "why_important": "Zelensky says Trump made a final decision. Trump will let Ukraine produce Patriot missiles under license. Kyiv is short of these interceptors. They are the only reliable defense against Russian ballistic strikes. Building them locally could ease the shortage. But factories and tooling will take months.",
+   "what_overlooked": "No timelines, funding, or named US firms have been announced. Kyiv still depends on US parts. So a license alone does not guarantee supply.",
+   "prediction": "Watch for a formal US-Ukraine agreement. It should name manufacturers and a start date for Patriot production lines.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/09/25/zelensky-says-trump-made-final-decision-to-give-ukraine-license-for-patriot-missiles_6757940_4.html",
+    "https://www.pravda.com.ua/eng/news/2026/09/25/8055005/",
+    "https://www.straitstimes.com/world/europe/volodymyr-zelensky-says-donald-trump-has-made-final-decision-to-give-ukraine-patriot-licence"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 6,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.82,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "western": 3,
+    "ukrainian": 2,
+    "east_asia": 2
+   },
+   "coverage_outlets": 7,
+   "signal_terms": [
+    "Patriot missiles",
+    "Zelensky",
+    "Trump",
+    "Ukraine"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Kazakhstan arrested five navy officers after 14 servicemen died in the Caspian Sea during drills; the president declared national mourning.",
+   "region": "central_asia",
+   "url": "https://www.dailymaverick.co.za/article/2026-09-25-kazakhstan-arrests-5-military-officers-after-14-die-during-naval-exercise/"
+  },
+  {
+   "text": "One in three members of Russia's new State Duma has ties to the Ukraine war; 49 'special military operation' veterans take United Russia seats.",
+   "region": "europe",
+   "url": "https://meduza.io/en/feature/2026/09/25/one-in-three-members-of-russia-s-new-state-duma-has-ties-to-the-war-in-ukraine-some-are-accused-of-war-crimes-here-s-who-they-are-and-what-they-ve-done"
+  },
+  {
+   "text": "Xi Jinping brought top economic officials but no Chinese CEOs to Trump's White House state dinner; US tech chiefs like Elon Musk and Tim Cook attended.",
+   "region": "indo_pacific",
+   "url": "https://www.channelnewsasia.com/world/trump-xi-state-dinner-guest-list-business-6410141"
+  },
+  {
+   "text": "Italy banned face coverings in all schools and capped newly arrived pupils with poor Italian at 30 percent per class.",
+   "region": "europe",
+   "url": "https://www.scmp.com/news/world/europe/article/3368837/italy-ban-burkas-schools-30-cap-pupils-poor-italian?utm_source=rss_feed"
+  },
+  {
+   "text": "Lula's campaign accused Trump of trying to 'colonise' Brazil by meddling in the October 4 election; polls show Lula at 40% and Flavio Bolsonaro at 36%.",
+   "region": "americas",
+   "url": "https://www.theguardian.com/world/2026/sep/25/lula-says-trump-wants-to-colonise-and-capture-brazils-resources-by-meddling-in-election"
+  },
+  {
+   "text": "Syria's president said Damascus will soon have no need for foreign military bases, as Israeli patrols continue in southern Syria.",
+   "region": "middle_east",
+   "url": "https://breakingdefense.com/2026/09/syria-looks-to-end-foreign-military-presence-have-sovereignty-over-all-bases-president/"
+  },
+  {
+   "text": "Moscow sent election expert Alexander Kynev to pre-trial detention on drug charges carrying up to 20 years; the case's circumstances remain unclear.",
+   "region": "europe",
+   "url": "https://novayagazeta.eu/articles/2026/09/25/politologa-aleksandra-kyneva-zaderzhali-po-narkoticheskoi-state-news"
+  },
+  {
+   "text": "The White House restored CNN, MS NOW and Politico access after a federal judge ordered Trump to reverse the ban.",
+   "region": "americas",
+   "url": "https://www.dw.com/en/cnn-ms-now-politico-regain-access-to-white-house/a-79405693?maca=en-rss-en-all-1573-rdf"
+  }
+ ],
+ "big_number": {
+  "value": "892 millibars",
+  "context": "Hurricane Polo's pressure reading on September 22, making it the second-most intense east Pacific hurricane ever recorded.",
+  "url": "https://www.theguardian.com/world/2026/sep/25/weather-tracker-hurricane-polo-baja-california-mexico"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "BBC",
+     "Euronews"
+    ],
+    "article_count": 3,
+    "framing": "Centers Netanyahu defending Israel while delegates walk out and protesters gather outside UN.",
+    "quote": "The Israeli leader labels those who left his speech at the UN General Assembly as \"moral cowards\".",
+    "quote_outlet": "BBC",
+    "quote_url": "https://www.bbc.co.uk/news/articles/c3y0z7kxlegdo?at_medium=RSS&at_campaign=rss",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "Bangkok Post"
+    ],
+    "article_count": 1,
+    "framing": "Presents Netanyahu defending Israel amid growing isolation and election risk, with delegates streaming out.",
+    "quote": "Israel's Prime Minister Benjamin Netanyahu mounted a forceful defence of Israel's actions in the region at the United Nations (UN) on Thursday",
+    "quote_outlet": "Bangkok Post",
+    "quote_url": "https://www.bangkokpost.com/world/3325959/at-un-netanyahu-defends-israel-as-delegates-walk-out",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "chinese_state",
+    "outlets": [
+     "CGTN"
+    ],
+    "article_count": 1,
+    "framing": "Highlights protest walkout against Netanyahu at UN, treating Israel as internationally opposed.",
+    "quote": "Scores of delegates walked out of the United Nations General Assembly hall in protest as Israeli Prime Minister Benjamin Netanyahu took the podium on Thursday",
+    "quote_outlet": "CGTN",
+    "quote_url": "https://news.cgtn.com/news/2026-09-25/Delegates-walk-out-in-protest-as-Netanyahu-defends-Israel-at-UN-1QIAF8V7nu8/p.html?UTM_Source=cgtn&UTM_Medium=rss&UTM_Campaign=World",
+    "state_affiliated": true
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Dawn",
+     "The Express Tribune",
+     "The Hindu"
+    ],
+    "article_count": 5,
+    "framing": "Focuses on walkout size and split: who protested, who stayed, and Netanyahu’s growing isolation.",
+    "quote": "Nearly 70 delegations left the chamber as Israeli PM began speaking, while the US, UK, France and others remained",
+    "quote_outlet": "The Express Tribune",
+    "quote_url": "https://tribune.com.pk/story/2631357/inside-the-un-walkout-who-left-and-who-stayed-for-netanyahus-speech",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al-Monitor",
+     "Haaretz"
+    ],
+    "article_count": 2,
+    "framing": "Focuses on Netanyahu rejecting genocide charge and antisemitism accusation amid mass walkout.",
+    "quote": "A mass walkout of delegates took place as Netanyahu pushed back against accusations of genocide levelled at Israel and accused Mamdani of antisemitism.",
+    "quote_outlet": "Haaretz",
+    "quote_url": "https://www.haaretz.com/israel-news/2026-09-24/ty-article/.premium/netanyahu-at-un-downplays-israeli-settler-violence-rebuts-gaza-genocide-claim/000001a0-d211-de22-a3b8-f653ed380000",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "african",
+    "outlets": [
+     "Africanews",
+     "Daily Maverick"
+    ],
+    "article_count": 2,
+    "framing": "Runs wire copy: reports the facts without an editorial angle.",
+    "quote": "Benjamin Netanyahu dismissed genocide claims and defended Israel's operations in Gaza, Iran, and elsewhere in the Middle East.",
+    "quote_outlet": "Africanews",
+    "quote_url": "http://www.africanews.com/2026/09/25/un-delegates-walk-out-at-netanyahu-defends-israeli-military-action/",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "latam",
+    "outlets": [
+     "El País",
+     "MercoPress"
+    ],
+    "article_count": 2,
+    "framing": "Presents Netanyahu’s hardline rejection of genocide charges before an emptied UN chamber.",
+    "quote": "Israeli Prime Minister Benjamin Netanyahu on Thursday called genocide allegations against his country over the war in Gaza \"the biggest lie of the century",
+    "quote_outlet": "MercoPress",
+    "quote_url": "https://en.mercopress.com/2026/09/25/netanyahu-rejects-genocide-allegations-before-an-assembly-emptied-by-dozens-of-delegations?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "intl_org",
+    "outlets": [
+     "UN News"
+    ],
+    "article_count": 1,
+    "framing": "Reports Netanyahu’s UN claims: Iran strikes as survival, West Bank violence limited, genocide charge rejected.",
+    "quote": "Prime Minister Benjamin Netanyahu used his address to the UN General Assembly to defend Israel’s strikes against Iran as a matter of national survival",
+    "quote_outlet": "UN News",
+    "quote_url": "https://news.un.org/feed/view/en/story/2026/09/1168431",
+    "state_affiliated": false
+   }
+  ],
+  "total_outlets": 15,
+  "counts": {
+   "middle_east": 2,
+   "latam": 2,
+   "intl_org": 1,
+   "south_asia": 5,
+   "african": 2,
+   "western": 3,
+   "east_asia": 1,
+   "chinese_state": 1
+  },
+  "blindspot": "TASS reports Russian and US envoys met in the US; Anadolu and Ukrainska Pravda also covered it. No Western outlet in today's pool covered it, though such talks affect Ukraine war diplomacy.",
+  "blindspot_url": "https://www.pravda.com.ua/eng/news/2026/09/25/8054989/"
+ },
+ "signals": []
+}
