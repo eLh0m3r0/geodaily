@@ -1,0 +1,233 @@
+{
+ "date": "2026-09-26",
+ "title": "Geopolitical Daily",
+ "email_subject": "Trump plans to bomb Iran after midterms",
+ "preheader": "He turned down Tehran's offer to reopen the Strait of Hormuz and halt fighting.",
+ "intro_text": "Good morning. It's Saturday, September 26, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "Trump Rejects Iran's Truce Offer and Plans to Resume Bombing",
+   "why_important": "Trump rejected Iran's offer to reopen a key oil route and stop fighting in exchange for lifting US sanctions. He told aides he expects to bomb Iran again after November's elections. Restarting the war could send global oil prices higher.",
+   "what_overlooked": "Every report traces to one Wall Street Journal story citing unnamed US officials. Iran has not confirmed the offer's terms, so the truce details stay unverified.",
+   "prediction": "Watch whether tanker traffic through the Strait of Hormuz slows or shipping insurance costs jump in the next few days.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.haaretz.com/middle-east-news/iran/2026-09-26/ty-article/trump-rejects-iranian-peace-proposal-wsj-reports/000001a0-db32-dfbb-afa4-fb72fbb70000",
+    "https://www.japantimes.co.jp/news/2026/09/26/world/politics/trump-rejects-iranian-peace-proposal/",
+    "https://www.hindustantimes.com/world-news/us-iran-war-donald-trump-strait-of-hormuz-peace-proposal-latest-news-101790385867297.html"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 9,
+   "novelty_score": 7,
+   "credibility_score": 7,
+   "impact_dimension_score": 9,
+   "confidence": 0.75,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "middle_east": 3,
+    "east_asia": 1,
+    "south_asia": 2,
+    "russian_state": 2
+   },
+   "coverage_outlets": 8,
+   "signal_terms": [
+    "Iran",
+    "Strait of Hormuz",
+    "Trump",
+    "Tehran"
+   ]
+  },
+  {
+   "story_title": "Ethiopia's Civil War Restarts as Tigray Forces Move to Oust Abiy",
+   "why_important": "The 2022 truce that ended one of this century's deadliest wars has collapsed. Tigray's TPLF says it launched a 'defensive' war to remove Prime Minister Abiy Ahmed. The UN rights chief says she is deeply alarmed as fighting spreads.",
+   "what_overlooked": "Most coverage focuses on Tigray alone, but the 2022 deal never settled Amhara and Eritrea disputes, so several conflicts are now merging into one.",
+   "prediction": "Watch whether Eritrean troops or Amhara militias formally join within 72 hours, and whether Addis Ababa's airport stays open.",
+   "impact_score": 9,
+   "sources": [
+    "https://foreignpolicy.com/2026/09/25/ethiopia-tigray-tplf-civil-war-abiy-amhara-afar-eritrea/",
+    "https://africanarguments.org/2026/09/breaking-the-pretoria-architecture-how-ethiopias-fragmented-wars-converged-into-a-single-existential-threat/?utm_source=rss&utm_medium=rss&utm_campaign=breaking-the-pretoria-architecture-how-ethiopias-fragmented-wars-converged-into-a-single-existential-threat",
+    "https://www.lemonde.fr/en/le-monde-africa/article/2026/09/26/ethiopia-slides-back-into-war-who-is-involved-and-why_6757974_124.html",
+    "https://www.straitstimes.com/world/un-rights-chief-deeply-alarmed-by-escalating-fighting-in-ethiopia"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 8,
+   "novelty_score": 6,
+   "credibility_score": 8,
+   "impact_dimension_score": 9,
+   "confidence": 0.8,
+   "region": "africa",
+   "actor_type": "mixed",
+   "event_type": "military",
+   "coverage_counts": {
+    "western": 5,
+    "african": 3,
+    "east_asia": 2,
+    "intl_org": 1
+   },
+   "coverage_outlets": 9,
+   "signal_terms": [
+    "Tigray",
+    "TPLF",
+    "Abiy Ahmed",
+    "Ethiopia"
+   ]
+  },
+  {
+   "story_title": "Trump and Xi Wrap Up Their Second Summit of the Year",
+   "why_important": "Trump and Xi met in Washington for their second summit this year. Xi said the two countries should be 'partners, not rivals' and expects two more meetings in 2026. The talks shape trade, AI rules and Taiwan.",
+   "what_overlooked": "The warm language came with no announced deals on tariffs or chip exports, so the 'partners' framing may not change policy.",
+   "prediction": "Watch for a joint statement or any tariff or technology-export announcement within three days.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.lowyinstitute.org/the-interpreter/trump-xi-summit-who-is-competing",
+    "https://asia.nikkei.com/spotlight/trump-xi-summit/trump-xi-summit-how-the-chinese-leader-s-trip-to-washington-unfolded",
+    "https://www.ndtv.com/world-news/donald-trump-xi-jinping-live-updates-us-china-summit-white-house-state-visit-key-announcements-trade-ai-live-news-12092374#publisher=newsstand"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 9,
+   "novelty_score": 6,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.8,
+   "region": "global",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "western": 1,
+    "east_asia": 3,
+    "south_asia": 1
+   },
+   "coverage_outlets": 3,
+   "signal_terms": [
+    "Trump",
+    "Xi Jinping",
+    "Washington summit",
+    "US-China"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "TikTok will pay Alabama at least $100 million and add a two-hour daily limit for teens to settle a child-safety lawsuit.",
+   "region": "americas",
+   "url": "https://www.scmp.com/news/us/economy-trade-business/article/3368877/tiktok-settles-lawsuit-alabama-least-us100m-apply-safety-steps?utm_source=rss_feed"
+  },
+  {
+   "text": "Bangkok declared a flood disaster across all 50 districts after almost 300 mm of rain since Thursday, submerging roads and homes.",
+   "region": "indo_pacific",
+   "url": "https://www.dw.com/en/thailand-bangkok-flooding-triggers-disaster-declaration/a-79440575?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "A Climate Impact Lab report warns a stronger El Niño could cause tens of thousands of extra heat deaths across Africa's Sahel.",
+   "region": "africa",
+   "url": "https://mg.co.za/the-green-guardian/2026-09-24-africa-faces-tens-of-thousands-of-additional-heat-deaths-as-el-nino-intensifies/"
+  },
+  {
+   "text": "Zelensky says the US proposed UAE-hosted peace talks with Russia, while his office denied a report that Trump pushed a Moscow meeting.",
+   "region": "europe",
+   "url": "https://www.themoscowtimes.com/2026/09/25/us-proposed-new-round-of-ukraine-peace-talks-in-uae-zelensky-says-a93795"
+  },
+  {
+   "text": "Brazil's Lula banned online betting and digital casinos days before the election, calling the industry a 'cancer.'",
+   "region": "americas",
+   "url": "https://www.ft.com/content/bc2fd2af-479d-44d4-840b-40ef52b16241?syn-25a6b1a6=1"
+  },
+  {
+   "text": "Final results confirm United Russia won a record parliamentary majority with turnout near 60% in a wartime vote.",
+   "region": "europe",
+   "url": "https://www.thehindu.com/news/international/full-results-from-russias-parliamentary-election-confirm-kremlins-dominance/article71510124.ece"
+  },
+  {
+   "text": "Fourteen US senators from both parties urged Trump to withdraw Putin's invitation to December's G20 summit in Miami.",
+   "region": "global",
+   "url": "https://meduza.io/en/news/2026/09/25/bipartisan-group-of-14-u-s-senators-urges-trump-to-withdraw-putin-s-g20-invitation"
+  },
+  {
+   "text": "Three years of war have left Gaza families sheltering in damaged buildings that may collapse, with few safe places to go.",
+   "region": "middle_east",
+   "url": "https://www.aljazeera.com/features/2026/9/26/nowhere-else-to-go-gaza-families-shelter-in-buildings-that-may-collapse?traffic_source=rss"
+  }
+ ],
+ "big_number": {
+  "value": "31,400",
+  "context": "Projected extra heat deaths in Nigeria alone from a super El Niño, the world's highest toll, per the Climate Impact Lab.",
+  "url": "https://theconversation.com/nigeria-faces-the-worlds-highest-projected-death-toll-from-super-el-nino-heat-what-could-save-lives-292786"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "The Japan Times"
+    ],
+    "article_count": 1,
+    "framing": "Runs wire copy: reports the facts without an editorial angle.",
+    "quote": "U.S. President Donald Trump told aides he expects to resume bombing after November congressional elections.",
+    "quote_outlet": "The Japan Times",
+    "quote_url": "https://www.japantimes.co.jp/news/2026/09/26/world/politics/trump-rejects-iranian-peace-proposal/",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Hindustan Times",
+     "NDTV"
+    ],
+    "article_count": 2,
+    "framing": "Frames Trump as rejecting Iran’s seven-day plan and planning post-midterm bombing, stressing skepticism of Iran’s compliance.",
+    "quote": "Trump has told his aides that he expects the US to resume bombing Iranian territory after the November congressional elections.",
+    "quote_outlet": "Hindustan Times",
+    "quote_url": "https://www.hindustantimes.com/world-news/us-iran-war-donald-trump-strait-of-hormuz-peace-proposal-latest-news-101790385867297.html",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera",
+     "Haaretz",
+     "Middle East Eye"
+    ],
+    "article_count": 3,
+    "framing": "Frames Trump’s rejection as risking renewed strikes, highlighting Iran’s ceasefire terms, sanctions relief and regional oil route.",
+    "quote": "Tehran's proposal would reopen the key oil shipping route and halt fighting across the region, in exchange for the lifting of U.S. sanctions and a blockade on Iranian ports",
+    "quote_outlet": "Haaretz",
+    "quote_url": "https://www.haaretz.com/middle-east-news/iran/2026-09-26/ty-article/trump-rejects-iranian-peace-proposal-wsj-reports/000001a0-db32-dfbb-afa4-fb72fbb70000",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "RT",
+     "TASS"
+    ],
+    "article_count": 2,
+    "framing": "Relays US officials' report that Trump rejected Iran’s ceasefire and may resume bombing after midterms.",
+    "quote": "The US President is skeptical Iran would meet his demands and has told his staff that he sees a renewed bombing campaign as likely, the newspaper said",
+    "quote_outlet": "TASS",
+    "quote_url": "https://tass.com/world/2193183",
+    "state_affiliated": true
+   }
+  ],
+  "total_outlets": 8,
+  "counts": {
+   "middle_east": 3,
+   "east_asia": 1,
+   "south_asia": 2,
+   "russian_state": 2
+  },
+  "blindspot": "Houthi attacks on Saudi Arabia test limits of Mecca regional security pact, Al-Monitor and others report. No Western outlet in today's pool covered it, leaving a Gulf security risk unexamined.",
+  "blindspot_url": "https://www.scmp.com/news/china/diplomacy/article/3368857/houthi-attacks-saudi-arabia-test-limits-mecca-regional-security-pact?utm_source=rss_feed"
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Will the U.S. invade Iran before 2027?\" at 16%.",
+   "url": "https://polymarket.com/market/will-the-us-invade-iran-before-2027",
+   "source": "Polymarket"
+  }
+ ]
+}
