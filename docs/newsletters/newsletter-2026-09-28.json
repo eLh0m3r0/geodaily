@@ -1,0 +1,260 @@
+{
+ "date": "2026-09-28",
+ "title": "Geopolitical Daily",
+ "email_subject": "Five held near US base used to bomb Iran",
+ "preheader": "Police moved after a tip about three vans heading to RAF Fairford.",
+ "intro_text": "Good morning. It's Monday, September 28, 2026 — the 3 stories that matter most today, plus 7 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "Britain arrests five men over suspected plot at US air base used to bomb Iran",
+   "why_important": "British police arrested five men near RAF Fairford, a base the US uses to strike Iran. Officers moved after a tip about three vans heading to the airfield. A source says an Iranian-linked motive is most likely. If true, that would mean Iran is striking back at the countries bombing it.",
+   "what_overlooked": "Iran's embassy calls the claims 'unfounded and malicious' and threatens legal action. No public evidence linking Tehran has been shown yet.",
+   "prediction": "Watch whether UK prosecutors file charges and whether London blames Tehran directly.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/09/27/uk-police-say-5-arrested-on-suspicion-of-preparing-terrorist-act_6758010_4.html",
+    "https://www.middleeasteye.net/live-blog/live-blog-update/iran-denies-involvement-suspected-plot-targeting-uk-airbase",
+    "https://www.dailymaverick.co.za/article/2026-09-28-trump-says-men-arrested-at-uk-air-base-used-by-us-were-looking-to-do-big-damage/",
+    "https://www.thehindu.com/news/international/uk-police-question-five-men-held-near-air-base-used-by-us-to-strike-iran/article71518813.ece"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 7,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.82,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "western": 10,
+    "middle_east": 7,
+    "african": 2,
+    "south_asia": 9,
+    "east_asia": 8,
+    "russian_state": 1
+   },
+   "coverage_outlets": 25,
+   "signal_terms": [
+    "RAF Fairford",
+    "Iran",
+    "UK counterterrorism",
+    "Explosives Act"
+   ]
+  },
+  {
+   "story_title": "Trump offered to sell US weapons to China, ambassador says",
+   "why_important": "US ambassador David Perdue says Trump asked Xi Jinping at last week's summit if China wanted to buy American weapons. Trump used the offer to downplay a pending US arms sale to Taiwan. If real, it would upend decades of US policy toward China and Taiwan.",
+   "what_overlooked": "One source, the US ambassador, speaking on Fox News. Beijing and the White House have not confirmed it.",
+   "prediction": "Watch whether the White House confirms this and how Taiwan and Beijing respond.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.thehindu.com/news/international/trump-asked-chinas-president-if-he-wants-to-buy-us-arms-ambassador-says/article71518145.ece",
+    "https://www.theguardian.com/world/2026/sep/28/trump-xi-jinping-china-buy-weapons",
+    "https://www.koreatimes.co.kr/world/20260928/trump-asked-chinas-president-if-he-wants-to-buy-us-arms-ambassador-says?utm_source=rss"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 8,
+   "novelty_score": 9,
+   "credibility_score": 6,
+   "impact_dimension_score": 8,
+   "confidence": 0.7,
+   "region": "indo_pacific",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "south_asia": 4,
+    "western": 1,
+    "east_asia": 2,
+    "russian_state": 1
+   },
+   "coverage_outlets": 7,
+   "signal_terms": [
+    "Xi Jinping",
+    "David Perdue",
+    "Taiwan",
+    "US arms sales"
+   ]
+  },
+  {
+   "story_title": "South Korea demands Ukraine apology over North Korean prisoners of war",
+   "why_important": "Seoul says Kyiv agreed to keep quiet about sending two North Korean prisoners of war to the South. Zelensky announced it at the UN anyway. South Korea now demands an apology. The row threatens Seoul's aid to Ukraine, a rare and important source of weapons.",
+   "what_overlooked": "Coverage focuses on the broken deal, not the prisoners. North Korean soldiers sent to fight for Russia face unclear fates.",
+   "prediction": "Watch whether Seoul pauses aid or Kyiv apologizes in the next few days.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.thehindu.com/news/international/south-korea-demands-ukraine-apology-over-denial-of-confidential-deal-on-norths-prisoners-of-war/article71518214.ece",
+    "https://www.dw.com/en/ukraine-south-korea-relations-sour-over-north-korean-pows/a-79451515?maca=en-rss-en-all-1573-rdf",
+    "https://www.scmp.com/week-asia/politics/article/3369055/south-koreas-pow-row-ukraine-puts-ties-and-aid-risk?utm_source=rss_feed"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 6,
+   "novelty_score": 6,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.8,
+   "region": "indo_pacific",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "south_asia": 2,
+    "western": 3,
+    "east_asia": 3,
+    "middle_east": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 9,
+   "signal_terms": [
+    "South Korea",
+    "Volodymyr Zelensky",
+    "North Korean POWs",
+    "Kyiv"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Serbia's president Aleksandar Vucic resigned to run for prime minister, with snap elections set for October 25.",
+   "region": "europe",
+   "url": "https://www.lemonde.fr/en/international/article/2026/09/27/serbia-s-president-aleksandar-vucic-announces-resignation_6758015_4.html"
+  },
+  {
+   "text": "Ethiopia accused Sudan and Egypt of backing Tigray rebels, a charge Sudan's army denied.",
+   "region": "africa",
+   "url": "https://www.aljazeera.com/news/2026/9/28/ethiopia-accuses-sudan-egypt-of-backing-tigray-rebels-as-fighting-rages?traffic_source=rss"
+  },
+  {
+   "text": "Swiss voters overwhelmingly rejected a far-right plan for 'total' neutrality, keeping sanctions on Russia.",
+   "region": "europe",
+   "url": "https://www.lemonde.fr/en/international/article/2026/09/28/swiss-voters-reject-total-neutrality-choosing-pragmatic-atlanticism_6758028_4.html"
+  },
+  {
+   "text": "Israeli media say Netanyahu made a secret one-day trip to the UAE to meet its president.",
+   "region": "middle_east",
+   "url": "https://www.dawn.com/news/2033171/netanyahu-visits-uae-israeli-media"
+  },
+  {
+   "text": "An avalanche on Nepal's Mount Himlung killed at least four people, with 12 still missing.",
+   "region": "indo_pacific",
+   "url": "https://www.scmp.com/news/asia/south-asia/article/3369014/avalanche-nepals-himlung-mountain-leaves-2-workers-dead-14-missing?utm_source=rss_feed"
+  },
+  {
+   "text": "A Turkish court convicted comedian Deniz Goktas of insulting President Erdogan, then released him after nearly three months in jail.",
+   "region": "middle_east",
+   "url": "https://www.dw.com/en/turkey-comedian-convicted-for-insulting-erdogan-in-show/a-79455759?maca=en-rss-en-all-1573-rdf"
+  },
+  {
+   "text": "SpaceX's Starship rocket reached orbit for the first time on its 14th flight, despite losing one engine.",
+   "region": "americas",
+   "url": "https://www.ft.com/content/6729bceb-2480-42b4-9308-51ef7728c181?syn-25a6b1a6=1"
+  }
+ ],
+ "big_number": {
+  "value": "39",
+  "context": "US House races Republicans now spend money on that they once called safe, after polls showed them slipping.",
+  "url": "https://www.scmp.com/news/world/united-states-canada/article/3369024/republicans-pour-cash-dozens-us-house-races-previously-seen-safe?utm_source=rss_feed"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW",
+     "Financial Times",
+     "Le Monde"
+    ],
+    "article_count": 10,
+    "framing": "Treats arrests as terrorism threat tied to US air base used for Iran strikes, stressing US-UK cooperation.",
+    "quote": "Trump suggests US worked with Britain to prevent attack on RAF Fairford, which US Air Force is using for strikes on Iran",
+    "quote_outlet": "Financial Times",
+    "quote_url": "https://www.ft.com/content/875027a3-db29-40a6-b17c-fa97c30fd07b?syn-25a6b1a6=1",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "South China Morning Post",
+     "The Japan Times",
+     "The Straits Times"
+    ],
+    "article_count": 8,
+    "framing": "Frames arrests as possible Iran-linked plot against US-used base, stressing counterterror probe and regional tensions.",
+    "quote": "Police were working to establish a motive for what they considered to be a serious attempted attack disrupted at a late stage, sources said.",
+    "quote_outlet": "The Japan Times",
+    "quote_url": "https://www.japantimes.co.jp/news/2026/09/28/world/trump-uk-attack-shared-base/",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Dawn",
+     "The Hindu"
+    ],
+    "article_count": 9,
+    "framing": "Highlights suspects’ UK nationality and London ties while reporting police see Iran-linked motive as likely.",
+    "quote": "Five men held over a bomb scare at a British air base used by the US are all UK nationals aged in their mid-20s, British counter-terror police said Monday.",
+    "quote_outlet": "Dawn",
+    "quote_url": "https://www.dawn.com/news/2033256/5-men-held-over-bomb-scare-at-england-base-used-by-us-to-attack-iran-are-uk-nationals-police",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al-Monitor",
+     "Middle East Eye"
+    ],
+    "article_count": 7,
+    "framing": "Focuses on Iran’s denial and rejection of any link, contesting suggestions Tehran was responsible.",
+    "quote": "Iran’s embassy in the UK has “categorically” rejected and condemned speculation linking Tehran to a suspected plot targeting a UK military airbase used by the United States.",
+    "quote_outlet": "Middle East Eye",
+    "quote_url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-denies-involvement-suspected-plot-targeting-uk-airbase",
+    "state_affiliated": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "RT"
+    ],
+    "article_count": 1,
+    "framing": "Reports arrests near a US base used for Iran strikes, stressing terrorism alert but omitting Iran denial.",
+    "quote": "The UK police have arrested five men on suspicion of plotting a terrorist attack near a US air base used in strikes on Iran",
+    "quote_outlet": "RT",
+    "quote_url": "https://www.rt.com/news/646335-uk-police-arrest-five-men/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+    "state_affiliated": true
+   },
+   {
+    "perspective": "african",
+    "outlets": [
+     "Daily Maverick"
+    ],
+    "article_count": 2,
+    "framing": "Runs wire copy: reports the facts without an editorial angle.",
+    "quote": "British police were questioning five men on Monday on suspicion of explosives and terrorism offences after their detention near an air base used by the US to strike Iran.",
+    "quote_outlet": "Daily Maverick",
+    "quote_url": "https://www.dailymaverick.co.za/article/2026-09-28-uk-counter-terror-police-question-five-men-held-at-airbase-used-by-us-to-attack-iran/",
+    "state_affiliated": false
+   }
+  ],
+  "total_outlets": 25,
+  "counts": {
+   "western": 10,
+   "middle_east": 7,
+   "african": 2,
+   "south_asia": 9,
+   "east_asia": 8,
+   "russian_state": 1
+  },
+  "blindspot": "Russian authorities opened a criminal case against anti-war organizer Ksenia Maksimova, TASS and Meduza report. No Western outlet in today's pool covered it; the gap matters for transnational repression of dissent.",
+  "blindspot_url": "https://meduza.io/en/news/2026/09/28/russia-opens-criminal-case-against-anti-war-organizer-former-model-and-london-councilor-ksenia-maksimova"
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Will the U.S. invade Iran before 2027?\" at 16%.",
+   "url": "https://polymarket.com/market/will-the-us-invade-iran-before-2027",
+   "source": "Polymarket"
+  }
+ ]
+}
