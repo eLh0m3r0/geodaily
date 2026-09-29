@@ -8,8 +8,12 @@ Required env vars:
     BUTTONDOWN_API_KEY  - API key from Buttondown → Settings → API Key
 """
 
+import json
+import os
 import re
-from typing import Optional
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import List, Optional, Tuple
 
 import requests
 
@@ -21,6 +25,108 @@ logger = get_logger(__name__)
 
 BUTTONDOWN_API_BASE = "https://api.buttondown.com/v1"
 
+# Buttondown's content filter answers HTTP 400 with e.g.
+#   {"code":"email_invalid","detail":"Contains prohibited keyword: Leroy Merlin"}
+# (2026-09-18: a news story naming the retailer blocked the whole send).
+_PROHIBITED_RE = re.compile(r"prohibited\s+keywords?\s*:\s*(.+)", re.IGNORECASE)
+# Invisible joiner inserted inside flagged words: renders identically in every
+# mail client but breaks a substring match.
+ZERO_WIDTH_JOINER = "\u200d"
+# Each rejection names what it found; a retry happens only when it names
+# something new, and at most this many times.
+MAX_KEYWORD_RETRIES = 2
+
+# Where the daily send records its outcome for the workflow's delivery check
+# (env EMAIL_DELIVERY_STATUS_FILE). output/ is gitignored and per-run.
+DEFAULT_DELIVERY_STATUS_FILE = "output/email_delivery_status.json"
+
+_TOKEN_RE = re.compile(
+    r"(<(?:style|script)\b[^>]*>.*?</(?:style|script)\s*>|<!--.*?-->|<[^>]*>)",
+    re.IGNORECASE | re.DOTALL,
+)
+_ATTR_VALUE_RE = re.compile(r"""(=\s*)("[^"]*"|'[^']*')""")
+
+
+def extract_prohibited_keywords(response_text: str) -> List[str]:
+    """Keywords named by a Buttondown content-filter rejection ([] if none)."""
+    if not response_text:
+        return []
+    candidates = []
+    try:
+        data = json.loads(response_text)
+    except (TypeError, ValueError):
+        data = None
+    if isinstance(data, dict):
+        meta = data.get("metadata") or {}
+        for key in ("keywords", "keyword", "prohibited_keywords"):
+            value = meta.get(key) if isinstance(meta, dict) else None
+            if isinstance(value, str):
+                candidates.append(value)
+            elif isinstance(value, list):
+                candidates.extend(str(v) for v in value)
+        texts = [str(data.get("detail") or ""), str(data.get("message") or "")]
+    else:
+        texts = [response_text]
+    for text in texts:
+        m = _PROHIBITED_RE.search(text)
+        if m:
+            candidates.extend(m.group(1).split(","))
+    keywords = []
+    for kw in candidates:
+        kw = kw.strip().strip("\"'“”„.").strip()
+        if kw and kw.lower() not in {k.lower() for k in keywords}:
+            keywords.append(kw)
+    return keywords
+
+
+def _keyword_regex(keyword: str) -> re.Pattern:
+    words = [re.escape(w) for w in keyword.split()]
+    return re.compile(r"\s+".join(words), re.IGNORECASE)
+
+
+def _break_with_joiner(match: re.Match) -> str:
+    # ZWJ after the first character of every word: "Leroy Merlin" ->
+    # "L\u200deroy M\u200derlin"
+    return re.sub(r"(?<!\w)(\w)(?=\w)", lambda m: m.group(1) + ZERO_WIDTH_JOINER, match.group(0))
+
+
+def _break_with_entity(match: re.Match) -> str:
+    # Inside attribute values (alt, title, href...) a joiner would change
+    # the value (and break URLs); a numeric character reference decodes to
+    # the identical character in the browser.
+    return re.sub(r"(?<!\w)(\w)(?=\w)", lambda m: "&#%d;" % ord(m.group(1)), match.group(0))
+
+
+def neutralize_keywords_text(text: str, keywords: List[str]) -> str:
+    """Plain text (subject line): break each keyword with a zero-width joiner."""
+    for kw in keywords:
+        text = _keyword_regex(kw).sub(_break_with_joiner, text)
+    return text
+
+
+def neutralize_keywords_html(html: str, keywords: List[str]) -> str:
+    """HTML body: joiner inside text nodes, character references inside
+    attribute values; tag/attribute names, comments, <style> and <script>
+    are left untouched so the markup stays valid."""
+    patterns = [_keyword_regex(kw) for kw in keywords]
+    out = []
+    for i, part in enumerate(_TOKEN_RE.split(html)):
+        if not part:
+            continue
+        if i % 2 == 0:          # text node
+            for pat in patterns:
+                part = pat.sub(_break_with_joiner, part)
+        elif part.startswith("<") and not part.startswith("<!--") \
+                and not re.match(r"<(?:style|script)\b", part, re.IGNORECASE):
+            def _fix_value(m, _pats=patterns):
+                value = m.group(2)
+                for pat in _pats:
+                    value = pat.sub(_break_with_entity, value)
+                return m.group(1) + value
+            part = _ATTR_VALUE_RE.sub(_fix_value, part)
+        out.append(part)
+    return "".join(out)
+
 
 class ButtondownPublisher:
     """Publishes newsletter editions to Buttondown subscribers via the v1 REST API."""
@@ -29,6 +135,8 @@ class ButtondownPublisher:
         self.api_key = Config.BUTTONDOWN_API_KEY
         self.username = Config.BUTTONDOWN_USERNAME
         self.enabled = bool(self.api_key)
+        self.last_error: Optional[str] = None
+        self._last_failure: Optional[Tuple[int, str]] = None
         if not self.enabled:
             logger.info("Buttondown publisher disabled (BUTTONDOWN_API_KEY not set)")
 
@@ -39,12 +147,56 @@ class ButtondownPublisher:
         Sunday digest instead.
 
         Returns the archive URL on success, None if disabled or on error.
+        A failed send is also made LOUD outside the return value, because
+        the pipeline only logs a warning for None: the outcome is written to
+        the delivery-status file (checked by the workflow's "Verify email
+        delivery" step, which fails the job and opens an issue) and, on
+        GitHub Actions, raised as an ::error:: annotation.
         """
-        return self.send_email(
-            subject=self._build_subject(newsletter),
-            html_content=html_content,
-            excluded_tags=[Config.BUTTONDOWN_WEEKLY_TAG],
-        )
+        if not self.enabled:
+            self._record_delivery("disabled")
+            return None
+        try:
+            url = self.send_email(
+                subject=self._build_subject(newsletter),
+                html_content=html_content,
+                excluded_tags=[Config.BUTTONDOWN_WEEKLY_TAG],
+            )
+        except Exception as exc:  # never let an unexpected error pass silently
+            self.last_error = f"unexpected error: {exc}"
+            url = None
+        if url:
+            self._record_delivery("sent", url=url, newsletter=newsletter)
+        else:
+            error = self.last_error or "Buttondown send failed (no details)"
+            logger.error(f"EMAIL NOT SENT to subscribers: {error}")
+            if os.getenv("GITHUB_ACTIONS") == "true":
+                # Workflow-command annotation: shows on the run summary page.
+                clean = error.replace("\r", " ").replace("\n", " ").replace("%", "%25")
+                print(f"::error title=Buttondown email not sent::{clean[:900]}", flush=True)
+            self._record_delivery("failed", error=error, newsletter=newsletter)
+        return url
+
+    @staticmethod
+    def delivery_status_path() -> Path:
+        return Path(os.getenv("EMAIL_DELIVERY_STATUS_FILE", DEFAULT_DELIVERY_STATUS_FILE))
+
+    def _record_delivery(self, status: str, url: Optional[str] = None,
+                         error: Optional[str] = None, newsletter: Optional[Newsletter] = None) -> None:
+        record = {
+            "status": status,                       # sent | failed | disabled
+            "url": url,
+            "error": error,
+            "issue_date": (newsletter.date.strftime("%Y-%m-%d")
+                           if newsletter is not None and getattr(newsletter, "date", None) else None),
+            "recorded_at": datetime.now(timezone.utc).isoformat(),
+        }
+        try:
+            path = self.delivery_status_path()
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(json.dumps(record, indent=2), encoding="utf-8")
+        except OSError as exc:
+            logger.error(f"Could not write email delivery status: {exc}")
 
     def send_email(self, subject: str, html_content: str,
                    included_tags: Optional[list] = None,
@@ -60,6 +212,7 @@ class ButtondownPublisher:
         """
         if not self.enabled:
             return None
+        self.last_error = None
 
         body = self._prepare_body(html_content)
         headers = {
@@ -71,23 +224,101 @@ class ButtondownPublisher:
 
         filters, unresolved = self._tag_filters(included_tags, excluded_tags, headers)
         if unresolved:
-            logger.error(f"Could not resolve tag ids for {unresolved} — "
-                         "aborting targeted send rather than emailing the whole list")
+            self.last_error = (f"could not resolve tag ids for {unresolved} — aborted targeted "
+                               "send rather than emailing the whole list")
+            logger.error(self.last_error)
             return None
 
+        neutralized: List[str] = []
+
         # Step 1: create draft
-        email_id = self._create_draft(subject, body, headers, filters=filters)
-        if not email_id and excluded_tags and not included_tags and filters:
-            logger.warning("Buttondown rejected the tag filter — retrying daily send untargeted")
-            email_id = self._create_draft(subject, body, headers)
+        email_id = None
+        for _ in range(MAX_KEYWORD_RETRIES + 1):
+            email_id = self._create_draft(subject, body, headers, filters=filters)
+            if not email_id and excluded_tags and not included_tags and filters \
+                    and not self._failure_keywords():
+                logger.warning("Buttondown rejected the tag filter — retrying daily send untargeted")
+                filters = None
+                email_id = self._create_draft(subject, body, headers)
+            if email_id:
+                break
+            new_keywords = self._new_keywords(neutralized)
+            if not new_keywords:
+                break
+            subject, body = self._neutralize(subject, body, new_keywords, neutralized)
         if not email_id:
             if included_tags:
                 logger.error("Buttondown draft with included-tag filter failed — "
                              "aborting rather than sending to the whole list")
+            self.last_error = self._failure_summary("create")
             return None
 
-        # Step 2: send draft to the targeted subscribers
-        return self._send_draft(email_id, headers)
+        # Step 2: send draft to the targeted subscribers. The content filter
+        # runs at send time too (that is where 2026-09-18 was rejected).
+        for _ in range(MAX_KEYWORD_RETRIES + 1):
+            url = self._send_draft(email_id, headers)
+            if url:
+                if neutralized:
+                    logger.warning(f"Buttondown email sent after neutralizing prohibited "
+                                   f"keyword(s) {neutralized} with invisible joiners")
+                return url
+            new_keywords = self._new_keywords(neutralized)
+            if not new_keywords:
+                break
+            subject, body = self._neutralize(subject, body, new_keywords, neutralized)
+            if not self._update_draft(email_id, subject, body, headers):
+                break
+        self.last_error = self._failure_summary("send")
+        return None
+
+    # ------------------------------------------------------------------
+    # Prohibited-keyword handling
+    # ------------------------------------------------------------------
+
+    def _failure_keywords(self) -> List[str]:
+        if not self._last_failure:
+            return []
+        status, text = self._last_failure
+        return extract_prohibited_keywords(text) if status == 400 else []
+
+    def _new_keywords(self, already: List[str]) -> List[str]:
+        seen = {k.lower() for k in already}
+        return [k for k in self._failure_keywords() if k.lower() not in seen]
+
+    @staticmethod
+    def _neutralize(subject: str, body: str, keywords: List[str],
+                    neutralized: List[str]) -> Tuple[str, str]:
+        logger.warning(f"Buttondown flagged prohibited keyword(s) {keywords} — "
+                       "neutralizing them in the email copy and retrying")
+        neutralized.extend(keywords)
+        return (neutralize_keywords_text(subject, keywords),
+                neutralize_keywords_html(body, keywords))
+
+    def _failure_summary(self, stage: str) -> str:
+        if not self._last_failure:
+            return f"Buttondown {stage} failed"
+        status, text = self._last_failure
+        return f"Buttondown {stage} failed (HTTP {status}): {text[:300]}"
+
+    def _update_draft(self, email_id: str, subject: str, body: str, headers: dict) -> bool:
+        try:
+            resp = requests.patch(
+                f"{BUTTONDOWN_API_BASE}/emails/{email_id}",
+                json={"subject": subject, "body": body},
+                headers=headers,
+                timeout=30,
+            )
+            resp.raise_for_status()
+            logger.info(f"Buttondown draft {email_id} updated with neutralized copy")
+            return True
+        except requests.HTTPError as exc:
+            self._last_failure = (exc.response.status_code, exc.response.text or "")
+            logger.error(f"Buttondown draft update failed (HTTP {exc.response.status_code}): "
+                         f"{exc.response.text[:500]}")
+        except Exception as exc:
+            self._last_failure = (0, str(exc))
+            logger.error(f"Buttondown draft update failed: {exc}")
+        return False
 
     def _resolve_tag_id(self, name: str, headers: dict) -> Optional[str]:
         """Tag id for a tag name, or None when it doesn't exist or can't be read.
@@ -181,13 +412,16 @@ class ButtondownPublisher:
             resp.raise_for_status()
             email_id = resp.json().get("id", "")
             logger.info(f"Buttondown draft created: id={email_id}")
+            self._last_failure = None
             return email_id
         except requests.HTTPError as exc:
+            self._last_failure = (exc.response.status_code, exc.response.text or "")
             logger.error(
                 f"Buttondown create failed (HTTP {exc.response.status_code}): "
                 f"{exc.response.text[:500]}"
             )
         except Exception as exc:
+            self._last_failure = (0, str(exc))
             logger.error(f"Buttondown create failed: {exc}")
         return None
 
@@ -212,13 +446,16 @@ class ButtondownPublisher:
                 )
             )
             logger.info(f"Buttondown email queued for send: id={email_id} url={url}")
+            self._last_failure = None
             return url or email_id
         except requests.HTTPError as exc:
+            self._last_failure = (exc.response.status_code, exc.response.text or "")
             logger.error(
                 f"Buttondown send failed (HTTP {exc.response.status_code}): "
                 f"{exc.response.text[:500]}"
             )
         except Exception as exc:
+            self._last_failure = (0, str(exc))
             logger.error(f"Buttondown send failed: {exc}")
         return None
 
@@ -251,7 +488,9 @@ class ButtondownPublisher:
         subject = self._truncate_at_word(subject, 60)
         if title.lower() not in subject.lower():
             subject = f"{subject} — {title}"
-        return f"🌍 {subject}"
+        # No emoji: the analyzer is told "no emoji" for a reason — and a
+        # leading 🌍 turned every Buttondown archive slug into "u1f30d-…".
+        return subject
 
     def _prepare_body(self, html: str) -> str:
         """Extract body content, strip JS handlers, and force Buttondown HTML mode.

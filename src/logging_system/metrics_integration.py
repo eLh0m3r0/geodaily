@@ -6,7 +6,7 @@ import threading
 import logging
 from datetime import datetime, date
 from typing import Dict, Any, Optional, List
-from queue import Queue
+from queue import Empty, Queue
 import json
 
 from .structured_logger import StructuredLogger, ErrorCategory, PipelineStage
@@ -49,10 +49,12 @@ class MetricsIntegration:
                 # Mark task as done
                 self._event_queue.task_done()
 
+            except Empty:
+                continue  # idle queue: the 1 s poll timed out, not an error
             except Exception as e:
                 # Log processing errors but don't crash
                 if not self._stop_processing:
-                    print(f"Metrics integration error: {e}")
+                    print(f"Metrics integration error: {type(e).__name__}: {e}")
 
     def _handle_log_event(self, event: Dict[str, Any]):
         """Handle a log event for metrics collection."""

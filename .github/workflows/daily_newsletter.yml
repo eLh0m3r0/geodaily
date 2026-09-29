@@ -2,12 +2,30 @@ name: Daily Geopolitical Newsletter
 
 on:
   schedule:
-    # Primary slot ~6:17 UTC (off-peak minute — top-of-hour slots are the
-    # ones GitHub drops under load, which cost us the 2026-08-27/28 issues)
-    - cron: '17 6 * * *'
-    # Self-healing backup: re-fires at 7:52 UTC; the precheck job turns it
-    # into a no-op when today's issue is already published
-    - cron: '52 7 * * *'
+    # GitHub starts scheduled runs late under load — since 2026-09-17 the
+    # 6:17 slot actually started 11:30-14:15 UTC, so the "morning" issue
+    # landed in European inboxes in the afternoon. Slots are therefore early
+    # and on off-peak minutes (top-of-hour slots are the ones GitHub drops,
+    # which cost us the 2026-08-27/28 issues). All times UTC, so the issue
+    # date (UTC) is always "today".
+    - cron: '23 3 * * *'   # primary
+    # Self-healing backups: the precheck job turns them into no-ops once
+    # today's issue is on the default branch, so they can never double-send.
+    - cron: '47 4 * * *'
+    - cron: '11 6 * * *'
+  # Reliable trigger for an external scheduler (cron-job.org, etc.) — GitHub
+  # delivers repository_dispatch immediately, unlike cron. Same precheck
+  # guard as the schedule, so firing it more than once a day is harmless.
+  # Needs a fine-grained PAT with "Contents: read & write" on this repo:
+  #   curl -fsS -X POST \
+  #     -H "Accept: application/vnd.github+json" \
+  #     -H "Authorization: Bearer $GITHUB_PAT" \
+  #     -H "X-GitHub-Api-Version: 2022-11-28" \
+  #     https://api.github.com/repos/OWNER/REPO/dispatches \
+  #     -d '{"event_type":"publish-newsletter"}'
+  # (see DEPLOYMENT.md, "Reliable daily trigger")
+  repository_dispatch:
+    types: [publish-newsletter]
   workflow_dispatch:
     inputs:
       dry_run:
@@ -35,8 +53,9 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Backup-slot guard: scheduled runs become no-ops once today's issue exists,
-  # so the 7:52 retry can never double-send. Manual dispatches always run.
+  # Duplicate guard: scheduled and repository_dispatch runs become no-ops once
+  # today's issue exists, so backup slots / repeated external pings can never
+  # double-send. Manual (workflow_dispatch) runs always run.
   precheck:
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -47,11 +66,29 @@ jobs:
       uses: actions/checkout@v4
     - name: Check whether today's issue already exists
       id: check
+      env:
+        EVENT_NAME: ${{ github.event_name }}
+        DEFAULT_BRANCH: ${{ github.event.repository.default_branch || 'main' }}
       run: |
         TODAY_FILE="docs/newsletters/newsletter-$(date -u +%F).html"
-        if [ "${{ github.event_name }}" = "schedule" ] && [ -f "$TODAY_FILE" ]; then
+        if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+          echo "publish=true" >> "$GITHUB_OUTPUT"
+          exit 0
+        fi
+        # Check the LATEST default branch, not this run's checkout: a slot
+        # that queued behind a running publish (concurrency group) was
+        # triggered at the pre-publish commit and would not see the new file.
+        if git fetch --depth=1 origin "$DEFAULT_BRANCH" 2>/dev/null \
+             && git cat-file -e "FETCH_HEAD:$TODAY_FILE" 2>/dev/null; then
+          EXISTS=true
+        elif [ -f "$TODAY_FILE" ]; then
+          EXISTS=true
+        else
+          EXISTS=false
+        fi
+        if [ "$EXISTS" = "true" ]; then
           echo "publish=false" >> "$GITHUB_OUTPUT"
-          echo "✅ $TODAY_FILE already published — this slot is a no-op."
+          echo "✅ $TODAY_FILE already published — this $EVENT_NAME run is a no-op."
         else
           echo "publish=true" >> "$GITHUB_OUTPUT"
         fi
@@ -62,10 +99,19 @@ jobs:
     if: needs.precheck.outputs.publish == 'true'
     # The full pipeline (861 feeds' worth of collection, embeddings, two AI
     # calls with adaptive thinking, publish) legitimately takes ~13 minutes;
-    # the old 15-minute cap killed the 2026-08-27 run
-    timeout-minutes: 30
+    # the old 15-minute cap killed the 2026-08-27 run. DeepSeek calls that
+    # write ~15k tokens take up to ~9 min each, and one hung call may burn
+    # the 10-minute request limit before its retry — hence 45.
+    timeout-minutes: 45
+    outputs:
+      # Set once the Pages artifact is uploaded, so the site still deploys
+      # when a LATER step (email delivery check) fails the job.
+      pages_ready: ${{ steps.pages_ready.outputs.ready }}
     env:
       FASTEMBED_CACHE_PATH: /home/runner/.cache/fastembed
+      # The pipeline dates the issue with the local clock; pin it to UTC.
+      TZ: UTC
+      EMAIL_DELIVERY_STATUS_FILE: output/email_delivery_status.json
 
     steps:
     - name: Checkout repository
@@ -216,15 +262,6 @@ jobs:
       run: |
         python -m src.main_pipeline
 
-    - name: Check pipeline success
-      run: |
-        if [ $? -eq 0 ]; then
-          echo "✅ Newsletter pipeline completed successfully"
-        else
-          echo "❌ Newsletter pipeline failed"
-          exit 1
-        fi
-
     - name: Generate unified dashboard
       if: success()
       run: |
@@ -234,12 +271,15 @@ jobs:
         python generate_simple_dashboard.py || echo "Dashboard generation failed, continuing..."
 
     - name: Archive cleanup
-      if: success() && github.event_name == 'schedule'
+      if: success() && github.event_name != 'workflow_dispatch'
       run: |
         echo "🧹 Running archive cleanup..."
         python cleanup_archives.py --days ${{ env.AI_ARCHIVE_RETENTION_DAYS }} --force --verbose
 
+    # A DRY_RUN issue is mock content: never commit it (it would overwrite
+    # today's real issue on main) and never deploy it to the live site.
     - name: Commit newsletter archive back to repository
+      if: env.DRY_RUN != 'true'
       run: |
         # Configure git
         git config --local user.email "action@github.com"
@@ -269,9 +309,36 @@ jobs:
         fi
 
     - name: Upload pages artifact
+      if: env.DRY_RUN != 'true'
       uses: actions/upload-pages-artifact@v3
       with:
         path: docs/
+
+    - name: Mark Pages artifact ready
+      if: env.DRY_RUN != 'true'
+      id: pages_ready
+      run: echo "ready=true" >> "$GITHUB_OUTPUT"
+
+    # The pipeline exits 0 when only the email failed (the web issue is
+    # already written), so check the delivery record explicitly. Runs after
+    # the archive commit and Pages upload: the site still publishes, but the
+    # job goes red and "Create issue on failure" fires.
+    - name: Verify email delivery
+      run: |
+        STATUS_FILE="$EMAIL_DELIVERY_STATUS_FILE"
+        if [ ! -f "$STATUS_FILE" ]; then
+          echo "ℹ️ No email delivery record (email step not reached or not configured)."
+          exit 0
+        fi
+        cat "$STATUS_FILE"
+        STATUS=$(python -c "import json,sys; print(json.load(open(sys.argv[1])).get('status',''))" "$STATUS_FILE")
+        if [ "$STATUS" = "failed" ]; then
+          ERROR=$(python -c "import json,sys; print(json.load(open(sys.argv[1])).get('error') or '')" "$STATUS_FILE")
+          echo "::error title=Newsletter email NOT sent::$ERROR"
+          echo "- **Email**: ❌ NOT sent — $ERROR" >> "$GITHUB_STEP_SUMMARY"
+          exit 1
+        fi
+        echo "✅ Email delivery status: $STATUS"
 
     - name: Upload newsletter artifacts
       uses: actions/upload-artifact@v4
@@ -287,13 +354,22 @@ jobs:
         retention-days: 30
 
     - name: Create issue on failure
-      if: failure() && github.event_name == 'schedule'
+      if: failure() && github.event_name != 'workflow_dispatch'
       uses: actions/github-script@v6
       with:
         script: |
+          const fs = require('fs');
+          let emailNote = '';
+          try {
+            const rec = JSON.parse(fs.readFileSync(process.env.EMAIL_DELIVERY_STATUS_FILE, 'utf8'));
+            if (rec.status === 'failed') {
+              emailNote = `\n**Email NOT sent to subscribers:** ${rec.error}\n(The web issue was published; resend from the Buttondown dashboard or fix and re-run manually.)\n`;
+            }
+          } catch (e) { /* no delivery record */ }
           const title = `Newsletter Pipeline Failed - ${new Date().toISOString().split('T')[0]}`;
           const body = `
-          The daily newsletter pipeline failed during the scheduled run.
+          The daily newsletter pipeline failed during the ${{ github.event_name }} run.
+          ${emailNote}
 
           **Run Details:**
           - Run ID: ${{ github.run_id }}
@@ -364,7 +440,9 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: generate-newsletter
-    if: success()
+    # Deploy whenever the Pages artifact was uploaded — even if the email
+    # delivery check failed the job afterwards.
+    if: ${{ !cancelled() && needs.generate-newsletter.outputs.pages_ready == 'true' }}
 
     steps:
     - name: Deploy to GitHub Pages

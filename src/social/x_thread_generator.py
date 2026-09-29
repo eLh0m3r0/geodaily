@@ -5,15 +5,36 @@ Generates Czech threads from AI analyses with minimal API calls.
 """
 import json
 import logging
+import os
+import re
+import time
 from datetime import datetime
 from pathlib import Path
-from typing import List, Dict, Optional
+from typing import Any, List, Dict, Optional, Tuple
 from dataclasses import dataclass, field
 
 from ..config import Config
 from ..models import AIAnalysis
+from ..ai.api_utils import extract_response_text, response_tokens_and_cost
 
 logger = logging.getLogger(__name__)
+
+# Output budget for one thread call. Adaptive-thinking models (Sonnet 5) spend
+# thinking tokens from max_tokens: the old 4000 cap left the JSON truncated on
+# most days (2026-09-12..29: 17 of 49 threads survived; "Could not parse" =
+# no JSON text at all, "Expecting ',' delimiter" = JSON cut off after the last
+# complete tweet object). 16000 matches the other calls and stays under the
+# SDK's non-streaming limit.
+DEFAULT_THREAD_MAX_TOKENS = 16000
+MIN_THREAD_TWEETS = 3
+
+# Fallback per-MTok rates for the thread model when the provider does not
+# report the billed amount (Anthropic doesn't; OpenRouter does). The global
+# AI_*_COST_PER_MTOK rates describe the MAIN model, which is a different one.
+_KNOWN_MODEL_RATES = {
+    "claude-sonnet-5": (2.0, 10.0),
+    "claude-sonnet-5-5": (2.0, 10.0),
+}
 
 # Unified prompt that handles everything in one Claude call
 UNIFIED_THREAD_PROMPT = """
@@ -37,14 +58,13 @@ Typ obsahu: {content_type}
 5. Použij 1-2 relevantní emoji na tweet (🔍📊🌍⚡💡🎯🚨📈)
 6. Přidej 2-3 české hashtagy na konec posledního tweetu
 
-FORMÁT ODPOVĚDI (přesně tento JSON):
+FORMÁT ODPOVĚDI - vrať POUZE tento JSON objekt, bez markdownu a bez textu okolo:
 {{
   "thread_title": "Krátký český název tématu (max 50 znaků)",
   "tweets": [
     {{
       "number": 1,
-      "content": "Text tweetu včetně emoji",
-      "char_count": 250
+      "content": "Text tweetu včetně emoji"
     }}
   ],
   "hashtags": ["#geopolitika", "#bezpečnost", "#analýza"],
@@ -58,7 +78,214 @@ DŮLEŽITÉ:
 - Použij čísla a fakta kde to dává smysl
 - Zdůrazni dopady na ČR/EU když jsou relevantní
 - Tweets čísluj ve formátu "1/7" na začátku
+- Uvnitř textů tweetů NEPOUŽÍVEJ rovné uvozovky ("), jen české „takto“ - rovné uvozovky rozbíjejí JSON
 """
+
+JSON_RETRY_SUFFIX = """
+
+OPRAVA: Tvoje předchozí odpověď nebyla platný kompletní JSON. Odpověz znovu a vrať
+VÝHRADNĚ jeden platný JSON objekt podle formátu výše - žádný markdown, žádný text
+před ani za ním, uvnitř řetězců žádné rovné uvozovky ("), maximálně 8 tweetů.
+"""
+
+
+# --- tolerant JSON extraction ----------------------------------------------
+
+_VALUE_START = tuple('"{[-0123456789')
+
+
+def _next_significant(s: str, i: int) -> int:
+    while i < len(s) and s[i] in " \t\r\n":
+        i += 1
+    return i
+
+
+def _starts_value(s: str, j: int) -> bool:
+    return j < len(s) and (s[j] in _VALUE_START or s.startswith(("true", "false", "null"), j))
+
+
+def _quote_closes_string(s: str, i: int) -> bool:
+    """Is the '"' at s[i] (inside a string) the real closing quote?
+
+    Yes when what follows is JSON structure: end of text, '}' or ']', a ','
+    followed by the next key/value, or a ':' followed by a value. Otherwise
+    it is an unescaped quote inside Czech prose (e.g. `řekl "ne", ale`)."""
+    j = _next_significant(s, i + 1)
+    if j >= len(s) or s[j] in "}]":
+        return True
+    if s[j] == ",":
+        k = _next_significant(s, j + 1)
+        return k >= len(s) or s[k] in "}]" or _starts_value(s, k)
+    if s[j] == ":":
+        return _starts_value(s, _next_significant(s, j + 1)) or _next_significant(s, j + 1) >= len(s)
+    return False
+
+
+def _repair_json_candidates(text: str) -> List[Tuple[str, bool]]:
+    """Candidate repairs of model-written JSON, best first.
+
+    One scan escapes stray quotes / raw control characters inside strings
+    and drops trailing commas; it also records every point where a complete
+    value ended, so a TRUNCATED response can be cut back to its last complete
+    element and closed with the brackets still open at that point.
+    Returns (candidate, was_truncated) pairs."""
+    out: List[str] = []
+    stack: List[str] = []
+    cut_points: List[Tuple[int, str]] = []   # (len(out) after a complete value, closers)
+    in_str = False
+    i, n = 0, len(text)
+    while i < n:
+        c = text[i]
+        if in_str:
+            if c == "\\" and i + 1 < n:
+                out.append(text[i:i + 2])
+                i += 2
+                continue
+            if c == '"':
+                if _quote_closes_string(text, i):
+                    in_str = False
+                    out.append(c)
+                    cut_points.append((len(out), "".join(reversed(stack))))
+                else:
+                    out.append('\\"')
+            elif c == "\n":
+                out.append("\\n")
+            elif c == "\t":
+                out.append("\\t")
+            elif c == "\r":
+                pass
+            else:
+                out.append(c)
+        else:
+            if c == '"':
+                in_str = True
+                out.append(c)
+            elif c in "{[":
+                stack.append("}" if c == "{" else "]")
+                out.append(c)
+            elif c in "}]":
+                while out and out[-1] in (" ", "\n", "\t", "\r"):
+                    out.pop()
+                if out and out[-1] == ",":
+                    out.pop()
+                if stack:
+                    stack.pop()
+                out.append(c)
+                cut_points.append((len(out), "".join(reversed(stack))))
+            else:
+                out.append(c)
+                if c.isdigit() or c in "el":   # end of number / true / false / null
+                    cut_points.append((len(out), "".join(reversed(stack))))
+        i += 1
+
+    candidates = [("".join(out), False)]
+    if in_str or stack:
+        # Truncated: close at the latest complete value that still parses.
+        for pos, closers in reversed(cut_points[-400:]):
+            prefix = "".join(out[:pos]).rstrip().rstrip(",")
+            if closers.startswith("}"):
+                # Inside an object a string right after `{` or `,` is a KEY
+                # whose value never arrived - drop it.
+                prefix = re.sub(r'([{,])\s*"[^"\\]*(?:\\.[^"\\]*)*"\s*$', r"\1", prefix).rstrip().rstrip(",")
+            candidates.append((prefix + closers, True))
+    return candidates
+
+
+def parse_json_object_tolerant(text: str) -> Tuple[Optional[Dict[str, Any]], str]:
+    """Extract one JSON object from an LLM response.
+
+    Returns (object or None, status) with status "ok" (valid as sent),
+    "repaired" (stray quotes / raw newlines / trailing commas fixed) or
+    "truncated" (cut-off JSON closed after its last complete element, so the
+    caller can decide whether a partial result is acceptable). Handles
+    markdown fences and prose around the object."""
+    if not text:
+        return None, "none"
+    cleaned = re.sub(r"```(?:json|JSON)?", "", text).strip()
+    start = cleaned.find("{")
+    if start < 0:
+        return None, "none"
+    cleaned = cleaned[start:]
+
+    try:
+        obj, _ = json.JSONDecoder().raw_decode(cleaned)
+        if isinstance(obj, dict):
+            return obj, "ok"
+    except ValueError:
+        pass
+
+    # Drop trailing prose after the last closing brace before repairing.
+    end = cleaned.rfind("}")
+    candidates = []
+    if end > 0:
+        candidates.extend(_repair_json_candidates(cleaned[:end + 1]))
+    candidates.extend(_repair_json_candidates(cleaned))
+    for candidate, was_truncated in candidates:
+        try:
+            obj = json.loads(candidate)
+        except ValueError:
+            continue
+        if isinstance(obj, dict):
+            return obj, ("truncated" if was_truncated else "repaired")
+    return None, "none"
+
+
+def normalize_thread(data: Any) -> Optional[Dict[str, Any]]:
+    """Validate/normalize a parsed thread; None when it is not a usable thread."""
+    if not isinstance(data, dict):
+        return None
+    raw_tweets = data.get("tweets")
+    if not isinstance(raw_tweets, list):
+        return None
+    tweets = []
+    for item in raw_tweets:
+        if isinstance(item, str):
+            content = item
+        elif isinstance(item, dict):
+            content = item.get("content") or item.get("text") or ""
+        else:
+            continue
+        content = str(content).strip()
+        if content:
+            tweets.append({"number": len(tweets) + 1, "content": content,
+                           "char_count": len(content)})
+    if len(tweets) < MIN_THREAD_TWEETS:
+        return None
+    data["tweets"] = tweets
+    if not isinstance(data.get("hashtags"), list):
+        data["hashtags"] = re.findall(r"#\w+", tweets[-1]["content"])
+    if not str(data.get("thread_title") or "").strip():
+        data["thread_title"] = tweets[0]["content"][:50]
+    return data
+
+
+
+def thread_max_tokens() -> int:
+    try:
+        return max(1024, int(os.getenv("X_THREADS_MAX_TOKENS", str(DEFAULT_THREAD_MAX_TOKENS))))
+    except ValueError:
+        return DEFAULT_THREAD_MAX_TOKENS
+
+
+def thread_call_cost(response, model: str, prompt: str, text: str) -> Tuple[int, int, float]:
+    """(input_tokens, output_tokens, cost_usd) for a thread call.
+
+    Uses the provider-billed amount when present (OpenRouter); otherwise the
+    thread model's own rates (X_THREADS_*_COST_PER_MTOK, else known list
+    prices, else the global AI_*_COST_PER_MTOK)."""
+    in_tok, out_tok, cost = response_tokens_and_cost(response, prompt, text)
+    usage = getattr(response, 'usage', None)
+    billed = getattr(usage, 'cost_usd', None) if usage else None
+    if isinstance(billed, (int, float)) and billed > 0:
+        return in_tok, out_tok, cost
+    known_in, known_out = _KNOWN_MODEL_RATES.get(
+        (model or "").lower(), (Config.AI_INPUT_COST_PER_MTOK, Config.AI_OUTPUT_COST_PER_MTOK))
+    try:
+        rate_in = float(os.getenv("X_THREADS_INPUT_COST_PER_MTOK", known_in))
+        rate_out = float(os.getenv("X_THREADS_OUTPUT_COST_PER_MTOK", known_out))
+    except ValueError:
+        rate_in, rate_out = known_in, known_out
+    return in_tok, out_tok, in_tok / 1_000_000 * rate_in + out_tok / 1_000_000 * rate_out
 
 
 class XThreadGenerator:
@@ -71,20 +298,18 @@ class XThreadGenerator:
         
     def generate_thread_from_analysis(self, analysis: AIAnalysis, api_client) -> Optional[Dict]:
         """
-        Generate X.com thread from AI analysis using Claude API
-        
-        Args:
-            analysis: AIAnalysis object with story data
-            api_client: Claude API client instance
-            
+        Generate X.com thread from AI analysis using the configured LLM client.
+
+        One API call normally; one retry (with an explicit valid-JSON
+        instruction) when the answer is empty, truncated or unparseable.
+        Every call is recorded in the AI cost controller.
+
         Returns:
             Thread data dict or None if generation fails
         """
         try:
-            # Prepare prompt with analysis data
-            # Create a summary from the available data
             summary = f"{analysis.why_important[:100]}..." if len(analysis.why_important) > 100 else analysis.why_important
-            
+
             prompt = UNIFIED_THREAD_PROMPT.format(
                 title=analysis.story_title,
                 summary=summary,
@@ -95,61 +320,80 @@ class XThreadGenerator:
                 urgency=analysis.urgency_score,
                 content_type=analysis.content_type.value if hasattr(analysis.content_type, 'value') else str(analysis.content_type)
             )
-            
-            # Single Claude API call for everything
-            logger.info(f"Generating X.com thread for: {analysis.story_title[:50]}...")
-            
-            # Sonnet 5 rejects non-default sampling params (temperature), so
-            # creativity is steered via the prompt instead.
-            response = api_client.messages.create(
-                model=Config.X_THREADS_MODEL,
-                max_tokens=4000,  # Headroom for adaptive thinking + thread text
-                messages=[
-                    {
-                        "role": "user",
-                        "content": prompt
-                    }
-                ]
-            )
-
-            # Parse response (skip thinking blocks on adaptive-thinking models)
-            response_text = "".join(
-                block.text for block in response.content
-                if getattr(block, 'type', None) == 'text'
-            )
-            
-            # Extract JSON from response
-            try:
-                # Try to parse as direct JSON first
-                thread_data = json.loads(response_text)
-            except json.JSONDecodeError:
-                # If not direct JSON, try to extract it
-                import re
-                json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
-                if json_match:
-                    thread_data = json.loads(json_match.group())
-                else:
-                    logger.error("Could not parse thread JSON from Claude response")
-                    return None
-            
-            # Add metadata
-            thread_data['source_analysis_id'] = analysis.story_title
-            thread_data['generated_at'] = datetime.now().isoformat()
-            
-            # Validate character counts
-            for tweet in thread_data.get('tweets', []):
-                actual_length = len(tweet['content'])
-                tweet['char_count'] = actual_length
-                if actual_length > 280:
-                    logger.warning(f"Tweet {tweet['number']} exceeds 280 chars: {actual_length}")
-            
-            logger.info(f"Successfully generated thread with {len(thread_data.get('tweets', []))} tweets")
-            return thread_data
-            
         except Exception as e:
-            logger.error(f"Failed to generate thread: {str(e)}")
+            logger.error(f"Failed to build thread prompt: {e}")
             return None
-    
+
+        logger.info(f"Generating X.com thread for: {analysis.story_title[:50]}...")
+
+        fallback: Optional[Dict] = None
+        for attempt in (1, 2):
+            attempt_prompt = prompt if attempt == 1 else prompt + JSON_RETRY_SUFFIX
+            try:
+                text, stop_reason = self._call_model(api_client, attempt_prompt)
+            except Exception as e:
+                logger.error(f"Failed to generate thread (attempt {attempt}): {e}")
+                continue
+
+            data, status = parse_json_object_tolerant(text)
+            thread = normalize_thread(data)
+            truncated = status == "truncated" or stop_reason in ("max_tokens", "length")
+
+            if thread and not truncated:
+                if status == "repaired":
+                    logger.info("Thread JSON needed repair (stray quotes/commas) - repaired OK")
+                return self._finalize(thread, analysis)
+
+            reason = ("no JSON object in response" if data is None else
+                      "JSON is not a usable thread" if thread is None else
+                      "response truncated")
+            logger.warning(f"Thread attempt {attempt} unusable: {reason} "
+                           f"(stop_reason={stop_reason}, {len(text)} chars of text)")
+            if thread and fallback is None:
+                fallback = thread
+
+        if fallback:
+            logger.warning("Using partially recovered thread (truncated response)")
+            return self._finalize(fallback, analysis)
+        logger.error("Could not parse thread JSON after retry")
+        return None
+
+    def _finalize(self, thread: Dict, analysis: AIAnalysis) -> Dict:
+        thread['source_analysis_id'] = analysis.story_title
+        thread['generated_at'] = datetime.now().isoformat()
+        for tweet in thread.get('tweets', []):
+            if tweet['char_count'] > 280:
+                logger.warning(f"Tweet {tweet['number']} exceeds 280 chars: {tweet['char_count']}")
+        logger.info(f"Successfully generated thread with {len(thread.get('tweets', []))} tweets")
+        return thread
+
+    def _call_model(self, api_client, prompt: str) -> Tuple[str, Optional[str]]:
+        """One API call; records its cost. Returns (text, stop_reason)."""
+        from ..ai.cost_controller import ai_cost_controller
+
+        model = Config.X_THREADS_MODEL
+        estimate = ai_cost_controller.estimate_cost(len(prompt), "analysis")
+        budget = ai_cost_controller.check_budget_allowance(estimate.estimated_cost)
+        if not budget.get('allowed', True):
+            raise RuntimeError(f"thread generation blocked by AI budget: {budget.get('reason')}")
+
+        started = time.time()
+        # Sampling params (temperature) are not sent: Sonnet 5 rejects them.
+        response = api_client.messages.create(
+            model=model,
+            max_tokens=thread_max_tokens(),
+            messages=[{"role": "user", "content": prompt}],
+        )
+        # Thinking blocks may precede the text on adaptive-thinking models.
+        text = extract_response_text(response)
+        in_tok, out_tok, cost = thread_call_cost(response, model, prompt, text)
+        ai_cost_controller.record_cost(cost, in_tok + out_tok, "x_thread_generation")
+        stop_reason = getattr(response, 'stop_reason', None)
+        logger.info(f"Thread call: {in_tok}+{out_tok} tokens, ${cost:.4f}, "
+                    f"{time.time() - started:.1f}s, stop_reason={stop_reason}, "
+                    f"model={getattr(response, 'model', model)}")
+        return text, stop_reason
+
     def generate_mock_thread(self, analysis: AIAnalysis) -> Dict:
         """Generate mock thread for testing without API calls"""
         # Generate realistic tweet lengths

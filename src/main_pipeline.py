@@ -241,6 +241,8 @@ def run_complete_pipeline() -> bool:
                 
                 # Update articles with enriched content
                 for article, extraction_result in enriched_results:
+                    if extraction_result is None:
+                        continue  # enrichment skipped; fields were set above
                     if extraction_result.success and extraction_result.quality_score > 0.4:
                         article.full_content = extraction_result.full_content
                         article.content_quality_score = extraction_result.quality_score
@@ -256,9 +258,10 @@ def run_complete_pipeline() -> bool:
                 enriched_articles = [article for article, _ in enriched_results]
                 
                 # Calculate enrichment statistics
-                successful_extractions = sum(1 for _, result in enriched_results if result.success and result.quality_score > 0.4)
-                avg_quality = sum(result.quality_score for _, result in enriched_results) / len(enriched_results) if enriched_results else 0
-                avg_word_count = sum(result.word_count for _, result in enriched_results) / len(enriched_results) if enriched_results else 0
+                real_results = [r for _, r in enriched_results if r is not None]
+                successful_extractions = sum(1 for r in real_results if r.success and r.quality_score > 0.4)
+                avg_quality = sum(r.quality_score for r in real_results) / len(real_results) if real_results else 0
+                avg_word_count = sum(r.word_count for r in real_results) / len(real_results) if real_results else 0
                 
                 logger.info("Content enrichment completed",
                            pipeline_stage=PipelineStage.PROCESSING,
@@ -806,9 +809,18 @@ def run_complete_pipeline() -> bool:
                                'success': bool(github_url)
                            })
 
+                # Email platforms never receive a DRY_RUN issue: its content
+                # is mock analysis, and a manual dry run must not reach
+                # subscribers.
+                email_allowed = not Config.DRY_RUN
+                if not email_allowed:
+                    logger.info("DRY_RUN: skipping Beehiiv and Buttondown (no email to subscribers)",
+                               pipeline_stage=PipelineStage.PUBLISHING,
+                               run_id=run_id)
+
                 # Beehiiv (email subscribers) — optional, skipped if not configured
                 beehiiv_publisher = BeehiivPublisher()
-                beehiiv_url = beehiiv_publisher.publish(newsletter, html_content)
+                beehiiv_url = beehiiv_publisher.publish(newsletter, html_content) if email_allowed else None
                 if beehiiv_url:
                     logger.info(f"✅ Published to Beehiiv: {beehiiv_url}",
                                pipeline_stage=PipelineStage.PUBLISHING,
@@ -818,7 +830,7 @@ def run_complete_pipeline() -> bool:
                                    'url': beehiiv_url,
                                    'success': True
                                })
-                elif beehiiv_publisher.enabled:
+                elif beehiiv_publisher.enabled and email_allowed:
                     logger.warning("Beehiiv publish returned no URL (check API key / publication ID)",
                                   pipeline_stage=PipelineStage.PUBLISHING,
                                   run_id=run_id)
@@ -830,7 +842,7 @@ def run_complete_pipeline() -> bool:
                     _email_html = generator.generate_email_html(newsletter)
                 except (NameError, AttributeError):
                     _email_html = html_content
-                buttondown_url = buttondown_publisher.publish(newsletter, _email_html)
+                buttondown_url = buttondown_publisher.publish(newsletter, _email_html) if email_allowed else None
                 if buttondown_url:
                     logger.info(f"✅ Published to Buttondown: {buttondown_url}",
                                pipeline_stage=PipelineStage.PUBLISHING,
@@ -840,10 +852,11 @@ def run_complete_pipeline() -> bool:
                                    'url': buttondown_url,
                                    'success': True
                                })
-                elif buttondown_publisher.enabled:
-                    logger.warning("Buttondown publish returned no URL (check API key)",
-                                  pipeline_stage=PipelineStage.PUBLISHING,
-                                  run_id=run_id)
+                elif buttondown_publisher.enabled and email_allowed:
+                    logger.error(f"Buttondown email NOT sent: {buttondown_publisher.last_error}",
+                                 pipeline_stage=PipelineStage.PUBLISHING,
+                                 run_id=run_id,
+                                 error_category=ErrorCategory.API_ERROR)
 
                 publishing_time = time.time() - publishing_start
 

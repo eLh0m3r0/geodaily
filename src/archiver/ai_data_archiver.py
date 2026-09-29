@@ -361,26 +361,71 @@ class AIDataArchiver:
         print(f"🗄️ AI Archiver: Archived {stage} stage - {len(input_data)} → {len(output_data)} articles")
         logger.info(f"Archived analysis stage: {stage}")
 
-    def archive_content_extraction_results(self, extraction_results: List[Dict]):
-        """Archive content extraction results for transparency."""
+    @staticmethod
+    def _normalize_extraction_result(item: Any) -> Dict[str, Any]:
+        """One archive record from whatever the pipeline hands us.
+
+        The pipeline passes ``(article, ContentExtractionResult | None)``
+        tuples (``enrich_articles_with_content``'s return shape; ``None`` when
+        enrichment is skipped), while older callers passed plain dicts. The
+        previous ``r.get(...)`` on a tuple raised
+        "'tuple' object has no attribute 'get'" on every run.
+        """
+        article, result = None, item
+        if isinstance(item, tuple) and len(item) == 2:
+            article, result = item
+
+        if result is None:
+            record: Dict[str, Any] = {"success": False, "extraction_method": "skipped",
+                                      "word_count": 0, "quality_score": 0.0}
+        elif isinstance(result, dict):
+            record = dict(result)
+        else:
+            record = {
+                "success": bool(getattr(result, "success", False)),
+                "extraction_method": getattr(result, "extraction_method", "") or "",
+                "word_count": getattr(result, "word_count", 0) or 0,
+                "quality_score": getattr(result, "quality_score", 0.0) or 0.0,
+                "extraction_time": getattr(result, "extraction_time", 0.0) or 0.0,
+                "error_message": getattr(result, "error_message", None),
+            }
+            content = getattr(result, "full_content", "") or ""
+            if content:
+                record["content_preview"] = content[:300]
+
+        if article is not None:
+            record.setdefault("title", getattr(article, "title", ""))
+            record.setdefault("url", getattr(article, "url", ""))
+            record.setdefault("source", getattr(article, "source", ""))
+        return record
+
+    def archive_content_extraction_results(self, extraction_results: List[Any]):
+        """Archive content extraction results for transparency.
+
+        Accepts ``(article, ContentExtractionResult | None)`` tuples, result
+        objects, or dicts (see _normalize_extraction_result)."""
         if not self.enabled or not self.current_run_path:
             return
-            
+
+        records = [self._normalize_extraction_result(r) for r in (extraction_results or [])]
+        count = len(records)
+
         extraction_data = {
             "extraction_timestamp": datetime.now().isoformat(),
-            "total_articles": len(extraction_results),
+            "total_articles": count,
             "extraction_summary": {
-                "successful_extractions": sum(1 for r in extraction_results if r.get('success', False)),
-                "fallback_used": sum(1 for r in extraction_results if r.get('extraction_method', '').endswith('fallback')),
-                "average_word_count": sum(r.get('word_count', 0) for r in extraction_results) / len(extraction_results) if extraction_results else 0,
-                "average_quality_score": sum(r.get('quality_score', 0) for r in extraction_results) / len(extraction_results) if extraction_results else 0
+                "successful_extractions": sum(1 for r in records if r.get('success', False)),
+                "skipped": sum(1 for r in records if r.get('extraction_method') == 'skipped'),
+                "fallback_used": sum(1 for r in records if str(r.get('extraction_method') or '').endswith('fallback')),
+                "average_word_count": sum(r.get('word_count') or 0 for r in records) / count if count else 0,
+                "average_quality_score": sum(r.get('quality_score') or 0 for r in records) / count if count else 0
             },
-            "detailed_results": extraction_results[:20]  # Store first 20 for detailed review
+            "detailed_results": records[:20]  # Store first 20 for detailed review
         }
-        
+
         self._save_json("content_extraction_results.json", extraction_data)
-        
-        print(f"🗄️ AI Archiver: Archived content extraction for {len(extraction_results)} articles")
+
+        print(f"🗄️ AI Archiver: Archived content extraction for {count} articles")
         logger.info(f"Archived content extraction results")
 
     def archive_pipeline_transparency(self, pipeline_stages: List[Dict], total_time: float, 

@@ -70,6 +70,34 @@ If not set, configure it manually:
 echo "0 6 * * * TZ=UTC cd /path/to/project && PYTHONPATH=src python3 src/main_pipeline.py" | crontab -
 ```
 
+### Reliable daily trigger (GitHub Actions)
+Production runs in `.github/workflows/daily_newsletter.yml`. GitHub's cron is
+best-effort: since 2026-09-17 the 6:17 UTC slot actually started 11:30–14:15
+UTC. The workflow therefore has three early schedule slots (03:23, 04:47 and
+06:11 UTC; the precheck job turns every run after the first successful publish
+into a no-op) **and** a `repository_dispatch` trigger, which GitHub starts
+immediately. Point an external scheduler (cron-job.org, a VPS crontab, …) at
+it for on-time delivery:
+
+1. Create a fine-grained personal access token limited to this repository
+   with **Contents: Read and write** (needed for `/dispatches`).
+2. Schedule this request daily, e.g. 04:00 UTC (≈06:00 CEST):
+
+```bash
+curl -fsS -X POST \
+  -H "Accept: application/vnd.github+json" \
+  -H "Authorization: Bearer $GITHUB_PAT" \
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  https://api.github.com/repos/eLh0m3r0/geodaily/dispatches \
+  -d '{"event_type":"publish-newsletter"}'
+```
+
+A `204 No Content` response means the run was queued. Extra pings the same
+day are harmless: like scheduled runs, dispatched runs are skipped once
+today's issue (`docs/newsletters/newsletter-YYYY-MM-DD.html`, UTC date) is on
+the default branch. Scheduled and dispatched runs that fail — including a
+Buttondown email that was not sent — fail the job and open a GitHub issue.
+
 ### 4. Manual Testing
 Before production, test the system:
 

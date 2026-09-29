@@ -301,7 +301,10 @@ The AI analyzer now evaluates stories across multiple dimensions:
   - `X_THREADS_MIN_IMPACT_SCORE=7.0` minimum story score
 
 ### GitHub Actions
-- Daily automation at 6:00 UTC
+- Daily automation: cron 03:23 UTC with backups 04:47 and 06:11 (GitHub starts scheduled runs hours late under load — 09-17..09-29 the 6:17 slot ran 11:30-14:15); `repository_dispatch` type `publish-newsletter` lets an external scheduler trigger it on time (DEPLOYMENT.md). The precheck makes every non-manual run a no-op once today's issue is on `main`
+- A manual `dry_run=true` run never emails, never commits docs/ and never deploys Pages (mock content)
+- Email delivery is verified after publishing: a Buttondown rejection (e.g. its prohibited-keyword filter — 2026-09-18 was never sent over "Leroy Merlin") is retried once with the keyword neutralized in the email only; a final failure turns the job red and opens an issue, while the website still deploys
+- LLM calls have a wall-clock limit `AI_REQUEST_TIMEOUT_S=600` (one retry, `AI_TIMEOUT_RETRIES=1`) and log provider, requested vs served model, latency and tokens per call
 - Manual trigger with dry-run option
 - No push trigger on the production workflow — pushes to `src/**` run `ci.yml` (dry-run validation, publishes nothing); code changes go live with the next scheduled run
 - Issue creation on repeated failures
@@ -335,7 +338,7 @@ The AI analyzer now evaluates stories across multiple dimensions:
 - SSL certificate verification disabled for web scraping (line 121 in `web_scraper.py`) - required for some sources with certificate issues
 - AI model is `deepseek/deepseek-v4.1-flash` via OpenRouter since 2026-09-15, chosen in a blind test over 11 production days (beat claude-sonnet-5 by 8.7 points at 1/15th the cost); rollback is `AI_PROVIDER=anthropic AI_MODEL=claude-sonnet-5`
 - Do NOT set a `reasoning` cap for DeepSeek — limiting it measurably lowered quality in the test
-- X.com threads generate CZECH and were never tested on DeepSeek; `X_THREADS_AI_PROVIDER`/`X_THREADS_MODEL` keep them on a separate model if needed
+- X.com threads generate CZECH and were never tested on DeepSeek; `X_THREADS_AI_PROVIDER`/`X_THREADS_MODEL` keep them on a separate model if needed. They use `X_THREADS_MAX_TOKENS=16000` (the old 4000 was eaten by Sonnet 5's adaptive thinking — 17 of 49 threads parsed in 09-12..09-29), a tolerant JSON parser with one retry, and their cost is recorded in the cost controller
 - ALLOW_OVERWRITE environment variable for debugging duplicate prevention
 - Archive cleanup required for long-running installations to manage disk space
 
