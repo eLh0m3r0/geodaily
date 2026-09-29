@@ -4,6 +4,7 @@ Metrics collector for integrating with existing pipeline components.
 
 import time
 import uuid
+from dataclasses import asdict
 from datetime import datetime, date
 from typing import List, Dict, Any, Optional
 
