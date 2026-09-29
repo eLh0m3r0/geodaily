@@ -437,6 +437,7 @@ def run_complete_pipeline() -> bool:
                        })
 
             # Check if AI analysis should be skipped due to degradation
+            issue_meta = {}
             if degradation_manager.should_skip_operation("ai_analysis", "ai_analyzer"):
                 logger.warning("Skipping AI analysis due to system degradation",
                              pipeline_stage=PipelineStage.AI_ANALYSIS,
@@ -449,6 +450,7 @@ def run_complete_pipeline() -> bool:
                 analyses = create_mock_analyses_from_articles(scored_articles[:1])
                 quick_hits, big_number = [], None
                 email_subject, preheader = "", ""
+                issue_meta = {"provider": "mock", "model": "mock_degraded"}
             else:
                 ai_start = time.time()
                 try:
@@ -518,24 +520,30 @@ def run_complete_pipeline() -> bool:
                                     'top_selected_sources': sorted(selected_source_counts.items(), key=lambda x: x[1], reverse=True)[:5]
                                 })
 
-                    # Collect AI metrics with simplified logging
-                    # Rough estimates since we're doing single call
-                    estimated_tokens = len(scored_articles) * 50 + len(analyses) * 200
-                    estimated_cost = estimated_tokens * 0.00001  # Rough estimate
+                    # Real (provider-billed where available) usage, not an estimate
+                    issue_meta = dict(getattr(issue, 'meta', None) or {})
+                    ai_tokens = int(issue_meta.get('analysis_input_tokens', 0)) + \
+                        int(issue_meta.get('analysis_output_tokens', 0))
+                    ai_cost = float(issue_meta.get('analysis_cost_usd', 0.0))
                     mock_mode = multi_stage_analyzer.mock_mode
+                    served_model = issue_meta.get('served_model') or Config.AI_MODEL
 
-                    logger.info(f"Simplified analysis completed - Estimated tokens: {estimated_tokens}, Cost: ~${estimated_cost:.4f}",
+                    logger.info(f"Issue analysis completed - model {served_model}, "
+                                f"tokens: {ai_tokens}, cost: ${ai_cost:.4f}",
                                pipeline_stage=PipelineStage.AI_ANALYSIS,
                                run_id=run_id,
                                structured_data={
-                                   'estimated_tokens': estimated_tokens,
-                                   'estimated_cost': estimated_cost,
+                                   'provider': issue_meta.get('provider', Config.AI_PROVIDER),
+                                   'served_model': served_model,
+                                   'tokens': ai_tokens,
+                                   'cost_usd': ai_cost,
+                                   'readability': issue_meta.get('readability'),
                                    'single_api_call': True,
                                    'mock_mode': mock_mode
                                })
 
                     metrics_collector.collect_ai_metrics(
-                        analyses, ai_time, Config.AI_MODEL, mock_mode, estimated_tokens, estimated_cost
+                        analyses, ai_time, served_model, mock_mode, ai_tokens, ai_cost
                     )
 
                 except Exception as e:
@@ -560,6 +568,7 @@ def run_complete_pipeline() -> bool:
                     analyses = create_mock_analyses_from_articles(scored_articles[:1])
                     quick_hits, big_number = [], None
                     email_subject, preheader = "", ""
+                    issue_meta = {"provider": "mock", "model": "mock_fallback"}
                     ai_time = time.time() - ai_start
 
                     # Collect metrics for fallback analysis
@@ -587,6 +596,7 @@ def run_complete_pipeline() -> bool:
                     perspective_grid = perspective_analyzer.build_grid(
                         analyses[0], scored_articles, all_stories=analyses,
                         exclude_urls=[h.url for h in quick_hits if getattr(h, 'url', '')])
+                    issue_meta.update(perspective_analyzer.meta)
                     if perspective_grid:
                         logger.info("Perspective grid built",
                                    pipeline_stage=PipelineStage.AI_ANALYSIS,
@@ -646,7 +656,8 @@ def run_complete_pipeline() -> bool:
                     newsletter = generator.generate_newsletter(
                         analyses, quick_hits=quick_hits, big_number=big_number,
                         perspective_grid=perspective_grid, signals=signals,
-                        email_subject=email_subject, preheader=preheader)
+                        email_subject=email_subject, preheader=preheader,
+                        meta=issue_meta)
                     html_content = generator.generate_html(newsletter)
 
                     # Save newsletter (legacy format)

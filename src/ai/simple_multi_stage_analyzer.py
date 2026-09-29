@@ -19,6 +19,8 @@ from ..archiver.ai_data_archiver import ai_archiver
 from .cost_controller import ai_cost_controller
 from .api_utils import extract_response_text, response_tokens_and_cost, load_recent_newsletter_titles
 from .llm_client import build_llm_client, ai_credentials_present
+from .editorial import (format_history_block, history_texts, is_repeat, load_issue_history,
+                        numbers_in, overlap, reads_choppy, sentence_stats, to_sentence_case)
 
 logger = logging.getLogger(__name__)
 
@@ -34,6 +36,15 @@ class SimplifiedMultiStageAnalyzer:
         # na konfigurovatelneho poskytovatele by takova kontrola poslala celou
         # analyzu do mock rezimu a vydani by vyslo s vymyslenym obsahem.
         self.mock_mode = Config.DRY_RUN or not ai_credentials_present()
+        # What the last issues already told the reader (stories, quick hits,
+        # big number, blindspot) — steers the prompt and the post-filters.
+        self.history = []
+        if Config.ENABLE_NEWSLETTER_HISTORY:
+            try:
+                self.history = load_issue_history(Config.NEWSLETTERS_DIR, days=Config.NEWSLETTER_HISTORY_DAYS)
+            except Exception as e:
+                logger.warning(f"Issue history unavailable: {e}")
+        self.meta: Dict[str, Any] = {}
 
         if not self.mock_mode:
             try:
@@ -67,7 +78,10 @@ class SimplifiedMultiStageAnalyzer:
         start_time = time.time()
 
         if self.mock_mode:
-            return self._create_mock_issue(articles, target_stories)
+            issue = self._create_mock_issue(articles, target_stories)
+            self._apply_editorial_rules(issue, articles)
+            issue.meta = {"provider": "mock", "model": "mock", "served_model": "mock"}
+            return issue
 
         # Event-aware pre-filter: keep corroborated, perspective-diverse events
         sorted_articles = self._prefilter_articles(articles, cap=60)
@@ -102,6 +116,7 @@ class SimplifiedMultiStageAnalyzer:
 
             response_text = extract_response_text(response)
             input_tokens, output_tokens, cost = response_tokens_and_cost(response, prompt, response_text)
+            served_model = self._served_model(response)
 
             # Parse the comprehensive response
             issue = self._parse_issue_response(response_text, sorted_articles)
@@ -137,6 +152,7 @@ class SimplifiedMultiStageAnalyzer:
                 input_tokens += gate_in
                 output_tokens += gate_out
                 cost += gate_cost
+                self._apply_editorial_rules(issue, sorted_articles)
 
             total_tokens = input_tokens + output_tokens
             ai_cost_controller.record_cost(cost, total_tokens, "single_call_analysis")
@@ -170,7 +186,18 @@ class SimplifiedMultiStageAnalyzer:
             print(f"   • Cost: ${cost:.4f}")
 
             logger.info(f"Single-call analysis completed: {len(issue.stories)} stories, "
-                        f"{len(issue.quick_hits)} quick hits, cost: ${cost:.4f}")
+                        f"{len(issue.quick_hits)} quick hits, cost: ${cost:.4f}, "
+                        f"provider {Config.AI_PROVIDER}, model {served_model or Config.AI_MODEL}")
+            self.meta.update({
+                "provider": Config.AI_PROVIDER,
+                "model": Config.AI_MODEL,
+                "served_model": served_model or Config.AI_MODEL,
+                "analysis_input_tokens": input_tokens,
+                "analysis_output_tokens": output_tokens,
+                "analysis_cost_usd": round(cost, 5),
+                "analysis_seconds": round(elapsed, 1),
+            })
+            issue.meta = dict(self.meta)
 
             if not issue.stories:
                 # Fail loudly rather than publish generic mock text as analysis.
@@ -257,13 +284,18 @@ URL: {}
 
         articles_section = "\n".join(article_texts)
 
-        # Recent coverage context so the briefing doesn't repeat itself day to day
+        # Recent coverage context so the briefing doesn't repeat itself day to
+        # day: stories AND quick hits, big number and blindspot (the 2026-09
+        # review found quick hits and big numbers rerun on consecutive days
+        # because only story titles were shown here).
         history_block = ""
         if Config.ENABLE_NEWSLETTER_HISTORY:
-            history = load_recent_newsletter_titles()
-            if history:
-                history_block = ("\nRECENT NEWSLETTER COVERAGE (do NOT re-select these topics unless "
-                                 "there is a genuinely new development):\n" + history + "\n")
+            history_block = format_history_block(self.history)
+            if not history_block:
+                titles = load_recent_newsletter_titles()
+                if titles:
+                    history_block = ("\nRECENT NEWSLETTER COVERAGE (do NOT re-select these topics unless "
+                                     "there is a genuinely new development):\n" + titles + "\n")
 
         # Use string formatting to avoid f-string issues with article content containing braces
         template = """You write a daily world-news brief for smart readers who are NOT foreign-policy professionals. Each issue has: THE BIG STORY (the one thing worth full attention today), MORE TOP STORIES (the next most consequential distinct events, covered more briefly), ALSO TODAY (a quick world roundup so the reader feels caught up), and THE BIG NUMBER (one striking figure from today's news).
@@ -274,8 +306,10 @@ ARTICLES TO ANALYZE:
 Build today's issue from the above articles. Deep stories to select: {}.
 
 WRITING STYLE (strict — this is the product):
-- Plain English, active voice, US grade 8-9 reading level.
-- Short sentences: at most ~18 words each. One idea per sentence. Two or three short sentences beat one long one — never pack multiple clauses into a single sentence.
+- Plain English, active voice, US grade 8-9 reading level — reached with plain WORDS, not by chopping sentences.
+- Sentences of 12-20 words with a natural rhythm, one idea each. Never write fragments or strings of 4-7-word sentences ("Kyiv is short. It needs more. Factories take months.") — that reads as a telegram, not journalism. Never open consecutive sentences with "Also".
+- Headlines in sentence case: capitalize only the first word and proper nouns ("Trump rejects Iran's truce offer", never "Trump Rejects Iran's Truce Offer"). A headline must be literally true to the body: no "record", "first" or superlative the body does not support.
+- Your own voice states facts only. Judgments ("shows Israel is isolated", "unusually high turnout") must be attributed to whoever makes them, or cut.
 - Banned jargon: "inflection point", "strategic calculus", "paradigm", "escalatory dynamics", "operational tempo", "recalibrate", "posture", "leverage" (as a verb), "signal" (as a verb), "underscore". Say what happened in real words.
 - Concrete beats abstract: "Iran said it will stop all Gulf oil exports" beats "Tehran signaled export disruption".
 - Direct and conversational is good. Vague is not.
@@ -283,7 +317,7 @@ WRITING STYLE (strict — this is the product):
 SOURCE RULES:
 - Articles marked with the same "Event:" id cover the SAME event — treat them as one story and list ALL supporting indices in article_indices.
 - article_indices must come from DIFFERENT outlets whenever possible. Never build a story on two articles from the same outlet if any alternative exists.
-- Every outlet is a lens, not an oracle. State-affiliated sources are marked — useful for what a government wants amplified, but never the sole basis of a factual claim. Reflect single-perspective sourcing in a lower credibility_score and name the gap in what_overlooked.
+- Every outlet is a lens, not an oracle. State-affiliated sources are marked — useful for what a government wants amplified, but NEVER the sole basis of a fact anywhere in the issue: not in a story, not in what_overlooked, not in a quick hit or the big number. If only state media report something, attribute it in the text ("TASS reports ...") or leave it out. For a quick hit or the big number, point article_index at a non-state article whenever one covers the event. Reflect single-perspective sourcing in a lower credibility_score.
 - The "editorial weight" (0.7-1.3) reflects past reliability — a mild tiebreaker, not a ranking rule. A well-corroborated wire story beats a single-source think-tank essay.
 
 Return this EXACT JSON structure — a single JSON object, no other text:
@@ -294,14 +328,14 @@ Return this EXACT JSON structure — a single JSON object, no other text:
   "big_stories": [
     {{
       "article_indices": [0, 3, 5],
-      "story_title": "Clear, specific title a non-expert understands — no clichés like 'tensions rise', no jargon",
+      "story_title": "Clear, specific, sentence-case title a non-expert understands — no clichés like 'tensions rise', no jargon",
       "content_type": "breaking_news or analysis or trend",
       "region": "europe or middle_east or indo_pacific or americas or africa or central_asia or global",
       "actor_type": "state or non_state or international_org or mixed",
       "event_type": "diplomatic or military or economic or informational_cyber or humanitarian or political",
-      "why_important": "2-3 SHORT sentences: what happened and why a smart reader should care. Max 60 words.",
-      "what_overlooked": "1-2 short sentences: what most coverage (or this story's own sources) misses. Max 35 words.",
-      "prediction": "One concrete thing to watch in the next 72 hours. Max 25 words.",
+      "why_important": "2-3 sentences: what happened and why a smart reader should care. Max 60 words.",
+      "what_overlooked": "1-2 sentences that ADD something why_important does not say: a missing fact, a claim nobody has verified (and who makes it), a consequence most coverage skips, or context that changes the meaning. Never restate why_important. Max 35 words.",
+      "prediction": "One concrete, checkable development in the next 72 hours and what it would tell us. It appears under the heading 'What to watch', so do NOT start with 'Watch'. Max 25 words.",
       "signal_terms": ["2-4 proper nouns that identify THIS event the way a prediction market or news search would name it: countries, leaders, places, organizations (e.g. Iran, Strait of Hormuz). Never generic words like US, war, strikes, talks."],
       "impact_score": 8,
       "urgency_score": 7,
@@ -327,40 +361,60 @@ Return this EXACT JSON structure — a single JSON object, no other text:
 }}
 
 CONTENT RULES:
-1. big_stories: exactly the number of deep stories requested, ranked by geopolitical consequence — most consequential FIRST. Each must cover a DIFFERENT event. The first is THE story of the day — the one a busy reader must know; give it your fullest why_important. For stories after the first, keep why_important to max 50 words.
-2. quick_hits: 6 to 8 items, each about a DIFFERENT event than ALL of the big_stories and than each other — never restate any selected story as a quick hit, not even from a different angle. Together they must span at least 4 distinct regions — this is the reader's "I'm caught up on the world" section, so favor geographic spread (Africa, Latin America and Asia are chronically under-covered; include them when the material exists).
-3. big_number: one genuinely striking, verifiable figure taken from one of the articles. If no article contains a striking number, use null.
+1. big_stories: exactly the number of deep stories requested, ranked by geopolitical consequence — most consequential FIRST. Each must cover a DIFFERENT event. The first is THE story of the day — the one a busy reader must know; give it your fullest why_important. For stories after the first, keep why_important to max 50 words. The ranking and the scores must agree: no story may have a higher impact_score than a story ranked above it.
+2. quick_hits: 6 to 8 items, each about a DIFFERENT event than ALL of the big_stories and than each other — never restate any selected story as a quick hit, not even from a different angle — and never a rerun of a quick hit from recent issues (a follow-up is fine only when it states the new fact). Together they must span at least 4 distinct regions — this is the reader's "I'm caught up on the world" section, so favor geographic spread (Africa, Latin America and Asia are chronically under-covered; include them when the material exists).
+3. big_number: one genuinely striking, verifiable figure taken from one of the articles, about something NOT already covered by a story or quick hit in this issue (a number from the big story repeated as the big number wastes the slot) and not used in recent issues. If no such number exists, use null.
 4. NO sports, entertainment, celebrity or human-interest items ANYWHERE in the issue — not as a story, not as a quick hit, not as the big number — unless the event has direct geopolitical consequences (state action, sanctions, boycotts, diplomatic fallout). An athlete retiring or a film winning awards is never news for this brief.
-5. All scores integers 1-10. article_index values must reference the list above.
+5. All scores integers 1-10 — use the whole scale. impact_score 9-10: changes the course of a war, a great-power relationship or the world economy (a few times a month, not daily); 7-8: a major national or regional development; 5-6: notable but contained. article_index values must reference the list above.
 6. Return ONLY the raw JSON object — no markdown, no explanations, no code blocks.
 
 FIELD DEFINITIONS:
-- content_type: breaking_news=event requiring attention today; analysis=strategic examination; trend=multi-week pattern
+- content_type: breaking_news=a discrete event of the last 48 hours; analysis=the news IS a report, study, investigation, leaked document or official statistic; trend=a multi-week pattern made newsworthy today
 - region: europe=EU/NATO/Russia; middle_east=MENA/GCC/Iran/Turkey; indo_pacific=China/Japan/Koreas/SE Asia/India; americas=US/LatAm; africa=SSA/Horn/Sahel; central_asia=ex-Soviet stans/Afghanistan; global=multi-region simultaneous
 - actor_type: state=governments+militaries; non_state=armed groups/corps/NGOs; international_org=UN/NATO/EU/WTO; mixed=combination
 - event_type: diplomatic=summits/treaties/negotiations; military=conflict/deployments/weapons; economic=trade/energy/sanctions; informational_cyber=disinformation/hacking; humanitarian=refugees/famine/disaster; political=elections/coups/protests"""
 
         return template.format(history_block, articles_section, target_stories)
     
+    @staticmethod
+    def _served_model(response) -> str:
+        """The model the provider actually ran (OpenRouter reports it), if known."""
+        for attr in ("served_model", "model"):
+            value = getattr(response, attr, None)
+            if isinstance(value, str) and value:
+                return value
+        return ""
+
+    @staticmethod
+    def _copy_texts(analyses: List[AIAnalysis]) -> List[str]:
+        return [t for a in analyses for t in (a.why_important, a.what_overlooked, a.prediction)]
+
     def _apply_readability_gate(self, analyses: List[AIAnalysis]) -> Tuple[List[AIAnalysis], int, int, float]:
         """Rewrite the generated copy in plainer language when it tests too dense.
 
         Returns (analyses, extra_input_tokens, extra_output_tokens, extra_cost).
-        One rewrite attempt only; on any failure the original copy is kept.
+        One rewrite attempt only. The rewrite is ACCEPTED only when it lowers
+        the grade without chopping the copy into fragments — in 2026-09 every
+        accepted rewrite turned ~13-word sentences into ~9-word telegrams
+        ("Kyiv is short of these interceptors. They are the only reliable
+        defense."), which is worse than a slightly dense original.
         """
         from .readability import combined_grade
 
-        texts = []
-        for a in analyses:
-            texts.extend([a.why_important, a.what_overlooked, a.prediction])
+        texts = self._copy_texts(analyses)
         grade = combined_grade(texts)
+        avg_len, frag = sentence_stats(texts)
+        self.meta["readability"] = {"grade": grade, "avg_sentence_words": avg_len,
+                                    "fragment_share": frag, "rewrite": "not_needed"}
         if grade is None:
             return analyses, 0, 0, 0.0
         if grade <= Config.READABILITY_MAX_GRADE:
-            logger.info(f"Readability gate passed: grade {grade:.1f} <= {Config.READABILITY_MAX_GRADE}")
+            logger.info(f"Readability gate passed: grade {grade:.1f} <= {Config.READABILITY_MAX_GRADE} "
+                        f"({avg_len} words/sentence)")
             return analyses, 0, 0, 0.0
 
-        logger.warning(f"Readability gate triggered: grade {grade:.1f} > {Config.READABILITY_MAX_GRADE}, requesting rewrite")
+        logger.warning(f"Readability gate triggered: grade {grade:.1f} > {Config.READABILITY_MAX_GRADE} "
+                       f"({avg_len} words/sentence), requesting rewrite")
         payload = [
             {
                 "index": i,
@@ -371,11 +425,14 @@ FIELD DEFINITIONS:
             for i, a in enumerate(analyses)
         ]
         rewrite_prompt = (
-            "These newsletter passages test at US reading grade {:.1f}. Rewrite each field "
-            "in plain English at grade 8-9 for smart non-expert readers.\n"
-            "Rules: keep every fact, name and number. Short sentences (max ~18 words). "
-            "Active voice. No jargon. Word limits: why_important max 60, what_overlooked "
-            "max 35, prediction max 25.\n\n{}\n\n"
+            "These newsletter passages test at US reading grade {:.1f}; the target is 8-9 "
+            "for smart non-expert readers. Edit them like a senior copy editor.\n"
+            "How: swap long or technical WORDS for plain ones, unpack jargon, and split only "
+            "sentences over 25 words. Keep sentences 12-20 words with a natural rhythm. Do NOT "
+            "chop the text into short fragments — merge any sentence under 8 words into its "
+            "neighbour. Keep every fact, name, number and attribution exactly; add nothing. "
+            "Active voice. The prediction must not start with 'Watch'. Word limits: "
+            "why_important max 60, what_overlooked max 35, prediction max 25.\n\n{}\n\n"
             "Return ONLY a JSON array of objects with fields: index, why_important, "
             "what_overlooked, prediction. No markdown, no commentary."
         ).format(grade, json.dumps(payload, ensure_ascii=False, indent=1))
@@ -394,22 +451,122 @@ FIELD DEFINITIONS:
             match = re.search(r'\[.*\]', cleaned, re.DOTALL)
             if not match:
                 logger.warning("Readability rewrite returned no JSON — keeping original copy")
+                self.meta["readability"]["rewrite"] = "failed"
                 return analyses, in_tok, out_tok, cost
+
+            import copy
+            candidate = copy.deepcopy(analyses)
             for item in json.loads(match.group()):
                 idx = item.get("index")
-                if isinstance(idx, int) and 0 <= idx < len(analyses):
-                    analyses[idx].why_important = item.get("why_important") or analyses[idx].why_important
-                    analyses[idx].what_overlooked = item.get("what_overlooked") or analyses[idx].what_overlooked
-                    analyses[idx].prediction = item.get("prediction") or analyses[idx].prediction
+                if isinstance(idx, int) and 0 <= idx < len(candidate):
+                    candidate[idx].why_important = item.get("why_important") or candidate[idx].why_important
+                    candidate[idx].what_overlooked = item.get("what_overlooked") or candidate[idx].what_overlooked
+                    candidate[idx].prediction = item.get("prediction") or candidate[idx].prediction
 
-            new_grade = combined_grade(
-                [t for a in analyses for t in (a.why_important, a.what_overlooked, a.prediction)]
-            )
-            logger.info(f"Readability rewrite applied: grade {grade:.1f} -> {new_grade if new_grade is None else round(new_grade, 1)}")
+            new_texts = self._copy_texts(candidate)
+            new_grade = combined_grade(new_texts)
+            new_avg, new_frag = sentence_stats(new_texts)
+            improved = new_grade is not None and new_grade < grade
+            choppy = reads_choppy(new_texts) and not reads_choppy(texts)
+            lost_numbers = numbers_in(" ".join(texts)) - numbers_in(" ".join(new_texts))
+            self.meta["readability"].update({
+                "rewrite_grade": new_grade, "rewrite_avg_sentence_words": new_avg,
+                "rewrite_fragment_share": new_frag,
+            })
+            if improved and not choppy and not lost_numbers:
+                logger.info(f"Readability rewrite applied: grade {grade:.1f} -> {new_grade:.1f}, "
+                            f"{avg_len} -> {new_avg} words/sentence")
+                self.meta["readability"]["rewrite"] = "applied"
+                return candidate, in_tok, out_tok, cost
+
+            reason = ("no grade improvement" if not improved else
+                      "copy turned choppy" if choppy else
+                      f"figures dropped: {sorted(lost_numbers)}")
+            logger.warning(f"Readability rewrite rejected ({reason}): grade {grade:.1f} -> {new_grade}, "
+                           f"{avg_len} -> {new_avg} words/sentence — keeping original copy")
+            self.meta["readability"]["rewrite"] = f"rejected: {reason}"
             return analyses, in_tok, out_tok, cost
         except Exception as e:
             logger.warning(f"Readability rewrite failed, keeping original copy: {e}")
+            self.meta["readability"]["rewrite"] = "failed"
             return analyses, 0, 0, 0.0
+
+    # ------------------------------------------------------------------
+    # Editorial guardrails (post-generation)
+    # ------------------------------------------------------------------
+
+    def _apply_editorial_rules(self, issue: IssueContent, articles: List[Article]) -> None:
+        """Enforce what the prompt asks but models don't always deliver:
+        sentence-case headlines, no quick hit or big number rerun from recent
+        issues, a big number that isn't already in the issue, and non-state
+        links for quick hits whenever the event has a non-state source."""
+        # Headlines: one house style (sentence case). Case evidence comes from
+        # running text only — feed titles are often Title Case themselves.
+        corpus = " ".join(
+            [f"{s.why_important} {s.what_overlooked} {s.prediction}" for s in issue.stories]
+            + [h.text for h in issue.quick_hits]
+            + [(getattr(a, 'full_content', None) or a.summary or "")[:600] for a in articles])
+        for story in issue.stories:
+            fixed = to_sentence_case(story.story_title, corpus)
+            if fixed != story.story_title:
+                logger.info(f"Headline normalized to sentence case: {story.story_title!r} -> {fixed!r}")
+                story.story_title = fixed
+
+        by_url = {a.url: a for a in articles}
+
+        # Quick hits: link a non-state outlet when the same event has one
+        for hit in issue.quick_hits:
+            art = by_url.get(hit.url)
+            if art is None or not getattr(art, 'state_affiliated', False):
+                continue
+            cid = getattr(art, 'cluster_id', None)
+            alt = next((a for a in articles
+                        if cid and getattr(a, 'cluster_id', None) == cid
+                        and not getattr(a, 'state_affiliated', False)), None)
+            if alt:
+                logger.info(f"Quick hit relinked from state outlet {art.source} to {alt.source}")
+                hit.url = alt.url
+
+        # Quick hits: no reruns of what recent issues already said
+        prior_hits = history_texts(self.history, "quick_hits", "big_number", "blindspot")
+        kept = []
+        for hit in issue.quick_hits:
+            repeat = is_repeat(hit.text, prior_hits)
+            if repeat:
+                logger.info(f"Quick hit dropped (rerun of a recent issue): {hit.text[:70]} ~ {repeat[:50]}")
+                continue
+            kept.append(hit)
+        issue.quick_hits = kept
+
+        # Big number: must add something the issue doesn't already say
+        bn = issue.big_number
+        if bn:
+            issue_texts = ([f"{s.story_title} {s.why_important} {s.what_overlooked}" for s in issue.stories]
+                           + [h.text for h in issue.quick_hits])
+            bn_text = f"{bn.value} {bn.context}"
+            bn_figures = numbers_in(bn.value)
+            reason = None
+            story_urls = {u for s in issue.stories for u in (s.sources or [])}
+            story_clusters = {getattr(by_url[u], 'cluster_id', None) for u in story_urls if u in by_url} - {None}
+            bn_article = by_url.get(bn.url)
+            if bn_figures and any(bn_figures & numbers_in(t) for t in issue_texts):
+                reason = "figure already in the issue"
+            elif bn.url and (bn.url in story_urls or
+                             (bn_article and getattr(bn_article, 'cluster_id', None) in story_clusters)):
+                reason = "same event as a story"
+            elif any(overlap(bn_text, t) >= 0.6 for t in issue_texts):
+                reason = "restates a story or quick hit"
+            elif is_repeat(bn_text, history_texts(self.history, "big_number", "quick_hits")):
+                reason = "rerun of a recent issue"
+            if reason:
+                logger.info(f"Big number dropped ({reason}): {bn.value} — {bn.context[:60]}")
+                issue.big_number = None
+
+        # Ranking sanity: order is editorial, but flag a contradiction
+        for i in range(1, len(issue.stories)):
+            if issue.stories[i].impact_score > issue.stories[0].impact_score:
+                logger.warning(f"Story #{i + 1} scores higher impact ({issue.stories[i].impact_score}) "
+                               f"than the lead ({issue.stories[0].impact_score}) — lead choice may be off")
 
     def _story_from_data(self, data: Dict[str, Any], articles: List[Article]) -> AIAnalysis:
         """Build one AIAnalysis from a parsed story dict."""

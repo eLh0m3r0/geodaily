@@ -28,11 +28,13 @@ from ..archiver.ai_data_archiver import ai_archiver
 from .cost_controller import ai_cost_controller
 from .api_utils import extract_response_text, response_tokens_and_cost
 from .llm_client import build_llm_client, ai_credentials_present
+from .editorial import history_texts, load_issue_history, overlap
 
 logger = logging.getLogger(__name__)
 
 MAX_ARTICLES_PER_GROUP = 3
 EXCERPT_CHARS = 450
+WIRE_COPY_PREFIX = "runs wire copy"
 
 
 class PerspectiveAnalyzer:
@@ -41,6 +43,17 @@ class PerspectiveAnalyzer:
     def __init__(self):
         self.mock_mode = Config.DRY_RUN or not ai_credentials_present()
         self.client = None
+        # Provenance of the grid call, merged into the issue's meta
+        self.meta: Dict[str, object] = {}
+        # Recent issues' stories and blindspots: a blindspot must be news the
+        # reader has NOT already had (09-17 resurfaced the 09-15 lead story).
+        self.recent_topics: List[str] = []
+        if Config.ENABLE_NEWSLETTER_HISTORY:
+            try:
+                history = load_issue_history(Config.NEWSLETTERS_DIR, days=max(3, Config.NEWSLETTER_HISTORY_DAYS))
+                self.recent_topics = history_texts(history, "stories", "blindspot")
+            except Exception as e:
+                logger.warning(f"Issue history unavailable for blindspot screening: {e}")
         if not self.mock_mode:
             try:
                 self.client = build_llm_client()
@@ -101,6 +114,10 @@ class PerspectiveAnalyzer:
             published = published.replace(tzinfo=timezone.utc)
         return now - published <= timedelta(hours=cls.BLINDSPOT_MAX_AGE_HOURS)
 
+    # A candidate this similar to a story title (today's or a recent
+    # issue's) is the same storyline, not a blindspot.
+    BLINDSPOT_TOPIC_OVERLAP = 0.5
+
     def _blindspot_candidates(self, stories: List[AIAnalysis], articles: List[Article],
                               limit: int = 4,
                               exclude_urls: Optional[List[str]] = None) -> List[List[Article]]:
@@ -108,13 +125,19 @@ class PerspectiveAnalyzer:
         and not any of the issue's selected stories (excluded by cited URL
         AND by whole event cluster, so an uncited cluster member can't
         resurface the story as its own blindspot). Only fresh articles
-        (BLINDSPOT_MAX_AGE_HOURS) take part."""
+        (BLINDSPOT_MAX_AGE_HOURS) take part.
+
+        Also excluded: events only state media report (a blindspot must not
+        become a megaphone for a government narrative — 09-20 and 09-25 were
+        TASS-driven), and storylines the reader already has from today's
+        stories or recent issues (09-13, 09-17, 09-21)."""
         now = datetime.now(timezone.utc)
         story_urls = set(exclude_urls or [])
         for s in stories:
             story_urls.update(s.sources or [])
         story_clusters = {getattr(a, 'cluster_id', None) for a in articles
                           if a.url in story_urls and getattr(a, 'cluster_id', None)}
+        known_topics = [s.story_title for s in stories] + list(self.recent_topics)
         events = defaultdict(list)
         for a in articles:
             cid = getattr(a, 'cluster_id', None)
@@ -123,13 +146,39 @@ class PerspectiveAnalyzer:
                 events[cid].append(a)
         candidates = []
         for members in events.values():
-            if len(members) < 2:
+            if len({m.source for m in members}) < 2:
                 continue
             groups = {group_of(getattr(m, 'source_perspective', '')) for m in members}
-            if groups and groups.issubset(NON_WESTERN_GROUPS):
-                candidates.append(members)
-        candidates.sort(key=lambda ms: -sum(m.source_weight or 1.0 for m in ms))
+            if not groups or not groups.issubset(NON_WESTERN_GROUPS):
+                continue
+            if all(self._is_state(m) for m in members):
+                continue
+            if any(overlap(m.title, topic) >= self.BLINDSPOT_TOPIC_OVERLAP
+                   for m in members for topic in known_topics):
+                logger.info(f"Blindspot candidate skipped (storyline already covered): {members[0].title[:70]}")
+                continue
+            candidates.append(members)
+        # State outlets count half: corroboration from independent outlets
+        # is what makes a blindspot worth the reader's time.
+        candidates.sort(key=lambda ms: -sum((m.source_weight or 1.0) * (0.5 if self._is_state(m) else 1.0)
+                                             for m in ms))
         return candidates[:limit]
+
+    @staticmethod
+    def _is_state(article: Article) -> bool:
+        return bool(getattr(article, 'state_affiliated', False)) or \
+            group_of(getattr(article, 'source_perspective', '')) in STATE_GROUPS
+
+    def _blindspot_link(self, members: List[Article], text: str) -> Article:
+        """The article to link: a non-state outlet the text names, else any
+        non-state member, else the first member."""
+        non_state = [m for m in members if not self._is_state(m)]
+        lowered = (text or "").lower()
+        for m in non_state:
+            names = {m.source.lower(), source_display_name(m.url).lower()}
+            if any(n and n in lowered for n in names):
+                return m
+        return non_state[0] if non_state else members[0]
 
     def coverage_counts(self, story: AIAnalysis, articles: List[Article]) -> Tuple[Dict[str, int], int]:
         """(perspective group -> article count, distinct outlet count) for one
@@ -189,9 +238,10 @@ class PerspectiveAnalyzer:
                 state_affiliated=g in STATE_GROUPS,
             ))
         if blindspot_events:
-            first = blindspot_events[0][0]
-            grid.blindspot = f"(mock) Barely covered outside its region: {first.title[:80]}"
-            grid.blindspot_url = first.url
+            members = blindspot_events[0]
+            grid.blindspot = f"(mock) Barely covered outside its region: {members[0].title[:80]}"
+            grid.blindspot_url = self._blindspot_link(members, "").url
+            grid.blindspot_outlets = sorted({source_display_name(m.url) for m in members})
         return grid
 
     # With 80+ sources a big story can carry 20+ articles; the model only needs
@@ -248,8 +298,10 @@ class PerspectiveAnalyzer:
                 m = members[0]
                 idx = len(indexed)
                 indexed.append(m)
-                outlets = ", ".join(sorted({x.source for x in members}))
-                lines.append(f"[{idx}] {m.title} (covered by: {outlets})")
+                outlets = ", ".join(sorted({x.source + (" [state]" if self._is_state(x) else "")
+                                            for x in members}))
+                summary = (getattr(m, 'full_content', None) or m.summary or "")[:240]
+                lines.append(f"[{idx}] {m.title} (covered by: {outlets})\nText: {summary}")
             blindspot_section = "\n" + "\n".join(lines) + "\n"
 
         prompt = (
@@ -260,30 +312,35 @@ class PerspectiveAnalyzer:
             "\nFor EACH perspective group above, give:\n"
             "1. framing: ONE short sentence (max 20 words) naming this group's editorial "
             "angle in political terms: what it treats as the cause, whom it holds "
-            "responsible, what it stresses or leaves out compared with the other groups. "
+            "responsible, what it stresses compared with the other groups. "
             "Never describe writing style, tone, vividness, level of detail or imagery "
             "(\"vivid detail on smoke\", \"precise factual account\" are NOT framings). "
-            "If a group only runs agency/wire copy with no discernible angle, write "
-            "exactly: \"Runs wire copy: reports the facts without an editorial angle.\"\n"
-            "2. quote: a VERBATIM quote of 8-30 words copied EXACTLY from one article's "
+            "You only see short excerpts, so never claim a group \"omits\", \"ignores\" or "
+            "\"downplays\" something unless another group's excerpt above reports it AND none of "
+            "this group's excerpts mention it — otherwise describe what the group stresses.\n"
+            "2. wire_copy: true if the group only runs agency/wire copy with no discernible "
+            "angle of its own (then framing may be \"\"); otherwise false. Do not invent an "
+            "angle to avoid saying true.\n"
+            "3. quote: a VERBATIM quote of 8-30 words copied EXACTLY from one article's "
             "Text above, that shows the framing. It must be a complete sentence or "
             "self-contained clause starting with a capital letter, and it must carry a "
             "claim, an attribution or a number — never scene-setting (smoke, fires, "
             "sirens, weather). Copy the characters exactly — do not fix, trim inside, "
             "or paraphrase. If no such quote exists, use \"\".\n"
-            "3. quote_article_index: the [index] of the article the quote is from.\n\n"
+            "4. quote_article_index: the [index] of the article the quote is from.\n\n"
             + ("Also pick the single most significant blindspot candidate and write 1-2 plain "
-               "sentences (max 35 words): what happened, who is reporting it, and why the "
-               "gap matters. Attribute claims to their source (\"Hamas says\", \"TASS "
-               "reports\"). Say that no Western outlet in today's pool covered it; do not "
-               "say Western media \"ignored\" it. Use the candidate's index. Only "
+               "sentences (max 40 words): what happened, then why it matters to a reader "
+               "outside the region. Write it as neutral news in your own voice. Claims made "
+               "only by state media ([state]) must be attributed (\"TASS reports\") and never "
+               "adopted as your framing or as the reason it matters. Do NOT say who did or did "
+               "not cover it — the page shows the outlets. Use the candidate's index. Only "
                "political, economic, security or humanitarian events qualify: never sports, "
                "entertainment, celebrities or lifestyle — if no candidate qualifies, "
                "return \"blindspot\": null.\n\n"
                if blindspot_section else "")
             + "Plain English, active voice, no jargon.\n"
             "Return ONLY this JSON object, no markdown fences:\n"
-            '{"views": [{"group": "western", "framing": "...", "quote": "...", '
+            '{"views": [{"group": "western", "framing": "...", "wire_copy": false, "quote": "...", '
             '"quote_article_index": 0}], '
             + ('"blindspot": {"text": "...", "article_index": 5}}'
                if blindspot_section else '"blindspot": null}')
@@ -315,6 +372,11 @@ class PerspectiveAnalyzer:
             text = extract_response_text(response)
             in_tok, out_tok, cost = response_tokens_and_cost(response, prompt, text)
             ai_cost_controller.record_cost(cost, in_tok + out_tok, "perspective_extraction")
+            self.meta["grid_cost_usd"] = round(float(self.meta.get("grid_cost_usd", 0.0)) + cost, 5)
+            self.meta["grid_attempts"] = attempt
+            served = getattr(response, 'served_model', None) or getattr(response, 'model', None)
+            if isinstance(served, str) and served:
+                self.meta["grid_served_model"] = served
             stop = getattr(response, 'stop_reason', None)
             logger.info(f"Perspective extraction (attempt {attempt}): {in_tok}+{out_tok} tokens, "
                         f"${cost:.4f}, {time.time() - start:.1f}s, stop_reason={stop}")
@@ -346,23 +408,33 @@ class PerspectiveAnalyzer:
                     quote = ""
             else:
                 quote = ""
+            framing = (view_data.get("framing") or "").strip()
+            wire = view_data.get("wire_copy") is True or framing.lower().startswith(WIRE_COPY_PREFIX)
             grid.views.append(PerspectiveView(
                 perspective=g,
                 outlets=sorted({source_display_name(m.url) for m in members}),
                 article_count=grid.counts.get(g, len(members)),
-                framing=(view_data.get("framing") or "").strip(),
+                framing="" if wire else framing,
                 quote=quote,
                 quote_outlet=quote_outlet,
                 quote_url=quote_url,
                 state_affiliated=g in STATE_GROUPS,
+                wire_copy=wire,
             ))
 
         bs = data.get("blindspot")
         if isinstance(bs, dict) and bs.get("text"):
-            grid.blindspot = str(bs["text"]).strip()
             b_idx = bs.get("article_index")
+            chosen = None
             if isinstance(b_idx, int) and 0 <= b_idx < len(indexed):
-                grid.blindspot_url = indexed[b_idx].url
+                chosen = next((ms for ms in blindspot_events if indexed[b_idx] in ms), None)
+            if chosen:
+                text = self._clean_blindspot_text(str(bs["text"]))
+                grid.blindspot = text
+                grid.blindspot_url = self._blindspot_link(chosen, text).url
+                grid.blindspot_outlets = sorted({source_display_name(m.url) for m in chosen})
+            else:
+                logger.warning("Blindspot dropped: article_index does not point at a candidate")
 
         ai_archiver.archive_ai_response(response_text=text, analysis=None,
                                         cluster_index=1, cost=cost, tokens=in_tok + out_tok)
@@ -371,6 +443,20 @@ class PerspectiveAnalyzer:
     # ------------------------------------------------------------------
     # Helpers
     # ------------------------------------------------------------------
+
+    _COVERAGE_CLAUSE = re.compile(
+        r"[^.;]*\b(no|not a single|none of the)\s+western\s+(outlet|media|news)[^.;]*[.;]?\s*", re.I)
+
+    @classmethod
+    def _clean_blindspot_text(cls, text: str) -> str:
+        """Strip "no Western outlet covered it" clauses — the rendered
+        outlet line says that from data; in the model's voice it became the
+        same boilerplate sentence every single day."""
+        cleaned = cls._COVERAGE_CLAUSE.sub("", text).strip()
+        cleaned = re.sub(r"\s{2,}", " ", cleaned)
+        if cleaned and cleaned[-1] not in ".!?":
+            cleaned += "."
+        return cleaned or text.strip()
 
     @staticmethod
     def _normalize(text: str) -> str:

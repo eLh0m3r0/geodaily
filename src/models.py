@@ -187,6 +187,9 @@ class PerspectiveView:
     quote_outlet: str = ""
     quote_url: str = ""
     state_affiliated: bool = False
+    # Straight agency copy with no editorial angle: rendered as one shared
+    # "reports the facts" line instead of an empty-calorie row of its own.
+    wire_copy: bool = False
 
 
 @dataclass
@@ -197,6 +200,9 @@ class PerspectiveGrid:
     counts: Dict[str, int] = field(default_factory=dict)  # perspective -> outlet count
     blindspot: str = ""              # 1-2 sentences on what almost nobody covers
     blindspot_url: str = ""
+    # Who did report the blindspot — rendered from data, so the "no Western
+    # outlet covered it" claim is never a sentence the model has to write.
+    blindspot_outlets: List[str] = field(default_factory=list)
 
 
 @dataclass
@@ -217,6 +223,9 @@ class IssueContent:
     # preheader teaser — subject/headline/snippet must not repeat each other
     email_subject: str = ""
     preheader: str = ""
+    # Provenance: provider, requested/served model, tokens, cost, readability
+    # — written into the issue JSON so reviews don't have to dig in CI logs.
+    meta: Dict[str, Any] = field(default_factory=dict)
 
 
 @dataclass
@@ -233,6 +242,7 @@ class Newsletter:
     signals: List[Signal] = field(default_factory=list)
     email_subject: str = ""
     preheader: str = ""
+    meta: Dict[str, Any] = field(default_factory=dict)
 
     def __post_init__(self):
         # Story order is editorial: the analyzer ranks them and the first

@@ -23,7 +23,8 @@ class NewsletterGenerator:
     def generate_newsletter(self, analyses: List[AIAnalysis], date: Optional[datetime] = None,
                             quick_hits=None, big_number=None,
                             perspective_grid=None, signals=None,
-                            email_subject: str = "", preheader: str = "") -> Newsletter:
+                            email_subject: str = "", preheader: str = "",
+                            meta: Optional[dict] = None) -> Newsletter:
         """
         Generate newsletter from AI analyses with balanced content types.
 
@@ -59,7 +60,8 @@ class NewsletterGenerator:
             perspective_grid=perspective_grid,
             signals=signals or [],
             email_subject=email_subject,
-            preheader=preheader
+            preheader=preheader,
+            meta=dict(meta or {}),
         )
 
         return newsletter
@@ -406,11 +408,11 @@ class NewsletterGenerator:
         )
         legend_html = " &middot; ".join(f'{p["pct"]}% {p["label"]}' for p in parts)
 
+        from ..perspectives import GROUP_COLORS, label_of, is_wire_view, wire_copy_line, coverage_summary
         rows = ""
         for view in grid.views:
-            if not view.framing:
+            if not view.framing or is_wire_view(view):
                 continue
-            from ..perspectives import GROUP_COLORS, label_of
             color = GROUP_COLORS.get(view.perspective, "#6B7280")
             state = ' <span class="state-label">state-affiliated</span>' if view.state_affiliated else ""
             quote_html = ""
@@ -429,12 +431,15 @@ class NewsletterGenerator:
                     </div>
                 </div>"""
 
+        wire = wire_copy_line(grid.views)
+        wire_html = f'<div class="persp-wire">{wire}</div>' if wire else ""
         return f"""
         <div class="perspective-grid">
             <div class="section-heading">How the World Covers It</div>
             <div class="coverage-bar">{bar_spans}</div>
-            <div class="coverage-legend">{grid.total_outlets} outlets &middot; {legend_html}</div>
+            <div class="coverage-legend">{coverage_summary(grid.total_outlets, grid.counts)} &middot; {legend_html}</div>
             {rows}
+            {wire_html}
         </div>
 """
 
@@ -452,10 +457,11 @@ class NewsletterGenerator:
             f'<span style="flex:{c};background-color:{GROUP_COLORS.get(g, "#6B7280")};" title="{label_of(g)}: {c}"></span>'
             for g, c in ordered
         )
+        from ..perspectives import coverage_summary
         legend = " &middot; ".join(f'{label_of(g)} {c}' for g, c in ordered)
         return (f'<div class="coverage-mini">'
                 f'<div class="coverage-bar">{bar_spans}</div>'
-                f'<div class="coverage-legend">{outlets} outlets &middot; {legend}</div>'
+                f'<div class="coverage-legend">{coverage_summary(outlets, counts)} &middot; {legend}</div>'
                 f'</div>')
 
     def _generate_blindspot_html(self, newsletter: Newsletter) -> str:
@@ -465,13 +471,17 @@ class NewsletterGenerator:
         grid = getattr(newsletter, 'perspective_grid', None)
         if not grid or not grid.blindspot:
             return ""
+        from ..perspectives import blindspot_sources_line
         arrow = (f' <a href="{grid.blindspot_url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>'
                  if grid.blindspot_url else "")
+        sources = blindspot_sources_line(getattr(grid, 'blindspot_outlets', None) or [])
+        sources_html = f'<div class="blindspot-sources">{sources}</div>' if sources else ""
         return f"""
         <div class="blindspot-section">
             <div class="section-heading">The Blindspot</div>
             <div class="blindspot-note">A story covered heavily in one part of the world &mdash; and barely mentioned in the rest.</div>
             <div class="blindspot">{grid.blindspot}{arrow}</div>
+            {sources_html}
         </div>
 """
 
@@ -928,6 +938,17 @@ class NewsletterGenerator:
             font-size: 14.5px;
             line-height: 1.6;
         }
+        .persp-wire {
+            font-size: 0.85rem;
+            color: #6B7280;
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+        .blindspot-sources {
+            font-size: 0.8rem;
+            color: #6B7280;
+            margin-top: 6px;
+        }
         .blindspot-note {
             font-size: 12px;
             color: #9AA3AB;
@@ -1255,9 +1276,10 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
             for p in parts
         )
 
+        from ..perspectives import is_wire_view, wire_copy_line, coverage_summary
         rows = ""
         for view in grid.views:
-            if not view.framing:
+            if not view.framing or is_wire_view(view):
                 continue
             color = GROUP_COLORS.get(view.perspective, "#6B7280")
             state = (f' <span style="{SANS}font-size:9px;font-weight:700;letter-spacing:0.5px;'
@@ -1282,8 +1304,10 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
                 f'text-transform:uppercase;color:{FAINT};margin-bottom:8px;">How the World Covers It</div>'
                 f'<div style="font-size:0;line-height:0;margin-bottom:6px;">{bar}</div>'
                 f'<div style="{SANS}font-size:12px;color:{FAINT};margin-bottom:14px;">'
-                f'{grid.total_outlets} outlets &middot; {legend}</div>'
+                f'{coverage_summary(grid.total_outlets, grid.counts)} &middot; {legend}</div>'
                 f'{rows}'
+                + (f'<div style="{SANS}font-size:12.5px;line-height:1.5;color:{FAINT};margin-top:2px;{NO_HYPHENS}">'
+                   f'{wire_copy_line(grid.views)}</div>' if wire_copy_line(grid.views) else '') +
                 f'<div style="border-bottom:1px solid {LINE};margin-top:16px;font-size:0;">&nbsp;</div></div>')
 
     def _email_coverage_line(self, story, FAINT: str, SANS: str) -> str:
@@ -1302,10 +1326,11 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
             f'height:5px;background-color:{GROUP_COLORS.get(g, "#6B7280")};"></span>'
             for g, c in ordered
         )
+        from ..perspectives import coverage_summary
         legend = " &middot; ".join(f'{label_of(g)} {c}' for g, c in ordered)
         return (f'<div style="margin:0 0 12px 0;">'
                 f'<div style="font-size:0;line-height:0;margin-bottom:4px;">{bar}</div>'
-                f'<div style="{SANS}font-size:11.5px;color:{FAINT};">{outlets} outlets &middot; {legend}</div>'
+                f'<div style="{SANS}font-size:11.5px;color:{FAINT};">{coverage_summary(outlets, counts)} &middot; {legend}</div>'
                 f'</div>')
 
     def _email_blindspot_block(self, newsletter: Newsletter, INK: str, SUB: str,
@@ -1316,6 +1341,8 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
         if not grid or not grid.blindspot:
             return ""
         NO_HYPHENS = "-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;"
+        from ..perspectives import blindspot_sources_line
+        sources = blindspot_sources_line(getattr(grid, 'blindspot_outlets', None) or [])
         arrow = (f' <a href="{grid.blindspot_url}" style="color:{ACCENT};text-decoration:none;">&rarr;</a>'
                  if grid.blindspot_url else "")
         return (f'{kicker("The Blindspot")}'
@@ -1323,7 +1350,10 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
                 f'A story covered heavily in one part of the world &mdash; and barely mentioned in the rest.</div>'
                 f'<div style="border-left:3px solid #B26B00;padding:2px 0 2px 12px;margin-bottom:8px;'
                 f'{SANS}font-size:14.5px;line-height:1.6;color:{INK};{NO_HYPHENS}">'
-                f'{grid.blindspot}{arrow}</div>')
+                f'{grid.blindspot}{arrow}'
+                + (f'<div style="{SANS}font-size:12px;color:{FAINT};margin-top:4px;">{sources}</div>'
+                   if sources else '') +
+                '</div>')
     def _email_signals_block(self, newsletter: Newsletter, SUB: str,
                              FAINT: str, ACCENT: str, SANS: str) -> str:
         """Signals — compact lines directly under What to Watch."""
