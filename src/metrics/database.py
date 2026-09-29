@@ -297,15 +297,42 @@ class MetricsDatabase:
 
     def _row_to_pipeline_run(self, row) -> PipelineRun:
         """Convert database row to PipelineRun object."""
-        columns = [desc[0] for desc in self.conn.execute("PRAGMA table_info(pipeline_runs)").fetchall()]
+        # PRAGMA table_info rows are (cid, name, type, notnull, dflt, pk): the
+        # column NAME is index 1. Reading index 0 keyed the dict by integer
+        # cids, so data['errors'] raised KeyError('errors') on every call —
+        # the daily "Failed to get recent pipeline runs: 'errors'" log line.
+        columns = [info[1] for info in self.conn.execute("PRAGMA table_info(pipeline_runs)").fetchall()]
         data = dict(zip(columns, row))
 
-        # Parse JSON fields
-        data['errors'] = json.loads(data['errors'] or '[]')
+        # The table also carries bookkeeping columns (created_at, updated_at)
+        # that PipelineRun does not declare — passing them would TypeError.
+        field_names = set(PipelineRun.__dataclass_fields__)
+        data = {k: v for k, v in data.items() if k in field_names}
 
-        # Parse datetime fields
-        if data['end_time']:
-            data['end_time'] = datetime.fromisoformat(data['end_time'])
+        # Parse JSON fields (tolerate NULL and legacy non-JSON text)
+        raw_errors = data.get('errors')
+        try:
+            parsed = json.loads(raw_errors) if raw_errors else []
+            data['errors'] = parsed if isinstance(parsed, list) else [str(parsed)]
+        except (TypeError, ValueError):
+            data['errors'] = [str(raw_errors)]
+
+        # Parse date/datetime fields stored as ISO text
+        for key in ('start_time', 'end_time'):
+            value = data.get(key)
+            if isinstance(value, str) and value:
+                try:
+                    data[key] = datetime.fromisoformat(value)
+                except ValueError:
+                    pass
+        run_date = data.get('run_date')
+        if isinstance(run_date, str) and run_date:
+            try:
+                data['run_date'] = date.fromisoformat(run_date[:10])
+            except ValueError:
+                pass
+        if 'newsletter_published' in data:
+            data['newsletter_published'] = bool(data['newsletter_published'])
 
         return PipelineRun(**data)
 

@@ -130,3 +130,62 @@ def summarize_grid(grid) -> tuple:
         })
     legend = " · ".join(f"{p['pct']}% {p['label']}" for p in parts)
     return parts, legend
+
+
+# ----------------------------------------------------------------------
+# Shared render helpers (web, email and Pages renderers all use these, so
+# the three outputs can't drift apart)
+# ----------------------------------------------------------------------
+
+def is_wire_view(view) -> bool:
+    """A grid row with no editorial angle of its own (agency copy). Older
+    issue JSON carries the sentinel framing instead of the flag."""
+    if getattr(view, "wire_copy", False):
+        return True
+    return (getattr(view, "framing", "") or "").lower().startswith("runs wire copy")
+
+
+def coverage_summary(total_outlets: int, counts: Dict[str, int]) -> str:
+    """'11 reports from 6 outlets' — the bar and per-group numbers count
+    REPORTS; saying only 'outlets' next to them read as a contradiction."""
+    reports = sum(counts.values()) if counts else 0
+    outlets = total_outlets or 0
+    if reports and outlets and reports != outlets:
+        return f"{reports} reports from {outlets} outlets"
+    n = outlets or reports
+    return f"{n} outlet{'s' if n != 1 else ''}"
+
+
+def wire_copy_line(views) -> str:
+    """One shared line for groups that ran straight agency copy, e.g.
+    'Straight news, no distinct angle: East Asian media (3), Chinese state
+    media (2, state)'. Empty when no group qualifies."""
+    groups = []
+    for v in views:
+        if not is_wire_view(v):
+            continue
+        extra = ", state" if getattr(v, "state_affiliated", False) else ""
+        groups.append(f"{label_of(v.perspective)} ({v.article_count}{extra})")
+    if not groups:
+        return ""
+    return "Straight news, no distinct angle: " + ", ".join(groups)
+
+
+def _join_names(names: List[str]) -> str:
+    names = [n for n in names if n]
+    if len(names) <= 1:
+        return "".join(names)
+    if len(names) == 2:
+        return f"{names[0]} and {names[1]}"
+    return ", ".join(names[:-1]) + f" and {names[-1]}"
+
+
+def blindspot_sources_line(outlets: List[str], limit: int = 4) -> str:
+    """'Reported by Dawn, Meduza and 2 more — no Western outlet we track.'"""
+    outlets = [o for o in (outlets or []) if o]
+    if not outlets:
+        return ""
+    shown = outlets[:limit]
+    rest = len(outlets) - len(shown)
+    names = _join_names(shown) if not rest else ", ".join(shown) + f" and {rest} more"
+    return f"Reported by {names} &mdash; no Western outlet we track."

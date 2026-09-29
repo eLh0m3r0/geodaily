@@ -92,9 +92,9 @@ python src/sitemap_generator.py             # Generate sitemap for GitHub Pages
 
 ### Pipeline Flow
 1. **Collection Layer** (`src/collectors/`): Collects from 86 sources (84 RSS + 2 web scraping) across 14 global perspectives — 52 of the RSS feeds are non-Western
-2. **Processing Layer** (`src/processors/`): Semantic event clustering (fastembed MiniLM + HDBSCAN in `embedding_clusterer.py`, title-similarity fallback), dedup and scoring
-3. **AI Analysis Layer** (`src/ai/`): Claude API with cost controls — one issue call (3 ranked stories + quick hits + big number, `simple_multi_stage_analyzer.py`; no sports/celebrity, quick hits deduped against story events by URL/cluster/title-overlap) plus one perspective-grid call (`perspective_analyzer.py`), with a Flesch-Kincaid readability gate (`readability.py`)
-4. **Newsletter Generation** (`src/newsletter/`): Hybrid issue format = THE BIG STORY (full treatment: 'How the World Covers It' perspective grid + signals) + MORE TOP STORIES (2 compact stories, each with a computed coverage mini-bar — no extra AI call) + ALSO TODAY quick hits + THE BLINDSPOT (own section — by construction a DIFFERENT event than the stories, never rendered inside a story) + THE BIG NUMBER; story order is editorial (analyzer ranking, never re-sorted by score); web + email-safe renderers, named source links (`source_display.py`), machine-readable issue JSON (`issue_store.py`)
+2. **Processing Layer** (`src/processors/`): Semantic event clustering (fastembed MiniLM + HDBSCAN in `embedding_clusterer.py`, then a conservative fragment repair: clusters with centroid cosine ≥0.85 merge, noise articles ≥0.75 from a centroid join it — so one event's Western and non-Western reports land in one grid; title-similarity fallback), dedup and scoring
+3. **AI Analysis Layer** (`src/ai/`): Claude API with cost controls — one issue call (3 ranked stories + quick hits + big number, `simple_multi_stage_analyzer.py`; no sports/celebrity, quick hits deduped against story events by URL/cluster/title-overlap) plus one perspective-grid call (`perspective_analyzer.py`), with a Flesch-Kincaid readability gate (`readability.py`) whose single rewrite is ACCEPTED only if it lowers the grade without turning the copy choppy (avg sentence < 10.5 words or > 25% fragments) or dropping figures; post-generation guardrails in `src/ai/editorial.py` (sentence-case headlines by case evidence, no quick hit / big number rerun from the last issues unless it carries a new figure, big number must not repeat a figure already in the issue, quick hits relinked from state to non-state outlets of the same event); the prompt sees the last issues' stories, quick hits, big number and blindspot (`load_issue_history`)
+4. **Newsletter Generation** (`src/newsletter/`): Hybrid issue format = THE BIG STORY (full treatment: 'How the World Covers It' perspective grid + signals) + MORE TOP STORIES (2 compact stories, each with a computed coverage mini-bar — no extra AI call) + ALSO TODAY quick hits + THE BLINDSPOT (own section — by construction a DIFFERENT event than the stories, never rendered inside a story) + THE BIG NUMBER; story order is editorial (analyzer ranking, never re-sorted by score); web + email-safe renderers, named source links (`source_display.py`), machine-readable issue JSON (`issue_store.py`) including `meta` (provider, requested/served model, tokens, billed cost, readability before/after rewrite, grid cost) — check `meta` first when reviewing which model wrote an issue. Grid rows with no editorial angle (`wire_copy`) collapse into one 'Straight news, no distinct angle' line; coverage legends say 'N reports from M outlets'; the blindspot text never says who did/didn't cover it — the renderer adds 'Reported by … — no Western outlet we track' from `blindspot_outlets`. Blindspot candidates must have ≥2 outlets incl. a non-state one and must not overlap today's stories or the last 3 issues' stories/blindspots. Shared render helpers live in `src/perspectives.py` (web, email and Pages renderers all use them)
 5. **AI Archive Layer** (`src/archiver/`): Comprehensive data archiving and retention management
 6. **Unified Dashboard Layer** (`src/dashboard/`): Single streamlined dashboard for GitHub Pages
 7. **Publishing Layer** (`src/publishers/`): GitHub Pages deployment and email notifications
@@ -209,7 +209,8 @@ The AI analyzer now evaluates stories across multiple dimensions:
 - `NEWSLETTER_EDITOR_NAME` named human curator for the footer persona ("drafted with AI, curated by X") — set it; anonymous AI footers measurably hurt trust
 - `NEWSLETTER_TAGLINE` (default "The world's news from every side")
 - `NEWSLETTER_TARGET_STORIES=3` hybrid default: big story (full treatment) + 2 compact stories; evergreen SEO story page is published for EVERY story (3 indexable topics/day)
-- `READABILITY_MAX_GRADE=9.5` Flesch-Kincaid gate; denser copy triggers one simplify rewrite
+- `READABILITY_MAX_GRADE=9.5` Flesch-Kincaid gate; denser copy triggers one simplify rewrite, kept only if it doesn't make the copy choppy (the 2026-09 rewrites turned ~13-word sentences into ~9-word telegrams)
+- `NEWSLETTER_HISTORY_DAYS=2` how many previous issues the analyzer sees (stories, quick hits, big number, blindspot); the blindspot screen always looks back at least 3
 - `BUTTONDOWN_WEEKLY_TAG=weekly` tag for Sunday-digest subscribers (excluded from daily sends)
 - Configurable AI provider support
 - `FETCH_FULL_CONTENT=true` to enable enhanced article content extraction (default: true)
@@ -300,7 +301,10 @@ The AI analyzer now evaluates stories across multiple dimensions:
   - `X_THREADS_MIN_IMPACT_SCORE=7.0` minimum story score
 
 ### GitHub Actions
-- Daily automation at 6:00 UTC
+- Daily automation: cron 03:23 UTC with backups 04:47 and 06:11 (GitHub starts scheduled runs hours late under load — 09-17..09-29 the 6:17 slot ran 11:30-14:15); `repository_dispatch` type `publish-newsletter` lets an external scheduler trigger it on time (DEPLOYMENT.md). The precheck makes every non-manual run a no-op once today's issue is on `main`
+- A manual `dry_run=true` run never emails, never commits docs/ and never deploys Pages (mock content)
+- Email delivery is verified after publishing: a Buttondown rejection (e.g. its prohibited-keyword filter — 2026-09-18 was never sent over "Leroy Merlin") is retried once with the keyword neutralized in the email only; a final failure turns the job red and opens an issue, while the website still deploys
+- LLM calls have a wall-clock limit `AI_REQUEST_TIMEOUT_S=600` (one retry, `AI_TIMEOUT_RETRIES=1`) and log provider, requested vs served model, latency and tokens per call
 - Manual trigger with dry-run option
 - No push trigger on the production workflow — pushes to `src/**` run `ci.yml` (dry-run validation, publishes nothing); code changes go live with the next scheduled run
 - Issue creation on repeated failures
@@ -334,7 +338,7 @@ The AI analyzer now evaluates stories across multiple dimensions:
 - SSL certificate verification disabled for web scraping (line 121 in `web_scraper.py`) - required for some sources with certificate issues
 - AI model is `deepseek/deepseek-v4.1-flash` via OpenRouter since 2026-09-15, chosen in a blind test over 11 production days (beat claude-sonnet-5 by 8.7 points at 1/15th the cost); rollback is `AI_PROVIDER=anthropic AI_MODEL=claude-sonnet-5`
 - Do NOT set a `reasoning` cap for DeepSeek — limiting it measurably lowered quality in the test
-- X.com threads generate CZECH and were never tested on DeepSeek; `X_THREADS_AI_PROVIDER`/`X_THREADS_MODEL` keep them on a separate model if needed
+- X.com threads generate CZECH and were never tested on DeepSeek; `X_THREADS_AI_PROVIDER`/`X_THREADS_MODEL` keep them on a separate model if needed. They use `X_THREADS_MAX_TOKENS=16000` (the old 4000 was eaten by Sonnet 5's adaptive thinking — 17 of 49 threads parsed in 09-12..09-29), a tolerant JSON parser with one retry, and their cost is recorded in the cost controller
 - ALLOW_OVERWRITE environment variable for debugging duplicate prevention
 - Archive cleanup required for long-running installations to manage disk space
 

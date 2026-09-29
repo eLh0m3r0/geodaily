@@ -241,6 +241,8 @@ def run_complete_pipeline() -> bool:
                 
                 # Update articles with enriched content
                 for article, extraction_result in enriched_results:
+                    if extraction_result is None:
+                        continue  # enrichment skipped; fields were set above
                     if extraction_result.success and extraction_result.quality_score > 0.4:
                         article.full_content = extraction_result.full_content
                         article.content_quality_score = extraction_result.quality_score
@@ -256,9 +258,10 @@ def run_complete_pipeline() -> bool:
                 enriched_articles = [article for article, _ in enriched_results]
                 
                 # Calculate enrichment statistics
-                successful_extractions = sum(1 for _, result in enriched_results if result.success and result.quality_score > 0.4)
-                avg_quality = sum(result.quality_score for _, result in enriched_results) / len(enriched_results) if enriched_results else 0
-                avg_word_count = sum(result.word_count for _, result in enriched_results) / len(enriched_results) if enriched_results else 0
+                real_results = [r for _, r in enriched_results if r is not None]
+                successful_extractions = sum(1 for r in real_results if r.success and r.quality_score > 0.4)
+                avg_quality = sum(r.quality_score for r in real_results) / len(real_results) if real_results else 0
+                avg_word_count = sum(r.word_count for r in real_results) / len(real_results) if real_results else 0
                 
                 logger.info("Content enrichment completed",
                            pipeline_stage=PipelineStage.PROCESSING,
@@ -437,6 +440,7 @@ def run_complete_pipeline() -> bool:
                        })
 
             # Check if AI analysis should be skipped due to degradation
+            issue_meta = {}
             if degradation_manager.should_skip_operation("ai_analysis", "ai_analyzer"):
                 logger.warning("Skipping AI analysis due to system degradation",
                              pipeline_stage=PipelineStage.AI_ANALYSIS,
@@ -449,6 +453,7 @@ def run_complete_pipeline() -> bool:
                 analyses = create_mock_analyses_from_articles(scored_articles[:1])
                 quick_hits, big_number = [], None
                 email_subject, preheader = "", ""
+                issue_meta = {"provider": "mock", "model": "mock_degraded"}
             else:
                 ai_start = time.time()
                 try:
@@ -518,24 +523,30 @@ def run_complete_pipeline() -> bool:
                                     'top_selected_sources': sorted(selected_source_counts.items(), key=lambda x: x[1], reverse=True)[:5]
                                 })
 
-                    # Collect AI metrics with simplified logging
-                    # Rough estimates since we're doing single call
-                    estimated_tokens = len(scored_articles) * 50 + len(analyses) * 200
-                    estimated_cost = estimated_tokens * 0.00001  # Rough estimate
+                    # Real (provider-billed where available) usage, not an estimate
+                    issue_meta = dict(getattr(issue, 'meta', None) or {})
+                    ai_tokens = int(issue_meta.get('analysis_input_tokens', 0)) + \
+                        int(issue_meta.get('analysis_output_tokens', 0))
+                    ai_cost = float(issue_meta.get('analysis_cost_usd', 0.0))
                     mock_mode = multi_stage_analyzer.mock_mode
+                    served_model = issue_meta.get('served_model') or Config.AI_MODEL
 
-                    logger.info(f"Simplified analysis completed - Estimated tokens: {estimated_tokens}, Cost: ~${estimated_cost:.4f}",
+                    logger.info(f"Issue analysis completed - model {served_model}, "
+                                f"tokens: {ai_tokens}, cost: ${ai_cost:.4f}",
                                pipeline_stage=PipelineStage.AI_ANALYSIS,
                                run_id=run_id,
                                structured_data={
-                                   'estimated_tokens': estimated_tokens,
-                                   'estimated_cost': estimated_cost,
+                                   'provider': issue_meta.get('provider', Config.AI_PROVIDER),
+                                   'served_model': served_model,
+                                   'tokens': ai_tokens,
+                                   'cost_usd': ai_cost,
+                                   'readability': issue_meta.get('readability'),
                                    'single_api_call': True,
                                    'mock_mode': mock_mode
                                })
 
                     metrics_collector.collect_ai_metrics(
-                        analyses, ai_time, Config.AI_MODEL, mock_mode, estimated_tokens, estimated_cost
+                        analyses, ai_time, served_model, mock_mode, ai_tokens, ai_cost
                     )
 
                 except Exception as e:
@@ -560,6 +571,7 @@ def run_complete_pipeline() -> bool:
                     analyses = create_mock_analyses_from_articles(scored_articles[:1])
                     quick_hits, big_number = [], None
                     email_subject, preheader = "", ""
+                    issue_meta = {"provider": "mock", "model": "mock_fallback"}
                     ai_time = time.time() - ai_start
 
                     # Collect metrics for fallback analysis
@@ -587,6 +599,7 @@ def run_complete_pipeline() -> bool:
                     perspective_grid = perspective_analyzer.build_grid(
                         analyses[0], scored_articles, all_stories=analyses,
                         exclude_urls=[h.url for h in quick_hits if getattr(h, 'url', '')])
+                    issue_meta.update(perspective_analyzer.meta)
                     if perspective_grid:
                         logger.info("Perspective grid built",
                                    pipeline_stage=PipelineStage.AI_ANALYSIS,
@@ -646,7 +659,8 @@ def run_complete_pipeline() -> bool:
                     newsletter = generator.generate_newsletter(
                         analyses, quick_hits=quick_hits, big_number=big_number,
                         perspective_grid=perspective_grid, signals=signals,
-                        email_subject=email_subject, preheader=preheader)
+                        email_subject=email_subject, preheader=preheader,
+                        meta=issue_meta)
                     html_content = generator.generate_html(newsletter)
 
                     # Save newsletter (legacy format)
@@ -795,9 +809,18 @@ def run_complete_pipeline() -> bool:
                                'success': bool(github_url)
                            })
 
+                # Email platforms never receive a DRY_RUN issue: its content
+                # is mock analysis, and a manual dry run must not reach
+                # subscribers.
+                email_allowed = not Config.DRY_RUN
+                if not email_allowed:
+                    logger.info("DRY_RUN: skipping Beehiiv and Buttondown (no email to subscribers)",
+                               pipeline_stage=PipelineStage.PUBLISHING,
+                               run_id=run_id)
+
                 # Beehiiv (email subscribers) — optional, skipped if not configured
                 beehiiv_publisher = BeehiivPublisher()
-                beehiiv_url = beehiiv_publisher.publish(newsletter, html_content)
+                beehiiv_url = beehiiv_publisher.publish(newsletter, html_content) if email_allowed else None
                 if beehiiv_url:
                     logger.info(f"✅ Published to Beehiiv: {beehiiv_url}",
                                pipeline_stage=PipelineStage.PUBLISHING,
@@ -807,7 +830,7 @@ def run_complete_pipeline() -> bool:
                                    'url': beehiiv_url,
                                    'success': True
                                })
-                elif beehiiv_publisher.enabled:
+                elif beehiiv_publisher.enabled and email_allowed:
                     logger.warning("Beehiiv publish returned no URL (check API key / publication ID)",
                                   pipeline_stage=PipelineStage.PUBLISHING,
                                   run_id=run_id)
@@ -819,7 +842,7 @@ def run_complete_pipeline() -> bool:
                     _email_html = generator.generate_email_html(newsletter)
                 except (NameError, AttributeError):
                     _email_html = html_content
-                buttondown_url = buttondown_publisher.publish(newsletter, _email_html)
+                buttondown_url = buttondown_publisher.publish(newsletter, _email_html) if email_allowed else None
                 if buttondown_url:
                     logger.info(f"✅ Published to Buttondown: {buttondown_url}",
                                pipeline_stage=PipelineStage.PUBLISHING,
@@ -829,10 +852,11 @@ def run_complete_pipeline() -> bool:
                                    'url': buttondown_url,
                                    'success': True
                                })
-                elif buttondown_publisher.enabled:
-                    logger.warning("Buttondown publish returned no URL (check API key)",
-                                  pipeline_stage=PipelineStage.PUBLISHING,
-                                  run_id=run_id)
+                elif buttondown_publisher.enabled and email_allowed:
+                    logger.error(f"Buttondown email NOT sent: {buttondown_publisher.last_error}",
+                                 pipeline_stage=PipelineStage.PUBLISHING,
+                                 run_id=run_id,
+                                 error_category=ErrorCategory.API_ERROR)
 
                 publishing_time = time.time() - publishing_start
 

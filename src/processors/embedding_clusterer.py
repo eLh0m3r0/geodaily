@@ -25,6 +25,13 @@ logger = logging.getLogger(__name__)
 EMBED_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 NEAR_DUPLICATE_COSINE = 0.97   # same text syndicated/reposted
 MIN_CLUSTER_SIZE = 2
+# HDBSCAN with min_cluster_size=2 splits one big event into several small
+# clusters and leaves outlying reports as noise; on 2026-09-29 the US-Iran
+# talks story showed no Western outlet in its grid although Western outlets
+# ran it. Conservative repair passes (high thresholds: a false merge would
+# fuse two events, which is worse than a split):
+MERGE_CENTROID_COSINE = 0.85   # two clusters whose centroids are this close are one event
+ATTACH_NOISE_COSINE = 0.75     # a noise article this close to a centroid joins that event
 
 
 class EmbeddingClusterer:
@@ -75,6 +82,7 @@ class EmbeddingClusterer:
 
         # HDBSCAN with euclidean on unit vectors is monotonic in cosine distance.
         labels = HDBSCAN(min_cluster_size=MIN_CLUSTER_SIZE, metric="euclidean").fit_predict(vectors)
+        labels = self._repair_fragments(vectors, np.array(labels))
 
         # Near-duplicate removal inside clusters
         drop = set()
@@ -117,3 +125,61 @@ class EmbeddingClusterer:
             f"({len(drop)} near-duplicates removed), {len(event_ids)} events"
         )
         return kept, len(event_ids)
+
+    @staticmethod
+    def _centroids(vectors: np.ndarray, labels: np.ndarray) -> dict:
+        cents = {}
+        for label in sorted(set(int(l) for l in labels if l >= 0)):
+            c = vectors[labels == label].mean(axis=0)
+            n = np.linalg.norm(c)
+            cents[label] = c / n if n else c
+        return cents
+
+    @classmethod
+    def _repair_fragments(cls, vectors: np.ndarray, labels: np.ndarray) -> np.ndarray:
+        """Merge near-identical clusters, then attach close noise points.
+
+        Both passes use centroid cosine similarity with conservative
+        thresholds, so only fragments of the same event are rejoined."""
+        labels = labels.copy()
+        merged = attached = 0
+
+        # 1) merge clusters (union-find over centroid pairs)
+        cents = cls._centroids(vectors, labels)
+        keys = list(cents)
+        parent = {k: k for k in keys}
+
+        def find(k):
+            while parent[k] != k:
+                parent[k] = parent[parent[k]]
+                k = parent[k]
+            return k
+
+        for i, a in enumerate(keys):
+            for b in keys[i + 1:]:
+                if float(np.dot(cents[a], cents[b])) >= MERGE_CENTROID_COSINE:
+                    ra, rb = find(a), find(b)
+                    if ra != rb:
+                        parent[rb] = ra
+                        merged += 1
+        for idx, label in enumerate(labels):
+            if label >= 0:
+                labels[idx] = find(int(label))
+
+        # 2) attach noise points to the nearest (merged) centroid
+        cents = cls._centroids(vectors, labels)
+        if cents:
+            keys = list(cents)
+            matrix = np.stack([cents[k] for k in keys])
+            for idx, label in enumerate(labels):
+                if label >= 0:
+                    continue
+                sims = matrix @ vectors[idx]
+                best = int(np.argmax(sims))
+                if float(sims[best]) >= ATTACH_NOISE_COSINE:
+                    labels[idx] = keys[best]
+                    attached += 1
+
+        if merged or attached:
+            logger.info(f"Cluster repair: {merged} fragment merges, {attached} outlying reports attached")
+        return labels

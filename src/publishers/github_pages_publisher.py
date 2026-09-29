@@ -233,7 +233,8 @@ class GitHubPagesPublisher:
         grid = getattr(newsletter, 'perspective_grid', None)
         if not grid or not grid.counts:
             return ""
-        from ..perspectives import summarize_grid, GROUP_COLORS, label_of
+        from ..perspectives import (summarize_grid, GROUP_COLORS, label_of, is_wire_view,
+                                    wire_copy_line, coverage_summary)
         parts, _legend = summarize_grid(grid)
         bar_spans = "".join(
             f'<span style="flex:{p["count"]};background-color:{p["color"]};" title="{p["label"]}: {p["count"]}"></span>'
@@ -242,7 +243,7 @@ class GitHubPagesPublisher:
         legend_html = " &middot; ".join(f'{p["pct"]}% {p["label"]}' for p in parts)
         rows = ""
         for view in grid.views:
-            if not view.framing:
+            if not view.framing or is_wire_view(view):
                 continue
             color = GROUP_COLORS.get(view.perspective, "#6B7280")
             state = ' <span class="state-label">state-affiliated</span>' if view.state_affiliated else ""
@@ -258,12 +259,15 @@ class GitHubPagesPublisher:
                             <div><span class="persp-name">{label_of(view.perspective)} ({view.article_count})</span>{state}
                             &mdash; {view.framing}{quote_html}</div>
                         </div>"""
+        wire = wire_copy_line(grid.views)
+        wire_html = f'<div class="persp-wire">{wire}</div>' if wire else ""
         return f"""
                     <div class="perspective-grid">
                         <h3 class="section-heading">How the World Covers It</h3>
                         <div class="coverage-bar">{bar_spans}</div>
-                        <div class="coverage-legend">{grid.total_outlets} outlets &middot; {legend_html}</div>
+                        <div class="coverage-legend">{coverage_summary(grid.total_outlets, grid.counts)} &middot; {legend_html}</div>
                         {rows}
+                        {wire_html}
                     </div>
 """
 
@@ -280,9 +284,10 @@ class GitHubPagesPublisher:
             f'<span style="flex:{c};background-color:{GROUP_COLORS.get(g, "#6B7280")};" title="{label_of(g)}: {c}"></span>'
             for g, c in ordered
         )
+        from ..perspectives import coverage_summary
         legend = " &middot; ".join(f'{label_of(g)} {c}' for g, c in ordered)
         return (f'<div class="coverage-mini"><div class="coverage-bar">{bar_spans}</div>'
-                f'<div class="coverage-legend">{outlets} outlets &middot; {legend}</div></div>')
+                f'<div class="coverage-legend">{coverage_summary(outlets, counts)} &middot; {legend}</div></div>')
 
     def _build_blindspot_html(self, newsletter: Newsletter) -> str:
         """The Blindspot as its own section — a different event by design,
@@ -290,13 +295,17 @@ class GitHubPagesPublisher:
         grid = getattr(newsletter, 'perspective_grid', None)
         if not grid or not grid.blindspot:
             return ""
+        from ..perspectives import blindspot_sources_line
         arrow = (f' <a href="{grid.blindspot_url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>'
                  if grid.blindspot_url else "")
+        sources = blindspot_sources_line(getattr(grid, 'blindspot_outlets', None) or [])
+        sources_html = f'<p class="blindspot-sources">{sources}</p>' if sources else ""
         return f"""
                     <section class="blindspot-section">
                         <h2 class="section-label">The Blindspot</h2>
                         <p class="blindspot-note">A story covered heavily in one part of the world &mdash; and barely mentioned in the rest.</p>
                         <div class="blindspot">{grid.blindspot}{arrow}</div>
+                        {sources_html}
                     </section>
 """
 
@@ -1425,6 +1434,8 @@ body {
     color: var(--primary-color); font-size: 0.95rem; line-height: 1.6;
 }
 .blindspot-note { font-size: 0.8rem; color: var(--text-light); margin: -0.25rem 0 0.75rem 0; }
+.blindspot-sources { font-size: 0.8rem; color: var(--text-light); margin: 0.4rem 0 0 0; }
+.persp-wire { font-size: 0.85rem; color: var(--text-light); margin-top: 0.25rem; line-height: 1.5; }
 .section-label {
     font-size: 0.7rem; font-weight: 800; text-transform: uppercase;
     letter-spacing: 2px; color: var(--primary-color);

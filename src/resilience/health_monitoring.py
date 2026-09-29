@@ -59,7 +59,7 @@ class HealthMonitor:
         self.health_checks = {}
         self.check_results = {}
         self.monitoring_threads = {}
-        self.stop_monitoring = threading.Event()
+        self._stop_event = threading.Event()
         self._lock = threading.RLock()
 
     def register_health_check(self, check: HealthCheck):
@@ -107,7 +107,7 @@ class HealthMonitor:
 
     def stop_monitoring(self):
         """Stop all health monitoring."""
-        self.stop_monitoring.set()
+        self._stop_event.set()
 
         with self._lock:
             for thread in self.monitoring_threads.values():
@@ -119,7 +119,7 @@ class HealthMonitor:
 
     def _monitor_check(self, check: HealthCheck):
         """Monitor a specific health check."""
-        while not self.stop_monitoring.is_set():
+        while not self._stop_event.is_set():
             try:
                 self._execute_health_check(check)
             except Exception as e:
@@ -131,7 +131,7 @@ class HealthMonitor:
                                 })
 
             # Wait for next check interval
-            self.stop_monitoring.wait(check.interval_seconds)
+            self._stop_event.wait(check.interval_seconds)
 
     def _execute_health_check(self, check: HealthCheck) -> HealthCheckResult:
         """Execute a health check and update results."""
