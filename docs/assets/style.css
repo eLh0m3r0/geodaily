@@ -238,6 +238,8 @@ body {
     color: var(--primary-color); font-size: 0.95rem; line-height: 1.6;
 }
 .blindspot-note { font-size: 0.8rem; color: var(--text-light); margin: -0.25rem 0 0.75rem 0; }
+.blindspot-sources { font-size: 0.8rem; color: var(--text-light); margin: 0.4rem 0 0 0; }
+.persp-wire { font-size: 0.85rem; color: var(--text-light); margin-top: 0.25rem; line-height: 1.5; }
 .section-label {
     font-size: 0.7rem; font-weight: 800; text-transform: uppercase;
     letter-spacing: 2px; color: var(--primary-color);
