@@ -28,7 +28,7 @@ from ..archiver.ai_data_archiver import ai_archiver
 from .cost_controller import ai_cost_controller
 from .api_utils import extract_response_text, response_tokens_and_cost
 from .llm_client import build_llm_client, ai_credentials_present
-from .editorial import history_texts, load_issue_history, overlap
+from .editorial import content_words, history_texts, load_issue_history, overlap
 
 logger = logging.getLogger(__name__)
 
@@ -48,10 +48,12 @@ class PerspectiveAnalyzer:
         # Recent issues' stories and blindspots: a blindspot must be news the
         # reader has NOT already had (09-17 resurfaced the 09-15 lead story).
         self.recent_topics: List[str] = []
+        self.recent_blindspots: List[str] = []
         if Config.ENABLE_NEWSLETTER_HISTORY:
             try:
                 history = load_issue_history(Config.NEWSLETTERS_DIR, days=max(3, Config.NEWSLETTER_HISTORY_DAYS))
                 self.recent_topics = history_texts(history, "stories", "blindspot")
+                self.recent_blindspots = history_texts(history, "blindspot")
             except Exception as e:
                 logger.warning(f"Issue history unavailable for blindspot screening: {e}")
         if not self.mock_mode:
@@ -117,6 +119,18 @@ class PerspectiveAnalyzer:
     # A candidate this similar to a story title (today's or a recent
     # issue's) is the same storyline, not a blindspot.
     BLINDSPOT_TOPIC_OVERLAP = 0.5
+    # Same storyline as a recent blindspot even when worded differently:
+    # 09-29 "27% rise in 2027 military spending" and 09-30 "record 17.1
+    # trillion rubles for its military in 2027" share russia/budget/2027/
+    # military but only ~25% of their words.
+    BLINDSPOT_SHARED_WORDS = 4
+
+    def _repeats_recent_blindspot(self, text: str) -> Optional[str]:
+        words = content_words(text)
+        for prior in self.recent_blindspots:
+            if len(words & content_words(prior)) >= self.BLINDSPOT_SHARED_WORDS:
+                return prior
+        return None
 
     def _blindspot_candidates(self, stories: List[AIAnalysis], articles: List[Article],
                               limit: int = 4,
@@ -154,7 +168,8 @@ class PerspectiveAnalyzer:
             if all(self._is_state(m) for m in members):
                 continue
             if any(overlap(m.title, topic) >= self.BLINDSPOT_TOPIC_OVERLAP
-                   for m in members for topic in known_topics):
+                   for m in members for topic in known_topics) \
+                    or self._repeats_recent_blindspot(" ".join(m.title for m in members)):
                 logger.info(f"Blindspot candidate skipped (storyline already covered): {members[0].title[:70]}")
                 continue
             candidates.append(members)
@@ -302,6 +317,9 @@ class PerspectiveAnalyzer:
                                             for x in members}))
                 summary = (getattr(m, 'full_content', None) or m.summary or "")[:240]
                 lines.append(f"[{idx}] {m.title} (covered by: {outlets})\nText: {summary}")
+            if self.recent_blindspots:
+                lines.append("RECENT BLINDSPOTS (already shown to readers — never the same storyline):")
+                lines.extend(f"- {b}" for b in self.recent_blindspots)
             blindspot_section = "\n" + "\n".join(lines) + "\n"
 
         prompt = (
@@ -333,7 +351,9 @@ class PerspectiveAnalyzer:
                "outside the region. Write it as neutral news in your own voice. Claims made "
                "only by state media ([state]) must be attributed (\"TASS reports\") and never "
                "adopted as your framing or as the reason it matters. Do NOT say who did or did "
-               "not cover it — the page shows the outlets. Use the candidate's index. Only "
+               "not cover it and do not credit news agencies (\"Reuters reported\") — the page "
+               "shows the outlets. Never pick a candidate from the same storyline as a recent "
+               "blindspot listed above. Use the candidate's index. Only "
                "political, economic, security or humanitarian events qualify: never sports, "
                "entertainment, celebrities or lifestyle — if no candidate qualifies, "
                "return \"blindspot\": null.\n\n"
@@ -428,7 +448,10 @@ class PerspectiveAnalyzer:
             chosen = None
             if isinstance(b_idx, int) and 0 <= b_idx < len(indexed):
                 chosen = next((ms for ms in blindspot_events if indexed[b_idx] in ms), None)
-            if chosen:
+            repeat = self._repeats_recent_blindspot(str(bs["text"])) if chosen else None
+            if repeat:
+                logger.warning(f"Blindspot dropped (repeats a recent blindspot): {str(bs['text'])[:80]} ~ {repeat[:60]}")
+            elif chosen:
                 text = self._clean_blindspot_text(str(bs["text"]))
                 grid.blindspot = text
                 grid.blindspot_url = self._blindspot_link(chosen, text).url

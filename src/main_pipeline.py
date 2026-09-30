@@ -368,7 +368,9 @@ def run_complete_pipeline() -> bool:
                 
                 processing_time = time.time() - processing_start
 
-                logger.info(f"Processing completed: {len(scored_articles)} articles processed (no clustering)",
+                logger.info(f"Processing completed: {len(scored_articles)} articles, "
+                            f"{event_count} embedding events"
+                            + ("" if event_count else " (title dedup fallback)"),
                             pipeline_stage=PipelineStage.PROCESSING,
                             run_id=run_id,
                             performance_data={
