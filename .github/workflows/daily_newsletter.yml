@@ -426,12 +426,14 @@ jobs:
           echo "- **AI Archive**: ❌ Missing" >> $GITHUB_STEP_SUMMARY
         fi
         
-        # Check if X.com threads were generated
-        if [ -d "docs/threads" ] && [ "$(ls -A docs/threads/*.html 2>/dev/null)" ]; then
-          thread_count=$(ls docs/threads/*.json 2>/dev/null | xargs -I {} grep -c "thread_title" {} | head -1)
+        # X.com threads: count TODAY's file only (the old xargs|head pipeline
+        # read the oldest file and flooded the log with "Broken pipe")
+        THREADS_FILE="docs/threads/threads-$(date -u +%F).json"
+        if [ -f "$THREADS_FILE" ]; then
+          thread_count=$(grep -c '"thread_title"' "$THREADS_FILE" || true)
           echo "- **X.com Threads**: ✅ Generated ($thread_count threads)" >> $GITHUB_STEP_SUMMARY
         else
-          echo "- **X.com Threads**: ❌ Not generated" >> $GITHUB_STEP_SUMMARY
+          echo "- **X.com Threads**: ❌ Not generated today" >> $GITHUB_STEP_SUMMARY
         fi
 
   deploy:

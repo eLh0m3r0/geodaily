@@ -214,6 +214,7 @@ def persp():
     p.mock_mode = True
     p.client = None
     p.recent_topics = []
+    p.recent_blindspots = []
     p.meta = {}
     return p
 
@@ -230,6 +231,18 @@ def test_blindspot_skips_storyline_already_covered_0913(persp):
     stories = [story("Deadly strike hits Iranian ship in the Strait of Hormuz, oil supplies at risk")]
     persp.recent_topics = ["Repeated strikes in Hormuz fuel oil supply fears"]
     assert persp._blindspot_candidates(stories, arts) == []
+
+
+def test_blindspot_same_storyline_as_yesterday_is_rejected_0930(persp):
+    persp.recent_blindspots = ["Meduza and The Moscow Times report that Russia's budget documents show a 27% "
+                               "rise in 2027 military spending. No Western outlet in today's pool covered it."]
+    today = ("Russia plans record 17.1 trillion rubles for its military in 2027 while cutting welfare, "
+             "education, and healthcare. The budget signals prolonged war priorities.")
+    assert persp._repeats_recent_blindspot(today)
+    assert persp._repeats_recent_blindspot("Kenya's opposition leader rallies supporters in Nairobi ahead of 2027 vote.") is None
+    arts = [art("Russia's 2027 budget: record military spending", "https://meduza.io/7", "Meduza", "russian_exile", False, "event_8"),
+            art("Kremlin budget boosts military spending in 2027", "https://themoscowtimes.com/7", "The Moscow Times", "russian_exile", False, "event_8")]
+    assert persp._blindspot_candidates([story("US forces exit Iraq")], arts) == []
 
 
 def test_blindspot_links_non_state_outlet_and_lists_outlets(persp):
