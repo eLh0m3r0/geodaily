@@ -1,0 +1,205 @@
+{
+ "date": "2026-10-03",
+ "title": "Geopolitical Daily",
+ "email_subject": "G7 taps reserves as diesel prices bite",
+ "preheader": "The release equals about one day of world oil demand, and pump prices may not fall soon.",
+ "intro_text": "Good morning. It's Saturday, October 03, 2026 — the 3 stories that matter most today, plus 7 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "G7 agrees to release 100 million barrels of emergency fuel",
+   "why_important": "The G7 will release 100 million barrels of diesel and crude from emergency stockpiles. The release will take four months, with a large diesel release in the first 20 days. That is roughly one day of global oil demand. President Trump dropped a threatened ban on US diesel exports after the deal.",
+   "what_overlooked": "Foreign Policy reports crude is moving out of Hormuz again. But diesel and other refined fuels are not leaving Russia or China, so pump relief may take months.",
+   "prediction": "Whether the large early diesel release actually ships within 20 days; if not, pump prices keep climbing.",
+   "impact_score": 8,
+   "sources": [
+    "https://foreignpolicy.com/2026/10/02/g7-release-emergency-diesel-crude-stockpiles-fuel-prices-trump/",
+    "https://www.lemonde.fr/en/economy/article/2026/10/03/under-pressure-from-donald-trump-g7-releases-100-million-barrels-of-oil_6758200_19.html",
+    "https://www.japantimes.co.jp/business/2026/10/03/economy/g7-global-energy-supply-deal/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 9,
+   "novelty_score": 6,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "global",
+   "actor_type": "international_org",
+   "event_type": "economic",
+   "coverage_counts": {
+    "western": 10,
+    "east_asia": 4,
+    "russian_exile": 2,
+    "middle_east": 2,
+    "south_asia": 5,
+    "latam": 1,
+    "russian_state": 6
+   },
+   "coverage_outlets": 24,
+   "signal_terms": [
+    "International Energy Agency",
+    "diesel",
+    "Trump"
+   ]
+  },
+  {
+   "story_title": "Saudi Arabia plans offensive to break Houthi grip on Red Sea shipping",
+   "why_important": "Saudi Arabia is preparing an offensive in Yemen within weeks. It aims to break the Houthi grip on Red Sea shipping, officials told Reuters. Yemeni ground forces will lead it, with Saudi air cover. Pakistan may take over defensive duties, and fighting already killed 80 combatants in one day.",
+   "what_overlooked": "Neither report explains what would make this campaign different from the decade-long Saudi-led war that failed to remove the Houthis.",
+   "prediction": "Whether Saudi airstrikes actually begin within weeks; if so, the Yemen war widens while US-Iran tensions are high.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.al-monitor.com/originals/2026/10/saudis-plan-assault-houthis-break-red-sea-chokehold",
+    "https://www.scmp.com/week-asia/politics/article/3369645/saudi-arabia-steps-war-against-yemens-houthis-pakistan-set-play-support-role?utm_source=rss_feed",
+    "http://www.africanews.com/2026/10/02/yemen-deadly-battles-between-ansar-allah-govt-forces/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 7,
+   "novelty_score": 7,
+   "credibility_score": 7,
+   "impact_dimension_score": 8,
+   "confidence": 0.72,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "middle_east": 2,
+    "east_asia": 1,
+    "african": 1,
+    "south_asia": 1,
+    "russian_state": 2
+   },
+   "coverage_outlets": 6,
+   "signal_terms": [
+    "Houthis",
+    "Saudi Arabia",
+    "Yemen",
+    "Red Sea"
+   ]
+  },
+  {
+   "story_title": "UAE calls flydubai cockpit axe attack a terrorist act",
+   "why_important": "UAE prosecutors say the Omani co-pilot on a flydubai flight to Tel Aviv attacked the captain. He used the cockpit's emergency axe and tried to take control, which prosecutors call a terrorist act. Oman had barred him from flying over extremism concerns before flydubai hired him.",
+   "what_overlooked": "Trump earlier said Iran was probably behind the attack. The UAE's findings so far describe one co-pilot with a known security history, not a state plot.",
+   "prediction": "Whether the UAE or Oman publish how the co-pilot passed security checks at flydubai; that record shows whether airlines missed a known warning.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.al-monitor.com/originals/2026/10/flydubai-co-pilot-attacked-pilot-axe-attempted-terrorist-attack-uae-says",
+    "https://www.scmp.com/news/world/middle-east/article/3369644/flydubai-plane-attack-co-pilot-previously-barred-flying-oman-over-extremist-views?utm_source=rss_feed",
+    "https://www.lemonde.fr/en/international/article/2026/10/03/uae-investigators-say-flydubai-co-pilot-was-planning-terrorist-act_6758208_4.html"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 6,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.8,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "western": 6,
+    "middle_east": 5,
+    "east_asia": 4,
+    "south_asia": 8,
+    "chinese_state": 1,
+    "russian_state": 2
+   },
+   "coverage_outlets": 18,
+   "signal_terms": [
+    "flydubai",
+    "Hammam al-Hammami",
+    "Oman",
+    "UAE"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "A crude oil tanker was struck by an unknown projectile off Oman and all crew were reported safe, UK maritime authorities said.",
+   "region": "middle_east",
+   "url": "https://www.middleeasteye.net/live-blog/live-blog-update/crude-oil-tanker-hit-unknown-projectile-oman-ukmto-says"
+  },
+  {
+   "text": "Ebola deaths in eastern Congo passed 4,000, with 8,300 cases recorded since May, as an Ebola treatment centre was burned down.",
+   "region": "africa",
+   "url": "https://www.lemonde.fr/en/le-monde-africa/article/2026/10/03/ebola-death-toll-in-drc-passes-4-000-as-health-workers-are-fighting-to-get-paid_6758201_124.html"
+  },
+  {
+   "text": "Taiwan received the first two of 66 long-delayed F-16V fighter jets from the US, built to shadow near-daily Chinese military flights.",
+   "region": "indo_pacific",
+   "url": "https://www.dailymaverick.co.za/article/2026-10-02-taiwans-first-two-f-16v-fighter-jets-arrive-to-bolster-defences-against-china/"
+  },
+  {
+   "text": "Riot police clashed with high school students across France on Friday as Prime Minister Lecornu's 2027 budget proposed new austerity.",
+   "region": "europe",
+   "url": "https://www.dailymaverick.co.za/article/2026-10-02-students-and-police-clash-as-france-struggles-to-quell-school-protests/"
+  },
+  {
+   "text": "US employers added just 29,000 jobs in September and unemployment rose to 4.2%, evidence the Federal Reserve will hold rates.",
+   "region": "americas",
+   "url": "https://www.semafor.com/article/10/02/2026/us-adds-29000-jobs-in-september-far-short-of-expectations"
+  },
+  {
+   "text": "India's opposition escalated calls for election commissioner Gyanesh Kumar to resign, and a Cockroach Janta Party march on Delhi is set for October 10.",
+   "region": "indo_pacific",
+   "url": "https://asia.nikkei.com/politics/india-s-opposition-steps-up-calls-to-oust-election-commission-head"
+  },
+  {
+   "text": "Zelensky said Ukrainian intercepts show Putin ordered commanders to abandon the rules of war in airstrikes on Ukraine.",
+   "region": "europe",
+   "url": "https://meduza.io/en/news/2026/10/02/zelensky-says-putin-ordered-russia-s-military-chiefs-to-abandon-rules-of-war-in-airstrikes-on-ukraine"
+  }
+ ],
+ "big_number": {
+  "value": "22%",
+  "context": "Russia's finance ministry proposes taxing property-sale income at up to 22%, up from 15%, starting in 2027.",
+  "url": "https://novayagazeta.eu/articles/2026/10/03/vlasti-povysiat-maksimalnuiu-stavku-naloga-s-prodazhi-nedvizhimosti-do-22-news"
+ },
+ "perspective_grid": {
+  "views": [],
+  "total_outlets": 24,
+  "counts": {
+   "western": 10,
+   "east_asia": 4,
+   "russian_exile": 2,
+   "middle_east": 2,
+   "south_asia": 5,
+   "latam": 1,
+   "russian_state": 6
+  },
+  "blindspot": "",
+  "blindspot_url": "",
+  "blindspot_outlets": []
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Will Trump acquire Greenland before 2027?\" at 3%.",
+   "url": "https://polymarket.com/market/will-trump-acquire-greenland-before-2027",
+   "source": "Polymarket"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 10.33,
+   "avg_sentence_words": 18.9,
+   "fragment_share": 0.07,
+   "rewrite": "applied",
+   "rewrite_grade": 8.49,
+   "rewrite_avg_sentence_words": 14.5,
+   "rewrite_fragment_share": 0.0
+  },
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "served_model": "deepseek/deepseek-v4.1-flash",
+  "analysis_input_tokens": 11984,
+  "analysis_output_tokens": 13647,
+  "analysis_cost_usd": 0.01637,
+  "analysis_seconds": 56.3,
+  "grid_cost_usd": 0.01236,
+  "grid_attempts": 2,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash"
+ }
+}
