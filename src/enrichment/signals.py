@@ -39,6 +39,22 @@ _STOPWORDS = {
     "threatens", "tensions", "rift", "flares", "flare", "thousands", "hundreds",
 }
 
+# Names that appear in dozens of unrelated markets at once. A hit on one of
+# these counts only as corroboration — the match must also hit a specific
+# term, otherwise "Trump" under a G7 fuel-reserves story lands on
+# "Will Trump acquire Greenland before 2027?" (2026-10-03).
+_GENERIC_TERMS = {
+    "trump", "donald trump", "trump administration", "putin", "vladimir putin",
+    "xi", "xi jinping", "biden", "zelensky", "zelenskyy", "netanyahu", "musk",
+    "elon musk", "russia", "china", "iran", "israel", "ukraine", "america",
+    "united states", "u.s.", "us", "usa", "europe", "eu", "european union",
+    "nato", "un", "united nations", "congress", "senate", "white house",
+    "kremlin", "pentagon", "washington", "moscow", "beijing", "tehran", "kyiv",
+    "gaza", "west bank", "taiwan", "north korea", "south korea", "india",
+    "pakistan", "turkey", "saudi arabia", "uae", "germany", "france", "uk",
+    "britain", "united kingdom", "oil", "diesel", "gas", "tariffs", "election",
+}
+
 # Market subjects that are never a geopolitical signal, however popular
 _JUNK_MARKET = re.compile(
     r"\b(jesus|christ|god|alien|aliens|ufo|bitcoin|btc|ethereum|solana|crypto|"
@@ -76,25 +92,34 @@ def _search_terms(story: AIAnalysis) -> tuple:
     return _keywords(story, max_terms=5), False
 
 
-def _term_hits(text: str, terms: List[str]) -> int:
-    """Whole-word / whole-phrase matches — never substrings, so "US" can no
-    longer hit "Jesus" and "Iran" can no longer hit "Iranian-American"
-    by accident... (word boundaries on both sides)."""
+def _matching_terms(text: str, terms: List[str]) -> List[str]:
+    """Terms with a whole-word / whole-phrase match — never substrings, so
+    "US" can no longer hit "Jesus" and "Iran" can no longer hit
+    "Iranian-American" by accident (word boundaries on both sides)."""
     low = text.lower()
-    hits = 0
+    matched = []
     for term in terms:
         t = term.strip().lower()
         if not t:
             continue
         if re.search(r"\b" + re.escape(t) + r"\b", low):
-            hits += 1
+            matched.append(t)
             continue
         # Multi-word term: its distinctive words count too ("Hormuz")
         parts = [w for w in re.findall(r"[a-z][a-z'-]+", t)
                  if len(w) >= 5 and w not in _STOPWORDS]
         if len(parts) > 1 and any(re.search(r"\b" + re.escape(w) + r"\b", low) for w in parts):
-            hits += 1
-    return hits
+            matched.append(t)
+    return matched
+
+
+def _term_hits(text: str, terms: List[str]) -> int:
+    """Number of terms with a whole-word match. Hits on _GENERIC_TERMS only
+    count when at least one specific term matches too."""
+    matched = _matching_terms(text, terms)
+    if matched and all(m in _GENERIC_TERMS for m in matched):
+        return 0
+    return len(matched)
 
 
 def match_market(markets: list, story: AIAnalysis) -> Optional[dict]:

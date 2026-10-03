@@ -124,11 +124,31 @@ class PerspectiveAnalyzer:
     # trillion rubles for its military in 2027" share russia/budget/2027/
     # military but only ~25% of their words.
     BLINDSPOT_SHARED_WORDS = 4
+    # Words every blindspot text shares by construction — the "why it
+    # matters outside the region" sentence — or that name no particular
+    # event. They never count as evidence of the same storyline: 10-02's
+    # "US sanctions Iran's rail and auto sectors" was dropped as a repeat
+    # of 10-01's "China mobilization law" because both raised security
+    # risks and could disrupt global trade, and the issue ran with no
+    # blindspot.
+    BLINDSPOT_FRAMING_WORDS = frozenset("""
+        matters matter outside region regional regions because raises raise
+        raising risks risk security global globally trade disrupt disrupts
+        disruption could would might likely signals signal signalling
+        signaling affect affects affecting forecasts forecast economic
+        economy political politics international world western outlet
+        outlets media covered coverage today pool reported reports report
+        reporting according officials official government governments
+        united states country countries nation nations national foreign
+        policy week year years month wider broader beyond implications
+        consequences stability pressure escalation tensions tension
+        """.split())
 
     def _repeats_recent_blindspot(self, text: str) -> Optional[str]:
-        words = content_words(text)
+        words = content_words(text) - self.BLINDSPOT_FRAMING_WORDS
         for prior in self.recent_blindspots:
-            if len(words & content_words(prior)) >= self.BLINDSPOT_SHARED_WORDS:
+            shared = words & content_words(prior)
+            if len(shared) >= self.BLINDSPOT_SHARED_WORDS:
                 return prior
         return None
 
@@ -380,7 +400,15 @@ class PerspectiveAnalyzer:
         )
 
         data = None
-        for attempt in (1, 2):
+        stop = None
+        # Two attempts, plus a third only when the second was cut off by the
+        # token budget: DeepSeek's reasoning occasionally eats the whole
+        # budget (2026-10-03: stop_reason=length after 345 chars of text) and
+        # an identical retry normally succeeds — the budget itself stays as
+        # configured, OpenRouter's output cap for the model is unknown.
+        for attempt in (1, 2, 3):
+            if attempt == 3 and stop != "length":
+                break
             start = time.time()
             # Same budget as the issue call: adaptive thinking spends from
             # max_tokens, and a 4000 cap left no room for the JSON on busy days.
@@ -403,9 +431,10 @@ class PerspectiveAnalyzer:
             data = self._parse_json_object(text)
             if data:
                 break
+            again = attempt == 1 or (attempt == 2 and stop == "length")
             logger.warning(f"Perspective response unusable (stop_reason={stop}, "
                            f"{len(text)} chars of text) — "
-                           + ("retrying once" if attempt == 1 else "shipping counts-only grid"))
+                           + ("retrying" if again else "shipping counts-only grid"))
         if not data:
             return grid
 
@@ -498,13 +527,31 @@ class PerspectiveAnalyzer:
 
     @staticmethod
     def _parse_json_object(text: str) -> Optional[dict]:
+        """First complete JSON object in the response that carries "views".
+
+        Models sometimes emit the object twice, or follow it with prose; the
+        old greedy {.*} span then covered both and json.loads failed with
+        "Extra data" (2026-10-03 shipped a counts-only grid that way). A
+        raw_decode from each "{" parses exactly one object and ignores
+        whatever trails it.
+        """
         cleaned = re.sub(r'```(?:json)?\s*', '', text.strip()).strip('`').strip()
-        match = re.search(r'\{.*\}', cleaned, re.DOTALL)
-        if not match:
+        decoder = json.JSONDecoder()
+        first_error = None
+        for m in re.finditer(r'\{', cleaned):
+            try:
+                obj, _ = decoder.raw_decode(cleaned, m.start())
+            except json.JSONDecodeError as e:
+                if first_error is None:
+                    first_error = e
+                continue
+            # Only the grid object counts: a truncated response still parses
+            # at an inner {"group": …} view, and returning that would skip
+            # the retry and ship an empty grid.
+            if isinstance(obj, dict) and ("views" in obj or "blindspot" in obj):
+                return obj
+        if first_error is None:
             logger.error("Perspective response contained no JSON object")
-            return None
-        try:
-            return json.loads(match.group())
-        except json.JSONDecodeError as e:
-            logger.error(f"Perspective response JSON error: {e}")
-            return None
+        else:
+            logger.error(f"Perspective response JSON error: {first_error}")
+        return None
