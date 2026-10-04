@@ -1,0 +1,294 @@
+{
+ "date": "2026-10-04",
+ "title": "Geopolitical Daily",
+ "email_subject": "Kyiv's bridges hit for the first time",
+ "preheader": "Russian drones killed six more people, while Ethiopia's army seized Tigray's capital.",
+ "intro_text": "Good morning. It's Sunday, October 04, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "Russia hits Kyiv's Dnipro bridges for the first time",
+   "why_important": "Russian drones and missiles damaged Kyiv's Northern Bridge over the Dnipro and killed six people elsewhere in Ukraine. The war had left the bridges alone for nearly four years. The strike suggests Moscow wants to make the capital harder to live in and harder to supply as winter nears.",
+   "what_overlooked": "Kyiv says it has documents showing Putin plans to hit more civilian targets before winter. Zelensky has promised more Ukrainian strikes on Russian oil refineries.",
+   "prediction": "Another strike on a Dnipro crossing or a Kyiv power plant within 72 hours would show whether this is a campaign or a one-off.",
+   "impact_score": 9,
+   "sources": [
+    "https://meduza.io/en/feature/2026/10/04/russia-has-begun-striking-kyiv-s-bridges-across-the-dnipro-for-the-first-time-since-invading-ukraine",
+    "https://www.thehindu.com/news/international/russian-attacks-kill-six-in-ukraine-damage-kyivs-northern-bridge/article71541430.ece",
+    "https://www.politico.eu/article/russia-hits-major-kyiv-bridge-logistics-hub-in-latest-attack/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "https://www.pravda.com.ua/eng/news/2026/10/04/8056377/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 7,
+   "novelty_score": 8,
+   "credibility_score": 9,
+   "impact_dimension_score": 9,
+   "confidence": 0.88,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "russian_exile": 1,
+    "south_asia": 1,
+    "western": 2,
+    "ukrainian": 2,
+    "middle_east_state": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 8,
+   "signal_terms": [
+    "Kyiv",
+    "Dnipro River",
+    "Pivnichnyi Bridge",
+    "Vitalii Klitschko"
+   ]
+  },
+  {
+   "story_title": "Ethiopian troops seize Mekelle as Tigray fighting flares again",
+   "why_important": "Ethiopian government forces took Mekelle, the capital of Tigray, after a week of battles. The fighting began when Tigrayan fighters attacked neighboring states on September 23. Renewed fighting has raised fears of a repeat of the 2020-2022 civil war, and Eritrea has already cut all ties with Ethiopia.",
+   "what_overlooked": "So far, only the government has described how Mekelle fell. No independent monitors have confirmed where the front line now sits.",
+   "prediction": "If government forces move into western Tigray within 72 hours, that would show this is a full war, not a border clash.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.thehindu.com/news/international/ethiopias-tigray-rebels-abandon-regional-capital-as-government-advances/article71541559.ece",
+    "https://www.aljazeera.com/video/newsfeed/2026/10/4/ethiopian-government-troops-seize-tigrays-capital-mekelle?traffic_source=rss",
+    "https://www.dw.com/en/in-tigray-ethiopian-government-forces-have-advanced-against-a-northern-rebel-group-reports-indicate/a-79534372?maca=en-rss-en-all-1573-rdf"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 6,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.8,
+   "region": "africa",
+   "actor_type": "mixed",
+   "event_type": "military",
+   "coverage_counts": {
+    "south_asia": 1,
+    "middle_east": 1,
+    "western": 1,
+    "latam": 1,
+    "middle_east_state": 1
+   },
+   "coverage_outlets": 5,
+   "signal_terms": [
+    "Tigray",
+    "Mekelle",
+    "TPLF",
+    "Ethiopia"
+   ]
+  },
+  {
+   "story_title": "Brazil votes as Lula and Flávio Bolsonaro run nearly even",
+   "why_important": "Brazilians vote Sunday in a presidential race that polls call a tie. The race is between President Lula da Silva and Senator Flávio Bolsonaro, son of the imprisoned former president. The result will shape Amazon policy and Brazil's ties with both Beijing and Washington.",
+   "what_overlooked": "Ballot boxes traveled by boat to remote Indigenous communities. Amazon conservation is a central campaign issue, so the result depends on voters far outside Brazil's big cities.",
+   "prediction": "First-round results due within hours will show whether the race goes to a runoff and whether either side disputes the count.",
+   "impact_score": 8,
+   "sources": [
+    "https://foreignpolicy.com/2026/10/02/brazil-lula-bolsonaro-election-trump-china-united-states-cuba/",
+    "https://english.elpais.com/international/2026-10-04/moral-panic-evangelical-fury-and-a-culture-war-the-bolsonaro-formula-threatens-lulas-re-election-bid.html",
+    "https://www.dw.com/en/brazil-s-2026-presidential-election-is-kicking-off-with-polls-showing-lula-and-bolsonaro-nearly-tied/a-79533857?maca=en-rss-en-all-1573-rdf"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 6,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.82,
+   "region": "americas",
+   "actor_type": "state",
+   "event_type": "political",
+   "coverage_counts": {
+    "western": 11,
+    "latam": 2,
+    "middle_east": 3,
+    "south_asia": 2,
+    "east_asia": 5,
+    "chinese_state": 2,
+    "russian_state": 1,
+    "middle_east_state": 1
+   },
+   "coverage_outlets": 19,
+   "signal_terms": [
+    "Lula da Silva",
+    "Flávio Bolsonaro",
+    "Brazil",
+    "Jair Bolsonaro"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Bosnians voted in elections that could decide whether their country advances toward EU membership, with Russia and the US both competing for influence.",
+   "region": "europe",
+   "url": "https://www.straitstimes.com/world/europe/bosnia-votes-sunday-in-election-that-could-affect-eu-bid"
+  },
+  {
+   "text": "Tens of thousands protested across Spain over housing costs after parliament rejected tenant protections, and organizers are pushing for a general strike.",
+   "region": "europe",
+   "url": "https://www.lemonde.fr/en/international/article/2026/10/03/thousands-protest-in-madrid-and-across-spain-after-parliament-rejects-tenant-protections_6758216_4.html"
+  },
+  {
+   "text": "Tennessee's prisons chief resigned after the botched execution of Christa Pike, who survived two lethal injections and remains unconscious on a ventilator.",
+   "region": "americas",
+   "url": "https://www.lemonde.fr/en/international/article/2026/10/03/tennessee-prison-chief-who-oversaw-christina-pike-s-failed-execution-resigns_6758221_4.html"
+  },
+  {
+   "text": "The IEA said member countries have now released 325 million barrels of emergency oil and fuel, with 75 million more still to come.",
+   "region": "global",
+   "url": "https://www.euronews.com/2026/10/03/iea-says-325-million-barrels-of-emergency-oil-released-with-75-million-still-to-come"
+  },
+  {
+   "text": "Latvia's prime minister's United List won a record 42 of 100 parliamentary seats, the largest tally for one party in the country's history.",
+   "region": "europe",
+   "url": "https://novayagazeta.eu/articles/2026/10/04/na-vyborakh-v-latvii-s-rekordnym-chislom-mandatov-pobedil-obedinennyi-spisok-news"
+  },
+  {
+   "text": "The US Coast Guard found debris from a medical jet with six people aboard that lost contact on a flight from Bermuda to Boston.",
+   "region": "americas",
+   "url": "https://www.theguardian.com/us-news/2026/oct/03/us-coast-guard-missing-air-ambulance-massachusetts"
+  },
+  {
+   "text": "Cornell's president called an alleged 2024 fraternity gang rape 'deeply disturbing' and promised an independent review and greater transparency.",
+   "region": "americas",
+   "url": "https://www.lemonde.fr/en/international/article/2026/10/04/cornell-president-calls-alleged-gang-rape-deeply-disturbing-pledges-greater-transparency_6758226_4.html"
+  },
+  {
+   "text": "China hosted East African police chiefs to expand joint policing of cross-border fraud, from Kenyan SIM-swap scams to cybercrime networks in Zambia.",
+   "region": "africa",
+   "url": "https://www.scmp.com/news/china/diplomacy/article/3369660/china-and-africa-boost-law-enforcement-ties-crackdown-cross-border-cybercrime?utm_source=rss_feed"
+  }
+ ],
+ "big_number": {
+  "value": "€1 billion",
+  "context": "Germany's chancellor announced €1 billion in new military aid during a visit to Kyiv, finalising a joint drone production deal with Ukraine.",
+  "url": "https://www.straitstimes.com/world/europe/germanys-merz-arrives-in-kyiv-to-finalize-drone-deal-release-aid"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "BBC",
+     "Politico Europe"
+    ],
+    "article_count": 2,
+    "framing": "Russia is escalating its aerial campaign by striking Kyiv’s key Dnipro bridges, disrupting transport links.",
+    "quote": "Russia struck a key bridge in Kyiv connecting the left and right bank of the Dnipro river overnight Saturday, as Moscow steps up its aerial campaign against Ukraine.",
+    "quote_outlet": "Politico Europe",
+    "quote_url": "https://www.politico.eu/article/russia-hits-major-kyiv-bridge-logistics-hub-in-latest-attack/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "The Hindu"
+    ],
+    "article_count": 1,
+    "framing": "Russian attacks killed six in Ukraine and damaged Kyiv’s Northern Bridge, while officials reported no bridge casualties.",
+    "quote": "Kyiv Mayor Vitalii Klitschko said the strike on the bridge damaged the road surface and trolleybus cables, forcing traffic to be suspended. There were no casualties reported.",
+    "quote_outlet": "The Hindu",
+    "quote_url": "https://www.thehindu.com/news/international/russian-attacks-kill-six-in-ukraine-damage-kyivs-northern-bridge/article71541430.ece",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east_state",
+    "outlets": [
+     "Anadolu Agency"
+    ],
+    "article_count": 1,
+    "framing": "Frames the event as reciprocal Russia-Ukraine attacks, pairing strikes on Odesa and Kyiv with Moscow’s reported Kaluga casualties.",
+    "quote": "Moscow says several wounded in Ukrainian attack on Kaluga",
+    "quote_outlet": "Anadolu Agency",
+    "quote_url": "https://www.aa.com.tr/en/world/1-dead-in-ship-strike-another-kyiv-bridge-hit-as-russia-ukraine-trade-attacks/4076830",
+    "state_affiliated": true,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "TASS"
+    ],
+    "article_count": 1,
+    "framing": "Ukrainian attacks are blamed for killing one and injuring nine in the DPR, damaging civilian infrastructure.",
+    "quote": "Five houses, six civilian infrastructure facilities, a shuttle bus, two small passenger vans, special vehicles, four trucks and nine passenger cars were damaged in the attacks",
+    "quote_outlet": "TASS",
+    "quote_url": "https://tass.com/politics/2197217",
+    "state_affiliated": true,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_exile",
+    "outlets": [
+     "Meduza"
+    ],
+    "article_count": 1,
+    "framing": "Russian independent media says Russian forces have begun striking Kyiv’s Dnipro bridges for the first time since invading Ukraine.",
+    "quote": "In recent days, Russian forces have begun attacking some of Kyiv’s most important transport links: the bridges across the Dnipro River, which had not previously come under attack.",
+    "quote_outlet": "Meduza",
+    "quote_url": "https://meduza.io/en/feature/2026/10/04/russia-has-begun-striking-kyiv-s-bridges-across-the-dnipro-for-the-first-time-since-invading-ukraine",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "ukrainian",
+    "outlets": [
+     "Ukrainska Pravda",
+     "Ukrinform"
+    ],
+    "article_count": 2,
+    "framing": "Russian forces again struck Kyiv’s Pivnichnyi Bridge, while Ukraine plans pontoon crossings and a tunnel to keep transport running.",
+    "quote": "Russian forces struck the Pivnichnyi Bridge in Kyiv on 14 October, hitting the roadway while vehicles were crossing.",
+    "quote_outlet": "Ukrainska Pravda",
+    "quote_url": "https://www.pravda.com.ua/eng/news/2026/10/04/8056377/",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 8,
+  "counts": {
+   "russian_exile": 1,
+   "south_asia": 1,
+   "western": 2,
+   "ukrainian": 2,
+   "middle_east_state": 1,
+   "russian_state": 1
+  },
+  "blindspot": "Yemen’s Houthis say they attacked an Aramco facility in Riyadh with missiles and drones. The reported strike matters outside the region because it risks disrupting Saudi oil infrastructure and widening Middle East hostilities.",
+  "blindspot_url": "https://www.thehindu.com/news/international/yemen-houthis-say-they-attacked-aramco-facility-in-riyadh-with-missiles-drones/article71541954.ece",
+  "blindspot_outlets": [
+   "Al Jazeera",
+   "Al-Monitor",
+   "Anadolu Agency",
+   "Haaretz",
+   "Middle East Eye",
+   "The Hindu"
+  ]
+ },
+ "signals": [],
+ "meta": {
+  "readability": {
+   "grade": 12.36,
+   "avg_sentence_words": 23.2,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 9.15,
+   "rewrite_avg_sentence_words": 15.4,
+   "rewrite_fragment_share": 0.0
+  },
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "served_model": "deepseek/deepseek-v4.1-flash",
+  "analysis_input_tokens": 11786,
+  "analysis_output_tokens": 18426,
+  "analysis_cost_usd": 0.00784,
+  "analysis_seconds": 306.2,
+  "grid_cost_usd": 0.0045,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash"
+ }
+}
