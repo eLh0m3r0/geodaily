@@ -71,6 +71,26 @@ def numbers_in(text: str) -> Set[str]:
     return found
 
 
+# Unambiguous markers of items that never belong in a geopolitical brief,
+# whatever the prompt says: US death-row cases, campus scandals, lotteries,
+# celebrity news. Christa Pike's execution ran as a quick hit on 10-01,
+# 10-02 and 10-04 (each time as a "follow-up with a new fact"), the Cornell
+# fraternity case twice. Deliberately narrow — "execution" or "crash" alone
+# can be geopolitics (prisoners executed by a regime, a shot-down airliner).
+_OFF_BRAND = re.compile(
+    r"\b(death row|lethal injection|botched execution|"
+    r"execution (?:chamber|protocol|drugs?|team|warrant)|"
+    r"fraternity|sorority|serial killer|lottery|jackpot|reality (?:tv|show)|"
+    r"box office|red carpet|celebrity|influencer|paparazzi|tabloid)\b", re.IGNORECASE)
+
+
+def is_off_brand(text: str) -> Optional[str]:
+    """The matched marker when the text is domestic crime or entertainment
+    fare rather than world news, else None."""
+    m = _OFF_BRAND.search(text or "")
+    return m.group(1).lower() if m else None
+
+
 def is_repeat(text: str, prior_texts: Iterable[str], threshold: float = 0.65) -> Optional[str]:
     """The prior text this one merely repeats, or None.
 
