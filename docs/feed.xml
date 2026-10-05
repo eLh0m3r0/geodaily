@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sun, 04 Oct 2026 08:32:48 GMT</pubDate>
-        <lastBuildDate>Sun, 04 Oct 2026 08:32:48 GMT</lastBuildDate>
+        <pubDate>Mon, 05 Oct 2026 08:31:46 GMT</pubDate>
+        <lastBuildDate>Mon, 05 Oct 2026 08:31:46 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,19 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - October 05, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-05.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Monday, October 05, 2026 — the 3 stories that matter most today, plus 7 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Brazil's election goes to a runoff as Bolsonaro edges past Lula</strong>: Flávio Bolsonaro won 47.1% of the vote to Lula's 45% in Sunday's first round. They face a runoff on October 25, and if Bolsonaro wins, Brazil becomes the latest Latin American country to swing right. ...</li></ul><p><em>Published: October 05, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Mon, 05 Oct 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20261005</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[United States]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-05.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - October 04, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-04.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Sunday, October 04, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russia hits Kyiv's Dnipro bridges for the first time</strong>: Russian drones and missiles damaged Kyiv's Northern Bridge over the Dnipro and killed six people elsewhere in Ukraine. The war had left the bridges alone for nearly four years. The strike suggests Mos...</li></ul><p><em>Published: October 04, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -175,18 +188,6 @@
         <category><![CDATA[International Relations]]></category>
         <category><![CDATA[Middle East]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-26.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - September 25, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-25.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Friday, September 25, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Delegates walk out as Netanyahu dismisses Gaza genocide charge at UN</strong>: Dozens of delegates walked out of the UN General Assembly on Thursday. This happened as Netanyahu began speaking. He called accusations of genocide in Gaza 'the biggest lie of the century.' He called ...</li></ul><p><em>Published: September 25, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Fri, 25 Sep 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260925</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-25.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>

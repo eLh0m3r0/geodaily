@@ -1,0 +1,348 @@
+{
+ "date": "2026-10-05",
+ "title": "Geopolitical Daily",
+ "email_subject": "Bolsonaro edges past Lula in Brazil",
+ "preheader": "The far-right senator won 47.1% in the first round and will face Lula again on October 25.",
+ "intro_text": "Good morning. It's Monday, October 05, 2026 — the 3 stories that matter most today, plus 7 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "Brazil's election goes to a runoff as Bolsonaro edges past Lula",
+   "why_important": "Flávio Bolsonaro won 47.1% of the vote to Lula's 45% in Sunday's first round. They face a runoff on October 25, and if Bolsonaro wins, Brazil becomes the latest Latin American country to swing right. That would have big effects for the Amazon and regional alliances.",
+   "what_overlooked": "The first round also showed strong support for Bolsonaro's far-right movement. It has not promised to accept a runoff defeat, so some fear a repeat of the 2023 coup attempt.",
+   "prediction": "Lula and Bolsonaro will begin televised debates next week. Whether Lula can win back centrist support will decide the runoff.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/10/05/bolsonaro-leads-lula-as-nail-biter-brazil-vote-goes-to-a-run-off_6758248_4.html",
+    "https://english.elpais.com/international/2026-10-05/bolsonaro-defeats-lula-in-the-first-round-and-brings-brazils-far-right-closer-to-power.html",
+    "https://theconversation.com/brazil-elections-2026-first-round-victories-demand-a-commitment-to-democracy-by-the-far-right-that-has-not-yet-been-made-293548"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.9,
+   "region": "americas",
+   "actor_type": "state",
+   "event_type": "political",
+   "coverage_counts": {
+    "western": 21,
+    "latam": 4,
+    "south_asia": 8,
+    "middle_east": 3,
+    "east_asia": 6,
+    "african": 1,
+    "russian_state": 6,
+    "chinese_state": 2,
+    "middle_east_state": 1
+   },
+   "coverage_outlets": 28,
+   "signal_terms": [
+    "Brazil",
+    "Lula",
+    "Bolsonaro",
+    "runoff"
+   ]
+  },
+  {
+   "story_title": "Spain calls snap election after housing protests",
+   "why_important": "Prime Minister Pedro Sánchez called early elections for November 29 after Parliament rejected his housing decrees. The vote could end one of Europe's last left-wing governments as the far-right gains across the continent.",
+   "what_overlooked": "The housing crisis has fueled protests across Spain. The opposition People's Party has not yet offered a clear alternative, leaving room for the far-right Vox to gain.",
+   "prediction": "Sánchez will try to pass a new housing package before the election; if he fails, Vox may gain more in the polls.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/10/05/spanish-pm-sanchez-announces-early-election-in-november_6758253_4.html",
+    "https://www.haaretz.com/world-news/europe/2026-10-05/ty-article/spains-prime-minister-calls-snap-election-as-left-wing-government-faces-ouster/000001a1-0aea-dfcd-a1a5-aaeb0e080000",
+    "https://english.elpais.com/international/2026-10-05/spain-calls-snap-election-as-housing-protests-spread-nationwide.html"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 7,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.85,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "political",
+   "coverage_counts": {
+    "western": 8,
+    "middle_east": 2,
+    "latam": 1,
+    "african": 1,
+    "south_asia": 1,
+    "east_asia": 3,
+    "middle_east_state": 1
+   },
+   "coverage_outlets": 15,
+   "signal_terms": [
+    "Spain",
+    "Pedro Sánchez",
+    "snap election",
+    "housing protests"
+   ]
+  },
+  {
+   "story_title": "US pulls B-1 bombers from UK base after terror plot",
+   "why_important": "The US Air Force removed all B-1 bombers from RAF Fairford in England after a suspected terror plot. The base supported strikes on Iran, and the quick pullout suggests a serious security threat that could raise US-Iran tensions.",
+   "what_overlooked": "British police found petrol in vans near the base but no explosives. They are still investigating, and it's unclear who was behind the plot.",
+   "prediction": "US officials will likely announce new security measures at European bases. Any link to Iran would cause a diplomatic crisis.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/10/05/us-removes-bombers-from-british-airbase-involved-in-suspicious-incident_6758252_4.html",
+    "https://www.thehindu.com/news/international/us-air-force-removes-all-bombers-from-british-air-base-targeted-by-a-suspected-terror-attack/article71544899.ece",
+    "https://www.japantimes.co.jp/news/2026/10/05/world/us-b-1-bombers-uk/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 7,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.85,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "western": 5,
+    "south_asia": 4,
+    "east_asia": 4,
+    "african": 1,
+    "latam": 1,
+    "russian_state": 1,
+    "chinese_state": 1
+   },
+   "coverage_outlets": 17,
+   "signal_terms": [
+    "RAF Fairford",
+    "B-1 bombers",
+    "terror plot",
+    "US Air Force"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Yemen's government announced a military operation to retake all Houthi-held territory, after the rebels cut a key road linking Taiz and Aden.",
+   "region": "middle_east",
+   "url": "https://www.dawn.com/news/2034695/yemen-presidency-announces-military-drive-to-retake-all-territory-seized-by-houthis"
+  },
+  {
+   "text": "A lab worker in Siberia died of suspected plague, and the White House says it is monitoring the case and assessing options.",
+   "region": "central_asia",
+   "url": "https://meduza.io/en/news/2026/10/05/white-house-says-it-s-monitoring-reports-of-plague-in-russia-assessing-options"
+  },
+  {
+   "text": "Japan lodged a formal protest with Washington after a US Marine was arrested for the murder of a woman in Okinawa.",
+   "region": "indo_pacific",
+   "url": "https://www.japantimes.co.jp/news/2026/10/05/japan/crime-legal/okinawa-murder-us-marine-arrest-japan-protest/"
+  },
+  {
+   "text": "Thousands of Imran Khan supporters began a long march to Islamabad to demand his release, as police set up roadblocks.",
+   "region": "indo_pacific",
+   "url": "https://www.dawn.com/news/2034906/atc-directs-authorities-to-produce-pti-founder-imran-khan-at-next-hearing-in-fjc-attack-case"
+  },
+  {
+   "text": "Up to 500 French high schools will be fully or partly closed Monday as student protests over teacher shortages and poor facilities continue.",
+   "region": "europe",
+   "url": "https://www.lemonde.fr/en/france/article/2026/10/04/french-high-school-protests-up-to-500-schools-to-be-totally-or-partly-closed-monday_6758237_7.html"
+  },
+  {
+   "text": "The FBI arrested a California woman accused of spying for China on the son of Taiwan's president, as she tried to fly to China.",
+   "region": "indo_pacific",
+   "url": "https://www.koreatimes.co.kr/world/20261005/us-arrests-woman-accused-of-spying-for-china-on-taiwan-leaders-family?utm_source=rss"
+  },
+  {
+   "text": "President Trump named National Intelligence Director Jay Clayton to lead a new federal AI task force called the 'Super Intelligence Force'.",
+   "region": "americas",
+   "url": "https://www.thehindu.com/news/international/trump-names-national-intelligence-director-jay-clayton-to-lead-a-new-federal-ai-task-force/article71544416.ece"
+  }
+ ],
+ "big_number": {
+  "value": "6%",
+  "context": "The Green Party's vote share in 2024, before it became the first UK party to label Zionism a form of racism.",
+  "url": "https://www.al-monitor.com/originals/2026/10/britains-green-party-votes-class-zionism-form-racism"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW",
+     "Le Monde",
+     "The Conversation"
+    ],
+    "article_count": 21,
+    "framing": "Frames the runoff as a rightward populist swing and a test for Brazil’s democratic institutions.",
+    "quote": "If Bolsonaro triumphs in the October 25 run-off election, Brazil will be the latest Latin American country to swing to the right.",
+    "quote_outlet": "Le Monde",
+    "quote_url": "https://www.lemonde.fr/en/international/article/2026/10/05/bolsonaro-leads-lula-as-nail-biter-brazil-vote-goes-to-a-run-off_6758248_4.html",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "South China Morning Post",
+     "The Japan Times",
+     "The Korea Times"
+    ],
+    "article_count": 6,
+    "framing": "Highlights Bolsonaro’s stronger-than-expected conservative surge and his geopolitical ties to Trump and China.",
+    "quote": "With conservative allies dominating across Brazil in Sunday's voting, Bolsonaro capped the day by taking about 47% of the vote.",
+    "quote_outlet": "The Japan Times",
+    "quote_url": "https://www.japantimes.co.jp/news/2026/10/05/world/brazil-lula-bolsonaro-narrow-election/",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "chinese_state",
+    "outlets": [
+     "CGTN"
+    ],
+    "article_count": 2,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": true,
+    "wire_copy": true
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Hindustan Times",
+     "The Hindu"
+    ],
+    "article_count": 8,
+    "framing": "Focuses on Lula’s left-wing succession crisis and Bolsonaro’s better-than-expected first-round result.",
+    "quote": "If he loses a re-election bid, it could shut his party out of power for years.",
+    "quote_outlet": "Hindustan Times",
+    "quote_url": "https://www.hindustantimes.com/world-news/lula-is-the-brazilian-left-s-last-hope-and-its-biggest-problem-101791103843378.html",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera",
+     "Haaretz"
+    ],
+    "article_count": 3,
+    "framing": "Frames the runoff through the candidates’ opposing Israel policies and Bolsonaro’s right-wing expectations.",
+    "quote": "The two candidates hold opposing views on Israel, with Lula calling Israel's war a 'genocide.'",
+    "quote_outlet": "Haaretz",
+    "quote_url": "https://www.haaretz.com/world-news/americas/2026-10-05/ty-article/.premium/brazil-to-hold-runoff-elections-after-bolsonaro-edges-lula-with-47-of-vote/000001a1-0a8b-dff9-a3b3-cfaf932b0000",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east_state",
+    "outlets": [
+     "Anadolu Agency"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": true,
+    "wire_copy": true
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "RT",
+     "TASS"
+    ],
+    "article_count": 6,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": true,
+    "wire_copy": true
+   },
+   {
+    "perspective": "african",
+    "outlets": [
+     "Punch"
+    ],
+    "article_count": 1,
+    "framing": "Stresses Bolsonaro’s surprise first-place finish and the resulting runoff against Lula.",
+    "quote": "Flavio Bolsonaro surprisingly finished first ahead of President Lula da Silva in Brazil’s election, forcing a run-off after neither secured a majority.",
+    "quote_outlet": "Punch",
+    "quote_url": "https://punchng.com/bolsonaro-shocks-lula-as-brazil-heads-to-run-off/?utm_source=rss.punchng.com&utm_medium=web",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "latam",
+    "outlets": [
+     "El País",
+     "MercoPress",
+     "folha.com.br"
+    ],
+    "article_count": 4,
+    "framing": "Frames the runoff as a far-right, coup-linked Bolsonaro leading Lula after the first round.",
+    "quote": "The senator, son of the former president convicted for plotting a coup, won 47.1% of the vote against 45% for the left-wing incumbent.",
+    "quote_outlet": "El País",
+    "quote_url": "https://english.elpais.com/international/2026-10-05/bolsonaro-defeats-lula-in-the-first-round-and-brings-brazils-far-right-closer-to-power.html",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 28,
+  "counts": {
+   "western": 21,
+   "latam": 4,
+   "south_asia": 8,
+   "middle_east": 3,
+   "east_asia": 6,
+   "african": 1,
+   "russian_state": 6,
+   "chinese_state": 2,
+   "middle_east_state": 1
+  },
+  "blindspot": "A flydubai co-pilot accused of stabbing his captain in an alleged attempt to crash a plane told UAE interrogators he planned the attack before being hired, Israeli officials say. The case raises global aviation security questions and Gulf-Israel tensions.",
+  "blindspot_url": "https://www.al-monitor.com/originals/2026/10/co-pilot-planned-flydubai-attack-joining-airline-two-israeli-officials-say",
+  "blindspot_outlets": [
+   "Al-Monitor",
+   "CGTN",
+   "Egypt Independent",
+   "Haaretz",
+   "NDTV",
+   "TASS",
+   "Times of India"
+  ]
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Will Luiz Inácio Lula da Silva win the 2026 Brazilian presidential election?\" at 18%.",
+   "url": "https://polymarket.com/market/will-luiz-incio-lula-da-silva-win-the-2026-brazilian-presidential-election",
+   "source": "Polymarket"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 10.67,
+   "avg_sentence_words": 18.4,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 8.5,
+   "rewrite_avg_sentence_words": 14.3,
+   "rewrite_fragment_share": 0.0
+  },
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "served_model": "deepseek/deepseek-v4.1-flash",
+  "analysis_input_tokens": 11522,
+  "analysis_output_tokens": 18090,
+  "analysis_cost_usd": 0.01365,
+  "analysis_seconds": 280.4,
+  "grid_cost_usd": 0.00834,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash"
+ }
+}
