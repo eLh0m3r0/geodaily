@@ -1,0 +1,287 @@
+{
+ "date": "2026-10-06",
+ "title": "Geopolitical Daily",
+ "email_subject": "Ukraine sends 650 drones at Moscow",
+ "preheader": "Two killed and its largest oil depot set ablaze, with Russia firing back 137 drones.",
+ "intro_text": "Good morning. It's Tuesday, October 06, 2026 — the 3 stories that matter most today, plus 7 quick updates from around the world.",
+ "stories": [
+  {
+   "story_title": "Ukraine hits Moscow with one of its largest drone attacks",
+   "why_important": "Ukraine launched about 650 drones at Moscow and nearby areas. It killed two people and set the region's largest oil depot on fire. Russia said it stopped most of them, and that night Russia fired 137 drones at Ukraine, with hits recorded in 17 places.",
+   "what_overlooked": "Russia says it shot down 105 drones as they approached the capital, a figure Ukraine has not confirmed. It says most were destroyed far from the city.",
+   "prediction": "Another large strike on Moscow or on Russian oil depots within days would show Ukraine has started a sustained campaign.",
+   "impact_score": 8,
+   "sources": [
+    "https://meduza.io/en/news/2026/10/06/massive-ukrainian-drone-attack-on-moscow-and-surrounding-region-kills-two-sets-region-s-largest-oil-depot-ablaze",
+    "https://www.pravda.com.ua/eng/news/2026/10/06/8056643/",
+    "https://www.scmp.com/news/world/russia-central-asia/article/3369888/ukraine-attacks-moscow-region-650-drones-both-sides-step-strikes?utm_source=rss_feed",
+    "https://www.france24.com/en/europe/20261006-massive-ukrainian-drone-attack-targets-moscow-russian-officials-say"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 7,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "russian_exile": 1,
+    "ukrainian": 2,
+    "east_asia": 2,
+    "western": 1,
+    "south_asia": 1,
+    "russian_state": 7
+   },
+   "coverage_outlets": 8,
+   "signal_terms": [
+    "Moscow",
+    "Ukraine",
+    "Sobyanin",
+    "Shahed drones"
+   ]
+  },
+  {
+   "story_title": "Pakistan and Turkey agree to send troops to Saudi Arabia",
+   "why_important": "Pakistan, Turkey and Saudi Arabia agreed to move troops and military equipment into Saudi Arabia. They agreed to do so quickly under the Makkah defense pact. The decision follows weeks of Houthi missile and drone attacks on Saudi Arabia. It also condemns attempted strikes on Mecca and Medina.",
+   "what_overlooked": "None of the three governments said how many troops will go or when they would arrive, and no independent source has confirmed any deployment.",
+   "prediction": "If troops arrive in Saudi Arabia within a week, the alliance is real. If only statements follow, it is mostly symbolic.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/10/05/turkey-and-pakistan-pledge-to-deploy-troops-to-saudi-arabia_6758277_4.html",
+    "https://www.dawn.com/news/2034893/pakistan-turkiye-saudi-arabia-agree-to-rapid-force-deployment-in-the-kingdom-under-makkah-pact",
+    "https://www.dailymaverick.co.za/article/2026-10-05-pakistan-saudi-arabia-and-turkey-agree-rapid-force-deployment-in-saudi-arabia/",
+    "https://www.haaretz.com/middle-east-news/2026-10-05/ty-article/mecca-alliance-agrees-to-deploy-forces-to-saudi-arabia-amid-yemen-escalation/000001a1-0d51-da81-abf3-ddd344b90000"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.8,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "western": 2,
+    "south_asia": 4,
+    "african": 1,
+    "middle_east": 3,
+    "russian_state": 2
+   },
+   "coverage_outlets": 12,
+   "signal_terms": [
+    "Makkah Defence Agreement",
+    "Saudi Arabia",
+    "Pakistan",
+    "Houthis"
+   ]
+  },
+  {
+   "story_title": "Airstrikes and forced recruitment as Ethiopia's Tigray war returns",
+   "why_important": "Air attacks killed at least 17 people northwest of Mekelle, which federal forces captured over the weekend. A new alliance of armed groups in Tigray is forcibly recruiting men and boys as young as 15. Four African countries have urged both sides to step back.",
+   "what_overlooked": "The 17 deaths come from a bulletin humanitarian groups shared, not an independent count, and Ethiopia's government has not confirmed the figure.",
+   "prediction": "Whether federal troops push past Mekelle into the Tigray highlands will show if this is a short offensive or a new full war.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.premiumtimesng.com/news/more-news/914804-four-african-countries-call-for-de-escalation-of-tension-in-ethiopia.html",
+    "https://www.thehindu.com/news/international/airstrikes-artillery-hit-north-ethiopia-as-government-and-rebels-clash-sources-say/article71548688.ece",
+    "https://www.aljazeera.com/video/newsfeed/2026/10/5/whats-happening-in-ethiopia?traffic_source=rss",
+    "https://www.theguardian.com/global-development/2026/oct/06/ethiopia-tigray-conflict-tplf-rebels-forcibly-recruit-boys-war-crimes"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 6,
+   "novelty_score": 6,
+   "credibility_score": 7,
+   "impact_dimension_score": 7,
+   "confidence": 0.72,
+   "region": "africa",
+   "actor_type": "mixed",
+   "event_type": "military",
+   "coverage_counts": {
+    "african": 2,
+    "south_asia": 1,
+    "middle_east": 1,
+    "western": 2,
+    "russian_state": 1
+   },
+   "coverage_outlets": 7,
+   "signal_terms": [
+    "Tigray",
+    "Mekelle",
+    "TPLF",
+    "Ethiopia"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Brazil's stock exchange hit a record high as investors welcomed Senator Flavio Bolsonaro's stronger-than-expected first-round showing, and allies pushed to free his jailed father.",
+   "region": "americas",
+   "url": "https://www.ft.com/content/ed28bf56-70b6-4e05-b48e-6a016699a675?syn-25a6b1a6=1"
+  },
+  {
+   "text": "The Parti Quebecois won Quebec's provincial election with about 30 percent of the vote and promises a referendum on independence from Canada.",
+   "region": "americas",
+   "url": "https://www.lemonde.fr/en/international/article/2026/10/06/separatists-win-provincial-elections-in-quebec-in-test-for-canada-pm_6758288_4.html"
+  },
+  {
+   "text": "The International Criminal Court unsealed arrest warrants for two Taliban education ministers accused of persecuting Afghan women and girls, a crime against humanity.",
+   "region": "central_asia",
+   "url": "https://www.dawn.com/news/2034973/icc-unseals-arrest-warrants-for-afghan-taliban-education-ministers-accused-of-gender-based-persecution"
+  },
+  {
+   "text": "A Siberian laboratory technician died of suspected pneumonic plague, and Russia has placed hundreds of her contacts under observation while saying the cause was unknown.",
+   "region": "europe",
+   "url": "https://www.thehindu.com/sci-tech/health/woman-dies-of-plague-in-siberia-regional-official/article71546206.ece"
+  },
+  {
+   "text": "New York declared a statewide disaster emergency over measles, with 92 cases in 18 counties there and 977 reported next door in Pennsylvania.",
+   "region": "americas",
+   "url": "https://www.thehindu.com/news/international/new-york-declares-disaster-emergency-over-measles-outbreak/article71548898.ece"
+  },
+  {
+   "text": "Leaders visited Tuvalu to see firsthand how rising seas and dying coral threaten the Pacific atoll's future and its people.",
+   "region": "indo_pacific",
+   "url": "https://www.straitstimes.com/world/leaders-visit-pacific-atoll-tuvalu-at-front-line-of-climate-change"
+  },
+  {
+   "text": "The Nobel Prize in medicine went to Karl Deisseroth, Peter Hegemann and Georg Nagel for optogenetics, which turns brain cells on and off with light.",
+   "region": "global",
+   "url": "https://www.lemonde.fr/en/science/article/2026/10/06/nobel-prize-in-medicine-2026-one-american-and-two-germans-honored-for-technique-activating-neurons-with-light_6758285_10.html"
+  }
+ ],
+ "big_number": {
+  "value": "80 million roubles",
+  "context": "The bribes Russian investigators say the director of the Defense Ministry's Patriot Park took from suppliers, a case announced Monday.",
+  "url": "https://novayagazeta.eu/articles/2026/10/06/novogo-gendirektora-parka-minoborony-patriot-i-ego-zamestitelei-zaderzhali-po-delu-o-vziatkakh-news"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "France 24"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "South China Morning Post",
+     "The Straits Times"
+    ],
+    "article_count": 2,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Times of India"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "RT",
+     "TASS"
+    ],
+    "article_count": 7,
+    "framing": "Ukraine is responsible for killing Russian civilians; stresses Russian air defences downing drones and civilian casualties.",
+    "quote": "Two Russian civilians have been killed and nine injured as 650 Ukrainian drones target Moscow Region, officials say",
+    "quote_outlet": "RT",
+    "quote_url": "https://www.rt.com/russia/646780-ukrainian-drones-kill-two-moscow-region/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+    "state_affiliated": true,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_exile",
+    "outlets": [
+     "Meduza"
+    ],
+    "article_count": 1,
+    "framing": "Ukrainian drone strike is treated as cause of civilian deaths and damage; stresses consequences inside Russia.",
+    "quote": "A massive Ukrainian drone strike killed one person and injured six others in the Moscow region, Governor Andrei Vorobyov said.",
+    "quote_outlet": "Meduza",
+    "quote_url": "https://meduza.io/en/news/2026/10/06/massive-ukrainian-drone-attack-on-moscow-and-surrounding-region-kills-two-sets-region-s-largest-oil-depot-ablaze",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "ukrainian",
+    "outlets": [
+     "Ukrainska Pravda"
+    ],
+    "article_count": 2,
+    "framing": "Russia is the attacker; stresses Ukrainian air defence successes and reports Moscow under large-scale drone attack.",
+    "quote": "Russian forces attacked Ukraine with 137 UAVs overnight, including 49 jet-powered Shaheds.",
+    "quote_outlet": "Ukrainska Pravda",
+    "quote_url": "https://www.pravda.com.ua/eng/news/2026/10/06/8056643/",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 8,
+  "counts": {
+   "russian_exile": 1,
+   "ukrainian": 2,
+   "east_asia": 2,
+   "western": 1,
+   "south_asia": 1,
+   "russian_state": 7
+  },
+  "blindspot": "Pakistan’s envoy on Afghanistan said at a Moscow meeting that terrorism remains Afghanistan’s central problem and promised further security measures. The stance matters because Pakistan’s border policies can shape Taliban ties and regional militancy risks.",
+  "blindspot_url": "https://www.dawn.com/news/2034953/at-moscow-moot-pakistan-says-terrorism-remains-core-of-afghanistans-problems",
+  "blindspot_outlets": [
+   "Africanews",
+   "Dawn",
+   "Hindustan Times",
+   "TASS",
+   "The Express Tribune"
+  ]
+ },
+ "signals": [],
+ "meta": {
+  "readability": {
+   "grade": 10.86,
+   "avg_sentence_words": 20.0,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 8.45,
+   "rewrite_avg_sentence_words": 14.9,
+   "rewrite_fragment_share": 0.0
+  },
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "served_model": "deepseek/deepseek-v4.1-flash",
+  "analysis_input_tokens": 12251,
+  "analysis_output_tokens": 17972,
+  "analysis_cost_usd": 0.02012,
+  "analysis_seconds": 74.1,
+  "grid_cost_usd": 0.00875,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash"
+ }
+}

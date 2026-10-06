@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Mon, 05 Oct 2026 08:31:46 GMT</pubDate>
-        <lastBuildDate>Mon, 05 Oct 2026 08:31:46 GMT</lastBuildDate>
+        <pubDate>Tue, 06 Oct 2026 08:31:36 GMT</pubDate>
+        <lastBuildDate>Tue, 06 Oct 2026 08:31:36 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,19 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - October 06, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-06.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Tuesday, October 06, 2026 — the 3 stories that matter most today, plus 7 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine hits Moscow with one of its largest drone attacks</strong>: Ukraine launched about 650 drones at Moscow and nearby areas. It killed two people and set the region's largest oil depot on fire. Russia said it stopped most of them, and that night Russia fired 137 ...</li></ul><p><em>Published: October 06, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Tue, 06 Oct 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20261006</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Russia]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-06.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - October 05, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-05.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Monday, October 05, 2026 — the 3 stories that matter most today, plus 7 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Brazil's election goes to a runoff as Bolsonaro edges past Lula</strong>: Flávio Bolsonaro won 47.1% of the vote to Lula's 45% in Sunday's first round. They face a runoff on October 25, and if Bolsonaro wins, Brazil becomes the latest Latin American country to swing right. ...</li></ul><p><em>Published: October 05, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -175,19 +188,6 @@
         <category><![CDATA[Strategic Analysis]]></category>
         <category><![CDATA[International Relations]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-27.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - September 26, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-26.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Saturday, September 26, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump Rejects Iran's Truce Offer and Plans to Resume Bombing</strong>: Trump rejected Iran's offer to reopen a key oil route and stop fighting in exchange for lifting US sanctions. He told aides he expects to bomb Iran again after November's elections. Restarting the war...</li></ul><p><em>Published: September 26, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sat, 26 Sep 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260926</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-26.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>

@@ -5,11 +5,6 @@
 "s": "Nikkei Asia",
 "t": "2026-09-30T08:23:28.776225+00:00"
 },
-"https://asia.nikkei.com/business/aerospace-defense-industries/japan-s-prodrone-gears-up-to-mass-produce-58-000-drones-a-year": {
-"l": "2026-09-21T12:57:22.136691+00:00",
-"s": "Nikkei Asia",
-"t": "2026-09-19T11:08:05.404725+00:00"
-},
 "https://asia.nikkei.com/business/aerospace-defense-industries/japan-satellite-maker-synspective-lands-20-launch-deal-with-rocket-lab": {
 "l": "2026-10-03T08:22:39.891440+00:00",
 "s": "Nikkei Asia",
@@ -21,7 +16,7 @@
 "t": "2026-09-30T08:23:28.776182+00:00"
 },
 "https://asia.nikkei.com/business/aerospace-defense-industries/turkish-arms-group-eyes-japan-ties-in-air-defense-and-underwater-drones": {
-"l": "2026-10-05T08:22:33.586999+00:00",
+"l": "2026-10-06T08:23:01.661533+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-04T08:22:16.585370+00:00"
 },
@@ -41,7 +36,7 @@
 "t": "2026-09-27T12:10:12.454705+00:00"
 },
 "https://asia.nikkei.com/business/automobiles/electric-vehicles/china-s-byd-to-sell-mini-ev-meant-for-japan-in-other-markets": {
-"l": "2026-10-05T08:22:33.586737+00:00",
+"l": "2026-10-06T08:23:01.661164+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-05T08:22:33.586737+00:00"
 },
@@ -60,10 +55,20 @@
 "s": "Nikkei Asia",
 "t": "2026-09-28T14:06:10.985515+00:00"
 },
+"https://asia.nikkei.com/business/automobiles/electric-vehicles/honda-to-test-ev-recharging-at-highway-speeds": {
+"l": "2026-10-06T08:23:01.660614+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.660614+00:00"
+},
 "https://asia.nikkei.com/business/automobiles/electric-vehicles/looming-made-in-eu-bill-threatens-toyota-and-other-japanese-ev-makers": {
 "l": "2026-09-29T13:01:43.293855+00:00",
 "s": "Nikkei Asia",
 "t": "2026-09-29T13:01:43.293855+00:00"
+},
+"https://asia.nikkei.com/business/automobiles/electric-vehicles/suzuki-undercuts-byd-in-japan-with-cheapest-in-class-mini-ev": {
+"l": "2026-10-06T08:23:01.660344+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.660344+00:00"
 },
 "https://asia.nikkei.com/business/automobiles/electric-vehicles/toyota-moves-into-extended-range-evs-with-model-made-in-china": {
 "l": "2026-09-22T11:47:09.904977+00:00",
@@ -125,6 +130,16 @@
 "s": "Nikkei Asia",
 "t": "2026-09-25T11:57:50.436186+00:00"
 },
+"https://asia.nikkei.com/business/automobiles/suzuki-s-mini-ev-bet-exposes-japan-s-battery-vulnerability-to-china": {
+"l": "2026-10-06T08:23:01.659855+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.659855+00:00"
+},
+"https://asia.nikkei.com/business/automobiles/toyota-partners-with-isuzu-to-launch-updated-hydrogen-fuel-cell-bus": {
+"l": "2026-10-06T08:23:01.660507+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.660507+00:00"
+},
 "https://asia.nikkei.com/business/automobiles/toyota-supplier-toyoda-gosei-to-build-indian-auto-parts-plant": {
 "l": "2026-09-26T11:32:16.249153+00:00",
 "s": "Nikkei Asia",
@@ -150,6 +165,11 @@
 "s": "Nikkei Asia",
 "t": "2026-09-30T08:23:28.776565+00:00"
 },
+"https://asia.nikkei.com/business/business-deals/nippon-paint-clinches-dulux-brand-with-deal-for-akzo-nobel-s-southeast-asia-business": {
+"l": "2026-10-06T08:23:01.660702+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.660702+00:00"
+},
 "https://asia.nikkei.com/business/business-deals/northern-japan-banks-set-for-merger-talks-to-create-region-s-top-lender": {
 "l": "2026-10-03T08:22:39.891368+00:00",
 "s": "Nikkei Asia",
@@ -169,11 +189,6 @@
 "l": "2026-10-02T08:22:57.238373+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-01T08:22:23.719738+00:00"
-},
-"https://asia.nikkei.com/business/business-trends/china-shipbuilding-orders-nearly-triple-on-iran-war-windfall": {
-"l": "2026-09-21T12:57:22.137104+00:00",
-"s": "Nikkei Asia",
-"t": "2026-09-19T11:08:05.405459+00:00"
 },
 "https://asia.nikkei.com/business/business-trends/taiwanese-banks-urged-to-trim-branches-as-office-rents-hit-high": {
 "l": "2026-10-04T08:22:16.587018+00:00",
@@ -255,11 +270,6 @@
 "s": "Nikkei Asia",
 "t": "2026-09-29T13:01:43.293980+00:00"
 },
-"https://asia.nikkei.com/business/companies/tata-scion-digs-in-as-indian-conglomerate-s-board-rifts-deepen": {
-"l": "2026-09-21T12:57:22.137196+00:00",
-"s": "Nikkei Asia",
-"t": "2026-09-18T11:24:42.104967+00:00"
-},
 "https://asia.nikkei.com/business/consumer/japan-s-kokuyo-charms-china-s-students-with-stylish-notebooks": {
 "l": "2026-09-28T14:06:10.986554+00:00",
 "s": "Nikkei Asia",
@@ -306,7 +316,7 @@
 "t": "2026-10-02T08:22:57.236984+00:00"
 },
 "https://asia.nikkei.com/business/energy/australia-gas-producers-fume-over-domestic-supply-mandate": {
-"l": "2026-10-05T08:22:33.586669+00:00",
+"l": "2026-10-06T08:23:01.661069+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-05T08:22:33.586669+00:00"
 },
@@ -361,7 +371,7 @@
 "t": "2026-09-29T13:01:43.290539+00:00"
 },
 "https://asia.nikkei.com/business/energy/saudi-arabia-and-uae-to-bolster-asia-s-oil-reserves": {
-"l": "2026-10-05T08:22:33.586864+00:00",
+"l": "2026-10-06T08:23:01.661349+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-05T08:22:33.586864+00:00"
 },
@@ -375,10 +385,20 @@
 "s": "Nikkei Asia",
 "t": "2026-09-25T11:57:50.436797+00:00"
 },
+"https://asia.nikkei.com/business/energy/vietnam-extends-fuel-tax-breaks-as-energy-supply-disruptions-drag-on": {
+"l": "2026-10-06T08:23:01.660052+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.660052+00:00"
+},
 "https://asia.nikkei.com/business/energy/vingroup-adds-oil-and-gas-to-growing-business-portfolio": {
 "l": "2026-10-01T08:22:23.720259+00:00",
 "s": "Nikkei Asia",
 "t": "2026-09-30T08:23:28.774351+00:00"
+},
+"https://asia.nikkei.com/business/finance/australiansuper-to-more-than-double-private-equity-investment-in-asia": {
+"l": "2026-10-06T08:23:01.659763+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.659763+00:00"
 },
 "https://asia.nikkei.com/business/finance/big-japan-banks-domestic-loan-share-marks-1st-sustained-post-bubble-rise": {
 "l": "2026-09-24T11:55:04.181743+00:00",
@@ -451,7 +471,7 @@
 "t": "2026-09-27T12:10:12.451948+00:00"
 },
 "https://asia.nikkei.com/business/food-beverage/taiwan-rice-returns-home-as-high-end-japanese-sake": {
-"l": "2026-10-05T08:22:33.586160+00:00",
+"l": "2026-10-06T08:23:01.660976+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-05T08:22:33.586160+00:00"
 },
@@ -510,11 +530,6 @@
 "s": "Nikkei Asia",
 "t": "2026-10-02T08:22:57.236766+00:00"
 },
-"https://asia.nikkei.com/business/markets/commodities/indonesia-s-bayan-shares-soar-after-30-stake-sold-to-prabowo-linked-tycoon": {
-"l": "2026-09-21T12:57:22.137355+00:00",
-"s": "Nikkei Asia",
-"t": "2026-09-18T11:24:42.110545+00:00"
-},
 "https://asia.nikkei.com/business/markets/commodities/japan-regains-land-of-gold-shine-as-prices-surge": {
 "l": "2026-09-25T11:57:50.437554+00:00",
 "s": "Nikkei Asia",
@@ -529,11 +544,6 @@
 "l": "2026-10-05T08:22:33.587628+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-03T08:22:39.888561+00:00"
-},
-"https://asia.nikkei.com/business/markets/currencies/boj-conducts-rate-check-lifting-yen-to-upper-156-range-against-dollar": {
-"l": "2026-09-21T12:57:22.136877+00:00",
-"s": "Nikkei Asia",
-"t": "2026-09-19T11:08:05.405076+00:00"
 },
 "https://asia.nikkei.com/business/markets/currencies/japan-s-katayama-government-united-in-view-that-reflation-policy-is-over": {
 "l": "2026-10-02T08:22:57.230447+00:00",
@@ -550,11 +560,6 @@
 "s": "Nikkei Asia",
 "t": "2026-09-26T11:32:16.244699+00:00"
 },
-"https://asia.nikkei.com/business/markets/currencies/yen-touches-158-to-the-dollar-as-market-weighs-further-boj-tightening-pace": {
-"l": "2026-09-21T12:57:22.137309+00:00",
-"s": "Nikkei Asia",
-"t": "2026-09-18T11:24:42.110449+00:00"
-},
 "https://asia.nikkei.com/business/markets/equities/china-s-power-infrastructure-stocks-languish-despite-ai-boom": {
 "l": "2026-09-23T11:46:27.381739+00:00",
 "s": "Nikkei Asia",
@@ -564,6 +569,16 @@
 "l": "2026-09-22T11:47:09.904370+00:00",
 "s": "Nikkei Asia",
 "t": "2026-09-21T12:57:22.135533+00:00"
+},
+"https://asia.nikkei.com/business/markets/equities/kioxia-sell-date-looms-for-retail-investors-who-joined-boom-on-margin": {
+"l": "2026-10-06T08:23:01.660181+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.660181+00:00"
+},
+"https://asia.nikkei.com/business/markets/equities/late-filings-by-situational-awareness-expose-gap-in-japan-disclosure-rules": {
+"l": "2026-10-06T08:23:01.660138+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.660138+00:00"
 },
 "https://asia.nikkei.com/business/markets/equities/tokyo-startup-to-broker-trades-of-unlisted-japan-stocks-in-us-uk": {
 "l": "2026-09-29T13:01:43.297037+00:00",
@@ -600,11 +615,6 @@
 "s": "Nikkei Asia",
 "t": "2026-09-24T11:55:04.178696+00:00"
 },
-"https://asia.nikkei.com/business/markets/ipo/philippines-gcash-owner-gets-nod-for-92.32bn-peso-ipo": {
-"l": "2026-09-21T12:57:22.137402+00:00",
-"s": "Nikkei Asia",
-"t": "2026-09-18T11:24:42.110604+00:00"
-},
 "https://asia.nikkei.com/business/markets/ipo/softbank-backed-sb-energy-seen-delaying-ipo-on-valuation-concerns": {
 "l": "2026-09-24T11:55:04.181652+00:00",
 "s": "Nikkei Asia",
@@ -616,9 +626,14 @@
 "t": "2026-09-30T08:23:28.774380+00:00"
 },
 "https://asia.nikkei.com/business/markets/japan-s-nikkei-average-briefly-regains-70-000-mark-as-ai-optimism-returns": {
-"l": "2026-10-05T08:22:33.586042+00:00",
+"l": "2026-10-06T08:23:01.660882+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-05T08:22:33.586042+00:00"
+},
+"https://asia.nikkei.com/business/markets/jgb-yield-rises-despite-30-year-high-coupon-as-rates-add-to-fiscal-fears": {
+"l": "2026-10-06T08:23:01.656721+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.656721+00:00"
 },
 "https://asia.nikkei.com/business/markets/oil-retreat-fails-to-halt-bond-yield-rise-in-japan-us": {
 "l": "2026-10-01T08:22:23.720354+00:00",
@@ -656,7 +671,7 @@
 "t": "2026-09-22T11:47:09.903452+00:00"
 },
 "https://asia.nikkei.com/business/markets/trading-asia/asian-gold-producers-begin-hoarding-domestic-supplies-after-price-rises": {
-"l": "2026-10-05T08:22:33.586770+00:00",
+"l": "2026-10-06T08:23:01.661210+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-05T08:22:33.586770+00:00"
 },
@@ -720,13 +735,23 @@
 "s": "Nikkei Asia",
 "t": "2026-09-23T11:46:27.374877+00:00"
 },
+"https://asia.nikkei.com/business/pharmaceuticals/shionogi-to-buy-us-based-intrabio-for-2bn-to-expand-rare-disease-drug-business": {
+"l": "2026-10-06T08:23:01.660566+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.660566+00:00"
+},
+"https://asia.nikkei.com/business/retail/china-s-convenience-stores-lose-customers-to-cheap-instant-delivery-apps": {
+"l": "2026-10-06T08:23:01.660659+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.660659+00:00"
+},
 "https://asia.nikkei.com/business/retail/china-s-luxury-malls-rise-above-retail-gloom-with-expansion-drives": {
 "l": "2026-09-30T08:23:28.776787+00:00",
 "s": "Nikkei Asia",
 "t": "2026-09-29T13:01:43.293100+00:00"
 },
 "https://asia.nikkei.com/business/retail/china-s-songmont-pane-accessory-brands-shine-with-thrifty-shoppers": {
-"l": "2026-10-05T08:22:33.587064+00:00",
+"l": "2026-10-06T08:23:01.661651+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-04T08:22:16.585451+00:00"
 },
@@ -754,6 +779,11 @@
 "l": "2026-10-01T08:22:23.720520+00:00",
 "s": "Nikkei Asia",
 "t": "2026-09-30T08:23:28.776247+00:00"
+},
+"https://asia.nikkei.com/business/retail/reliance-closes-all-7-eleven-stores-in-india": {
+"l": "2026-10-06T08:23:01.659808+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.659808+00:00"
 },
 "https://asia.nikkei.com/business/retail/shein-shares-sink-12-as-slow-revenue-growth-fuels-doubts": {
 "l": "2026-09-30T08:23:28.776917+00:00",
@@ -785,11 +815,6 @@
 "s": "Nikkei Asia",
 "t": "2026-09-24T11:55:04.180416+00:00"
 },
-"https://asia.nikkei.com/business/tech/semiconductors/india-s-chip-ambitions-open-door-for-fujifilm-tokyo-electron": {
-"l": "2026-09-21T12:57:22.137059+00:00",
-"s": "Nikkei Asia",
-"t": "2026-09-19T11:08:05.405383+00:00"
-},
 "https://asia.nikkei.com/business/tech/semiconductors/infineon-opens-plant-near-bangkok-as-thailand-boosts-chip-ambitions": {
 "l": "2026-10-02T08:22:57.237954+00:00",
 "s": "Nikkei Asia",
@@ -799,11 +824,6 @@
 "l": "2026-09-25T11:57:50.437353+00:00",
 "s": "Nikkei Asia",
 "t": "2026-09-24T11:55:04.180247+00:00"
-},
-"https://asia.nikkei.com/business/tech/semiconductors/japan-chip-gear-maker-screen-to-expand-into-india-eyeing-growing-industry": {
-"l": "2026-09-21T12:57:22.136739+00:00",
-"s": "Nikkei Asia",
-"t": "2026-09-19T11:08:05.404843+00:00"
 },
 "https://asia.nikkei.com/business/tech/semiconductors/japan-local-governments-step-up-taiwan-outreach-for-chip-investment": {
 "l": "2026-10-05T08:22:33.587565+00:00",
@@ -816,7 +836,7 @@
 "t": "2026-09-24T11:55:04.180375+00:00"
 },
 "https://asia.nikkei.com/business/tech/semiconductors/japan-s-rapidus-to-help-17-companies-design-chips-for-clients": {
-"l": "2026-10-05T08:22:33.586833+00:00",
+"l": "2026-10-06T08:23:01.661303+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-05T08:22:33.586833+00:00"
 },
@@ -826,7 +846,7 @@
 "t": "2026-09-29T13:01:43.293590+00:00"
 },
 "https://asia.nikkei.com/business/tech/semiconductors/malaysia-s-skyechip-targets-japan-joins-rapidus-ecosystem": {
-"l": "2026-10-05T08:22:33.584123+00:00",
+"l": "2026-10-06T08:23:01.660784+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-05T08:22:33.584123+00:00"
 },
@@ -890,10 +910,20 @@
 "s": "Nikkei Asia",
 "t": "2026-09-27T12:10:12.454661+00:00"
 },
+"https://asia.nikkei.com/business/technology/artificial-intelligence/japan-s-tepco-to-tap-ai-to-speed-nuclear-restarts": {
+"l": "2026-10-06T08:23:01.660466+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.660466+00:00"
+},
 "https://asia.nikkei.com/business/technology/artificial-intelligence/japan-to-tap-industrial-machinery-for-collecting-physical-ai-data": {
 "l": "2026-09-22T11:47:09.904439+00:00",
 "s": "Nikkei Asia",
 "t": "2026-09-21T12:57:22.135618+00:00"
+},
+"https://asia.nikkei.com/business/technology/artificial-intelligence/mitsui-fudosan-to-build-data-center-in-abandoned-tunnel-in-japan": {
+"l": "2026-10-06T08:23:01.660386+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.660386+00:00"
 },
 "https://asia.nikkei.com/business/technology/artificial-intelligence/nippon-life-plans-13bn-for-data-center-financing-primarily-in-us": {
 "l": "2026-09-22T11:47:09.904936+00:00",
@@ -909,6 +939,11 @@
 "l": "2026-10-01T08:22:23.720703+00:00",
 "s": "Nikkei Asia",
 "t": "2026-09-30T08:23:28.776396+00:00"
+},
+"https://asia.nikkei.com/business/technology/artificial-intelligence/openai-steps-up-safety-promises-earlier-disclosure-after-australian-hack": {
+"l": "2026-10-06T08:23:01.659609+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.659609+00:00"
 },
 "https://asia.nikkei.com/business/technology/artificial-intelligence/samsung-joins-ai-infrastructure-race-with-1bn-helix-deal": {
 "l": "2026-09-30T08:23:28.776868+00:00",
@@ -946,7 +981,7 @@
 "t": "2026-09-28T14:06:10.985766+00:00"
 },
 "https://asia.nikkei.com/business/technology/kawasaki-heavy-aims-for-fully-autonomous-humanoid-ai-robot-by-2030": {
-"l": "2026-10-05T08:22:33.587207+00:00",
+"l": "2026-10-06T08:23:01.661833+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-04T08:22:16.585610+00:00"
 },
@@ -956,7 +991,7 @@
 "t": "2026-10-02T08:22:57.236811+00:00"
 },
 "https://asia.nikkei.com/business/technology/panasonic-to-make-humanoid-robots-leveraging-its-battery-business": {
-"l": "2026-10-05T08:22:33.585998+00:00",
+"l": "2026-10-06T08:23:01.660833+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-05T08:22:33.585998+00:00"
 },
@@ -979,11 +1014,6 @@
 "l": "2026-09-24T11:55:04.181378+00:00",
 "s": "Nikkei Asia",
 "t": "2026-09-23T11:46:27.374765+00:00"
-},
-"https://asia.nikkei.com/business/transportation/airasia-expects-1bn-financing-by-january-amid-fuel-cost-pressure": {
-"l": "2026-09-21T12:57:22.137452+00:00",
-"s": "Nikkei Asia",
-"t": "2026-09-18T11:24:42.110653+00:00"
 },
 "https://asia.nikkei.com/business/transportation/japan-s-hitachi-rail-to-upgrade-austria-s-signal-system-in-1.5bn-deal": {
 "l": "2026-09-24T11:55:04.180900+00:00",
@@ -1066,7 +1096,7 @@
 "t": "2026-09-23T11:46:27.374603+00:00"
 },
 "https://asia.nikkei.com/business/travel-leisure/japan-s-seto-inland-sea-cruise-tours-target-wealthy-visitors": {
-"l": "2026-10-05T08:22:33.587031+00:00",
+"l": "2026-10-06T08:23:01.661601+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-04T08:22:16.585411+00:00"
 },
@@ -1100,20 +1130,20 @@
 "s": "Nikkei Asia",
 "t": "2026-10-02T08:22:57.237443+00:00"
 },
-"https://asia.nikkei.com/economy/bank-of-japan/boj-hikes-rates-to-1.25-as-chief-ueda-cites-shift-in-policy-phase": {
-"l": "2026-09-21T12:57:22.137261+00:00",
-"s": "Nikkei Asia",
-"t": "2026-09-18T11:24:42.110386+00:00"
-},
 "https://asia.nikkei.com/economy/bank-of-japan/boj-tankan-shows-sixth-straight-rise-in-manufacturer-sentiment": {
 "l": "2026-10-02T08:22:57.237997+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-01T08:22:23.715267+00:00"
 },
-"https://asia.nikkei.com/economy/bank-of-japan/how-the-boj-s-rate-hike-became-tangled-in-a-currency-alliance-with-the-us": {
-"l": "2026-09-21T12:57:22.136923+00:00",
+"https://asia.nikkei.com/economy/china-s-q3-growth-estimated-below-target-at-4.4-despite-ai-boom": {
+"l": "2026-10-06T08:23:01.659667+00:00",
 "s": "Nikkei Asia",
-"t": "2026-09-19T11:08:05.405158+00:00"
+"t": "2026-10-06T08:23:01.659667+00:00"
+},
+"https://asia.nikkei.com/economy/demography/elderly-outnumber-children-in-nearly-all-japan-prefectures": {
+"l": "2026-10-06T08:23:01.660263+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.660263+00:00"
 },
 "https://asia.nikkei.com/economy/despite-inflation-emerging-economies-struggle-to-raise-interest-rates": {
 "l": "2026-10-01T08:22:23.720835+00:00",
@@ -1166,7 +1196,7 @@
 "t": "2026-09-30T08:23:28.776417+00:00"
 },
 "https://asia.nikkei.com/economy/thai-protesters-slam-chinese-other-foreign-companies-as-economy-slows": {
-"l": "2026-10-05T08:22:33.586893+00:00",
+"l": "2026-10-06T08:23:01.661396+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-05T08:22:33.586893+00:00"
 },
@@ -1215,10 +1245,10 @@
 "s": "Nikkei Asia",
 "t": "2026-09-29T13:01:43.285496+00:00"
 },
-"https://asia.nikkei.com/editor-s-picks/interview/cooperating-with-china-better-for-us-than-trading-threats-hasan-piker": {
-"l": "2026-09-21T12:57:22.136832+00:00",
+"https://asia.nikkei.com/editor-s-picks/interview/hk-express-ceo-says-airline-firmly-on-path-to-turnaround2": {
+"l": "2026-10-06T08:23:01.660744+00:00",
 "s": "Nikkei Asia",
-"t": "2026-09-19T11:08:05.405000+00:00"
+"t": "2026-10-06T08:23:01.660744+00:00"
 },
 "https://asia.nikkei.com/editor-s-picks/interview/japan-finance-minister-government-united-in-view-reflation-is-over": {
 "l": "2026-10-05T08:22:33.587886+00:00",
@@ -1246,7 +1276,7 @@
 "t": "2026-09-19T11:08:05.404336+00:00"
 },
 "https://asia.nikkei.com/life-arts/life/destinations/exploring-langkawi-s-ancient-ecosystem": {
-"l": "2026-10-05T08:22:33.587108+00:00",
+"l": "2026-10-06T08:23:01.661697+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-04T08:22:16.585489+00:00"
 },
@@ -1271,7 +1301,7 @@
 "t": "2026-09-26T11:32:16.244782+00:00"
 },
 "https://asia.nikkei.com/opinion/china-s-economic-reset-starts-at-city-hall": {
-"l": "2026-10-05T08:22:33.586802+00:00",
+"l": "2026-10-06T08:23:01.661257+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-05T08:22:33.586802+00:00"
 },
@@ -1306,7 +1336,7 @@
 "t": "2026-09-28T14:06:10.985723+00:00"
 },
 "https://asia.nikkei.com/opinion/strategic-ambiguity-isn-t-perfect-but-it-remains-washington-s-best-bet": {
-"l": "2026-10-05T08:22:33.586609+00:00",
+"l": "2026-10-06T08:23:01.661023+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-05T08:22:33.586609+00:00"
 },
@@ -1321,7 +1351,7 @@
 "t": "2026-09-29T13:01:43.293007+00:00"
 },
 "https://asia.nikkei.com/opinion/the-unglamorous-reality-of-winning-the-ai-race": {
-"l": "2026-10-05T08:22:33.587173+00:00",
+"l": "2026-10-06T08:23:01.661787+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-04T08:22:16.585569+00:00"
 },
@@ -1329,6 +1359,11 @@
 "l": "2026-09-27T12:10:12.455875+00:00",
 "s": "Nikkei Asia",
 "t": "2026-09-25T11:57:50.436020+00:00"
+},
+"https://asia.nikkei.com/opinion/time-to-get-off-the-roller-coaster-south-korea-markets-must-deliver-stability": {
+"l": "2026-10-06T08:23:01.660304+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.660304+00:00"
 },
 "https://asia.nikkei.com/photos/in-focus-elder-care-the-warmth-of-robots-the-wisdom-of-people": {
 "l": "2026-09-22T11:47:09.904298+00:00",
@@ -1420,10 +1455,20 @@
 "s": "Nikkei Asia",
 "t": "2026-09-30T08:23:28.776085+00:00"
 },
+"https://asia.nikkei.com/politics/international-relations/south-korea-cautious-over-deal-trump-says-keeps-getting-better": {
+"l": "2026-10-06T08:23:01.659960+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.659960+00:00"
+},
 "https://asia.nikkei.com/politics/international-relations/summits-in-a-new-york-minute-riding-along-with-takaichi-s-un-visit": {
 "l": "2026-09-28T14:06:10.986925+00:00",
 "s": "Nikkei Asia",
 "t": "2026-09-26T11:32:16.244577+00:00"
+},
+"https://asia.nikkei.com/politics/international-relations/taiwan-s-top-diplomat-launches-new-mission-in-arizona": {
+"l": "2026-10-06T08:23:01.659716+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.659716+00:00"
 },
 "https://asia.nikkei.com/politics/international-relations/taiwan-tensions/foreign-envoys-in-taiwan-warn-rules-of-game-at-sea-are-being-challenged": {
 "l": "2026-09-22T11:47:09.904512+00:00",
@@ -1439,11 +1484,6 @@
 "l": "2026-09-24T11:55:04.180810+00:00",
 "s": "Nikkei Asia",
 "t": "2026-09-24T11:55:04.180810+00:00"
-},
-"https://asia.nikkei.com/politics/international-relations/takaichi-seeks-trump-meeting-early-next-week-ahead-of-us-china-summit": {
-"l": "2026-09-21T12:57:22.136786+00:00",
-"s": "Nikkei Asia",
-"t": "2026-09-19T11:08:05.404928+00:00"
 },
 "https://asia.nikkei.com/politics/international-relations/takaichi-to-stress-japanese-investment-in-us-in-talks-with-trump": {
 "l": "2026-09-23T11:46:27.382203+00:00",
@@ -1465,13 +1505,8 @@
 "s": "Nikkei Asia",
 "t": "2026-09-21T12:57:22.135661+00:00"
 },
-"https://asia.nikkei.com/politics/japan-pm-urges-new-cabinet-to-focus-on-markets-mideast-response": {
-"l": "2026-09-21T12:57:22.136646+00:00",
-"s": "Nikkei Asia",
-"t": "2026-09-19T11:08:05.404651+00:00"
-},
 "https://asia.nikkei.com/politics/japan-s-takaichi-aims-to-reassure-markets-over-spending-agenda": {
-"l": "2026-10-05T08:22:33.586093+00:00",
+"l": "2026-10-06T08:23:01.660929+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-05T08:22:33.586093+00:00"
 },
@@ -1515,6 +1550,11 @@
 "s": "Nikkei Asia",
 "t": "2026-09-22T11:47:09.903653+00:00"
 },
+"https://asia.nikkei.com/spotlight/asean-money/myanmar-property-market-booms-as-prices-soar-on-regime-policies-inflation": {
+"l": "2026-10-06T08:23:01.660223+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.660223+00:00"
+},
 "https://asia.nikkei.com/spotlight/asean-money/vietnam-s-silver-economy-emerges-to-fill-gaps-in-family-care": {
 "l": "2026-09-30T08:23:28.777038+00:00",
 "s": "Nikkei Asia",
@@ -1524,11 +1564,6 @@
 "l": "2026-09-28T14:06:10.986833+00:00",
 "s": "Nikkei Asia",
 "t": "2026-09-26T11:32:16.244493+00:00"
-},
-"https://asia.nikkei.com/spotlight/big-in-asia/spike-hazard-thai-farmers-go-all-in-to-feed-china-s-durian-craving": {
-"l": "2026-09-21T12:57:22.136599+00:00",
-"s": "Nikkei Asia",
-"t": "2026-09-19T11:08:05.404570+00:00"
 },
 "https://asia.nikkei.com/spotlight/big-in-asia/young-indians-flock-to-eu-as-immigration-curbs-bite-in-us-uk": {
 "l": "2026-10-05T08:22:33.587500+00:00",
@@ -1551,7 +1586,7 @@
 "t": "2026-09-30T08:23:28.776204+00:00"
 },
 "https://asia.nikkei.com/spotlight/comment/hiroshima-and-nagasaki-disasters-offer-lesson-for-ai-governance": {
-"l": "2026-10-05T08:22:33.586963+00:00",
+"l": "2026-10-06T08:23:01.661487+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-04T08:22:16.585321+00:00"
 },
@@ -1559,11 +1594,6 @@
 "l": "2026-09-25T11:57:50.437673+00:00",
 "s": "Nikkei Asia",
 "t": "2026-09-24T11:55:04.180585+00:00"
-},
-"https://asia.nikkei.com/spotlight/comment/inflation-draws-boj-fed-ecb-into-historic-alignment-on-rate-hikes": {
-"l": "2026-09-21T12:57:22.137013+00:00",
-"s": "Nikkei Asia",
-"t": "2026-09-19T11:08:05.405304+00:00"
 },
 "https://asia.nikkei.com/spotlight/comment/japan-s-response-to-us-foreign-pressure-must-be-to-benefit-of-both": {
 "l": "2026-09-22T11:47:09.904725+00:00",
@@ -1595,13 +1625,8 @@
 "s": "Nikkei Asia",
 "t": "2026-09-23T11:46:27.374687+00:00"
 },
-"https://asia.nikkei.com/spotlight/environment/jal-to-buy-carbon-credits-directly-ahead-of-2027-demand-rush": {
-"l": "2026-09-21T12:57:22.137150+00:00",
-"s": "Nikkei Asia",
-"t": "2026-09-19T11:08:05.405530+00:00"
-},
 "https://asia.nikkei.com/spotlight/huawei-crackdown/qualcomm-to-pay-huawei-for-first-time-in-5g-ai-patent-breakthrough": {
-"l": "2026-10-05T08:22:33.586128+00:00",
+"l": "2026-10-06T08:23:01.659901+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-05T08:22:33.586128+00:00"
 },
@@ -1620,10 +1645,20 @@
 "s": "Nikkei Asia",
 "t": "2026-09-24T11:55:04.179875+00:00"
 },
+"https://asia.nikkei.com/spotlight/japan-immigration/japan-faces-wide-language-teaching-gap-as-new-immigration-scheme-looms": {
+"l": "2026-10-06T08:23:01.660426+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.660426+00:00"
+},
 "https://asia.nikkei.com/spotlight/my-personal-history/bobby-my-best-friend-stephen-schwarzman-4": {
-"l": "2026-10-05T08:22:33.587142+00:00",
+"l": "2026-10-06T08:23:01.661743+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-04T08:22:16.585530+00:00"
+},
+"https://asia.nikkei.com/spotlight/my-personal-history/harriman-experience-stephen-schwarzman-6": {
+"l": "2026-10-06T08:23:01.660096+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.660096+00:00"
 },
 "https://asia.nikkei.com/spotlight/my-personal-history/moving-showed-me-a-different-america-stephen-schwarzman-2": {
 "l": "2026-10-04T08:22:16.587099+00:00",
@@ -1641,7 +1676,7 @@
 "t": "2026-10-03T08:22:39.888142+00:00"
 },
 "https://asia.nikkei.com/spotlight/my-personal-history/yale-university-stephen-schwarzman-5": {
-"l": "2026-10-05T08:22:33.586704+00:00",
+"l": "2026-10-06T08:23:01.661116+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-05T08:22:33.586704+00:00"
 },
@@ -1649,6 +1684,11 @@
 "l": "2026-09-30T08:23:28.776957+00:00",
 "s": "Nikkei Asia",
 "t": "2026-09-29T13:01:43.293388+00:00"
+},
+"https://asia.nikkei.com/spotlight/podcasts/podcast-tech-latest/is-it-possible-to-slow-down-ai-development": {
+"l": "2026-10-06T08:23:01.660006+00:00",
+"s": "Nikkei Asia",
+"t": "2026-10-06T08:23:01.660006+00:00"
 },
 "https://asia.nikkei.com/spotlight/policy-asia/australia-steps-up-pressure-on-social-networks-to-unplug-kids": {
 "l": "2026-09-26T11:32:16.249070+00:00",
@@ -1664,11 +1704,6 @@
 "l": "2026-09-24T11:55:04.180998+00:00",
 "s": "Nikkei Asia",
 "t": "2026-09-23T11:46:27.374440+00:00"
-},
-"https://asia.nikkei.com/spotlight/society/crime/north-korean-hackers-disguise-cyberattacks-as-job-interviews-with-ai": {
-"l": "2026-09-21T12:57:22.136549+00:00",
-"s": "Nikkei Asia",
-"t": "2026-09-19T11:08:05.404486+00:00"
 },
 "https://asia.nikkei.com/spotlight/society/crime/vietnam-begins-mass-trial-of-psychiatric-staff-for-alleged-fraud": {
 "l": "2026-09-29T13:01:43.294104+00:00",
@@ -1689,11 +1724,6 @@
 "l": "2026-09-28T14:06:10.986692+00:00",
 "s": "Nikkei Asia",
 "t": "2026-09-26T11:32:16.244363+00:00"
-},
-"https://asia.nikkei.com/spotlight/supply-chain/japan-s-sojitz-plans-chip-materials-transport-hub-for-tata-fab-in-india": {
-"l": "2026-09-21T12:57:22.136969+00:00",
-"s": "Nikkei Asia",
-"t": "2026-09-19T11:08:05.405234+00:00"
 },
 "https://asia.nikkei.com/spotlight/supply-chain/pandora-opens-150m-vietnam-plant-to-diversify-beyond-thailand": {
 "l": "2026-10-02T08:22:57.238097+00:00",
@@ -1801,7 +1831,7 @@
 "t": "2026-09-25T11:57:50.436262+00:00"
 },
 "https://asia.nikkei.com/spotlight/your-week-in-asia/takaichi-policy-speech-malaysia-budget-pacific-islands-climate-summit": {
-"l": "2026-10-05T08:22:33.586923+00:00",
+"l": "2026-10-06T08:23:01.661442+00:00",
 "s": "Nikkei Asia",
 "t": "2026-10-04T08:22:16.571773+00:00"
 },
@@ -1820,25 +1850,10 @@
 "s": "Sixth Tone",
 "t": "2026-08-25T08:22:43.274211+00:00"
 },
-"https://www.sixthtone.com/news/1018916/Cold Comfort: What Europe\u2019s Heat Wave Means for Chinese Factories": {
-"l": "2026-09-21T12:57:37.651270+00:00",
-"s": "Sixth Tone",
-"t": "2026-08-25T08:22:43.274893+00:00"
-},
 "https://www.sixthtone.com/news/1018921/China Before the Infinite Camera Roll": {
 "l": "2026-09-22T11:47:17.122840+00:00",
 "s": "Sixth Tone",
 "t": "2026-08-25T08:22:43.274359+00:00"
-},
-"https://www.sixthtone.com/news/1018922/Chinese Supermarket Chain Recruits Ex-Cons for 2nd Consecutive Year": {
-"l": "2026-09-21T12:57:37.651061+00:00",
-"s": "Sixth Tone",
-"t": "2026-08-25T08:22:43.274661+00:00"
-},
-"https://www.sixthtone.com/news/1018923/China\u2019s First Booster Landing Marks Leap Toward Reusable Rockets": {
-"l": "2026-09-21T12:57:37.650862+00:00",
-"s": "Sixth Tone",
-"t": "2026-08-25T08:22:43.274512+00:00"
 },
 "https://www.sixthtone.com/news/1018927/Inside China\u2019s Shift From Short-Drama Sets to AI Factories": {
 "l": "2026-09-23T11:46:44.333278+00:00",
@@ -1921,7 +1936,7 @@
 "t": "2026-08-25T08:22:43.271957+00:00"
 },
 "https://www.sixthtone.com/news/1018966/Did AI Find Murakami\u2019s Voice? Student\u2019s $2 Experiment Divides China\u2019s Literati": {
-"l": "2026-10-05T08:22:42.524518+00:00",
+"l": "2026-10-06T08:23:16.241748+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-08T08:22:43.269316+00:00"
 },
@@ -1931,249 +1946,254 @@
 "t": "2026-08-25T08:22:43.271790+00:00"
 },
 "https://www.sixthtone.com/news/1018971/Remembering Gyirong: The Bustling Port That Vanished in a Flash": {
-"l": "2026-10-05T08:22:42.525816+00:00",
+"l": "2026-10-06T08:23:16.242471+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-08T08:22:43.271114+00:00"
 },
 "https://www.sixthtone.com/news/1018976/China Pushes for Homes to Be Completed Before They\u2019re Sold": {
-"l": "2026-10-05T08:22:42.526064+00:00",
+"l": "2026-10-06T08:23:16.242865+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-08T08:22:43.271460+00:00"
 },
 "https://www.sixthtone.com/news/1018982/Scammers Are Targeting China\u2019s Content Creators for Ransoms": {
-"l": "2026-10-05T08:22:42.525940+00:00",
+"l": "2026-10-06T08:23:16.242679+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-08T08:22:43.271297+00:00"
 },
 "https://www.sixthtone.com/news/1018983/Two Filmmakers, 1,100 Villages, and a Race to Record Rural China": {
-"l": "2026-10-05T08:22:42.525701+00:00",
+"l": "2026-10-06T08:23:16.242294+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-08T08:22:43.270900+00:00"
 },
 "https://www.sixthtone.com/news/1018985/Can VR Capture the Power of China\u2019s Ancient Caves?": {
-"l": "2026-10-05T08:22:42.525236+00:00",
+"l": "2026-10-06T08:23:16.241937+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-08T08:22:43.269477+00:00"
 },
 "https://www.sixthtone.com/news/1018986/China Gives Schools More Flexibility as Enrollment Shrinks": {
-"l": "2026-10-05T08:22:42.525571+00:00",
+"l": "2026-10-06T08:23:16.242117+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-08T08:22:43.269640+00:00"
 },
 "https://www.sixthtone.com/news/1018990/China Moves to Address Self-Driving Cars in National Law": {
-"l": "2026-10-05T08:22:42.524321+00:00",
+"l": "2026-10-06T08:23:16.241531+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-08T08:22:43.269139+00:00"
 },
 "https://www.sixthtone.com/news/1018994/She Preserved the Memory of the Mogao Grottoes. Now It\u2019s All She Remembers.": {
-"l": "2026-10-05T08:22:42.523316+00:00",
+"l": "2026-10-06T08:23:16.239794+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-11T11:30:15.573576+00:00"
 },
 "https://www.sixthtone.com/news/1018995/How a Rotten Apple Brought China\u2019s Internet Into a Mushroom Lab": {
-"l": "2026-10-05T08:22:42.523932+00:00",
+"l": "2026-10-06T08:23:16.240968+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-09T08:22:49.154189+00:00"
 },
 "https://www.sixthtone.com/news/1018996/When China\u2019s Star Intellectuals Fly Too Close to the Sun": {
-"l": "2026-10-05T08:22:42.524194+00:00",
+"l": "2026-10-06T08:23:16.241343+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-08T08:22:43.268915+00:00"
 },
 "https://www.sixthtone.com/news/1018997/End of the Vine: China\u2019s \u2018Calabash Grandpa\u2019 Cuts Down His Famous Gourds": {
-"l": "2026-10-05T08:22:42.524046+00:00",
+"l": "2026-10-06T08:23:16.241158+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-09T08:22:49.154362+00:00"
 },
 "https://www.sixthtone.com/news/1018999/From Monkey Kings to Little Demons: China\u2019s New Age of the Supporting Character": {
-"l": "2026-10-05T08:22:42.522540+00:00",
+"l": "2026-10-06T08:23:16.237591+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-16T08:22:43.022697+00:00"
 },
 "https://www.sixthtone.com/news/1019002/Chinese Auto Supplier Faces Backlash for Firing 107 Recent Grads": {
-"l": "2026-10-05T08:22:42.523816+00:00",
+"l": "2026-10-06T08:23:16.240776+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-10T11:28:30.144951+00:00"
 },
 "https://www.sixthtone.com/news/1019007/Top-Ranked Chinese Netflix Series Divides Viewers at Home": {
-"l": "2026-10-05T08:22:42.523574+00:00",
+"l": "2026-10-06T08:23:16.240323+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-10T11:28:30.144498+00:00"
 },
 "https://www.sixthtone.com/news/1019008/One Last Night With Shanghai\u2019s \u2018Sleep No More\u2019 Superfans": {
-"l": "2026-10-05T08:22:42.523701+00:00",
+"l": "2026-10-06T08:23:16.240540+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-10T11:28:30.144744+00:00"
 },
 "https://www.sixthtone.com/news/1019013/Frog Gone: China\u2019s Beloved Traveling Game Is Going Offline": {
-"l": "2026-10-05T08:22:42.523163+00:00",
+"l": "2026-10-06T08:23:16.238734+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-11T11:30:15.573342+00:00"
 },
 "https://www.sixthtone.com/news/1019014/Pizza Bao, Spaghetti Stir-Fry: Chinese Students Hack Home Cooking Abroad": {
-"l": "2026-10-05T08:22:42.523449+00:00",
+"l": "2026-10-06T08:23:16.240040+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-11T11:30:15.573769+00:00"
 },
 "https://www.sixthtone.com/news/1019015/How I Brought China\u2019s Vibe-Coding Revolution to Rural America": {
-"l": "2026-10-05T08:22:42.522004+00:00",
+"l": "2026-10-06T08:23:16.236833+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-18T11:24:59.788978+00:00"
 },
 "https://www.sixthtone.com/news/1019019/A Crab Farmer and His Uninvited Guests": {
-"l": "2026-10-05T08:22:42.523021+00:00",
+"l": "2026-10-06T08:23:16.238310+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-14T08:23:28.042118+00:00"
 },
 "https://www.sixthtone.com/news/1019020/China Approves Obesity Drug for Severe Fatty Liver Disease": {
-"l": "2026-10-05T08:22:42.522898+00:00",
+"l": "2026-10-06T08:23:16.238149+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-15T08:22:47.929724+00:00"
 },
 "https://www.sixthtone.com/news/1019024/After Beijing Bowel Accident, Hyrox Changes Its Rules": {
-"l": "2026-10-05T08:22:42.522662+00:00",
+"l": "2026-10-06T08:23:16.237782+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-16T08:22:43.022800+00:00"
 },
 "https://www.sixthtone.com/news/1019025/The Chinese Dating App Promising Marriage \u2014 or Your Money Back": {
-"l": "2026-10-05T08:22:42.522783+00:00",
+"l": "2026-10-06T08:23:16.237969+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-15T08:22:47.929530+00:00"
 },
 "https://www.sixthtone.com/news/1019029/Token of Trust: Beijing Links AI Usage to Company Loans": {
-"l": "2026-10-05T08:22:42.522420+00:00",
+"l": "2026-10-06T08:23:16.237385+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-16T08:22:43.022549+00:00"
 },
 "https://www.sixthtone.com/news/1019030/Pension Paradox: China\u2019s Delivery Riders on a Rocky Road to Retirement": {
-"l": "2026-10-05T08:22:42.522291+00:00",
+"l": "2026-10-06T08:23:16.237199+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-17T11:50:05.420124+00:00"
 },
 "https://www.sixthtone.com/news/1019031/From Paris to Hangzhou: The $9m Quest to Return China\u2019s Lost Encyclopedia": {
-"l": "2026-10-05T08:22:42.521755+00:00",
+"l": "2026-10-06T08:23:16.236427+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-21T12:57:37.637527+00:00"
 },
 "https://www.sixthtone.com/news/1019036/Marriage Proposal at Beijing Concert Hits Sour Note With Fans": {
-"l": "2026-10-05T08:22:42.522146+00:00",
+"l": "2026-10-06T08:23:16.237017+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-17T11:50:05.419901+00:00"
 },
 "https://www.sixthtone.com/news/1019040/Three Sisters Cross China to See What Keeps Their Family Apart": {
-"l": "2026-10-05T08:22:42.521507+00:00",
+"l": "2026-10-06T08:23:16.236053+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-22T11:47:17.111781+00:00"
 },
 "https://www.sixthtone.com/news/1019041/Ticket to Trouble: Scalping Row Disrupts Shanghai Comedy Show": {
-"l": "2026-10-05T08:22:42.521883+00:00",
+"l": "2026-10-06T08:23:16.236642+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-18T11:24:59.788716+00:00"
 },
 "https://www.sixthtone.com/news/1019049/China Tells E-Commerce Apps to Stop Selling Loans": {
-"l": "2026-10-05T08:22:42.521631+00:00",
+"l": "2026-10-06T08:23:16.236236+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-21T12:57:37.637273+00:00"
 },
 "https://www.sixthtone.com/news/1019050/China Misses Basketball Medal in 2nd-Worst Asian Games Finish": {
-"l": "2026-10-05T08:22:42.521383+00:00",
+"l": "2026-10-06T08:23:16.235858+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-22T11:47:17.111547+00:00"
 },
 "https://www.sixthtone.com/news/1019051/A Dying Tradition? The Haunting Beauty of China\u2019s \u2018Day of the Dead\u2019": {
-"l": "2026-10-05T08:22:42.520203+00:00",
+"l": "2026-10-06T08:23:16.233289+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-29T13:02:02.941157+00:00"
 },
 "https://www.sixthtone.com/news/1019055/Cooking to Drones: Shanghai Hosts Record WorldSkills Competition": {
-"l": "2026-10-05T08:22:42.521267+00:00",
+"l": "2026-10-06T08:23:16.235665+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-22T11:47:17.111347+00:00"
 },
 "https://www.sixthtone.com/news/1019056/Runaway to Record Breaker: Zhao Jiaju on Willpower, Pain, and the Tor des G\u00e9ants": {
-"l": "2026-10-05T08:22:42.521142+00:00",
+"l": "2026-10-06T08:23:16.235449+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-23T11:46:44.324606+00:00"
 },
 "https://www.sixthtone.com/news/1019060/In the Rubber Forests, \u2018Shanghai Daughter\u2019 Traces a Father\u2019s Past": {
-"l": "2026-10-05T08:22:42.520870+00:00",
+"l": "2026-10-06T08:23:16.235065+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-24T11:55:19.717992+00:00"
 },
 "https://www.sixthtone.com/news/1019062/Report Links Alibaba\u2019s Resale App to Sex Trade Involving Minors": {
-"l": "2026-10-05T08:22:42.520995+00:00",
+"l": "2026-10-06T08:23:16.235256+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-23T11:46:44.324371+00:00"
 },
 "https://www.sixthtone.com/news/1019063/Spleen May Affect Cognitive Decline in Women, Says Chinese Study": {
-"l": "2026-10-05T08:22:42.520747+00:00",
+"l": "2026-10-06T08:23:16.234870+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-24T11:55:19.717726+00:00"
 },
 "https://www.sixthtone.com/news/1019064/When Surgery Isn\u2019t Enough for China\u2019s MRKH Patients": {
-"l": "2026-10-05T08:22:42.520490+00:00",
+"l": "2026-10-06T08:23:16.234421+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-28T14:06:22.987540+00:00"
 },
 "https://www.sixthtone.com/news/1019065/The Enduring Appeal of China\u2019s Eight Immortals": {
-"l": "2026-10-05T08:22:42.517018+00:00",
+"l": "2026-10-06T08:23:16.231869+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-30T08:23:40.199861+00:00"
 },
 "https://www.sixthtone.com/news/1019069/The Transsion Story: How a Chinese Firm Conquered Africa\u2019s Tech Market": {
-"l": "2026-10-05T08:22:42.516120+00:00",
+"l": "2026-10-06T08:23:16.229816+00:00",
 "s": "Sixth Tone",
 "t": "2026-10-05T08:22:42.516120+00:00"
 },
 "https://www.sixthtone.com/news/1019070/Weaving History: China\u2019s \u2018Wig Capital\u2019 Fights to Keep Its Crown": {
-"l": "2026-10-05T08:22:42.519995+00:00",
+"l": "2026-10-06T08:23:16.232825+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-29T13:02:02.940952+00:00"
 },
 "https://www.sixthtone.com/news/1019071/She Sold 192 Porsches in a Year. Then Came an AI-Fueled Smear Campaign.": {
-"l": "2026-10-05T08:22:42.517161+00:00",
+"l": "2026-10-06T08:23:16.232190+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-30T08:23:40.199991+00:00"
 },
 "https://www.sixthtone.com/news/1019073/Beijing Court Lets Widow Use Embryos Created With Late Husband": {
-"l": "2026-10-05T08:22:42.520621+00:00",
+"l": "2026-10-06T08:23:16.234668+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-26T11:32:28.622369+00:00"
 },
 "https://www.sixthtone.com/news/1019075/17,000 Shipwrecked Relics Given to Chinese Research Centers": {
-"l": "2026-10-05T08:22:42.520356+00:00",
+"l": "2026-10-06T08:23:16.234202+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-28T14:06:22.987286+00:00"
 },
 "https://www.sixthtone.com/news/1019076/Chinese Village to Spend Millions on NPCs to Boost Tourism": {
-"l": "2026-10-05T08:22:42.517294+00:00",
+"l": "2026-10-06T08:23:16.232443+00:00",
 "s": "Sixth Tone",
 "t": "2026-09-29T13:02:02.940682+00:00"
 },
 "https://www.sixthtone.com/news/1019082/When China\u2019s Family Heirlooms Need More Than Tape, Glue, or Luck": {
-"l": "2026-10-05T08:22:42.516485+00:00",
+"l": "2026-10-06T08:23:16.230440+00:00",
 "s": "Sixth Tone",
 "t": "2026-10-02T08:23:08.084411+00:00"
 },
 "https://www.sixthtone.com/news/1019083/Chinese Olympic Diver\u2019s Mother in Hot Water Over Toxic Parenting": {
-"l": "2026-10-05T08:22:42.516891+00:00",
+"l": "2026-10-06T08:23:16.231437+00:00",
 "s": "Sixth Tone",
 "t": "2026-10-01T08:22:36.957194+00:00"
 },
 "https://www.sixthtone.com/news/1019091/In Photos: China Begins Its Weeklong National Day Holiday": {
-"l": "2026-10-05T08:22:42.516756+00:00",
+"l": "2026-10-06T08:23:16.231119+00:00",
 "s": "Sixth Tone",
 "t": "2026-10-01T08:22:36.957011+00:00"
 },
 "https://www.sixthtone.com/news/1019092/Bug Bounty: Beijing Park Recruits Visitors Against Invasive Moth": {
-"l": "2026-10-05T08:22:42.516623+00:00",
+"l": "2026-10-06T08:23:16.230857+00:00",
 "s": "Sixth Tone",
 "t": "2026-10-02T08:23:08.084641+00:00"
 },
 "https://www.sixthtone.com/news/1019093/China\u2019s Esports Haul Includes an Asian Games First for Women": {
-"l": "2026-10-05T08:22:42.516320+00:00",
+"l": "2026-10-06T08:23:16.230108+00:00",
 "s": "Sixth Tone",
 "t": "2026-10-03T08:22:46.785139+00:00"
+},
+"https://www.sixthtone.com/news/1019094/Feathered Dinosaur From China Points to Another Path to Flight": {
+"l": "2026-10-06T08:23:16.229543+00:00",
+"s": "Sixth Tone",
+"t": "2026-10-06T08:23:16.229543+00:00"
 }
 }
 }
