@@ -154,6 +154,7 @@ class PerspectiveAnalyzer:
     # A candidate this similar to a story title (today's or a recent
     # issue's) is the same storyline, not a blindspot.
     BLINDSPOT_TOPIC_OVERLAP = 0.5
+    BLINDSPOT_TODAY_OVERLAP = 0.4
     # Same storyline as a recent blindspot even when worded differently:
     # 09-29 "27% rise in 2027 military spending" and 09-30 "record 17.1
     # trillion rubles for its military in 2027" share russia/budget/2027/
@@ -207,6 +208,12 @@ class PerspectiveAnalyzer:
         story_clusters = {getattr(a, 'cluster_id', None) for a in articles
                           if a.url in story_urls and getattr(a, 'cluster_id', None)}
         known_topics = [s.story_title for s in stories] + list(self.recent_topics)
+        # Today's stories also by their whole event clusters' headlines and
+        # first sentence: an event split across clusters must not come back
+        # as today's blindspot (10-06 shadow: the Moscow drone strike was
+        # story #2 AND the blindspot).
+        today_texts = [s.story_title + " " + (s.why_important or "").split(". ")[0] for s in stories]
+        today_texts += [a.title for a in articles if getattr(a, 'cluster_id', None) in story_clusters]
         events = defaultdict(list)
         for a in articles:
             cid = getattr(a, 'cluster_id', None)
@@ -233,8 +240,13 @@ class PerspectiveAnalyzer:
                     or self._repeats_recent_blindspot(" ".join(m.title for m in members)):
                 logger.info(f"Blindspot candidate skipped (storyline already covered): {members[0].title[:70]}")
                 continue
+            today = next((t for m in members for t in today_texts
+                          if overlap(m.title, t, stem=True) >= self.BLINDSPOT_TODAY_OVERLAP), None)
+            if today:
+                logger.info(f"Blindspot candidate skipped (today's story: {today[:60]}): {members[0].title[:70]}")
+                continue
             western = next((w for m in members for w in western_titles
-                            if overlap(m.title, w) >= self.BLINDSPOT_TOPIC_OVERLAP), None)
+                            if overlap(m.title, w, stem=True) >= self.BLINDSPOT_TOPIC_OVERLAP), None)
             if western:
                 logger.info(f"Blindspot candidate skipped (a Western outlet ran it: {western[:60]}): "
                             f"{members[0].title[:70]}")

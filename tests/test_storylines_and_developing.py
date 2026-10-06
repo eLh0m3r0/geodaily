@@ -321,3 +321,12 @@ def test_reserve_story_becomes_a_quick_hit_unless_a_demotion_made_room(analyzer)
     analyzer._apply_storyline_rules(issue)
     assert [s.story_title for s in issue.stories] == ["Fresh lead", "Fresh three", "Reserve event"]
     assert any("Story demoted" in a for a in analyzer.meta["editorial_actions"])
+
+
+def test_todays_story_split_across_clusters_is_no_blindspot(persp):
+    arts = [art("Massive Ukrainian drone attack on Moscow region kills two, sets largest oil depot ablaze",
+                "https://meduza.io/8", "Meduza", "russian_exile", False, "e4"),
+            art("Ukrainian drones hit Moscow region fuel depot", "https://st.com/8", "The Straits Times", "east_asia", False, "e4")]
+    s = story("Ukraine hits Moscow region with hundreds of drones, killing two people",
+              why="Russia said its air defences shot down nearly 900 drones overnight.")
+    assert persp._blindspot_candidates([s], arts) == []

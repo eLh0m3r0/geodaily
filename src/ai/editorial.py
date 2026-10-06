@@ -44,15 +44,26 @@ def _fold(text: str) -> str:
     return "".join(c for c in decomposed if not unicodedata.combining(c)).lower()
 
 
-def content_words(text: str) -> Set[str]:
-    """Lower-cased identifying words (len > 3, no stop words)."""
-    return {w for w in re.findall(r"[a-z0-9]+", _fold(text))
-            if len(w) > 3 and w not in _STOP}
+def _word_stem(w: str) -> str:
+    """Crude stem so word forms meet: Ukraine/Ukrainian, drone/drones,
+    kills/killing ('ukrain', 'dron', 'kill')."""
+    for suffix in ("ians", "ian", "ings", "ing", "ed", "es", "s", "e"):
+        if w.endswith(suffix) and len(w) - len(suffix) >= 4:
+            return w[: -len(suffix)]
+    return w
 
 
-def overlap(a: str, b: str) -> float:
+def content_words(text: str, stem: bool = False) -> Set[str]:
+    """Lower-cased identifying words (len > 3, no stop words); with `stem`,
+    crude stems so word forms meet."""
+    words = {w for w in re.findall(r"[a-z0-9]+", _fold(text))
+             if len(w) > 3 and w not in _STOP}
+    return {_word_stem(w) for w in words} if stem else words
+
+
+def overlap(a: str, b: str, stem: bool = False) -> float:
     """Share of the shorter text's content words that the other text has."""
-    wa, wb = content_words(a), content_words(b)
+    wa, wb = content_words(a, stem), content_words(b, stem)
     base = min(len(wa), len(wb))
     if base < 3:
         return 0.0

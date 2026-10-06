@@ -100,10 +100,11 @@ class SimplifiedMultiStageAnalyzer:
         sorted_articles = self._prefilter_articles(articles, cap=60)
 
         # Build the comprehensive prompt for single API call
-        # One reserve story: when a running storyline is demoted to
-        # DEVELOPING, the reserve keeps the issue at full strength (the 10-06
-        # shadow run shipped 2 stories after demoting RAF Fairford).
-        prompt = self._build_single_call_prompt(sorted_articles, target_stories + 1 if target_stories > 1 else 1)
+        # No reserve story in the prompt: a fourth story plus extra quick hits
+        # pushed DeepSeek's reasoning past 32k tokens (18-minute analysis in
+        # the 10-06 shadow runs). A demotion may leave 2 stories; DEVELOPING
+        # carries the running story.
+        prompt = self._build_single_call_prompt(sorted_articles, target_stories)
 
         # Budget check before spending API tokens
         cost_estimate = ai_cost_controller.estimate_cost(len(prompt), "analysis")
@@ -320,7 +321,7 @@ URL: {}
 ARTICLES TO ANALYZE:
 {}
 
-Build today's issue from the above articles. Deep stories to select: {} (when this is more than one, the last is a reserve that may not be published — rank it last).
+Build today's issue from the above articles. Deep stories to select: {}.
 
 WRITING STYLE (strict — this is the product):
 - Plain English, active voice, US grade 8-9 reading level — reached with plain WORDS, not by chopping sentences.
@@ -380,7 +381,7 @@ Return this EXACT JSON structure — a single JSON object, no other text:
 
 CONTENT RULES:
 1. big_stories: exactly the number of deep stories requested, ranked by geopolitical consequence — most consequential FIRST. Each must cover a DIFFERENT event. The first is THE story of the day — the one a busy reader must know; give it your fullest why_important. For stories after the first, keep why_important to max 50 words. The ranking and the scores must agree: no story may have a higher impact_score than a story ranked above it.
-2. quick_hits: 8 to 10 items (some are filtered out downstream; 8 at most are published), each about a DIFFERENT event than ALL of the big_stories and than each other — never restate any selected story as a quick hit, not even from a different angle — and never a rerun of a quick hit from recent issues (a follow-up is fine only when it states the new fact). Every quick hit must involve a government, an international organization, an armed group or a cross-border consequence, and must NAME the actor ("Japan's foreign ministry protested…", never "Leaders visited…" or "Officials said…"); science prizes, domestic health alerts and markets news without a state actor do not qualify. Together they must span at least 4 distinct regions — this is the reader's "I'm caught up on the world" section, so favor geographic spread (Africa, Latin America and Asia are chronically under-covered; include them when the material exists).
+2. quick_hits: 6 to 8 items, never about a story or storyline the reader already got (listed above), each about a DIFFERENT event than ALL of the big_stories and than each other — never restate any selected story as a quick hit, not even from a different angle — and never a rerun of a quick hit from recent issues (a follow-up is fine only when it states the new fact). Every quick hit must involve a government, an international organization, an armed group or a cross-border consequence, and must NAME the actor ("Japan's foreign ministry protested…", never "Leaders visited…" or "Officials said…"); science prizes, domestic health alerts and markets news without a state actor do not qualify. Together they must span at least 4 distinct regions — this is the reader's "I'm caught up on the world" section, so favor geographic spread (Africa, Latin America and Asia are chronically under-covered; include them when the material exists).
 3. big_number: one genuinely striking, verifiable figure taken from one of the articles, about something NOT already covered by a story or quick hit in this issue (a number from the big story repeated as the big number wastes the slot) and not used in recent issues. The figure must describe TODAY's event itself — never background from an earlier year ("6% vote share in 2024") or a past disaster's toll. If no such number exists, use null.
 4. NO sports, entertainment, celebrity or human-interest items, and NO single-country domestic crime, court cases, executions, campus scandals, accidents or space launches ANYWHERE in the issue — not as a story, not as a quick hit, not as the big number — unless the event has direct geopolitical consequences (state action, sanctions, boycotts, diplomatic fallout, cross-border impact). An athlete retiring, a film winning awards, a botched execution in one US state or a university fraternity case is never news for this brief; a world-roundup item must matter beyond its own country's borders.
 5. All scores integers 1-10 — use the whole scale. impact_score 9-10: changes the course of a war, a great-power relationship or the world economy (a few times a month, not daily); 7-8: a major national or regional development; 5-6: notable but contained. article_index values must reference the list above.
