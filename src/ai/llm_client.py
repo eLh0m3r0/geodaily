@@ -35,6 +35,8 @@ DEFAULT_REQUEST_TIMEOUT_S = 600
 # How many times a request that hit the wall-clock limit is re-sent
 # (env AI_TIMEOUT_RETRIES).
 DEFAULT_TIMEOUT_RETRIES = 1
+# Ceiling for the automatic budget growth after a length-truncated empty reply
+MAX_GROWN_TOKENS = int(os.getenv("AI_MAX_GROWN_TOKENS", "64000"))
 
 
 class LLMTimeoutError(RuntimeError):
@@ -228,6 +230,17 @@ class OpenRouterClient:
                             % (provider, choice.get("finish_reason"),
                                (usage.get("completion_tokens_details") or {}).get("reasoning_tokens")))
                 logger.warning("OpenRouter %s - zkousim jineho hostitele", last_err)
+                # Reasoning that ate the whole budget (finish=length, no text)
+                # is not a host fault: the same budget fails again on every
+                # host (2026-10-06 shadow run: 4 x 16000 reasoning tokens, no
+                # issue). Double the budget instead — never cap the reasoning
+                # itself (it measurably lowered quality).
+                if (choice.get("finish_reason") or choice.get("native_finish_reason")) == "length":
+                    grown = min(MAX_GROWN_TOKENS, int(body.get("max_tokens") or max_tokens) * 2)
+                    if grown > int(body.get("max_tokens") or 0):
+                        logger.warning("OpenRouter: reasoning used the whole budget - retrying with "
+                                       "max_tokens=%d", grown)
+                        body["max_tokens"] = grown
                 if provider:
                     ignore = body.setdefault("provider", {}).setdefault("ignore", [])
                     if provider not in ignore:

@@ -203,7 +203,7 @@ The AI analyzer now evaluates stories across multiple dimensions:
 - `.env` file for local development
 - GitHub Secrets for production API keys
 - `DRY_RUN=true` for testing without API costs
-- `AI_MAX_TOKENS=16000` for Sonnet 5 production (new tokenizer uses ~30% more tokens; adaptive thinking spends from the same budget)
+- `AI_MAX_TOKENS=16000` for Sonnet 5 production (new tokenizer uses ~30% more tokens; adaptive thinking spends from the same budget); the issue call uses `ANALYSIS_MAX_TOKENS=32000`, and an empty `finish=length` reply from OpenRouter is retried with a doubled budget (up to `AI_MAX_GROWN_TOKENS=64000`) instead of the same budget on another host
 - `AI_MAX_COST_PER_MONTH=30.0` monthly budget cap for AI spend
 - `ALLOW_OVERWRITE=true` to regenerate existing newsletters
 - `NEWSLETTER_EDITOR_NAME` named human curator for the footer persona ("drafted with AI, curated by X") — set it only if someone really reviews issues before sending; without it the footer says plainly that the issue is written with AI and sent automatically (it used to promise a human review that never happened)

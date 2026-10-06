@@ -121,7 +121,7 @@ class SimplifiedMultiStageAnalyzer:
             print(f"📡 Making single API call for comprehensive analysis...")
             response = self.client.messages.create(
                 model=Config.AI_MODEL,
-                max_tokens=Config.AI_MAX_TOKENS or 16000,
+                max_tokens=self._analysis_budget(),
                 messages=[{"role": "user", "content": prompt}]
             )
 
@@ -138,7 +138,7 @@ class SimplifiedMultiStageAnalyzer:
                 logger.warning("First response was not parseable JSON, retrying with corrective message")
                 retry_response = self.client.messages.create(
                     model=Config.AI_MODEL,
-                    max_tokens=Config.AI_MAX_TOKENS or 16000,
+                    max_tokens=self._analysis_budget(),
                     messages=[
                         {"role": "user", "content": prompt},
                         {"role": "assistant", "content": response_text or "(empty)"},
@@ -409,6 +409,10 @@ FIELD DEFINITIONS:
             lines.append(f"- {names} (big story on {dates}; latest: {g['latest']})")
         return ("\nRUNNING STORYLINES (the reader already followed these as big stories — see rule 6):\n"
                 + "\n".join(lines) + "\n")
+
+    @staticmethod
+    def _analysis_budget() -> int:
+        return max(Config.AI_MAX_TOKENS or 16000, getattr(Config, "ANALYSIS_MAX_TOKENS", 32000))
 
     @staticmethod
     def _served_model(response) -> str:

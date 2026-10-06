@@ -250,3 +250,34 @@ def test_quality_report_flags_degraded_issue(tmp_path):
                     "perspective_grid": {"views": []}, "quick_hits": [], "meta": {}})
     warned = {label for status, label, _ in rows if status == "warn"}
     assert {"Grid rows with an angle", "Blindspot", "Also today"} <= warned
+
+
+def test_length_truncated_empty_reply_retries_with_bigger_budget(monkeypatch):
+    """2026-10-06 shadow run: reasoning ate 16000 tokens four times and the
+    issue failed. An empty finish=length reply must grow the budget, never
+    cap the reasoning."""
+    from unittest.mock import patch
+    from src.ai import llm_client
+    budgets = []
+
+    def fake_post(url, headers=None, json=None, timeout=None):
+        budgets.append(json["max_tokens"])
+        assert "reasoning" not in json
+        if len(budgets) == 1:
+            return SimpleNamespace(status_code=200, text="{}", json=lambda: {
+                "model": "deepseek/deepseek-v4.1-flash", "provider": "Together",
+                "choices": [{"message": {"content": ""}, "finish_reason": "length"}],
+                "usage": {"prompt_tokens": 10, "completion_tokens": 16000,
+                          "completion_tokens_details": {"reasoning_tokens": 16000}}})
+        return SimpleNamespace(status_code=200, text="{}", json=lambda: {
+            "model": "deepseek/deepseek-v4.1-flash", "provider": "DeepInfra",
+            "choices": [{"message": {"content": "{\"ok\": 1}"}, "finish_reason": "stop"}],
+            "usage": {"prompt_tokens": 10, "completion_tokens": 20000}})
+
+    monkeypatch.setattr(llm_client.time, "sleep", lambda s: None)
+    client = llm_client.OpenRouterClient(api_key="k", timeout=5, max_retries=3)
+    with patch.object(llm_client.requests, "post", side_effect=fake_post):
+        resp = client.messages.create(model="deepseek/deepseek-v4.1-flash", max_tokens=16000,
+                                      messages=[{"role": "user", "content": "hi"}])
+    assert budgets == [16000, 32000]
+    assert resp.content[0].text == '{"ok": 1}'
