@@ -36,7 +36,8 @@ DEFAULT_REQUEST_TIMEOUT_S = 600
 # (env AI_TIMEOUT_RETRIES).
 DEFAULT_TIMEOUT_RETRIES = 1
 # Ceiling for the automatic budget growth after a length-truncated empty reply
-MAX_GROWN_TOKENS = int(os.getenv("AI_MAX_GROWN_TOKENS", "64000"))
+# (a 64000-token retry ran past the 600 s request limit on a slow host)
+MAX_GROWN_TOKENS = int(os.getenv("AI_MAX_GROWN_TOKENS", "32000"))
 
 
 class LLMTimeoutError(RuntimeError):

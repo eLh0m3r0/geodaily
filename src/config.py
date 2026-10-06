@@ -106,7 +106,7 @@ class Config:
     # Output budget for the issue call. The prompt carries the running-storyline
     # rules and DeepSeek's reasoning spends from the same budget: 16000 left no
     # room for the JSON on 2026-10-06 (4 empty replies). Reasoning is never capped.
-    ANALYSIS_MAX_TOKENS = int(os.getenv("ANALYSIS_MAX_TOKENS", "32000"))
+    ANALYSIS_MAX_TOKENS = int(os.getenv("ANALYSIS_MAX_TOKENS", "24000"))
     READABILITY_MAX_GRADE = float(os.getenv("READABILITY_MAX_GRADE", "9.5"))
     # Deep stories per issue. Hybrid default (since 2026-09): 3 — the big
     # story gets the full treatment (perspective grid, signals), stories 2-3

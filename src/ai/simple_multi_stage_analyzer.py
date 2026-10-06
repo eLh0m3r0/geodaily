@@ -310,7 +310,7 @@ URL: {}
             history_block += self._running_storylines_block()
 
         # Use string formatting to avoid f-string issues with article content containing braces
-        template = """You write a daily world-news brief for smart readers who are NOT foreign-policy professionals. Each issue has: THE BIG STORY (the one thing worth full attention today), MORE TOP STORIES (the next most consequential distinct events, covered more briefly), DEVELOPING (one-line updates on stories the reader already followed in recent issues), ALSO TODAY (a quick world roundup of OTHER news so the reader feels caught up), and THE BIG NUMBER (one striking figure from today's news).
+        template = """You write a daily world-news brief for smart readers who are NOT foreign-policy professionals. Each issue has: THE BIG STORY (the one thing worth full attention today), MORE TOP STORIES (the next most consequential distinct events, covered more briefly), ALSO TODAY (a quick world roundup so the reader feels caught up), and THE BIG NUMBER (one striking figure from today's news).
 {}
 ARTICLES TO ANALYZE:
 {}
@@ -366,14 +366,6 @@ Return this EXACT JSON structure — a single JSON object, no other text:
       "article_index": 7
     }}
   ],
-  "developing": [
-    {{
-      "storyline": "Short name of a RUNNING STORYLINE listed above, e.g. Tigray",
-      "text": "One sentence, max 25 words: ONLY what is new since the last issue, with a name or number.",
-      "region": "europe or middle_east or indo_pacific or americas or africa or central_asia or global",
-      "article_index": 4
-    }}
-  ],
   "big_number": {{
     "value": "35%",
     "context": "One sentence: what this number is and why it is striking. Max 25 words.",
@@ -383,12 +375,11 @@ Return this EXACT JSON structure — a single JSON object, no other text:
 
 CONTENT RULES:
 1. big_stories: exactly the number of deep stories requested, ranked by geopolitical consequence — most consequential FIRST. Each must cover a DIFFERENT event. The first is THE story of the day — the one a busy reader must know; give it your fullest why_important. For stories after the first, keep why_important to max 50 words. The ranking and the scores must agree: no story may have a higher impact_score than a story ranked above it.
-2. quick_hits: 6 to 8 items, each about a DIFFERENT event than ALL of the big_stories and than each other — never restate any selected story as a quick hit, not even from a different angle — and never a rerun of a quick hit from recent issues (a follow-up is fine only when it states the new fact). Every quick hit must involve a government, an international organization, an armed group or a cross-border consequence, and must NAME the actor ("Japan's foreign ministry protested…", never "Leaders visited…" or "Officials said…"); science prizes, domestic health alerts and markets news without a state actor do not qualify. A development in a RUNNING STORYLINE is never a quick hit — it belongs in "developing". Together they must span at least 4 distinct regions — this is the reader's "I'm caught up on the world" section, so favor geographic spread (Africa, Latin America and Asia are chronically under-covered; include them when the material exists).
+2. quick_hits: 6 to 8 items, each about a DIFFERENT event than ALL of the big_stories and than each other — never restate any selected story as a quick hit, not even from a different angle — and never a rerun of a quick hit from recent issues (a follow-up is fine only when it states the new fact). Every quick hit must involve a government, an international organization, an armed group or a cross-border consequence, and must NAME the actor ("Japan's foreign ministry protested…", never "Leaders visited…" or "Officials said…"); science prizes, domestic health alerts and markets news without a state actor do not qualify. Together they must span at least 4 distinct regions — this is the reader's "I'm caught up on the world" section, so favor geographic spread (Africa, Latin America and Asia are chronically under-covered; include them when the material exists).
 3. big_number: one genuinely striking, verifiable figure taken from one of the articles, about something NOT already covered by a story or quick hit in this issue (a number from the big story repeated as the big number wastes the slot) and not used in recent issues. The figure must describe TODAY's event itself — never background from an earlier year ("6% vote share in 2024") or a past disaster's toll. If no such number exists, use null.
 4. NO sports, entertainment, celebrity or human-interest items, and NO single-country domestic crime, court cases, executions, campus scandals, accidents or space launches ANYWHERE in the issue — not as a story, not as a quick hit, not as the big number — unless the event has direct geopolitical consequences (state action, sanctions, boycotts, diplomatic fallout, cross-border impact). An athlete retiring, a film winning awards, a botched execution in one US state or a university fraternity case is never news for this brief; a world-roundup item must matter beyond its own country's borders.
 5. All scores integers 1-10 — use the whole scale. impact_score 9-10: changes the course of a war, a great-power relationship or the world economy (a few times a month, not daily); 7-8: a major national or regional development; 5-6: notable but contained. article_index values must reference the list above.
-6. RUNNING STORYLINES (listed above, if any): at most ONE big story may continue one of them, and only when today's development there is the single most consequential news of the day or a decisive turn (a capital falls, a deal is signed). Every other new development in a running storyline goes to "developing": 0-3 items, one per storyline, each stating ONLY what is new since the last issue. Fresh events the reader has not seen yet take the remaining big-story slots.
-7. Return ONLY the raw JSON object — no markdown, no explanations, no code blocks.
+6. Return ONLY the raw JSON object — no markdown, no explanations, no code blocks.
 
 FIELD DEFINITIONS:
 - content_type: breaking_news=a discrete event of the last 48 hours; analysis=the news IS a report, study, investigation, leaked document or official statistic; trend=a multi-week pattern made newsworthy today
@@ -407,8 +398,9 @@ FIELD DEFINITIONS:
             names = ", ".join(label_for(t) for t in sorted(g["terms"], key=len)[:4])
             dates = ", ".join(sorted(g["dates"]))
             lines.append(f"- {names} (big story on {dates}; latest: {g['latest']})")
-        return ("\nRUNNING STORYLINES (the reader already followed these as big stories — see rule 6):\n"
-                + "\n".join(lines) + "\n")
+        return ("\nSTORIES THE READER ALREADY FOLLOWED as big stories in the last issues "
+                "(give big-story slots to fresh events first; one of these may lead only if today's "
+                "development is the biggest news of the day):\n" + "\n".join(lines) + "\n")
 
     @staticmethod
     def _analysis_budget() -> int:
