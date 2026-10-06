@@ -36,6 +36,14 @@ on:
         options:
           - 'true'
           - 'false'
+      force:
+        description: 'Regenerate and RESEND even if today''s issue already exists (subscribers get a second email)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
   # NOTE: no push trigger — a push-triggered run would generate and PUBLISH a
   # second newsletter the same day (double email to subscribers, double AI
   # spend). Code changes are validated by ci.yml (dry run, no publishing) and
@@ -55,7 +63,7 @@ concurrency:
 jobs:
   # Duplicate guard: scheduled and repository_dispatch runs become no-ops once
   # today's issue exists, so backup slots / repeated external pings can never
-  # double-send. Manual (workflow_dispatch) runs always run.
+  # double-send. Manual runs are guarded too unless force=true or dry_run=true.
   precheck:
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -69,9 +77,16 @@ jobs:
       env:
         EVENT_NAME: ${{ github.event_name }}
         DEFAULT_BRANCH: ${{ github.event.repository.default_branch || 'main' }}
+        FORCE: ${{ github.event.inputs.force || 'false' }}
+        DRY_RUN_INPUT: ${{ github.event.inputs.dry_run || 'false' }}
       run: |
         TODAY_FILE="docs/newsletters/newsletter-$(date -u +%F).html"
-        if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+        # Manual runs are guarded too: the daily issue is in practice started
+        # by a workflow_dispatch at ~08:21 UTC, and if a delayed cron slot ever
+        # published first, an unguarded manual run would email subscribers a
+        # second issue. Only an explicit force=true (or a dry run, which never
+        # emails or commits) skips the guard.
+        if [ "$EVENT_NAME" = "workflow_dispatch" ] && { [ "$FORCE" = "true" ] || [ "$DRY_RUN_INPUT" = "true" ]; }; then
           echo "publish=true" >> "$GITHUB_OUTPUT"
           exit 0
         fi
@@ -240,7 +255,9 @@ jobs:
         fi
 
         # Allow overwriting existing newsletters for debugging (manual runs, dry-run mode, or debug mode)
-        if [ "${{ github.event.inputs.dry_run }}" = "true" ] || [ "$DEBUG" = "true" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+        # Overwrite only when asked for: a dry run (never published) or an
+        # explicit force=true manual run.
+        if [ "${{ github.event.inputs.dry_run }}" = "true" ] || [ "$DEBUG" = "true" ] || [ "${{ github.event.inputs.force }}" = "true" ]; then
           echo "ALLOW_OVERWRITE=true" >> $GITHUB_ENV
         else
           echo "ALLOW_OVERWRITE=false" >> $GITHUB_ENV
@@ -271,7 +288,7 @@ jobs:
         python generate_simple_dashboard.py || echo "Dashboard generation failed, continuing..."
 
     - name: Archive cleanup
-      if: success() && github.event_name != 'workflow_dispatch'
+      if: success() && env.DRY_RUN != 'true'
       run: |
         echo "🧹 Running archive cleanup..."
         python cleanup_archives.py --days ${{ env.AI_ARCHIVE_RETENTION_DAYS }} --force --verbose
@@ -340,6 +357,10 @@ jobs:
         fi
         echo "✅ Email delivery status: $STATUS"
 
+    - name: Issue quality report
+      if: always() && env.DRY_RUN != 'true'
+      run: python scripts/issue_quality_report.py || true
+
     - name: Upload newsletter artifacts
       uses: actions/upload-artifact@v4
       if: always()
@@ -354,7 +375,7 @@ jobs:
         retention-days: 30
 
     - name: Create issue on failure
-      if: failure() && github.event_name != 'workflow_dispatch'
+      if: failure() && env.DRY_RUN != 'true'
       uses: actions/github-script@v6
       with:
         script: |

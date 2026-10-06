@@ -44,15 +44,26 @@ def _fold(text: str) -> str:
     return "".join(c for c in decomposed if not unicodedata.combining(c)).lower()
 
 
-def content_words(text: str) -> Set[str]:
-    """Lower-cased identifying words (len > 3, no stop words)."""
-    return {w for w in re.findall(r"[a-z0-9]+", _fold(text))
-            if len(w) > 3 and w not in _STOP}
+def _word_stem(w: str) -> str:
+    """Crude stem so word forms meet: Ukraine/Ukrainian, drone/drones,
+    kills/killing ('ukrain', 'dron', 'kill')."""
+    for suffix in ("ians", "ian", "ings", "ing", "ed", "es", "s", "e"):
+        if w.endswith(suffix) and len(w) - len(suffix) >= 4:
+            return w[: -len(suffix)]
+    return w
 
 
-def overlap(a: str, b: str) -> float:
+def content_words(text: str, stem: bool = False) -> Set[str]:
+    """Lower-cased identifying words (len > 3, no stop words); with `stem`,
+    crude stems so word forms meet."""
+    words = {w for w in re.findall(r"[a-z0-9]+", _fold(text))
+             if len(w) > 3 and w not in _STOP}
+    return {_word_stem(w) for w in words} if stem else words
+
+
+def overlap(a: str, b: str, stem: bool = False) -> float:
     """Share of the shorter text's content words that the other text has."""
-    wa, wb = content_words(a), content_words(b)
+    wa, wb = content_words(a, stem), content_words(b, stem)
     base = min(len(wa), len(wb))
     if base < 3:
         return 0.0
@@ -81,7 +92,9 @@ _OFF_BRAND = re.compile(
     r"\b(death row|lethal injection|botched execution|"
     r"execution (?:chamber|protocol|drugs?|team|warrant)|"
     r"fraternity|sorority|serial killer|lottery|jackpot|reality (?:tv|show)|"
-    r"box office|red carpet|celebrity|influencer|paparazzi|tabloid)\b", re.IGNORECASE)
+    r"box office|red carpet|celebrity|influencer|paparazzi|tabloid|"
+    r"nobel prize in (?:medicine|physiology|physics|chemistry|literature|economics)|"
+    r"nobel (?:medicine|physiology|physics|chemistry|literature) prize)\b", re.IGNORECASE)
 
 
 def is_off_brand(text: str) -> Optional[str]:
@@ -276,7 +289,10 @@ def load_issue_history(newsletters_dir: Path, days: int = 3,
         history.append({
             "date": m.group(1),
             "stories": [s.get("story_title", "") for s in data.get("stories", [])],
+            "story_terms": [s.get("signal_terms", []) or [] for s in data.get("stories", [])],
             "quick_hits": [h.get("text", "") for h in data.get("quick_hits", [])],
+            "developing": [f"{d.get('storyline', '')}: {d.get('text', '')}"
+                           for d in data.get("developing", []) or []],
             "big_number": (f"{bn.get('value', '')} — {bn.get('context', '')}" if bn else ""),
             "blindspot": grid.get("blindspot", "") or "",
         })
@@ -309,6 +325,8 @@ def format_history_block(history: List[dict]) -> str:
             lines.append(f"  STORY: {t}")
         for t in day["quick_hits"]:
             lines.append(f"  QUICK HIT: {t}")
+        for t in day.get("developing", []):
+            lines.append(f"  DEVELOPING: {t}")
         if day["big_number"]:
             lines.append(f"  BIG NUMBER: {day['big_number']}")
         if day["blindspot"]:
@@ -320,3 +338,48 @@ def format_history_block(history: List[dict]) -> str:
         "blindspot. A running story may return only with a genuinely new development, "
         "and then the copy must lead with what is new since the last issue.\n"
     )
+
+
+# ----------------------------------------------------------------------
+# Claims vs. evidence
+# ----------------------------------------------------------------------
+
+_UNCONFIRMED = re.compile(
+    r"\b(no independent source|not (?:yet |been |independently )*confirmed|unconfirmed|"
+    r"unverified|has not confirmed|have not confirmed|no evidence|remains unproven|"
+    r"has not been verified|could not be verified)\b", re.IGNORECASE)
+_ATTRIBUTED = re.compile(
+    r"\b(says?|said|claims?|claimed|accus\w*|alleg\w*|plans?|planned|threat\w*|warns?|"
+    r"reports?|reported|vows?|may|could|seeks?|propos\w*|consider\w*|weighs?|calls? for|"
+    r"urges?|denies|denied|blames?|suspect\w*|believes?|expects?|prepar\w*|readies|"
+    r"agrees? to (?:discuss|consider|study)|push\w* for|ask\w*)\b", re.IGNORECASE)
+
+
+_SUB_CLAIM = re.compile(r"\b(figure|figures|toll|number|numbers|count|casualt\w*|death\w*|"
+                        r"killed|injured|estimate\w*|details?)\b", re.IGNORECASE)
+
+
+def headline_overclaims(title: str, *body: str) -> bool:
+    """True when the body says the core claim is unconfirmed but the
+    headline states it as fact (2026-10-06: "Pakistan and Turkey agree to
+    send troops to Saudi Arabia" over "no independent source has confirmed
+    any deployment"). An unconfirmed FIGURE or detail ("a figure Ukraine has
+    not confirmed") is a caveat, not a contradiction of the headline."""
+    if _ATTRIBUTED.search(title or ""):
+        return False
+    text = " ".join(body)
+    for m in _UNCONFIRMED.finditer(text):
+        window = text[max(0, m.start() - 60): m.end() + 40]
+        if not _SUB_CLAIM.search(window):
+            return True
+    return False
+
+
+def earlier_year(text: str, current_year: Optional[int] = None) -> Optional[int]:
+    """An explicit year before the current one in the text, if any — a big
+    number about 2024 is background, not today's news."""
+    current_year = current_year or datetime.now().year
+    years = [int(y) for y in re.findall(r"\b(19\d\d|20\d\d)\b", text or "")]
+    past = [y for y in years if y < current_year]
+    return max(past) if past else None
+

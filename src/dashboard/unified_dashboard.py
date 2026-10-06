@@ -346,7 +346,7 @@ class UnifiedDashboard:
         </div>
 
         <footer style="text-align: center; margin-top: 30px; color: #666; font-size: 14px;">
-            <p>&copy; 2025 Geopolitical Daily. Strategic analysis beyond the headlines.</p>
+            <p>&copy; {copyright_year} Geopolitical Daily. Strategic analysis beyond the headlines.</p>
             <p><a href="index.html">Latest Newsletter</a> | <a href="feed.xml">RSS Feed</a></p>
         </footer>
     </div>
@@ -362,6 +362,7 @@ class UnifiedDashboard:
             processing_info = f" • Processing time: {latest_data['processing_time']:.1f}s"
         
         return template.format(
+            copyright_year=datetime.now().year,
             update_time=datetime.now().strftime("%Y-%m-%d %H:%M UTC"),
             status_class=status_class,
             status_text=status_text,

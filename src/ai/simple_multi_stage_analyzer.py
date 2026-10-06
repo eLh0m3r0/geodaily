@@ -7,13 +7,14 @@ to minimize costs while maintaining decision transparency.
 
 import asyncio
 import json
+import re
 import time
 import logging
 from typing import List, Dict, Any, Optional, Tuple
 from dataclasses import dataclass
 from datetime import datetime
 
-from ..models import Article, AIAnalysis, ContentType, QuickHit, BigNumber, IssueContent
+from ..models import Article, AIAnalysis, ContentType, QuickHit, BigNumber, IssueContent, DevelopingItem
 from ..config import Config
 from ..archiver.ai_data_archiver import ai_archiver
 from .cost_controller import ai_cost_controller
@@ -21,7 +22,8 @@ from .api_utils import extract_response_text, response_tokens_and_cost, load_rec
 from .llm_client import build_llm_client, ai_credentials_present
 from .editorial import (format_history_block, history_texts, is_off_brand, is_repeat,
                         load_issue_history, numbers_in, overlap, reads_choppy, sentence_stats,
-                        to_sentence_case)
+                        to_sentence_case, headline_overclaims, earlier_year, content_words)
+from .storylines import StorylineIndex, label_for
 
 logger = logging.getLogger(__name__)
 
@@ -45,6 +47,15 @@ class SimplifiedMultiStageAnalyzer:
                 self.history = load_issue_history(Config.NEWSLETTERS_DIR, days=Config.NEWSLETTER_HISTORY_DAYS)
             except Exception as e:
                 logger.warning(f"Issue history unavailable: {e}")
+        # Running storylines (names that identify an event across days): a
+        # story, quick hit or blindspot that continues one is recognised even
+        # when every word of the copy changed.
+        self.storylines = StorylineIndex([])
+        if Config.ENABLE_NEWSLETTER_HISTORY:
+            try:
+                self.storylines = StorylineIndex(load_issue_history(Config.NEWSLETTERS_DIR, days=5))
+            except Exception as e:
+                logger.warning(f"Storyline history unavailable: {e}")
         self.meta: Dict[str, Any] = {}
 
         if not self.mock_mode:
@@ -75,6 +86,7 @@ class SimplifiedMultiStageAnalyzer:
         """
         print(f"🔍 Starting simplified multi-stage analysis of {len(articles)} articles")
         logger.info(f"Simplified analysis started: {len(articles)} articles → {target_stories} deep stories + quick hits")
+        self.target_stories = target_stories
 
         start_time = time.time()
 
@@ -88,6 +100,10 @@ class SimplifiedMultiStageAnalyzer:
         sorted_articles = self._prefilter_articles(articles, cap=60)
 
         # Build the comprehensive prompt for single API call
+        # No reserve story in the prompt: a fourth story plus extra quick hits
+        # pushed DeepSeek's reasoning past 32k tokens (18-minute analysis in
+        # the 10-06 shadow runs). A demotion may leave 2 stories; DEVELOPING
+        # carries the running story.
         prompt = self._build_single_call_prompt(sorted_articles, target_stories)
 
         # Budget check before spending API tokens
@@ -111,7 +127,7 @@ class SimplifiedMultiStageAnalyzer:
             print(f"📡 Making single API call for comprehensive analysis...")
             response = self.client.messages.create(
                 model=Config.AI_MODEL,
-                max_tokens=Config.AI_MAX_TOKENS or 16000,
+                max_tokens=self._analysis_budget(),
                 messages=[{"role": "user", "content": prompt}]
             )
 
@@ -128,7 +144,7 @@ class SimplifiedMultiStageAnalyzer:
                 logger.warning("First response was not parseable JSON, retrying with corrective message")
                 retry_response = self.client.messages.create(
                     model=Config.AI_MODEL,
-                    max_tokens=Config.AI_MAX_TOKENS or 16000,
+                    max_tokens=self._analysis_budget(),
                     messages=[
                         {"role": "user", "content": prompt},
                         {"role": "assistant", "content": response_text or "(empty)"},
@@ -297,6 +313,7 @@ URL: {}
                 if titles:
                     history_block = ("\nRECENT NEWSLETTER COVERAGE (do NOT re-select these topics unless "
                                      "there is a genuinely new development):\n" + titles + "\n")
+            history_block += self._running_storylines_block()
 
         # Use string formatting to avoid f-string issues with article content containing braces
         template = """You write a daily world-news brief for smart readers who are NOT foreign-policy professionals. Each issue has: THE BIG STORY (the one thing worth full attention today), MORE TOP STORIES (the next most consequential distinct events, covered more briefly), ALSO TODAY (a quick world roundup so the reader feels caught up), and THE BIG NUMBER (one striking figure from today's news).
@@ -310,6 +327,7 @@ WRITING STYLE (strict — this is the product):
 - Plain English, active voice, US grade 8-9 reading level — reached with plain WORDS, not by chopping sentences.
 - Sentences of 12-20 words with a natural rhythm, one idea each. Never write fragments or strings of 4-7-word sentences ("Kyiv is short. It needs more. Factories take months.") — that reads as a telegram, not journalism. Never open consecutive sentences with "Also".
 - Headlines in sentence case: capitalize only the first word and proper nouns ("Trump rejects Iran's truce offer", never "Trump Rejects Iran's Truce Offer"). A headline must be literally true to the body: no "record", "first" or superlative the body does not support.
+- A headline claims only what is confirmed. If an action is planned, threatened, claimed by one side or not yet confirmed, the headline says so ("plans to", "says", "claims", "threatens", "agrees to discuss") — never "Pakistan and Turkey send troops" when the body says no deployment is confirmed.
 - Your own voice states facts only. Judgments ("shows Israel is isolated", "unusually high turnout") must be attributed to whoever makes them, or cut.
 - Banned jargon: "inflection point", "strategic calculus", "paradigm", "escalatory dynamics", "operational tempo", "recalibrate", "posture", "leverage" (as a verb), "signal" (as a verb), "underscore". Say what happened in real words.
 - Concrete beats abstract: "Iran said it will stop all Gulf oil exports" beats "Tehran signaled export disruption".
@@ -363,8 +381,8 @@ Return this EXACT JSON structure — a single JSON object, no other text:
 
 CONTENT RULES:
 1. big_stories: exactly the number of deep stories requested, ranked by geopolitical consequence — most consequential FIRST. Each must cover a DIFFERENT event. The first is THE story of the day — the one a busy reader must know; give it your fullest why_important. For stories after the first, keep why_important to max 50 words. The ranking and the scores must agree: no story may have a higher impact_score than a story ranked above it.
-2. quick_hits: 6 to 8 items, each about a DIFFERENT event than ALL of the big_stories and than each other — never restate any selected story as a quick hit, not even from a different angle — and never a rerun of a quick hit from recent issues (a follow-up is fine only when it states the new fact). Together they must span at least 4 distinct regions — this is the reader's "I'm caught up on the world" section, so favor geographic spread (Africa, Latin America and Asia are chronically under-covered; include them when the material exists).
-3. big_number: one genuinely striking, verifiable figure taken from one of the articles, about something NOT already covered by a story or quick hit in this issue (a number from the big story repeated as the big number wastes the slot) and not used in recent issues. If no such number exists, use null.
+2. quick_hits: 8 items, never about a story or storyline the reader already got (listed above), each about a DIFFERENT event than ALL of the big_stories and than each other — never restate any selected story as a quick hit, not even from a different angle — and never a rerun of a quick hit from recent issues (a follow-up is fine only when it states the new fact). Every quick hit must involve a government, an international organization, an armed group or a cross-border consequence, and must NAME the actor ("Japan's foreign ministry protested…", never "Leaders visited…" or "Officials said…"); science prizes, domestic health alerts and markets news without a state actor do not qualify. Together they must span at least 4 distinct regions — this is the reader's "I'm caught up on the world" section, so favor geographic spread (Africa, Latin America and Asia are chronically under-covered; include them when the material exists).
+3. big_number: one genuinely striking, verifiable figure taken from one of the articles, about something NOT already covered by a story or quick hit in this issue (a number from the big story repeated as the big number wastes the slot) and not used in recent issues. The figure must describe TODAY's event itself — never background from an earlier year ("6% vote share in 2024") or a past disaster's toll. If no such number exists, use null.
 4. NO sports, entertainment, celebrity or human-interest items, and NO single-country domestic crime, court cases, executions, campus scandals, accidents or space launches ANYWHERE in the issue — not as a story, not as a quick hit, not as the big number — unless the event has direct geopolitical consequences (state action, sanctions, boycotts, diplomatic fallout, cross-border impact). An athlete retiring, a film winning awards, a botched execution in one US state or a university fraternity case is never news for this brief; a world-roundup item must matter beyond its own country's borders.
 5. All scores integers 1-10 — use the whole scale. impact_score 9-10: changes the course of a war, a great-power relationship or the world economy (a few times a month, not daily); 7-8: a major national or regional development; 5-6: notable but contained. article_index values must reference the list above.
 6. Return ONLY the raw JSON object — no markdown, no explanations, no code blocks.
@@ -377,6 +395,23 @@ FIELD DEFINITIONS:
 
         return template.format(history_block, articles_section, target_stories)
     
+    def _running_storylines_block(self) -> str:
+        groups = (getattr(self, "storylines", None) or StorylineIndex([])).running_storylines(days=3)
+        if not groups:
+            return ""
+        lines = []
+        for g in groups:
+            names = ", ".join(label_for(t) for t in sorted(g["terms"], key=len)[:4])
+            dates = ", ".join(sorted(g["dates"]))
+            lines.append(f"- {names} (big story on {dates}; latest: {g['latest']})")
+        return ("\nSTORIES THE READER ALREADY FOLLOWED as big stories in the last issues "
+                "(give big-story slots to fresh events first; one of these may lead only if today's "
+                "development is the biggest news of the day):\n" + "\n".join(lines) + "\n")
+
+    @staticmethod
+    def _analysis_budget() -> int:
+        return max(Config.AI_MAX_TOKENS or 16000, getattr(Config, "ANALYSIS_MAX_TOKENS", 32000))
+
     @staticmethod
     def _served_model(response) -> str:
         """The model the provider actually ran (OpenRouter reports it), if known."""
@@ -515,6 +550,17 @@ FIELD DEFINITIONS:
 
         by_url = {a.url: a for a in articles}
 
+        # Quick hits and the big number: the link must be about the text.
+        # The model's article_index is sometimes off (10-06 shadow runs linked
+        # a 'super El Nino' quick hit to a pre-COP fossil-fuel article twice).
+        for item in list(issue.quick_hits) + ([issue.big_number] if issue.big_number else []):
+            text = getattr(item, 'text', None) or f"{getattr(item, 'value', '')} {getattr(item, 'context', '')}"
+            better = self._better_link(text, by_url.get(item.url), articles)
+            if better is not None:
+                self._note(f"Link fixed ({by_url[item.url].source if item.url in by_url else 'unknown'}"
+                           f" -> {better.source}): {text[:70]}")
+                item.url = better.url
+
         # Quick hits: link a non-state outlet when the same event has one
         for hit in issue.quick_hits:
             art = by_url.get(hit.url)
@@ -534,7 +580,7 @@ FIELD DEFINITIONS:
         for hit in issue.quick_hits:
             repeat = is_repeat(hit.text, prior_hits)
             if repeat:
-                logger.info(f"Quick hit dropped (rerun of a recent issue): {hit.text[:70]} ~ {repeat[:50]}")
+                self._note(f"Quick hit dropped (rerun of a recent issue): {hit.text[:70]}")
                 continue
             kept.append(hit)
         issue.quick_hits = kept
@@ -545,10 +591,12 @@ FIELD DEFINITIONS:
         for hit in issue.quick_hits:
             marker = is_off_brand(hit.text)
             if marker:
-                logger.warning(f"Quick hit dropped (off-brand: {marker}): {hit.text[:70]}")
+                self._note(f"Quick hit dropped (off-brand: {marker}): {hit.text[:70]}")
                 continue
             kept.append(hit)
         issue.quick_hits = kept
+
+        self._apply_storyline_rules(issue)
 
         # Big number: must add something the issue doesn't already say
         bn = issue.big_number
@@ -572,8 +620,14 @@ FIELD DEFINITIONS:
                 reason = "rerun of a recent issue"
             elif is_off_brand(bn_text):
                 reason = f"off-brand: {is_off_brand(bn_text)}"
+            elif earlier_year(bn.context):
+                reason = f"background figure from {earlier_year(bn.context)}, not today's event"
+            elif not re.search(r"\d", bn.value or ""):
+                reason = "not a figure"
+            elif (getattr(self, "storylines", None) or StorylineIndex([])).match(bn_text, days=3):
+                reason = "part of a running storyline"
             if reason:
-                logger.info(f"Big number dropped ({reason}): {bn.value} — {bn.context[:60]}")
+                self._note(f"Big number dropped ({reason}): {bn.value} — {bn.context[:60]}")
                 issue.big_number = None
 
         # Ranking sanity: order is editorial, but flag a contradiction
@@ -581,6 +635,135 @@ FIELD DEFINITIONS:
             if issue.stories[i].impact_score > issue.stories[0].impact_score:
                 logger.warning(f"Story #{i + 1} scores higher impact ({issue.stories[i].impact_score}) "
                                f"than the lead ({issue.stories[0].impact_score}) — lead choice may be off")
+
+        # Headlines that state as fact what the body calls unconfirmed —
+        # surfaced in the issue's quality report (meta.quality_flags)
+        flags = self.meta.setdefault("quality_flags", [])
+        for story in issue.stories:
+            if headline_overclaims(story.story_title, story.why_important, story.what_overlooked):
+                logger.warning(f"Headline may overstate an unconfirmed claim: {story.story_title}")
+                flags.append(f"headline_overclaims: {story.story_title}")
+
+    # Max one big story may continue a storyline that was a big story in the
+    # last two issues; max DEVELOPING lines per issue.
+    MAX_CONTINUING_STORIES = 1
+    MAX_DEVELOPING = 3
+    MAX_QUICK_HITS = 8
+
+    LINK_MISMATCH = 0.2   # share of the item's words its linked article has
+    LINK_BETTER = 0.4     # a replacement must clearly be about the item
+
+    @staticmethod
+    def _link_score(words, article) -> float:
+        if not words or article is None:
+            return 0.0
+        art_words = content_words(f"{article.title} {(article.summary or '')[:400]}", stem=True)
+        return len(words & art_words) / len(words)
+
+    def _better_link(self, text, current, articles):
+        """An article that matches `text` clearly better than its current
+        link does, or None when the link is fine or nothing fits better."""
+        words = content_words(text, stem=True)
+        if len(words) < 4:
+            return None
+        current_score = self._link_score(words, current)
+        if current is not None and current_score >= self.LINK_MISMATCH:
+            return None
+        best, best_score = None, 0.0
+        for a in articles:
+            score = self._link_score(words, a)
+            # prefer non-state outlets on ties
+            if score > best_score or (score == best_score and best is not None
+                                      and getattr(best, 'state_affiliated', False)
+                                      and not getattr(a, 'state_affiliated', False)):
+                best, best_score = a, score
+        if best is not None and best is not current and best_score >= self.LINK_BETTER \
+                and best_score >= current_score + 0.2:
+            return best
+        return None
+
+    def _note(self, action: str) -> None:
+        """Record an editorial decision in the issue's meta (the JSON logger
+        does not carry module loggers, so shadow runs could not show them)."""
+        logger.info(action)
+        self.meta.setdefault("editorial_actions", []).append(action[:200])
+
+    def _apply_storyline_rules(self, issue: IssueContent) -> None:
+        """Running stories get one DEVELOPING line, not a story or quick-hit
+        slot. 2026-09-30..10-06 ran flydubai and the French school protests
+        four days in a row and Tigray as a big story in 4 of 6 issues — each
+        time "with a new fact", so the repeat filters let it through."""
+        idx = getattr(self, "storylines", None) or StorylineIndex([])
+        developing: List[DevelopingItem] = []
+        seen_labels = set()
+
+        def add(item: DevelopingItem, front: bool = False) -> bool:
+            key = item.storyline.lower()
+            if key in seen_labels or len(developing) >= self.MAX_DEVELOPING:
+                return False
+            seen_labels.add(key)
+            developing.insert(0, item) if front else developing.append(item)
+            return True
+
+        # 1) Big stories continuing a storyline that was a big story lately
+        continuing = []
+        for i, story in enumerate(issue.stories):
+            m = idx.match(story.story_title, story.signal_terms, days=2, kinds={"story"})
+            if m:
+                continuing.append((i, m[1]))
+        demotable = max(0, len(issue.stories) - 2)  # an issue keeps >= 2 stories
+        # Only the LEAD may continue a running storyline (the prompt allows it
+        # only when it is the day's most consequential news); a continuing
+        # story further down the ranking is a running story, not news.
+        extra = [c for c in continuing if c[0] != 0]
+        if continuing and continuing[0][0] == 0:
+            extra = continuing[self.MAX_CONTINUING_STORIES:]
+        for i, term in sorted(extra, reverse=True)[:demotable]:
+            story = issue.stories.pop(i)
+            self._note(f"Story demoted to DEVELOPING (running storyline '{term}'): {story.story_title}")
+            add(DevelopingItem(storyline=label_for(term), text=story.story_title.rstrip(".") + ".",
+                               region=story.region, url=(story.sources or [""])[0]), front=True)
+
+        # 2) The model's own DEVELOPING items: one per storyline, new facts only
+        prior = history_texts(self._storyline_history(), "developing", "quick_hits")
+        for item in issue.developing:
+            if is_repeat(item.text, prior):
+                self._note(f"Developing item dropped (no new fact): {item.text[:70]}")
+                continue
+            add(item)
+
+        # 3) Quick hits that belong to today's stories or a running storyline
+        today = StorylineIndex([{"date": "today", "stories": [s.story_title for s in issue.stories],
+                                 "story_terms": [s.signal_terms for s in issue.stories]}])
+        kept = []
+        for hit in issue.quick_hits:
+            m = idx.match(hit.text, days=3, kinds={"story", "quick_hit", "developing"})
+            if m:
+                moved = add(DevelopingItem(storyline=label_for(m[1]), text=hit.text,
+                                           region=hit.region, url=hit.url))
+                self._note(f"Quick hit {'moved to DEVELOPING' if moved else 'dropped'} "
+                           f"(running storyline '{m[1]}'): {hit.text[:70]}")
+                continue
+            if today.match(hit.text, days=1, kinds={"story"}):
+                self._note(f"Quick hit dropped (same storyline as a story today): {hit.text[:70]}")
+                continue
+            kept.append(hit)
+        # 4) The reserve story: published only if a demotion made room;
+        # otherwise it leads ALSO TODAY as a one-sentence item.
+        target = getattr(self, "target_stories", len(issue.stories)) or len(issue.stories)
+        while len(issue.stories) > max(1, target):
+            reserve = issue.stories.pop()
+            first = re.split(r"(?<=[.!?])\s+", (reserve.why_important or "").strip())[0]
+            text = first if len(first.split()) >= 6 else reserve.story_title.rstrip(".") + "."
+            kept.insert(0, QuickHit(text=text, region=reserve.region,
+                                    url=(reserve.sources or [""])[0]))
+            self._note(f"Reserve story moved to ALSO TODAY: {reserve.story_title}")
+        issue.quick_hits = kept[:self.MAX_QUICK_HITS]
+        issue.developing = developing
+
+    def _storyline_history(self) -> List[dict]:
+        """Raw history behind the storyline index (for text-level repeat checks)."""
+        return getattr(getattr(self, "storylines", None), "history", []) or self.history
 
     def _story_from_data(self, data: Dict[str, Any], articles: List[Article]) -> AIAnalysis:
         """Build one AIAnalysis from a parsed story dict."""
@@ -716,6 +899,17 @@ FIELD DEFINITIONS:
                 ))
             quick_hits = self._filter_hits_against_stories(quick_hits, stories, articles)
 
+            developing = []
+            for item in data.get('developing', []) or []:
+                if not isinstance(item, dict):
+                    continue
+                text = (item.get('text') or '').strip()
+                label = (item.get('storyline') or '').strip()
+                if text and label:
+                    developing.append(DevelopingItem(
+                        storyline=label[:40], text=text, region=item.get('region', 'global'),
+                        url=self._article_url(item.get('article_index'), articles)))
+
             big_number = None
             bn = data.get('big_number')
             if isinstance(bn, dict) and bn.get('value') and bn.get('context'):
@@ -729,6 +923,7 @@ FIELD DEFINITIONS:
             preheader = str(data.get('preheader') or "").strip().strip('"')[:110]
 
             return IssueContent(stories=stories, quick_hits=quick_hits, big_number=big_number,
+                                developing=developing,
                                 email_subject=email_subject, preheader=preheader)
 
         except Exception as e:

@@ -49,6 +49,7 @@ def save_issue_json(newsletter: Newsletter, newsletters_dir: Path) -> Path:
         "big_number": asdict(newsletter.big_number) if newsletter.big_number else None,
         "perspective_grid": asdict(newsletter.perspective_grid) if newsletter.perspective_grid else None,
         "signals": [asdict(s) for s in (newsletter.signals or [])],
+        "developing": [asdict(d) for d in (getattr(newsletter, 'developing', None) or [])],
         # Provenance (provider, served model, tokens, cost, readability)
         "meta": getattr(newsletter, 'meta', None) or {},
     }

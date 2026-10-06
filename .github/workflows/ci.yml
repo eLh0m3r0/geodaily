@@ -46,7 +46,7 @@ concurrency:
 jobs:
   dry-run:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 40
     env:
       FASTEMBED_CACHE_PATH: /home/runner/.cache/fastembed
     steps:
@@ -107,11 +107,12 @@ jobs:
           python - "$f" <<'PY'
           import json, sys
           d = json.load(open(sys.argv[1], encoding='utf-8'))
-          keep = ('date', 'email_subject', 'preheader', 'stories', 'quick_hits', 'big_number', 'perspective_grid', 'signals')
+          keep = ('date', 'email_subject', 'preheader', 'stories', 'developing', 'quick_hits', 'big_number', 'perspective_grid', 'signals', 'meta')
           print("SHADOW_ISSUE_JSON " + json.dumps({k: d[k] for k in keep if k in d}, ensure_ascii=False))
           PY
           grep -h -o '"message": "[^"]*Cost[^"]*"' logs/*.log 2>/dev/null | tail -3 || true
           grep -h -o '"message": "Quote failed[^"]*"' logs/*.log 2>/dev/null | wc -l || true
+          python scripts/issue_quality_report.py "$f" || true
 
       - name: Upload generated outputs
         uses: actions/upload-artifact@v4

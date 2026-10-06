@@ -205,7 +205,7 @@ class GitHubPagesPublisher:
                 </div>
 
                 <footer class="newsletter-footer">
-                    <p>{newsletter.footer_text or 'Drafted with AI from the sources linked above, with human review. Spotted an error? Open an issue or reply to the email — a human reads every response.'}</p>
+                    <p>{newsletter.footer_text or 'Written with AI from the sources linked above and published automatically; every claim links to its source. Spotted an error? Open an issue or reply to the email — a human reads every response.'}</p>
                     <p class="timestamp">Generated on {datetime.now().strftime('%Y-%m-%d at %H:%M UTC')}</p>
                     {self._build_subscribe_html()}
                 </footer>
@@ -215,7 +215,7 @@ class GitHubPagesPublisher:
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 Geopolitical Daily. Strategic analysis beyond the headlines.</p>
+            <p>&copy; {datetime.now().year} Geopolitical Daily. Strategic analysis beyond the headlines.</p>
             <p>
                 <a href="../feed.xml">RSS Feed</a> |
                 <a href="../archive.html">Archive</a> |
@@ -333,7 +333,22 @@ class GitHubPagesPublisher:
         """
         html = ""
         quick_hits = getattr(newsletter, 'quick_hits', None) or []
+        developing = getattr(newsletter, 'developing', None) or []
         big_number = getattr(newsletter, 'big_number', None)
+        if developing:
+            items = ""
+            for d in developing:
+                arrow = f' <a href="{d.url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>' if d.url else ""
+                items += (f'                        <li><strong class="developing-label">{d.storyline}:</strong> '
+                          f'{d.text}{arrow}</li>\n')
+            html += f"""
+                    <section class="developing">
+                        <h2 class="section-label">Developing</h2>
+                        <p class="developing-note">What changed today in stories you have been following.</p>
+                        <ul class="quick-hits">
+{items}                        </ul>
+                    </section>
+"""
         if quick_hits:
             items = ""
             for hit in quick_hits:
@@ -592,7 +607,7 @@ class GitHubPagesPublisher:
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 Geopolitical Daily. Strategic analysis beyond the headlines.</p>
+            <p>&copy; {datetime.now().year} Geopolitical Daily. Strategic analysis beyond the headlines.</p>
             <p>
                 <a href="feed.xml">RSS Feed</a> |
                 <a href="archive.html">Archive</a> |
@@ -705,7 +720,7 @@ class GitHubPagesPublisher:
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 Geopolitical Daily. Strategic analysis beyond the headlines.</p>
+            <p>&copy; {datetime.now().year} Geopolitical Daily. Strategic analysis beyond the headlines.</p>
             <p>
                 <a href="feed.xml">RSS Feed</a> |
                 <a href="index.html">Latest Newsletter</a> |
@@ -834,7 +849,7 @@ class GitHubPagesPublisher:
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 Geopolitical Daily. Strategic analysis beyond the headlines.</p>
+            <p>&copy; {datetime.now().year} Geopolitical Daily. Strategic analysis beyond the headlines.</p>
             <p>
                 <a href="feed.xml">RSS Feed</a> |
                 <a href="archive.html">Archive</a> |
@@ -1101,7 +1116,7 @@ class GitHubPagesPublisher:
         <dc:creator>Geopolitical Daily Editorial Team</dc:creator>
         <dc:publisher>Geopolitical Daily</dc:publisher>
         <dc:language>en-US</dc:language>
-        <dc:rights>© 2025 Geopolitical Daily. All rights reserved.</dc:rights>
+        <dc:rights>© {datetime.now().year} Geopolitical Daily. All rights reserved.</dc:rights>
 
         <!-- Image for feed readers that support it -->
         <image>
@@ -1453,7 +1468,9 @@ body {
 .big-number { text-align: center; }
 .signals-inline { margin: -0.5rem 0 1.25rem 0; }
 .signals-inline .quick-hits { list-style: none; padding-left: 0.25rem; }
-.also-today, .big-number, .blindspot-section {
+.developing-note { font-size: 0.8rem; color: var(--text-light); margin: -0.25rem 0 0.5rem 0; }
+.developing-label { font-weight: 700; }
+.developing, .also-today, .big-number, .blindspot-section {
     margin: 2rem 0; padding: 1.25rem 1.5rem;
     background: var(--bg-light); border-radius: 8px;
 }

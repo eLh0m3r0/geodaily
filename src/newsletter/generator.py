@@ -24,7 +24,7 @@ class NewsletterGenerator:
                             quick_hits=None, big_number=None,
                             perspective_grid=None, signals=None,
                             email_subject: str = "", preheader: str = "",
-                            meta: Optional[dict] = None) -> Newsletter:
+                            meta: Optional[dict] = None, developing=None) -> Newsletter:
         """
         Generate newsletter from AI analyses with balanced content types.
 
@@ -53,7 +53,8 @@ class NewsletterGenerator:
             date=date,
             title=Config.NEWSLETTER_TITLE,
             stories=selected_stories,
-            intro_text=self._generate_intro_text(date, len(selected_stories), len(quick_hits)),
+            intro_text=self._generate_intro_text(date, len(selected_stories), len(quick_hits),
+                                                 len(developing or [])),
             footer_text=self._generate_footer_text(),
             quick_hits=quick_hits,
             big_number=big_number,
@@ -62,6 +63,7 @@ class NewsletterGenerator:
             email_subject=email_subject,
             preheader=preheader,
             meta=dict(meta or {}),
+            developing=list(developing or []),
         )
 
         return newsletter
@@ -508,6 +510,21 @@ class NewsletterGenerator:
         (web). The perspective grid and signals render inside the big story.
         """
         html = ""
+        developing = getattr(newsletter, 'developing', None) or []
+        if developing:
+            items = ""
+            for d in developing:
+                link = (f' <a href="{d.url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>'
+                        if d.url else "")
+                items += f'<li><strong class="developing-label">{d.storyline}:</strong> {d.text}{link}</li>\n'
+            html += f"""
+        <div class="developing">
+            <div class="section-heading">Developing</div>
+            <div class="developing-note">What changed today in stories you have been following.</div>
+            <ul class="quick-hits">
+{items}            </ul>
+        </div>
+"""
         if newsletter.quick_hits:
             items = ""
             for hit in newsletter.quick_hits:
@@ -960,7 +977,13 @@ class NewsletterGenerator:
         .coverage-mini .coverage-legend { margin-bottom: 0; }
 
         /* Also Today roundup */
-        .also-today, .big-number, .blindspot-section {
+        .developing-note {
+            font-size: 0.8rem;
+            color: #6B7280;
+            margin: -2px 0 6px 0;
+        }
+        .developing-label { font-weight: 700; }
+        .developing, .also-today, .big-number, .blindspot-section {
             margin: 30px 0;
             padding: 20px 24px;
             background-color: #f7f8fa;
@@ -1025,7 +1048,8 @@ class NewsletterGenerator:
         }
         """
     
-    def _generate_intro_text(self, date: datetime, story_count: int, quick_hit_count: int = 0) -> str:
+    def _generate_intro_text(self, date: datetime, story_count: int, quick_hit_count: int = 0,
+                             developing_count: int = 0) -> str:
         """Generate intro text for newsletter.
 
         Kept to two short sentences — on mobile a long boilerplate intro fills
@@ -1036,9 +1060,15 @@ class NewsletterGenerator:
 
         story_phrase = ("one story worth your full attention" if story_count <= 1
                         else f"the {story_count} stories that matter most")
+        extras = []
+        if developing_count:
+            extras.append(f"{developing_count} update{'s' if developing_count != 1 else ''} "
+                          f"on stories you're following")
         if quick_hit_count:
+            extras.append(f"{quick_hit_count} quick items from around the world")
+        if extras:
             return (f"Good morning. It's {day_name}, {date_str} — {story_phrase} today, "
-                    f"plus {quick_hit_count} quick updates from around the world.")
+                    f"plus {' and '.join(extras)}.")
         return (f"Good morning. It's {day_name}, {date_str} — today's briefing covers "
                 f"{story_count} developments shaping global affairs.")
     
@@ -1053,7 +1083,10 @@ class NewsletterGenerator:
         if curator:
             drafted = f"Drafted with AI from the sources linked above, curated and reviewed by {curator}."
         else:
-            drafted = "Drafted with AI from the sources linked above, with human review before sending."
+            # No named editor means no review step before sending — say so
+            # plainly instead of promising one (it went out unreviewed daily).
+            drafted = ("Written with AI from the sources linked above and sent automatically; "
+                       "every claim links to its source.")
         return f"{drafted} Spotted an error or have a tip? Just reply — a human reads every response."
     
     def generate_email_html(self, newsletter: Newsletter) -> str:
@@ -1376,6 +1409,20 @@ body,div,h1,h2,p{-webkit-hyphens:none !important;-ms-hyphens:none !important;hyp
         """Also Today (hairline list) + Blindspot + Big Number after the stories."""
         NO_HYPHENS = "-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;"
         html = ""
+        developing = getattr(newsletter, 'developing', None) or []
+        if developing:
+            items = ""
+            for i, d in enumerate(developing):
+                arrow = (f' <a href="{d.url}" style="color:{ACCENT};text-decoration:none;">&rarr;</a>'
+                         if d.url else "")
+                border = "" if i == len(developing) - 1 else f"border-bottom:1px solid {LINE};"
+                items += (f'<div style="padding:9px 0;{border}{SANS}font-size:14.5px;'
+                          f'line-height:1.6;color:{INK};{NO_HYPHENS}">'
+                          f'<strong>{d.storyline}:</strong> {d.text}{arrow}</div>')
+            html += (f'{kicker("Developing")}'
+                     f'<div style="{SANS}font-size:12px;color:{FAINT};margin:-6px 0 4px 0;">'
+                     f'What changed today in stories you have been following.</div>'
+                     f'<div style="margin-bottom:8px;">{items}</div>')
         if newsletter.quick_hits:
             items = ""
             for i, hit in enumerate(newsletter.quick_hits):
