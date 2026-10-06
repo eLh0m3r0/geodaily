@@ -213,6 +213,12 @@ class PerspectiveAnalyzer:
             if (cid and cid not in story_clusters and a.url not in story_urls
                     and self._is_fresh(a, now) and not self._off_topic(a)):
                 events[cid].append(a)
+        # Western reports anywhere in the pool: a cluster can be non-Western
+        # only because the embedding split one event (10-06 shadow: the Moscow
+        # drone strike was offered as a blindspot while France 24 ran it).
+        western_titles = [a.title for a in articles
+                          if group_of(getattr(a, 'source_perspective', '')) not in NON_WESTERN_GROUPS
+                          and group_of(getattr(a, 'source_perspective', '')) != 'intl_org']
         candidates = []
         for members in events.values():
             if len({m.source for m in members}) < 2:
@@ -226,6 +232,12 @@ class PerspectiveAnalyzer:
                    for m in members for topic in known_topics) \
                     or self._repeats_recent_blindspot(" ".join(m.title for m in members)):
                 logger.info(f"Blindspot candidate skipped (storyline already covered): {members[0].title[:70]}")
+                continue
+            western = next((w for m in members for w in western_titles
+                            if overlap(m.title, w) >= self.BLINDSPOT_TOPIC_OVERLAP), None)
+            if western:
+                logger.info(f"Blindspot candidate skipped (a Western outlet ran it: {western[:60]}): "
+                            f"{members[0].title[:70]}")
                 continue
             covered = self._covered_storyline(members, stories)
             if covered:

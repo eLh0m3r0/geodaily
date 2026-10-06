@@ -300,3 +300,24 @@ def test_big_number_must_be_a_figure_and_not_a_running_story(analyzer):
                          big_number=BigNumber("4,000", "Ebola deaths in eastern Congo since May."))
     analyzer._apply_editorial_rules(issue, [])
     assert issue.big_number is not None
+
+
+def test_event_run_by_a_western_outlet_elsewhere_is_no_blindspot(persp):
+    arts = [art("Ukrainian drones hit Moscow region fuel depot, kill two", "https://meduza.io/9", "Meduza", "russian_exile", False, "e5"),
+            art("Moscow region fuel depot hit by Ukrainian drones", "https://st.com/9", "The Straits Times", "east_asia", False, "e5"),
+            art("Massive Ukrainian drone attack hits Moscow region fuel depot", "https://france24.com/9", "France 24",
+                "western_mainstream", False, "e6")]
+    assert persp._blindspot_candidates([story("Kenya confirms Ebola case")], arts) == []
+
+
+def test_reserve_story_becomes_a_quick_hit_unless_a_demotion_made_room(analyzer):
+    analyzer.target_stories = 3
+    issue = IssueContent(stories=[story("Fresh lead"), story("Fresh two"), story("Fresh three"),
+                                  story("Reserve event", why="Chile's congress approved a new constitution draft on Monday.")])
+    analyzer._apply_storyline_rules(issue)
+    assert len(issue.stories) == 3 and issue.quick_hits[0].text.startswith("Chile's congress")
+    issue = IssueContent(stories=[story("Fresh lead"), story("Ethiopian troops press on in Tigray", terms=["Tigray"]),
+                                  story("Fresh three"), story("Reserve event")])
+    analyzer._apply_storyline_rules(issue)
+    assert [s.story_title for s in issue.stories] == ["Fresh lead", "Fresh three", "Reserve event"]
+    assert any("Story demoted" in a for a in analyzer.meta["editorial_actions"])

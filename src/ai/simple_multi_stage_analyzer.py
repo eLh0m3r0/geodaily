@@ -86,6 +86,7 @@ class SimplifiedMultiStageAnalyzer:
         """
         print(f"🔍 Starting simplified multi-stage analysis of {len(articles)} articles")
         logger.info(f"Simplified analysis started: {len(articles)} articles → {target_stories} deep stories + quick hits")
+        self.target_stories = target_stories
 
         start_time = time.time()
 
@@ -99,7 +100,10 @@ class SimplifiedMultiStageAnalyzer:
         sorted_articles = self._prefilter_articles(articles, cap=60)
 
         # Build the comprehensive prompt for single API call
-        prompt = self._build_single_call_prompt(sorted_articles, target_stories)
+        # One reserve story: when a running storyline is demoted to
+        # DEVELOPING, the reserve keeps the issue at full strength (the 10-06
+        # shadow run shipped 2 stories after demoting RAF Fairford).
+        prompt = self._build_single_call_prompt(sorted_articles, target_stories + 1 if target_stories > 1 else 1)
 
         # Budget check before spending API tokens
         cost_estimate = ai_cost_controller.estimate_cost(len(prompt), "analysis")
@@ -316,7 +320,7 @@ URL: {}
 ARTICLES TO ANALYZE:
 {}
 
-Build today's issue from the above articles. Deep stories to select: {}.
+Build today's issue from the above articles. Deep stories to select: {} (when this is more than one, the last is a reserve that may not be published — rank it last).
 
 WRITING STYLE (strict — this is the product):
 - Plain English, active voice, US grade 8-9 reading level — reached with plain WORDS, not by chopping sentences.
@@ -564,7 +568,7 @@ FIELD DEFINITIONS:
         for hit in issue.quick_hits:
             repeat = is_repeat(hit.text, prior_hits)
             if repeat:
-                logger.info(f"Quick hit dropped (rerun of a recent issue): {hit.text[:70]} ~ {repeat[:50]}")
+                self._note(f"Quick hit dropped (rerun of a recent issue): {hit.text[:70]}")
                 continue
             kept.append(hit)
         issue.quick_hits = kept
@@ -575,7 +579,7 @@ FIELD DEFINITIONS:
         for hit in issue.quick_hits:
             marker = is_off_brand(hit.text)
             if marker:
-                logger.warning(f"Quick hit dropped (off-brand: {marker}): {hit.text[:70]}")
+                self._note(f"Quick hit dropped (off-brand: {marker}): {hit.text[:70]}")
                 continue
             kept.append(hit)
         issue.quick_hits = kept
@@ -611,7 +615,7 @@ FIELD DEFINITIONS:
             elif (getattr(self, "storylines", None) or StorylineIndex([])).match(bn_text, days=3):
                 reason = "part of a running storyline"
             if reason:
-                logger.info(f"Big number dropped ({reason}): {bn.value} — {bn.context[:60]}")
+                self._note(f"Big number dropped ({reason}): {bn.value} — {bn.context[:60]}")
                 issue.big_number = None
 
         # Ranking sanity: order is editorial, but flag a contradiction
@@ -633,6 +637,12 @@ FIELD DEFINITIONS:
     MAX_CONTINUING_STORIES = 1
     MAX_DEVELOPING = 3
     MAX_QUICK_HITS = 8
+
+    def _note(self, action: str) -> None:
+        """Record an editorial decision in the issue's meta (the JSON logger
+        does not carry module loggers, so shadow runs could not show them)."""
+        logger.info(action)
+        self.meta.setdefault("editorial_actions", []).append(action[:200])
 
     def _apply_storyline_rules(self, issue: IssueContent) -> None:
         """Running stories get one DEVELOPING line, not a story or quick-hit
@@ -666,7 +676,7 @@ FIELD DEFINITIONS:
             extra = continuing[self.MAX_CONTINUING_STORIES:]
         for i, term in sorted(extra, reverse=True)[:demotable]:
             story = issue.stories.pop(i)
-            logger.info(f"Story demoted to DEVELOPING (running storyline '{term}'): {story.story_title}")
+            self._note(f"Story demoted to DEVELOPING (running storyline '{term}'): {story.story_title}")
             add(DevelopingItem(storyline=label_for(term), text=story.story_title.rstrip(".") + ".",
                                region=story.region, url=(story.sources or [""])[0]), front=True)
 
@@ -674,7 +684,7 @@ FIELD DEFINITIONS:
         prior = history_texts(self._storyline_history(), "developing", "quick_hits")
         for item in issue.developing:
             if is_repeat(item.text, prior):
-                logger.info(f"Developing item dropped (no new fact): {item.text[:70]}")
+                self._note(f"Developing item dropped (no new fact): {item.text[:70]}")
                 continue
             add(item)
 
@@ -687,13 +697,23 @@ FIELD DEFINITIONS:
             if m:
                 moved = add(DevelopingItem(storyline=label_for(m[1]), text=hit.text,
                                            region=hit.region, url=hit.url))
-                logger.info(f"Quick hit {'moved to DEVELOPING' if moved else 'dropped'} "
-                            f"(running storyline '{m[1]}'): {hit.text[:70]}")
+                self._note(f"Quick hit {'moved to DEVELOPING' if moved else 'dropped'} "
+                           f"(running storyline '{m[1]}'): {hit.text[:70]}")
                 continue
             if today.match(hit.text, days=1, kinds={"story"}):
-                logger.info(f"Quick hit dropped (same storyline as a story today): {hit.text[:70]}")
+                self._note(f"Quick hit dropped (same storyline as a story today): {hit.text[:70]}")
                 continue
             kept.append(hit)
+        # 4) The reserve story: published only if a demotion made room;
+        # otherwise it leads ALSO TODAY as a one-sentence item.
+        target = getattr(self, "target_stories", len(issue.stories)) or len(issue.stories)
+        while len(issue.stories) > max(1, target):
+            reserve = issue.stories.pop()
+            first = re.split(r"(?<=[.!?])\s+", (reserve.why_important or "").strip())[0]
+            text = first if len(first.split()) >= 6 else reserve.story_title.rstrip(".") + "."
+            kept.insert(0, QuickHit(text=text, region=reserve.region,
+                                    url=(reserve.sources or [""])[0]))
+            self._note(f"Reserve story moved to ALSO TODAY: {reserve.story_title}")
         issue.quick_hits = kept[:self.MAX_QUICK_HITS]
         issue.developing = developing
 
