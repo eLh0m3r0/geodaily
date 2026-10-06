@@ -336,3 +336,22 @@ def test_weather_words_are_no_storyline_names():
     from src.ai.storylines import distinctive_tokens
     assert "super" not in distinctive_tokens("Super Typhoon Ragasa")
     assert distinctive_tokens("super", any_case=True) == set()
+
+
+def test_quick_hit_linked_to_an_unrelated_article_is_relinked_1006(analyzer):
+    from src.models import QuickHit
+    wrong = art("Agreement to transition away from fossil fuels not open for renegotiation, Pacific leader tells pre-COP",
+                "https://theguardian.com/precop", "The Guardian")
+    right = art("Albanese warns Pacific leaders of floods, cyclones and heat as super El Nino builds",
+                "https://abc.net.au/elnino", "ABC News",
+                summary="Australia's prime minister warned of a hazardous summer driven by a super El Nino.")
+    hit = QuickHit(text="Australia's prime minister warned of a hazardous summer of floods, cyclones and extreme "
+                        "heat, driven by a 'super El Nino' building in the Pacific.",
+                   region="indo_pacific", url=wrong.url)
+    ok = QuickHit(text="Pacific leader says the fossil fuel transition agreement is not open for renegotiation.",
+                  region="indo_pacific", url=wrong.url)
+    issue = IssueContent(stories=[story("Germany arrests its former spy chief")], quick_hits=[hit, ok])
+    analyzer._apply_editorial_rules(issue, [wrong, right])
+    assert hit.url == right.url
+    assert ok.url == wrong.url
+    assert any(a.startswith("Link fixed") for a in analyzer.meta["editorial_actions"])

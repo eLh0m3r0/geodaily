@@ -22,7 +22,7 @@ from .api_utils import extract_response_text, response_tokens_and_cost, load_rec
 from .llm_client import build_llm_client, ai_credentials_present
 from .editorial import (format_history_block, history_texts, is_off_brand, is_repeat,
                         load_issue_history, numbers_in, overlap, reads_choppy, sentence_stats,
-                        to_sentence_case, headline_overclaims, earlier_year)
+                        to_sentence_case, headline_overclaims, earlier_year, content_words)
 from .storylines import StorylineIndex, label_for
 
 logger = logging.getLogger(__name__)
@@ -550,6 +550,17 @@ FIELD DEFINITIONS:
 
         by_url = {a.url: a for a in articles}
 
+        # Quick hits and the big number: the link must be about the text.
+        # The model's article_index is sometimes off (10-06 shadow runs linked
+        # a 'super El Nino' quick hit to a pre-COP fossil-fuel article twice).
+        for item in list(issue.quick_hits) + ([issue.big_number] if issue.big_number else []):
+            text = getattr(item, 'text', None) or f"{getattr(item, 'value', '')} {getattr(item, 'context', '')}"
+            better = self._better_link(text, by_url.get(item.url), articles)
+            if better is not None:
+                self._note(f"Link fixed ({by_url[item.url].source if item.url in by_url else 'unknown'}"
+                           f" -> {better.source}): {text[:70]}")
+                item.url = better.url
+
         # Quick hits: link a non-state outlet when the same event has one
         for hit in issue.quick_hits:
             art = by_url.get(hit.url)
@@ -638,6 +649,38 @@ FIELD DEFINITIONS:
     MAX_CONTINUING_STORIES = 1
     MAX_DEVELOPING = 3
     MAX_QUICK_HITS = 8
+
+    LINK_MISMATCH = 0.2   # share of the item's words its linked article has
+    LINK_BETTER = 0.4     # a replacement must clearly be about the item
+
+    @staticmethod
+    def _link_score(words, article) -> float:
+        if not words or article is None:
+            return 0.0
+        art_words = content_words(f"{article.title} {(article.summary or '')[:400]}", stem=True)
+        return len(words & art_words) / len(words)
+
+    def _better_link(self, text, current, articles):
+        """An article that matches `text` clearly better than its current
+        link does, or None when the link is fine or nothing fits better."""
+        words = content_words(text, stem=True)
+        if len(words) < 4:
+            return None
+        current_score = self._link_score(words, current)
+        if current is not None and current_score >= self.LINK_MISMATCH:
+            return None
+        best, best_score = None, 0.0
+        for a in articles:
+            score = self._link_score(words, a)
+            # prefer non-state outlets on ties
+            if score > best_score or (score == best_score and best is not None
+                                      and getattr(best, 'state_affiliated', False)
+                                      and not getattr(a, 'state_affiliated', False)):
+                best, best_score = a, score
+        if best is not None and best is not current and best_score >= self.LINK_BETTER \
+                and best_score >= current_score + 0.2:
+            return best
+        return None
 
     def _note(self, action: str) -> None:
         """Record an editorial decision in the issue's meta (the JSON logger
