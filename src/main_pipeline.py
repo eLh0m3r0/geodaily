@@ -443,6 +443,7 @@ def run_complete_pipeline() -> bool:
 
             # Check if AI analysis should be skipped due to degradation
             issue_meta = {}
+            developing = []
             if degradation_manager.should_skip_operation("ai_analysis", "ai_analyzer"):
                 logger.warning("Skipping AI analysis due to system degradation",
                              pipeline_stage=PipelineStage.AI_ANALYSIS,
@@ -466,6 +467,7 @@ def run_complete_pipeline() -> bool:
                     analyses = issue.stories
                     quick_hits = issue.quick_hits
                     big_number = issue.big_number
+                    developing = issue.developing
                     email_subject = issue.email_subject
                     preheader = issue.preheader
                     ai_time = time.time() - ai_start
@@ -662,7 +664,7 @@ def run_complete_pipeline() -> bool:
                         analyses, quick_hits=quick_hits, big_number=big_number,
                         perspective_grid=perspective_grid, signals=signals,
                         email_subject=email_subject, preheader=preheader,
-                        meta=issue_meta)
+                        meta=issue_meta, developing=developing)
                     html_content = generator.generate_html(newsletter)
 
                     # Save newsletter (legacy format)

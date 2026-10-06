@@ -29,6 +29,7 @@ from .cost_controller import ai_cost_controller
 from .api_utils import extract_response_text, response_tokens_and_cost
 from .llm_client import build_llm_client, ai_credentials_present
 from .editorial import content_words, history_texts, load_issue_history, overlap
+from .storylines import StorylineIndex, distinctive_tokens, text_has
 
 logger = logging.getLogger(__name__)
 
@@ -49,11 +50,17 @@ class PerspectiveAnalyzer:
         # reader has NOT already had (09-17 resurfaced the 09-15 lead story).
         self.recent_topics: List[str] = []
         self.recent_blindspots: List[str] = []
+        # Everything the last 5 issues covered, by distinctive names: a
+        # blindspot is never one of OUR running stories (10-05 offered
+        # flydubai — the week's most-covered story — as "the story the West
+        # missed").
+        self.storylines = StorylineIndex([])
         if Config.ENABLE_NEWSLETTER_HISTORY:
             try:
                 history = load_issue_history(Config.NEWSLETTERS_DIR, days=max(3, Config.NEWSLETTER_HISTORY_DAYS))
                 self.recent_topics = history_texts(history, "stories", "blindspot")
                 self.recent_blindspots = history_texts(history, "blindspot")
+                self.storylines = StorylineIndex(load_issue_history(Config.NEWSLETTERS_DIR, days=5))
             except Exception as e:
                 logger.warning(f"Issue history unavailable for blindspot screening: {e}")
         if not self.mock_mode:
@@ -76,9 +83,37 @@ class PerspectiveAnalyzer:
             members = [a for a in articles if getattr(a, 'cluster_id', None) in cluster_ids]
         else:
             members = cited
+        members = self._focus_members(story, members, source_urls)
         # Stable order: cited articles first, then by source weight
         members.sort(key=lambda a: (a.url not in source_urls, -(a.source_weight or 1.0)))
         return members
+
+    @staticmethod
+    def _focus_members(story: AIAnalysis, members: List[Article], source_urls: set) -> List[Article]:
+        """Keep the cluster members that name the event, not merely its actors.
+
+        Embedding clusters are topical: 10-04's "Kyiv bridges" cluster carried
+        a TASS piece on casualties in Donetsk, 10-01's Kaliningrad cluster an
+        FT op-ed on hybrid war — and each became a grid row speaking for its
+        whole perspective group. A member stays when it mentions one of the
+        story's distinctive names (signal terms minus generic actors) or is
+        cited by the story. No-op when the story has no distinctive name or
+        filtering would leave fewer than 2 members."""
+        patterns = set()
+        for term in story.signal_terms or []:
+            patterns |= distinctive_tokens(term, any_case=" " not in term.strip())
+        if not patterns:
+            return members
+        focused = []
+        for a in members:
+            text = f"{a.title} {(getattr(a, 'full_content', None) or a.summary or '')[:600]}".lower()
+            if a.url in source_urls or any(text_has(text, p) for p in patterns):
+                focused.append(a)
+        if len(focused) < 2:
+            return members
+        if len(focused) < len(members):
+            logger.info(f"Grid members focused on {sorted(patterns)[:4]}: {len(members)} -> {len(focused)}")
+        return focused
 
     def _group_articles(self, members: List[Article]) -> Dict[str, List[Article]]:
         groups = defaultdict(list)
@@ -192,12 +227,29 @@ class PerspectiveAnalyzer:
                     or self._repeats_recent_blindspot(" ".join(m.title for m in members)):
                 logger.info(f"Blindspot candidate skipped (storyline already covered): {members[0].title[:70]}")
                 continue
+            covered = self._covered_storyline(members, stories)
+            if covered:
+                logger.info(f"Blindspot candidate skipped (our own storyline '{covered}'): {members[0].title[:70]}")
+                continue
             candidates.append(members)
-        # State outlets count half: corroboration from independent outlets
-        # is what makes a blindspot worth the reader's time.
-        candidates.sort(key=lambda ms: -sum((m.source_weight or 1.0) * (0.5 if self._is_state(m) else 1.0)
-                                             for m in ms))
+        # Independent corroboration first: distinct non-state outlets, then
+        # weight (state outlets count half).
+        candidates.sort(key=lambda ms: (
+            -len({m.source for m in ms if not self._is_state(m)}),
+            -sum((m.source_weight or 1.0) * (0.5 if self._is_state(m) else 1.0) for m in ms)))
         return candidates[:limit]
+
+    def _covered_storyline(self, members: List[Article], stories: List[AIAnalysis]) -> Optional[str]:
+        """The distinctive name tying a candidate to today's stories or to
+        anything the last 5 issues covered, else None."""
+        text = " ".join(f"{m.title} {(m.summary or '')[:300]}" for m in members)
+        today = StorylineIndex([{"date": "today", "stories": [s.story_title for s in stories],
+                                 "story_terms": [s.signal_terms for s in stories]}])
+        for index, days in ((today, 1), (getattr(self, "storylines", None) or StorylineIndex([]), 5)):
+            hit = index.match(text, days=days)
+            if hit:
+                return hit[1]
+        return None
 
     @staticmethod
     def _is_state(article: Article) -> bool:
@@ -373,7 +425,9 @@ class PerspectiveAnalyzer:
                "adopted as your framing or as the reason it matters. Do NOT say who did or did "
                "not cover it and do not credit news agencies (\"Reuters reported\") — the page "
                "shows the outlets. Never pick a candidate from the same storyline as a recent "
-               "blindspot listed above. Use the candidate's index. Only "
+               "blindspot listed above. Use the candidate's index. It must be an EVENT — a "
+               "decision, an attack, casualties, a vote, an arrest, a deal or new data — never "
+               "a statement, speech, warning or opinion on its own. Only "
                "political, economic, security or humanitarian events qualify: never sports, "
                "entertainment, celebrities or lifestyle — if no candidate qualifies, "
                "return \"blindspot\": null.\n\n"
@@ -519,11 +573,41 @@ class PerspectiveAnalyzer:
 
     def _verify_quote(self, quote: str, article: Article) -> bool:
         """A quote must appear verbatim (modulo whitespace/smart quotes) in the
-        text we actually showed the model."""
+        text we actually showed the model — and must not date a past event in
+        the future (10-04 quoted a source typo: "struck the Pivnichnyi Bridge
+        in Kyiv on 14 October")."""
         haystack = self._normalize(
             f"{article.title} {(getattr(article, 'full_content', None) or article.summary or '')[:EXCERPT_CHARS + 100]}"
         )
-        return self._normalize(quote) in haystack
+        if self._normalize(quote) not in haystack:
+            return False
+        if self._future_dated_past_event(quote):
+            logger.warning(f"Quote dropped (past event dated in the future — source typo?): {quote[:80]}")
+            return False
+        return True
+
+    _MONTHS = {m: i for i, m in enumerate(
+        ["january", "february", "march", "april", "may", "june", "july", "august",
+         "september", "october", "november", "december"], start=1)}
+    _PAST_VERB = re.compile(r"\b(struck|hit|killed|attacked|launched|said|was|were|seized|"
+                            r"captured|fired|arrested|died|destroyed|damaged|signed|voted|won)\b", re.I)
+
+    @classmethod
+    def _future_dated_past_event(cls, quote: str, today: Optional[datetime] = None) -> bool:
+        today = (today or datetime.now(timezone.utc)).date()
+        if not cls._PAST_VERB.search(quote):
+            return False
+        months = "|".join(cls._MONTHS)
+        for m in re.finditer(rf"\b(\d{{1,2}})\s+({months})\b|\b({months})\s+(\d{{1,2}})\b", quote, re.I):
+            day = int(m.group(1) or m.group(4))
+            month = cls._MONTHS[(m.group(2) or m.group(3)).lower()]
+            try:
+                when = today.replace(month=month, day=day)
+            except ValueError:
+                continue
+            if 1 < (when - today).days < 180:
+                return True
+        return False
 
     @staticmethod
     def _parse_json_object(text: str) -> Optional[dict]:

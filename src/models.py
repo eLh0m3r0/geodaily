@@ -169,6 +169,17 @@ class QuickHit:
 
 
 @dataclass
+class DevelopingItem:
+    """One-line update on a running storyline the reader already knows
+    (DEVELOPING section) — instead of spending a story or quick-hit slot
+    on the fourth day of the same story."""
+    storyline: str      # short label, e.g. "Tigray"
+    text: str           # what is new today, one sentence
+    region: str = "global"
+    url: str = ""
+
+
+@dataclass
 class BigNumber:
     """Delight element: one striking number from today's news with context."""
     value: str          # e.g. "35 %"
@@ -219,6 +230,7 @@ class IssueContent:
     stories: List[AIAnalysis] = field(default_factory=list)
     quick_hits: List[QuickHit] = field(default_factory=list)
     big_number: Optional[BigNumber] = None
+    developing: List[DevelopingItem] = field(default_factory=list)
     # Inbox craft: a dedicated short subject (not the headline) and a
     # preheader teaser — subject/headline/snippet must not repeat each other
     email_subject: str = ""
@@ -243,6 +255,7 @@ class Newsletter:
     email_subject: str = ""
     preheader: str = ""
     meta: Dict[str, Any] = field(default_factory=dict)
+    developing: List[DevelopingItem] = field(default_factory=list)
 
     def __post_init__(self):
         # Story order is editorial: the analyzer ranks them and the first

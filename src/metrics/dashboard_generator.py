@@ -246,7 +246,7 @@ class DashboardGenerator:
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 Geopolitical Daily. Strategic analysis beyond the headlines.</p>
+            <p>&copy; {datetime.now().year} Geopolitical Daily. Strategic analysis beyond the headlines.</p>
             <p>
                 <a href="feed.xml">RSS Feed</a> |
                 <a href="archive.html">Archive</a> |
