@@ -281,3 +281,22 @@ def test_length_truncated_empty_reply_retries_with_bigger_budget(monkeypatch):
                                       messages=[{"role": "user", "content": "hi"}])
     assert budgets == [16000, 32000]
     assert resp.content[0].text == '{"ok": 1}'
+
+
+def test_generic_office_words_are_not_storylines():
+    idx = StorylineIndex([{"date": "2026-10-05", "stories": ["Estonia blames Russian Military Intelligence for arson"],
+                           "story_terms": [["Estonia", "Russian Military Intelligence"]],
+                           "quick_hits": [], "developing": [], "big_number": "", "blindspot": ""}])
+    assert idx.match("Germany arrested its former Federal Intelligence Service chief on espionage charges",
+                     days=3) is None
+
+
+def test_big_number_must_be_a_figure_and_not_a_running_story(analyzer):
+    issue = IssueContent(stories=[story("Fresh lead")],
+                         big_number=BigNumber("Hundreds", "People quarantined after a plague death in Siberia."))
+    analyzer._apply_editorial_rules(issue, [])
+    assert issue.big_number is None
+    issue = IssueContent(stories=[story("Fresh lead")],
+                         big_number=BigNumber("4,000", "Ebola deaths in eastern Congo since May."))
+    analyzer._apply_editorial_rules(issue, [])
+    assert issue.big_number is not None

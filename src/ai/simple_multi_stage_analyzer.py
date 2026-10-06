@@ -7,6 +7,7 @@ to minimize costs while maintaining decision transparency.
 
 import asyncio
 import json
+import re
 import time
 import logging
 from typing import List, Dict, Any, Optional, Tuple
@@ -375,7 +376,7 @@ Return this EXACT JSON structure — a single JSON object, no other text:
 
 CONTENT RULES:
 1. big_stories: exactly the number of deep stories requested, ranked by geopolitical consequence — most consequential FIRST. Each must cover a DIFFERENT event. The first is THE story of the day — the one a busy reader must know; give it your fullest why_important. For stories after the first, keep why_important to max 50 words. The ranking and the scores must agree: no story may have a higher impact_score than a story ranked above it.
-2. quick_hits: 6 to 8 items, each about a DIFFERENT event than ALL of the big_stories and than each other — never restate any selected story as a quick hit, not even from a different angle — and never a rerun of a quick hit from recent issues (a follow-up is fine only when it states the new fact). Every quick hit must involve a government, an international organization, an armed group or a cross-border consequence, and must NAME the actor ("Japan's foreign ministry protested…", never "Leaders visited…" or "Officials said…"); science prizes, domestic health alerts and markets news without a state actor do not qualify. Together they must span at least 4 distinct regions — this is the reader's "I'm caught up on the world" section, so favor geographic spread (Africa, Latin America and Asia are chronically under-covered; include them when the material exists).
+2. quick_hits: 8 to 10 items (some are filtered out downstream; 8 at most are published), each about a DIFFERENT event than ALL of the big_stories and than each other — never restate any selected story as a quick hit, not even from a different angle — and never a rerun of a quick hit from recent issues (a follow-up is fine only when it states the new fact). Every quick hit must involve a government, an international organization, an armed group or a cross-border consequence, and must NAME the actor ("Japan's foreign ministry protested…", never "Leaders visited…" or "Officials said…"); science prizes, domestic health alerts and markets news without a state actor do not qualify. Together they must span at least 4 distinct regions — this is the reader's "I'm caught up on the world" section, so favor geographic spread (Africa, Latin America and Asia are chronically under-covered; include them when the material exists).
 3. big_number: one genuinely striking, verifiable figure taken from one of the articles, about something NOT already covered by a story or quick hit in this issue (a number from the big story repeated as the big number wastes the slot) and not used in recent issues. The figure must describe TODAY's event itself — never background from an earlier year ("6% vote share in 2024") or a past disaster's toll. If no such number exists, use null.
 4. NO sports, entertainment, celebrity or human-interest items, and NO single-country domestic crime, court cases, executions, campus scandals, accidents or space launches ANYWHERE in the issue — not as a story, not as a quick hit, not as the big number — unless the event has direct geopolitical consequences (state action, sanctions, boycotts, diplomatic fallout, cross-border impact). An athlete retiring, a film winning awards, a botched execution in one US state or a university fraternity case is never news for this brief; a world-roundup item must matter beyond its own country's borders.
 5. All scores integers 1-10 — use the whole scale. impact_score 9-10: changes the course of a war, a great-power relationship or the world economy (a few times a month, not daily); 7-8: a major national or regional development; 5-6: notable but contained. article_index values must reference the list above.
@@ -605,6 +606,10 @@ FIELD DEFINITIONS:
                 reason = f"off-brand: {is_off_brand(bn_text)}"
             elif earlier_year(bn.context):
                 reason = f"background figure from {earlier_year(bn.context)}, not today's event"
+            elif not re.search(r"\d", bn.value or ""):
+                reason = "not a figure"
+            elif (getattr(self, "storylines", None) or StorylineIndex([])).match(bn_text, days=3):
+                reason = "part of a running storyline"
             if reason:
                 logger.info(f"Big number dropped ({reason}): {bn.value} — {bn.context[:60]}")
                 issue.big_number = None
@@ -627,6 +632,7 @@ FIELD DEFINITIONS:
     # last two issues; max DEVELOPING lines per issue.
     MAX_CONTINUING_STORIES = 1
     MAX_DEVELOPING = 3
+    MAX_QUICK_HITS = 8
 
     def _apply_storyline_rules(self, issue: IssueContent) -> None:
         """Running stories get one DEVELOPING line, not a story or quick-hit
@@ -688,7 +694,7 @@ FIELD DEFINITIONS:
                 logger.info(f"Quick hit dropped (same storyline as a story today): {hit.text[:70]}")
                 continue
             kept.append(hit)
-        issue.quick_hits = kept
+        issue.quick_hits = kept[:self.MAX_QUICK_HITS]
         issue.developing = developing
 
     def _storyline_history(self) -> List[dict]:

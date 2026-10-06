@@ -65,6 +65,8 @@ missile missiles bombing bombings attack attacks budget inflation housing migran
 migrants migration talks summit deal vote votes poll polls coup earthquake flood
 floods hurricane typhoon cyclone wildfire wildfires famine measles cholera
 blockade blockades offensive invasion truce hostages hostage prisoners
+intelligence espionage justice education environment labor labour treasury
+interior economy economic affairs development planning communications
 monday tuesday wednesday thursday friday saturday sunday january february march
 april may june july august september october november december
 he she they it this that these those his her their its we our i
