@@ -68,6 +68,7 @@ blockade blockades offensive invasion truce hostages hostage prisoners
 intelligence espionage justice education environment labor labour treasury
 interior economy economic affairs development planning communications
 coast coastal border borders desert mountains valley highlands frontline front
+super storm storms tropical quake wildfires heatwave drought monsoon
 monday tuesday wednesday thursday friday saturday sunday january february march
 april may june july august september october november december
 he she they it this that these those his her their its we our i

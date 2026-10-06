@@ -330,3 +330,9 @@ def test_todays_story_split_across_clusters_is_no_blindspot(persp):
     s = story("Ukraine hits Moscow region with hundreds of drones, killing two people",
               why="Russia said its air defences shot down nearly 900 drones overnight.")
     assert persp._blindspot_candidates([s], arts) == []
+
+
+def test_weather_words_are_no_storyline_names():
+    from src.ai.storylines import distinctive_tokens
+    assert "super" not in distinctive_tokens("Super Typhoon Ragasa")
+    assert distinctive_tokens("super", any_case=True) == set()

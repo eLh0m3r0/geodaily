@@ -47,11 +47,14 @@ def check(issue: dict) -> list:
     add(bool(grid.get("blindspot")), "Blindspot", "present" if grid.get("blindspot") else "missing")
 
     hits = issue.get("quick_hits") or []
-    add(len(hits) >= 5, "Also today", f"{len(hits)} items")
+    developing = issue.get("developing") or []
+    # Running-story quick hits move to DEVELOPING; the reader still gets
+    # them, so the short-item budget counts both sections.
+    add(len(hits) >= 3 and len(hits) + len(developing) >= 6, "Also today",
+        f"{len(hits)} items (+{len(developing)} developing)")
     regions = {h.get("region") for h in hits}
     add(len(regions) >= 4, "Also today regions", f"{len(regions)} regions", warn_if_false=False)
 
-    developing = issue.get("developing") or []
     rows.append(("info", "Developing", f"{len(developing)} running-story updates"))
 
     add(bool(issue.get("big_number")), "Big number",
