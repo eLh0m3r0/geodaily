@@ -82,7 +82,7 @@ def test_demonym_suffix_matches_siberia_siberian_1006():
 def test_unrelated_item_does_not_match():
     idx = StorylineIndex(HISTORY)
     assert idx.match("The Parti Quebecois won Quebec's provincial election", days=5) is None
-    assert proper_terms("Leaders visited Tuvalu to see rising seas") == {"tuvalu"}
+    assert proper_terms("Leaders visited Funafuti in Tuvalu to see rising seas") == {"funafuti"}
 
 
 # ----------------------------------------------------------------------
@@ -355,3 +355,11 @@ def test_quick_hit_linked_to_an_unrelated_article_is_relinked_1006(analyzer):
     assert hit.url == right.url
     assert ok.url == wrong.url
     assert any(a.startswith("Link fixed") for a in analyzer.meta["editorial_actions"])
+
+
+def test_country_names_do_not_make_a_storyline_1006():
+    from src.ai.storylines import StorylineIndex
+    idx = StorylineIndex([{"date": "2026-10-03", "stories": [], "story_terms": [],
+                           "quick_hits": ["Deaths in eastern Congo's outbreak passed 4,000 as fighting slowed aid."],
+                           "developing": [], "big_number": "", "blindspot": ""}])
+    assert idx.match("Kenya confirmed its first case: a citizen who arrived from Congo on Saturday has died.") is None

@@ -42,6 +42,39 @@ oil diesel gas fuel tariffs tariff election elections war ceasefire sanctions
     "downing street", "latin america", "us president", "prime minister",
 })
 
+# Every country (and its demonym) is a place, not an event: "Congo" made
+# Kenya's first Ebola case a continuation of a 10-03 Congo quick hit
+# (10-06 shadow run). Storylines key on events' own names instead.
+_COUNTRIES = frozenset("""
+afghanistan afghan albania albanian algeria algerian andorra angola angolan argentina
+argentine argentinian armenia armenian austria austrian azerbaijan azerbaijani azeri
+bahamas bahrain bahraini bangladesh bangladeshi barbados belarus belarusian belgium
+belgian belize benin bhutan bolivia bolivian bosnia bosnian botswana brazil brazilian
+brunei bulgaria bulgarian burkina burundi cambodia cambodian cameroon cameroonian
+chad chadian chile chilean colombia colombian comoros congo congolese costa croatia
+croatian cuba cuban cyprus cypriot czech czechia denmark danish djibouti dominica
+dominican ecuador ecuadorian egyptian eritrea eritrean estonia estonian eswatini
+ethiopia ethiopian fiji fijian finland finnish gabon gambia georgia georgian ghana
+ghanaian greece greek grenada guatemala guatemalan guinea guyana haiti haitian
+honduras hungary hungarian iceland icelandic indonesia indonesian iraq iraqi ireland
+irish italy italian jamaica jordan jordanian kazakhstan kazakh kenya kenyan kiribati
+kosovo kuwait kuwaiti kyrgyzstan laos latvia latvian lebanon lebanese lesotho
+liberia liberian libya libyan liechtenstein lithuania lithuanian luxembourg
+madagascar malawi malaysia malaysian maldives mali malian malta mauritania mauritius
+mexican moldova moldovan monaco mongolia mongolian montenegro morocco moroccan
+mozambique myanmar burma burmese namibia nauru nepal nepali netherlands dutch
+zealand nicaragua niger nigeria nigerian norway norwegian oman omani palau
+palestine palestinian palestinians panama papua paraguay peru peruvian philippines
+filipino poland polish portugal portuguese qatari romania romanian rwanda rwandan
+samoa senegal senegalese serbia serbian seychelles sierra singapore slovakia slovak
+slovenia somalia somali spain spanish sudan sudanese suriname sweden swedish
+switzerland swiss syria syrian tajikistan tanzania tanzanian thailand thai togo
+tonga trinidad tunisia tunisian turkmenistan tuvalu uganda ugandan uruguay
+uzbekistan uzbek vanuatu vatican venezuela venezuelan vietnam vietnamese yemen
+yemeni zambia zimbabwe emirati israelis saudis
+""".split())
+GENERIC_TERMS = GENERIC_TERMS | _COUNTRIES
+
 # Capitalised words that are titles, months or sentence furniture, not names
 _COMMON_CAPS = frozenset("""
 the a an and or but of in on at for with as by from to into after before
