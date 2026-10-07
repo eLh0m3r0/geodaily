@@ -1,0 +1,280 @@
+{
+ "date": "2026-10-07",
+ "title": "Geopolitical Daily",
+ "email_subject": "Drones sink a ship off a NATO member's coast",
+ "preheader": "Bulgaria halted the search for the missing crew, so the death toll is still unknown.",
+ "intro_text": "Good morning. It's Wednesday, October 07, 2026 — the 3 stories that matter most today, plus 1 update on stories you're following and 6 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Drones hit two cargo ships off Bulgaria, sinking one",
+   "why_important": "Unidentified drones hit two cargo ships in Bulgaria's Black Sea economic zone. The drones hit them on Tuesday, sinking one and leaving its crew missing. Bulgaria is a NATO member, and this is the first drone attack on shipping in its waters. The government has not blamed Moscow, but the opposition says it should.",
+   "what_overlooked": "Bulgaria stopped searching for the missing crew on Wednesday, Vice-Admiral Rumen Nikolov told Nova TV. So the death toll from the sinking is still unknown.",
+   "prediction": "If Bulgaria or NATO names the drone's origin, that will decide if this stays a rescue story or becomes a NATO response.",
+   "impact_score": 8,
+   "sources": [
+    "https://meduza.io/en/news/2026/10/06/drones-attack-civilian-ships-off-bulgaria-for-first-time-sinking-one",
+    "https://balkaninsight.com/2026/10/06/bulgarian-pm-and-opposition-quarrel-over-black-sea-drone-attack/bi/",
+    "https://www.thehindu.com/news/international/bulgarian-prime-minister-says-two-commercial-vessels-hit-by-drones-in-economic-zone/article71550965.ece",
+    "https://www.straitstimes.com/world/europe/bulgaria-halts-rescue-operation-for-crew-of-sunken-ship"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 8,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.8,
+   "region": "europe",
+   "actor_type": "mixed",
+   "event_type": "military",
+   "coverage_counts": {
+    "russian_exile": 1,
+    "western": 3,
+    "south_asia": 1,
+    "east_asia": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 7,
+   "signal_terms": [
+    "Bulgaria",
+    "Black Sea",
+    "Rumen Radev",
+    "Alfa Watan"
+   ]
+  },
+  {
+   "story_title": "Germany arrests its former spy chief on treason charges",
+   "why_important": "German prosecutors detained August Hanning on suspicion of passing state secrets to a foreign intelligence service. He led the BND from 1998 to 2005. His former bureau chief was arrested with him. A former top spy facing treason charges is rare and damaging for Germany's security services.",
+   "what_overlooked": "German media say the foreign service was not Russian. Haaretz reports the evidence came from a Danish investigation into an heiress's abducted children that involved former Israeli agents.",
+   "prediction": "Prosecutors must soon decide whether to formally charge Hanning or release him. A charge sheet would name the foreign intelligence service.",
+   "impact_score": 8,
+   "sources": [
+    "https://meduza.io/en/news/2026/10/06/former-german-spy-chief-arrested-on-espionage-charges-he-made-at-least-seven-trips-to-russia-after-leaving-office",
+    "https://www.haaretz.com/world-news/europe/2026-10-06/ty-article/germany-arrests-ex-chief-spy-on-espionage-and-treason-charges/000001a1-1094-d777-afb7-31fcc4b50000",
+    "https://www.japantimes.co.jp/news/2026/10/07/world/crime-legal/germany-spy-chief-treason-arrest/",
+    "https://www.thehindu.com/news/international/ex-spy-chief-is-arrested-in-germany-on-suspicion-of-trading-state-secrets-treason/article71551683.ece"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 7,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.8,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "informational_cyber",
+   "coverage_counts": {
+    "russian_exile": 1,
+    "middle_east": 1,
+    "east_asia": 2,
+    "south_asia": 1,
+    "western": 6,
+    "russian_state": 1
+   },
+   "coverage_outlets": 11,
+   "signal_terms": [
+    "August Hanning",
+    "BND",
+    "Germany",
+    "Manfred D."
+   ]
+  },
+  {
+   "story_title": "Kenya confirms its first Ebola death as Congo's outbreak spreads",
+   "why_important": "A Kenyan man who travelled from eastern Congo via Uganda died of Ebola in Nairobi, Kenya's first confirmed case. Congo's outbreak is the second largest on record, with more than 8,000 cases, and Uganda has already had 20. Kenya's health system now faces its own first outbreak.",
+   "what_overlooked": "The man crossed at least one international border before he died. Kenya is the fourth country linked to Congo's outbreak, which shows how easily the virus gets past border screening.",
+   "prediction": "Kenya's health ministry will report whether the dead man's contacts test positive. A cluster would mean local transmission, not an imported case.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.dailymaverick.co.za/article/2026-10-06-kenya-confirms-first-ebola-case-after-man-who-travelled-from-congo-dies/",
+    "https://www.thehindu.com/sci-tech/health/ebola-death-recorded-in-kenya-after-victim-travelled-from-drc-explained/article71554368.ece",
+    "https://www.koreaherald.com/article/10895641"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 6,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.8,
+   "region": "africa",
+   "actor_type": "state",
+   "event_type": "humanitarian",
+   "coverage_counts": {
+    "african": 4,
+    "south_asia": 3,
+    "east_asia": 1,
+    "western": 2,
+    "chinese_state": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 10,
+   "signal_terms": [
+    "Kenya",
+    "Ebola",
+    "Democratic Republic of Congo",
+    "Nairobi"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "A naval drone set a Liberian-flagged tanker ablaze off Sochi, and Russia said it rescued all 23 crew, all Indian nationals.",
+   "region": "europe",
+   "url": "https://www.theguardian.com/world/2026/oct/07/ukraine-drone-hits-oil-tanker-russia-sochi"
+  },
+  {
+   "text": "US Vice President JD Vance said Iran must make a 'meaningful' cut to its uranium enrichment capacity to end the seven-month war.",
+   "region": "middle_east",
+   "url": "https://www.dawn.com/news/2035354/us-vice-president-vance-says-iran-must-cut-enrichment-to-end-war"
+  },
+  {
+   "text": "Israel marked three years since the October 7 attack with memorials, new strikes on Gaza and election campaigning weeks before a vote.",
+   "region": "middle_east",
+   "url": "https://www.al-monitor.com/originals/2026/10/mourning-war-and-elections-israel-marks-october-7"
+  },
+  {
+   "text": "The UAE revoked two Israeli airlines' landing rights, ending repatriation flights, after a flydubai co-pilot allegedly tried to hijack an Israel-bound plane.",
+   "region": "middle_east",
+   "url": "https://www.haaretz.com/israel-news/israel-security/2026-10-07/ty-article/.premium/uae-cancels-israeli-repatriation-flights-following-flydubai-attempted-hijacking/000001a1-12b7-d883-a3a1-f7f743cd0000"
+  },
+  {
+   "text": "Kim Jong Un pledged continued support for Russia's war in a birthday message to Putin, while state media condemned US F-16 sales to Taiwan.",
+   "region": "indo_pacific",
+   "url": "https://www.japantimes.co.jp/news/2026/10/07/asia-pacific/politics/north-korea-us-taiwan-russia/"
+  },
+  {
+   "text": "Trump said he has a call scheduled with Vladimir Putin to discuss Russia's suspected pneumonic plague case.",
+   "region": "europe",
+   "url": "https://meduza.io/en/news/2026/10/07/trump-says-he-ll-call-putin-about-suspected-plague-outbreak-in-russia"
+  }
+ ],
+ "big_number": {
+  "value": "$110 billion",
+  "context": "Paramount Skydance's completed takeover of Warner Bros Discovery, which Reuters says creates the largest Hollywood studio owner in years.",
+  "url": "https://www.dailymaverick.co.za/article/2026-10-07-paramount-wraps-up-mega-warner-bros-merger-to-create-hollywood-powerhouse-skydance/"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "Balkan Insight",
+     "Euronews",
+     "Semafor"
+    ],
+    "article_count": 3,
+    "framing": "Western media stresses Bulgarian leaders' reluctance to blame Moscow and opposition criticism of that response.",
+    "quote": "Kremlin-friendly PM condemns attack on two international cargo ships in Bulgarian waters as 'crude violation of law'",
+    "quote_outlet": "Balkan Insight",
+    "quote_url": "https://balkaninsight.com/2026/10/06/bulgarian-pm-and-opposition-quarrel-over-black-sea-drone-attack/bi/",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "The Straits Times"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "The Hindu"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "RT"
+    ],
+    "article_count": 1,
+    "framing": "Russian state media stresses a NATO state condemning the vessel attack without identifying the perpetrator.",
+    "quote": "Bulgarian Prime Minister Rumen Radev has condemned a twin attack on merchant ships off the country’s coast, which resulted in the sinking of one ship and heavy damage to another",
+    "quote_outlet": "RT",
+    "quote_url": "https://www.rt.com/news/646831-bulgaria-black-sea-attack/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+    "state_affiliated": true,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_exile",
+    "outlets": [
+     "Meduza"
+    ],
+    "article_count": 1,
+    "framing": "Russian independent media stresses unidentified drones hit civilian ships for the first time off Bulgaria.",
+    "quote": "Unidentified drones attacked two merchant ships off Bulgaria’s coast, the country’s prime minister, Rumen Radev, said.",
+    "quote_outlet": "Meduza",
+    "quote_url": "https://meduza.io/en/news/2026/10/06/drones-attack-civilian-ships-off-bulgaria-for-first-time-sinking-one",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 7,
+  "counts": {
+   "russian_exile": 1,
+   "western": 3,
+   "south_asia": 1,
+   "east_asia": 1,
+   "russian_state": 1
+  },
+  "blindspot": "A series of cyberattacks hit businesses in Japan and South Korea, exposing millions of customer records. The breaches matter globally because they can disrupt supply chains and raise cross-border cybersecurity risks.",
+  "blindspot_url": "https://asia.nikkei.com/spotlight/cybersecurity/cyberattacks-sweep-japan-and-south-korea-businesses",
+  "blindspot_outlets": [
+   "NDTV",
+   "Nikkei Asia",
+   "The Japan Times",
+   "Yonhap"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "California",
+   "text": "President Trump said Iran could 'take' San Diego and Los Angeles; the White House called it a warning, California's governor called it treasonous.",
+   "region": "americas",
+   "url": "https://www.bbc.co.uk/news/articles/c6r7yn8pknyxo?at_medium=RSS&at_campaign=rss"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 10.14,
+   "avg_sentence_words": 17.1,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 8.73,
+   "rewrite_avg_sentence_words": 13.3,
+   "rewrite_fragment_share": 0.05
+  },
+  "editorial_actions": [
+   "Quick hit moved to DEVELOPING (running storyline 'california'): President Trump said Iran could 'take' San Diego and Los Angeles; the ",
+   "Quick hit dropped (same storyline as a story today): The European Commission proposed safeguards to stop democratic backsli"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "served_model": "deepseek/deepseek-v4.1-flash",
+  "analysis_input_tokens": 12294,
+  "analysis_output_tokens": 20119,
+  "analysis_cost_usd": 0.02489,
+  "analysis_seconds": 190.3,
+  "grid_cost_usd": 0.00666,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash"
+ }
+}

@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Tue, 06 Oct 2026 08:31:36 GMT</pubDate>
-        <lastBuildDate>Tue, 06 Oct 2026 08:31:36 GMT</lastBuildDate>
+        <pubDate>Wed, 07 Oct 2026 08:29:35 GMT</pubDate>
+        <lastBuildDate>Wed, 07 Oct 2026 08:29:35 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -49,7 +49,7 @@
         <dc:creator>Geopolitical Daily Editorial Team</dc:creator>
         <dc:publisher>Geopolitical Daily</dc:publisher>
         <dc:language>en-US</dc:language>
-        <dc:rights>© 2025 Geopolitical Daily. All rights reserved.</dc:rights>
+        <dc:rights>© 2026 Geopolitical Daily. All rights reserved.</dc:rights>
 
         <!-- Image for feed readers that support it -->
         <image>
@@ -60,6 +60,19 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - October 07, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-07.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Wednesday, October 07, 2026 — the 3 stories that matter most today, plus 1 update on stories you're following and 6 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Drones hit two cargo ships off Bulgaria, sinking one</strong>: Unidentified drones hit two cargo ships in Bulgaria's Black Sea economic zone. The drones hit them on Tuesday, sinking one and leaving its crew missing. Bulgaria is a NATO member, and this is the firs...</li></ul><p><em>Published: October 07, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Wed, 07 Oct 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20261007</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Europe]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-07.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - October 06, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-06.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Tuesday, October 06, 2026 — the 3 stories that matter most today, plus 7 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine hits Moscow with one of its largest drone attacks</strong>: Ukraine launched about 650 drones at Moscow and nearby areas. It killed two people and set the region's largest oil depot on fire. Russia said it stopped most of them, and that night Russia fired 137 ...</li></ul><p><em>Published: October 06, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -176,18 +189,6 @@
         <category><![CDATA[International Relations]]></category>
         <category><![CDATA[Middle East]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-28.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - September 27, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-27.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Sunday, September 27, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Suicide bombing at Pakistan police checkpoint kills 12</strong>: A suicide bomber drove a vehicle full of explosives into a police checkpoint in Dera Ismail Khan. The Pakistani Taliban said it carried out the attack. The blast killed 12 people and wounded 35. The a...</li></ul><p><em>Published: September 27, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sun, 27 Sep 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260927</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-27.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>

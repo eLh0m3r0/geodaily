@@ -257,7 +257,9 @@ body {
 .big-number { text-align: center; }
 .signals-inline { margin: -0.5rem 0 1.25rem 0; }
 .signals-inline .quick-hits { list-style: none; padding-left: 0.25rem; }
-.also-today, .big-number, .blindspot-section {
+.developing-note { font-size: 0.8rem; color: var(--text-light); margin: -0.25rem 0 0.5rem 0; }
+.developing-label { font-weight: 700; }
+.developing, .also-today, .big-number, .blindspot-section {
     margin: 2rem 0; padding: 1.25rem 1.5rem;
     background: var(--bg-light); border-radius: 8px;
 }
