@@ -363,3 +363,33 @@ def test_country_names_do_not_make_a_storyline_1006():
                            "quick_hits": ["Deaths in eastern Congo's outbreak passed 4,000 as fighting slowed aid."],
                            "developing": [], "big_number": "", "blindspot": ""}])
     assert idx.match("Kenya confirmed its first case: a citizen who arrived from Congo on Saturday has died.") is None
+
+
+def test_production_1007_false_and_missed_storylines():
+    """10-07: 'California' and 'Democratic (Republic of Congo)' made false
+    storylines; a lower-case 'flydubai' in a blindspot was missed."""
+    from src.ai.storylines import StorylineIndex
+    hist = [
+        {"date": "2026-10-06", "stories": [], "story_terms": [], "quick_hits": [], "developing": [],
+         "big_number": "", "blindspot": ""},
+        {"date": "2026-10-05", "stories": [], "story_terms": [],
+         "quick_hits": ["The FBI arrested a California woman accused of spying for China."],
+         "developing": [], "big_number": "",
+         "blindspot": "A flydubai co-pilot accused of stabbing his captain trained in New Zealand."},
+        {"date": "2026-10-04", "stories": [], "story_terms": [], "quick_hits": [], "developing": [],
+         "big_number": "", "blindspot": ""},
+        {"date": "2026-10-03", "stories": ["UAE calls flydubai cockpit axe attack a terrorist act"],
+         "story_terms": [["flydubai", "Hammam al-Hammami"]], "quick_hits": [], "developing": [],
+         "big_number": "", "blindspot": ""},
+    ]
+    idx = StorylineIndex(hist)
+    kinds = {"story", "quick_hit", "developing", "blindspot"}
+    assert idx.match("Trump said Iran could take San Diego; California's governor called it treasonous.",
+                     kinds=kinds) is None
+    m = idx.match("The UAE revoked Israeli airlines' landing rights after a flydubai co-pilot tried to hijack a plane.",
+                  kinds=kinds)
+    assert m and m[1] == "flydubai"
+    today = StorylineIndex([{"date": "today", "stories": ["Kenya confirms its first Ebola death"],
+                             "story_terms": [["Ebola", "Democratic Republic of Congo", "Nairobi"]]}])
+    assert today.match("The European Commission proposed safeguards to stop democratic backsliding.",
+                       days=1, kinds={"story"}) is None

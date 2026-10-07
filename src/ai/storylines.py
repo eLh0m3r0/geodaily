@@ -42,6 +42,16 @@ oil diesel gas fuel tariffs tariff election elections war ceasefire sanctions
     "downing street", "latin america", "us president", "prime minister",
 })
 
+# US states are places too (10-07: "California" tied a Trump remark about
+# San Diego to a 10-05 quick hit about a California spy case).
+_US_STATES = frozenset("""
+alabama alaska arizona arkansas california colorado connecticut delaware florida
+hawaii idaho illinois indiana iowa kansas kentucky louisiana maine maryland
+massachusetts michigan minnesota mississippi missouri montana nebraska nevada
+hampshire jersey york carolina dakota ohio oklahoma oregon pennsylvania rhode
+tennessee texas utah vermont virginia wisconsin wyoming
+""".split())
+
 # Every country (and its demonym) is a place, not an event: "Congo" made
 # Kenya's first Ebola case a continuation of a 10-03 Congo quick hit
 # (10-06 shadow run). Storylines key on events' own names instead.
@@ -73,7 +83,7 @@ tonga trinidad tunisia tunisian turkmenistan tuvalu uganda ugandan uruguay
 uzbekistan uzbek vanuatu vatican venezuela venezuelan vietnam vietnamese yemen
 yemeni zambia zimbabwe emirati israelis saudis
 """.split())
-GENERIC_TERMS = GENERIC_TERMS | _COUNTRIES
+GENERIC_TERMS = GENERIC_TERMS | _COUNTRIES | _US_STATES
 
 # Capitalised words that are titles, months or sentence furniture, not names
 _COMMON_CAPS = frozenset("""
@@ -102,6 +112,7 @@ intelligence espionage justice education environment labor labour treasury
 interior economy economic affairs development planning communications
 coast coastal border borders desert mountains valley highlands frontline front
 super storm storms tropical quake wildfires heatwave drought monsoon
+democratic democracy republican people's peoples popular socialist
 monday tuesday wednesday thursday friday saturday sunday january february march
 april may june july august september october november december
 he she they it this that these those his her their its we our i
@@ -208,6 +219,14 @@ class StorylineIndex:
             for kind in ("big_number", "blindspot"):
                 if day.get(kind):
                     self.entries.append(Entry(d, kind, day[kind], proper_terms(day[kind])))
+        # A name known from one entry also identifies the others that mention
+        # it in any case: the 10-05 blindspot wrote "flydubai" in lower case,
+        # so only the 10-03 story carried it, and on 10-07 that story was
+        # outside the 3-day window — a flydubai quick hit went through.
+        vocab = {t for e in self.entries for t in e.terms if " " not in t and len(t) >= 5}
+        for e in self.entries:
+            low = _norm(e.text)
+            e.terms |= {t for t in vocab if t not in e.terms and text_has(low, t)}
 
     def _recent(self, days: int, kinds: Optional[Iterable[str]]) -> List[Entry]:
         keep = set(self.dates[:days])

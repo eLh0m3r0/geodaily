@@ -737,7 +737,7 @@ FIELD DEFINITIONS:
                                  "story_terms": [s.signal_terms for s in issue.stories]}])
         kept = []
         for hit in issue.quick_hits:
-            m = idx.match(hit.text, days=3, kinds={"story", "quick_hit", "developing"})
+            m = idx.match(hit.text, days=3, kinds={"story", "quick_hit", "developing", "blindspot"})
             if m:
                 moved = add(DevelopingItem(storyline=label_for(m[1]), text=hit.text,
                                            region=hit.region, url=hit.url))
