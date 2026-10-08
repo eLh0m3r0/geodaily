@@ -1,0 +1,281 @@
+{
+ "date": "2026-10-08",
+ "title": "Geopolitical Daily",
+ "email_subject": "Three dead as attacks hit Saudi airports",
+ "preheader": "Riyadh's main airport was targeted, and the Saudi-led coalition hit back in Yemen.",
+ "intro_text": "Good morning. It's Thursday, October 08, 2026 — the 3 stories that matter most today, plus 1 update on stories you're following and 7 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Houthis claim deadly strikes on Saudi airports",
+   "why_important": "Houthi attacks on Saudi airports killed an Egyptian, an Algerian, and a Sudanese national and wounded 36 others. The strike on Riyadh's main airport is a sharp escalation in the Yemen war. It directly tests Saudi Arabia's new defense pact with Pakistan and Turkey.",
+   "what_overlooked": "The Houthis also said they hit a military convoy near Aden's airport. The Saudi-led coalition says it destroyed 82 Houthi targets, but independent checks have not verified either claim.",
+   "prediction": "If Riyadh bombs Houthi-held Sanaa or Yemen's ports within three days, the war is widening; a new truce effort would show restraint.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/10/08/saudi-arabia-says-3-dead-at-airports-after-houthis-claim-attacks_6758376_4.html",
+    "https://www.middleeasteye.net/live-blog/live-blog-update/yemens-houthis-claim-attack-riyadh-airport",
+    "https://www.japantimes.co.jp/news/2026/10/08/world/houthi-saudi-airport-attack/",
+    "https://www.thehindu.com/news/international/yemens-houthis-claim-new-attacks-on-saudi-airports-as-conflict-deepens/article71557047.ece"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 7,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.88,
+   "region": "middle_east",
+   "actor_type": "non_state",
+   "event_type": "military",
+   "coverage_counts": {
+    "western": 4,
+    "middle_east": 4,
+    "east_asia": 5,
+    "south_asia": 5,
+    "russian_state": 2
+   },
+   "coverage_outlets": 15,
+   "signal_terms": [
+    "Houthis",
+    "Riyadh airport",
+    "Abha",
+    "Saudi-led coalition"
+   ]
+  },
+  {
+   "story_title": "US urges citizens to leave Russia over plague suspicions",
+   "why_important": "A Siberian lab worker died of a suspected plague infection, and Russia now reports a second suspected case. The US embassy told Americans to consider leaving, the WHO says it still lacks details, and Mongolia has tightened border checks.",
+   "what_overlooked": "Russia calls reports of a second case 'false information,' and the WHO says no cases have been recorded in Irkutsk. So the size of any outbreak is still unconfirmed.",
+   "prediction": "If Moscow names a lab-confirmed cause within 72 hours, the mystery would settle. If more countries issue travel advice, that would mean wider alarm.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.themoscowtimes.com/2026/10/07/us-embassy-urges-citizens-to-leave-russia-over-siberian-plague-suspicions-a93899",
+    "https://www.aljazeera.com/news/2026/10/8/russia-dismisses-reports-of-second-plague-case-as-false-information?traffic_source=rss",
+    "https://www.france24.com/en/un-health-agency-wants-more-details-from-russia-on-suspected-pneumonic-plague-case",
+    "https://www.koreatimes.co.kr/world/20261008/russia-warns-of-false-information-as-second-plague-case-reported?utm_source=rss"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 7,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.8,
+   "region": "europe",
+   "actor_type": "mixed",
+   "event_type": "humanitarian",
+   "coverage_counts": {
+    "russian_exile": 1,
+    "middle_east": 1,
+    "western": 1,
+    "east_asia": 1,
+    "south_asia": 1,
+    "middle_east_state": 2
+   },
+   "coverage_outlets": 6,
+   "signal_terms": [
+    "Irkutsk",
+    "pneumonic plague",
+    "WHO",
+    "Mongolia"
+   ]
+  },
+  {
+   "story_title": "Britain downgrades Jerusalem consulate after Israel orders it shut",
+   "why_important": "Israel ordered Britain's 200-year-old consulate in Jerusalem closed to retaliate for UK sanctions on West Bank settlements. Britain kept it open but downgraded and renamed it a UK mission, the latest strain between long-time allies.",
+   "what_overlooked": "Britain says the renamed mission stays independent and still serves Palestinians. Israel had set a 30-day closure deadline that expired on Thursday.",
+   "prediction": "If Israel expels British diplomats or London expands settlement sanctions in the next 72 hours, the alliance is heading for a deeper split.",
+   "impact_score": 6,
+   "sources": [
+    "https://www.al-monitor.com/originals/2026/10/explainer-whats-happening-britains-jerusalem-consulate",
+    "https://www.scmp.com/news/world/middle-east/article/3370163/britain-downscales-and-renames-jerusalem-consulate-after-israel-orders-closure?utm_source=rss_feed",
+    "https://www.theguardian.com/politics/2026/oct/08/uk-consulate-east-jerusalem-remain-open-uk-mission-ed-miliband"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 6,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 6,
+   "confidence": 0.85,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "middle_east": 5,
+    "east_asia": 2,
+    "western": 4
+   },
+   "coverage_outlets": 9,
+   "signal_terms": [
+    "Jerusalem consulate",
+    "UK Mission",
+    "West Bank settlements",
+    "Ed Miliband"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Maricarmen Abascal, the 87-year-old whose eviction sparked Spain's housing protests and snap election, died on Wednesday.",
+   "region": "europe",
+   "url": "https://english.elpais.com/spain/2026-10-08/there-will-be-no-more-maricarmens-madrids-sol-protest-camp-mourns-the-woman-who-galvanized-a-movement.html"
+  },
+  {
+   "text": "France's prime minister, Sébastien Lecornu, denied police were ordered to confront student protesters and promised new economic measures.",
+   "region": "europe",
+   "url": "https://www.lemonde.fr/en/france/article/2026/10/07/french-pm-denies-police-were-ordered-to-confront-student-protesters_6758362_7.html"
+  },
+  {
+   "text": "The UN's weather agency warned El Niño will intensify before peaking in December and could be the strongest since at least 1950.",
+   "region": "global",
+   "url": "https://www.dawn.com/news/2035638/el-nino-will-intensify-then-peak-in-december-un"
+  },
+  {
+   "text": "South Africa's Competition Commission wants Premier Group's 6.5 billion rand takeover of Rhodes blocked; Premier says it complies with the law.",
+   "region": "africa",
+   "url": "https://www.dailymaverick.co.za/article/2026-10-07-premier-group-rhodes-merger/"
+  },
+  {
+   "text": "India's opposition alliance planned more protests after lawmakers were detained for a second time; Delhi is also seeking to repatriate citizens serving in Russia's army.",
+   "region": "indo_pacific",
+   "url": "https://foreignpolicy.com/2026/10/07/pakistan-imran-khan-opposition-long-march-islamabad/"
+  },
+  {
+   "text": "As the Iran war weighs on Republicans, President Trump was interrupted by 10 protesters at a Texas rally for Senate candidate Ken Paxton.",
+   "region": "americas",
+   "url": "https://www.thehindu.com/news/international/trump-interrupted-by-protesters-as-he-fights-to-rally-texas-voters-behind-paxton-in-us-senate-race/article71558298.ece"
+  },
+  {
+   "text": "Former Anthropic researcher Jacob Coxon said he is 90 percent certain China already has spies inside leading US AI labs.",
+   "region": "indo_pacific",
+   "url": "https://www.scmp.com/news/china/diplomacy/article/3370108/china-already-has-spies-us-ai-labs-claims-ex-anthropic-researcher?utm_source=rss_feed"
+  }
+ ],
+ "big_number": null,
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW",
+     "France 24",
+     "Le Monde"
+    ],
+    "article_count": 4,
+    "framing": "Houthi attacks, described as Iran-backed, kill people at Saudi airports and escalate Yemen war beyond borders.",
+    "quote": "A Houthi missile strike on Riyadh's King Khalid International Airport killed three people and disrupted operations, the rebels said, as Yemen's conflict continues to escalate beyond its borders.",
+    "quote_outlet": "DW",
+    "quote_url": "https://www.dw.com/en/yemen-s-houthis-claim-strike-on-riyadh-airport-three-killed/a-79587815?maca=en-rss-en-all-1573-rdf",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "South China Morning Post",
+     "The Japan Times",
+     "The Straits Times"
+    ],
+    "article_count": 5,
+    "framing": "Treats Houthi airport attacks as Yemen civil war, stressing Saudi-led coalition retaliation and counteroffensive.",
+    "quote": "In retaliation, the Saudi-led coalition in Yemen said it had destroyed 82 military targets belonging to the Houthis.",
+    "quote_outlet": "The Japan Times",
+    "quote_url": "https://www.japantimes.co.jp/news/2026/10/08/world/houthi-saudi-airport-attack/",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Dawn",
+     "The Hindu"
+    ],
+    "article_count": 5,
+    "framing": "Highlights Houthi claims and Saudi official ambiguity, stressing conflict deepening and Houthi targeting in Yemen’s Aden.",
+    "quote": "In a separate post the Houthis also said they targeted a military supply convoy near the airport in the Yemeni city of Aden, the interim capital for the government",
+    "quote_outlet": "The Hindu",
+    "quote_url": "https://www.thehindu.com/news/international/yemens-houthis-claim-new-attacks-on-saudi-airports-as-conflict-deepens/article71557047.ece",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Middle East Eye"
+    ],
+    "article_count": 4,
+    "framing": "Presents Houthi strike claims alongside Saudi-led coalition retaliation, stressing both sides’ military accounts.",
+    "quote": "Saudi-led coalition's spokesperson Major-General Turki al-Maliki said 82 targets were destroyed in a “comprehensive operation” across Saada, Hodeidah, al-Jawf and Marib.",
+    "quote_outlet": "Middle East Eye",
+    "quote_url": "https://www.middleeasteye.net/live-blog/live-blog-update/saudi-led-coalition-says-it-destroyed-82-houthi-military-targets-across",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "TASS"
+    ],
+    "article_count": 2,
+    "framing": "Relays Houthi missile claim and Saudi airport casualties, stressing nationalities of dead and injured.",
+    "quote": "According to the Houthi spokesman Yahya Saria, the direct hit brought air traffic at the Saudi capital’s airport to a halt",
+    "quote_outlet": "TASS",
+    "quote_url": "https://tass.com/world/2199053",
+    "state_affiliated": true,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 15,
+  "counts": {
+   "western": 4,
+   "middle_east": 4,
+   "east_asia": 5,
+   "south_asia": 5,
+   "russian_state": 2
+  },
+  "blindspot": "Malaysia’s prime minister met Myanmar’s military-backed leader and backed the country’s reintegration into Asean. The meeting matters because Asean’s treatment of Myanmar shapes regional diplomacy and the junta’s international standing.",
+  "blindspot_url": "https://www.bangkokpost.com/world/3333553/malaysian-pm-backs-myanmars-reintegration-into-asean",
+  "blindspot_outlets": [
+   "Bangkok Post",
+   "Nikkei Asia",
+   "South China Morning Post",
+   "Taipei Times"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "Mekelle",
+   "text": "Ethiopia's military has driven Tigrayan fighters out of Mekelle, the regional capital, in a new round of fighting in the north.",
+   "region": "africa",
+   "url": "https://foreignpolicy.com/2026/10/07/ethiopia-tigray-conflict-regional-impact-spread-tplf/"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 11.85,
+   "avg_sentence_words": 21.4,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 9.22,
+   "rewrite_avg_sentence_words": 15.5,
+   "rewrite_fragment_share": 0.0
+  },
+  "editorial_actions": [
+   "Quick hit moved to DEVELOPING (running storyline 'mekelle'): Ethiopia's military has driven Tigrayan fighters out of Mekelle, the r",
+   "Big number dropped (background figure from 2011, not today's event): 680,000 — The chinstrap penguins lost from Zavodovski Island since 201"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "served_model": "deepseek/deepseek-v4.1-flash",
+  "analysis_input_tokens": 12498,
+  "analysis_output_tokens": 40240,
+  "analysis_cost_usd": 0.02459,
+  "analysis_seconds": 1116.6,
+  "grid_cost_usd": 0.00516,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash"
+ }
+}
