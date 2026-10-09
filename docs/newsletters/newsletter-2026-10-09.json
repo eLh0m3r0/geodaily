@@ -1,0 +1,257 @@
+{
+ "date": "2026-10-09",
+ "title": "Geopolitical Daily",
+ "email_subject": "Ethiopia and Eritrea edge toward war",
+ "preheader": "Drone strikes on Eritrean troops near Adigrat risk a wider Horn of Africa war.",
+ "intro_text": "Good morning. It's Friday, October 09, 2026 — the 3 stories that matter most today, plus 7 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Ethiopia strikes Eritrean troops inside Tigray as war risk grows",
+   "why_important": "Eritrean troops crossed into Ethiopia's Tigray region on Wednesday, and Ethiopian drones struck their convoys near Adigrat. The neighbors fought a border war from 1998 to 2000, then fought together against Tigray's leaders. A new war between them would shake the whole Horn of Africa.",
+   "what_overlooked": "Ethiopia has not publicly confirmed the drone strikes, and Eritrea has said nothing. A conflict monitor reported the troop movement, and neither government has reported it.",
+   "prediction": "If Eritrea retaliates across the border within days, the fragile truce has collapsed into a wider war.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.theafricareport.com/432735/ethiopia-launches-drone-strikes-on-eritrean-forces-in-tigray/",
+    "https://www.aljazeera.com/news/2026/10/9/will-ethiopias-neighbours-intervene-as-tigray-war-escalates?traffic_source=rss",
+    "https://www.theguardian.com/world/2026/oct/08/ethiopia-drone-attack-against-eritrean-troops-in-tigray"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.8,
+   "region": "africa",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "african": 3,
+    "middle_east": 1,
+    "western": 2,
+    "russian_state": 1
+   },
+   "coverage_outlets": 7,
+   "signal_terms": [
+    "Tigray",
+    "Eritrea",
+    "Adigrat",
+    "Ethiopia"
+   ]
+  },
+  {
+   "story_title": "Russian strike on buses in Kramatorsk kills at least 30",
+   "why_important": "A guided bomb exploded beside public buses in frontline Kramatorsk, killing at least 30 people in one of the deadliest strikes in weeks. Public transport shut down, and Russian attacks worsened blackouts in Kyiv.",
+   "what_overlooked": "The strike landed hours before US envoys Steve Witkoff and Jared Kushner were due to meet Ukrainian and European officials in Miami. They were due to bring new proposals to end the war.",
+   "prediction": "If Ukraine confirms the toll reached 33, this would become the deadliest single strike in weeks.",
+   "impact_score": 7,
+   "sources": [
+    "https://meduza.io/en/news/2026/10/08/russian-strike-on-two-passenger-buses-in-ukraine-s-kramatorsk-kills-33",
+    "https://www.lemonde.fr/en/international/article/2026/10/08/russian-strike-on-buses-kills-30-in-ukrainian-city_6758396_4.html",
+    "https://www.thehindu.com/news/international/death-toll-russian-strike-in-eastern-ukraine/article71559309.ece"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 6,
+   "novelty_score": 6,
+   "credibility_score": 9,
+   "impact_dimension_score": 7,
+   "confidence": 0.88,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "russian_exile": 2,
+    "western": 3,
+    "south_asia": 1,
+    "east_asia": 1
+   },
+   "coverage_outlets": 6,
+   "signal_terms": [
+    "Kramatorsk",
+    "Donetsk",
+    "Kyiv",
+    "Steve Witkoff"
+   ]
+  },
+  {
+   "story_title": "Trump rules out attacking Iran before November midterms",
+   "why_important": "Trump wrote on Truth Social that the US will not attack Iran before the November 3 midterms. He said talks with Tehran are productive, but Iran will never get a nuclear weapon, and oil prices had risen on fears of new strikes.",
+   "what_overlooked": "Trump tied a decision about national security to an election date, an unusually public link. Iran has so far not confirmed the 'productive discussions' he described.",
+   "prediction": "If Tehran confirms direct talks with Washington, that would show the pause is diplomacy and not just election timing.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.middleeasteye.net/live-blog/live-blog-update/trump-rules-out-new-attack-iran-until-after-midterms-oil-prices-spike",
+    "https://www.scmp.com/news/world/united-states-canada/article/3370235/trump-says-us-will-not-attack-iran-novembers-midterm-elections?utm_source=rss_feed",
+    "https://www.hindustantimes.com/world-news/no-attack-on-iran-before-november-3-mid-term-elections-trump-101791477417541.html"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 7,
+   "novelty_score": 6,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.85,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "middle_east": 5,
+    "east_asia": 2,
+    "south_asia": 1
+   },
+   "coverage_outlets": 6,
+   "signal_terms": [
+    "Iran",
+    "Trump",
+    "Strait of Hormuz",
+    "Truth Social"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "US prosecutors added torture charges against deposed Venezuelan leader Nicolás Maduro and his wife, Cilia Flores, who are jailed in New York awaiting trial.",
+   "region": "americas",
+   "url": "https://www.thehindu.com/news/international/venezuelas-maduro-charged-in-us-with-ordering-torture-of-opponents-americans/article71561348.ece"
+  },
+  {
+   "text": "The US suspended Microsoft, Adobe and Indian IT firms like Infosys from its PERM green-card program, citing fraud and a push to hire Americans.",
+   "region": "americas",
+   "url": "https://www.thehindu.com/news/international/ussuspends-microsoft-adobe-and-major-it-firms-from-perm-green-card-programme/article71560826.ece"
+  },
+  {
+   "text": "The African Union launched the Africa Credit Rating Agency in Mauritius to challenge the big three firms it says inflate the continent's borrowing costs.",
+   "region": "africa",
+   "url": "https://english.elpais.com/international/2026-10-08/african-union-launches-continents-first-credit-rating-agency-to-counter-what-it-says-is-bias-inflating-borrowing-costs.html"
+  },
+  {
+   "text": "Montenegro's police and security agency arrested Mikhail Zvinchuk, founder of the pro-Kremlin Rybar military analysis project, plus his wife and three staff.",
+   "region": "europe",
+   "url": "https://novayagazeta.eu/articles/2026/10/09/v-chernogorii-zaderzhali-sozdatelia-z-proekta-rybar-mikhaila-zvinchuka-news"
+  },
+  {
+   "text": "The FBI linked an Iraqi man tied to pro-Iran groups to a foiled Paris attack on a Bank of America branch and other US and Jewish sites.",
+   "region": "middle_east",
+   "url": "https://www.lemonde.fr/en/france/article/2026/10/08/pro-iran-groups-behind-foiled-attack-on-bank-of-america-in-paris-fbi-finds_6758400_7.html"
+  },
+  {
+   "text": "Britain's ruling Labour Party, led by Prime Minister Andy Burnham, held the Holborn and St Pancras seat, beating Green challenger Zack Polanski.",
+   "region": "europe",
+   "url": "https://www.straitstimes.com/world/europe/uk-pm-burnhams-labour-fends-off-left-wing-greens-in-local-election"
+  },
+  {
+   "text": "Students blocked entrances to hundreds of French high schools and clashed with riot police as protests over austerity widened.",
+   "region": "europe",
+   "url": "https://www.thehindu.com/news/international/fighting-for-our-future-france-high-school-students-vow-no-let-up/article71561293.ece"
+  }
+ ],
+ "big_number": null,
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "Euronews",
+     "The Guardian"
+    ],
+    "article_count": 2,
+    "framing": "Eritrean troop incursion into Tigray triggers Ethiopian drone strikes, raising risk of regional war.",
+    "quote": "Eritrean troops who crossed into Ethiopia’s Tigray region have come under drone attack from government forces",
+    "quote_outlet": "The Guardian",
+    "quote_url": "https://www.theguardian.com/world/2026/oct/08/ethiopia-drone-attack-against-eritrean-troops-in-tigray",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera"
+    ],
+    "article_count": 1,
+    "framing": "Tigray war escalation strains Ethiopia’s regional ties, raising question of neighboring intervention.",
+    "quote": "Tigray’s renewed war is testing Ethiopia’s already strained regional ties.",
+    "quote_outlet": "Al Jazeera",
+    "quote_url": "https://www.aljazeera.com/news/2026/10/9/will-ethiopias-neighbours-intervene-as-tigray-war-escalates?traffic_source=rss",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "TASS"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": true,
+    "wire_copy": true
+   },
+   {
+    "perspective": "african",
+    "outlets": [
+     "Africanews",
+     "AllAfrica",
+     "The Africa Report"
+    ],
+    "article_count": 3,
+    "framing": "Ethiopia-Eritrea escalation toward open conflict threatens regional order and worsens Tigray’s humanitarian crisis.",
+    "quote": "Addis Ababa and Asmara edge closer to open conflict as overnight bombardment near Adigrat hits military convoys and shatter a fragile regional order.",
+    "quote_outlet": "The Africa Report",
+    "quote_url": "https://www.theafricareport.com/432735/ethiopia-launches-drone-strikes-on-eritrean-forces-in-tigray/",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 7,
+  "counts": {
+   "african": 3,
+   "middle_east": 1,
+   "western": 2,
+   "russian_state": 1
+  },
+  "blindspot": "At least seven Palestinians, including a child, were killed in separate Israeli strikes across Gaza, Gaza’s civil defence rescue service said. The deaths add to the civilian toll and could complicate ceasefire efforts and regional stability.",
+  "blindspot_url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-forces-kill-least-seven-palestinians-separate-attacks-across",
+  "blindspot_outlets": [
+   "Africanews",
+   "Al Jazeera",
+   "Hindustan Times",
+   "Middle East Eye",
+   "The Express Tribune"
+  ]
+ },
+ "signals": [],
+ "developing": [],
+ "meta": {
+  "readability": {
+   "grade": 9.69,
+   "avg_sentence_words": 16.7,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 9.23,
+   "rewrite_avg_sentence_words": 15.8,
+   "rewrite_fragment_share": 0.0
+  },
+  "editorial_actions": [
+   "Link fixed (Financial Times World -> The Hindu International): The US suspended Microsoft, Adobe and Indian IT firms like Infosys fro",
+   "Quick hit dropped (same storyline as a story today): US envoys Steve Witkoff and Jared Kushner planned to bring new peace p",
+   "Big number dropped (part of a running storyline): 50% — About half of all departures from Riyadh's airport were canc"
+  ],
+  "quality_flags": [
+   "headline_overclaims: Trump rules out attacking Iran before November midterms"
+  ],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "served_model": "deepseek/deepseek-v4.1-flash",
+  "analysis_input_tokens": 12848,
+  "analysis_output_tokens": 32794,
+  "analysis_cost_usd": 0.02159,
+  "analysis_seconds": 596.0,
+  "grid_cost_usd": 0.00996,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash"
+ }
+}

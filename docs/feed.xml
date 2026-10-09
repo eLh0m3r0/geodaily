@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Thu, 08 Oct 2026 08:49:33 GMT</pubDate>
-        <lastBuildDate>Thu, 08 Oct 2026 08:49:33 GMT</lastBuildDate>
+        <pubDate>Fri, 09 Oct 2026 08:38:52 GMT</pubDate>
+        <lastBuildDate>Fri, 09 Oct 2026 08:38:52 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,18 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - October 09, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-09.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Friday, October 09, 2026 — the 3 stories that matter most today, plus 7 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ethiopia strikes Eritrean troops inside Tigray as war risk grows</strong>: Eritrean troops crossed into Ethiopia's Tigray region on Wednesday, and Ethiopian drones struck their convoys near Adigrat. The neighbors fought a border war from 1998 to 2000, then fought together ag...</li></ul><p><em>Published: October 09, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Fri, 09 Oct 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20261009</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-09.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - October 08, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-08.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Thursday, October 08, 2026 — the 3 stories that matter most today, plus 1 update on stories you're following and 7 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Houthis claim deadly strikes on Saudi airports</strong>: Houthi attacks on Saudi airports killed an Egyptian, an Algerian, and a Sudanese national and wounded 36 others. The strike on Riyadh's main airport is a sharp escalation in the Yemen war. It directly...</li></ul><p><em>Published: October 08, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -176,19 +188,6 @@
         <category><![CDATA[International Relations]]></category>
         <category><![CDATA[China]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-30.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - September 29, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-29.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Tuesday, September 29, 2026 — the 3 stories that matter most today, plus 7 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>US and Iran hold indirect talks to end seven-month war</strong>: The US and Iran are talking through go-betweens about ending a seven-month war. Iran wants billions in frozen assets freed, oil sanctions ended, and the US port blockade lifted. A deal could calm oil ...</li></ul><p><em>Published: September 29, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Tue, 29 Sep 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260929</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-29.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
