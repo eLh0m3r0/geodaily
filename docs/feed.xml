@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 09 Oct 2026 08:38:52 GMT</pubDate>
-        <lastBuildDate>Fri, 09 Oct 2026 08:38:52 GMT</lastBuildDate>
+        <pubDate>Sat, 10 Oct 2026 08:35:48 GMT</pubDate>
+        <lastBuildDate>Sat, 10 Oct 2026 08:35:48 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,21 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - October 10, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-10.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Saturday, October 10, 2026 — the 3 stories that matter most today, plus 1 update on stories you're following and 7 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>US lifts sanctions on Russian diesel after Trump-Putin call</strong>: The US Treasury lifted sanctions on Russian diesel minutes after Trump and Putin spoke by phone. Trump said Russia will supply American and global markets. Ukraine's president said his country is 'bei...</li></ul><p><em>Published: October 10, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sat, 10 Oct 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20261010</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[United States]]></category>
+        <category><![CDATA[Economy]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-10.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - October 09, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-09.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Friday, October 09, 2026 — the 3 stories that matter most today, plus 7 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ethiopia strikes Eritrean troops inside Tigray as war risk grows</strong>: Eritrean troops crossed into Ethiopia's Tigray region on Wednesday, and Ethiopian drones struck their convoys near Adigrat. The neighbors fought a border war from 1998 to 2000, then fought together ag...</li></ul><p><em>Published: October 09, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -175,19 +190,6 @@
         <category><![CDATA[Russia]]></category>
         <category><![CDATA[Europe]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-01.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - September 30, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-30.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Wednesday, September 30, 2026 — the 3 stories that matter most today, plus 8 quick updates from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>US forces exit Iraq after two decades</strong>: The last US forces left their remaining bases in Iraq on Wednesday. This ends a deployment that began in 2014 to fight the Islamic State. The pullout is mostly popular among Iraqis, but it raises fear...</li></ul><p><em>Published: September 30, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Wed, 30 Sep 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20260930</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-09-30.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>

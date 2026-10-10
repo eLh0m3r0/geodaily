@@ -1,0 +1,330 @@
+{
+ "date": "2026-10-10",
+ "title": "Geopolitical Daily",
+ "email_subject": "US eases Russian diesel as Zelensky objects",
+ "preheader": "Ukraine's Zelensky says his country is 'being used as a front.'",
+ "intro_text": "Good morning. It's Saturday, October 10, 2026 — the 3 stories that matter most today, plus 1 update on stories you're following and 7 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "US lifts sanctions on Russian diesel after Trump-Putin call",
+   "why_important": "The US Treasury lifted sanctions on Russian diesel minutes after Trump and Putin spoke by phone. Trump said Russia will supply American and global markets. Ukraine's president said his country is 'being used as a front' by the deal. It eases pressure on Moscow's energy earnings while the war continues.",
+   "what_overlooked": "The Kremlin said the call also covered Iran and the war in Ukraine. Russia still occupies about one-fifth of Ukrainian territory.",
+   "prediction": "Whether the Miami talks produce a written ceasefire proposal or Ukraine walks out over the diesel deal will show if Washington still coordinates with Kyiv.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.lemonde.fr/en/economy/article/2026/10/09/trump-says-putin-agrees-to-major-release-of-diesel-to-us-global-markets_6758435_19.html",
+    "https://meduza.io/en/feature/2026/10/10/we-re-being-used-as-a-front-zelensky-says-of-trump-s-diesel-deal-with-putin",
+    "https://www.thehindu.com/news/international/us-lifts-sanctions-on-sale-of-russian-diesel-in-global-markets/article71565823.ece",
+    "https://www.pravda.com.ua/eng/news/2026/10/09/8057293/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "global",
+   "actor_type": "state",
+   "event_type": "economic",
+   "coverage_counts": {
+    "western": 6,
+    "russian_exile": 2,
+    "south_asia": 4,
+    "ukrainian": 3,
+    "east_asia": 5,
+    "latam": 1,
+    "middle_east_state": 2,
+    "russian_state": 1
+   },
+   "coverage_outlets": 19,
+   "signal_terms": [
+    "Trump",
+    "Putin",
+    "Russian diesel",
+    "Zelensky"
+   ]
+  },
+  {
+   "story_title": "US sanctions ICC hours after its former judge wins Nobel Peace Prize",
+   "why_important": "The Trump administration barred US companies from working with the International Criminal Court. This came hours after former ICC judge Navi Pillay won the Nobel Peace Prize. The court called the sanctions an assault on international law. It asked its 125 member states to defend it.",
+   "what_overlooked": "Japan's prime minister called the sanctions 'incompatible with' Tokyo's position. At a rally, Trump called Pillay a 'mystery person' and said Norway bore an 'indelible stain.'",
+   "prediction": "Whether any ICC member state retaliates against US officials, or allies settle for statements, will show what the court's backlash costs Washington.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/10/09/us-imposes-sanctions-on-icc-hours-after-nobel-award-to-former-judge_6758431_4.html",
+    "https://www.dawn.com/news/2036132/betrayal-of-international-law-us-sanctions-on-icc-draw-widespread-condemnation",
+    "https://www.japantimes.co.jp/news/2026/10/10/world/icc-us-sanctions/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.85,
+   "region": "global",
+   "actor_type": "mixed",
+   "event_type": "economic",
+   "coverage_counts": {
+    "western": 2,
+    "south_asia": 3,
+    "east_asia": 4,
+    "african": 2,
+    "middle_east": 1,
+    "latam": 1
+   },
+   "coverage_outlets": 12,
+   "signal_terms": [
+    "Navi Pillay",
+    "International Criminal Court",
+    "Nobel Peace Prize",
+    "ICC sanctions"
+   ]
+  },
+  {
+   "story_title": "UAE says flydubai co-pilot planned to crash into Tel Aviv airport",
+   "why_important": "The UAE's top prosecutor said an Omani co-pilot on a flydubai flight from Dubai to Tel Aviv planned to crash into Ben Gurion airport. He said the co-pilot was inspired by the September 11 attacks. Passengers described a sudden plunge and a fight for control before an emergency landing in Saudi Arabia.",
+   "what_overlooked": "The prosecutor said the co-pilot flew the Dubai-Tel Aviv route twice before to study the airport. A second flydubai flight took passengers home hours later.",
+   "prediction": "Whether the UAE names the co-pilot and any al-Qaeda contacts will show if this was a lone plot or part of a wider network.",
+   "impact_score": 6,
+   "sources": [
+    "https://www.al-monitor.com/originals/2026/10/flydubai-co-pilot-planned-suicide-attack-tel-aviv-airport-uae-prosecutor",
+    "https://www.japantimes.co.jp/news/2026/10/10/world/flydubai-suicide-attack-tel-aviv/",
+    "https://www.thehindu.com/news/international/flydubai-co-pilot-intended-to-crash-plane-into-tel-aviv-airport-uae-prosecutor-says/article71565815.ece"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 6,
+   "novelty_score": 8,
+   "credibility_score": 7,
+   "impact_dimension_score": 6,
+   "confidence": 0.8,
+   "region": "middle_east",
+   "actor_type": "mixed",
+   "event_type": "military",
+   "coverage_counts": {
+    "middle_east": 3,
+    "east_asia": 4,
+    "south_asia": 3,
+    "western": 7,
+    "russian_state": 1
+   },
+   "coverage_outlets": 15,
+   "signal_terms": [
+    "flydubai",
+    "Ben Gurion airport",
+    "Tel Aviv",
+    "UAE prosecutor"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "A magnitude 7.7 earthquake struck southern Panama, cracking homes; the president declared a major disaster, and the Panama Canal kept operating normally.",
+   "region": "americas",
+   "url": "https://www.dawn.com/news/2035973/powerful-quake-hits-panama-damages-homes-canal-operations-normal"
+  },
+  {
+   "text": "South Africa withdrew an asylum-processing order after anti-migrant riots in Durban and Soweto, where crowds torched cars and looted foreign-owned shops.",
+   "region": "africa",
+   "url": "https://www.bbc.co.uk/news/articles/cwm24v45p4jgo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "text": "Indian police detained Abhijeet Dipke, founder of the Cockroach Janta Party, ahead of a banned Delhi protest demanding the election commissioner's resignation.",
+   "region": "indo_pacific",
+   "url": "https://www.dawn.com/news/2036128/indias-cockroach-movement-chief-detained-ahead-of-major-protest"
+  },
+  {
+   "text": "Hurricane Isaias weakened to Category 1 after hitting Florida's coast, the National Hurricane Center said, warning of storm surges and downed power lines.",
+   "region": "americas",
+   "url": "https://www.straitstimes.com/world/isaias-weakens-to-category-1-hurricane-after-florida-landfall-nhc-says"
+  },
+  {
+   "text": "Spain's government is under pressure over hundreds of teenage migrants sleeping in tent camps and on streets in its North African enclave of Ceuta.",
+   "region": "europe",
+   "url": "https://www.koreatimes.co.kr/world/20261010/spains-slow-response-to-crisis-in-ceuta-leaves-teen-migrants-on-streets?utm_source=rss"
+  },
+  {
+   "text": "Prediction market Kalshi is investigating suspicious trades tied to Trump's choice of Katie Zacharia as White House press secretary, the Wall Street Journal reported.",
+   "region": "americas",
+   "url": "https://www.thehindu.com/news/international/katie-zacharia-picked-as-white-house-press-secretary/article71565837.ece"
+  },
+  {
+   "text": "Chinese researchers used Beijing's Guowang satellite network to make a video call between the Arctic and Antarctic, the first reported test of China's Starlink rival.",
+   "region": "indo_pacific",
+   "url": "https://www.scmp.com/news/china/military/article/3370374/chinese-researchers-make-arctic-antarctic-call-using-rival-musks-starlink?utm_source=rss_feed"
+  }
+ ],
+ "big_number": {
+  "value": "$60 billion",
+  "context": "US telecom stocks lost that much value in a day after SpaceX said it would buy spectrum for a Starlink mobile service.",
+  "url": "https://www.ft.com/content/8c3f95ec-2428-4102-9f67-b707f1264c69?syn-25a6b1a6=1"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW",
+     "Financial Times",
+     "Le Monde"
+    ],
+    "article_count": 6,
+    "framing": "Treats Trump as lifting Russia sanctions for midterm politics, stressing Ukraine-war context and pressure on Moscow.",
+    "quote": "Pact between Washington and Moscow comes just weeks before critical US midterm elections",
+    "quote_outlet": "Financial Times",
+    "quote_url": "https://www.ft.com/content/84ca76fd-0eed-4fb6-aea4-f72638a9d9c8?syn-25a6b1a6=1",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "Bangkok Post",
+     "South China Morning Post",
+     "The Japan Times"
+    ],
+    "article_count": 5,
+    "framing": "Sees US midterm politics and record diesel prices as the cause, stressing Republicans' electoral risk from the deal.",
+    "quote": "Prices for diesel are near a record and have put Trump's fellow Republicans at risk ahead of the Nov. 3 congressional elections.",
+    "quote_outlet": "The Japan Times",
+    "quote_url": "https://www.japantimes.co.jp/news/2026/10/10/world/politics/trump-russia-diesel-us-global-markets/",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Hindustan Times",
+     "The Hindu"
+    ],
+    "article_count": 4,
+    "framing": "Stresses Washington's sanctions rollback and Treasury licence, attributing the deal to Trump's push to cut US fuel prices before elections.",
+    "quote": "The surprise announcement comes against the backdrop of a U.S. law seeking to impose steep tariffs against top purchasers of Russian oil and gas",
+    "quote_outlet": "The Hindu",
+    "quote_url": "https://www.thehindu.com/news/international/trump-says-russia-to-immediately-supply-diesel-to-us-after-talks-with-putin/article71565812.ece",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east_state",
+    "outlets": [
+     "Anadolu Agency"
+    ],
+    "article_count": 2,
+    "framing": "Presents the deal through Putin's and Trump's claims, stressing benefits to the world economy and Russian supply volumes.",
+    "quote": "Russian president reaffirms Moscow's readiness to supply oil, petroleum products following phone call with Trump",
+    "quote_outlet": "Anadolu Agency",
+    "quote_url": "https://www.aa.com.tr/en/economy/putin-says-sales-of-russian-diesel-to-us-global-markets-will-benefit-world-economy/4084078",
+    "state_affiliated": true,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "TASS"
+    ],
+    "article_count": 1,
+    "framing": "Credits Putin with granting the diesel supply, stressing Trump's public gratitude and the deal's scale for Russia.",
+    "quote": "According to the official, the agreement provides for the supply of \"massive amounts of oil\" to the US",
+    "quote_outlet": "TASS",
+    "quote_url": "https://tass.com/world/2200203",
+    "state_affiliated": true,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_exile",
+    "outlets": [
+     "Meduza"
+    ],
+    "article_count": 2,
+    "framing": "Highlights Ukrainian anger, treating the deal as Western complicity in prolonging Russia's war against Ukraine.",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "ukrainian",
+    "outlets": [
+     "Ukrainska Pravda",
+     "Ukrinform"
+    ],
+    "article_count": 3,
+    "framing": "Stresses Moscow's gains and further cooperation, detailing the volumes Russia will supply with US approval and the Treasury licence.",
+    "quote": "The Kremlin also says the two leaders agreed to maintain contact and discussed the war in Ukraine and the situation around Iran.",
+    "quote_outlet": "Ukrainska Pravda",
+    "quote_url": "https://www.pravda.com.ua/eng/news/2026/10/09/8057293/",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "latam",
+    "outlets": [
+     "MercoPress"
+    ],
+    "article_count": 1,
+    "framing": "Frames the deal as a market intervention, stressing diesel volumes and the sanctions suspension running to April 2027.",
+    "quote": "To make it possible, the Treasury Department temporarily suspended sanctions on Russian diesel until April 2027.",
+    "quote_outlet": "MercoPress",
+    "quote_url": "https://en.mercopress.com/2026/10/09/trump-says-russia-will-supply-millions-of-tonnes-of-diesel-as-us-eases-sanctions-on-moscow?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 19,
+  "counts": {
+   "western": 6,
+   "russian_exile": 2,
+   "south_asia": 4,
+   "ukrainian": 3,
+   "east_asia": 5,
+   "latam": 1,
+   "middle_east_state": 2,
+   "russian_state": 1
+  },
+  "blindspot": "Judy Shelton, Trump's former Federal Reserve nominee, has joined the Treasury Department as an adviser to Secretary Scott Bessent. Her record of questioning Fed independence gives her new role influence over dollar and monetary policy worldwide.",
+  "blindspot_url": "https://www.thehindu.com/news/international/judy-shelton-trumps-former-fed-pick-joins-treasury-as-scott-bessents-adviser/article71564436.ece",
+  "blindspot_outlets": [
+   "Nikkei Asia",
+   "The Hindu",
+   "The Japan Times"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "Saudi-led Coalition",
+   "text": "Saudi Arabia said three Saudi nationals were killed in Thursday's Houthi attacks on Riyadh's airport, and the Saudi-led coalition vowed a firm response.",
+   "region": "middle_east",
+   "url": "https://www.thehindu.com/news/international/saudi-authorities-say-three-killed-in-houthi-claimed-attacks-on-riyadh-airport/article71565580.ece"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 13.08,
+   "avg_sentence_words": 24.0,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 9.07,
+   "rewrite_avg_sentence_words": 14.4,
+   "rewrite_fragment_share": 0.0
+  },
+  "editorial_actions": [
+   "Quick hit moved to DEVELOPING (running storyline 'saudi-led coalition'): Saudi Arabia said three Saudi nationals were killed in Thursday's Hout"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "served_model": "deepseek/deepseek-v4.1-flash",
+  "analysis_input_tokens": 12906,
+  "analysis_output_tokens": 27148,
+  "analysis_cost_usd": 0.0182,
+  "analysis_seconds": 590.5,
+  "grid_cost_usd": 0.00596,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash"
+ }
+}
