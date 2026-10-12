@@ -180,11 +180,29 @@ class PerspectiveAnalyzer:
         consequences stability pressure escalation tensions tension
         """.split())
 
+    # A repeat must share a name or a figure with the earlier blindspot, not
+    # just a theme: 10-12's "Nigeria's finance minister unveiled measures to
+    # ease fuel costs before elections" was dropped as a repeat of 10-11's
+    # "Brazil's government announced fuel tax cuts ... before a close
+    # presidential runoff" on fuel/ease/inflation/voters/economy alone, and
+    # the issue ran without a blindspot.
+    _ANCHOR = re.compile(r"\b(?:[A-Z][A-Za-z'’-]{2,}|\d[\d,.]*)")
+
+    @classmethod
+    def _anchor_words(cls, text: str) -> set:
+        """Lower-cased content words that appear as proper nouns or figures."""
+        anchors = set()
+        for token in cls._ANCHOR.findall(text or ""):
+            anchors |= content_words(token)
+        return anchors - cls.BLINDSPOT_FRAMING_WORDS
+
     def _repeats_recent_blindspot(self, text: str) -> Optional[str]:
         words = content_words(text) - self.BLINDSPOT_FRAMING_WORDS
+        anchors = self._anchor_words(text)
         for prior in self.recent_blindspots:
-            shared = words & content_words(prior)
-            if len(shared) >= self.BLINDSPOT_SHARED_WORDS:
+            prior_words = content_words(prior)
+            shared = words & prior_words
+            if len(shared) >= self.BLINDSPOT_SHARED_WORDS and anchors & prior_words:
                 return prior
         return None
 

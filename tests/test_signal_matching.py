@@ -85,3 +85,26 @@ class TestTruncatedGridResponse(unittest.TestCase):
     def test_truncated_outer_object_is_not_mistaken_for_an_inner_view(self):
         text = '{"views": [{"group": "western", "framing": "a", "quote": "", "quote_article_index": 0}, {"group": "east_asia", "fra'
         self.assertIsNone(PerspectiveAnalyzer._parse_json_object(text))
+
+
+class TestRecentBlindspotNeedsAnchor(unittest.TestCase):
+    """Sharing a theme (fuel subsidies before an election) is not sharing a
+    storyline: a repeat must also share a name or a figure."""
+
+    def setUp(self):
+        self.persp = PerspectiveAnalyzer.__new__(PerspectiveAnalyzer)
+        self.persp.recent_blindspots = [
+            "Brazil's government announced fuel tax cuts and extended subsidies weeks before a close "
+            "presidential runoff. The move could ease inflation and sway voters in a major economy whose "
+            "election affects global trade and climate policy."]
+
+    def test_thematic_twin_in_another_country_is_kept(self):
+        text = ("Nigeria's finance minister unveiled measures to ease fuel costs before elections, including "
+                "subsidies for transport operators. The move could ease inflation and sway voters in Africa's "
+                "largest economy, whose election affects regional trade.")
+        self.assertIsNone(self.persp._repeats_recent_blindspot(text))
+
+    def test_same_country_rewording_is_caught(self):
+        text = ("Brazil's Lula government extended fuel subsidies and cut taxes to curb inflation ahead of "
+                "the runoff, Folha reported. The subsidies matter because they tilt a close election.")
+        self.assertIsNotNone(self.persp._repeats_recent_blindspot(text))
