@@ -1,0 +1,270 @@
+{
+ "date": "2026-10-12",
+ "title": "Geopolitical Daily",
+ "email_subject": "Kyiv says Russia broke ceasefire in hours",
+ "preheader": "Trump announced it without telling Zelensky and had threatened to cut arms aid.",
+ "intro_text": "Good morning. It's Monday, October 12, 2026 — the 2 stories that matter most today, plus 3 updates on stories you're following and 6 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Trump announces an 'energy ceasefire' in Ukraine as Kyiv says Russia broke it",
+   "why_important": "Trump said Russia and Ukraine agreed to an immediate 'energy ceasefire'. Zelensky said he first heard of it from Trump's post. Ukraine's foreign minister said Russia hit energy sites hours later. The US had threatened to cut intelligence sharing and arms funding if Kyiv kept hitting Russian refineries.",
+   "what_overlooked": "Moscow has not commented on the ceasefire, and the US threats to Kyiv surfaced only after Trump's diesel deal with Putin.",
+   "prediction": "If Ukrainian drones stay away from Russian refineries for 72 hours, the deal holds; another strike would show it is not.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/10/12/ukraine-and-europe-seek-to-keep-pressure-on-putin-after-trump-deal-on-russian-diesel_6758498_4.html",
+    "https://www.themoscowtimes.com/2026/10/11/ukraine-will-stop-hitting-refineries-if-russia-halts-energy-attacks-zelensky-says-a93943",
+    "https://www.dawn.com/news/2036500/trump-proclaims-energy-ceasefire-in-ukraine-war",
+    "https://www.pravda.com.ua/eng/news/2026/10/11/8057516/",
+    "https://meduza.io/en/news/2026/10/12/financial-times-us-threatened-to-cut-off-weapons-deliveries-and-intelligence-sharing-with-ukraine-unless-kyiv-stopped-striking-russian-oil-refineries",
+    "https://www.dailymaverick.co.za/article/2026-10-11-us-threatens-to-block-arms-for-ukraine-over-refinery-attacks-ft-reports/",
+    "https://www.ft.com/content/68fd8c4f-6f34-4f6e-a52c-76f635164031?syn-25a6b1a6=1"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "western": 6,
+    "russian_exile": 3,
+    "african": 1,
+    "south_asia": 1,
+    "ukrainian": 1,
+    "east_asia": 4
+   },
+   "coverage_outlets": 14,
+   "signal_terms": [
+    "Vladimir Putin",
+    "Volodymyr Zelensky",
+    "energy ceasefire",
+    "Russian oil refineries"
+   ]
+  },
+  {
+   "story_title": "Pakistan imposes emergency rule and suspends Imran Khan's provincial government",
+   "why_important": "Pakistan's president declared a state of emergency and suspended the government of Khyber Pakhtunkhwa. Jailed former prime minister Imran Khan's party runs the province. The federal government said the province failed to fight Islamist militants along the Afghan border.",
+   "what_overlooked": "Khan's PTI party called the move undemocratic, and the province is the center of his support and borders Taliban-run Afghanistan.",
+   "prediction": "Whether Imran Khan's party can overturn the suspension in court this week will show how far Pakistan's government will go.",
+   "impact_score": 7,
+   "sources": [
+    "https://asia.nikkei.com/politics/pakistan-suspends-imran-khan-followers-provincial-government",
+    "https://www.dawn.com/news/2036352/emergency-governors-rule-imposed-in-kp-as-president-approves-cabinet-decision",
+    "https://www.al-monitor.com/originals/2026/10/pakistan-imposes-emergency-rule-over-imran-khans-provincial-government",
+    "https://www.dw.com/en/pakistan-president-puts-khan-stronghold-province-under-emergency-rule/a-79632530?maca=en-rss-en-all-1573-rdf"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 6,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.85,
+   "region": "indo_pacific",
+   "actor_type": "state",
+   "event_type": "political",
+   "coverage_counts": {
+    "east_asia": 3,
+    "south_asia": 5,
+    "middle_east": 1,
+    "western": 2
+   },
+   "coverage_outlets": 10,
+   "signal_terms": [
+    "Imran Khan",
+    "Khyber Pakhtunkhwa",
+    "Asif Ali Zardari",
+    "PTI"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "North Korea fired multiple ballistic missiles into the sea, its fourth launch in October, days after South Korea tested a hypersonic missile.",
+   "region": "indo_pacific",
+   "url": "https://www.japantimes.co.jp/news/2026/10/12/japan/north-korea-multiple-ballistic-missiles-launch/"
+  },
+  {
+   "text": "Poland detained a man suspected of plotting to attack Prime Minister Donald Tusk and Defence Minister Wladyslaw Kosiniak-Kamysz, the interior ministry said.",
+   "region": "europe",
+   "url": "https://www.lemonde.fr/en/international/article/2026/10/11/poland-detains-suspect-in-alleged-assassination-attempt-on-prime-minister_6758485_4.html"
+  },
+  {
+   "text": "China sanctioned Paraguay's communications minister and Belize's foreign minister over their countries' ties with Taiwan, freezing assets and banning their entry.",
+   "region": "indo_pacific",
+   "url": "https://asia.nikkei.com/politics/international-relations/china-sanctions-paraguay-belize-ministers-over-taiwan-ties"
+  },
+  {
+   "text": "Seven US senators, four Republicans and three Democrats, urged Trump to reverse his diesel deal with Russia, saying it breaks a 2022 law.",
+   "region": "americas",
+   "url": "https://www.al-monitor.com/originals/2026/10/us-republicans-democrats-want-trump-reverse-course-russia-diesel"
+  },
+  {
+   "text": "Pope Leo XIV will have surgery to remove a small nodule on his lung, which the Vatican says was caught early; recovery should take about a week.",
+   "region": "europe",
+   "url": "https://www.thehindu.com/news/international/pope-leo-to-undergo-surgery-for-growth-on-lung/article71572904.ece"
+  },
+  {
+   "text": "Russian drones hit two apartment buildings in Kharkiv, injuring at least 15 people, Ukrainian officials said.",
+   "region": "europe",
+   "url": "https://novayagazeta.eu/articles/2026/10/12/drony-udarili-po-dvum-mnogoetazhnym-domam-v-kharkove-postradali-minimum-15-chelovek-news"
+  }
+ ],
+ "big_number": {
+  "value": "139",
+  "context": "At least 139 migrants, including 15 children, died when a boat carrying over 300 people from Djibouti to Yemen capsized; about 84 are missing.",
+  "url": "https://www.al-monitor.com/originals/2026/10/least-139-migrants-dead-including-some-children-after-boat-djibouti-yemen"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "Financial Times",
+     "Le Monde",
+     "The Guardian"
+    ],
+    "article_count": 6,
+    "framing": "Frames Trump’s unilateral energy deal and US arms threats as central, stressing Kyiv’s exclusion and Russian violations.",
+    "quote": "US President Donald Trump announced on Sunday a ceasefire targeting both Russian and Ukrainian energy infrastructure, without Kyiv being informed.",
+    "quote_outlet": "Le Monde",
+    "quote_url": "https://www.lemonde.fr/en/international/article/2026/10/12/ukraine-and-europe-seek-to-keep-pressure-on-putin-after-trump-deal-on-russian-diesel_6758498_4.html",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "South China Morning Post",
+     "The Korea Times",
+     "The Straits Times"
+    ],
+    "article_count": 4,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Dawn"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "russian_exile",
+    "outlets": [
+     "Meduza",
+     "The Moscow Times"
+    ],
+    "article_count": 3,
+    "framing": "Stresses US threats to cut weapons and intelligence unless Kyiv halts strikes on Russian refineries, centering Trump’s pressure.",
+    "quote": "US President Donald Trump expects Ukrainian President Volodymyr Zelensky to observe the energy ceasefire and stop strikes on Russian oil refineries, Axios reported.",
+    "quote_outlet": "Meduza",
+    "quote_url": "https://meduza.io/en/news/2026/10/12/trump-is-really-mad-white-house-source-says-president-expects-ukraine-to-stop-striking-russian-oil-refineries",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "ukrainian",
+    "outlets": [
+     "Ukrainska Pravda"
+    ],
+    "article_count": 1,
+    "framing": "Holds Moscow responsible for immediately violating the announced energy ceasefire, stressing Ukraine’s energy infrastructure attacks.",
+    "quote": "Ukrainian Foreign Minister Andrii Sybiha says Moscow attacked critical energy infrastructure facilities hours after Donald Trump announced an immediate halt to strikes on energy facilities.",
+    "quote_outlet": "Ukrainska Pravda",
+    "quote_url": "https://www.pravda.com.ua/eng/news/2026/10/11/8057516/",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "african",
+    "outlets": [
+     "Daily Maverick"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   }
+  ],
+  "total_outlets": 14,
+  "counts": {
+   "western": 6,
+   "russian_exile": 3,
+   "african": 1,
+   "south_asia": 1,
+   "ukrainian": 1,
+   "east_asia": 4
+  },
+  "blindspot": "",
+  "blindspot_url": "",
+  "blindspot_outlets": []
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "King Khalid International Airport",
+   "text": "Houthis hit Riyadh's airport again as Saudi Arabia weighs a response.",
+   "region": "middle_east",
+   "url": "https://www.lemonde.fr/en/international/article/2026/10/11/saudi-arabia-weighs-response-after-deadliest-houthi-attack-on-riyadh-in-a-decade_6758480_4.html"
+  },
+  {
+   "storyline": "Prime Minister Andy",
+   "text": "UK Prime Minister Andy Burnham said Russia interfered in the 2016 Brexit referendum, the first time a British leader has said so publicly.",
+   "region": "europe",
+   "url": "https://www.pravda.com.ua/eng/news/2026/10/12/8057523/"
+  },
+  {
+   "storyline": "Strait OF Hormuz",
+   "text": "Iran said the latest US reply on reopening the Strait of Hormuz is insufficient, and its security chief said Tehran will not return to the old terms.",
+   "region": "middle_east",
+   "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-says-us-response-falls-short-conditions-deal"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 10.54,
+   "avg_sentence_words": 17.5,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 9.31,
+   "rewrite_avg_sentence_words": 15.1,
+   "rewrite_fragment_share": 0.0
+  },
+  "editorial_actions": [
+   "Story demoted to DEVELOPING (running storyline 'king khalid international airport'): Houthis hit Riyadh's airport again as Saudi Arabia weighs a response",
+   "Quick hit moved to DEVELOPING (running storyline 'prime minister andy'): UK Prime Minister Andy Burnham said Russia interfered in the 2016 Brex",
+   "Quick hit moved to DEVELOPING (running storyline 'strait of hormuz'): Iran said the latest US reply on reopening the Strait of Hormuz is ins"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "served_model": "deepseek/deepseek-v4.1-flash",
+  "analysis_input_tokens": 12348,
+  "analysis_output_tokens": 39185,
+  "analysis_cost_usd": 0.02794,
+  "analysis_seconds": 366.7,
+  "grid_cost_usd": 0.00689,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash"
+ }
+}
