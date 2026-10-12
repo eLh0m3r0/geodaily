@@ -161,5 +161,11 @@ class TestBlindspotSkipsSportsAndEntertainment(unittest.TestCase):
             a.title = "Nairobi senator emerges as challenger to President Ruto"
         story = AIAnalysis(story_title="x", why_important="w", what_overlooked="o",
                            prediction="p", impact_score=8, sources=["https://w/1"])
-        candidates = PerspectiveAnalyzer()._blindspot_candidates([story], sport + politics)
+        # Isolate from the repo's real issue history: the running-storyline
+        # index built from docs/newsletters once carried 'nairobi' and
+        # swallowed the politics cluster (2026-10-12).
+        persp = PerspectiveAnalyzer()
+        persp.recent_topics, persp.recent_blindspots = [], []
+        persp.storylines = type(persp.storylines)([])
+        candidates = persp._blindspot_candidates([story], sport + politics)
         self.assertEqual({m.cluster_id for ms in candidates for m in ms}, {"c2"})
