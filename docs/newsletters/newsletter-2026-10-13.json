@@ -1,0 +1,279 @@
+{
+ "date": "2026-10-13",
+ "title": "Geopolitical Daily",
+ "email_subject": "UK links Iran's Guard to air base plot",
+ "preheader": "Five men were arrested nearby; a Ukrainian-owned ship sank off NATO ally Bulgaria.",
+ "intro_text": "Good morning. It's Tuesday, October 13, 2026 — the 3 stories that matter most today, plus 3 updates on stories you're following and 5 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "UK says Iran's Revolutionary Guard likely behind plot at a US bomber base",
+   "why_important": "Prime Minister Andy Burnham told parliament a suspected plot at RAF Fairford was 'highly likely' coordinated in Iran. He said it was almost certainly directed by the Revolutionary Guard. Police arrested five British men near the base, which had hosted US bombers used to strike Iran.",
+   "what_overlooked": "Iran has not responded publicly, and Britain has not said whether the five men in custody will be charged. The base's US bombers left after Trump cited an Iran-linked threat.",
+   "prediction": "Whether Britain charges the five men, and how Tehran responds, will show if this becomes a formal UK-Iran standoff.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.al-monitor.com/originals/2026/10/uk-pm-burnham-says-irans-irgc-likely-behind-raf-fairford-incident",
+    "https://www.dw.com/en/uk-iran-highly-likely-to-be-behind-raf-fairford-incident/a-79645941?maca=en-rss-en-all-1573-rdf",
+    "https://www.scmp.com/news/world/europe/article/3370646/uk-pm-burnham-says-irans-irgc-highly-likely-have-been-behind-raf-fairford-incident?utm_source=rss_feed"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 7,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.86,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "middle_east": 3,
+    "western": 2,
+    "east_asia": 1,
+    "south_asia": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 8,
+   "signal_terms": [
+    "RAF Fairford",
+    "IRGC",
+    "Andy Burnham",
+    "Iran"
+   ]
+  },
+  {
+   "story_title": "Drones sink a Ukrainian-owned cargo ship off Bulgaria's Black Sea coast",
+   "why_important": "Strikes hit two cargo ships overnight off Bulgaria, a NATO member, and one, the Ukrainian-owned Chelsea 3, sank. Bulgaria's prime minister called the attack unacceptable and said Sofia plans to call in Russia's ambassador after the second such strike in a week.",
+   "what_overlooked": "No one has claimed the attack, and Bulgaria has not publicly named who launched the drones. Rescuers saved one person from the sunken ship and took 15 off the other.",
+   "prediction": "Whether Sofia publicly blames Moscow, and whether NATO takes up the sinking, will show how far the war is spreading.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.theguardian.com/world/live/2026/oct/13/ships-hit-sunk-drones-bulgaria-black-sea-ukraine-russia-war-france-spains-sweden-pope-leo-europe-latest-news-updates",
+    "https://meduza.io/en/news/2026/10/13/drones-attack-two-cargo-ships-off-bulgaria-s-coast-one-ukrainian-owned-sofia-plans-to-summon-russian-ambassador",
+    "https://www.aljazeera.com/news/2026/10/13/drone-attack-sinks-ship-off-bulgarias-black-sea-coast-pm-says?traffic_source=rss"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 7,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.84,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "russian_exile": 1,
+    "middle_east": 1,
+    "western": 1,
+    "south_asia": 1,
+    "east_asia": 1
+   },
+   "coverage_outlets": 5,
+   "signal_terms": [
+    "Chelsea 3",
+    "Black Sea",
+    "Bulgaria",
+    "Rumen Radev"
+   ]
+  },
+  {
+   "story_title": "Hackers heat French supermarket freezers, sparking fires and spoiling food",
+   "why_important": "Attackers raised temperatures in fridges and freezers at several hundred French supermarkets to as high as 50°C overnight. The attack caused fires and destroyed tons of food. Software from Denmark's Danfoss contained the bug, and France's cybercrime office has opened an investigation.",
+   "what_overlooked": "No group has claimed responsibility, and investigators have not said who was behind the attack. Because the software with the bug is widely used, stores in other countries could be at risk.",
+   "prediction": "Whether investigators identify a culprit or motive, and whether Danfoss fixes the bug, will show if this spreads beyond France.",
+   "impact_score": 6,
+   "sources": [
+    "https://www.lemonde.fr/en/economy/article/2026/10/13/a-disastrous-day-for-french-supermarkets-after-massive-cyberattack-targets-refrigeration-systems_6758535_19.html",
+    "https://www.japantimes.co.jp/business/2026/10/13/french-supermarket-cyberattack/",
+    "https://www.dailymaverick.co.za/article/2026-10-12-hackers-heat-french-supermarket-fridges-sparking-fires-and-spoiling-food/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 6,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 6,
+   "confidence": 0.85,
+   "region": "europe",
+   "actor_type": "non_state",
+   "event_type": "informational_cyber",
+   "coverage_counts": {
+    "western": 1,
+    "east_asia": 1,
+    "african": 1
+   },
+   "coverage_outlets": 3,
+   "signal_terms": [
+    "Danfoss",
+    "French supermarkets",
+    "cybercrime office"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Israel's military is preparing polling stations in Gaza, Lebanon and Syria for the October 27 Knesset election, about 100 more than last time.",
+   "region": "middle_east",
+   "url": "https://www.haaretz.com/israel-news/elections/2026-10-12/ty-article/.premium/with-polling-stations-in-gaza-lebanon-and-syria-idf-prepares-for-election/000001a1-3008-db9b-adf9-f8e8f33f0000"
+  },
+  {
+   "text": "Hurricane Simon and Tropical Storm Rachel left at least five people dead in Mexico and sent floods across the US Southwest.",
+   "region": "americas",
+   "url": "https://www.scmp.com/news/world/americas/article/3370651/2-dead-10-missing-hurricane-and-tropical-storm-hit-mexico?utm_source=rss_feed"
+  },
+  {
+   "text": "Pope Leo XIV was due to enter a Rome hospital Tuesday for surgery on a lung nodule, with audiences canceled until October 20.",
+   "region": "europe",
+   "url": "https://www.lemonde.fr/en/international/article/2026/10/12/pope-leo-xiv-to-be-hospitalized-in-rome-on-tuesday-for-a-lung-operation_6758529_4.html"
+  },
+  {
+   "text": "The Kremlin said talks on Trump's 'energy ceasefire' were still ongoing, as Zelensky accused Russia of violating it.",
+   "region": "europe",
+   "url": "https://www.themoscowtimes.com/2026/10/12/zelensky-accuses-russia-of-breaking-energy-ceasefire-as-kremlin-says-talks-ongoing-a93944"
+  },
+  {
+   "text": "President Trump defended his deal to let Russia sell diesel abroad, calling it 'the right choice' as senators from both parties objected.",
+   "region": "global",
+   "url": "https://www.semafor.com/article/10/12/2026/trump-faces-russia-diesel-deal-blowback"
+  }
+ ],
+ "big_number": null,
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW",
+     "France 24"
+    ],
+    "article_count": 2,
+    "framing": "Britain holds Iran's IRGC responsible for the Fairford plot, and Tehran's denial is given prominence.",
+    "quote": "Prime Minister Andy Burnham told parliament there were \"strong indications\" of Iranian involvement.",
+    "quote_outlet": "DW",
+    "quote_url": "https://www.dw.com/en/uk-iran-highly-likely-to-be-behind-raf-fairford-incident/a-79645941?maca=en-rss-en-all-1573-rdf",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "South China Morning Post"
+    ],
+    "article_count": 1,
+    "framing": "Relays UK's accusation that Iran's IRGC directed the plot, tying it to US strikes flown from the base.",
+    "quote": "British Prime Minister Andy Burnham said on Monday that a suspected plot targeting the RAF Fairford airbase in Britain was “highly likely” to have been coordinated in Iran,",
+    "quote_outlet": "South China Morning Post",
+    "quote_url": "https://www.scmp.com/news/world/europe/article/3370646/uk-pm-burnham-says-irans-irgc-highly-likely-have-been-behind-raf-fairford-incident?utm_source=rss_feed",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "The Hindu"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al-Monitor",
+     "Haaretz",
+     "Iran International"
+    ],
+    "article_count": 3,
+    "framing": "Reports UK's IRGC accusation while stressing Tehran's denial and Britain's crackdown on Iranian networks.",
+    "quote": "Tehran denied involvement, calling the allegations 'unfounded and malicious speculations'",
+    "quote_outlet": "Haaretz",
+    "quote_url": "https://www.haaretz.com/world-news/europe/2026-10-12/ty-article/u-k-pm-burnham-irans-irgc-likely-behind-raf-fairford-incident/000001a1-30d4-dbe9-ade9-72deccca0000",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "rt-english.com"
+    ],
+    "article_count": 1,
+    "framing": "Frames Iran as victim of a UK false-flag plot staged to hide British backing for strikes on Iran.",
+    "quote": "Iran has accused Britain of staging a false-flag terrorist plot at RAF Fairford to cover up its involvement in US-Israeli strikes on Iran",
+    "quote_outlet": "rt-english.com",
+    "quote_url": "https://rt-english.com/news/647110-uk-iran-false-flag-plot/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+    "state_affiliated": true,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 8,
+  "counts": {
+   "middle_east": 3,
+   "western": 2,
+   "east_asia": 1,
+   "south_asia": 1,
+   "russian_state": 1
+  },
+  "blindspot": "At least 72 artisanal miners were killed in an airstrike in northern Sudan, the second such attack in months; the rights monitor Emergency Lawyers blamed Egypt. Egypt's role in Sudan's war affects regional stability and Red Sea shipping.",
+  "blindspot_url": "https://www.egyptindependent.com/at-least-72-sudanese-artisanal-miners-killed-in-strike-rights-monitor-says/",
+  "blindspot_outlets": [
+   "Egypt Independent",
+   "Hindustan Times",
+   "Taipei Times",
+   "The Straits Times",
+   "rt-english.com"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "Riyadh",
+   "text": "Saudi Arabia kept Riyadh's airport closed and reported a new Houthi drone and missile barrage days after a deadly strike on a terminal.",
+   "region": "middle_east",
+   "url": "https://www.al-monitor.com/originals/2026/10/saudi-arabia-faces-new-missile-and-drone-fire-after-major-attacks-airports"
+  },
+  {
+   "storyline": "Houthi",
+   "text": "A Houthi official warned the United States it would face a 'painful response' if Washington joins the war in Yemen.",
+   "region": "middle_east",
+   "url": "https://www.al-monitor.com/originals/2026/10/houthi-official-warns-swift-painful-response-if-us-enters-yemen-war"
+  },
+  {
+   "storyline": "Republicans",
+   "text": "Elon Musk has spent more than $276 million since July to help Republicans keep control of Congress in the US midterms.",
+   "region": "americas",
+   "url": "https://www.scmp.com/news/world/united-states-canada/article/3370645/elon-musk-becomes-biggest-known-donor-midterm-elections-bid-save-republicans?utm_source=rss_feed"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 10.12,
+   "avg_sentence_words": 17.0,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 9.75,
+   "rewrite_avg_sentence_words": 16.4,
+   "rewrite_fragment_share": 0.0
+  },
+  "editorial_actions": [
+   "Quick hit moved to DEVELOPING (running storyline 'riyadh'): Saudi Arabia kept Riyadh's airport closed and reported a new Houthi dr",
+   "Quick hit moved to DEVELOPING (running storyline 'houthi'): A Houthi official warned the United States it would face a 'painful re",
+   "Quick hit moved to DEVELOPING (running storyline 'republicans'): Elon Musk has spent more than $276 million since July to help Republic"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "served_model": "deepseek/deepseek-v4.1-flash",
+  "analysis_input_tokens": 12637,
+  "analysis_output_tokens": 36133,
+  "analysis_cost_usd": 0.02069,
+  "analysis_seconds": 572.0,
+  "grid_cost_usd": 0.00777,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash"
+ }
+}
