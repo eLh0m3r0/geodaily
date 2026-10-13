@@ -60,6 +60,9 @@ _KNOWN_DOMAINS: Dict[str, str] = {
     "themoscowtimes.com": "The Moscow Times",
     "defenseone.com": "Defense One",
     "worldpoliticsreview.com": "World Politics Review",
+    # RT publishes its English feed items on mirror domains (2026-10-13 the
+    # issue showed "rt-english.com" as an outlet name next to Haaretz)
+    "rt-english.com": "RT", "swentr.site": "RT",
 }
 
 
