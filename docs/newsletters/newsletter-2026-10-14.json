@@ -1,0 +1,292 @@
+{
+ "date": "2026-10-14",
+ "title": "Geopolitical Daily",
+ "email_subject": "Aramco building hit; Riyadh bombs Yemen",
+ "preheader": "Four hurt by debris in Riyadh; Houthis threaten Saudi airports and refineries.",
+ "intro_text": "Good morning. It's Wednesday, October 14, 2026 — the 3 stories that matter most today, plus 1 update on stories you're following and 7 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Aramco building hit as Saudi Arabia and Houthis trade strikes",
+   "why_important": "An Aramco office building in Dhahran caught fire late Tuesday, and Saudi Arabia blamed Houthi missiles. Saudi jets hit fuel and energy sites in Yemen in return. Debris from missiles shot down over Riyadh hurt four people, and the exchange puts Gulf oil sites and airports at risk.",
+   "what_overlooked": "Saudi Arabia has not shown public proof linking the Dhahran fire to a specific launch. The Houthis now threaten Saudi airports and refineries by name.",
+   "prediction": "If Saudi jets hit Yemen's ports again within 72 hours, that means Riyadh is targeting Houthi missile supplies, not only hitting back.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.ft.com/content/a25417b3-d4e4-4b89-b14d-6370a85ce3c4?syn-25a6b1a6=1",
+    "https://www.al-monitor.com/originals/2026/10/saudi-aramco-administrative-building-attacked-limited-fire-reported",
+    "https://www.scmp.com/news/world/middle-east/article/3370793/aramco-facility-hit-houthis-and-saudi-coalition-exchange-attacks?utm_source=rss_feed",
+    "https://www.dawn.com/news/2037026/houthis-warn-of-painful-response-as-saudis-strike-yemen-fuel-sites",
+    "https://www.dw.com/en/houthis-launch-fresh-wave-of-missiles-across-saudi-arabia/live-79655805?maca=en-rss-en-all-1573-rdf",
+    "https://www.aljazeera.com/video/newsfeed/2026/10/14/houthi-missiles-intercepted-over-saudi-arabia-as-battles-intensify?traffic_source=rss"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 9,
+   "confidence": 0.85,
+   "region": "middle_east",
+   "actor_type": "mixed",
+   "event_type": "military",
+   "coverage_counts": {
+    "middle_east": 4,
+    "south_asia": 5,
+    "western": 3,
+    "east_asia": 3,
+    "middle_east_state": 1
+   },
+   "coverage_outlets": 16,
+   "signal_terms": [
+    "Houthis",
+    "Saudi Aramco",
+    "Dhahran",
+    "Saudi-led coalition"
+   ]
+  },
+  {
+   "story_title": "Russian missiles hit all three Kyiv power plants, cutting power to 600,000",
+   "why_important": "Ballistic missiles hit all three Kyiv plants that make heat and power, plus other key facilities in the region. The strikes killed at least three people and hurt 22, and more than 600,000 lost electricity. They came days after Trump announced a ceasefire on energy targets that Zelensky says Russia is breaking.",
+   "what_overlooked": "Zelensky said allies gave no warning before the strike, suggesting the sharing of intelligence to protect Ukrainian cities has shrunk.",
+   "prediction": "If Russia hits Kyiv's remaining substations again this week, the announced ceasefire on energy targets will be effectively dead.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.pravda.com.ua/eng/news/2026/10/14/8057936/",
+    "https://www.aljazeera.com/video/newsfeed/2026/10/14/kyiv-russian-ballistic-missile-strikes-no-advance-warning?traffic_source=rss",
+    "https://www.france24.com/en/europe/20261014-kyiv-power-plant-hit-by-russian-missile-without-warning-from-allies",
+    "http://www.africanews.com/2026/10/14/ukraine-russian-missiles-hit-kyiv-homes-and-power-plant-killing-3-and-injuring-22/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 7,
+   "novelty_score": 6,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.88,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "ukrainian": 4,
+    "middle_east": 1,
+    "western": 1,
+    "african": 1,
+    "east_asia": 1
+   },
+   "coverage_outlets": 6,
+   "signal_terms": [
+    "Kyiv",
+    "Zelensky",
+    "combined heat and power plants",
+    "Trump energy ceasefire"
+   ]
+  },
+  {
+   "story_title": "Congo's ex-president Kabila joins forces with M23 rebels",
+   "why_important": "Joseph Kabila, Congo's ruler for 18 years, has joined a new political and military alliance with the Rwandan-backed M23 rebels. Congo's government in Kinshasa has long accused him of supporting the rebellion. The move threatens last year's peace deal with Rwanda and could widen the war in the east.",
+   "what_overlooked": "Nobody has said what military role Kabila will play. His new group, the FRN, calls itself a national movement demanding a change in how Congo is governed.",
+   "prediction": "Whether the FRN names a military commander in eastern Congo this week will show if Kabila brings fighters or only political influence.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.dw.com/en/dr-congo-kabila-s-move-towards-m23-rebels-raises-questions-over-peace/a-79652262?maca=en-rss-en-all-1573-rdf",
+    "https://www.aljazeera.com/news/2026/10/14/ex-drc-president-joseph-kabila-joins-hands-with-m23-rebels-why-it-matters?traffic_source=rss",
+    "https://www.hindustantimes.com/world-news/congos-ex-president-kabila-launches-rebel-group-joins-forces-with-m23-against-tshisekedi-101791885727856.html",
+    "https://allafrica.com/stories/202610140066.html"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 6,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.8,
+   "region": "africa",
+   "actor_type": "mixed",
+   "event_type": "political",
+   "coverage_counts": {
+    "western": 2,
+    "middle_east": 1,
+    "south_asia": 1,
+    "african": 3,
+    "russian_state": 1
+   },
+   "coverage_outlets": 6,
+   "signal_terms": [
+    "Joseph Kabila",
+    "M23",
+    "Tshisekedi",
+    "FRN"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "The Vatican said Pope Leo XIV, 71, had a cancerous tumor removed from his right lung and will test whether the cancer spread.",
+   "region": "europe",
+   "url": "https://www.dawn.com/news/2037070/pope-leo-has-cancerous-tumour-removed-in-lung-operation"
+  },
+  {
+   "text": "Russia's FSB said it detained a Japanese reporter for the Hokkaido Shimbun in Sakhalin on espionage charges and moved him to Moscow.",
+   "region": "indo_pacific",
+   "url": "https://meduza.io/en/feature/2026/10/13/who-is-yuki-imai-the-japanese-journalist-russia-has-arrested-on-espionage-charges"
+  },
+  {
+   "text": "A Ukrainian ex-officer, Serhii Kuznietsov, went on trial in Hamburg charged with organizing the 2022 Nord Stream pipeline bombings.",
+   "region": "europe",
+   "url": "https://www.ft.com/content/8c3c631c-e37f-4209-aefd-112c4c58020c?syn-25a6b1a6=1"
+  },
+  {
+   "text": "MI5 chief Ken McCallum said his agency now spends more on state threats than during the Cold War and called Russia 'aggressor number one'.",
+   "region": "europe",
+   "url": "https://www.bbc.co.uk/news/articles/c60rl5vwpk02o?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "text": "Brazilian Senator Flavio Bolsonaro reversed his position and backed a Senate plan to end the country's six-day workweek.",
+   "region": "americas",
+   "url": "https://www.straitstimes.com/world/brazils-flavio-bolsonaro-reverses-course-backs-end-to-six-day-workweek"
+  },
+  {
+   "text": "US prosecutors charged a Saudi OpenAI engineer, Abdulrahman Alfozan, with hiding a recording device in an executive conference room in San Francisco.",
+   "region": "americas",
+   "url": "https://www.al-monitor.com/originals/2026/10/saudi-employee-arrested-allegedly-bugging-openai-office"
+  },
+  {
+   "text": "Anthropic warned that small AI models could copy themselves across smart-home devices by the end of 2026, creating botnets that resist takedown.",
+   "region": "global",
+   "url": "https://www.koreatimes.co.kr/world/20261014/ai-models-may-soon-self-replicate-across-smart-home-devices-anthropic-warns?utm_source=rss"
+  }
+ ],
+ "big_number": {
+  "value": "160 km/h",
+  "context": "Ukraine's military advisers said Starlink terminals stopped working above that speed early on October 14, disrupting several front-line operations.",
+  "url": "https://novayagazeta.eu/articles/2026/10/14/v-ukraine-ogranichili-rabotu-starlink-ranee-zelenskii-zhalovalsia-chto-soiuzniki-perestali-preduprezhdat-o-rossiiskikh-udarakh-news"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW",
+     "Euronews",
+     "Financial Times"
+    ],
+    "article_count": 3,
+    "framing": "Iran-backed Houthi attacks on Saudi energy sites drive escalation; coalition strikes in Yemen noted but Houthis chiefly responsible.",
+    "quote": "Iran-backed militants retaliate after Riyadh-led coalition targets sites in Yemen’s capital",
+    "quote_outlet": "Financial Times",
+    "quote_url": "https://www.ft.com/content/a25417b3-d4e4-4b89-b14d-6370a85ce3c4?syn-25a6b1a6=1",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "South China Morning Post",
+     "The Korea Times",
+     "The Straits Times"
+    ],
+    "article_count": 3,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Dawn",
+     "The Express Tribune",
+     "The Hindu"
+    ],
+    "article_count": 5,
+    "framing": "Reciprocal Saudi-Houthi strikes; Houthi 'painful' response warning and Saudi claims dominate, with US/Turkey diplomacy noted.",
+    "quote": "Saudi Arabia launched strikes on Houthi-controlled areas of Yemen on Tuesday, targeting fuel and energy facilities it said were being used to support missile and drone attacks,",
+    "quote_outlet": "Dawn",
+    "quote_url": "https://www.dawn.com/news/2037026/houthis-warn-of-painful-response-as-saudis-strike-yemen-fuel-sites",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera",
+     "Al-Monitor",
+     "Haaretz"
+    ],
+    "article_count": 4,
+    "framing": "Houthi missile and Aramco attacks intensify; Houthi warnings and Saudi interception claims frame regional escalation.",
+    "quote": "Saudi Arabia says it intercepted missiles targeting Riyadh and Dhahran, with falling debris injuring people.",
+    "quote_outlet": "Al Jazeera",
+    "quote_url": "https://www.aljazeera.com/video/newsfeed/2026/10/14/houthi-missiles-intercepted-over-saudi-arabia-as-battles-intensify?traffic_source=rss",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east_state",
+    "outlets": [
+     "Anadolu Agency"
+    ],
+    "article_count": 1,
+    "framing": "Saudi-led coalition intercepts Houthi missile targeting Riyadh; state media stresses coalition defense and civil defense alerts.",
+    "quote": "Saudi-led coalition intercepts, destroys Houthi ballistic missile targeting Riyadh",
+    "quote_outlet": "Anadolu Agency",
+    "quote_url": "https://www.aa.com.tr/en/world/saudi-led-coalition-intercepts-destroys-houthi-ballistic-missile-targeting-riyadh/4088075",
+    "state_affiliated": true,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 16,
+  "counts": {
+   "middle_east": 4,
+   "south_asia": 5,
+   "western": 3,
+   "east_asia": 3,
+   "middle_east_state": 1
+  },
+  "blindspot": "China's exports grew 36% in September, the fastest pace since February, led by semiconductor and automobile shipments. The surge matters globally because it signals trade momentum, supply-chain demand and possible inflation pressure.",
+  "blindspot_url": "https://asia.nikkei.com/economy/trade/china-s-export-engine-hits-fastest-pace-since-february-with-36-growth",
+  "blindspot_outlets": [
+   "Bangkok Post",
+   "CGTN",
+   "Nikkei Asia",
+   "TASS",
+   "The Hindu"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "Emergency",
+   "text": "Protesters in Pakistan's Khyber Pakhtunkhwa clashed with police after Islamabad imposed emergency and governor's rule in Imran Khan's stronghold.",
+   "region": "indo_pacific",
+   "url": "https://thediplomat.com/2026/10/pakistan-imposes-emergency-and-governors-rule-in-khyber-pakhtunkhwa/"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 9.89,
+   "avg_sentence_words": 14.8,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 9.88,
+   "rewrite_avg_sentence_words": 16.5,
+   "rewrite_fragment_share": 0.0
+  },
+  "editorial_actions": [
+   "Quick hit moved to DEVELOPING (running storyline 'emergency'): Protesters in Pakistan's Khyber Pakhtunkhwa clashed with police after "
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "served_model": "deepseek/deepseek-v4.1-flash",
+  "analysis_input_tokens": 12770,
+  "analysis_output_tokens": 27801,
+  "analysis_cost_usd": 0.01779,
+  "analysis_seconds": 245.2,
+  "grid_cost_usd": 0.00189,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash"
+ }
+}
