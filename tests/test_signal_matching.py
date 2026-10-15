@@ -108,3 +108,22 @@ class TestRecentBlindspotNeedsAnchor(unittest.TestCase):
         text = ("Brazil's Lula government extended fuel subsidies and cut taxes to curb inflation ahead of "
                 "the runoff, Folha reported. The subsidies matter because they tilt a close election.")
         self.assertIsNotNone(self.persp._repeats_recent_blindspot(text))
+
+
+class TestMultiWordTermNeedsSpecificPart(unittest.TestCase):
+    """A generic name inside a multi-word term ("Trump waiver") is not a
+    specific hit — 2026-10-15 it selected the Greenland market again."""
+
+    markets = [
+        {"question": "Will Trump acquire Greenland before 2027?", "volume": 9e6},
+        {"question": "Will the Strait of Hormuz be closed to shipping in 2026?", "volume": 1e6},
+    ]
+
+    def test_trump_waiver_does_not_select_trump_market(self):
+        self.assertIsNone(match_market(self.markets, story(
+            ["Alexander Novak", "Russian diesel", "Giorgia Meloni", "Trump waiver"])))
+
+    def test_distinctive_part_of_multi_word_term_still_matches(self):
+        best = match_market(self.markets, story(["Strait of Hormuz closure", "tanker traffic"]))
+        self.assertIsNotNone(best)
+        self.assertIn("Hormuz", best["question"])
