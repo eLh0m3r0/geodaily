@@ -105,9 +105,11 @@ def _matching_terms(text: str, terms: List[str]) -> List[str]:
         if re.search(r"\b" + re.escape(t) + r"\b", low):
             matched.append(t)
             continue
-        # Multi-word term: its distinctive words count too ("Hormuz")
+        # Multi-word term: its distinctive words count too ("Hormuz") — but
+        # never a generic one: "Trump waiver" must not match on "Trump"
+        # alone (10-15: "Will Trump acquire Greenland before 2027?" again)
         parts = [w for w in re.findall(r"[a-z][a-z'-]+", t)
-                 if len(w) >= 5 and w not in _STOPWORDS]
+                 if len(w) >= 5 and w not in _STOPWORDS and w not in _GENERIC_TERMS]
         if len(parts) > 1 and any(re.search(r"\b" + re.escape(w) + r"\b", low) for w in parts):
             matched.append(t)
     return matched
