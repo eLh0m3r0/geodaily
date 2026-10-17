@@ -1,0 +1,313 @@
+{
+ "date": "2026-10-17",
+ "title": "Geopolitical Daily",
+ "email_subject": "Trump suspends Russia sanctions before vote",
+ "preheader": "The order suspends oil penalties and tariffs days before the November 3 midterms.",
+ "intro_text": "Good morning. It's Saturday, October 17, 2026 — the 3 stories that matter most today, plus 2 updates on stories you're following and 6 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Trump suspends Russia sanctions and tariffs under the Graham Act",
+   "why_important": "Trump signed an executive order Friday that suspends tariffs and sanctions on Russia. Those penalties were set to take effect under the Graham Act, days before the November 3 midterms. The waiver lifts penalties on buying Russian oil and gas, weakening Ukraine's position as Zelensky asks EU leaders for nearly $80 billion more.",
+   "what_overlooked": "The Graham Act passed last month as a bipartisan rebuke of Moscow, named for the senator who sponsored it. Trump suspended it before any penalty was collected.",
+   "prediction": "Whether Republican lawmakers who backed the Graham Act publicly object within three days, which would show how much freedom Trump has on Russia.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.themoscowtimes.com/2026/10/17/trump-signs-order-exempting-russia-from-new-sanctions-legislation-a94012",
+    "https://www.dawn.com/news/2037795/trump-waives-new-russia-sanctions-as-ukraine-ties-slump",
+    "https://www.pravda.com.ua/eng/news/2026/10/17/8058450/",
+    "https://www.japantimes.co.jp/news/2026/10/17/world/politics/trump-waives-russia-sanctions/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 9,
+   "confidence": 0.88,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "economic",
+   "coverage_counts": {
+    "russian_exile": 1,
+    "south_asia": 3,
+    "ukrainian": 2,
+    "east_asia": 4,
+    "middle_east": 2,
+    "western": 1,
+    "russian_state": 2
+   },
+   "coverage_outlets": 15,
+   "signal_terms": [
+    "Graham Act",
+    "Donald Trump",
+    "Russia",
+    "Volodymyr Zelensky"
+   ]
+  },
+  {
+   "story_title": "Supertanker with 2 million barrels hits mine in Hormuz, Iran's Guard says",
+   "why_important": "Iran's Revolutionary Guard says a supertanker carrying more than 2 million barrels of crude hit a sea mine. The Guard says it caught fire in the Strait of Hormuz. The US has two carriers in the Arabian Sea, and Trump has not ruled out wider strikes after the midterms.",
+   "what_overlooked": "No independent source has confirmed the mine claim, which comes from Iran's Revolutionary Guard. Shipping data from Reuters says Iran has exported some fuel since July despite the US blockade.",
+   "prediction": "Whether insurers raise war-risk insurance rates for Hormuz tankers in the next three days, which would show shipping is already pulling back.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.middleeasteye.net/live-blog/live-blog-update/morning-update-643",
+    "https://www.euronews.com/2026/10/16/military-signals-building-is-the-us-iran-war-about-to-escalate",
+    "https://www.hindustantimes.com/world-news/tanker-carrying-over-2-million-barrels-of-crude-oil-hits-mine-in-hormuz-catches-fire-irans-guards-say-101792219288746.html"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 7,
+   "impact_dimension_score": 8,
+   "confidence": 0.8,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "middle_east": 4,
+    "western": 1,
+    "south_asia": 1,
+    "middle_east_state": 2
+   },
+   "coverage_outlets": 6,
+   "signal_terms": [
+    "Strait of Hormuz",
+    "Revolutionary Guard",
+    "Arabian Sea",
+    "Iran"
+   ]
+  },
+  {
+   "story_title": "Israeli settlers attack eight West Bank villages during olive harvest",
+   "why_important": "Dozens of masked settlers attacked Palestinians picking olives in eight West Bank villages on Friday, injuring at least 20, Foreign Policy reported. A Washington Post photographer wearing a press vest was beaten and will need surgery on one hand.",
+   "what_overlooked": "Palestinians and rights groups say Israeli soldiers have sometimes protected settlers or stood by. Britain's government accused Israel of turning a blind eye to the campaign.",
+   "prediction": "Whether Washington comments on the injured US photographer within 72 hours; silence would suggest the White House is absorbing the attack.",
+   "impact_score": 7,
+   "sources": [
+    "https://foreignpolicy.com/2026/10/16/israel-settler-attacks-palestinians-west-bank-washington-post-levine/",
+    "https://www.lemonde.fr/en/international/article/2026/10/17/pressure-and-violence-against-journalists-intensify-in-israel_6758696_4.html",
+    "https://timesofindia.indiatimes.com/world/middle-east/israeli-settlers-attack-palestinian-villages-torch-cars-and-trees-during-olive-harvest/articleshow/134999210.cms"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 6,
+   "novelty_score": 6,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.85,
+   "region": "middle_east",
+   "actor_type": "non_state",
+   "event_type": "military",
+   "coverage_counts": {
+    "western": 4,
+    "south_asia": 2,
+    "middle_east": 2,
+    "middle_east_state": 2,
+    "russian_state": 1
+   },
+   "coverage_outlets": 9,
+   "signal_terms": [
+    "West Bank",
+    "Israeli settlers",
+    "olive harvest",
+    "Heidi Levine"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Ethiopia's Prime Minister Abiy Ahmed named an interim Tigray government and said elections will be held there within six months after renewed fighting.",
+   "region": "africa",
+   "url": "https://www.dailymaverick.co.za/article/2026-10-16-ethiopias-abiy-names-new-tigray-government-wants-polls-in-six-months/"
+  },
+  {
+   "text": "Russia fired 315 drones and 15 missiles at Ukraine on October 16; Ukrainian air defenses intercepted 253 drones and nine missiles.",
+   "region": "europe",
+   "url": "https://www.pravda.com.ua/eng/news/2026/10/16/8058422/"
+  },
+  {
+   "text": "Pope Leo XIV phoned Vladimir Putin from his hospital room to ask for a ceasefire in Oleshky so aid and evacuations could proceed.",
+   "region": "europe",
+   "url": "https://www.scmp.com/news/world/europe/article/3371210/hospital-pope-leo-pushes-putin-ceasefire-contested-ukraine-city?utm_source=rss_feed"
+  },
+  {
+   "text": "A military judge at Guantanamo Bay postponed jury selection in the USS Cole bombing case to October 26; unresolved issues could delay it again.",
+   "region": "americas",
+   "url": "https://www.justsecurity.org/161003/guantanamo-dispatches-four-possible-obstacles-to-jury-selection-in-the-uss-cole-case-at-guantanamo-bay/?utm_source=rss&utm_medium=rss&utm_campaign=guantanamo-dispatches-four-possible-obstacles-to-jury-selection-in-the-uss-cole-case-at-guantanamo-bay"
+  },
+  {
+   "text": "Foreign Policy reports Algeria's president, Abdelmadjid Tebboune, has broken with the UAE and is courting new partners, a sharp turn from its old mediator role.",
+   "region": "middle_east",
+   "url": "https://foreignpolicy.com/2026/10/15/algeria-foreign-policy-uae-break-united-states-western-sahara-dispute-morocco-tebboune/"
+  },
+  {
+   "text": "Katie Zacharia left as White House press secretary after five days, after a widely criticized briefing and a report she never passed the bar exam.",
+   "region": "americas",
+   "url": "https://en.mercopress.com/2026/10/16/trump-drops-his-new-press-secretary-after-a-week-of-controversy?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss"
+  }
+ ],
+ "big_number": null,
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "Euronews"
+    ],
+    "article_count": 1,
+    "framing": "Trump's waiver serves his courtship of Moscow and pressure on Zelenskyy after a US-Russia diesel deal.",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "CNA",
+     "South China Morning Post",
+     "The Japan Times"
+    ],
+    "article_count": 4,
+    "framing": "Frames the waiver as fallout from Trump's diesel deal with Putin and the widening US-Ukraine rift.",
+    "quote": "The move came as Ukrainian President Volodymyr Zelenskyy urged EU leaders to keep financing Kyiv's fight with nearly $80 billion more next year.",
+    "quote_outlet": "The Japan Times",
+    "quote_url": "https://www.japantimes.co.jp/news/2026/10/17/world/politics/trump-waives-russia-sanctions/",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Dawn",
+     "Hindustan Times",
+     "The Hindu"
+    ],
+    "article_count": 3,
+    "framing": "Stresses the waiver spares India and China from 100% tariffs, read as a pre-midterm US energy-price play.",
+    "quote": "Donald Trump's decision has been interpreted as a move to keep domestic energy prices low in the United States ahead of November's crucial midterm elections.",
+    "quote_outlet": "Hindustan Times",
+    "quote_url": "https://www.hindustantimes.com/world-news/trump-waives-some-russia-related-sanctions-that-threatened-100-tariffs-on-india-lindsey-graham-bill-101792201629205.html",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera",
+     "Al-Monitor"
+    ],
+    "article_count": 2,
+    "framing": "Casts the waiver as Trump easing sanctions to lower energy prices while his rift with Zelenskyy widens.",
+    "quote": "US President Donald Trump has waived more sanctions on Russia in a bid to ease energy prices.",
+    "quote_outlet": "Al Jazeera",
+    "quote_url": "https://www.aljazeera.com/video/newsfeed/2026/10/17/trump-waives-russia-sanctions-as-rift-with-zelenskyy-widens?traffic_source=rss",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "RT",
+     "TASS"
+    ],
+    "article_count": 2,
+    "framing": "Presents the waiver as a US concession to Russia, crediting Trump's national-interest justification for lifting sanctions.",
+    "quote": "Trump has waived sweeping new sanctions against Russia under a law named after Senator Lindsey Graham, citing US national interests.",
+    "quote_outlet": "RT",
+    "quote_url": "https://rt-english.com/news/647324-trump-waives-graham-sanctions-russia/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+    "state_affiliated": true,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_exile",
+    "outlets": [
+     "The Moscow Times"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "ukrainian",
+    "outlets": [
+     "Ukrainska Pravda",
+     "Ukrinform"
+    ],
+    "article_count": 2,
+    "framing": "Holds Trump's midterm diesel-price politics responsible, noting lawmaker criticism of his Russian energy stance.",
+    "quote": "The move comes amid efforts to lower US diesel prices ahead of the 3 November midterm elections and growing criticism from lawmakers over his approach to Russian energy exports.",
+    "quote_outlet": "Ukrainska Pravda",
+    "quote_url": "https://www.pravda.com.ua/eng/news/2026/10/17/8058450/",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 15,
+  "counts": {
+   "russian_exile": 1,
+   "south_asia": 3,
+   "ukrainian": 2,
+   "east_asia": 4,
+   "middle_east": 2,
+   "western": 1,
+   "russian_state": 2
+  },
+  "blindspot": "China proposed adding artificial intelligence, biopharmaceutical and solar-panel technologies to its export control list. The move could tighten global supply of these technologies and escalate trade tensions with the US and Europe.",
+  "blindspot_url": "https://asia.nikkei.com/business/technology/artificial-intelligence/china-to-add-ai-biopharma-and-solar-tech-to-export-control-list",
+  "blindspot_outlets": [
+   "NDTV",
+   "Nikkei Asia",
+   "Taipei Times"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "Cockroach Janta Party",
+   "text": "Indian police detained Abhijeet Dipke, founder of the Cockroach Janta Party, hours before a New Delhi protest against the election commission.",
+   "region": "indo_pacific",
+   "url": "https://asia.nikkei.com/politics/delhi-crackdown-fosters-gen-z-defenders-of-indian-democracy"
+  },
+  {
+   "storyline": "Bolsonaro",
+   "text": "Two new polls put Brazil's October 25 runoff in a statistical tie, with Flavio Bolsonaro at 51% of valid votes and Lula at 49%.",
+   "region": "americas",
+   "url": "https://en.mercopress.com/2026/10/17/bolsonaro-and-lula-head-into-the-final-stretch-of-brazil-s-campaign-in-a-statistical-tie?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 12.73,
+   "avg_sentence_words": 23.2,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 10.03,
+   "rewrite_avg_sentence_words": 16.8,
+   "rewrite_fragment_share": 0.0
+  },
+  "editorial_actions": [
+   "Quick hit moved to DEVELOPING (running storyline 'cockroach janta party'): Indian police detained Abhijeet Dipke, founder of the Cockroach Janta ",
+   "Quick hit moved to DEVELOPING (running storyline 'bolsonaro'): Two new polls put Brazil's October 25 runoff in a statistical tie, wit",
+   "Big number dropped (background figure from 1988, not today's event): 3,335 sq km — Amazon rainforest cleared in the 12 months to July, the lowe"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "served_model": "deepseek/deepseek-v4.1-flash",
+  "analysis_input_tokens": 12352,
+  "analysis_output_tokens": 32911,
+  "analysis_cost_usd": 0.01646,
+  "analysis_seconds": 262.4,
+  "grid_cost_usd": 0.00245,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash"
+ }
+}

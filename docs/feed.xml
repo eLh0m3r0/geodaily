@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 16 Oct 2026 08:31:03 GMT</pubDate>
-        <lastBuildDate>Fri, 16 Oct 2026 08:31:03 GMT</lastBuildDate>
+        <pubDate>Sat, 17 Oct 2026 08:34:06 GMT</pubDate>
+        <lastBuildDate>Sat, 17 Oct 2026 08:34:06 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,19 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - October 17, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-17.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Saturday, October 17, 2026 — the 3 stories that matter most today, plus 2 updates on stories you're following and 6 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump suspends Russia sanctions and tariffs under the Graham Act</strong>: Trump signed an executive order Friday that suspends tariffs and sanctions on Russia. Those penalties were set to take effect under the Graham Act, days before the November 3 midterms. The waiver lift...</li></ul><p><em>Published: October 17, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sat, 17 Oct 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20261017</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Russia]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-17.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - October 16, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-16.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Friday, October 16, 2026 — the 3 stories that matter most today, plus 2 updates on stories you're following and 6 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Houthis fire missiles at Yemen's presidential palace in Aden</strong>: Houthi missiles hit the Maashiq presidential palace complex in Aden, home of Yemen's internationally recognized government. The strike killed guards and staff, but the prime minister and cabinet escap...</li></ul><p><em>Published: October 16, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -176,19 +189,6 @@
         <category><![CDATA[International Relations]]></category>
         <category><![CDATA[Middle East]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-08.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - October 07, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-07.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Wednesday, October 07, 2026 — the 3 stories that matter most today, plus 1 update on stories you're following and 6 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Drones hit two cargo ships off Bulgaria, sinking one</strong>: Unidentified drones hit two cargo ships in Bulgaria's Black Sea economic zone. The drones hit them on Tuesday, sinking one and leaving its crew missing. Bulgaria is a NATO member, and this is the firs...</li></ul><p><em>Published: October 07, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Wed, 07 Oct 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20261007</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[Europe]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-07.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
