@@ -1,0 +1,270 @@
+{
+ "date": "2026-10-18",
+ "title": "Geopolitical Daily",
+ "email_subject": "Settlers beat EU diplomats in West Bank",
+ "preheader": "Belgium wants EU sanctions as Rubio warns of a crisis before Israel's vote.",
+ "intro_text": "Good morning. It's Sunday, October 18, 2026 — the 2 stories that matter most today, plus 2 updates on stories you're following and 6 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Israeli settlers attack European diplomats in the West Bank",
+   "why_important": "Israeli settlers attacked a convoy of European diplomats and beat a visiting French mayor during the Palestinian olive harvest. Belgium says it will push for EU sanctions on those responsible. Secretary of State Marco Rubio warned of a West Bank crisis ahead of Israel's October 27 election.",
+   "what_overlooked": "US officials say settlers have made at least 170 attacks on Palestinians since September 27, a pace previous olive harvests rarely saw.",
+   "prediction": "Whether EU foreign ministers start formal sanctions talks this week will show if Belgium's push has real backing.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.ft.com/content/35a08f82-6830-41fa-83ae-d3765f3970e0",
+    "https://www.al-monitor.com/originals/2026/10/israeli-settlers-attack-european-diplomats-beat-french-mayor",
+    "https://www.dawn.com/news/2037953/israeli-settlers-attack-european-diplomats-beat-up-french-mayor",
+    "https://www.bangkokpost.com/world/3339193/israeli-settlers-attack-european-diplomats-beat-french-mayor",
+    "https://www.straitstimes.com/world/middle-east/us-wants-israel-to-crack-down-on-settler-violence-in-west-bank-rubio-says"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 7,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "middle_east",
+   "actor_type": "mixed",
+   "event_type": "political",
+   "coverage_counts": {
+    "western": 6,
+    "middle_east": 10,
+    "south_asia": 2,
+    "east_asia": 5,
+    "russian_state": 1,
+    "middle_east_state": 1
+   },
+   "coverage_outlets": 17,
+   "signal_terms": [
+    "West Bank",
+    "European diplomats",
+    "olive harvest",
+    "Belgium"
+   ]
+  },
+  {
+   "story_title": "France's cost-of-living protests turn into riots and looting",
+   "why_important": "Hundreds of thousands marched over living costs and school conditions, and the unrest became France's worst riots in years. Protesters burned Limoges town hall and looted shops, and police detained about 1,200 people months before the election to replace Macron.",
+   "what_overlooked": "US Vice President JD Vance blamed immigration for the unrest, but French officials have not repeated that claim.",
+   "prediction": "Whether unions call another national march this week will show if the protest wave is still growing.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.dawn.com/news/2037825/looting-blazes-and-clashes-in-france-amid-nationwide-protests",
+    "https://www.france24.com/en/france/20261017-looting-fires-and-clashes-rock-france-amid-massive-nationwide-protests",
+    "https://www.egyptindependent.com/buildings-torched-and-over-1000-detained-after-half-a-million-protesters-sweep-france/",
+    "https://www.bangkokpost.com/world/3339188/town-hall-in-limoges-largely-lost-to-blaze-set-during-french-protests",
+    "https://www.ft.com/content/bcb6c27a-f082-4867-ade4-ae6eb757b780?syn-25a6b1a6=1",
+    "https://www.japantimes.co.jp/news/2026/10/18/world/mass-protests-france-riots/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 6,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 7,
+   "confidence": 0.88,
+   "region": "europe",
+   "actor_type": "mixed",
+   "event_type": "political",
+   "coverage_counts": {
+    "south_asia": 3,
+    "east_asia": 3,
+    "western": 4,
+    "middle_east": 2,
+    "russian_state": 1
+   },
+   "coverage_outlets": 12,
+   "signal_terms": [
+    "France",
+    "Limoges",
+    "Macron",
+    "Paris"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Pope Leo XIV left Rome's Gemelli Hospital and returned to the Vatican four days after surgery for lung cancer.",
+   "region": "europe",
+   "url": "https://www.lemonde.fr/en/international/article/2026/10/18/smiling-pope-returns-to-vatican-after-cancer-surgery_6758720_4.html"
+  },
+  {
+   "text": "Across the US, 'No Kings' organizers held rallies urging early voting in the November 3 midterm elections that will decide control of Congress.",
+   "region": "americas",
+   "url": "https://www.japantimes.co.jp/news/2026/10/18/world/politics/us-no-kings-early-voting/"
+  },
+  {
+   "text": "Four people died fighting Indonesia's wildfires, and Singapore's leader vowed legal action against companies behind the haze choking Southeast Asia.",
+   "region": "indo_pacific",
+   "url": "https://www.thehindu.com/news/international/four-killed-in-indonesia-battling-fires-causing-toxic-haze/article71591244.ece"
+  },
+  {
+   "text": "Vietnam signed a free trade deal with the four-nation European Free Trade Association to cut duties on industrial, fish and farm goods, CNA reported.",
+   "region": "indo_pacific",
+   "url": "https://www.lowyinstitute.org/the-interpreter/money-not-china-s-new-base-is-vietnam-s-real-worry-in-laos"
+  },
+  {
+   "text": "A Chinese facility in Laos is forcing Vietnam to compete for influence in Vientiane on economics rather than history, the Lowy Institute argued.",
+   "region": "indo_pacific",
+   "url": "https://www.lowyinstitute.org/the-interpreter/money-not-china-s-new-base-is-vietnam-s-real-worry-in-laos"
+  },
+  {
+   "text": "Egypt's President Abdel Fattah el-Sisi said his term will end in 2030 and the constitution will not be amended to extend it.",
+   "region": "middle_east",
+   "url": "https://www.japantimes.co.jp/news/2026/10/18/world/politics/el-sissi-egypt-president-2030/"
+  }
+ ],
+ "big_number": {
+  "value": "7",
+  "context": "Kenya's confirmed Ebola cases, up from three a day earlier, now include three health workers who treated the first patient.",
+  "url": "https://www.bangkokpost.com/world/3338859/four-more-ebola-cases-detected-in-kenya-bringing-total-to-seven"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "BBC",
+     "DW",
+     "Financial Times"
+    ],
+    "article_count": 6,
+    "framing": "Treats settler violence as prompting European condemnation and EU sanctions pressure, while noting Israeli official pushback.",
+    "quote": "Belgian foreign minister says his government will ‘press for EU sanctions against those responsible for this violence’",
+    "quote_outlet": "Financial Times",
+    "quote_url": "https://www.ft.com/content/35a08f82-6830-41fa-83ae-d3765f3970e0",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "Bangkok Post",
+     "The Straits Times"
+    ],
+    "article_count": 5,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Dawn",
+     "NDTV"
+    ],
+    "article_count": 2,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al-Monitor",
+     "Middle East Eye"
+    ],
+    "article_count": 10,
+    "framing": "Stresses Palestinian civilian victims and US pressure over settler violence in the occupied West Bank.",
+    "quote": "Israeli settlers attacked Palestinian civilians, European diplomats and a French mayor in the occupied West Bank on Saturday, Belgium's foreign minister said",
+    "quote_outlet": "Al-Monitor",
+    "quote_url": "https://www.al-monitor.com/originals/2026/10/israeli-settlers-attack-palestinians-european-diplomats-west-bank-belgium-says",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east_state",
+    "outlets": [
+     "Anadolu Agency"
+    ],
+    "article_count": 1,
+    "framing": "Highlights US pressure on Israel over settler 'occupier' violence, stressing Trump's desire to avoid a West Bank crisis.",
+    "quote": "US secretary of state says Washington has urged Israel to crack down on violence by occupiers, stressing Trump does not want to see new crisis in West Bank",
+    "quote_outlet": "Anadolu Agency",
+    "quote_url": "https://www.aa.com.tr/en/americas/us-very-disturbed-by-attack-on-american-journalist-in-occupied-west-bank-rubio/4092340",
+    "state_affiliated": true,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "RT"
+    ],
+    "article_count": 1,
+    "framing": "Focuses on European condemnation of Israeli settler attack, framing Western diplomats as victims of Israeli violence.",
+    "quote": "Israeli settlers have attacked a convoy carrying European diplomats in the West Bank, prompting condemnation from France, Belgium and Poland",
+    "quote_outlet": "RT",
+    "quote_url": "https://rt-english.com/news/647344-israeli-settlers-attack-european-diplomats/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+    "state_affiliated": true,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 17,
+  "counts": {
+   "western": 6,
+   "middle_east": 10,
+   "south_asia": 2,
+   "east_asia": 5,
+   "russian_state": 1,
+   "middle_east_state": 1
+  },
+  "blindspot": "Frontline health workers in the Democratic Republic of Congo received the Ervebo vaccine as the country battles a growing Ebola outbreak. Containing the outbreak matters globally because Ebola can spread across borders and disrupt health systems.",
+  "blindspot_url": "http://www.africanews.com/2026/10/17/frontline-workers-in-drc-receive-ervebo-vaccine-amid-growing-ebola-outbreak/",
+  "blindspot_outlets": [
+   "Africanews",
+   "Bangkok Post",
+   "CGTN",
+   "Nation",
+   "TASS"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "Mark Carney",
+   "text": "Deaths and injuries after incident at Canadian military base in Alberta.",
+   "region": "americas",
+   "url": "https://www.dawn.com/news/2037999/serious-incident-at-canada-base-causes-deaths-sparks-fire-govt"
+  },
+  {
+   "storyline": "Graham ACT",
+   "text": "Secretary of State Marco Rubio said Trump's waiver of Graham Act sanctions on Russia is a 60-day pause to study effects on energy prices.",
+   "region": "americas",
+   "url": "https://www.middleeasteye.net/live-blog/live-blog-update/rubio-says-russia-sanctions-pause-analyse-impact-global-economy-1"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 11.19,
+   "avg_sentence_words": 20.0,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 10.49,
+   "rewrite_avg_sentence_words": 18.3,
+   "rewrite_fragment_share": 0.0
+  },
+  "editorial_actions": [
+   "Story demoted to DEVELOPING (running storyline 'mark carney'): Deaths and injuries after incident at Canadian military base in Alberta",
+   "Quick hit moved to DEVELOPING (running storyline 'graham act'): Secretary of State Marco Rubio said Trump's waiver of Graham Act sanct"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "served_model": "deepseek/deepseek-v4.1-flash",
+  "analysis_input_tokens": 12266,
+  "analysis_output_tokens": 31338,
+  "analysis_cost_usd": 0.0178,
+  "analysis_seconds": 310.3,
+  "grid_cost_usd": 0.00991,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash"
+ }
+}
