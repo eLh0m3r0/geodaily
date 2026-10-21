@@ -22,16 +22,52 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+import re
+import socket
+import urllib.parse
+import urllib.request
+
 try:
     import feedparser
 except ImportError:
     print("feedparser is required: pip install feedparser")
     sys.exit(2)
 
+# One stuck feed must not hang the run: feedparser has no timeout of its own
+# and the results are printed only once every feed has answered
+socket.setdefaulttimeout(20)
+
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 SOURCES_FILE = PROJECT_ROOT / "sources.json"
 # Match the collector's browser UA so validation reflects production behavior
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+
+
+_FEED_LINK = re.compile(
+    r"""<link[^>]+type=["']application/(?:rss|atom)\+xml["'][^>]*>""", re.I)
+_HREF = re.compile(r"""href=["']([^"']+)["']""", re.I)
+
+
+def discover_feeds(url: str) -> str:
+    """When a candidate URL is a web page rather than a feed, list the feeds
+    the page advertises (<link rel="alternate" type="application/rss+xml">),
+    so vetting can start from an outlet's homepage or language edition."""
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            head = resp.read(400_000).decode("utf-8", "replace")
+    except Exception:
+        return ""
+    found = []
+    for tag in _FEED_LINK.findall(head):
+        m = _HREF.search(tag)
+        if m:
+            href = m.group(1)
+            if href.startswith("/"):
+                href = urllib.parse.urljoin(url, href)
+            if href not in found:
+                found.append(href)
+    return f"; page advertises feeds: {', '.join(found[:6])}" if found else ""
 
 
 def check_feed(source: dict, max_age_days: int) -> dict:
@@ -46,10 +82,11 @@ def check_feed(source: dict, max_age_days: int) -> dict:
             return result
         if feed.bozo and not feed.entries:
             result.update(status="dead", detail=f"parse error: {feed.bozo_exception}")
+            result["detail"] += discover_feeds(url)
             return result
         result["entries"] = len(feed.entries)
         if not feed.entries:
-            result.update(status="dead", detail="no entries")
+            result.update(status="dead", detail="no entries" + discover_feeds(url))
             return result
         # The newest title shows what a feed really carries — language and
         # section — which the entry count alone hides (the Novaya Gazeta

@@ -867,7 +867,7 @@
     },
     {
       "name": "Novaya Gazeta Europe",
-      "url": "https://novayagazeta.eu/feed/rss",
+      "url": "https://novayagazeta.eu/feed/rss/en",
       "category": "mainstream",
       "weight": 0.9,
       "perspective": "russian_exile",
