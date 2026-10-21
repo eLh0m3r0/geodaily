@@ -5,7 +5,7 @@ RSS feed collector for Tier 1 sources.
 import feedparser
 import requests
 from datetime import datetime, timezone
-from typing import List, Optional
+from typing import Dict, List, Optional
 import time
 import re
 from bs4 import BeautifulSoup
@@ -32,6 +32,26 @@ class RSSCollector:
         self.fetch_full_content = fetch_full_content
         # Publication dates for entries whose feed carries none (see first_seen.py)
         self.first_seen = FirstSeenStore(Config.FIRST_SEEN_FILE)
+        # Entries skipped per source because their title is not in Latin script
+        self.script_skips: Dict[str, int] = {}
+
+    # Letters of the scripts a feed may slip in that English readers cannot
+    # read: Cyrillic, Armenian, Hebrew, Arabic, Indic, Thai, Hangul, kana, CJK.
+    _NON_LATIN = re.compile(r"[\u0400-\u052F\u0530-\u058F\u0590-\u05FF\u0600-\u06FF\u0900-\u0DFF"
+                            r"\u0E00-\u0E7F\u1100-\u11FF\u3040-\u30FF\u3400-\u4DBF\u4E00-\u9FFF"
+                            r"\uAC00-\uD7AF]")
+    _LETTER = re.compile(r"[^\W\d_]")
+
+    @classmethod
+    def _is_latin_script(cls, text: str) -> bool:
+        """True unless most letters of `text` are from a non-Latin script. A
+        quoted foreign word ("Russia's 'Орешник' missile") passes; a
+        Russian or Chinese headline does not."""
+        letters = cls._LETTER.findall(text or "")
+        if not letters:
+            return True
+        foreign = sum(1 for ch in letters if cls._NON_LATIN.match(ch))
+        return foreign * 2 <= len(letters)
     
     def collect_from_source(self, source: NewsSource) -> List[Article]:
         """
@@ -69,6 +89,7 @@ class RSSCollector:
 
             # Process each entry and collect valid articles
             parsed_articles = []
+            script_skips_before = self.script_skips.get(source.name, 0)
             for position, entry in enumerate(feed.entries):
                 try:
                     article = self._parse_rss_entry(entry, source, position)
@@ -96,6 +117,18 @@ class RSSCollector:
                                })
                     continue
             
+            # A feed that is mostly in another script is the wrong edition of
+            # the outlet (the Novaya Gazeta Europe feed served the Russian
+            # edition for six weeks, 2026-09-08..10-21, and the English
+            # newsletter linked readers to Russian articles)
+            skipped = self.script_skips.get(source.name, 0) - script_skips_before
+            if skipped and skipped * 2 > len(feed.entries):
+                logger.warning(f"{source.name}: {skipped} of {len(feed.entries)} entries skipped as "
+                               f"non-Latin script — the feed is not an English edition, replace it",
+                               pipeline_stage=PipelineStage.COLLECTION,
+                               structured_data={'source_name': source.name, 'source_url': source.url,
+                                                'script_skips': skipped, 'entries': len(feed.entries)})
+
             # Enhance articles with full content in parallel if enabled
             if self.fetch_full_content and parsed_articles:
                 articles = self._enhance_articles_parallel(parsed_articles)
@@ -208,6 +241,14 @@ class RSSCollector:
             # Extract title
             title = self._clean_text(getattr(entry, 'title', ''))
             if not title:
+                return None
+            # An English newsletter cannot cite an article its readers cannot read
+            if not self._is_latin_script(title):
+                self.script_skips[source.name] = self.script_skips.get(source.name, 0) + 1
+                logger.debug(f"Skipping non-Latin-script entry: {title[:50]}",
+                             pipeline_stage=PipelineStage.COLLECTION,
+                             structured_data={'source_name': source.name, 'article_title': title[:50],
+                                              'reason': 'non_latin_script'})
                 return None
             
             # Extract URL

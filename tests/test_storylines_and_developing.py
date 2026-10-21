@@ -393,3 +393,32 @@ def test_production_1007_false_and_missed_storylines():
                              "story_terms": [["Ebola", "Democratic Republic of Congo", "Nairobi"]]}])
     assert today.match("The European Commission proposed safeguards to stop democratic backsliding.",
                        days=1, kinds={"story"}) is None
+
+
+def test_production_1019_1021_recurring_officials_are_not_storylines():
+    """10-19: 'Donald Trump' (first name + generic surname) was a two-word
+    storyline name and demoted Trump's Netanyahu endorsement to DEVELOPING;
+    10-21: 'Secretary of State Marco Rubio' tied his India visit to the 10-18
+    Graham Act waiver item under the label 'State Marco Rubio'."""
+    from src.ai.storylines import StorylineIndex, distinctive_tokens, label_for
+    hist = [
+        {"date": "2026-10-18", "stories": ["Donald Trump says Ukraine has to want to settle the war"],
+         "story_terms": [["Donald Trump", "Ukraine"]], "quick_hits": [],
+         "developing": ["Secretary of State Marco Rubio said Trump's waiver of Graham Act sanctions on "
+                        "Russia is a 60-day pause to study effects."],
+         "big_number": "", "blindspot": ""},
+    ]
+    idx = StorylineIndex(hist)
+    kinds = {"story", "quick_hit", "developing", "blindspot"}
+    assert idx.match("Trump endorses Netanyahu a week before Israel's election",
+                     ["Donald Trump", "Netanyahu"], days=2, kinds={"story"}) is None
+    assert idx.match("US Secretary of State Marco Rubio, on a visit to India, said Ukraine would not "
+                     "exist as a state without American aid.", kinds=kinds) is None
+    # the Graham Act itself is still a storyline
+    m = idx.match("The Treasury said the Graham Act waiver will be reviewed in December.", kinds=kinds)
+    assert m and m[1] == "graham act"
+    assert distinctive_tokens("Donald Trump") == set()
+    # titles and generic actors at the edges of a name are not part of it
+    assert distinctive_tokens("Interior Minister Laurent Nunez") == {"laurent nunez", "laurent", "nunez"}
+    assert "raf fairford" in distinctive_tokens("RAF Fairford")
+    assert label_for(max(distinctive_tokens("Special Envoy Steve Witkoff"), key=len)) == "Steve Witkoff"
