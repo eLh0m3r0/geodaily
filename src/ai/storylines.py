@@ -21,10 +21,19 @@ from dataclasses import dataclass, field
 from typing import Dict, Iterable, List, Optional, Sequence, Set
 
 # Actors and places that recur across unrelated stories every day. A match
-# on one of these alone never ties two items to the same storyline.
+# on one of these alone never ties two items to the same storyline. Leaders'
+# first names are listed too, so "Donald Trump" is not a two-word name
+# (10-19: it demoted Trump's Netanyahu endorsement to DEVELOPING under the
+# label "Donald Trump"), as are the ministers, envoys and spokespeople who
+# are quoted on a different subject every day (10-21: "Secretary of State
+# Marco Rubio" tied his India visit to the 10-18 Graham Act waiver item).
 GENERIC_TERMS = frozenset("""
 trump biden putin xi zelensky zelenskyy netanyahu musk modi erdogan macron starmer
 burnham merz sanchez lula khamenei pezeshkian kim
+donald vladimir volodymyr benjamin elon narendra recep tayyip emmanuel keir friedrich
+pedro luiz inacio masoud jong
+marco rubio vance pete hegseth scott bessent sergei sergey lavrov dmitry peskov yuri yury
+ushakov antonio guterres mark rutte ursula leyen kaja kallas
 russia russian russians china chinese iran iranian israel israeli israelis ukraine
 ukrainian ukrainians america american americans europe european europeans
 us u.s. usa uk britain british england german germany france french india
@@ -116,6 +125,10 @@ democratic democracy republican people's peoples popular socialist
 monday tuesday wednesday thursday friday saturday sunday january february march
 april may june july august september october november december
 he she they it this that these those his her their its we our i
+special envoy envoys prosecutor prosecutors attorney ambassador deputy vice premier
+chairman chairwoman chair speaker judge colonel lieutenant admiral marshal sheikh
+ayatollah bishop cardinal archbishop rabbi founder billionaire tycoon oligarch warlord
+rebel rebels militia junta regime opposition secretary-general director
 """.split())
 
 _CAP_SEQ = re.compile(r"\b([A-Z][\w'’.-]*(?:\s+[A-Z][\w'’.-]*){0,2})")
@@ -157,9 +170,26 @@ def distinctive_tokens(term: str, any_case: bool = False) -> Set[str]:
                 and t not in _COMMON_CAPS and not t.isdigit()):
             name_tokens.add(t)
     out = set()
-    if len(words) > 1 and (name_tokens or re.search(r"\d", phrase)):
+    # The phrase is the name without its furniture: titles and generic
+    # actors at either end are trimmed, so "State Marco Rubio" (the
+    # capitalised run of "Secretary of State Marco Rubio") is keyed and
+    # labelled "Marco Rubio", not "State Marco Rubio" (10-21 DEVELOPING).
+    core = [w for w in words]
+    while core and _is_furniture(core[0]):
+        core = core[1:]
+    while core and _is_furniture(core[-1]):
+        core = core[:-1]
+    phrase = _norm(" ".join(core))
+    if len(core) > 1 and (name_tokens or re.search(r"\d", phrase)):
         out.add(phrase)
     return out | name_tokens
+
+
+def _is_furniture(word: str) -> bool:
+    """A title, month, generic actor or function word — never part of the
+    name that labels a storyline."""
+    t = _tok(word)
+    return not t or t in _COMMON_CAPS or t in GENERIC_TERMS
 
 
 def proper_terms(text: str) -> Set[str]:

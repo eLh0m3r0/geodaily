@@ -36,7 +36,8 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 
 def check_feed(source: dict, max_age_days: int) -> dict:
     name, url = source["name"], source["url"]
-    result = {"name": name, "url": url, "status": "ok", "entries": 0, "newest": None, "detail": ""}
+    result = {"name": name, "url": url, "status": "ok", "entries": 0, "newest": None, "detail": "",
+              "sample": ""}
     try:
         feed = feedparser.parse(url, agent=USER_AGENT)
         status = getattr(feed, "status", None)
@@ -50,6 +51,11 @@ def check_feed(source: dict, max_age_days: int) -> dict:
         if not feed.entries:
             result.update(status="dead", detail="no entries")
             return result
+        # The newest title shows what a feed really carries — language and
+        # section — which the entry count alone hides (the Novaya Gazeta
+        # Europe feed validated fine for six weeks while serving the
+        # Russian-language edition to an English newsletter)
+        result["sample"] = " ".join(str(feed.entries[0].get("title", "")).split())[:70]
 
         newest = None
         for entry in feed.entries:
@@ -94,7 +100,8 @@ def main() -> int:
     for r in results:
         extra = f" — {r['detail']}" if r["detail"] else ""
         newest = f", newest {r['newest']}" if r["newest"] else ""
-        print(f"{icon[r['status']]} {r['name']}: {r['entries']} entries{newest}{extra}")
+        sample = f' — "{r["sample"]}"' if r["sample"] else ""
+        print(f"{icon[r['status']]} {r['name']}: {r['entries']} entries{newest}{extra}{sample}")
 
     dead = [r for r in results if r["status"] == "dead"]
     stale = [r for r in results if r["status"] == "stale"]
