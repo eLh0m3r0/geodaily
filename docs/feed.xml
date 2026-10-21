@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Tue, 20 Oct 2026 08:45:46 GMT</pubDate>
-        <lastBuildDate>Tue, 20 Oct 2026 08:45:46 GMT</lastBuildDate>
+        <pubDate>Wed, 21 Oct 2026 08:32:40 GMT</pubDate>
+        <lastBuildDate>Wed, 21 Oct 2026 08:32:40 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,20 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - October 21, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-21.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Wednesday, October 21, 2026 — the 3 stories that matter most today, plus 2 updates on stories you're following and 6 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>US envoy Witkoff arrives in St Petersburg to meet Putin</strong>: Trump's envoy Steve Witkoff arrived in St Petersburg for talks with Vladimir Putin on the war. European leaders are debating their own talks with the Kremlin; the Financial Times reports one idea: Rus...</li></ul><p><em>Published: October 21, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Wed, 21 Oct 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20261021</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Europe]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-21.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - October 20, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-20.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Tuesday, October 20, 2026 — the 3 stories that matter most today, plus 1 update on stories you're following and 7 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump says Zelensky won't end the war; Ukraine says US arms are arriving late</strong>: Trump wrote that Zelensky 'doesn't want to end this war' and should send someone else to negotiate. He praised Russia's conduct, and Zelensky said US arms shipments are arriving late. Zelensky said Tr...</li></ul><p><em>Published: October 20, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -178,18 +192,6 @@
         <category><![CDATA[International Relations]]></category>
         <category><![CDATA[Russia]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-12.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - October 11, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-11.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Sunday, October 11, 2026 — the 2 stories that matter most today, plus 3 updates on stories you're following and 5 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Riyadh airport strike kills 12 as Trump weighs a US role</strong>: A missile hit the passenger terminal at Riyadh's King Khalid International Airport on Saturday. It killed 12 people from 11 countries and wounded more than 300, the third attack on the airport this we...</li></ul><p><em>Published: October 11, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sun, 11 Oct 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20261011</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-11.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
