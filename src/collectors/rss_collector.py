@@ -168,9 +168,13 @@ class RSSCollector:
                 response = connection_pool_manager.make_request(
                     url=url,
                     method='GET',
+                    # Browser-like headers: an XML-only Accept header got 403
+                    # from Human Rights Watch and 404 from Nation Africa on
+                    # every run up to 2026-10-22, while this set read both
                     headers={
                         'User-Agent': Config.USER_AGENT,
-                        'Accept': 'application/rss+xml, application/xml, text/xml'
+                        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                        'Accept-Language': 'en-US,en;q=0.5'
                     }
                 )
                 response.raise_for_status()
