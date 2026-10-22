@@ -1,0 +1,100 @@
+[
+  {
+    "thread_title": "AI odhalila kritickou chybu v PHP",
+    "tweets": [
+      {
+        "number": 1,
+        "content": "1/7 🚨 Umělá inteligence právě odhalila dvě kritické chyby v PHP – jazyce, na kterém běží přibližně 70 % všech webových stránek na světě. Vlády i firmy musely weby narychlo odstavit, než je stihnou zneužít hackeři. Co to znamená pro nás? 🧵",
+        "char_count": 238
+      },
+      {
+        "number": 2,
+        "content": "2/7 🔍 Bezpečnostní firmy nasadily AI nástroje, které prohledaly desítky let starý kód PHP a našly zranitelnosti, kterých si lidé dlouho nevšimli. Je to ukázka síly AI v kybernetické bezpečnosti – ale i varování, co všechno jsme přehlíželi.",
+        "char_count": 239
+      },
+      {
+        "number": 3,
+        "content": "3/7 📊 PHP pohání obrovskou část internetu – od malých e-shopů po velké firemní systémy. Pokud se tyto díry nepodaří opravit včas, může jít o jeden z nejrozsáhlejších bezpečnostních incidentů posledních let.",
+        "char_count": 206
+      },
+      {
+        "number": 4,
+        "content": "4/7 ⚡ Reakce byla bleskurychlá – státy i korporace preventivně odstavily weby, aby opravily chyby dřív, než je zneužijí útočníci. Otázka zní: stihli to všichni včas?",
+        "char_count": 165
+      },
+      {
+        "number": 5,
+        "content": "5/7 💡 Zatím nikdo nepotvrdil žádný konkrétní hack. Ale chyby existovaly roky – je docela možné, že je útočníci našli už dávno předtím, než byly tento týden zveřejněny. Ticho ještě neznamená bezpečí.",
+        "char_count": 198
+      },
+      {
+        "number": 6,
+        "content": "6/7 🎯 Klíčové bude sledovat příští tři dny. Pokud se objeví první napadený web, ukáže to, že zločinci dokážou zranitelnosti zneužít rychleji, než je firmy stihnou opravit. Pro české a evropské weby na PHP je to zásadní varování.",
+        "char_count": 228
+      },
+      {
+        "number": 7,
+        "content": "7/7 🌍 Tento případ ukazuje, jak AI mění kybernetickou bezpečnost – pomáhá odhalovat hrozby, ale stejné nástroje mohou používat i útočníci. Sledujte své weby a aktualizujte PHP co nejdříve. #kyberbezpečnost #PHP #umeleinteligence",
+        "char_count": 228
+      }
+    ],
+    "hashtags": [
+      "#kyberbezpečnost",
+      "#PHP",
+      "#umeleinteligence"
+    ],
+    "estimated_engagement": 8.7,
+    "main_topic": "kyberbezpecnost",
+    "source_analysis_id": "AI uncovers a flaw in PHP, taking websites offline worldwide",
+    "generated_at": "2026-10-22T08:34:50.871608"
+  },
+  {
+    "thread_title": "Putin propustil vězně, slíbil jednání o Ukrajině",
+    "tweets": [
+      {
+        "number": 1,
+        "content": "1/7 🚨 Putin se setkal s americkým vyslancem Witkoffem u Petrohradu a propustil Stephena Hubbarda, bývalého amerického učitele. Kreml oznámil ochotu obnovit třístranná jednání s USA a Ukrajinou.",
+        "char_count": 193
+      },
+      {
+        "number": 2,
+        "content": "2/7 📊 Kreml potvrdil, že je připraven na obnovení třístranných jednání (Rusko-Ukrajina-USA) již příští měsíc. Putin ale znovu odmítl jakékoli příměří - boje tedy mají pokračovat i během jednání.",
+        "char_count": 194
+      },
+      {
+        "number": 3,
+        "content": "3/7 ⚡ Zelenskyj uvedl, že Ukrajina podporuje jednání vyjednavačů začátkem listopadu. Moskva ale nestanovila žádné konkrétní datum ani místo - to je zásadní rozdíl v očekáváních obou stran.",
+        "char_count": 188
+      },
+      {
+        "number": 4,
+        "content": "4/7 🔍 Co si od toho slibuje Putin? Propuštění vězně je gesto dobré vůle vůči Washingtonu, ale odmítnutí příměří ukazuje, že Rusko chce vyjednávat z pozice síly na bojišti, ne za stolem jednání.",
+        "char_count": 193
+      },
+      {
+        "number": 5,
+        "content": "5/7 🎯 Klíčové bude sledovat příštích 72 hodin: pokud Moskva oznámí konkrétní datum a místo jednání vyjednavačů, slib o obnovení rozhovorů bude reálný. Pokud ne, jde jen o další odklad.",
+        "char_count": 184
+      },
+      {
+        "number": 6,
+        "content": "6/7 🌍 Pro Českou republiku a střední Evropu je to klíčový signál - jakékoli zdržení mírových jednání znamená pokračující nejistotu v regionu, tlak na ceny energií a bezpečnostní rizika u hranic.",
+        "char_count": 194
+      },
+      {
+        "number": 7,
+        "content": "7/7 💡 Sledujte, zda Rusko skutečně oznámí datum jednání. Bez konkrétního termínu zůstává slib Kremlu jen diplomatickým gestem bez reálného obsahu. Co si o tom myslíte vy? #Ukrajina #Rusko #geopolitika",
+        "char_count": 200
+      }
+    ],
+    "hashtags": [
+      "#Ukrajina",
+      "#Rusko",
+      "#geopolitika"
+    ],
+    "estimated_engagement": 7.8,
+    "main_topic": "Ukrajina",
+    "source_analysis_id": "Putin frees US prisoner and agrees to resume Ukraine talks",
+    "generated_at": "2026-10-22T08:35:31.179372"
+  }
+]

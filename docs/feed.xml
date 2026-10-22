@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Wed, 21 Oct 2026 08:32:40 GMT</pubDate>
-        <lastBuildDate>Wed, 21 Oct 2026 08:32:40 GMT</lastBuildDate>
+        <pubDate>Thu, 22 Oct 2026 08:35:31 GMT</pubDate>
+        <lastBuildDate>Thu, 22 Oct 2026 08:35:31 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,19 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - October 22, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-22.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Thursday, October 22, 2026 — the 2 stories that matter most today, plus 2 updates on stories you're following and 6 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>AI uncovers a flaw in PHP, taking websites offline worldwide</strong>: Computer security firms used AI to find two critical flaws in PHP, a decades-old language that helps run about 70% of the world's websites. Governments and companies took sites offline to fix them bef...</li></ul><p><em>Published: October 22, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Thu, 22 Oct 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20261022</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-22.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - October 21, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-21.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Wednesday, October 21, 2026 — the 3 stories that matter most today, plus 2 updates on stories you're following and 6 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>US envoy Witkoff arrives in St Petersburg to meet Putin</strong>: Trump's envoy Steve Witkoff arrived in St Petersburg for talks with Vladimir Putin on the war. European leaders are debating their own talks with the Kremlin; the Financial Times reports one idea: Rus...</li></ul><p><em>Published: October 21, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -179,19 +192,6 @@
         <category><![CDATA[International Relations]]></category>
         <category><![CDATA[Middle East]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-13.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - October 12, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-12.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Monday, October 12, 2026 — the 2 stories that matter most today, plus 3 updates on stories you're following and 6 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump announces an 'energy ceasefire' in Ukraine as Kyiv says Russia broke it</strong>: Trump said Russia and Ukraine agreed to an immediate 'energy ceasefire'. Zelensky said he first heard of it from Trump's post. Ukraine's foreign minister said Russia hit energy sites hours later. The ...</li></ul><p><em>Published: October 12, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Mon, 12 Oct 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20261012</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[Russia]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-12.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
