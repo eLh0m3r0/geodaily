@@ -168,9 +168,15 @@ class RSSCollector:
                 response = connection_pool_manager.make_request(
                     url=url,
                     method='GET',
+                    # Browser-like headers with a plain Accept: the XML-only
+                    # Accept header got 404 from Nation Africa on every run up
+                    # to 2026-10-22, and an HTML-first list made Ynetnews serve
+                    # a page instead of its feed; this set read 83 of 84 feeds
+                    # in the validator
                     headers={
                         'User-Agent': Config.USER_AGENT,
-                        'Accept': 'application/rss+xml, application/xml, text/xml'
+                        'Accept': '*/*',
+                        'Accept-Language': 'en-US,en;q=0.5'
                     }
                 )
                 response.raise_for_status()

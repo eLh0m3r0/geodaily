@@ -64,3 +64,20 @@ class TestNonLatinTitlesAreSkipped(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestFeedRequestHeaders(unittest.TestCase):
+    """Human Rights Watch answered the collector's XML-only Accept header with
+    403 and Nation Africa with 404 (every run up to 2026-10-22), while a
+    browser-like header set read both; the collector now sends one."""
+
+    def test_feed_requests_look_like_a_browser(self):
+        from unittest.mock import patch
+        collector = RSSCollector(fetch_full_content=False)
+        with patch("src.collectors.rss_collector.connection_pool_manager.make_request") as make_request:
+            make_request.return_value = Mock(content=b"<rss/>", raise_for_status=lambda: None)
+            collector._fetch_feed_with_retry("https://www.hrw.org/rss.xml", "Human Rights Watch")
+        headers = make_request.call_args.kwargs["headers"]
+        self.assertIn("*/*", headers["Accept"])
+        self.assertTrue(headers["Accept-Language"].startswith("en"))
+        self.assertTrue(headers["User-Agent"].startswith("Mozilla/5.0"))
