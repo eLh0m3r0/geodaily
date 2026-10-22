@@ -24,6 +24,7 @@ from pathlib import Path
 
 import re
 import socket
+import urllib.error
 import urllib.parse
 import urllib.request
 
@@ -70,18 +71,42 @@ def discover_feeds(url: str) -> str:
     return f"; page advertises feeds: {', '.join(found[:6])}" if found else ""
 
 
+def fetch_feed(url: str):
+    """Read `url` the way the collector does — fetch the body with a browser
+    User-Agent and a plain Accept header, then parse the text — and fall
+    back to feedparser's own fetcher. feedparser alone sends an XML-only
+    Accept header that some servers answer with an HTML page: the weekly
+    report called MercoPress dead on 10-12 and 10-19 while the pipeline
+    collected six articles a day from it. Returns (feed, http_status, note)."""
+    note = ""
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "*/*",
+                                                   "Accept-Language": "en-US,en;q=0.5"})
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            body = resp.read()
+        feed = feedparser.parse(body)
+        if feed.entries:
+            return feed, 200, note
+        note = f"body fetch parsed no entries ({feed.bozo_exception if feed.bozo else 'empty feed'}); "
+    except urllib.error.HTTPError as e:
+        return None, e.code, note
+    except Exception as e:
+        note = f"body fetch failed ({str(e)[:60]}); "
+    feed = feedparser.parse(url, agent=USER_AGENT)
+    return feed, getattr(feed, "status", None), note
+
+
 def check_feed(source: dict, max_age_days: int) -> dict:
     name, url = source["name"], source["url"]
     result = {"name": name, "url": url, "status": "ok", "entries": 0, "newest": None, "detail": "",
               "sample": ""}
     try:
-        feed = feedparser.parse(url, agent=USER_AGENT)
-        status = getattr(feed, "status", None)
-        if status and status >= 400:
-            result.update(status="dead", detail=f"HTTP {status}")
+        feed, status, note = fetch_feed(url)
+        if feed is None or (status and status >= 400):
+            result.update(status="dead", detail=f"{note}HTTP {status}")
             return result
         if feed.bozo and not feed.entries:
-            result.update(status="dead", detail=f"parse error: {feed.bozo_exception}")
+            result.update(status="dead", detail=f"{note}parse error: {feed.bozo_exception}")
             result["detail"] += discover_feeds(url)
             return result
         result["entries"] = len(feed.entries)
