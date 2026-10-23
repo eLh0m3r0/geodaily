@@ -34,6 +34,8 @@ donald vladimir volodymyr benjamin elon narendra recep tayyip emmanuel keir frie
 pedro luiz inacio masoud jong
 marco rubio vance pete hegseth scott bessent sergei sergey lavrov dmitry peskov yuri yury
 ushakov antonio guterres mark rutte ursula leyen kaja kallas
+fbi cia doj dhs ice nsa fda cdc fed sec irs faa nhs bbc cnn nyt wsj afp gop dnc rnc idf pla fsb
+gru isi usa gdp ceo ipo nyc ssa tsa usc odd
 russia russian russians china chinese iran iranian israel israeli israelis ukraine
 ukrainian ukrainians america american americans europe european europeans
 us u.s. usa uk britain british england german germany france french india
@@ -129,6 +131,8 @@ special envoy envoys prosecutor prosecutors attorney ambassador deputy vice prem
 chairman chairwoman chair speaker judge colonel lieutenant admiral marshal sheikh
 ayatollah bishop cardinal archbishop rabbi founder billionaire tycoon oligarch warlord
 rebel rebels militia junta regime opposition secretary-general director
+day days how why who what when live top big key hit hits say says set win ban bid cut cuts row
+aid ties talk new via per amid over under off out all one two six ten
 """.split())
 
 _CAP_SEQ = re.compile(r"\b([A-Z][\w'’.-]*(?:\s+[A-Z][\w'’.-]*){0,2})")
@@ -151,8 +155,8 @@ def distinctive_tokens(term: str, any_case: bool = False) -> Set[str]:
     """Patterns that identify `term`.
 
     Only NAMES count: a token qualifies when it is capitalised in the
-    original term, at least 4 letters, and neither a generic actor nor a
-    title/month/furniture word ("Dnipro River" -> dnipro; "Vitalii
+    original term, at least 4 letters (or a 3-letter all-caps acronym), and
+    neither a generic actor nor a title/month/furniture word ("Dnipro River" -> dnipro; "Vitalii
     Klitschko" -> vitalii, klitschko; "Russia" -> nothing; "housing
     protests" -> nothing). Long organisation names ("International Energy
     Agency") match only as the whole phrase — their words are ordinary
@@ -166,7 +170,12 @@ def distinctive_tokens(term: str, any_case: bool = False) -> Set[str]:
     name_tokens = set()
     for w in words:
         t = _tok(w)
-        if ((any_case or w[:1].isupper()) and len(t) >= 4 and t not in GENERIC_TERMS
+        # A 3-letter token counts only as an all-caps acronym (PHP, RSF, PKK):
+        # the 10-22 lead "AI uncovers a flaw in PHP" had no name of 4+ letters,
+        # so the 10-23 blindspot offered the same event as the story the West
+        # missed. Everyday agencies (FBI, IDF …) are generic actors.
+        acronym = len(t) == 3 and w.strip(".,'\"").isupper() and t.isalpha()
+        if ((any_case or w[:1].isupper()) and (len(t) >= 4 or acronym) and t not in GENERIC_TERMS
                 and t not in _COMMON_CAPS and not t.isdigit()):
             name_tokens.add(t)
     out = set()

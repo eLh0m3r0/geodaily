@@ -422,3 +422,26 @@ def test_production_1019_1021_recurring_officials_are_not_storylines():
     assert distinctive_tokens("Interior Minister Laurent Nunez") == {"laurent nunez", "laurent", "nunez"}
     assert "raf fairford" in distinctive_tokens("RAF Fairford")
     assert label_for(max(distinctive_tokens("Special Envoy Steve Witkoff"), key=len)) == "Steve Witkoff"
+
+
+def test_three_letter_acronyms_identify_a_storyline_1023(persp):
+    """10-23: the blindspot offered the PHP-flaw patching rush — the 10-22
+    LEAD ('AI uncovers a flaw in PHP', terms PHP, Wiz) — as the story the West
+    missed, because no name of 4+ letters identified that event."""
+    from src.ai.storylines import StorylineIndex, distinctive_tokens
+    hist = [{"date": "2026-10-22", "stories": ["AI uncovers a flaw in PHP, taking websites offline worldwide"],
+             "story_terms": [["PHP", "Wiz"]], "quick_hits": [], "developing": [], "big_number": "",
+             "blindspot": ""}]
+    idx = StorylineIndex(hist)
+    m = idx.match("Companies and governments rushed to patch critical PHP flaws after a cybersecurity "
+                  "firm reported millions of hacking attempts.", days=5)
+    assert m and m[1] == "php"
+    assert "php" in distinctive_tokens("PHP", any_case=True)
+    assert distinctive_tokens("FBI") == set()            # everyday agencies are generic actors
+    assert distinctive_tokens("Php") == set()            # a 3-letter word is a name only in capitals
+    assert distinctive_tokens("The DAY after") == set()  # furniture in capitals is still furniture
+    persp.storylines = idx
+    arts = [art("Governments scramble to patch PHP flaws as hackers probe millions of sites", "https://a.com/9",
+                "Taipei Times", "east_asia", False, "e9"),
+            art("PHP vulnerability: Asian firms rush out patches", "https://b.com/9", "Dawn", "south_asia", False, "e9")]
+    assert persp._blindspot_candidates([story("Ukraine hits Moscow")], arts) == []
