@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Thu, 22 Oct 2026 08:35:31 GMT</pubDate>
-        <lastBuildDate>Thu, 22 Oct 2026 08:35:31 GMT</lastBuildDate>
+        <pubDate>Fri, 23 Oct 2026 08:34:19 GMT</pubDate>
+        <lastBuildDate>Fri, 23 Oct 2026 08:34:19 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,21 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - October 23, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-23.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Friday, October 23, 2026 — the 3 stories that matter most today, plus 1 update on stories you're following and 7 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump says Ukraine's Starlink is restored, but AP reports the speed cap remains</strong>: President Trump said Elon Musk had restored Ukraine's Starshield access. A senior European official told the AP the speed limit is still in place. Ukraine's military uses these satellite links to fly ...</li></ul><p><em>Published: October 23, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Fri, 23 Oct 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20261023</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Europe]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-23.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - October 22, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-22.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Thursday, October 22, 2026 — the 2 stories that matter most today, plus 2 updates on stories you're following and 6 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>AI uncovers a flaw in PHP, taking websites offline worldwide</strong>: Computer security firms used AI to find two critical flaws in PHP, a decades-old language that helps run about 70% of the world's websites. Governments and companies took sites offline to fix them bef...</li></ul><p><em>Published: October 22, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -179,19 +194,6 @@
         <category><![CDATA[Middle East]]></category>
         <category><![CDATA[Economy]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-14.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - October 13, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-13.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Tuesday, October 13, 2026 — the 3 stories that matter most today, plus 3 updates on stories you're following and 5 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>UK says Iran's Revolutionary Guard likely behind plot at a US bomber base</strong>: Prime Minister Andy Burnham told parliament a suspected plot at RAF Fairford was 'highly likely' coordinated in Iran. He said it was almost certainly directed by the Revolutionary Guard. Police arrest...</li></ul><p><em>Published: October 13, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Tue, 13 Oct 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20261013</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-13.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>

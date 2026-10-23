@@ -1,0 +1,310 @@
+{
+ "date": "2026-10-23",
+ "title": "Geopolitical Daily",
+ "email_subject": "Trump says the Starlink cap is over. Is it?",
+ "preheader": "Senior European official tells AP the cap is still in place, contradicting Trump.",
+ "intro_text": "Good morning. It's Friday, October 23, 2026 — the 3 stories that matter most today, plus 1 update on stories you're following and 7 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Trump says Ukraine's Starlink is restored, but AP reports the speed cap remains",
+   "why_important": "President Trump said Elon Musk had restored Ukraine's Starshield access. A senior European official told the AP the speed limit is still in place. Ukraine's military uses these satellite links to fly drones and strike Russian targets. The conflicting US accounts leave Kyiv unsure who controls a system its army depends on every day.",
+   "what_overlooked": "Musk has said the US military decided the limits, and then the president did. That claim would put a private company's network under direct White House control in wartime.",
+   "prediction": "A Pentagon or SpaceX statement naming who ordered the limits, or Ukrainian reports of new drone failures, would show if Trump's account was accurate.",
+   "impact_score": 8,
+   "sources": [
+    "https://meduza.io/en/news/2026/10/23/starlink-speed-restrictions-remain-in-place-in-ukraine-despite-trump-s-claim-they-were-lifted",
+    "https://www.thehindu.com/news/international/trump-claims-starshield-is-back-in-ukraine/article71614563.ece",
+    "https://www.pravda.com.ua/eng/news/2026/10/23/8059323/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 7,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.8,
+   "region": "europe",
+   "actor_type": "mixed",
+   "event_type": "military",
+   "coverage_counts": {
+    "russian_exile": 3,
+    "south_asia": 3,
+    "ukrainian": 3,
+    "middle_east": 1,
+    "western": 5,
+    "east_asia": 2,
+    "russian_state": 3
+   },
+   "coverage_outlets": 15,
+   "signal_terms": [
+    "Starshield",
+    "Starlink",
+    "SpaceX",
+    "Ukraine"
+   ]
+  },
+  {
+   "story_title": "Houthis say their strikes hit Saudi oil and defense sites as missiles target Riyadh",
+   "why_important": "Yemen's Houthis say they struck Saudi Arabia's defense ministry in Riyadh, Aramco facilities at Yanbu and Dammam's airport. Saudi defenses say they intercepted missiles over Riyadh. Four more people were reported killed, and each round pulls the kingdom deeper into the war and threatens oil exports through the region.",
+   "what_overlooked": "Yemen's army says it killed 512 Houthi fighters in 24 hours. That one-sided claim from the Saudi-backed side, carried by Turkey's state news agency, has not been verified by any independent monitor.",
+   "prediction": "If a Houthi missile reaches Riyadh or an oil terminal, Gulf states will likely press Washington for direct strikes on launch sites.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.dawn.com/news/2039176/houthi-attacks-on-saudi-sites-claim-four-more-lives",
+    "https://www.middleeasteye.net/live-blog/live-blog-update/alerts-issued-saudi-arabias-riyadh-and-najran-saudi-led-coalition-says",
+    "https://www.aa.com.tr/en/middle-east/yemeni-army-says-512-houthi-fighters-neutralized-in-24-hours/4097644"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 7,
+   "novelty_score": 6,
+   "credibility_score": 7,
+   "impact_dimension_score": 7,
+   "confidence": 0.75,
+   "region": "middle_east",
+   "actor_type": "mixed",
+   "event_type": "military",
+   "coverage_counts": {
+    "south_asia": 2,
+    "middle_east": 2,
+    "middle_east_state": 1
+   },
+   "coverage_outlets": 4,
+   "signal_terms": [
+    "Houthis",
+    "Riyadh",
+    "Aramco",
+    "Dammam"
+   ]
+  },
+  {
+   "story_title": "Magnitude 7 earthquake in Tibet kills 16 and forces 12,000 to evacuate",
+   "why_important": "A magnitude 7.0 earthquake struck Tibet's Nagqu region late Thursday, killing at least 16 people and collapsing hundreds of homes. More than 12,000 residents have been evacuated from the area. The quake's center sits in remote mountains, where winter cold and damaged roads will slow rescue work.",
+   "what_overlooked": "Official injury figures already disagree: 32 in Xinhua's first report and 65 in later coverage. Every casualty count comes from Chinese state media, and foreign access to the region is tightly limited.",
+   "prediction": "Chinese authorities will publish final casualty and damage totals within days; a large jump would show the first official figures were too low.",
+   "impact_score": 5,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/10/22/7-0-magnitude-earthquake-in-tibet-kills-at-least-16_6761878_4.html",
+    "https://www.thehindu.com/news/international/tibet-earthquake-nagqu-updates-october-22-2026/article71612585.ece",
+    "https://www.scmp.com/news/china/article/3371831/casualties-reported-after-70-quake-strikes-chinas-tibet"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 4,
+   "novelty_score": 7,
+   "credibility_score": 7,
+   "impact_dimension_score": 5,
+   "confidence": 0.8,
+   "region": "indo_pacific",
+   "actor_type": "state",
+   "event_type": "humanitarian",
+   "coverage_counts": {
+    "western": 6,
+    "south_asia": 3,
+    "east_asia": 2,
+    "russian_state": 2,
+    "middle_east_state": 1
+   },
+   "coverage_outlets": 13,
+   "signal_terms": [
+    "Tibet",
+    "Nagqu",
+    "Xinhua"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "An attack near Hebron wounded at least five Israelis and killed two Palestinian assailants, prompting Netanyahu to cancel campaign events before the October 27 election.",
+   "region": "middle_east",
+   "url": "https://www.dawn.com/news/2039241/west-bank-attack-wounds-5-israelis-as-netanyahu-cancels-events"
+  },
+  {
+   "text": "Nepal will receive $21.6 million from the UN's Loss and Damage Fund for August's Bhotekoshi floods, the fund's first payout to a single country.",
+   "region": "indo_pacific",
+   "url": "https://www.thehindu.com/videos/nepal-to-receive-first-ever-loss-and-damage-fund-payout-after-devastating-floods/article71614805.ece"
+  },
+  {
+   "text": "France's interior ministry said it will deploy 20 percent more police on Saturday, and Lyon banned all protests that day.",
+   "region": "europe",
+   "url": "https://www.thehindu.com/news/international/french-city-of-lyon-bans-all-protests-on-october-24/article71611024.ece"
+  },
+  {
+   "text": "France confirmed the first known human case of Shamonda virus, a livestock disease circulating in Africa and Asia, and said the patient has died.",
+   "region": "europe",
+   "url": "https://nation.africa/kenya/news/world/rare-livestock-virus-detected-in-human-for-first-time-in-france--5642530"
+  },
+  {
+   "text": "Australia and East Timor signed a defense deal to expand joint exercises and cooperate on cyber and maritime security, their governments said.",
+   "region": "indo_pacific",
+   "url": "https://www.taipeitimes.com/News/world/archives/2026/10/23/2003866488"
+  },
+  {
+   "text": "The UN says Afghanistan faces record acute malnutrition and hunger this winter, with aid access limited and rights abuses rising under Taliban rule.",
+   "region": "central_asia",
+   "url": "https://www.ipsnews.net/2026/10/as-winter-approaches-afghanistan-faces-record-hunger-and-mounting-human-rights-abuses/"
+  },
+  {
+   "text": "Canada combined defense purchasing and industry funding in a single agency, a model Australia's ASPI think tank says it should follow.",
+   "region": "americas",
+   "url": "https://www.aspistrategist.org.au/another-model-canada-integrates-defence-acquisition-and-industry-funding/"
+  }
+ ],
+ "big_number": {
+  "value": "191 kph",
+  "context": "Gusts near Typhoon Champi's center as it neared Taiwan, where almost the whole island shut down and nearly 1,000 flights were canceled.",
+  "url": "https://www.dawn.com/news/2039238/taiwan-shuts-down-ahead-of-typhoon-champi-nearly-1000-flights-cancelled"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW",
+     "Politico Europe",
+     "The Guardian"
+    ],
+    "article_count": 5,
+    "framing": "Treats Trump’s restoration claim as questionable, stressing continued Starlink limits and unclear responsibility.",
+    "quote": "The satellite service was still operating at a cap of 161km/hr, crippling key air defences",
+    "quote_outlet": "The Guardian",
+    "quote_url": "https://www.theguardian.com/world/live/2026/oct/23/starlink-ukraine-musk-trump-russia-black-sea-strikes-france-milan-europe-protests-latest-news-updates",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "The Straits Times"
+    ],
+    "article_count": 2,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Hindustan Times",
+     "The Hindu",
+     "Times of India"
+    ],
+    "article_count": 3,
+    "framing": "Stresses Trump’s evasiveness and Ukraine’s continued reliance on Starlink amid incomplete restoration.",
+    "quote": "Ukraine depends heavily on Starlink for communications between military units, coordinating operations and receiving early warnings during Russian missile attacks.",
+    "quote_outlet": "Times of India",
+    "quote_url": "https://timesofindia.indiatimes.com/world/us/he-put-it-back-trump-says-ukraines-starlink-access-restored-stays-silent-on-musk/articleshow/135130030.cms",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera"
+    ],
+    "article_count": 1,
+    "framing": "Stresses Trump’s claim while noting he declined to explain how Starlink restrictions were lifted.",
+    "quote": "Trump has declined to comment on the process that led Starlink to lift speed and access restrictions on Ukraine.",
+    "quote_outlet": "Al Jazeera",
+    "quote_url": "https://www.aljazeera.com/news/2026/10/23/trump-says-musk-restored-ukraines-starlink-access-amid-russia-war?traffic_source=rss",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "TASS"
+    ],
+    "article_count": 3,
+    "framing": "Frames Starshield access as controlled by the US government, not Musk, and highlights doubts about restoration.",
+    "quote": "Elon Musk doesn't want to get in the middle of what is a war between two state actors",
+    "quote_outlet": "TASS",
+    "quote_url": "https://tass.com/world/2206397",
+    "state_affiliated": true,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_exile",
+    "outlets": [
+     "Meduza",
+     "The Moscow Times"
+    ],
+    "article_count": 3,
+    "framing": "Challenges Trump’s claim, reporting restrictions persist and that Trump personally called Musk to lift them.",
+    "quote": "Starlink’s military version in Ukraine is still subject to a speed restriction, the Associated Press reported, citing a senior European official familiar with the situation.",
+    "quote_outlet": "Meduza",
+    "quote_url": "https://meduza.io/en/news/2026/10/23/starlink-speed-restrictions-remain-in-place-in-ukraine-despite-trump-s-claim-they-were-lifted",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "ukrainian",
+    "outlets": [
+     "Ukrainska Pravda",
+     "Ukrinform"
+    ],
+    "article_count": 3,
+    "framing": "Presses for accountability, citing reports Trump asked Musk to lift restrictions while US accounts conflict.",
+    "quote": "U.S. President Donald Trump called Elon Musk and asked him to lift restrictions on a military-grade version of Starlink in Ukraine that the SpaceX chief had throttled.",
+    "quote_outlet": "Ukrinform",
+    "quote_url": "https://www.ukrinform.net/rubric-polytics/4177271-trump-asked-musk-to-lift-starlink-restrictions-in-ukraine-wsj.html",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 15,
+  "counts": {
+   "russian_exile": 3,
+   "south_asia": 3,
+   "ukrainian": 3,
+   "middle_east": 1,
+   "western": 5,
+   "east_asia": 2,
+   "russian_state": 3
+  },
+  "blindspot": "Companies and governments rushed to patch critical PHP flaws after a cybersecurity firm reported millions of hacking attempts. This matters globally because compromised PHP systems can expose websites and services millions rely on.",
+  "blindspot_url": "https://www.taipeitimes.com/News/front/archives/2026/10/23/2003866463",
+  "blindspot_outlets": [
+   "Daily Maverick",
+   "Taipei Times",
+   "The Express Tribune"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "Bolsonaro",
+   "text": "Lula and Flávio Bolsonaro met in a final debate before Brazil's Sunday runoff, with both campaigns asking courts to disqualify the rival.",
+   "region": "americas",
+   "url": "https://www.thehindu.com/news/international/lula-and-flavio-bolsonaro-face-off-in-a-pivotal-final-debate/article71614399.ece"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 12.34,
+   "avg_sentence_words": 20.3,
+   "fragment_share": 0.13,
+   "rewrite": "applied",
+   "rewrite_grade": 10.24,
+   "rewrite_avg_sentence_words": 16.1,
+   "rewrite_fragment_share": 0.0
+  },
+  "editorial_actions": [
+   "Quick hit moved to DEVELOPING (running storyline 'bolsonaro'): Lula and Flávio Bolsonaro met in a final debate before Brazil's Sunday"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "served_model": "deepseek/deepseek-v4.1-flash",
+  "analysis_input_tokens": 12238,
+  "analysis_output_tokens": 34839,
+  "analysis_cost_usd": 0.01828,
+  "analysis_seconds": 332.3,
+  "grid_cost_usd": 0.00504,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash"
+ }
+}
