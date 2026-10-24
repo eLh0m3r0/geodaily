@@ -1,0 +1,287 @@
+{
+ "date": "2026-10-24",
+ "title": "Geopolitical Daily",
+ "email_subject": "Brazil votes; Russian diesel sails to the US",
+ "preheader": "Ukraine and Russia agree a truce in Oleshky; Melania Trump says she brokered it.",
+ "intro_text": "Good morning. It's Saturday, October 24, 2026 — the 3 stories that matter most today, plus 1 update on stories you're following and 7 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Brazil votes Sunday in a runoff that could shift its ties with the US and China",
+   "why_important": "Brazil votes Sunday in a runoff between Lula and Sen. Flávio Bolsonaro. A campaign-finance scandal has cut Flávio's poll numbers, and the winner will shape how Brazil sells the rare earths the West wants for its break with China.",
+   "what_overlooked": "The disputed funds were meant to finance a biopic of Jair Bolsonaro, who is under house arrest for plotting a coup after the 2022 election.",
+   "prediction": "Whether Flávio keeps sliding in Sunday's count will show if the scandal, rather than Lula's record, decided the race.",
+   "impact_score": 8,
+   "sources": [
+    "https://foreignpolicy.com/2026/10/22/brazil-election-lula-bolsonaro-trump-us-military-shield-americas/",
+    "https://asia.nikkei.com/spotlight/supply-chain/brazil-election-to-impact-rare-earth-race-as-west-seeks-china-balance",
+    "https://www.thehindu.com/news/international/brazil-debate-leaves-lula-and-bolsonaro-tied-as-polls-tighten-ahead-of-sundays-runoff/article71619106.ece"
+   ],
+   "content_type": "analysis",
+   "urgency_score": 9,
+   "scope_score": 8,
+   "novelty_score": 6,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "americas",
+   "actor_type": "state",
+   "event_type": "political",
+   "coverage_counts": {
+    "western": 5,
+    "east_asia": 5,
+    "south_asia": 1,
+    "latam": 7,
+    "middle_east_state": 1
+   },
+   "coverage_outlets": 12,
+   "signal_terms": [
+    "Lula",
+    "Flávio Bolsonaro",
+    "Eduardo Bolsonaro",
+    "Brazil runoff"
+   ]
+  },
+  {
+   "story_title": "First tanker of Russian diesel sails to the US under a Trump-Putin deal",
+   "why_important": "A tanker carrying 40,000 tons of Russian diesel left the Baltic port of Primorsk for the US East Coast, the first shipment under an energy deal between Trump and Putin. Washington eased sanctions to allow it, shocking Ukraine and European allies.",
+   "what_overlooked": "Kremlin spokesman Dmitry Peskov said shipments will continue on a regular schedule, a sign the arrangement is meant to outlast the first tanker.",
+   "prediction": "Whether a second tanker loads at Primorsk in the next 72 hours will show if this is a one-off or a steady trade.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.themoscowtimes.com/2026/10/23/first-shipment-of-russian-diesel-departs-for-the-united-states-under-trump-deal-a94039",
+    "https://www.thehindu.com/news/international/kremlin-says-a-first-tanker-of-russian-diesel-sets-sail-for-us-despite-ukraines-protests/article71617208.ece",
+    "https://www.bangkokpost.com/world/3342383/tanker-with-russian-diesel-heads-to-new-york"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 8,
+   "novelty_score": 8,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "global",
+   "actor_type": "state",
+   "event_type": "economic",
+   "coverage_counts": {
+    "russian_exile": 1,
+    "south_asia": 2,
+    "east_asia": 1
+   },
+   "coverage_outlets": 4,
+   "signal_terms": [
+    "Primorsk",
+    "Russian diesel",
+    "Trump-Putin deal",
+    "Dmitry Peskov"
+   ]
+  },
+  {
+   "story_title": "Russia and Ukraine agree to a truce in Oleshky that Melania Trump says she brokered",
+   "why_important": "Moscow and Kyiv said they will stop firing on the Kherson front from Tuesday so civilians trapped in Russian-occupied Oleshky can leave. Melania Trump said she brokered the truce, which both militaries confirmed.",
+   "what_overlooked": "Non-military teams from both countries will visit homes and arrange transport, and an unnamed American news organization will accompany them to document the evacuations.",
+   "prediction": "Whether both sides stop firing at 4 a.m. Tuesday will show if this truce can be repeated elsewhere on the front.",
+   "impact_score": 7,
+   "sources": [
+    "https://meduza.io/en/news/2026/10/23/russia-announces-october-27-ceasefire-on-southern-ukraine-s-kherson-front-to-evacuate-residents-of-occupied-oleshky",
+    "https://www.lemonde.fr/en/international/article/2026/10/23/russia-and-ukraine-agree-to-truce-in-oleshky_6762538_4.html",
+    "https://www.thehindu.com/news/international/russia-ukraine-agree-to-oleshky-ceasefire-brokered-by-melania-trump-white-house-says/article71616736.ece",
+    "https://www.pravda.com.ua/eng/news/2026/10/23/8059482/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 6,
+   "novelty_score": 9,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.8,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "russian_exile": 4,
+    "western": 3,
+    "south_asia": 4,
+    "ukrainian": 3,
+    "east_asia": 7,
+    "chinese_state": 1,
+    "middle_east": 1,
+    "russian_state": 3
+   },
+   "coverage_outlets": 21,
+   "signal_terms": [
+    "Oleshky",
+    "Kherson",
+    "Melania Trump",
+    "Valery Gerasimov"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Gunmen killed seven people and wounded 40 at a Greek Orthodox church in Karak, Jordan, and the king vowed retaliation.",
+   "region": "middle_east",
+   "url": "https://www.al-monitor.com/originals/2026/10/jordan-tightens-security-after-deadly-church-attack-kills-seven"
+  },
+  {
+   "text": "Israel launched a days-long West Bank operation after gunmen killed two soldiers, with Netanyahu promising a campaign bigger than any since 1967.",
+   "region": "middle_east",
+   "url": "https://foreignpolicy.com/2026/10/23/netanyahu-israel-military-operation-west-bank-hebron-refugee-camps/"
+  },
+  {
+   "text": "Romania blamed Russia for a drone strike that sank the cargo ship Khoryv in the Black Sea, killing one sailor and leaving three missing.",
+   "region": "europe",
+   "url": "https://www.politico.eu/article/drone-hits-another-ship-in-black-sea-near-romania-killing-at-least-one-sailor/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
+  },
+  {
+   "text": "Typhoon Champi killed one person and injured 350 in Taiwan, toppling trees and cutting power before weakening and heading toward Japan.",
+   "region": "indo_pacific",
+   "url": "https://www.thehindu.com/news/international/typhoon-champi-taiwan-many-people-dead-and-several-injured/article71619102.ece"
+  },
+  {
+   "text": "Kim Jong-un called for a 'Korean-style military revolution' at a commanders' meeting, state media said, days after an explosion inside the DMZ.",
+   "region": "indo_pacific",
+   "url": "https://www.scmp.com/news/asia/east-asia/article/3372003/kim-jong-un-urges-north-korean-military-become-strongest-armed-forces-world"
+  },
+  {
+   "text": "Serbia votes Sunday in an early election called by Aleksandar Vučić, who resigned the presidency to run for prime minister against a student-led movement.",
+   "region": "europe",
+   "url": "https://meduza.io/en/feature/2026/10/23/can-serbia-s-student-protesters-stop-aleksandar-vucic-from-becoming-prime-minister-the-country-s-longtime-leader-has-called-an-early-election-to-extend-his-hold-on-power"
+  },
+  {
+   "text": "Macron postponed a trip to Nigeria and Senegal as France prepares to deploy 70,000 police for Saturday's protests.",
+   "region": "europe",
+   "url": "https://www.scmp.com/news/world/europe/article/3371973/france-deploys-70000-police-new-protests-macron-delays-africa-trip"
+  }
+ ],
+ "big_number": {
+  "value": "540",
+  "context": "Russia and Ukraine each handed over 270 prisoners of war at the Belarus border, their second swap in two days, mediated by the US and UAE.",
+  "url": "https://www.politico.eu/article/ukraine-russia-exchange-270-prisoners-war-zelenskyy-putin-trump/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "Foreign Policy",
+     "The Conversation"
+    ],
+    "article_count": 5,
+    "framing": "Western media treat Bolsonaro family corruption and Trump-aligned intervention as threats to Brazil’s sovereignty.",
+    "quote": "Soon after the scandal broke, Flávio’s poll numbers began to plummet .",
+    "quote_outlet": "Foreign Policy",
+    "quote_url": "https://foreignpolicy.com/2026/10/22/brazil-election-lula-bolsonaro-trump-us-military-shield-americas/",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "Nikkei Asia",
+     "The Japan Times"
+    ],
+    "article_count": 5,
+    "framing": "East Asian media stress Brazil’s rare-earth leverage in US-China competition, with graft and living costs shaping the runoff.",
+    "quote": "Opinion polls show Bolsonaro, son of former President Jair Bolsonaro, and Lula neck-and-neck this week as the gap between them narrowed.",
+    "quote_outlet": "The Japan Times",
+    "quote_url": "https://www.japantimes.co.jp/news/2026/10/24/world/politics/brazil-final-election-debate/",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "The Hindu"
+    ],
+    "article_count": 1,
+    "framing": "South Asian media frame Brazil’s runoff as a choice between a Trump-backed rightward shift and a left-wing stronghold.",
+    "quote": "The election outcome could see Latin America's largest country join a regional shift to the right championed by U.S. President Donald Trump, or remain a left-wing stronghold",
+    "quote_outlet": "The Hindu",
+    "quote_url": "https://www.thehindu.com/news/international/brazil-debate-leaves-lula-and-bolsonaro-tied-as-polls-tighten-ahead-of-sundays-runoff/article71619106.ece",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east_state",
+    "outlets": [
+     "Anadolu Agency"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": true,
+    "wire_copy": true
+   },
+   {
+    "perspective": "latam",
+    "outlets": [
+     "El País",
+     "MercoPress"
+    ],
+    "article_count": 7,
+    "framing": "Latin American media stress electoral fairness, social media oversight and candidates’ financial transparency in the runoff.",
+    "quote": "Lula’s campaign has reported unequal treatment on social media and Brazil’s Electoral Court has also requested tighter oversight of the social media company ahead of Sunday’s presidential runoff",
+    "quote_outlet": "El País",
+    "quote_url": "https://english.elpais.com/usa/2026-10-23/bernie-sanders-and-democratic-lawmakers-demand-answers-from-meta-over-alleged-favoritism-toward-bolsonaro-in-brazil-election.html",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 12,
+  "counts": {
+   "western": 5,
+   "east_asia": 5,
+   "south_asia": 1,
+   "latam": 7,
+   "middle_east_state": 1
+  },
+  "blindspot": "Austria ordered the expulsion of four Russian diplomats suspected of spying, including three at its Vienna embassy and one at its OSCE mission. The move deepens Russia-West tensions and may prompt retaliatory diplomatic expulsions in Europe.",
+  "blindspot_url": "https://meduza.io/en/news/2026/10/23/austria-orders-expulsion-of-four-russian-diplomats-suspected-of-spying",
+  "blindspot_outlets": [
+   "Daily Maverick",
+   "Meduza",
+   "RT",
+   "TASS",
+   "The Moscow Times"
+  ]
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Will Flávio Bolsonaro win the 2026 Brazilian presidential election?\" at 80%.",
+   "url": "https://polymarket.com/market/will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
+   "source": "Polymarket"
+  }
+ ],
+ "developing": [
+  {
+   "storyline": "Ebola",
+   "text": "Doctors in Bunia, eastern DR Congo, began the first human trial of an Ebola vaccine to see if Ervebo protects against the Bundibugyo strain.",
+   "region": "africa",
+   "url": "https://www.thehindu.com/news/international/ebola-vaccine-trial-begins-in-dr-congo/article71617960.ece"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 9.32,
+   "avg_sentence_words": 17.7,
+   "fragment_share": 0.07,
+   "rewrite": "not_needed"
+  },
+  "editorial_actions": [
+   "Quick hit moved to DEVELOPING (running storyline 'ebola'): Doctors in Bunia, eastern DR Congo, began the first human trial of an "
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "served_model": "deepseek/deepseek-v4.1-flash",
+  "analysis_input_tokens": 12024,
+  "analysis_output_tokens": 20515,
+  "analysis_cost_usd": 0.01976,
+  "analysis_seconds": 268.8,
+  "grid_cost_usd": 0.00254,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash"
+ }
+}
