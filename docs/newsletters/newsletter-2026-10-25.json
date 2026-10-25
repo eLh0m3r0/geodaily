@@ -1,0 +1,254 @@
+{
+ "date": "2026-10-25",
+ "title": "Geopolitical Daily",
+ "email_subject": "Hebron families told not to expect return",
+ "preheader": "About 2,000 residents were pushed out after two Israeli soldiers were killed.",
+ "intro_text": "Good morning. It's Sunday, October 25, 2026 — the 3 stories that matter most today, plus 3 updates on stories you're following and 3 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Israel pushes Hebron families out and plans to close West Bank crossings on election day",
+   "why_important": "Israel's army said it will close every land crossing with the West Bank on Tuesday's election day, barring Palestinian workers. Troops have pushed about 2,000 Hebron residents from their homes after gunmen killed two soldiers. Defense Minister Israel Katz said they will not return until Israel finishes dealing with Hamas.",
+   "what_overlooked": "Counts differ: Palestinian officials cite more than 2,200 displaced, while Israeli and wire reports say about 250 families. Katz gave no date for anyone's return.",
+   "prediction": "Whether Hebron residents are allowed home after Tuesday's vote will show if the operation was shaped by election timing.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.haaretz.com/west-bank/2026-10-25/ty-article/.premium/idf-announces-general-west-bank-closure-on-israels-election-day/000001a1-6fe4-d9e6-a5b1-6feda7180000",
+    "https://www.thehindu.com/news/international/israel-to-close-all-land-crossings-with-west-bank-on-election-day/article71622494.ece",
+    "https://www.scmp.com/news/world/middle-east/article/3372058/israel-widens-west-bank-crackdown-displacing-hebron-families-after-attack",
+    "https://www.france24.com/en/middle-east/20261024-israel-to-close-all-land-crossings-with-west-bank-on-election-day"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 7,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "middle_east": 2,
+    "south_asia": 1,
+    "east_asia": 1,
+    "western": 1
+   },
+   "coverage_outlets": 5,
+   "signal_terms": [
+    "Hebron",
+    "West Bank",
+    "Israel Katz",
+    "Israeli election"
+   ]
+  },
+  {
+   "story_title": "Kim Jong Un crosses a new bridge into China to expand trade",
+   "why_important": "North Korea's leader made an unannounced visit to the Chinese border city of Dandong, crossing a newly opened bridge with China's fourth-ranking official, Wang Huning. Both sides want more trade, and analysts say Beijing worries about Pyongyang's growing military ties with Moscow.",
+   "what_overlooked": "Neither government announced the trip in advance; South Korea's Yonhap reported it first, and Xinhua confirmed it only after Kim crossed. No agreements have been disclosed.",
+   "prediction": "A Chinese announcement on new border trade, or a Kim visit to Moscow, within three days would show who is winning influence in Pyongyang.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.japantimes.co.jp/news/2026/10/25/asia-pacific/politics/north-korea-kim-jong-un-china-dandong/",
+    "https://www.ft.com/content/fd106d25-3abf-4729-be26-683d1d115d2e?syn-25a6b1a6=1",
+    "https://www.thehindu.com/news/international/north-korean-leader-kim-jong-un-visits-china-south-korean-media-reports/article71619300.ece"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.8,
+   "region": "indo_pacific",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "east_asia": 4,
+    "western": 2,
+    "south_asia": 1,
+    "middle_east": 1
+   },
+   "coverage_outlets": 7,
+   "signal_terms": [
+    "Kim Jong Un",
+    "Dandong",
+    "Wang Huning",
+    "Pyongyang"
+   ]
+  },
+  {
+   "story_title": "Europe's cost-of-living protests turn violent as Italy sends 500 more troops to Milan",
+   "why_important": "Police clashed with demonstrators in France, Italy and Spain over rising living costs and cuts to public services. Italy's premier, Giorgia Meloni, is sending 500 more soldiers to Milan and wants tougher penalties for minors, who police say made up many violent protesters.",
+   "what_overlooked": "Most marchers were peaceful. Sociologist Fabien Truong told Le Monde the violence comes from fragmented, angry youth in working-class neighborhoods, not one organized movement.",
+   "prediction": "Whether other governments copy Italy's troop deployment this week will show if they treat the protests as a policing problem or an economic one.",
+   "impact_score": 6,
+   "sources": [
+    "https://www.lemonde.fr/en/france/article/2026/10/24/french-protests-reveal-the-profound-fragmentation-among-young-people-in-working-class-areas_6763231_7.html",
+    "https://www.thehindu.com/news/international/thousands-of-european-protests-erupt-from-milan-to-madrid/article71622515.ece",
+    "https://www.aljazeera.com/video/newsfeed/2026/10/25/10-25-sv-europe-protests-wrap?traffic_source=rss",
+    "https://www.japantimes.co.jp/commentary/2026/10/25/world/spread-of-french-protests/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 7,
+   "novelty_score": 6,
+   "credibility_score": 8,
+   "impact_dimension_score": 6,
+   "confidence": 0.8,
+   "region": "europe",
+   "actor_type": "mixed",
+   "event_type": "political",
+   "coverage_counts": {
+    "western": 6,
+    "south_asia": 3,
+    "middle_east": 1,
+    "east_asia": 3,
+    "middle_east_state": 1
+   },
+   "coverage_outlets": 12,
+   "signal_terms": [
+    "Milan",
+    "Giorgia Meloni",
+    "France",
+    "Spain"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "The October Council drew thousands to Tel Aviv to demand accountability from Benjamin Netanyahu three days before Israel's election.",
+   "region": "middle_east",
+   "url": "https://www.middleeasteye.net/live-blog/live-blog-update/thousands-rally-against-netanyahu-ahead-elections"
+  },
+  {
+   "text": "Trump cast his midterm ballot early in Florida and said of the war in Iran, 'I may have to finish it off.'",
+   "region": "americas",
+   "url": "https://www.thehindu.com/news/international/trump-casts-his-midterm-ballot-early-in-florida/article71621475.ece"
+  },
+  {
+   "text": "Barack Obama told Ohio and Michigan crowds to vote early, blaming Trump's 'chaos and cruelty' for rising living costs.",
+   "region": "americas",
+   "url": "https://www.lemonde.fr/en/international/article/2026/10/25/obama-delivers-scathing-criticisms-of-trump-while-campaigning-for-democrats_6763528_4.html"
+  }
+ ],
+ "big_number": null,
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "France 24"
+    ],
+    "article_count": 1,
+    "framing": "Frames closure as Israeli security measure amid occupation operation and Hebron displacement after Palestinian attack.",
+    "quote": "The measure comes as Israel conducts a large-scale operation in the occupied Palestinian territory",
+    "quote_outlet": "France 24",
+    "quote_url": "https://www.france24.com/en/middle-east/20261024-israel-to-close-all-land-crossings-with-west-bank-on-election-day",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "South China Morning Post"
+    ],
+    "article_count": 1,
+    "framing": "Frames closure as Israel’s widening crackdown that displaced Hebron families after a Palestinian attack.",
+    "quote": "Israeli forces pushed into the occupied West Bank city of Hebron and displaced around 2,000 residents",
+    "quote_outlet": "South China Morning Post",
+    "quote_url": "https://www.scmp.com/news/world/middle-east/article/3372058/israel-widens-west-bank-crackdown-displacing-hebron-families-after-attack",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "The Hindu"
+    ],
+    "article_count": 1,
+    "framing": "Frames closure through Israeli military terminology, stressing Palestinian workers barred from Israeli communities.",
+    "quote": "Palestinians would \"not be permitted to enter Israeli communities in Judea and Samaria and the Jordan Valley for work",
+    "quote_outlet": "The Hindu",
+    "quote_url": "https://www.thehindu.com/news/international/israel-to-close-all-land-crossings-with-west-bank-on-election-day/article71622494.ece",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera",
+     "Haaretz"
+    ],
+    "article_count": 2,
+    "framing": "Frames closure as Israeli lockdown of occupied West Bank and Palestinian workers during election.",
+    "quote": "Israel says it will close all land crossings with the occupied West Bank when it holds a general election on Tuesday.",
+    "quote_outlet": "Al Jazeera",
+    "quote_url": "https://www.aljazeera.com/news/2026/10/25/israel-to-close-occupied-west-bank-crossings-as-hebron-lockdown-continues?traffic_source=rss",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 5,
+  "counts": {
+   "middle_east": 2,
+   "south_asia": 1,
+   "east_asia": 1,
+   "western": 1
+  },
+  "blindspot": "Ras Al Khaimah closed all beaches after an offshore oil leak also shut beaches in Umm Al Quwain and Sharjah. The spill threatens Gulf waters and coastal economies beyond the UAE.",
+  "blindspot_url": "https://www.al-monitor.com/originals/2026/10/uaes-ras-al-khaimah-shuts-all-beaches-neighbours-grapple-oil-spill",
+  "blindspot_outlets": [
+   "Al-Monitor",
+   "NDTV",
+   "The Straits Times"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "Karak",
+   "text": "Jordan says the death toll from Friday's church shooting in Karak rose to nine, and authorities call it a terrorist act by extremists.",
+   "region": "middle_east",
+   "url": "https://www.theguardian.com/world/2026/oct/24/seven-killed-and-40-injured-after-gunmen-open-fire-at-church-funeral-in-jordan"
+  },
+  {
+   "storyline": "Riyadh",
+   "text": "Riyadh's King Khalid airport resumed flights Sunday after Houthi attacks, as the group warned airlines it is still a 'military target'.",
+   "region": "middle_east",
+   "url": "https://www.straitstimes.com/world/middle-east/yemens-houthis-renew-warning-against-using-riyadh-airport"
+  },
+  {
+   "storyline": "Black",
+   "text": "Bulgarians voted for president, with Iliana Iotova and Andrey Gyurov leading a field of 27 candidates after deadly Black Sea drone strikes.",
+   "region": "europe",
+   "url": "https://www.thehindu.com/news/international/bulgaria-presidential-election-black-sea-drone-strikes-on-october-25-2026/article71622481.ece"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 10.77,
+   "avg_sentence_words": 17.1,
+   "fragment_share": 0.12,
+   "rewrite": "failed"
+  },
+  "editorial_actions": [
+   "Quick hit moved to DEVELOPING (running storyline 'karak'): Jordan says the death toll from Friday's church shooting in Karak rose",
+   "Quick hit moved to DEVELOPING (running storyline 'riyadh'): Riyadh's King Khalid airport resumed flights Sunday after Houthi attac",
+   "Quick hit moved to DEVELOPING (running storyline 'black'): Bulgarians voted for president, with Iliana Iotova and Andrey Gyurov l",
+   "Quick hit dropped (running storyline 'aleksandar vučić'): Serbia voted in a snap election that polls call a tight race between A",
+   "Quick hit dropped (running storyline 'php'): Cloudflare's chief executive, Matthew Prince, said internet flaws as s",
+   "Big number dropped (part of a running storyline): 17 — Yemen's Houthis say Saudi-led strikes killed this many peopl"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "served_model": "deepseek/deepseek-v4.1-flash",
+  "analysis_input_tokens": 11615,
+  "analysis_output_tokens": 22913,
+  "analysis_cost_usd": 0.01227,
+  "analysis_seconds": 1072.4,
+  "grid_cost_usd": 0.00439,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash"
+ }
+}
