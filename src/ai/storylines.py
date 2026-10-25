@@ -94,7 +94,18 @@ tonga trinidad tunisia tunisian turkmenistan tuvalu uganda ugandan uruguay
 uzbekistan uzbek vanuatu vatican venezuela venezuelan vietnam vietnamese yemen
 yemeni zambia zimbabwe emirati israelis saudis
 """.split())
-GENERIC_TERMS = GENERIC_TERMS | _COUNTRIES | _US_STATES
+# Seas, straits, oceans, ranges, rivers and world regions recur across
+# unrelated events like countries do (10-25: "Black Sea drone strikes" in a
+# Bulgarian-election quick hit matched the previous day's Khoryv sinking on
+# "black" and ran in DEVELOPING under the label "Black").
+_GEOGRAPHY = frozenset("""
+black red dead aegean adriatic ionian tyrrhenian caspian persian arabian bengal andaman tasman
+coral azov okhotsk barents kara laptev beaufort bering hormuz malacca bosphorus bosporus
+dardanelles gibraltar suez panama sahel sahara maghreb levant balkans balkan caucasus
+himalayas himalayan alps andes amazon danube nile euphrates tigris rhine mekong yangtze
+ganges indus volga sinai golan donbas crimea kuril kurils spratly paracel
+""".split())
+GENERIC_TERMS = GENERIC_TERMS | _COUNTRIES | _US_STATES | _GEOGRAPHY
 
 # Capitalised words that are titles, months or sentence furniture, not names
 _COMMON_CAPS = frozenset("""

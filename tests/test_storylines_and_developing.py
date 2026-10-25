@@ -445,3 +445,23 @@ def test_three_letter_acronyms_identify_a_storyline_1023(persp):
                 "Taipei Times", "east_asia", False, "e9"),
             art("PHP vulnerability: Asian firms rush out patches", "https://b.com/9", "Dawn", "south_asia", False, "e9")]
     assert persp._blindspot_candidates([story("Ukraine hits Moscow")], arts) == []
+
+
+def test_seas_and_regions_are_places_not_storylines_1025():
+    """10-25: 'Black' (from 'Black Sea drone strikes') keyed a storyline that
+    tied Bulgaria's presidential vote to the 10-24 Khoryv sinking, filled the
+    last DEVELOPING slot under the label 'Black' and pushed the Serbia election
+    update out of the issue. Seas, oceans and regions are places."""
+    from src.ai.storylines import StorylineIndex, distinctive_tokens
+    hist = [{"date": "2026-10-24", "stories": [], "story_terms": [],
+             "quick_hits": ["Romania blamed Russia for a drone strike that sank the cargo ship Khoryv in the "
+                            "Black Sea, killing one sailor and leaving three missing."],
+             "developing": [], "big_number": "", "blindspot": ""}]
+    idx = StorylineIndex(hist)
+    kinds = {"story", "quick_hit", "developing", "blindspot"}
+    assert idx.match("Bulgarians voted for president, with Iliana Iotova and Andrey Gyurov leading a field of "
+                     "27 candidates after deadly Black Sea drone strikes.", kinds=kinds) is None
+    m = idx.match("Divers reached the wreck of the Khoryv off Constanta.", kinds=kinds)
+    assert m and m[1] == "khoryv"
+    for place in ("Black Sea", "Red Sea", "South China Sea", "the Sahel", "Persian Gulf", "Strait of Hormuz"):
+        assert distinctive_tokens(place) == set(), place
