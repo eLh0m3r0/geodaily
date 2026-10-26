@@ -20,3 +20,11 @@ class TestSourceDisplayName(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+def test_folha_english_edition_domain_is_named_1026():
+    """10-26: the Brazil-runoff grid listed 'folha.com.br' as an outlet — the
+    English edition's domain differs from the feed host in sources.json."""
+    from src.newsletter.source_display import source_display_name
+    assert source_display_name("https://www1.folha.com.br/internacional/en/world/2026/10/lula-wins.shtml") == "Folha de S.Paulo"
+    assert source_display_name("https://www1.folha.uol.com.br/internacional/en/world/2026/10/lula-wins.shtml") == "Folha de S.Paulo"

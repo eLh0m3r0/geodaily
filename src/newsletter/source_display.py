@@ -38,6 +38,10 @@ _KNOWN_DOMAINS: Dict[str, str] = {
     "foreignpolicy.com": "Foreign Policy",
     "atlanticcouncil.org": "Atlantic Council",
     "ecfr.eu": "ECFR",
+    # Folha's English edition publishes on folha.com.br while sources.json
+    # names the feed host folha.uol.com.br (10-26: the grid listed the raw
+    # domain as an outlet)
+    "folha.com.br": "Folha de S.Paulo", "folha.uol.com.br": "Folha de S.Paulo",
     "gmfus.org": "German Marshall Fund",
     "crisisgroup.org": "International Crisis Group",
     "hrw.org": "Human Rights Watch",
