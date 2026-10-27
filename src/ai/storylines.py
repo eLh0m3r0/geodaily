@@ -17,6 +17,7 @@ days of covering it), and the perspective-grid member filter.
 """
 
 import re
+import unicodedata
 from dataclasses import dataclass, field
 from typing import Dict, Iterable, List, Optional, Sequence, Set
 
@@ -144,21 +145,38 @@ ayatollah bishop cardinal archbishop rabbi founder billionaire tycoon oligarch w
 rebel rebels militia junta regime opposition secretary-general director
 day days how why who what when live top big key hit hits say says set win ban bid cut cuts row
 aid ties talk new via per amid over under off out all one two six ten
+people children women men families residents workers soldiers troops civilians students voters
+citizens victims survivors journalists companies firms markets investors lawmakers senators
+cities towns countries thousands hundreds millions billions dozens several many more most least
+first second third last next early late total number percent cases toll killed dead deaths
+wounded injured missing arrested detained
 """.split())
 
 _CAP_SEQ = re.compile(r"\b([A-Z][\w'’.-]*(?:\s+[A-Z][\w'’.-]*){0,2})")
-_SENT_START = re.compile(r"(?:^|[.!?:;]\s+|\n)([A-Z][\w'’.-]*)")
+_SENT_START = re.compile(r"(?:^|[.!?:;]\s+|\s[—–-]\s+|\n)([A-Z][\w'’.-]*)")
+
+# Original spelling of names whose folded key differs ("aleksandar vucic" ->
+# "Aleksandar Vučić"), so labels keep their diacritics.
+_DISPLAY: Dict[str, str] = {}
+
+
+def _fold(text: str) -> str:
+    """Strip diacritics so 'Vučić' and 'Vucic', 'María' and 'Maria' are one
+    name (10-27: the 10-26 story's 'Aleksandar Vučić' did not match a quick
+    hit's 'Aleksandar Vucic' as a phrase, so the DEVELOPING label became the
+    first name alone, and 'María Corina Machado' fell back to 'Caracas')."""
+    return "".join(c for c in unicodedata.normalize("NFKD", text or "") if not unicodedata.combining(c))
 
 
 def _norm(term: str) -> str:
-    t = (term or "").lower().replace("’", "'").strip(" .,'\"")
+    t = _fold(term or "").lower().replace("’", "'").strip(" .,'\"")
     if t.endswith("'s"):
         t = t[:-2]
     return t
 
 
 def _tok(word: str) -> str:
-    w = word.lower().replace("’", "'").strip(" .,'\"")
+    w = _fold(word).lower().replace("’", "'").strip(" .,'\"")
     return w[:-2] if w.endswith("'s") else w
 
 
@@ -189,6 +207,9 @@ def distinctive_tokens(term: str, any_case: bool = False) -> Set[str]:
         if ((any_case or w[:1].isupper()) and (len(t) >= 4 or acronym) and t not in GENERIC_TERMS
                 and t not in _COMMON_CAPS and not t.isdigit()):
             name_tokens.add(t)
+            clean = w.strip(" .,'\"")
+            if _fold(clean) != clean:
+                _DISPLAY.setdefault(t, clean)
     out = set()
     # The phrase is the name without its furniture: titles and generic
     # actors at either end are trimmed, so "State Marco Rubio" (the
@@ -202,6 +223,9 @@ def distinctive_tokens(term: str, any_case: bool = False) -> Set[str]:
     phrase = _norm(" ".join(core))
     if len(core) > 1 and (name_tokens or re.search(r"\d", phrase)):
         out.add(phrase)
+        shown = " ".join(core).strip(" .,'\"")
+        if _fold(shown) != shown:
+            _DISPLAY.setdefault(phrase, shown)
     return out | name_tokens
 
 
@@ -316,6 +340,10 @@ class StorylineIndex:
 
 
 def label_for(term: str) -> str:
-    """Display label for a storyline term ("raf fairford" -> "RAF Fairford")."""
+    """Display label for a storyline term ("raf fairford" -> "RAF Fairford",
+    "aleksandar vucic" -> "Aleksandar Vučić" when the name was seen with its
+    diacritics)."""
+    if term in _DISPLAY:
+        return _DISPLAY[term]
     words = term.split()
     return " ".join(w.upper() if len(w) <= 3 and w.isalpha() else w.capitalize() for w in words)

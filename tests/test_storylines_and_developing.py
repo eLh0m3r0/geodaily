@@ -129,8 +129,10 @@ def test_quick_hit_in_running_storyline_moves_to_developing(analyzer):
 
 
 def test_quick_hit_restating_todays_story_is_dropped(analyzer):
-    issue = IssueContent(stories=[story("Spain calls snap election", terms=["Pedro Sánchez", "Spain"])],
-                         quick_hits=[QuickHit(text="Pedro Sánchez dissolved parliament on Monday.")])
+    # A leader's name is generic (Sánchez folds to the listed 'sanchez'), so
+    # the story needs an event name of its own to be recognised
+    issue = IssueContent(stories=[story("Spain calls snap election", terms=["Pedro Sánchez", "Cortes Generales"])],
+                         quick_hits=[QuickHit(text="Pedro Sánchez dissolved the Cortes Generales on Monday.")])
     analyzer._apply_storyline_rules(issue)
     assert issue.quick_hits == [] and issue.developing == []
 
@@ -465,3 +467,31 @@ def test_seas_and_regions_are_places_not_storylines_1025():
     assert m and m[1] == "khoryv"
     for place in ("Black Sea", "Red Sea", "South China Sea", "the Sahel", "Persian Gulf", "Strait of Hormuz"):
         assert distinctive_tokens(place) == set(), place
+
+
+def test_diacritics_and_dash_led_big_numbers_1027():
+    """10-27: the 10-26 story's 'Aleksandar Vučić' did not match a quick hit's
+    'Aleksandar Vucic' as a phrase, so the DEVELOPING label was the first name
+    'Aleksandar'; 'María Corina Machado' vs 'Maria Corina Machado' fell back to
+    'Caracas'; and the 10-26 big number '1,000+ — People French police
+    arrested …' made 'people' a storyline name that relabelled the Oleshky
+    ceasefire 'People' and dropped the day's big number."""
+    from src.ai.storylines import StorylineIndex, label_for, proper_terms
+    hist = [{"date": "2026-10-26",
+             "stories": ["Serbia's Vučić concedes defeat to a student-led movement",
+                         "Venezuela's Machado returns home to a government that has not called elections"],
+             "story_terms": [["Aleksandar Vučić", "Serbia", "Belgrade"],
+                             ["María Corina Machado", "Caracas", "Venezuela"]],
+             "quick_hits": ["Gunmen killed seven people and wounded 40 at a Greek Orthodox church in Karak, Jordan."],
+             "developing": [], "blindspot": "",
+             "big_number": "1,000+ — People French police arrested in a single day during a second weekend of protests."}]
+    idx = StorylineIndex(hist)
+    kinds = {"story", "quick_hit", "developing", "blindspot"}
+    m = idx.match("Serbia's Aleksandar Vucic said the new government will soon impose sanctions on Russia.", kinds=kinds)
+    assert m and m[1] == "aleksandar vucic" and label_for(m[1]) == "Aleksandar Vučić"
+    m = idx.match("Tens of thousands greeted Maria Corina Machado in Caracas, El Pais reported.", kinds=kinds)
+    assert m and m[1] == "maria corina machado"
+    assert "people" not in proper_terms("1,000+ — People French police arrested in a single day.")
+    assert idx.match("A US-brokered ceasefire took effect around Oleshky, letting aid reach about 2,000 stranded people.",
+                     kinds=kinds) is None
+    assert idx.match("60 — People killed in two attacks in Ethiopia's Oromia region.", days=3) is None
