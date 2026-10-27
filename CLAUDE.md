@@ -259,7 +259,7 @@ The AI analyzer now evaluates stories across multiple dimensions:
 - Validate with `src/processors/content_quality_validator.py`
 
 ### AI Integration
-- AI provider is configurable: `AI_PROVIDER=openrouter` (default, DeepSeek V4.1 Flash) or `anthropic`
+- AI provider is configurable: `AI_PROVIDER=openrouter` (default, DeepSeek V4.1 Flash, checkpoint 1017) or `anthropic`
 - Keys: `OPENROUTER_API_KEY` for OpenRouter, `ANTHROPIC_API_KEY` for Anthropic — the unused one can stay set, it is the rollback path
 - All calls go through `src/ai/llm_client.py`, which mimics the Anthropic Messages API response shape so `api_utils` and the analyzers need no provider-specific code
 - Switching providers is one env var; no code revert
@@ -347,7 +347,7 @@ The AI analyzer now evaluates stories across multiple dimensions:
 
 ### Known Issues & Workarounds
 - SSL certificate verification disabled for web scraping (line 121 in `web_scraper.py`) - required for some sources with certificate issues
-- AI model is `deepseek/deepseek-v4.1-flash` via OpenRouter since 2026-09-15, chosen in a blind test over 11 production days (beat claude-sonnet-5 by 8.7 points at 1/15th the cost); rollback is `AI_PROVIDER=anthropic AI_MODEL=claude-sonnet-5`
+- AI model is `deepseek/deepseek-v4.1-flash-1017` (the 2026-10-17 checkpoint) via OpenRouter since 2026-10-28, after a shadow run on 10-27 produced a complete issue in 102 s of analysis (the previous checkpoint took 260-1070 s that week); it is the default in `daily_newsletter.yml` and `ci.yml`, and a repository variable `AI_MODEL` overrides it. DeepSeek V4.1 Flash has run the newsletter since 2026-09-15, chosen in a blind test over 11 production days (beat claude-sonnet-5 by 8.7 points at 1/15th the cost). Rollback to the previous checkpoint: `AI_MODEL=deepseek/deepseek-v4.1-flash`; to Anthropic: `AI_PROVIDER=anthropic AI_MODEL=claude-sonnet-5`
 - Do NOT set a `reasoning` cap for DeepSeek — limiting it measurably lowered quality in the test
 - X.com threads generate CZECH and were never tested on DeepSeek; `X_THREADS_AI_PROVIDER`/`X_THREADS_MODEL` keep them on a separate model if needed. They use `X_THREADS_MAX_TOKENS=16000` (the old 4000 was eaten by Sonnet 5's adaptive thinking — 17 of 49 threads parsed in 09-12..09-29), a tolerant JSON parser with one retry, and their cost is recorded in the cost controller
 - ALLOW_OVERWRITE environment variable for debugging duplicate prevention

@@ -34,7 +34,7 @@ on:
       ai_model:
         description: 'Model id for the shadow run (OpenRouter id)'
         required: false
-        default: 'deepseek/deepseek-v4.1-flash'
+        default: 'deepseek/deepseek-v4.1-flash-1017'
 
 permissions:
   contents: read
@@ -79,7 +79,7 @@ jobs:
           OPENROUTER_API_KEY: ${{ github.event.inputs.shadow_ai == 'true' && secrets.OPENROUTER_API_KEY || '' }}
           LOG_LEVEL: INFO
           AI_PROVIDER: openrouter
-          AI_MODEL: ${{ github.event.inputs.ai_model || 'deepseek/deepseek-v4.1-flash' }}
+          AI_MODEL: ${{ github.event.inputs.ai_model || 'deepseek/deepseek-v4.1-flash-1017' }}
           AI_MAX_TOKENS: '16000'
           CLEANUP_ENABLED: 'false'
           AI_ARCHIVE_ENABLED: 'true'
@@ -103,7 +103,7 @@ jobs:
         if: always() && github.event.inputs.shadow_ai == 'true'
         run: |
           f="docs/newsletters/newsletter-$(date -u +%F).json"
-          echo "=== SHADOW ISSUE $f (model: ${{ github.event.inputs.ai_model || 'deepseek/deepseek-v4.1-flash' }}) ==="
+          echo "=== SHADOW ISSUE $f (model: ${{ github.event.inputs.ai_model || 'deepseek/deepseek-v4.1-flash-1017' }}) ==="
           python - "$f" <<'PY'
           import json, sys
           d = json.load(open(sys.argv[1], encoding='utf-8'))
