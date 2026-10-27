@@ -161,7 +161,7 @@ jobs:
         echo "ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }}" >> $GITHUB_ENV
         echo "OPENROUTER_API_KEY=${{ secrets.OPENROUTER_API_KEY }}" >> $GITHUB_ENV
         echo "AI_PROVIDER=${{ vars.AI_PROVIDER || 'openrouter' }}" >> $GITHUB_ENV
-        echo "AI_MODEL=${{ vars.AI_MODEL || 'deepseek/deepseek-v4.1-flash' }}" >> $GITHUB_ENV
+        echo "AI_MODEL=${{ vars.AI_MODEL || 'deepseek/deepseek-v4.1-flash-1017' }}" >> $GITHUB_ENV
 
         # Optional API keys
         if [ -n "${{ secrets.GEMINI_API_KEY }}" ]; then
