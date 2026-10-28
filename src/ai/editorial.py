@@ -93,6 +93,13 @@ _OFF_BRAND = re.compile(
     r"execution (?:chamber|protocol|drugs?|team|warrant)|"
     r"fraternity|sorority|serial killer|lottery|jackpot|reality (?:tv|show)|"
     r"box office|red carpet|celebrity|influencer|paparazzi|tabloid|"
+    # Sports never run, political angle or not (10-27 shadow and 10-28: a
+    # Chinese broadcaster dropping La Liga over a Mbappe remark)
+    r"footballer|striker|goalkeeper|olympian|la liga|premier league|champions league|"
+    r"serie a|bundesliga|ligue 1|spanish league|world cup|grand prix|formula (?:1|one)|"
+    r"nba|nfl|nhl|mlb|wimbledon|"
+    r"(?:football|soccer|basketball|baseball|cricket|tennis|rugby|golf|hockey) "
+    r"(?:league|club|team|star|player|match|tournament|coach|federation|broadcasts?)|"
     r"nobel prize in (?:medicine|physiology|physics|chemistry|literature|economics)|"
     r"nobel (?:medicine|physiology|physics|chemistry|literature) prize)\b", re.IGNORECASE)
 
