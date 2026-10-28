@@ -204,6 +204,13 @@ def distinctive_tokens(term: str, any_case: bool = False) -> Set[str]:
         # so the 10-23 blindspot offered the same event as the story the West
         # missed. Everyday agencies (FBI, IDF …) are generic actors.
         acronym = len(t) == 3 and w.strip(".,'\"").isupper() and t.isalpha()
+        # "US-brokered", "Russian-occupied", "China-backed": a generic actor
+        # glued to a lower-case word is an adjective, not a name (10-28:
+        # "us-brokered" keyed a storyline); "Russia-Africa" stays a name
+        parts = w.strip(".,'\"").split("-")
+        if len(parts) > 1 and _tok(parts[0]) in GENERIC_TERMS and any(
+                p_[:1].islower() for p_ in parts[1:]):
+            continue
         if ((any_case or w[:1].isupper()) and (len(t) >= 4 or acronym) and t not in GENERIC_TERMS
                 and t not in _COMMON_CAPS and not t.isdigit()):
             name_tokens.add(t)
@@ -345,5 +352,6 @@ def label_for(term: str) -> str:
     diacritics)."""
     if term in _DISPLAY:
         return _DISPLAY[term]
-    words = term.split()
-    return " ".join(w.upper() if len(w) <= 3 and w.isalpha() else w.capitalize() for w in words)
+    def cap(w: str) -> str:
+        return w.upper() if len(w) <= 3 and w.isalpha() else w.capitalize()
+    return " ".join("-".join(cap(p) for p in w.split("-")) for w in term.split())

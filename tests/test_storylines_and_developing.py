@@ -495,3 +495,12 @@ def test_diacritics_and_dash_led_big_numbers_1027():
     assert idx.match("A US-brokered ceasefire took effect around Oleshky, letting aid reach about 2,000 stranded people.",
                      kinds=kinds) is None
     assert idx.match("60 — People killed in two attacks in Ethiopia's Oromia region.", days=3) is None
+
+
+def test_hyphenated_adjectives_are_not_names_1028():
+    """10-28: 'US-brokered' keyed a storyline; 'Russia-africa' was the label."""
+    from src.ai.storylines import distinctive_tokens, label_for
+    assert distinctive_tokens("US-brokered") == set()
+    assert distinctive_tokens("Russian-occupied") == set()
+    assert "russia-africa" in distinctive_tokens("Russia-Africa summit")
+    assert label_for("russia-africa") == "Russia-Africa"

@@ -31,3 +31,15 @@ class TestOffBrandMarkers(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+def test_sports_with_a_political_angle_is_still_off_brand_1028():
+    """10-28: 'China's state broadcaster suspended Spanish league broadcasts and
+    three Chinese brands dropped Kylian Mbappe over a remark about Mao' ran as
+    a quick hit; sports never run."""
+    from src.ai.editorial import is_off_brand
+    assert is_off_brand("China's state broadcaster suspended Spanish league broadcasts and three "
+                        "Chinese brands dropped Kylian Mbappe over a remark about Mao.")
+    assert is_off_brand("Qatar's World Cup stadium deal draws labour-rights criticism.")
+    assert is_off_brand("The Arab League met in Cairo on Gaza reconstruction.") is None
+    assert is_off_brand("Bangladesh's Awami League was barred from the election.") is None
