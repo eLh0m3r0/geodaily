@@ -1,0 +1,266 @@
+{
+ "date": "2026-10-28",
+ "title": "Geopolitical Daily",
+ "email_subject": "Netanyahu falls short as Israel counts votes",
+ "preheader": "Eisenkot's bloc trails as Arab parties' 16 seats could decide who governs.",
+ "intro_text": "Good morning. It's Wednesday, October 28, 2026 — the 2 stories that matter most today, plus 3 updates on stories you're following and 4 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Israel's election leaves Netanyahu's bloc short of a majority",
+   "why_important": "With more than half the votes counted, Netanyahu's right-wing bloc leads with about 56 seats and is short of the 61 needed to govern. Gadi Eisenkot's opposition bloc trails at about 48, while Arab parties hold 16 seats that could decide who becomes prime minister.",
+   "what_overlooked": "Arab communities reported ballot shortages and police disruptions on election day, Haaretz reported. That is a hurdle for parties whose seats may now decide the government.",
+   "prediction": "Official results, expected within days, will show which bloc can assemble 61 seats.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/10/28/israeli-elections-exit-polls-show-no-clear-winner-as-netanyahu-and-opposition-bloc-neck-and-neck_6765641_4.html",
+    "https://www.middleeasteye.net/live-blog/live-blog-update/more-66-percent-ballots-counted-netanyahus-bloc-56-seats",
+    "https://foreignpolicy.com/2026/10/27/israel-election-netanyahu-likud-eisenkot-yashar-hamas-gaza-war/",
+    "https://www.haaretz.com/israel-news/elections/2026-10-27/ty-article/.premium/israels-elections-committee-rejects-likud-petition-to-extend-voting-hours/000001a1-7e6d-d71c-a5ff-7f6d9e8b0000"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 9,
+   "confidence": 0.9,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "political",
+   "coverage_counts": {
+    "western": 2,
+    "middle_east": 9,
+    "south_asia": 5,
+    "east_asia": 2,
+    "african": 1,
+    "middle_east_state": 4
+   },
+   "coverage_outlets": 10,
+   "signal_terms": [
+    "Israel",
+    "Netanyahu",
+    "Eisenkot",
+    "Knesset"
+   ]
+  },
+  {
+   "story_title": "Congo's Ebola outbreak passes 10,000 cases and spreads abroad",
+   "why_important": "Congo's Ebola outbreak has passed 10,000 confirmed cases and nearly 4,900 deaths. It is the fastest-growing outbreak on record, and cases have appeared in Kenya, Nigeria and Uganda. No approved vaccine or specific treatment exists for the Bundibugyo virus driving it.",
+   "what_overlooked": "Attacks on health workers in Congo and their strike over unpaid wages are slowing the response, The Hindu reported.",
+   "prediction": "The WHO will decide within days whether to declare a broader emergency as cases are confirmed in Uganda and Kenya.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.dailymaverick.co.za/article/2026-10-27-congos-ebola-cases-surpass-10000-as-fears-grow-of-wider-african-spread/",
+    "https://www.thehindu.com/news/international/congos-ebola-outbreak-tops-10000-cases-as-authorities-race-to-slow-spread-in-african-countries/article71630756.ece",
+    "https://www.dw.com/en/dr-congo-reports-over-10-000-ebola-cases-as-the-outbreak-spreads-abroad-with-no-approved-vaccine-or-specific-treatment-for-the-bundibugyo-virus/a-79773667?maca=en-rss-en-all-1573-rdf",
+    "https://www.koreatimes.co.kr/world/20261028/africa-ebola-outbreak-passes-10000-cases-mostly-in-dr-congo?utm_source=rss"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 7,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.85,
+   "region": "africa",
+   "actor_type": "state",
+   "event_type": "humanitarian",
+   "coverage_counts": {
+    "african": 4,
+    "south_asia": 2,
+    "western": 3,
+    "east_asia": 1,
+    "intl_org": 1,
+    "chinese_state": 1
+   },
+   "coverage_outlets": 9,
+   "signal_terms": [
+    "DR Congo",
+    "Ebola",
+    "Bundibugyo",
+    "WHO"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Finland's Stubb and Norway's Støre held a 'frank' call with Putin on ending the Ukraine war, drawing criticism from some EU leaders.",
+   "region": "europe",
+   "url": "https://www.themoscowtimes.com/2026/10/27/finnish-norwegian-leaders-call-putin-ahead-of-ukraine-peace-talks-a94093"
+  },
+  {
+   "text": "Taiwan's interior minister said police will step up efforts to stop China, gangs and local collaborators from meddling in the 2026 elections.",
+   "region": "indo_pacific",
+   "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/10/28/2003866744"
+  },
+  {
+   "text": "China's state broadcaster suspended Spanish league broadcasts and three Chinese brands dropped Kylian Mbappe over a remark about Mao Zedong.",
+   "region": "indo_pacific",
+   "url": "https://asia.nikkei.com/spotlight/sports/chinese-brands-drop-soccer-star-kylian-mbappe-for-offending-nation"
+  },
+  {
+   "text": "A Foreign Policy analysis says the US-Iran war has cost 800 American casualties and pushed US inflation to its highest since 2023.",
+   "region": "middle_east",
+   "url": "https://foreignpolicy.com/2026/10/26/iran-war-trump-options-escalation-blockade-hormuz/"
+  }
+ ],
+ "big_number": {
+  "value": "6%",
+  "context": "The cut in global emissions that current climate pledges would achieve by 2035, a UN report found, far short of what is needed.",
+  "url": "https://www.thehindu.com/news/international/current-climate-pledges-will-cut-emissions-by-just-6-by-2035-far-off-track-un-report/article71630763.ece"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "Foreign Policy",
+     "Le Monde"
+    ],
+    "article_count": 2,
+    "framing": "Frames the vote as a referendum on Netanyahu, stressing exit-poll uncertainty and no bloc securing a majority.",
+    "quote": "The partial results are likely to change, with several exit polls showing Benjamin Netanyahu's bloc and that of opposition candidate Gadi Eisenkot neck and neck, neither securing a majority.",
+    "quote_outlet": "Le Monde",
+    "quote_url": "https://www.lemonde.fr/en/international/article/2026/10/28/israeli-elections-exit-polls-show-no-clear-winner-as-netanyahu-and-opposition-bloc-neck-and-neck_6765641_4.html",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "CNA",
+     "South China Morning Post"
+    ],
+    "article_count": 2,
+    "framing": "Frames the election as a close contest, stressing turnout and uncertainty over coalition control.",
+    "quote": "More than half of the votes have been counted in the Israeli election, with Prime Minister Benjamin Netanyahu narrowly ahead of former military chief Gadi Eisenkot.",
+    "quote_outlet": "CNA",
+    "quote_url": "https://www.channelnewsasia.com/world/netanyahu-leads-israeli-election-vote-count-half-6499236",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Hindustan Times",
+     "The Hindu"
+    ],
+    "article_count": 5,
+    "framing": "Stresses coalition arithmetic and Netanyahu’s uncertain future, including Arab parties and Trump’s endorsement.",
+    "quote": "Opposition leaders Gadi Eisenkot and Naftali Bennett are challenging PM Netanyahu’s right-wing coalition, with opinion polls showing neither bloc assured of the 61 seats needed for a majority",
+    "quote_outlet": "The Hindu",
+    "quote_url": "https://www.thehindu.com/news/international/israel-holds-polls-amid-uncertainty-over-netanyahus-future-coalition-numbers/article71629859.ece",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Haaretz",
+     "Middle East Eye"
+    ],
+    "article_count": 9,
+    "framing": "Highlights Arab voter turnout and obstacles, plus Palestinian-led parties’ potential balance of power.",
+    "quote": "Arab communities report ballot shortages and police disruptions as Netanyahu sounds alarm over Arab turnout",
+    "quote_outlet": "Haaretz",
+    "quote_url": "https://www.haaretz.com/israel-news/elections/2026-10-27/ty-article/.premium/israels-elections-committee-rejects-likud-petition-to-extend-voting-hours/000001a1-7e6d-d71c-a5ff-7f6d9e8b0000",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east_state",
+    "outlets": [
+     "Anadolu Agency"
+    ],
+    "article_count": 4,
+    "framing": "Stresses Netanyahu’s bloc falling short of a majority, leaving Arab parties potential balance of power.",
+    "quote": "None of the projections give either bloc the 61 seats needed for a parliamentary majority",
+    "quote_outlet": "Anadolu Agency",
+    "quote_url": "https://www.aa.com.tr/en/politics/netanyahu-s-bloc-projected-to-win-57-seats-eisenkot-s-47-as-vote-count-continues-in-israeli-elections/4103259",
+    "state_affiliated": true,
+    "wire_copy": false
+   },
+   {
+    "perspective": "african",
+    "outlets": [
+     "Africanews"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   }
+  ],
+  "total_outlets": 10,
+  "counts": {
+   "western": 2,
+   "middle_east": 9,
+   "south_asia": 5,
+   "east_asia": 2,
+   "african": 1,
+   "middle_east_state": 4
+  },
+  "blindspot": "An American woman, Halima Salman, was convicted of receiving military training from Islamic State after being captured in Syria. The case matters globally for how countries prosecute and deter foreign ISIS recruits.",
+  "blindspot_url": "https://www.al-monitor.com/originals/2026/10/american-woman-convicted-getting-military-training-islamic-state",
+  "blindspot_outlets": [
+   "Al-Monitor",
+   "Hindustan Times",
+   "NDTV",
+   "The Straits Times"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "Flávio Bolsonaro",
+   "text": "Brazil's Flavio Bolsonaro leaves for US as Trump calls vote rigged.",
+   "region": "americas",
+   "url": "https://www.lemonde.fr/en/international/article/2026/10/27/brazil-court-orders-probe-into-foreign-funding-of-bolsonaro-campaign_6765410_4.html"
+  },
+  {
+   "storyline": "Russia-africa",
+   "text": "Delegations from 48 African countries gathered in Moscow for a Russia-Africa summit as Putin sought to expand influence on the continent.",
+   "region": "africa",
+   "url": "https://www.japantimes.co.jp/news/2026/10/28/world/politics/putin-africa-moscow-summit/"
+  },
+  {
+   "storyline": "Anthropic",
+   "text": "Anthropic's IPO filing warns of 'catastrophic or existential' risks from its AI as the company discloses soaring sales.",
+   "region": "global",
+   "url": "https://www.taipeitimes.com/News/biz/archives/2026/10/28/2003866722"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 11.32,
+   "avg_sentence_words": 18.4,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 10.93,
+   "rewrite_avg_sentence_words": 17.4,
+   "rewrite_fragment_share": 0.0
+  },
+  "editorial_actions": [
+   "Link fixed (South China Morning Post RSS -> Foreign Policy Magazine): A Foreign Policy analysis says the US-Iran war has cost 800 American c",
+   "Story demoted to DEVELOPING (running storyline 'flavio bolsonaro'): Brazil's Flavio Bolsonaro leaves for US as Trump calls vote rigged",
+   "Quick hit moved to DEVELOPING (running storyline 'russia-africa'): Delegations from 48 African countries gathered in Moscow for a Russia-",
+   "Quick hit moved to DEVELOPING (running storyline 'anthropic'): Anthropic's IPO filing warns of 'catastrophic or existential' risks fr",
+   "Quick hit dropped (running storyline 'aleksandar vucic'): Serbia's public broadcaster RTV apologized on air for years of one-sid",
+   "Quick hit dropped (running storyline 'us-brokered'): Ukraine's rights commissioner said no ceasefire violations were record"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 12235,
+  "analysis_output_tokens": 28613,
+  "analysis_cost_usd": 0.02074,
+  "analysis_seconds": 121.7,
+  "grid_cost_usd": 0.01135,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017"
+ }
+}

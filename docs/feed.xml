@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Tue, 27 Oct 2026 08:39:16 GMT</pubDate>
-        <lastBuildDate>Tue, 27 Oct 2026 08:39:16 GMT</lastBuildDate>
+        <pubDate>Wed, 28 Oct 2026 08:32:04 GMT</pubDate>
+        <lastBuildDate>Wed, 28 Oct 2026 08:32:04 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,19 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - October 28, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-28.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Wednesday, October 28, 2026 — the 2 stories that matter most today, plus 3 updates on stories you're following and 4 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Israel's election leaves Netanyahu's bloc short of a majority</strong>: With more than half the votes counted, Netanyahu's right-wing bloc leads with about 56 seats and is short of the 61 needed to govern. Gadi Eisenkot's opposition bloc trails at about 48, while Arab par...</li></ul><p><em>Published: October 28, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Wed, 28 Oct 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20261028</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-28.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - October 27, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-27.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Tuesday, October 27, 2026 — the 3 stories that matter most today, plus 3 updates on stories you're following and 4 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Israelis vote in an election that could end Netanyahu's rule</strong>: Israelis voted Tuesday for the first time since the October 7, 2023 attack. Polls suggest Prime Minister Benjamin Netanyahu's coalition may lose its majority to former army chief Gadi Eisenkot's bloc....</li></ul><p><em>Published: October 27, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -179,20 +192,6 @@
         <category><![CDATA[China]]></category>
         <category><![CDATA[Russia]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-19.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - October 18, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-18.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Sunday, October 18, 2026 — the 2 stories that matter most today, plus 2 updates on stories you're following and 6 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Israeli settlers attack European diplomats in the West Bank</strong>: Israeli settlers attacked a convoy of European diplomats and beat a visiting French mayor during the Palestinian olive harvest. Belgium says it will push for EU sanctions on those responsible. Secreta...</li></ul><p><em>Published: October 18, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sun, 18 Oct 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20261018</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <category><![CDATA[Europe]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-18.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
