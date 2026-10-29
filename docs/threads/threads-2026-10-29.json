@@ -1,0 +1,100 @@
+[
+  {
+    "thread_title": "Srážka vlaků ve Španělsku: 68 mrtvých",
+    "tweets": [
+      {
+        "number": 1,
+        "content": "1/7 🚨 Nejméně 68 mrtvých po srážce dvou vysokorychlostních vlaků u stanice Urda ve Španělsku. Nejhorší železniční neštěstí v Evropě od roku 2013 – a už druhé letos ve Španělsku.",
+        "char_count": 177
+      },
+      {
+        "number": 2,
+        "content": "2/7 📍 K tragédii došlo ve středu ráno v provincii Toledo. Dva vlaky jedoucí vysokou rychlostí se srazily čelně, záchranáři zasahují dodnes.",
+        "char_count": 139
+      },
+      {
+        "number": 3,
+        "content": "3/7 🔍 Ministr dopravy mluví o selhání počítačového systému, následovaném lidskou chybou. Kritici ale míří přímo na vládu a stav bezpečnosti železnic.",
+        "char_count": 149
+      },
+      {
+        "number": 4,
+        "content": "4/7 ⚡ Před ministerstvem dopravy protestovaly davy lidí, včetně krajně pravicových skupin. Požadovali rezignaci premiéra Sáncheze i ministra Puenteho. Policie nasadila slzný plyn.",
+        "char_count": 179
+      },
+      {
+        "number": 5,
+        "content": "5/7 🎯 Klíčová otázka: do 72 hodin musí vyšetřovatelé určit, který systém selhal. Pokud šlo o státem provozovanou infrastrukturu, politické dopady budou obrovské.",
+        "char_count": 161
+      },
+      {
+        "number": 6,
+        "content": "6/7 🌍 Pro ČR a střední Evropu je to varování – vysokorychlostní železnice se chystají i u nás. Otázka bezpečnosti signalizace a lidského faktoru bude klíčová i pro naše projekty.",
+        "char_count": 178
+      },
+      {
+        "number": 7,
+        "content": "7/7 💡 Dvě tragédie za jeden rok ve stejné zemi nejsou náhoda, ale systémový signál. Sledujme, jak Španělsko (a EU) na toto selhání zareagují. #Španělsko #bezpečnost #vlaky",
+        "char_count": 171
+      }
+    ],
+    "hashtags": [
+      "#Španělsko",
+      "#bezpečnost",
+      "#vlaky"
+    ],
+    "estimated_engagement": 8.7,
+    "main_topic": "train_crash",
+    "source_analysis_id": "Spain's second high-speed train crash this year kills at least 68",
+    "generated_at": "2026-10-29T08:31:02.975825"
+  },
+  {
+    "thread_title": "Trump: Schůzka Putin-Zelensky brzy?",
+    "tweets": [
+      {
+        "number": 1,
+        "content": "1/7 🚨 Trump tvrdí, že setkání Putina a Zelenského bude domluveno „velmi brzy“. Válka trvá už pátý rok a svět čeká na konkrétní krok k jejímu ukončení. Ale je to reálné, nebo jen další politické prohlášení? 🔍",
+        "char_count": 207
+      },
+      {
+        "number": 2,
+        "content": "2/7 📊 Zatím nepadlo žádné datum ani místo konání schůzky. Zelensky navíc vyjádřil obavy z plánovaného summitu USA-Rusko-Čína, který by se měl konat příští měsíc – bez jeho přímé účasti.",
+        "char_count": 185
+      },
+      {
+        "number": 3,
+        "content": "3/7 ⚡ Kreml zatím setkání nepotvrdil. Veškeré tvrzení zatím stojí jen na slovech Donalda Trumpa – Moskva mlčí, což vyvolává otázky o reálnosti celé iniciativy.",
+        "char_count": 159
+      },
+      {
+        "number": 4,
+        "content": "4/7 🌍 Pro Českou republiku a střední Evropu je to klíčové téma – jakýkoli posun v jednáních ovlivní bezpečnostní situaci v regionu, energetické dodávky i migrační tlaky.",
+        "char_count": 169
+      },
+      {
+        "number": 5,
+        "content": "5/7 🎯 Co sledovat: oficiální vyjádření Kremlu k účasti Putina na schůzce, a oznámení Bílého domu o termínu summitu USA-Rusko-Čína. To ukáže, zda je iniciativa reálná.",
+        "char_count": 166
+      },
+      {
+        "number": 6,
+        "content": "6/7 💡 Impact skóre této zprávy je 7/10, naléhavost 6/10 – jde o potenciálně významný diplomatický krok, ale zatím bez konkrétních záruk.",
+        "char_count": 136
+      },
+      {
+        "number": 7,
+        "content": "7/7 📈 Sledujte vývoj situace – každý den může přinést zásadní zprávu o budoucnosti konfliktu na Ukrajině. Co si myslíte, dojde ke skutečnému setkání? #Ukrajina #Rusko #geopolitika",
+        "char_count": 179
+      }
+    ],
+    "hashtags": [
+      "#Ukrajina",
+      "#Rusko",
+      "#geopolitika"
+    ],
+    "estimated_engagement": 7.5,
+    "main_topic": "Ukrajina",
+    "source_analysis_id": "Trump says a Putin-Zelensky meeting will be set up 'very soon'",
+    "generated_at": "2026-10-29T08:31:49.424083"
+  }
+]

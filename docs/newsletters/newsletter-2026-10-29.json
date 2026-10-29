@@ -1,0 +1,303 @@
+{
+ "date": "2026-10-29",
+ "title": "Geopolitical Daily",
+ "email_subject": "68 dead, and Spain asks who is to blame",
+ "preheader": "Minister blames a computer failure and human error; protesters want Sánchez out.",
+ "intro_text": "Good morning. It's Thursday, October 29, 2026 — the 3 stories that matter most today, plus 3 updates on stories you're following and 4 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Spain's second high-speed train crash this year kills at least 68",
+   "why_important": "Two high-speed trains collided near Urda station in Toledo province on Wednesday morning, killing at least 68 people. It was Europe's deadliest rail crash since 2013 and Spain's second this year. The transport minister pointed to a computer failure followed by human error, while critics attack the government over rail safety.",
+   "what_overlooked": "Protesters outside the transport ministry, including far-right groups, demanded that Prime Minister Pedro Sánchez and minister Óscar Puente resign, and police used tear gas.",
+   "prediction": "Investigators will identify the failed computer or signal system within 72 hours; whether the infrastructure was state-run will decide the political damage.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/10/28/spain-mourns-another-rail-disaster-less-than-a-year-after-the-adamuz-tragedy_6766399_4.html",
+    "https://english.elpais.com/spain/2026-10-28/the-crash-between-two-high-speed-trains-in-spain-in-images.html",
+    "https://www.dw.com/en/spain-train-crash-pm-sanchez-calls-for-investigation-as-3-days-of-mourning-begins/a-79792085?maca=en-rss-en-all-1573-rdf",
+    "https://www.hindustantimes.com/world-news/spain-train-crash-deaths-madrid-protests-outside-transport-ministry-calls-for-pm-sanchez-resignation-far-right-tear-gas-riot-police-puente-101793252114528.html"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 6,
+   "novelty_score": 6,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.9,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "humanitarian",
+   "coverage_counts": {
+    "western": 6,
+    "latam": 2,
+    "south_asia": 4,
+    "east_asia": 2,
+    "chinese_state": 2,
+    "russian_state": 2
+   },
+   "coverage_outlets": 16,
+   "signal_terms": [
+    "Toledo",
+    "Urda",
+    "Óscar Puente",
+    "Adamuz"
+   ]
+  },
+  {
+   "story_title": "Trump says a Putin-Zelensky meeting will be set up 'very soon'",
+   "why_important": "Trump said a meeting between Putin and Zelensky would be arranged 'very soon' to end the war, now in its fifth year. No date or venue has been given, and Zelensky is uneasy about a separate US-Russia-China summit planned for next month.",
+   "what_overlooked": "The Kremlin has not confirmed it will attend any Putin-Zelensky meeting; for now, the claim rests on Trump alone.",
+   "prediction": "A Kremlin statement on whether Putin will meet Zelensky, or a White House date for the US-Russia-China summit, would show if this is real.",
+   "impact_score": 7,
+   "sources": [
+    "https://meduza.io/en/news/2026/10/28/trump-says-he-hopes-to-meet-with-putin-and-zelensky-very-soon",
+    "https://www.dw.com/en/ukraine-s-zelenskyy-irked-by-us-russia-china-summit/a-79788616?maca=en-rss-en-all-1573-rdf",
+    "https://www.taipeitimes.com/News/world/archives/2026/10/29/2003866833"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 7,
+   "impact_dimension_score": 7,
+   "confidence": 0.72,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "russian_exile": 1,
+    "western": 1,
+    "east_asia": 1
+   },
+   "coverage_outlets": 3,
+   "signal_terms": [
+    "Vladimir Putin",
+    "Volodymyr Zelensky",
+    "Donald Trump",
+    "Oleshky"
+   ]
+  },
+  {
+   "story_title": "UN votes 130-17 to condemn Cuba embargo as US pressure erodes support",
+   "why_important": "The UN General Assembly voted 130-17, with 25 abstentions, to condemn the US embargo on Cuba for the 34th year. Support fell sharply from more than 160 votes last year, after Ambassador Mike Waltz led a US lobbying campaign.",
+   "what_overlooked": "The resolution does not bind anyone, so no US law changes; it serves as a scoreboard of which governments still side with Havana against Washington.",
+   "prediction": "Whether Washington penalizes any of the 130 countries that voted yes will show if its lobbying campaign has teeth.",
+   "impact_score": 6,
+   "sources": [
+    "https://responsiblestatecraft.org/cuba-united-nations/",
+    "https://www.premiumtimesng.com/news/headlines/921226-nigeria-other-countries-demand-end-to-us-blockade-of-cuba.html",
+    "https://www.scmp.com/news/world/americas/article/3372494/un-condemns-us-embargo-cuba-more-nations-sit-out-after-trump-pressure"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 5,
+   "scope_score": 6,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 6,
+   "confidence": 0.85,
+   "region": "americas",
+   "actor_type": "international_org",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "western": 2,
+    "african": 1,
+    "east_asia": 2,
+    "south_asia": 3,
+    "intl_org": 1,
+    "latam": 1,
+    "chinese_state": 1,
+    "middle_east_state": 1
+   },
+   "coverage_outlets": 10,
+   "signal_terms": [
+    "Cuba",
+    "UN General Assembly",
+    "Mike Waltz",
+    "embargo"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "The Federal Reserve held rates at 3.75-4.00% on a 10-2 vote days before the midterms, with inflation up on Iran-war fuel costs.",
+   "region": "americas",
+   "url": "https://english.elpais.com/economy-and-business/2026-10-28/the-federal-reserve-leaves-interest-rates-unchanged-less-than-a-week-before-the-midterms.html"
+  },
+  {
+   "text": "Putin called Elon Musk a 'real genius' for Starlink and said they are in close contact, as Russia builds its Rassvet satellite network.",
+   "region": "global",
+   "url": "https://www.bbc.co.uk/news/articles/c63djl148n3eo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "text": "Putin told African leaders at the Moscow summit that Russia was their best partner and accused the West of colonial exploitation and debt traps.",
+   "region": "africa",
+   "url": "https://www.scmp.com/news/world/russia-central-asia/article/3372483/russias-putin-woos-african-leaders-summit-slams-colonial-west"
+  },
+  {
+   "text": "EU lawmakers criticized new powers letting border agency Frontex monitor social media for illegal content, saying the mandate is too broad.",
+   "region": "europe",
+   "url": "https://www.politico.eu/article/eu-lawmakers-slam-new-border-force-powers-to-surveil-social-media-frontex/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
+  }
+ ],
+ "big_number": {
+  "value": "60+",
+  "context": "Countries that have imposed or are weighing age limits on minors' social media, as the EU moves toward bloc-wide rules.",
+  "url": "https://foreignpolicy.com/2026/10/27/social-media-age-restrictions-australia-china-india/"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW",
+     "France 24",
+     "Le Monde"
+    ],
+    "article_count": 6,
+    "framing": "Cause is suspected computer and human error; it stresses government investigation and fresh rail-safety questions.",
+    "quote": "The second such accident to strike Spain this year will raise fresh questions about the country's rail safety",
+    "quote_outlet": "France 24",
+    "quote_url": "https://www.france24.com/en/spain-high-speed-train-crash-kills-68-injures-over-100",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "The Korea Times",
+     "The Straits Times"
+    ],
+    "article_count": 2,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "chinese_state",
+    "outlets": [
+     "CGTN"
+    ],
+    "article_count": 2,
+    "framing": "It stresses repeated crashes on the same line and systemic concerns over Spain's high-speed rail safety.",
+    "quote": "Just nine months after a deadly railway accident near Adamuz in southern Spain, another high-speed train collision occurred on Wednesday on the same Madrid-Seville railway line",
+    "quote_outlet": "CGTN",
+    "quote_url": "https://news.cgtn.com/news/2026-10-29/Two-deadly-crashes-this-year-raise-concerns-over-Spain-s-rail-security-1RCZctXn1Sg/p.html?UTM_Source=cgtn&UTM_Medium=rss&UTM_Campaign=World",
+    "state_affiliated": true,
+    "wire_copy": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Hindustan Times",
+     "NDTV",
+     "The Hindu"
+    ],
+    "article_count": 4,
+    "framing": "It stresses human error and protests demanding the Spanish PM and transport minister resign over the crash.",
+    "quote": "The protesters were largely calling for the resignations of Spanish Prime Minister Pedro Sánchez and Spain's transport minister Óscar Puente.",
+    "quote_outlet": "Hindustan Times",
+    "quote_url": "https://www.hindustantimes.com/world-news/spain-train-crash-deaths-madrid-protests-outside-transport-ministry-calls-for-pm-sanchez-resignation-far-right-tear-gas-riot-police-puente-101793252114528.html",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "RT",
+     "TASS"
+    ],
+    "article_count": 2,
+    "framing": "It stresses casualty counts and suspected human error, without assigning political responsibility.",
+    "quote": "At least 68 people have reportedly been killed and more than 179 injured after two high-speed trains collided near Toledo, with human error suspected",
+    "quote_outlet": "RT",
+    "quote_url": "https://rt-english.com/news/647891-spain-train-sollision/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+    "state_affiliated": true,
+    "wire_copy": false
+   },
+   {
+    "perspective": "latam",
+    "outlets": [
+     "El País",
+     "MercoPress"
+    ],
+    "article_count": 2,
+    "framing": "It stresses human error by a rail operator and collision mechanics, focusing on operational cause over political blame.",
+    "quote": "The government has suggested the cause is human error by a railway traffic operator",
+    "quote_outlet": "El País",
+    "quote_url": "https://english.elpais.com/spain/2026-10-28/the-crash-between-two-high-speed-trains-in-spain-in-images.html",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 16,
+  "counts": {
+   "western": 6,
+   "latam": 2,
+   "south_asia": 4,
+   "east_asia": 2,
+   "chinese_state": 2,
+   "russian_state": 2
+  },
+  "blindspot": "Army Lt. Gen. Brett Sylvia has been removed from a top Pentagon planning post amid rising U.S.-Iran tensions. The removal comes as Washington reportedly weighs military action against Iran, affecting Middle East security.",
+  "blindspot_url": "https://timesofindia.indiatimes.com/world/us/hegseth-fires-top-pentagon-military-planner-as-trump-weighs-fresh-iran-strikes-report/articleshow/135288878.cms",
+  "blindspot_outlets": [
+   "Hindustan Times",
+   "Middle East Eye",
+   "South China Morning Post",
+   "The Hindu",
+   "Times of India"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "Flávio Bolsonaro",
+   "text": "Flávio Bolsonaro declared himself Brazil's rightful president from Miami, blaming Lula and the Supreme Court for an 'electoral coup'; Trump said he won't get involved.",
+   "region": "americas",
+   "url": "https://www.thehindu.com/news/international/flavio-bolsonaro-claims-he-is-brazils-true-leader-after-fleeing-to-us/article71639212.ece"
+  },
+  {
+   "storyline": "Belgrade",
+   "text": "Serbian police shot dead a knife-wielding teenager who attacked a guard outside Israel's embassy in Belgrade, the second such attack in two years.",
+   "region": "europe",
+   "url": "https://www.thehindu.com/news/international/policeman-kills-knife-attacker-outside-israeli-embassy-in-serbia/article71635091.ece"
+  },
+  {
+   "storyline": "Vučić",
+   "text": "Belgrade residents washed political graffiti off the walls as the student-led movement that beat Vučić prepared to take over the government.",
+   "region": "europe",
+   "url": "https://www.bangkokpost.com/world/3345300/cleanup-starts-as-serbian-students-movement-prepares-to-govern"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 11.17,
+   "avg_sentence_words": 20.1,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 11.11,
+   "rewrite_avg_sentence_words": 19.9,
+   "rewrite_fragment_share": 0.0
+  },
+  "editorial_actions": [
+   "Quick hit moved to DEVELOPING (running storyline 'flavio bolsonaro'): Flávio Bolsonaro declared himself Brazil's rightful president from Mia",
+   "Quick hit moved to DEVELOPING (running storyline 'belgrade'): Serbian police shot dead a knife-wielding teenager who attacked a guar",
+   "Quick hit moved to DEVELOPING (running storyline 'vucic'): Belgrade residents washed political graffiti off the walls as the stud",
+   "Quick hit dropped (running storyline 'policy'): Foreign Policy's Africa Brief reported new fighting in Ethiopia's Orom"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 12077,
+  "analysis_output_tokens": 27392,
+  "analysis_cost_usd": 0.01565,
+  "analysis_seconds": 188.7,
+  "grid_cost_usd": 0.00689,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017"
+ }
+}
