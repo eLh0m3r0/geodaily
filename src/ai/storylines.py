@@ -106,7 +106,30 @@ dardanelles gibraltar suez panama sahel sahara maghreb levant balkans balkan cau
 himalayas himalayan alps andes amazon danube nile euphrates tigris rhine mekong yangtze
 ganges indus volga sinai golan donbas crimea kuril kurils spratly paracel
 """.split())
-GENERIC_TERMS = GENERIC_TERMS | _COUNTRIES | _US_STATES | _GEOGRAPHY
+# Capitals stand for their governments in every story from that country
+# (10-29: "Belgrade" tied a knife attack outside Israel's embassy to the
+# Serbian election storyline and put two Serbia items in DEVELOPING)
+_CAPITALS = frozenset("""
+kabul tirana algiers luanda yerevan canberra vienna baku manama dhaka minsk brussels
+sofia phnom penh ottawa santiago bogota zagreb havana nicosia prague copenhagen quito cairo
+tallinn addis ababa helsinki tbilisi accra athens budapest reykjavik jakarta baghdad dublin
+rome tokyo amman astana nairobi pristina kuwait bishkek vientiane riga beirut tripoli vilnius
+skopje kuala lumpur bamako valletta nouakchott chisinau ulaanbaatar podgorica rabat maputo
+naypyidaw windhoek kathmandu amsterdam hague wellington managua niamey abuja oslo muscat
+islamabad panama lima manila warsaw lisbon doha bucharest kigali riyadh dakar belgrade
+bratislava ljubljana mogadishu pretoria seoul pyongyang madrid colombo khartoum juba stockholm
+bern damascus taipei dushanbe dodoma bangkok tunis ankara ashgabat kampala montevideo tashkent
+caracas hanoi sanaa lusaka harare asmara djibouti mbabane gaborone maseru lilongwe antananarivo
+yaounde kinshasa brazzaville libreville bangui ndjamena ouagadougou conakry freetown monrovia
+lome cotonou bissau banjul abidjan yamoussoukro nuuk delhi tehran ramallah
+""".split())
+# Outlet names quoted in the copy ("A Foreign Policy analysis says …",
+# 10-29: "policy" keyed a storyline that dropped an Ethiopia quick hit)
+_OUTLET_WORDS = frozenset("""
+policy times post journal tribune herald guardian telegraph review monitor gazette daily
+weekly news press observer standard express reuters afp bloomberg dawn hindu nikkei
+""".split())
+GENERIC_TERMS = GENERIC_TERMS | _COUNTRIES | _US_STATES | _GEOGRAPHY | _CAPITALS | _OUTLET_WORDS
 
 # Capitalised words that are titles, months or sentence furniture, not names
 _COMMON_CAPS = frozenset("""

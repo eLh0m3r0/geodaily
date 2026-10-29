@@ -504,3 +504,22 @@ def test_hyphenated_adjectives_are_not_names_1028():
     assert distinctive_tokens("Russian-occupied") == set()
     assert "russia-africa" in distinctive_tokens("Russia-Africa summit")
     assert label_for("russia-africa") == "Russia-Africa"
+
+
+def test_capitals_and_outlet_names_are_not_storylines_1029():
+    """10-29: 'Belgrade' tied an embassy knife attack to the Serbian election
+    storyline; 'policy' (from 'A Foreign Policy analysis says') dropped an
+    unrelated Ethiopia quick hit."""
+    from src.ai.storylines import StorylineIndex
+    hist = [{"date": "2026-10-28", "stories": ["Serbia's Vučić concedes defeat to a student-led movement"],
+             "story_terms": [["Aleksandar Vučić", "Belgrade"]],
+             "quick_hits": ["A Foreign Policy analysis says the US-Iran war has cost 800 American casualties."],
+             "developing": [], "big_number": "", "blindspot": ""}]
+    idx = StorylineIndex(hist)
+    kinds = {"story", "quick_hit", "developing", "blindspot"}
+    assert idx.match("Serbian police shot dead a teenager who attacked a guard outside Israel's embassy in Belgrade.",
+                     kinds=kinds) is None
+    assert idx.match("Foreign Policy's Africa Brief reported new fighting in Ethiopia's Amhara region.",
+                     kinds=kinds) is None
+    m = idx.match("Belgrade residents washed graffiti off as the movement that beat Vucic took office.", kinds=kinds)
+    assert m and m[1] in ("vucic", "aleksandar vucic")
