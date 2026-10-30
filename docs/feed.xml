@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Thu, 29 Oct 2026 08:31:49 GMT</pubDate>
-        <lastBuildDate>Thu, 29 Oct 2026 08:31:49 GMT</lastBuildDate>
+        <pubDate>Fri, 30 Oct 2026 08:37:44 GMT</pubDate>
+        <lastBuildDate>Fri, 30 Oct 2026 08:37:44 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,18 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - October 30, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-30.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Friday, October 30, 2026 — the 3 stories that matter most today, plus 1 update on stories you're following and 7 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Binance reports $6.3 billion breach and freezes about $3 billion</strong>: Binance, the world’s largest crypto exchange, said a breach affected about $6.3 billion and it had frozen roughly $3 billion. A blockchain intelligence firm blamed North Korean state hackers, Al Jazee...</li></ul><p><em>Published: October 30, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Fri, 30 Oct 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20261030</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-30.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - October 29, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-29.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Thursday, October 29, 2026 — the 3 stories that matter most today, plus 3 updates on stories you're following and 4 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Spain's second high-speed train crash this year kills at least 68</strong>: Two high-speed trains collided near Urda station in Toledo province on Wednesday morning, killing at least 68 people. It was Europe's deadliest rail crash since 2013 and Spain's second this year. The ...</li></ul><p><em>Published: October 29, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -178,19 +190,6 @@
         <category><![CDATA[Russia]]></category>
         <category><![CDATA[Europe]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-21.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - October 20, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-20.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Tuesday, October 20, 2026 — the 3 stories that matter most today, plus 1 update on stories you're following and 7 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump says Zelensky won't end the war; Ukraine says US arms are arriving late</strong>: Trump wrote that Zelensky 'doesn't want to end this war' and should send someone else to negotiate. He praised Russia's conduct, and Zelensky said US arms shipments are arriving late. Zelensky said Tr...</li></ul><p><em>Published: October 20, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Tue, 20 Oct 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20261020</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[Russia]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-20.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
