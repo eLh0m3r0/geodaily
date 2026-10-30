@@ -235,7 +235,10 @@ jobs:
         echo "DASHBOARD_AUTO_GENERATE=true" >> $GITHUB_ENV
         
         # X.com Thread Generation configuration
-        echo "X_THREADS_ENABLED=true" >> $GITHUB_ENV
+        # Vypnuto 2026-10-30: vlakna se nepublikovala a nereflektovala novy
+        # format (grid, blindspot, odkaz na vydani); Sonnet 5 stal ~9 centu
+        # denne, 4x vic nez cele vydani. Znovu zapnout = true.
+        echo "X_THREADS_ENABLED=false" >> $GITHUB_ENV
         # Vlakna jsou CESKY a na DeepSeeku netestovana - zustavaji na puvodnim
         # modelu, aby se menila jen jedna promenna. Az se cestina overi, staci
         # tyhle dva radky smazat (prevezmou pak hlavni AI_PROVIDER/AI_MODEL).

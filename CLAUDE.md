@@ -305,6 +305,7 @@ The AI analyzer now evaluates stories across multiple dimensions:
 - **HTML Preview**: Export to `docs/threads/` for manual review before posting
 - **Character Validation**: Automatic 280-char limit checking per tweet
 - **Mock Mode**: Test generation without API calls
+- **Disabled in production since 2026-10-30** (`X_THREADS_ENABLED=false` in `daily_newsletter.yml`): the threads were never posted, cost ~$0.095/day on Sonnet 5 (4x the whole issue), and the prompt sees only one story's title/why/overlooked/prediction — none of the grid, blindspot, DEVELOPING or a link to the issue — and invents 'impact on Czechia' filler. A rebuild should be one thread per issue from the lead's perspective grid + blindspot + issue link, on the main model after a Czech quality test
 - **Configuration**:
   - `X_THREADS_ENABLED=true` to enable
   - `X_THREADS_MAX_DAILY=4` max threads per day
@@ -349,7 +350,7 @@ The AI analyzer now evaluates stories across multiple dimensions:
 - SSL certificate verification disabled for web scraping (line 121 in `web_scraper.py`) - required for some sources with certificate issues
 - AI model is `deepseek/deepseek-v4.1-flash-1017` (the 2026-10-17 checkpoint) via OpenRouter since 2026-10-28, after a shadow run on 10-27 produced a complete issue in 102 s of analysis (the previous checkpoint took 260-1070 s that week); it is the default in `daily_newsletter.yml` and `ci.yml`, and a repository variable `AI_MODEL` overrides it. DeepSeek V4.1 Flash has run the newsletter since 2026-09-15, chosen in a blind test over 11 production days (beat claude-sonnet-5 by 8.7 points at 1/15th the cost). Rollback to the previous checkpoint: `AI_MODEL=deepseek/deepseek-v4.1-flash`; to Anthropic: `AI_PROVIDER=anthropic AI_MODEL=claude-sonnet-5`
 - Do NOT set a `reasoning` cap for DeepSeek — limiting it measurably lowered quality in the test
-- X.com threads generate CZECH and were never tested on DeepSeek; `X_THREADS_AI_PROVIDER`/`X_THREADS_MODEL` keep them on a separate model if needed. They use `X_THREADS_MAX_TOKENS=16000` (the old 4000 was eaten by Sonnet 5's adaptive thinking — 17 of 49 threads parsed in 09-12..09-29), a tolerant JSON parser with one retry, and their cost is recorded in the cost controller
+- X.com threads (disabled since 2026-10-30) generate CZECH and were never tested on DeepSeek; `X_THREADS_AI_PROVIDER`/`X_THREADS_MODEL` keep them on a separate model if needed. They use `X_THREADS_MAX_TOKENS=16000` (the old 4000 was eaten by Sonnet 5's adaptive thinking — 17 of 49 threads parsed in 09-12..09-29), a tolerant JSON parser with one retry, and their cost is recorded in the cost controller
 - ALLOW_OVERWRITE environment variable for debugging duplicate prevention
 - Archive cleanup required for long-running installations to manage disk space
 
