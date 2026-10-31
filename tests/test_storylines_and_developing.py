@@ -547,3 +547,20 @@ def test_backup_big_number_runs_only_when_the_first_is_dropped_1031(analyzer):
                          big_number_backup=BigNumber("Thousands", "Protesters in the streets."))
     analyzer._apply_editorial_rules(issue, [])
     assert issue.big_number is None
+
+
+def test_first_names_and_one_digit_figures_1031(analyzer):
+    """10-31 shadow run: 'john' dropped a Ghana quick hit as a running
+    storyline, and '3 drones' was dropped because some other '3' was in the
+    issue."""
+    from src.ai.storylines import StorylineIndex, distinctive_tokens
+    idx = StorylineIndex([{"date": "2026-10-30", "stories": [], "story_terms": [],
+                           "quick_hits": ["Hong Kong leader John Lee apologized after the housing inquiry."],
+                           "developing": [], "big_number": "", "blindspot": ""}])
+    assert idx.match("Ghana's President John Mahama said talks with Russia on a nuclear plant are advanced.",
+                     kinds={"story", "quick_hit", "developing", "blindspot"}) is None
+    assert "mahama" in distinctive_tokens("John Mahama")
+    issue = IssueContent(stories=[story("Fresh lead", why="Three ministers resigned; 3 parties left the coalition.")],
+                         big_number=BigNumber("3", "Drones the coalition says it destroyed over the Mecca region."))
+    analyzer._apply_editorial_rules(issue, [])
+    assert issue.big_number is not None
