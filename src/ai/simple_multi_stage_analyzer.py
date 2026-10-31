@@ -376,13 +376,18 @@ Return this EXACT JSON structure — a single JSON object, no other text:
     "value": "35%",
     "context": "One sentence: what this number is and why it is striking. Max 25 words.",
     "article_index": 12
+  }},
+  "big_number_backup": {{
+    "value": "1.2 million",
+    "context": "Same rules, from a DIFFERENT event than big_number. Used only if big_number cannot run.",
+    "article_index": 31
   }}
 }}
 
 CONTENT RULES:
 1. big_stories: exactly the number of deep stories requested, ranked by geopolitical consequence — most consequential FIRST. Each must cover a DIFFERENT event. The first is THE story of the day — the one a busy reader must know; give it your fullest why_important. For stories after the first, keep why_important to max 50 words. The ranking and the scores must agree: no story may have a higher impact_score than a story ranked above it.
 2. quick_hits: 8 items, never about a story or storyline the reader already got (listed above), each about a DIFFERENT event than ALL of the big_stories and than each other — never restate any selected story as a quick hit, not even from a different angle — and never a rerun of a quick hit from recent issues (a follow-up is fine only when it states the new fact). Every quick hit must involve a government, an international organization, an armed group or a cross-border consequence, and must NAME the actor ("Japan's foreign ministry protested…", never "Leaders visited…" or "Officials said…"); science prizes, domestic health alerts and markets news without a state actor do not qualify. Together they must span at least 4 distinct regions — this is the reader's "I'm caught up on the world" section, so favor geographic spread (Africa, Latin America and Asia are chronically under-covered; include them when the material exists).
-3. big_number: one genuinely striking, verifiable figure taken from one of the articles, about something NOT already covered by a story or quick hit in this issue (a number from the big story repeated as the big number wastes the slot) and not used in recent issues. The figure must describe TODAY's event itself — never background from an earlier year ("6% vote share in 2024") or a past disaster's toll. If no such number exists, use null.
+3. big_number: one genuinely striking, verifiable figure taken from one of the articles, about something NOT already covered by a story or quick hit in this issue (a number from the big story repeated as the big number wastes the slot) and not used in recent issues. The figure must describe TODAY's event itself — never background from an earlier year ("6% vote share in 2024") or a past disaster's toll. If no such number exists, use null. big_number_backup follows the same rules but must come from a DIFFERENT event than big_number (and than the stories); it runs only if big_number has to be dropped.
 4. NO sports, entertainment, celebrity or human-interest items, and NO single-country domestic crime, court cases, executions, campus scandals, accidents or space launches ANYWHERE in the issue — not as a story, not as a quick hit, not as the big number — unless the event has direct geopolitical consequences (state action, sanctions, boycotts, diplomatic fallout, cross-border impact). An athlete retiring, a film winning awards, a botched execution in one US state or a university fraternity case is never news for this brief; a world-roundup item must matter beyond its own country's borders. Sports never run, not even with a political angle (a broadcaster dropping a football league, a sponsor dropping a player, a tournament boycott).
 5. All scores integers 1-10 — use the whole scale. impact_score 9-10: changes the course of a war, a great-power relationship or the world economy (a few times a month, not daily); 7-8: a major national or regional development; 5-6: notable but contained. article_index values must reference the list above.
 6. Return ONLY the raw JSON object — no markdown, no explanations, no code blocks.
@@ -553,7 +558,7 @@ FIELD DEFINITIONS:
         # Quick hits and the big number: the link must be about the text.
         # The model's article_index is sometimes off (10-06 shadow runs linked
         # a 'super El Nino' quick hit to a pre-COP fossil-fuel article twice).
-        for item in list(issue.quick_hits) + ([issue.big_number] if issue.big_number else []):
+        for item in list(issue.quick_hits) + [b for b in (issue.big_number, getattr(issue, 'big_number_backup', None)) if b]:
             text = getattr(item, 'text', None) or f"{getattr(item, 'value', '')} {getattr(item, 'context', '')}"
             better = self._better_link(text, by_url.get(item.url), articles)
             if better is not None:
@@ -598,37 +603,21 @@ FIELD DEFINITIONS:
 
         self._apply_storyline_rules(issue)
 
-        # Big number: must add something the issue doesn't already say
-        bn = issue.big_number
-        if bn:
-            issue_texts = ([f"{s.story_title} {s.why_important} {s.what_overlooked}" for s in issue.stories]
-                           + [h.text for h in issue.quick_hits])
-            bn_text = f"{bn.value} {bn.context}"
-            bn_figures = numbers_in(bn.value)
-            reason = None
-            story_urls = {u for s in issue.stories for u in (s.sources or [])}
-            story_clusters = {getattr(by_url[u], 'cluster_id', None) for u in story_urls if u in by_url} - {None}
-            bn_article = by_url.get(bn.url)
-            if bn_figures and any(bn_figures & numbers_in(t) for t in issue_texts):
-                reason = "figure already in the issue"
-            elif bn.url and (bn.url in story_urls or
-                             (bn_article and getattr(bn_article, 'cluster_id', None) in story_clusters)):
-                reason = "same event as a story"
-            elif any(overlap(bn_text, t) >= 0.6 for t in issue_texts):
-                reason = "restates a story or quick hit"
-            elif is_repeat(bn_text, history_texts(self.history, "big_number", "quick_hits")):
-                reason = "rerun of a recent issue"
-            elif is_off_brand(bn_text):
-                reason = f"off-brand: {is_off_brand(bn_text)}"
-            elif earlier_year(bn.context):
-                reason = f"background figure from {earlier_year(bn.context)}, not today's event"
-            elif not re.search(r"\d", bn.value or ""):
-                reason = "not a figure"
-            elif (getattr(self, "storylines", None) or StorylineIndex([])).match(bn_text, days=3):
-                reason = "part of a running storyline"
+        # Big number: must add something the issue doesn't already say. The
+        # backup candidate runs only when the first one is dropped.
+        candidates = [b for b in (issue.big_number, getattr(issue, 'big_number_backup', None)) if b]
+        issue.big_number = None
+        for rank, bn in enumerate(candidates):
+            reason = self._big_number_reason(bn, issue, by_url)
             if reason:
-                self._note(f"Big number dropped ({reason}): {bn.value} — {bn.context[:60]}")
-                issue.big_number = None
+                self._note(f"Big number{' backup' if rank else ''} dropped ({reason}): "
+                           f"{bn.value} — {bn.context[:60]}")
+                continue
+            if rank:
+                self._note(f"Big number backup used: {bn.value} — {bn.context[:60]}")
+            issue.big_number = bn
+            break
+        issue.big_number_backup = None
 
         # Ranking sanity: order is editorial, but flag a contradiction
         for i in range(1, len(issue.stories)):
@@ -659,6 +648,35 @@ FIELD DEFINITIONS:
             return 0.0
         art_words = content_words(f"{article.title} {(article.summary or '')[:400]}", stem=True)
         return len(words & art_words) / len(words)
+
+    def _big_number_reason(self, bn, issue, by_url) -> Optional[str]:
+        """Why this big number cannot run, or None."""
+        issue_texts = ([f"{s.story_title} {s.why_important} {s.what_overlooked}" for s in issue.stories]
+                       + [h.text for h in issue.quick_hits]
+                       + [d.text for d in getattr(issue, 'developing', []) or []])
+        bn_text = f"{bn.value} {bn.context}"
+        bn_figures = numbers_in(bn.value)
+        story_urls = {u for s in issue.stories for u in (s.sources or [])}
+        story_clusters = {getattr(by_url[u], 'cluster_id', None) for u in story_urls if u in by_url} - {None}
+        bn_article = by_url.get(bn.url)
+        if bn_figures and any(bn_figures & numbers_in(t) for t in issue_texts):
+            return "figure already in the issue"
+        if bn.url and (bn.url in story_urls or
+                       (bn_article and getattr(bn_article, 'cluster_id', None) in story_clusters)):
+            return "same event as a story"
+        if any(overlap(bn_text, t) >= 0.6 for t in issue_texts):
+            return "restates a story or quick hit"
+        if is_repeat(bn_text, history_texts(self.history, "big_number", "quick_hits")):
+            return "rerun of a recent issue"
+        if is_off_brand(bn_text):
+            return f"off-brand: {is_off_brand(bn_text)}"
+        if earlier_year(bn.context):
+            return f"background figure from {earlier_year(bn.context)}, not today's event"
+        if not re.search(r"\d", bn.value or ""):
+            return "not a figure"
+        if (getattr(self, "storylines", None) or StorylineIndex([])).match(bn_text, days=3):
+            return "part of a running storyline"
+        return None
 
     def _better_link(self, text, current, articles):
         """An article that matches `text` clearly better than its current
@@ -910,20 +928,19 @@ FIELD DEFINITIONS:
                         storyline=label[:40], text=text, region=item.get('region', 'global'),
                         url=self._article_url(item.get('article_index'), articles)))
 
-            big_number = None
-            bn = data.get('big_number')
-            if isinstance(bn, dict) and bn.get('value') and bn.get('context'):
-                big_number = BigNumber(
-                    value=str(bn['value']).strip(),
-                    context=str(bn['context']).strip(),
-                    url=self._article_url(bn.get('article_index'), articles),
-                )
+            def _bn(raw):
+                if isinstance(raw, dict) and raw.get('value') and raw.get('context'):
+                    return BigNumber(value=str(raw['value']).strip(), context=str(raw['context']).strip(),
+                                     url=self._article_url(raw.get('article_index'), articles))
+                return None
+            big_number = _bn(data.get('big_number'))
+            big_number_backup = _bn(data.get('big_number_backup'))
 
             email_subject = str(data.get('email_subject') or "").strip().strip('"')[:60]
             preheader = str(data.get('preheader') or "").strip().strip('"')[:110]
 
             return IssueContent(stories=stories, quick_hits=quick_hits, big_number=big_number,
-                                developing=developing,
+                                big_number_backup=big_number_backup, developing=developing,
                                 email_subject=email_subject, preheader=preheader)
 
         except Exception as e:

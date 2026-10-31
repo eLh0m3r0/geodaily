@@ -230,6 +230,9 @@ class IssueContent:
     stories: List[AIAnalysis] = field(default_factory=list)
     quick_hits: List[QuickHit] = field(default_factory=list)
     big_number: Optional[BigNumber] = None
+    # A second candidate from a different event, published only when the
+    # screens drop the first (10-25, 10-27, 10-31 went out with no big number)
+    big_number_backup: Optional[BigNumber] = None
     developing: List[DevelopingItem] = field(default_factory=list)
     # Inbox craft: a dedicated short subject (not the headline) and a
     # preheader teaser — subject/headline/snippet must not repeat each other

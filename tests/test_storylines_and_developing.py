@@ -523,3 +523,27 @@ def test_capitals_and_outlet_names_are_not_storylines_1029():
                      kinds=kinds) is None
     m = idx.match("Belgrade residents washed graffiti off as the movement that beat Vucic took office.", kinds=kinds)
     assert m and m[1] in ("vucic", "aleksandar vucic")
+
+
+def test_backup_big_number_runs_only_when_the_first_is_dropped_1031(analyzer):
+    """10-25, 10-27 and 10-31 went out with no big number: the only candidate
+    was dropped (running storyline, figure already in the issue)."""
+    issue = IssueContent(stories=[story("Fresh lead")],
+                         big_number=BigNumber("Hundreds", "People quarantined after a plague death in Siberia."),
+                         big_number_backup=BigNumber("1.2 million", "Barrels a day Libya restored after the oilfield blockade ended."))
+    analyzer._apply_editorial_rules(issue, [])
+    assert issue.big_number and issue.big_number.value == "1.2 million"
+    assert issue.big_number_backup is None
+    assert any("backup used" in a for a in analyzer.meta.get("editorial_actions", []))
+
+    issue = IssueContent(stories=[story("Fresh lead")],
+                         big_number=BigNumber("4,000", "Ebola deaths in eastern Congo since May."),
+                         big_number_backup=BigNumber("1.2 million", "Barrels a day Libya restored after the oilfield blockade ended."))
+    analyzer._apply_editorial_rules(issue, [])
+    assert issue.big_number.value == "4,000"
+
+    issue = IssueContent(stories=[story("Fresh lead")],
+                         big_number=BigNumber("Hundreds", "People quarantined after a plague death in Siberia."),
+                         big_number_backup=BigNumber("Thousands", "Protesters in the streets."))
+    analyzer._apply_editorial_rules(issue, [])
+    assert issue.big_number is None
