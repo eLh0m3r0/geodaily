@@ -129,6 +129,32 @@ _OUTLET_WORDS = frozenset("""
 policy times post journal tribune herald guardian telegraph review monitor gazette daily
 weekly news press observer standard express reuters afp bloomberg dawn hindu nikkei
 """.split())
+# Common first names alone identify nobody (10-31 shadow run: "john" tied a
+# Ghana nuclear-plant quick hit to an earlier item and dropped it). They are
+# never a name token on their own but stay part of a full name's phrase
+# ("María Corina Machado", "John Mahama")
+_FIRST_NAMES = frozenset("""
+john james david michael robert william richard joseph thomas charles christopher daniel
+paul mark george steven andrew peter kenneth anthony kevin brian edward ronald timothy
+jason jeffrey ryan jacob gary nicholas eric jonathan stephen larry justin scott brandon
+benjamin samuel frank gregory raymond alexander patrick jack dennis jerry tyler aaron
+henry adam nathan douglas zachary kyle walter ethan jeremy harold keith christian roger
+noah gerald carl terry sean austin arthur lawrence jesse dylan bryan joe jordan billy
+bruce albert willie gabriel logan alan juan wayne roy ralph randy eugene vincent russell
+louis philip bobby johnny bradley mary patricia jennifer linda elizabeth barbara susan
+jessica sarah karen nancy lisa betty margaret sandra ashley kimberly emily donna michelle
+carol amanda dorothy melissa deborah stephanie rebecca sharon laura cynthia kathleen amy
+angela shirley anna brenda pamela emma nicole helen samantha katherine christine debra
+rachel carolyn janet catherine maria heather diane ruth julie olivia joyce virginia
+victoria kelly lauren christina joan evelyn judith megan andrea cheryl hannah jacqueline
+martha gloria teresa ann sara madison frances kathryn janice jean abigail alice judy
+sophia grace denise amber doris marilyn danielle beverly isabella theresa diana natalie
+brittany charlotte marie kayla alexis lori mohammed muhammad mohamed ahmed ahmad ali
+hassan hussein omar abdul abdullah ibrahim mustafa yusuf khalid hamid mahmoud jose carlos
+luis miguel antonio francisco pedro manuel jorge ana sergio ivan igor olga elena
+natalia viktor vladimir alexei andrei dmitri mikhail nikolai oleksandr volodymyr wang li
+zhang liu chen yang huang zhao kim lee park
+""".split())
 GENERIC_TERMS = GENERIC_TERMS | _COUNTRIES | _US_STATES | _GEOGRAPHY | _CAPITALS | _OUTLET_WORDS
 
 # Capitalised words that are titles, months or sentence furniture, not names
@@ -235,7 +261,7 @@ def distinctive_tokens(term: str, any_case: bool = False) -> Set[str]:
                 p_[:1].islower() for p_ in parts[1:]):
             continue
         if ((any_case or w[:1].isupper()) and (len(t) >= 4 or acronym) and t not in GENERIC_TERMS
-                and t not in _COMMON_CAPS and not t.isdigit()):
+                and t not in _COMMON_CAPS and t not in _FIRST_NAMES and not t.isdigit()):
             name_tokens.add(t)
             clean = w.strip(" .,'\"")
             if _fold(clean) != clean:
