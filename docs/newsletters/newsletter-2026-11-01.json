@@ -1,0 +1,223 @@
+{
+ "date": "2026-11-01",
+ "title": "Geopolitical Daily",
+ "email_subject": "Iran sets two-day terms to reopen Hormuz",
+ "preheader": "Trump says US still has one or two targets in Iran as Khamenei warns of response.",
+ "intro_text": "Good morning. It's Sunday, November 01, 2026 — the 2 stories that matter most today, plus 3 updates on stories you're following and 4 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Iran says Strait of Hormuz can reopen in two days if US accepts conditions",
+   "why_important": "Iran's foreign minister said the Strait of Hormuz could reopen within two days. That would happen if Washington recognizes a new shipping route agreed with Oman and closes other routes. The strait is the world's most important oil bottleneck, and reopening it would ease energy markets and lower war risk.",
+   "what_overlooked": "The offer is conditional and has no public US response. Iran is also debating whether to keep its ban on nuclear weapons if fighting resumes.",
+   "prediction": "A US public response to Iran's conditions within 72 hours: acceptance would signal less tension; silence would leave Hormuz closed.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.middleeasteye.net/live-blog/live-blog-update/morning-update-657",
+    "https://tass.com/world/2211373",
+    "https://foreignpolicy.com/2026/10/30/life-in-strait-of-hormuz-bandar-abbas/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 9,
+   "novelty_score": 8,
+   "credibility_score": 7,
+   "impact_dimension_score": 9,
+   "confidence": 0.8,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "western": 1,
+    "middle_east": 2,
+    "russian_state": 1
+   },
+   "coverage_outlets": 3,
+   "signal_terms": [
+    "Strait of Hormuz",
+    "Abbas Araghchi",
+    "Oman",
+    "Iran"
+   ]
+  },
+  {
+   "story_title": "Germany's Gen Z protests turn violent as rioters loot Frankfurt stores",
+   "why_important": "Tens of thousands marched in 34 German cities demanding better education and lower living costs. The daytime protests were largely peaceful, but hooded rioters looted stores in Frankfurt at night, part of a wave of youth-led unrest across Europe.",
+   "what_overlooked": "The looting overshadowed the demonstrations, and no nationwide arrest or injury count was immediately available.",
+   "prediction": "Police and organizers' next moves in Frankfurt within 72 hours; new clashes or a peaceful follow-up will show whether the movement stays mass.",
+   "impact_score": 6,
+   "sources": [
+    "https://www.dw.com/en/germany-s-gen-z-protests-disrupted-by-violence-on-saturday/live-79814694?maca=en-rss-en-all-1573-rdf",
+    "https://www.aljazeera.com/video/newsfeed/2026/11/1/germany-gen-z-protests-education-military-service?traffic_source=rss",
+    "https://www.koreatimes.co.kr/world/20261101/rioters-loot-stores-in-frankfurt-as-gen-z-led-protests-in-germany-turn-violent?utm_source=rss",
+    "https://nation.africa/kenya/news/world/gen-z-led-protests-in-germany-turn-violent-as-rioters-loot-stores-in-frankfurt--5654046"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 5,
+   "novelty_score": 6,
+   "credibility_score": 9,
+   "impact_dimension_score": 6,
+   "confidence": 0.9,
+   "region": "europe",
+   "actor_type": "mixed",
+   "event_type": "political",
+   "coverage_counts": {
+    "western": 1,
+    "middle_east": 1,
+    "east_asia": 2,
+    "african": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 6,
+   "signal_terms": [
+    "Frankfurt",
+    "Gen Z",
+    "Germany",
+    "education costs"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "London police arrested 139 people outside the US embassy for supporting Palestine Action, which Britain has banned as a terrorist group.",
+   "region": "europe",
+   "url": "https://www.theguardian.com/uk-news/2026/oct/31/protest-against-palestine-action-ban-outside-us-embassy-in-london"
+  },
+  {
+   "text": "UK Prime Minister Andy Burnham said he is open to a formal apology for Britain's slave trade but ruled out financial reparations.",
+   "region": "europe",
+   "url": "https://www.politico.eu/article/andy-burnham-open-to-formal-apology-for-britain-slave-trade/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
+  },
+  {
+   "text": "Bolivia declared a state of emergency over El Nino, with drought affecting 78,000 families and killing more than 75,000 cattle.",
+   "region": "americas",
+   "url": "https://www.straitstimes.com/world/bolivia-declares-state-of-emergency-over-el-nino"
+  },
+  {
+   "text": "Brazil's Lula da Silva won the presidential runoff with nearly 52% after trailing by 2.2 million votes in the first round.",
+   "region": "americas",
+   "url": "https://globalvoices.org/2026/10/30/how-the-streets-and-a-social-media-army-led-lula-to-a-historic-win-in-brazil/"
+  }
+ ],
+ "big_number": {
+  "value": "10 minutes",
+  "context": "Trump said the US could hit remaining Iranian nuclear sites, including Pickaxe Mountain, in that time.",
+  "url": "https://www.koreatimes.co.kr/world/20261101/trump-says-us-still-has-to-take-care-of-one-or-two-targets-in-iran?utm_source=rss"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "Foreign Policy"
+    ],
+    "article_count": 1,
+    "framing": "Frames war as an ongoing threat to Iranians, stressing civilian fear and soldiers’ duty to defend the country.",
+    "quote": "I know he could be killed at any moment, and that scares me, but he’s a soldier.",
+    "quote_outlet": "Foreign Policy",
+    "quote_url": "https://foreignpolicy.com/2026/10/30/life-in-strait-of-hormuz-bandar-abbas/",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Middle East Eye"
+    ],
+    "article_count": 2,
+    "framing": "Treats Hormuz reopening as contingent on US concessions, stressing Iran’s terms: sanctions relief and recognition of a new route.",
+    "quote": "Iranian Foreign Minister Abbas Araghchi has said Hormuz could be reopened within two days if Washington agrees to a set of conditions",
+    "quote_outlet": "Middle East Eye",
+    "quote_url": "https://www.middleeasteye.net/live-blog/live-blog-update/morning-update-657",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "TASS"
+    ],
+    "article_count": 1,
+    "framing": "Frames Iran as ready to reopen Hormuz in a US deal, stressing Iran’s demands for route recognition.",
+    "quote": "Iranian Foreign Minister Abbas Araghchi noted that Iran demands recognition of the shipping route in the Strait of Hormuz",
+    "quote_outlet": "TASS",
+    "quote_url": "https://tass.com/world/2211373",
+    "state_affiliated": true,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 3,
+  "counts": {
+   "western": 1,
+   "middle_east": 2,
+   "russian_state": 1
+  },
+  "blindspot": "A U.S. judge dismissed Trump’s $10 billion lawsuit against The Wall Street Journal over an alleged 2003 letter to Jeffrey Epstein. The ruling matters outside the U.S. because it tests press protections and keeps the Epstein files politically charged.",
+  "blindspot_url": "https://www.thehindu.com/news/international/epstein-files-us-judge-dismisses-trump-lawsuit-against-wall-street-journal-over-epstein-letter/article71652110.ece",
+  "blindspot_outlets": [
+   "Bangkok Post",
+   "CNA",
+   "Hindustan Times",
+   "RT",
+   "South China Morning Post",
+   "The Hindu",
+   "The Straits Times"
+  ]
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Strait of Hormuz traffic returns to normal by December 31?\" at 12%.",
+   "url": "https://polymarket.com/market/strait-of-hormuz-traffic-returns-to-normal-by-december-31",
+   "source": "Polymarket"
+  }
+ ],
+ "developing": [
+  {
+   "storyline": "Constitutional Tribunal",
+   "text": "Poland's president holds crisis talks without Tusk in court standoff.",
+   "region": "europe",
+   "url": "https://www.lemonde.fr/en/international/article/2026/11/01/poland-s-president-holds-crisis-talks-after-a-dramatic-showdown-at-the-constitutional-court_6768412_4.html"
+  },
+  {
+   "storyline": "Houthi",
+   "text": "The UN human rights office demanded an independent investigation after a Yemeni staff member died in Houthi custody more than two years after detention.",
+   "region": "middle_east",
+   "url": "https://www.straitstimes.com/world/middle-east/un-says-yemeni-staff-member-dies-in-houthi-custody-demands-investigation"
+  },
+  {
+   "storyline": "Binance",
+   "text": "The FBI blamed North Korea for the $6.3 billion Binance hack, and Binance said it will cover about 90% of customer losses.",
+   "region": "global",
+   "url": "https://www.japantimes.co.jp/business/2026/11/01/tech/binance-hack-fbi-north-korea/"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 11.93,
+   "avg_sentence_words": 18.9,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 10.89,
+   "rewrite_avg_sentence_words": 16.9,
+   "rewrite_fragment_share": 0.0
+  },
+  "editorial_actions": [
+   "Story demoted to DEVELOPING (running storyline 'constitutional tribunal'): Poland's president holds crisis talks without Tusk in court standoff",
+   "Quick hit moved to DEVELOPING (running storyline 'houthi'): The UN human rights office demanded an independent investigation after",
+   "Quick hit moved to DEVELOPING (running storyline 'binance'): The FBI blamed North Korea for the $6.3 billion Binance hack, and Bina",
+   "Quick hit dropped (running storyline 'oleshky'): Starved residents of Russian-occupied Oleshky reached Ukrainian-held t",
+   "Quick hit dropped (running storyline 'bolsonaro'): Trump said Flavio Bolsonaro, who fled Brazil after losing the runoff, "
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 12375,
+  "analysis_output_tokens": 27047,
+  "analysis_cost_usd": 0.02274,
+  "analysis_seconds": 223.4,
+  "grid_cost_usd": 0.00364,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017"
+ }
+}

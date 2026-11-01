@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sat, 31 Oct 2026 08:29:54 GMT</pubDate>
-        <lastBuildDate>Sat, 31 Oct 2026 08:29:54 GMT</lastBuildDate>
+        <pubDate>Sun, 01 Nov 2026 08:28:23 GMT</pubDate>
+        <lastBuildDate>Sun, 01 Nov 2026 08:28:23 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,20 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 01, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-01.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Sunday, November 01, 2026 — the 2 stories that matter most today, plus 3 updates on stories you're following and 4 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Iran says Strait of Hormuz can reopen in two days if US accepts conditions</strong>: Iran's foreign minister said the Strait of Hormuz could reopen within two days. That would happen if Washington recognizes a new shipping route agreed with Oman and closes other routes. The strait is ...</li></ul><p><em>Published: November 01, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sun, 01 Nov 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20261101</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[United States]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-01.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - October 31, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-31.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Saturday, October 31, 2026 — the 2 stories that matter most today, plus 3 updates on stories you're following and 6 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Poland suspends constitutional court chief and deploys riot police</strong>: Poland's government suspended the head of the Constitutional Tribunal, and police sealed the building, prompting protests and coup accusations. The clash between Prime Minister Donald Tusk and conserv...</li></ul><p><em>Published: October 31, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -175,19 +189,6 @@
         <category><![CDATA[Europe]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-23.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - October 22, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-22.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Thursday, October 22, 2026 — the 2 stories that matter most today, plus 2 updates on stories you're following and 6 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>AI uncovers a flaw in PHP, taking websites offline worldwide</strong>: Computer security firms used AI to find two critical flaws in PHP, a decades-old language that helps run about 70% of the world's websites. Governments and companies took sites offline to fix them bef...</li></ul><p><em>Published: October 22, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Thu, 22 Oct 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20261022</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-22.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
