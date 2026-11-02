@@ -312,3 +312,55 @@ def test_wire_rows_collapse_into_one_line_in_rendered_issue():
         assert "7 reports from 6 outlets" in html
     assert wire_copy_line(grid.views).startswith("Straight news")
     assert blindspot_sources_line([]) == ""
+
+
+def test_second_rewrite_pass_runs_when_the_first_leaves_copy_above_target(analyzer, monkeypatch):
+    """10-28..11-02: DeepSeek 1017 drafts graded 11.2-12.3 and one rewrite left
+    them at 10.7-11.6. A second pass gets the longest sentences and hardest
+    words as feedback, and runs only after a successful first pass."""
+    from src.config import Config
+    monkeypatch.setattr(Config, "READABILITY_MAX_GRADE", 6.0)
+    original = [story("Ukraine gets licence to build Patriot interceptors",
+                      why=("The administration authorised Ukrainian manufacturing of Patriot interceptors under an "
+                           "American licence, substantially alleviating a chronic shortage of air-defence missiles "
+                           "according to presidential representatives and defence ministry officials."),
+                      overlooked="No timeline, financing arrangement or participating manufacturer has been announced.",
+                      pred="A formal agreement naming manufacturers and a production start date.")]
+    first = json.dumps([{"index": 0,
+                         "why_important": ("Washington will let Ukraine build Patriot interceptors under a US licence, "
+                                           "which should ease a long shortage of air-defence missiles, officials said."),
+                         "what_overlooked": "No timeline, money plan or maker has been announced for the factories.",
+                         "prediction": "A deal that names the makers and a start date for production."}])
+    second = json.dumps([{"index": 0,
+                          "why_important": ("Washington will let Ukraine build Patriot missiles under a US licence. "
+                                            "That should ease a long shortage of air defence, officials said."),
+                          "what_overlooked": "No dates, money or maker have been named for the plants yet.",
+                          "prediction": "A deal that names the makers and a start date."}])
+    client = FakeClient([first, second])
+    prompts = []
+    orig_create = client.create
+    client.create = lambda **kw: (prompts.append(kw["messages"][0]["content"]), orig_create(**kw))[1]
+    client.messages = client
+    analyzer.client = client
+    out, *_ = analyzer._apply_readability_gate(original)
+    r = analyzer.meta["readability"]
+    assert r["rewrite"] == "applied (2 passes)", r
+    assert len(prompts) == 2 and "SECOND pass" in prompts[1]
+    assert out[0].why_important.startswith("Washington will let Ukraine build Patriot missiles")
+    assert r["rewrite_grade"] < r["grade"]
+
+
+def test_no_second_pass_after_a_rejected_first(analyzer, monkeypatch):
+    from src.config import Config
+    monkeypatch.setattr(Config, "READABILITY_MAX_GRADE", 5.0)
+    original = [story("Trump grants Ukraine license to build Patriot missiles at home",
+                      why=("Trump will let Ukraine manufacture Patriot interceptors under an American license, "
+                           "President Zelensky announced, addressing a chronic shortage of air-defence missiles."),
+                      overlooked="No timeline or manufacturer has been announced for the production lines.",
+                      pred="A formal agreement naming manufacturers and a start date for production.")]
+    choppy = json.dumps([{"index": 0, "why_important": "Trump chose. Ukraine builds. Kyiv is short. It needs them.",
+                          "what_overlooked": "No dates. No firms.", "prediction": "A deal. A date."}])
+    analyzer.client = FakeClient([choppy])  # a second call would raise IndexError
+    out, *_ = analyzer._apply_readability_gate(original)
+    assert analyzer.meta["readability"]["rewrite"].startswith("rejected")
+    assert analyzer.meta["readability"]["rewrite_attempts"] == [analyzer.meta["readability"]["rewrite"]]
