@@ -326,7 +326,8 @@ Build today's issue from the above articles. Deep stories to select: {}.
 
 WRITING STYLE (strict — this is the product):
 - Plain English, active voice, US grade 8-9 reading level — reached with plain WORDS, not by chopping sentences.
-- Sentences of 12-20 words with a natural rhythm, one idea each. Never write fragments or strings of 4-7-word sentences ("Kyiv is short. It needs more. Factories take months.") — that reads as a telegram, not journalism. Never open consecutive sentences with "Also".
+- Sentences of 12-18 words with a natural rhythm, one idea each, and none over 22 words: split a long sentence at "and", "while", "as" or a semicolon. Never write fragments or strings of 4-7-word sentences ("Kyiv is short. It needs more. Factories take months.") — that reads as a telegram, not journalism. Never open consecutive sentences with "Also".
+- Prefer the short common word: "talks" not "negotiations", "help" not "assistance", "about" not "approximately", "use" not "utilize", "end" not "terminate", "rules" not "regulations".
 - Headlines in sentence case: capitalize only the first word and proper nouns ("Trump rejects Iran's truce offer", never "Trump Rejects Iran's Truce Offer"). A headline must be literally true to the body: no "record", "first" or superlative the body does not support.
 - A headline claims only what is confirmed. If an action is planned, threatened, claimed by one side or not yet confirmed, the headline says so ("plans to", "says", "claims", "threatens", "agrees to discuss") — never "Pakistan and Turkey send troops" when the body says no deployment is confirmed.
 - Your own voice states facts only. Judgments ("shows Israel is isolated", "unusually high turnout") must be attributed to whoever makes them, or cut.
@@ -457,6 +458,38 @@ FIELD DEFINITIONS:
 
         logger.warning(f"Readability gate triggered: grade {grade:.1f} > {Config.READABILITY_MAX_GRADE} "
                        f"({avg_len} words/sentence), requesting rewrite")
+        tot_in = tot_out = 0
+        tot_cost = 0.0
+        best, best_grade, outcomes = analyses, grade, []
+        for attempt in (1, 2):
+            candidate, info, in_tok, out_tok, cost = self._rewrite_attempt(best, best_grade, attempt)
+            tot_in, tot_out, tot_cost = tot_in + in_tok, tot_out + out_tok, tot_cost + cost
+            outcomes.append(info["outcome"])
+            if candidate is not None:
+                best, best_grade = candidate, info["grade"]
+                self.meta["readability"].update({
+                    "rewrite_grade": info["grade"], "rewrite_avg_sentence_words": info["avg"],
+                    "rewrite_fragment_share": info["frag"]})
+            # A second pass only when the first one worked but left the copy
+            # above the target (10-28..11-02: DeepSeek 1017 drafts graded
+            # 11.2-12.3 and one rewrite left them at 10.7-11.6).
+            if candidate is None or best_grade <= Config.READABILITY_MAX_GRADE:
+                break
+        passes = sum(1 for o in outcomes if o == "applied")
+        self.meta["readability"]["rewrite"] = (
+            "applied (2 passes)" if passes == 2 else "applied" if passes == 1 else outcomes[0])
+        self.meta["readability"]["rewrite_attempts"] = outcomes
+        return best, tot_in, tot_out, tot_cost
+
+    def _rewrite_attempt(self, analyses: List[AIAnalysis], grade: float, attempt: int):
+        """One simplify pass. Returns (candidate or None, info, in_tok,
+        out_tok, cost); info has outcome, grade, avg, frag. The candidate is
+        returned only when it lowers the grade without turning choppy or
+        dropping a figure."""
+        from .readability import combined_grade, hardest_parts
+
+        texts = self._copy_texts(analyses)
+        avg_len, _ = sentence_stats(texts)
         payload = [
             {
                 "index": i,
@@ -466,19 +499,28 @@ FIELD DEFINITIONS:
             }
             for i, a in enumerate(analyses)
         ]
+        focus = ""
+        if attempt > 1:
+            long_sents, hard_words = hardest_parts(texts)
+            if long_sents:
+                focus += "Split or shorten these sentences first:\n" + "\n".join(f"- {x}" for x in long_sents) + "\n"
+            if hard_words:
+                focus += "Replace these long words with plain ones where meaning allows: " + ", ".join(hard_words) + "\n"
+            focus = ("This is a SECOND pass: the copy still tests at grade {:.1f}.\n".format(grade) + focus + "\n") if focus else ""
         rewrite_prompt = (
             "These newsletter passages test at US reading grade {:.1f}; the target is 8-9 "
-            "for smart non-expert readers. Edit them like a senior copy editor.\n"
-            "How: swap long or technical WORDS for plain ones, unpack jargon, and split only "
-            "sentences over 25 words. Keep sentences 12-20 words with a natural rhythm. Do NOT "
+            "for smart non-expert readers. Edit them like a senior copy editor.\n{}"
+            "How: swap long or technical WORDS for plain ones, unpack jargon, and split "
+            "sentences over 22 words. Keep sentences 12-18 words with a natural rhythm. Do NOT "
             "chop the text into short fragments — merge any sentence under 8 words into its "
             "neighbour. Keep every fact, name, number and attribution exactly; add nothing. "
             "Active voice. The prediction must not start with 'Watch'. Word limits: "
             "why_important max 60, what_overlooked max 35, prediction max 25.\n\n{}\n\n"
             "Return ONLY a JSON array of objects with fields: index, why_important, "
             "what_overlooked, prediction. No markdown, no commentary."
-        ).format(grade, json.dumps(payload, ensure_ascii=False, indent=1))
+        ).format(grade, focus, json.dumps(payload, ensure_ascii=False, indent=1))
 
+        info = {"outcome": "failed", "grade": None, "avg": None, "frag": None}
         try:
             response = self.client.messages.create(
                 model=Config.AI_MODEL,
@@ -492,9 +534,8 @@ FIELD DEFINITIONS:
             cleaned = re.sub(r'```(?:json)?\s*', '', text.strip()).strip('`').strip()
             match = re.search(r'\[.*\]', cleaned, re.DOTALL)
             if not match:
-                logger.warning("Readability rewrite returned no JSON — keeping original copy")
-                self.meta["readability"]["rewrite"] = "failed"
-                return analyses, in_tok, out_tok, cost
+                logger.warning(f"Readability rewrite {attempt} returned no JSON — keeping the copy")
+                return None, info, in_tok, out_tok, cost
 
             import copy
             candidate = copy.deepcopy(analyses)
@@ -508,30 +549,26 @@ FIELD DEFINITIONS:
             new_texts = self._copy_texts(candidate)
             new_grade = combined_grade(new_texts)
             new_avg, new_frag = sentence_stats(new_texts)
+            info.update(grade=new_grade, avg=new_avg, frag=new_frag)
             improved = new_grade is not None and new_grade < grade
             choppy = reads_choppy(new_texts) and not reads_choppy(texts)
             lost_numbers = numbers_in(" ".join(texts)) - numbers_in(" ".join(new_texts))
-            self.meta["readability"].update({
-                "rewrite_grade": new_grade, "rewrite_avg_sentence_words": new_avg,
-                "rewrite_fragment_share": new_frag,
-            })
             if improved and not choppy and not lost_numbers:
-                logger.info(f"Readability rewrite applied: grade {grade:.1f} -> {new_grade:.1f}, "
+                logger.info(f"Readability rewrite {attempt} applied: grade {grade:.1f} -> {new_grade:.1f}, "
                             f"{avg_len} -> {new_avg} words/sentence")
-                self.meta["readability"]["rewrite"] = "applied"
-                return candidate, in_tok, out_tok, cost
+                info["outcome"] = "applied"
+                return candidate, info, in_tok, out_tok, cost
 
             reason = ("no grade improvement" if not improved else
                       "copy turned choppy" if choppy else
                       f"figures dropped: {sorted(lost_numbers)}")
-            logger.warning(f"Readability rewrite rejected ({reason}): grade {grade:.1f} -> {new_grade}, "
-                           f"{avg_len} -> {new_avg} words/sentence — keeping original copy")
-            self.meta["readability"]["rewrite"] = f"rejected: {reason}"
-            return analyses, in_tok, out_tok, cost
+            logger.warning(f"Readability rewrite {attempt} rejected ({reason}): grade {grade:.1f} -> {new_grade}, "
+                           f"{avg_len} -> {new_avg} words/sentence")
+            info["outcome"] = f"rejected: {reason}"
+            return None, info, in_tok, out_tok, cost
         except Exception as e:
-            logger.warning(f"Readability rewrite failed, keeping original copy: {e}")
-            self.meta["readability"]["rewrite"] = "failed"
-            return analyses, 0, 0, 0.0
+            logger.warning(f"Readability rewrite {attempt} failed, keeping the copy: {e}")
+            return None, info, 0, 0, 0.0
 
     # ------------------------------------------------------------------
     # Editorial guardrails (post-generation)

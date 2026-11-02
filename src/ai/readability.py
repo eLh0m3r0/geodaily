@@ -60,3 +60,21 @@ def combined_grade(texts: Iterable[str]) -> Optional[float]:
     for a stable score, so score the concatenation)."""
     joined = ". ".join(t.strip().rstrip(".") for t in texts if t and t.strip())
     return flesch_kincaid_grade(joined)
+
+
+def hardest_parts(texts: Iterable[str], max_sentences: int = 4, max_words: int = 10):
+    """(longest sentences over 22 words, words of 4+ syllables) — the concrete
+    things a second simplify pass should fix. Names (capitalised words) are
+    left out of the word list: they cannot be swapped for plainer ones."""
+    sentences, hard = [], {}
+    for text in texts:
+        for sent in _sentences(text or ""):
+            n = len(_WORD.findall(sent))
+            if n > 22:
+                sentences.append((n, sent.strip()))
+            for w in _WORD.findall(sent):
+                if w[:1].islower() and _count_syllables(w) >= 4:
+                    hard[w.lower()] = hard.get(w.lower(), 0) + 1
+    sentences.sort(reverse=True)
+    words = sorted(hard, key=lambda w: (-hard[w], w))[:max_words]
+    return [s for _, s in sentences[:max_sentences]], words
