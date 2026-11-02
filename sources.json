@@ -94,15 +94,15 @@
       "reliability_tier": 2
     },
     {
-      "name": "European Council on Foreign Relations",
-      "url": "https://ecfr.eu/feed/",
+      "name": "Stimson Center",
+      "url": "https://www.stimson.org/feed/",
       "category": "think_tank",
-      "weight": 1.1,
+      "weight": 1.0,
       "perspective": "western_analysis",
       "state_affiliated": false,
       "reliability_tier": 1,
-      "site": "ecfr.eu",
-      "display": "ECFR"
+      "site": "stimson.org",
+      "display": "Stimson Center"
     },
     {
       "name": "German Marshall Fund",
@@ -124,14 +124,15 @@
       "site": "crisisgroup.org"
     },
     {
-      "name": "Human Rights Watch",
-      "url": "https://www.hrw.org/rss.xml",
+      "name": "Amnesty International",
+      "url": "https://www.amnesty.org/en/feed/",
       "category": "analysis",
       "weight": 1.0,
       "perspective": "western_analysis",
       "state_affiliated": false,
       "reliability_tier": 1,
-      "site": "hrw.org"
+      "site": "amnesty.org",
+      "display": "Amnesty International"
     },
     {
       "name": "War on the Rocks",
@@ -776,6 +777,17 @@
       "reliability_tier": 2,
       "site": "ipsnews.net",
       "display": "Inter Press Service"
+    },
+    {
+      "name": "The New Humanitarian",
+      "url": "https://www.thenewhumanitarian.org/rss/all.xml",
+      "category": "analysis",
+      "weight": 1.0,
+      "perspective": "global_south",
+      "state_affiliated": false,
+      "reliability_tier": 1,
+      "site": "thenewhumanitarian.org",
+      "display": "The New Humanitarian"
     },
     {
       "name": "Semafor",

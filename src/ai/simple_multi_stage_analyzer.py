@@ -54,6 +54,7 @@ class SimplifiedMultiStageAnalyzer:
         if Config.ENABLE_NEWSLETTER_HISTORY:
             try:
                 self.storylines = StorylineIndex(load_issue_history(Config.NEWSLETTERS_DIR, days=5))
+                self.week_history = load_issue_history(Config.NEWSLETTERS_DIR, days=7)
             except Exception as e:
                 logger.warning(f"Storyline history unavailable: {e}")
         self.meta: Dict[str, Any] = {}
@@ -579,6 +580,25 @@ FIELD DEFINITIONS:
                 logger.info(f"Quick hit relinked from state outlet {art.source} to {alt.source}")
                 hit.url = alt.url
 
+        # Quick hits: no restatement of a story from 3-7 issues ago, beyond the
+        # prompt's 2-issue window (11-01: "Lula won the runoff with nearly
+        # 52%" reran the 10-26 lead). Word overlap alone also matches unrelated
+        # items ("Pope votes in US election" vs "Israelis vote"), so a shared
+        # capitalised word is required too.
+        older = [(day.get("date", ""), title) for day in (getattr(self, "week_history", None) or [])[2:]
+                 for title in day.get("stories", []) or []]
+        if older:
+            fresh = []
+            for hit in issue.quick_hits:
+                caps = set(re.findall(r"\b[A-Z][\w'’-]+", hit.text)[1:])
+                stale = next(((d, t) for d, t in older if overlap(hit.text, t) >= self.STALE_RERUN_OVERLAP
+                              and caps & set(re.findall(r"\b[A-Z][\w'’-]+", t))), None)
+                if stale:
+                    self._note(f"Quick hit dropped (restates the {stale[0]} story '{stale[1][:50]}'): {hit.text[:70]}")
+                    continue
+                fresh.append(hit)
+            issue.quick_hits = fresh
+
         # Quick hits: no reruns of what recent issues already said
         prior_hits = history_texts(self.history, "quick_hits", "big_number", "blindspot")
         kept = []
@@ -648,6 +668,8 @@ FIELD DEFINITIONS:
             return 0.0
         art_words = content_words(f"{article.title} {(article.summary or '')[:400]}", stem=True)
         return len(words & art_words) / len(words)
+
+    STALE_RERUN_OVERLAP = 0.4
 
     def _big_number_reason(self, bn, issue, by_url) -> Optional[str]:
         """Why this big number cannot run, or None."""
