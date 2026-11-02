@@ -564,3 +564,11 @@ def test_first_names_and_one_digit_figures_1031(analyzer):
                          big_number=BigNumber("3", "Drones the coalition says it destroyed over the Mecca region."))
     analyzer._apply_editorial_rules(issue, [])
     assert issue.big_number is not None
+
+
+def test_leader_given_names_and_adjectives_are_not_storylines_1102():
+    """11-02: DEVELOPING labels 'Jinping' (from 'Xi Jinping') and
+    'Constitutional' (from 'Constitutional Tribunal')."""
+    from src.ai.storylines import distinctive_tokens
+    assert distinctive_tokens("Xi Jinping") == set()
+    assert "constitutional" not in distinctive_tokens("Constitutional Tribunal")

@@ -32,6 +32,7 @@ GENERIC_TERMS = frozenset("""
 trump biden putin xi zelensky zelenskyy netanyahu musk modi erdogan macron starmer
 burnham merz sanchez lula khamenei pezeshkian kim
 donald vladimir volodymyr benjamin elon narendra recep tayyip emmanuel keir friedrich
+jinping shigeru sanae takaichi ishiba jae-myung cyril
 pedro luiz inacio masoud jong
 marco rubio vance pete hegseth scott bessent sergei sergey lavrov dmitry peskov yuri yury
 ushakov antonio guterres mark rutte ursula leyen kaja kallas
@@ -194,6 +195,8 @@ ayatollah bishop cardinal archbishop rabbi founder billionaire tycoon oligarch w
 rebel rebels militia junta regime opposition secretary-general director
 day days how why who what when live top big key hit hits say says set win ban bid cut cuts row
 aid ties talk new via per amid over under off out all one two six ten
+constitutional presidential parliamentary legislative judicial electoral provincial municipal
+regional local constitutional-court
 people children women men families residents workers soldiers troops civilians students voters
 citizens victims survivors journalists companies firms markets investors lawmakers senators
 cities towns countries thousands hundreds millions billions dozens several many more most least
