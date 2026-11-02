@@ -572,3 +572,35 @@ def test_leader_given_names_and_adjectives_are_not_storylines_1102():
     from src.ai.storylines import distinctive_tokens
     assert distinctive_tokens("Xi Jinping") == set()
     assert "constitutional" not in distinctive_tokens("Constitutional Tribunal")
+
+
+def test_stale_rerun_of_an_older_story_is_dropped_1101(analyzer):
+    """11-01: 'Brazil's Lula da Silva won the presidential runoff with nearly
+    52%' reran the 10-26 lead, outside the 2-issue repeat window. The Pope's
+    US ballot shares words with an older Israeli-election story but no name,
+    so it stays."""
+    analyzer.week_history = [
+        {"date": "2026-10-31", "stories": ["Poland suspends constitutional court chief"]},
+        {"date": "2026-10-30", "stories": ["Binance reports $6.3 billion breach"]},
+        {"date": "2026-10-27", "stories": ["Israelis vote in an election that could end Netanyahu's rule"]},
+        {"date": "2026-10-26", "stories": ["Lula wins Brazil's runoff as his rival refuses to concede"]},
+    ]
+    issue = IssueContent(stories=[story("Fresh lead")], quick_hits=[
+        QuickHit(text="Brazil's Lula da Silva won the presidential runoff with nearly 52% after trailing in the first round."),
+        QuickHit(text="Pope Leo XIV became the first pontiff to vote in a US election, by mail-in ballot."),
+    ])
+    analyzer._apply_editorial_rules(issue, [])
+    texts = [h.text for h in issue.quick_hits]
+    assert not any("Lula" in t for t in texts)
+    assert any("Pope" in t for t in texts)
+
+
+def test_domestic_court_case_is_no_blindspot_1101(persp):
+    arts = [art("US judge dismisses Trump's $10 billion lawsuit against Wall Street Journal", "https://a.com/c1",
+                "The Hindu", "south_asia", False, "c1"),
+            art("Judge throws out Trump suit over Epstein letter report", "https://b.com/c1",
+                "The Straits Times", "east_asia", False, "c1")]
+    assert persp._blindspot_candidates([story("Ukraine hits Moscow")], arts) == []
+    icj = [art("ICJ rules on Guyana-Venezuela border dispute", "https://a.com/c2", "The Hindu", "south_asia", False, "c2"),
+           art("World court sides with Guyana in Essequibo case", "https://b.com/c2", "Dawn", "south_asia", False, "c2")]
+    assert len(persp._blindspot_candidates([story("Ukraine hits Moscow")], icj)) == 1

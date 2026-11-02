@@ -138,6 +138,27 @@ class PerspectiveAnalyzer:
         r"film festival|album|concert|grammy|oscar|oscars|emmy|netflix|k-pop|"
         r"royal wedding|miss universe|beauty pageant)\b", re.I)
 
+    # A single country's court case is not "the story the West missed"
+    # (11-01: a US judge dismissing Trump's lawsuit against the Wall Street
+    # Journal ran as the blindspot); international courts stay in
+    _DOMESTIC_COURT = re.compile(
+        r"\b(lawsuit|sues|sued|suing|defamation|libel|indicted|indictment|verdict|"
+        r"acquitted|convicted|sentenced|jailed for|trial of|plea deal|"
+        r"(?:judge|court|jury) (?:dismisses|dismissed|rules|ruled|blocks|blocked|throws out|threw out|orders|ordered|finds|found))\b",
+        re.I)
+    _INTL_COURT = re.compile(r"\b(ICJ|ICC|international court|international criminal|tribunal|"
+                             r"world court|arbitration|WTO|european court)\b", re.I)
+
+    @classmethod
+    def _domestic_court_case(cls, members: List[Article]) -> bool:
+        """True when most of the event's reports are about a national court
+        case and none names an international court."""
+        titles = [getattr(m, 'title', '') or '' for m in members]
+        if any(cls._INTL_COURT.search(t) for t in titles):
+            return False
+        hits = sum(1 for t in titles if cls._DOMESTIC_COURT.search(t))
+        return hits * 2 > len(titles)
+
     @classmethod
     def _off_topic(cls, article: Article) -> bool:
         return bool(cls._OFF_TOPIC.search(getattr(article, 'title', '') or ''))
@@ -252,6 +273,9 @@ class PerspectiveAnalyzer:
             if not groups or not groups.issubset(NON_WESTERN_GROUPS):
                 continue
             if all(self._is_state(m) for m in members):
+                continue
+            if self._domestic_court_case(members):
+                logger.info(f"Blindspot candidate skipped (domestic court case): {members[0].title[:70]}")
                 continue
             if any(overlap(m.title, topic) >= self.BLINDSPOT_TOPIC_OVERLAP
                    for m in members for topic in known_topics) \
