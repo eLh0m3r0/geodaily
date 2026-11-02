@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sun, 01 Nov 2026 08:28:23 GMT</pubDate>
-        <lastBuildDate>Sun, 01 Nov 2026 08:28:23 GMT</lastBuildDate>
+        <pubDate>Mon, 02 Nov 2026 08:42:36 GMT</pubDate>
+        <lastBuildDate>Mon, 02 Nov 2026 08:42:36 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,21 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 02, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-02.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Monday, November 02, 2026 — the 3 stories that matter most today, plus 3 updates on stories you're following and 4 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>UN peacekeeping mission in Western Sahara ends after 35 years</strong>: After a US-Russia standoff, the Security Council let the 35-year mission expire. Its exit removes the main international monitor from a disputed territory where Morocco and the Algeria-backed Polisari...</li></ul><p><em>Published: November 02, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Mon, 02 Nov 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20261102</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Russia]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-02.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 01, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-01.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Sunday, November 01, 2026 — the 2 stories that matter most today, plus 3 updates on stories you're following and 4 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Iran says Strait of Hormuz can reopen in two days if US accepts conditions</strong>: Iran's foreign minister said the Strait of Hormuz could reopen within two days. That would happen if Washington recognizes a new shipping route agreed with Oman and closes other routes. The strait is ...</li></ul><p><em>Published: November 01, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -174,21 +189,6 @@
         <category><![CDATA[China]]></category>
         <category><![CDATA[Economy]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-24.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - October 23, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-23.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Friday, October 23, 2026 — the 3 stories that matter most today, plus 1 update on stories you're following and 7 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump says Ukraine's Starlink is restored, but AP reports the speed cap remains</strong>: President Trump said Elon Musk had restored Ukraine's Starshield access. A senior European official told the AP the speed limit is still in place. Ukraine's military uses these satellite links to fly ...</li></ul><p><em>Published: October 23, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Fri, 23 Oct 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20261023</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Europe]]></category>
-        <category><![CDATA[Security]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-23.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>

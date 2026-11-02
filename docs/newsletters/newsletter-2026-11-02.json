@@ -1,0 +1,267 @@
+{
+ "date": "2026-11-02",
+ "title": "Geopolitical Daily",
+ "email_subject": "UN ends 35-year Sahara mission",
+ "preheader": "Morocco welcomes the exit; the Polisario Front calls it unacceptable.",
+ "intro_text": "Good morning. It's Monday, November 02, 2026 — the 3 stories that matter most today, plus 3 updates on stories you're following and 4 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "UN peacekeeping mission in Western Sahara ends after 35 years",
+   "why_important": "After a US-Russia standoff, the Security Council let the 35-year mission expire. Its exit removes the main international monitor from a disputed territory where Morocco and the Algeria-backed Polisario Front remain deadlocked.",
+   "what_overlooked": "Morocco welcomed the end, while the Polisario Front called it unacceptable; no new UN monitor is in place.",
+   "prediction": "If Morocco and the Polisario Front announce talks or new clashes within 72 hours, it will show whether the mission's exit changes the frozen conflict.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.dailymaverick.co.za/article/2026-11-02-un-peacekeeping-mission-in-western-sahara-ends-after-35-years-un-chief-says/",
+    "https://www.hindustantimes.com/world-news/us-news/uns-peacekeeping-mission-in-western-sahara-ends-after-35-years-following-us-russia-standoff-101793558237521.html",
+    "https://www.france24.com/en/africa/20261101-un-s-peacekeeping-mission-in-disputed-western-sahara-ends-after-35-years"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 7,
+   "novelty_score": 8,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.88,
+   "region": "africa",
+   "actor_type": "international_org",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "african": 1,
+    "south_asia": 1,
+    "western": 2,
+    "east_asia": 1
+   },
+   "coverage_outlets": 5,
+   "signal_terms": [
+    "Western Sahara",
+    "Polisario Front",
+    "Morocco",
+    "Security Council"
+   ]
+  },
+  {
+   "story_title": "Cyberattacks send false nuclear warnings on Russian and Ukrainian alert apps",
+   "why_important": "Hackers hit emergency alert apps in both countries and sent false nuclear warnings. The breach came as a truce ended, raising fears that such information attacks could cause panic or dangerous mistakes in a live war.",
+   "what_overlooked": "Ukraine blamed Russia for its breach; Moscow said its own app suffered a hit; independent checks have not verified either claim.",
+   "prediction": "If either government changes alert procedures or issues new evacuation warnings within 72 hours, it will show whether the hack disrupted real emergency systems.",
+   "impact_score": 7,
+   "sources": [
+    "https://meduza.io/en/news/2026/11/02/emergency-alert-apps-hacked-in-russia-and-ukraine-sending-false-warnings-of-nuclear-threats",
+    "https://www.japantimes.co.jp/news/2026/11/02/world/politics/cyber-attacks-russia-ukraine-truce/",
+    "https://www.dw.com/en/ukraine-russia-report-hacking-attacks-on-emergency-alert-apps/live-79825079?maca=en-rss-en-all-1573-rdf"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 6,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.84,
+   "region": "europe",
+   "actor_type": "mixed",
+   "event_type": "informational_cyber",
+   "coverage_counts": {
+    "russian_exile": 1,
+    "east_asia": 2,
+    "western": 3,
+    "ukrainian": 1,
+    "south_asia": 1
+   },
+   "coverage_outlets": 7,
+   "signal_terms": [
+    "Russia",
+    "Ukraine",
+    "Emergency Situations Ministry",
+    "air raid alert apps"
+   ]
+  },
+  {
+   "story_title": "Bulgaria elects president who favors dialogue with Moscow",
+   "why_important": "Iliana Yotova, who favors talks with Moscow, won Bulgaria's runoff vote against a banker who backs the West. The result puts a Russia-friendly figure in the presidency of an EU and NATO member as Black Sea drone attacks raise security fears.",
+   "what_overlooked": "The presidency is mostly ceremonial, but Yotova is Bulgaria's first elected female president. She is also an ally of Prime Minister Rumen Radev, and that may boost his power.",
+   "prediction": "If Yotova calls for easing sanctions on Russia within 72 hours, it will show how far she will push Moscow-friendly policies.",
+   "impact_score": 6,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/11/02/bulgarian-president-wins-runoff-vote-as-black-sea-attacks-raise-stakes_6769369_4.html",
+    "https://www.pravda.com.ua/eng/news/2026/11/02/8060796/",
+    "https://www.aljazeera.com/video/newsfeed/2026/11/2/bulgaria-has-its-first-elected-female-president?traffic_source=rss"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 6,
+   "novelty_score": 8,
+   "credibility_score": 9,
+   "impact_dimension_score": 6,
+   "confidence": 0.87,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "political",
+   "coverage_counts": {
+    "western": 2,
+    "ukrainian": 1,
+    "middle_east": 1,
+    "east_asia": 3,
+    "south_asia": 1,
+    "russian_state": 4,
+    "chinese_state": 1
+   },
+   "coverage_outlets": 11,
+   "signal_terms": [
+    "Bulgaria",
+    "Iliana Yotova",
+    "Rumen Radev",
+    "Black Sea"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Michigan Democrat Haley Stevens endorsed Republican Mike Rogers for Senate, two days before US midterms that will decide Congress.",
+   "region": "americas",
+   "url": "https://www.lemonde.fr/en/international/article/2026/11/02/us-midterms-in-michigan-abdul-el-sayed-s-democratic-opponent-backs-republican-senate-candidate-in-stunning-move_6769336_4.html"
+  },
+  {
+   "text": "South Africans vote in municipal elections on Nov. 4, with water, jobs and crime topping the agenda in major cities.",
+   "region": "africa",
+   "url": "https://www.straitstimes.com/world/water-jobs-and-crime-among-key-issues-for-south-african-voters"
+  },
+  {
+   "text": "Israeli strikes in Gaza killed eight people, including a child, and five Hamas-run police officers, hospital officials said.",
+   "region": "middle_east",
+   "url": "https://www.bbc.co.uk/news/articles/cmqln14rrzxvo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "text": "Iran and Qatari mediators held a third day of indirect talks on reopening the Strait of Hormuz and releasing $6bn in Iranian assets.",
+   "region": "middle_east",
+   "url": "https://www.theguardian.com/world/2026/nov/01/negotiators-braced-for-worst-over-us-iran-talks-to-reopen-strait-of-hormuz"
+  }
+ ],
+ "big_number": {
+  "value": "108",
+  "context": "Bhutan built 108 Buddhist stupas in nine hours for its planned Gelephu Mindfulness City, including one dedicated to India's Narendra Modi.",
+  "url": "https://www.thehindu.com/news/international/bhutan-builds-108-stupas-in-9-hours-dedicates-no-76-to-pm-modi/article71653715.ece"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "France 24",
+     "NPR"
+    ],
+    "article_count": 2,
+    "framing": "Ends UN mission over Security Council failure, stressing Morocco-Polisario sovereignty dispute.",
+    "quote": "Morocco, which claims the region as its own, welcomed the decision, while its opponents from the Algeria-backed Polisario Front called it \"unacceptable\".",
+    "quote_outlet": "France 24",
+    "quote_url": "https://www.france24.com/en/africa/20261101-un-s-peacekeeping-mission-in-disputed-western-sahara-ends-after-35-years",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "The Straits Times"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Hindustan Times"
+    ],
+    "article_count": 1,
+    "framing": "Attributes mission’s end to US-Russia standoff, stressing great-power rivalry over Western Sahara.",
+    "quote": "UN’s peacekeeping mission in Western Sahara ends after 35 years following US-Russia standoff",
+    "quote_outlet": "Hindustan Times",
+    "quote_url": "https://www.hindustantimes.com/world-news/us-news/uns-peacekeeping-mission-in-western-sahara-ends-after-35-years-following-us-russia-standoff-101793558237521.html",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "african",
+    "outlets": [
+     "Daily Maverick"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   }
+  ],
+  "total_outlets": 5,
+  "counts": {
+   "african": 1,
+   "south_asia": 1,
+   "western": 2,
+   "east_asia": 1
+  },
+  "blindspot": "Bangladesh garment factories reopened after wage protests disrupted key manufacturing hubs, with workers demanding a higher minimum monthly wage. As the world’s second-largest apparel exporter, renewed unrest could affect global clothing supply and buyer confidence.",
+  "blindspot_url": "https://www.thehindu.com/news/international/bangladesh-garment-factories-reopen-as-wage-protests-keep-industry-on-edge/article71655556.ece",
+  "blindspot_outlets": [
+   "Al Jazeera",
+   "CNA",
+   "Hindustan Times",
+   "South China Morning Post",
+   "The Hindu"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "Jinping",
+   "text": "China's Fifth Plenum expelled 33 Central Committee members, including 16 generals, as Xi Jinping's anti-corruption purge continues.",
+   "region": "indo_pacific",
+   "url": "https://www.thehindu.com/news/international/the-unending-purge-in-xis-china/article71653156.ece"
+  },
+  {
+   "storyline": "Oleshky",
+   "text": "Ukraine evacuated 167 people from threatened parts of Kherson as a local ceasefire near Oleshky neared its expiry.",
+   "region": "europe",
+   "url": "https://www.dailymaverick.co.za/article/2026-11-01-ukraine-evacuates-civilians-from-parts-of-kherson-region-as-expiry-of-oleshky-ceasefire-nears/"
+  },
+  {
+   "storyline": "Constitutional",
+   "text": "The European Commission backed Polish Prime Minister Donald Tusk in his standoff with the constitutional court over new judges.",
+   "region": "europe",
+   "url": "https://www.politico.eu/article/european-commission-backs-donald-tusk-over-poland-constitutional-court-judges/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 11.83,
+   "avg_sentence_words": 17.9,
+   "fragment_share": 0.08,
+   "rewrite": "applied",
+   "rewrite_grade": 11.6,
+   "rewrite_avg_sentence_words": 18.8,
+   "rewrite_fragment_share": 0.0
+  },
+  "editorial_actions": [
+   "Quick hit moved to DEVELOPING (running storyline 'jinping'): China's Fifth Plenum expelled 33 Central Committee members, including ",
+   "Quick hit moved to DEVELOPING (running storyline 'oleshky'): Ukraine evacuated 167 people from threatened parts of Kherson as a loc",
+   "Quick hit moved to DEVELOPING (running storyline 'constitutional'): The European Commission backed Polish Prime Minister Donald Tusk in hi",
+   "Quick hit dropped (running storyline 'binance'): Binance reopened after a $6.3bn hack blamed on North Korea; customers "
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 12215,
+  "analysis_output_tokens": 22711,
+  "analysis_cost_usd": 0.01178,
+  "analysis_seconds": 194.6,
+  "grid_cost_usd": 0.00158,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017"
+ }
+}
