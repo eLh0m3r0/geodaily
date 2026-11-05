@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Wed, 04 Nov 2026 08:36:37 GMT</pubDate>
-        <lastBuildDate>Wed, 04 Nov 2026 08:36:37 GMT</lastBuildDate>
+        <pubDate>Thu, 05 Nov 2026 08:36:03 GMT</pubDate>
+        <lastBuildDate>Thu, 05 Nov 2026 08:36:03 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,19 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 05, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-05.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Thursday, November 05, 2026 — the 3 stories that matter most today, plus 8 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump agrees the Iran war cost Republicans the midterms</strong>: Vice President JD Vance said the Iran war was 'the reason we lost.' Trump called that 'largely true.' Democrats will control both chambers in January. That lets them block war spending and call offici...</li></ul><p><em>Published: November 05, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Thu, 05 Nov 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20261105</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-05.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 04, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-04.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Wednesday, November 04, 2026 — the 3 stories that matter most today, plus 2 updates on stories you're following and 2 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Democrats win the House and Senate in a sweeping midterm rebuke</strong>: Democrats won control of both the House and Senate on Tuesday, projections show. The win ends Republican rule of Congress and lets Democrats block Trump's agenda. It also lets them investigate his adm...</li></ul><p><em>Published: November 04, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -176,18 +189,6 @@
         <category><![CDATA[International Relations]]></category>
         <category><![CDATA[Middle East]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-27.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - October 26, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-26.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Monday, October 26, 2026 — the 3 stories that matter most today, plus 1 update on stories you're following and 7 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Lula wins Brazil's runoff as his rival refuses to concede</strong>: Luiz Inácio Lula da Silva won Brazil's runoff with 51.75% of the vote. Polls had predicted a tight race, but he secured a fourth term. His right-wing rival, Flavio Bolsonaro, refused to concede and sa...</li></ul><p><em>Published: October 26, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Mon, 26 Oct 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20261026</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-26.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>

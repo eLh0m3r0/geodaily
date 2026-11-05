@@ -1,0 +1,313 @@
+{
+ "date": "2026-11-05",
+ "title": "Geopolitical Daily",
+ "email_subject": "Trump: Iran war cost Republicans Congress",
+ "preheader": "Democrats take both chambers in January, with power to challenge war funding.",
+ "intro_text": "Good morning. It's Thursday, November 05, 2026 — the 3 stories that matter most today, plus 8 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Trump agrees the Iran war cost Republicans the midterms",
+   "why_important": "Vice President JD Vance said the Iran war was 'the reason we lost.' Trump called that 'largely true.' Democrats will control both chambers in January. That lets them block war spending and call officials to testify. A president who says he would do it again now faces a Congress that can slow him.",
+   "what_overlooked": "Trump linked the loss to higher gasoline prices. He said he would repeat the war because 'long-term, it's the only answer.' Dawn reported Vance is distancing himself ahead of a possible 2028 run.",
+   "prediction": "Whether Democratic leaders schedule an Iran war funding vote or hearing within days will show how fast Congress moves to limit him.",
+   "impact_score": 8,
+   "sources": [
+    "https://foreignpolicy.com/2026/11/04/vance-midterms-blames-iran-war-trump-republicans/",
+    "https://www.haaretz.com/us-news/2026-11-04/ty-article/.premium/vance-republicans-lost-midterms-because-of-iran-war-trump-said-so-himself/000001a1-a749-d5c5-ade1-bf7f5c340000",
+    "https://www.koreatimes.co.kr/world/20261105/trump-says-largely-true-iran-war-caused-midterms-loss?utm_source=rss"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 8,
+   "novelty_score": 5,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "americas",
+   "actor_type": "state",
+   "event_type": "political",
+   "coverage_counts": {
+    "western": 3,
+    "middle_east": 3,
+    "east_asia": 2,
+    "south_asia": 7,
+    "latam": 1,
+    "african": 1,
+    "middle_east_state": 2
+   },
+   "coverage_outlets": 15,
+   "signal_terms": [
+    "JD Vance",
+    "Iran war",
+    "Donald Trump"
+   ]
+  },
+  {
+   "story_title": "Hong Kong court sentences Joshua Wong to 10 years for foreign collusion",
+   "why_important": "Wong became a face of Hong Kong's freedom movement in the 2014 Umbrella Movement. He has been jailed since 2020 and was convicted of working with foreign forces under a national safety law. Amnesty International called the sentence a grim reminder of the city's disregard for human rights.",
+   "what_overlooked": "Amnesty said the sentence came months before he would have been due for release. Amnesty called the timing cruel and possibly on purpose.",
+   "prediction": "Whether Britain or the US calls in China's top diplomat or announces sanctions over the sentence will show how far they will go.",
+   "impact_score": 7,
+   "sources": [
+    "https://asia.nikkei.com/spotlight/hong-kong-security-law/hong-kong-activist-joshua-wong-sentenced-to-10-years-for-foreign-collusion",
+    "https://www.lemonde.fr/en/international/article/2026/11/05/hong-kong-democracy-activist-joshua-wong-sentenced-to-10-years-in-prison_6772438_4.html",
+    "https://www.aljazeera.com/news/2026/11/5/hong-kong-democracy-activist-joshua-wong-sentenced-to-10-years-in-jail?traffic_source=rss"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 7,
+   "novelty_score": 9,
+   "credibility_score": 9,
+   "impact_dimension_score": 7,
+   "confidence": 0.9,
+   "region": "indo_pacific",
+   "actor_type": "state",
+   "event_type": "political",
+   "coverage_counts": {
+    "east_asia": 5,
+    "western": 9,
+    "middle_east": 2,
+    "south_asia": 5
+   },
+   "coverage_outlets": 18,
+   "signal_terms": [
+    "Joshua Wong",
+    "Hong Kong",
+    "national security law",
+    "Amnesty International"
+   ]
+  },
+  {
+   "story_title": "Paraguay's bank collapse freezes savings and fuels impeachment calls",
+   "why_important": "Paraguay's central bank took over Ueno Bank overnight, leaving millions of customers unable to reach their accounts. The Senate voted to let savers take out up to 40 minimum wages within 24 hours. Opposition lawmakers are now pushing to impeach President Santiago Peña.",
+   "what_overlooked": "The payment plan still needs the lower house, which was due to consider it on Thursday. The early payment is capped at about 121 million guaraníes per saver.",
+   "prediction": "Whether the Chamber of Deputies passes the payment bill Thursday and money reaches savers within 24 hours will decide whether protests fade.",
+   "impact_score": 6,
+   "sources": [
+    "https://www.straitstimes.com/world/paraguay-bank-crisis-spurs-lawmakers-calls-to-impeach-president",
+    "https://en.mercopress.com/2026/11/05/paraguay-seeks-to-return-part-of-the-savings-frozen-at-ueno-bank-within-24-hours?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss",
+    "https://www.aljazeera.com/video/newsfeed/2026/11/5/paraguay-bank-collapses-with-half-of-populations-savings?traffic_source=rss"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 6,
+   "novelty_score": 9,
+   "credibility_score": 8,
+   "impact_dimension_score": 6,
+   "confidence": 0.8,
+   "region": "americas",
+   "actor_type": "state",
+   "event_type": "economic",
+   "coverage_counts": {
+    "middle_east": 1,
+    "east_asia": 1,
+    "latam": 2
+   },
+   "coverage_outlets": 3,
+   "signal_terms": [
+    "Ueno Bank",
+    "Santiago Peña",
+    "Paraguay"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "South Africa's ANC leads early municipal results with a sharply reduced share of the vote, pointing to coalition governments in major cities.",
+   "region": "africa",
+   "url": "https://www.straitstimes.com/world/anc-narrowly-leads-da-in-early-south-africa-municipal-election-results"
+  },
+  {
+   "text": "South Korea plans to widen its Cheonghae anti-piracy patrols to waters about 650km from the Strait of Hormuz, pending parliament's approval.",
+   "region": "indo_pacific",
+   "url": "https://www.theguardian.com/world/2026/nov/05/south-korea-to-expand-anti-piracy-unit-strait-of-hormuz"
+  },
+  {
+   "text": "Hackers raised refrigeration temperatures at three French blood bank sites; the national blood service said alarms saved every blood product.",
+   "region": "europe",
+   "url": "https://www.koreatimes.co.kr/world/20261105/french-blood-banks-face-cyberattack-no-blood-damaged?utm_source=rss"
+  },
+  {
+   "text": "Bavaria's deputy premier, Hubert Aiwanger, was found dead in a Berlin hotel; police and prosecutors opened a probe into the cause.",
+   "region": "europe",
+   "url": "https://www.lemonde.fr/en/international/article/2026/11/05/bavaria-s-deputy-premier-hubert-aiwanger-found-dead-in-berlin-hotel_6772372_4.html"
+  },
+  {
+   "text": "Saudi-led coalition strikes reportedly killed about 20 people in 24 hours across four Yemeni provinces, Houthi-affiliated media said.",
+   "region": "middle_east",
+   "url": "https://www.middleeasteye.net/live-blog/live-blog-update/saudi-led-coalition-hits-yemen-reportedly-kill-20-people-over-past-day"
+  },
+  {
+   "text": "Abdul El-Sayed became the first Muslim elected to the US Senate; Egyptian state media largely ignored it while public figures celebrated.",
+   "region": "americas",
+   "url": "https://www.al-monitor.com/originals/2026/11/el-sayeds-senate-win-hailed-egyptians-snubbed-state-media"
+  },
+  {
+   "text": "California and Texas elected their first Latino governors: Xavier Becerra in California and Gina Hinojosa in Texas.",
+   "region": "americas",
+   "url": "https://mexiconewsdaily.com/politics/mexican-americans-historic-winners-tuesday-elections/"
+  },
+  {
+   "text": "Yemen's government says its 'Dawn of Yemen' offensive killed 340 Houthi fighters in 1,322 operations, with gains in al-Jawf and Taiz.",
+   "region": "middle_east",
+   "url": "https://tribune.com.pk/story/2638779/yemeni-army-says-340-houthi-fighters-killed-in-1322-military-operations"
+  }
+ ],
+ "big_number": {
+  "value": "1 in 2,100",
+  "context": "NASA's estimate of the chance its 3,200-pound Swift telescope would hurt someone on the ground when it fell over Indonesia on Wednesday.",
+  "url": "https://timesofindia.indiatimes.com/science/space/after-22-years-in-space-nasas-3200-pound-swift-space-telescope-crashes-back-to-earth-over-indonesia-after-failed-30-million-rescue-mission-agency-estimates-1-in-2100-risk-of-debris-harming-someone/articleshow/135557967.cms"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "Foreign Policy",
+     "Responsible Statecraft",
+     "Semafor"
+    ],
+    "article_count": 3,
+    "framing": "Vance and Republicans blame the unpopular Iran war for their midterm defeat, stressing internal party recrimination.",
+    "quote": "The reason we lost is the war. The president himself said so last night",
+    "quote_outlet": "Foreign Policy",
+    "quote_url": "https://foreignpolicy.com/2026/11/04/vance-midterms-blames-iran-war-trump-republicans/",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "The Korea Times",
+     "The Straits Times"
+    ],
+    "article_count": 2,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Dawn",
+     "The Hindu"
+    ],
+    "article_count": 7,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Haaretz",
+     "Iran International",
+     "Middle East Eye"
+    ],
+    "article_count": 3,
+    "framing": "Trump and Vance admit the Iran war cost Republicans the midterms while weighing continued confrontation with Tehran.",
+    "quote": "President Donald Trump weighed renewed military strikes against Tehran or a negotiated settlement to end the conflict.",
+    "quote_outlet": "Iran International",
+    "quote_url": "https://www.iranintl.com/en/202611059696",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east_state",
+    "outlets": [
+     "Tehran Times"
+    ],
+    "article_count": 2,
+    "framing": "Iranian officials frame the GOP midterm defeat as public rejection of Trump’s war on Iran and US military adventurism.",
+    "quote": "Iranian officials have described the Republican Party’s projected defeat in the US midterm elections as a rejection",
+    "quote_outlet": "Tehran Times",
+    "quote_url": "https://www.tehrantimes.com/news/531839/Iranian-officials-link-Republican-election-defeat-to-US-war-against",
+    "state_affiliated": true,
+    "wire_copy": false
+   },
+   {
+    "perspective": "african",
+    "outlets": [
+     "Punch"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "latam",
+    "outlets": [
+     "MercoPress"
+    ],
+    "article_count": 1,
+    "framing": "Republicans seek culprits after midterm defeat, with Vance blaming Iran war and the House Speaker stepping aside.",
+    "quote": "Speaker of the US House of Representatives Mike Johnson, a Republican, said he will not seek to continue leading his party in the new Congress",
+    "quote_outlet": "MercoPress",
+    "quote_url": "https://en.mercopress.com/2026/11/05/republicans-look-for-culprits-after-defeat-speaker-of-congress-steps-aside-and-vance-points-to-iran?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 15,
+  "counts": {
+   "western": 3,
+   "middle_east": 3,
+   "east_asia": 2,
+   "south_asia": 7,
+   "latam": 1,
+   "african": 1,
+   "middle_east_state": 2
+  },
+  "blindspot": "The US Treasury imposed new sanctions on companies and individuals in India and Turkey for supporting Iran. The move widens Washington’s Iran pressure campaign to third-country businesses, raising compliance and diplomatic risks beyond the Middle East.",
+  "blindspot_url": "https://www.al-monitor.com/originals/2026/11/us-slaps-sanctions-indian-turkish-firms-and-people-aiding-iran-0",
+  "blindspot_outlets": [
+   "Al-Monitor",
+   "The Hindu",
+   "The Straits Times"
+  ]
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Will JD Vance win the 2028 US Presidential Election?\" at 17%.",
+   "url": "https://polymarket.com/market/will-jd-vance-win-the-2028-us-presidential-election",
+   "source": "Polymarket"
+  }
+ ],
+ "developing": [],
+ "meta": {
+  "readability": {
+   "grade": 10.8,
+   "avg_sentence_words": 19.3,
+   "fragment_share": 0.0,
+   "rewrite": "applied (2 passes)",
+   "rewrite_grade": 8.92,
+   "rewrite_avg_sentence_words": 16.1,
+   "rewrite_fragment_share": 0.0,
+   "rewrite_attempts": [
+    "applied",
+    "applied"
+   ]
+  },
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 13497,
+  "analysis_output_tokens": 43678,
+  "analysis_cost_usd": 0.03739,
+  "analysis_seconds": 384.0,
+  "grid_cost_usd": 0.02567,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017"
+ }
+}
