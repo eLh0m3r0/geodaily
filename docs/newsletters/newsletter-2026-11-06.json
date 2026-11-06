@@ -1,0 +1,257 @@
+{
+ "date": "2026-11-06",
+ "title": "Geopolitical Daily",
+ "email_subject": "Netanyahu's rival gains key backing",
+ "preheader": "Eisenkot has Arab-list support, and Herzog will decide Sunday.",
+ "intro_text": "Good morning. It's Friday, November 06, 2026 — the 2 stories that matter most today, plus 3 updates on stories you're following and 5 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Israel's Eisenkot secures backing to form government as Netanyahu loses allies",
+   "why_important": "Six parties and Israel's largest Arab list have backed Gadi Eisenkot, a former military chief, to form a government. President Isaac Herzog is expected to announce his choice on Sunday. If Herzog chooses him, Eisenkot would replace Benjamin Netanyahu, who has led Israel through three years of war.",
+   "what_overlooked": "Eisenkot's path depends on Arab parties that Netanyahu has accused of taking foreign money. That claim could complicate talks to build a coalition.",
+   "prediction": "Herzog's Sunday announcement will show whether Eisenkot can turn endorsements into a coalition before Netanyahu's allies regroup.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/11/06/israel-s-former-chief-of-staff-eisenkot-in-strong-position-to-replace-netanyahu-as-new-pm_6773098_4.html",
+    "https://www.dawn.com/news/2042371/gadi-eisenkot-tipped-to-seek-israel-government-with-backing-of-arab-lists",
+    "https://www.middleeasteye.net/live-blog/live-blog-update/palestinian-led-party-backs-eisenkot-form-israeli-government",
+    "https://www.scmp.com/news/world/middle-east/article/3373476/netanyahu-rival-eisenkot-tipped-seek-israeli-government-backing-arab-lists"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 8,
+   "novelty_score": 8,
+   "credibility_score": 9,
+   "impact_dimension_score": 9,
+   "confidence": 0.85,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "political",
+   "coverage_counts": {
+    "western": 4,
+    "south_asia": 7,
+    "middle_east": 5,
+    "east_asia": 1,
+    "middle_east_state": 1
+   },
+   "coverage_outlets": 11,
+   "signal_terms": [
+    "Gadi Eisenkot",
+    "Benjamin Netanyahu",
+    "Isaac Herzog",
+    "Knesset"
+   ]
+  },
+  {
+   "story_title": "Taiwan stocks post steepest-ever fall as AI selloff hits Asia",
+   "why_important": "Asian tech markets plunged after a sharp US tech stock drop. Taiwan's main stock index fell by its steepest amount ever, and South Korea halted trading. Investors fear Democrats in Congress will push back against AI data centers after their midterm wins. That drop threatens the global boom in AI investment.",
+   "what_overlooked": "The cause is political, not just company earnings. Democrats' midterm gains have raised hopes for new AI rules, even before anyone drafts a bill.",
+   "prediction": "US chip stocks may open lower on Friday, and Seoul may extend its trading halt into a second session.",
+   "impact_score": 9,
+   "sources": [
+    "https://asia.nikkei.com/business/markets/taiwan-stocks-in-steepest-ever-fall-south-korea-halts-trading-amid-ai-rout",
+    "https://www.dawn.com/news/2042565/asia-stocks-tumble-after-ai-rout-rocks-us-markets",
+    "https://www.aljazeera.com/video/newsfeed/2026/11/6/global-tech-stocks-plunge-over-fears-of-ai-curbs-in-us?traffic_source=rss",
+    "https://www.dw.com/en/asian-stocks-slump-after-us-tech-rout-amid-ai-jitters/a-79871504?maca=en-rss-en-all-1573-rdf"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 9,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 9,
+   "confidence": 0.85,
+   "region": "global",
+   "actor_type": "mixed",
+   "event_type": "economic",
+   "coverage_counts": {
+    "east_asia": 3,
+    "south_asia": 2,
+    "middle_east": 1,
+    "western": 2,
+    "latam": 1
+   },
+   "coverage_outlets": 8,
+   "signal_terms": [
+    "Taiwan stocks",
+    "South Korea",
+    "AI rout",
+    "Nikkei"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Japan demanded Russia reverse Putin's decree placing Japan Tobacco's Russian assets under temporary state management.",
+   "region": "indo_pacific",
+   "url": "https://asia.nikkei.com/politics/international-relations/japan-demands-russia-reverse-seizure-of-japan-tobacco-units"
+  },
+  {
+   "text": "A British doctor who caught Ebola in DR Congo returned to London for treatment, and UK health officials said public risk remains low.",
+   "region": "africa",
+   "url": "https://www.straitstimes.com/world/europe/uk-doctor-with-ebola-returns-from-congo-to-london-for-treatment"
+  },
+  {
+   "text": "Secretary of State Marco Rubio denied reports he might leave the Trump administration after Republican midterm losses.",
+   "region": "americas",
+   "url": "https://www.hindustantimes.com/world-news/us-news/marco-rubio-dismisses-reports-of-his-trump-administration-exit-after-gop-midterms-rout-101793928158213.html"
+  },
+  {
+   "text": "Hoax bomb threats disrupted dozens of European flights on Thursday, forcing diversions and fighter-jet escorts in a second wave this week.",
+   "region": "europe",
+   "url": "https://www.dailymaverick.co.za/article/2026-11-06-new-wave-of-bomb-hoaxes-hits-dozens-of-flights-across-europe/"
+  },
+  {
+   "text": "IEA chief Fatih Birol predicted a comeback for climate action ahead of the COP31 summit in Antalya, Türkiye.",
+   "region": "global",
+   "url": "https://www.ft.com/content/44d83edf-de3b-4a4c-81d0-0a9029e7f46e?syn-25a6b1a6=1"
+  }
+ ],
+ "big_number": {
+  "value": "1.6 million",
+  "context": "France's CGT union estimated nearly 1.6 million people joined nationwide strikes, the largest turnout since the movement began in September.",
+  "url": "https://www.scmp.com/news/world/europe/article/3373463/mass-protests-sweep-france-again-workers-strike-and-march-dignified-wage"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "France 24",
+     "Le Monde",
+     "The Guardian"
+    ],
+    "article_count": 4,
+    "framing": "Frames Eisenkot's broad coalition endorsements as a challenge to Netanyahu, but stresses President Herzog's undecided mandate.",
+    "quote": "President says he will make a decision on Sunday about who should try to build a government as Netanyahu rival is endorsed by 67 lawmakers",
+    "quote_outlet": "The Guardian",
+    "quote_url": "https://www.theguardian.com/world/2026/nov/05/herzog-netanyahu-eisenkot-israel-election-decision",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "South China Morning Post"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "Israeli President Isaac Herzog said he will announce on Sunday whom he will task with trying to form a new government",
+    "quote_outlet": "South China Morning Post",
+    "quote_url": "https://www.scmp.com/news/world/middle-east/article/3373476/netanyahu-rival-eisenkot-tipped-seek-israeli-government-backing-arab-lists",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Dawn",
+     "The Hindu"
+    ],
+    "article_count": 7,
+    "framing": "",
+    "quote": "Israel’s largest Arab list on Thursday said it would back Gadi Eisenkot to form the next government",
+    "quote_outlet": "Dawn",
+    "quote_url": "https://www.dawn.com/news/2042371/gadi-eisenkot-tipped-to-seek-israel-government-with-backing-of-arab-lists",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Haaretz",
+     "Middle East Eye"
+    ],
+    "article_count": 5,
+    "framing": "Stresses Arab-majority and Palestinian-led party backing for Eisenkot, while Netanyahu attacks those parties amid a divided Knesset.",
+    "quote": "Both Arab-majority parties backed Eisenkot, while United Torah Judaism – traditionally aligned with Netanyahu and Likud – declined to endorse either candidate",
+    "quote_outlet": "Haaretz",
+    "quote_url": "https://www.haaretz.com/israel-news/elections/2026-11-05/ty-article/.premium/eisenkot-secures-parliamentary-majority-clearest-path-to-form-govt/000001a1-ad0b-d041-a5f9-ed2bbb1f0000",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east_state",
+    "outlets": [
+     "Anadolu Agency"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "Ra’am’s 8 lawmakers back Eisenkot, bringing his confirmed recommendations to 56; Netanyahu expected to receive 46",
+    "quote_outlet": "Anadolu Agency",
+    "quote_url": "https://www.aa.com.tr/en/middle-east/arab-party-recommends-opposition-leader-eisenkot-to-form-israeli-government/4112840",
+    "state_affiliated": true,
+    "wire_copy": true
+   }
+  ],
+  "total_outlets": 11,
+  "counts": {
+   "western": 4,
+   "south_asia": 7,
+   "middle_east": 5,
+   "east_asia": 1,
+   "middle_east_state": 1
+  },
+  "blindspot": "",
+  "blindspot_url": "",
+  "blindspot_outlets": []
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Will Benjamin Netanyahu be the next Prime Minister of Israel?\" at 23%.",
+   "url": "https://polymarket.com/market/will-benjamin-netanyahu-be-the-next-prime-minister-of-israel",
+   "source": "Polymarket"
+  }
+ ],
+ "developing": [
+  {
+   "storyline": "Peña",
+   "text": "Paraguay's president resigns after bank collapse freezes savings.",
+   "region": "americas",
+   "url": "https://responsiblestatecraft.org/paraguay-president-resigns/"
+  },
+  {
+   "storyline": "Asian",
+   "text": "Nithya Raman defeated incumbent Karen Bass to become Los Angeles' first Asian-American mayor, with 52% of the vote to Bass's 48%.",
+   "region": "americas",
+   "url": "https://www.scmp.com/news/world/united-states-canada/article/3373464/india-born-leftist-nithya-raman-beats-incumbent-karen-bass-become-la-mayor"
+  },
+  {
+   "storyline": "Melania",
+   "text": "First Lady Melania Trump hosted Russian and Ukrainian officials at the White House and called for a more enduring ceasefire in Oleshky.",
+   "region": "europe",
+   "url": "https://www.dawn.com/news/2042442/melania-trump-hosts-russia-ukraine-meeting-calls-for-enduring-truce"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 10.89,
+   "avg_sentence_words": 17.6,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 9.09,
+   "rewrite_avg_sentence_words": 14.3,
+   "rewrite_fragment_share": 0.0,
+   "rewrite_attempts": [
+    "applied"
+   ]
+  },
+  "editorial_actions": [
+   "Story demoted to DEVELOPING (running storyline 'pena'): Paraguay's president resigns after bank collapse freezes savings",
+   "Quick hit moved to DEVELOPING (running storyline 'asian'): Nithya Raman defeated incumbent Karen Bass to become Los Angeles' firs",
+   "Quick hit moved to DEVELOPING (running storyline 'melania'): First Lady Melania Trump hosted Russian and Ukrainian officials at the",
+   "Quick hit dropped (running storyline 'el-sayed'): About 86% of Black Michiganders voted for Abdul El-Sayed, but he ran w"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 12277,
+  "analysis_output_tokens": 28837,
+  "analysis_cost_usd": 0.03829,
+  "analysis_seconds": 967.1,
+  "grid_cost_usd": 0.01098,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017"
+ }
+}
