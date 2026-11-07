@@ -1,0 +1,235 @@
+{
+ "date": "2026-11-07",
+ "title": "Geopolitical Daily",
+ "email_subject": "US strikes Iran again days after midterms",
+ "preheader": "Trump calls it 'minor' as Tehran weighs a mediator's peace proposal.",
+ "intro_text": "Good morning. It's Saturday, November 07, 2026 — the 2 stories that matter most today, plus 1 update on stories you're following and 6 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "US strikes Iranian air-defence site near Strait of Hormuz",
+   "why_important": "US forces hit an Iranian air-defence system on Qeshm Island in the Strait of Hormuz, and Trump called it 'minor'. It was the second such strike this week, days after voters punished Republicans over the war. Iran's state media reported two explosions, and Tehran is considering a mediator's proposal to end the fighting.",
+   "what_overlooked": "Qeshm sits inside the strait, which carries Gulf oil exports. Iranian state media reported the blasts but gave no word on damage or casualties.",
+   "prediction": "If Tehran names negotiators or a venue for talks by Monday, diplomacy survives the strikes. A military reply would mean it does not.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.theguardian.com/world/2026/nov/07/us-carries-out-another-round-of-minor-strikes-on-iran-trump-says",
+    "https://www.scmp.com/news/world/middle-east/article/3373633/trump-confirms-fresh-iran-strikes-days-after-voters-punish-war-polls",
+    "https://www.thehindu.com/news/international/us-military-carries-out-fresh-targeted-strikes-on-iran-as-tehran-weighs-mediators-proposals/article71677274.ece"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 7,
+   "novelty_score": 6,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "south_asia": 1,
+    "east_asia": 1,
+    "western": 1,
+    "middle_east": 2
+   },
+   "coverage_outlets": 4,
+   "signal_terms": [
+    "Iran",
+    "Qeshm Island",
+    "Strait of Hormuz",
+    "Donald Trump"
+   ]
+  },
+  {
+   "story_title": "Trump names Stephen Miller chief of staff after midterm losses",
+   "why_important": "Trump replaced chief of staff Susie Wiles with Stephen Miller, who shaped his immigration crackdown, starting Monday. The switch came days after Democrats won the House and Senate. Miller's promotion puts a hardliner in charge of steering Trump's agenda past a Congress that can block it.",
+   "what_overlooked": "Miller, 41, has shaped Trump's immigration policy since the first term. The chief of staff job covers the whole White House staff, not just domestic policy.",
+   "prediction": "By Wednesday, look for new immigration orders or a funding fight with Congress. Either would show Miller is setting policy, not just staff.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/11/06/trump-appoints-immigration-hardliner-stephen-miller-as-new-chief-of-staff_6773758_4.html",
+    "https://www.dawn.com/news/2042647/trump-promotes-stephen-miller-to-chief-of-staff-replacing-susie-wiles",
+    "https://www.haaretz.com/us-news/2026-11-06/ty-article/trump-names-far-right-pro-israel-stephen-miller-as-white-house-chief-of-staff/000001a1-b245-d2e9-a5ad-badf186e0000"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 7,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 7,
+   "confidence": 0.9,
+   "region": "americas",
+   "actor_type": "state",
+   "event_type": "political",
+   "coverage_counts": {
+    "western": 8,
+    "middle_east": 1,
+    "south_asia": 13,
+    "latam": 1,
+    "east_asia": 7,
+    "russian_state": 1
+   },
+   "coverage_outlets": 19,
+   "signal_terms": [
+    "Stephen Miller",
+    "Susie Wiles",
+    "White House chief of staff",
+    "Trump"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "The Stop Dirty Data Centres coalition staged protests in 16 countries, and activists broke into a Microsoft construction site in Amsterdam.",
+   "region": "global",
+   "url": "https://www.dawn.com/news/2042640/activists-breach-microsoft-data-centre-construction-site-as-protests-spread-in-europe"
+  },
+  {
+   "text": "Pope Leo XIV arrived in Uruguay for a 12-day South America tour, a month after surgery removed a cancerous tumor from his lung.",
+   "region": "americas",
+   "url": "https://www.lemonde.fr/en/international/article/2026/11/06/pope-leo-says-in-fairly-good-shape-after-lung-cancer-surgery_6773791_4.html"
+  },
+  {
+   "text": "European security agencies suspect pro-Kremlin activists or hacking groups ran this week's flight bomb hoaxes, the Financial Times reported, with more threats on Friday.",
+   "region": "europe",
+   "url": "https://www.ft.com/content/0845687f-1f74-4bbf-88c9-5c6b031c7f20?syn-25a6b1a6=1"
+  },
+  {
+   "text": "Japanese, South Korean and Taiwanese chip stocks fell again Friday, extending a week of AI losses that started on Wall Street.",
+   "region": "indo_pacific",
+   "url": "https://asia.nikkei.com/business/markets/taiwan-south-korea-japan-stock-markets-hit-hard-by-ai-sell-off"
+  },
+  {
+   "text": "France's Yellow Vests vowed 'mass disobedience' at a banned Paris rally on Saturday, as unions called another day of protests over pay.",
+   "region": "europe",
+   "url": "https://www.dawn.com/news/2042809/france-braces-for-protests-as-yellow-vests-urge-mass-disobedience"
+  },
+  {
+   "text": "US employers added 165,000 jobs in October and unemployment fell to 4.1%, data that strengthens the case for a Fed rate rise.",
+   "region": "americas",
+   "url": "https://www.scmp.com/news/world/united-states-canada/article/3373607/us-adds-165000-jobs-october-labour-market-beats-expectations"
+  }
+ ],
+ "big_number": {
+  "value": "$20 million",
+  "context": "The State Department's Rewards for Justice program offers up to $20 million, plus relocation, for details on Iran's nuclear facilities, equipment and scientists.",
+  "url": "https://www.lemonde.fr/en/international/article/2026/11/07/us-offers-20-million-reward-for-info-on-iran-s-nuclear-program_6774089_4.html"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "The Guardian"
+    ],
+    "article_count": 1,
+    "framing": "Frames fresh US strikes as Trump-declared ‘minor’ action amid accelerating diplomacy, holding Washington responsible for escalation.",
+    "quote": "Donald Trump has said the US military on Friday carried out a new round of limited strikes on Iran, targeting an air defence system, describing the action as “minor.”",
+    "quote_outlet": "The Guardian",
+    "quote_url": "https://www.theguardian.com/world/2026/nov/07/us-carries-out-another-round-of-minor-strikes-on-iran-trump-says",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "South China Morning Post"
+    ],
+    "article_count": 1,
+    "framing": "Frames the strikes as Trump’s confirmation under domestic voter backlash, stressing his ‘minor’ label and oil-waterway risk.",
+    "quote": "US President Donald Trump said the American military on Friday carried out new limited strikes on Iran, targeting an Iranian air defence system.",
+    "quote_outlet": "South China Morning Post",
+    "quote_url": "https://www.scmp.com/news/world/middle-east/article/3373633/trump-confirms-fresh-iran-strikes-days-after-voters-punish-war-polls",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "The Hindu"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera"
+    ],
+    "article_count": 2,
+    "framing": "Frames US strikes as Trump’s ‘minor’ action while stressing his denial of war and claims of diplomatic progress.",
+    "quote": "The US president also claims 'a lot of progress' in Washington's negotiations with Tehran.",
+    "quote_outlet": "Al Jazeera",
+    "quote_url": "https://www.aljazeera.com/news/2026/11/7/trump-confirms-new-us-strikes-on-irans-qeshm-island?traffic_source=rss",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 4,
+  "counts": {
+   "south_asia": 1,
+   "east_asia": 1,
+   "western": 1,
+   "middle_east": 2
+  },
+  "blindspot": "Malaysia’s court allowed jailed ex-PM Najib Razak to move to house arrest after his party paid a royal-pardon fine, his lawyer said. The move tests rule of law and accountability in a high-profile Southeast Asian corruption case.",
+  "blindspot_url": "https://www.dailymaverick.co.za/article/2026-11-06-malaysia-ex-pm-najib-razak-set-for-house-arrest-after-party-pays-fine-to/",
+  "blindspot_outlets": [
+   "Bangkok Post",
+   "CNA",
+   "Daily Maverick",
+   "South China Morning Post",
+   "The Japan Times"
+  ]
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Strait of Hormuz traffic returns to normal by December 31?\" at 10%.",
+   "url": "https://polymarket.com/market/strait-of-hormuz-traffic-returns-to-normal-by-december-31",
+   "source": "Polymarket"
+  }
+ ],
+ "developing": [
+  {
+   "storyline": "Peña",
+   "text": "Paraguay's Senate votes 44-0 to remove Peña over bank crisis.",
+   "region": "americas",
+   "url": "https://www.lemonde.fr/en/international/article/2026/11/07/paraguay-s-impeached-president-pena-put-under-house-arrest_6773857_4.html"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 9.62,
+   "avg_sentence_words": 17.2,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 8.75,
+   "rewrite_avg_sentence_words": 14.4,
+   "rewrite_fragment_share": 0.0,
+   "rewrite_attempts": [
+    "applied"
+   ]
+  },
+  "editorial_actions": [
+   "Quick hit dropped (restates the 2026-11-03 story 'US sets Russia-Ukraine talks for Abu Dhabi on Nove'): Russia struck Kyiv's energy and transport sites overnight, injuring at",
+   "Quick hit dropped (restates the 2026-11-04 story 'Trump says US military aid to Israel will end this'): Trump suggested cutting billions in annual military aid to Israel, the",
+   "Story demoted to DEVELOPING (running storyline 'pena'): Paraguay's Senate votes 44-0 to remove Peña over bank crisis"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 12731,
+  "analysis_output_tokens": 32577,
+  "analysis_cost_usd": 0.01828,
+  "analysis_seconds": 191.2,
+  "grid_cost_usd": 0.00362,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017"
+ }
+}
