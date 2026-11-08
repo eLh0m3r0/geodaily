@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sat, 07 Nov 2026 08:29:27 GMT</pubDate>
-        <lastBuildDate>Sat, 07 Nov 2026 08:29:27 GMT</lastBuildDate>
+        <pubDate>Sun, 08 Nov 2026 08:30:23 GMT</pubDate>
+        <lastBuildDate>Sun, 08 Nov 2026 08:30:23 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,19 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 08, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-08.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Sunday, November 08, 2026 — the 3 stories that matter most today, plus 3 updates on stories you're following and 4 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Russia hits Kyiv power plants and bridge before US-Ukraine talks</strong>: Russia fired missiles and drones at energy facilities around Kyiv and struck a key bridge. Strikes knocked out power in five regions as US, Ukrainian and Russian officials prepare for Abu Dhabi talks....</li></ul><p><em>Published: November 08, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sun, 08 Nov 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20261108</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Russia]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-08.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 07, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-07.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Saturday, November 07, 2026 — the 2 stories that matter most today, plus 1 update on stories you're following and 6 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>US strikes Iranian air-defence site near Strait of Hormuz</strong>: US forces hit an Iranian air-defence system on Qeshm Island in the Strait of Hormuz, and Trump called it 'minor'. It was the second such strike this week, days after voters punished Republicans over t...</li></ul><p><em>Published: November 07, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -177,19 +190,6 @@
         <category><![CDATA[Strategic Analysis]]></category>
         <category><![CDATA[International Relations]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-30.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - October 29, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-29.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Thursday, October 29, 2026 — the 3 stories that matter most today, plus 3 updates on stories you're following and 4 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Spain's second high-speed train crash this year kills at least 68</strong>: Two high-speed trains collided near Urda station in Toledo province on Wednesday morning, killing at least 68 people. It was Europe's deadliest rail crash since 2013 and Spain's second this year. The ...</li></ul><p><em>Published: October 29, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Thu, 29 Oct 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20261029</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[Europe]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-29.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>

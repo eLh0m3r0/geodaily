@@ -1,0 +1,260 @@
+{
+ "date": "2026-11-08",
+ "title": "Geopolitical Daily",
+ "email_subject": "Kyiv's power grid hit as talks loom",
+ "preheader": "A key bridge was also hit, and 70,000 Gaza tents are underwater after heavy rain.",
+ "intro_text": "Good morning. It's Sunday, November 08, 2026 — the 3 stories that matter most today, plus 3 updates on stories you're following and 4 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Russia hits Kyiv power plants and bridge before US-Ukraine talks",
+   "why_important": "Russia fired missiles and drones at energy facilities around Kyiv and struck a key bridge. Strikes knocked out power in five regions as US, Ukrainian and Russian officials prepare for Abu Dhabi talks. This suggests Moscow wants to squeeze Ukraine before negotiations.",
+   "what_overlooked": "Zelensky said four ballistic missiles hit the Pivnichnyi Bridge. That detail shows Russia targeted transport links, not just power stations.",
+   "prediction": "Whether Abu Dhabi talks open as planned will show if Moscow's strikes pressure or derail them.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.themoscowtimes.com/2026/11/07/russia-pounds-power-facilities-around-kyiv-damages-major-bridge-a94198",
+    "https://www.thehindu.com/news/international/ukraine-says-russia-ramps-up-strikes-to-pressure-kyiv-at-talks/article71679254.ece",
+    "https://www.pravda.com.ua/eng/news/2026/11/07/8061738/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 9,
+   "confidence": 0.9,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "russian_exile": 1,
+    "south_asia": 1,
+    "ukrainian": 1,
+    "western": 2
+   },
+   "coverage_outlets": 5,
+   "signal_terms": [
+    "Kyiv",
+    "Pivnichnyi Bridge",
+    "Abu Dhabi",
+    "Zelensky"
+   ]
+  },
+  {
+   "story_title": "US launches task force to restrict Iran's land trade",
+   "why_important": "The US military said it is launching Task Force Iron Gate. The force will stop Iran from moving weapons and sanctioned goods across land borders and the Caspian Sea. It builds on a months-long naval blockade and widens pressure on Tehran beyond the Strait of Hormuz.",
+   "what_overlooked": "The task force will be based in Tampa, Florida, with 20 civilian and military staff. Its reach depends on coordination with governments along Iran's borders.",
+   "prediction": "Iran's response at land crossings with Afghanistan, Pakistan and Caspian states will show. The test is whether the new task force can slow weapons flows.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.al-monitor.com/originals/2026/11/expanding-naval-blockade-us-military-looks-restrict-iranian-land-commerce",
+    "https://www.japantimes.co.jp/news/2026/11/08/world/politics/us-military-blockade-iran-commerce/",
+    "https://www.dawn.com/news/2042856/us-task-force-iron-gate-in-the-works-to-restrict-iranian-land-commerce-alongside-naval-blockade"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 8,
+   "novelty_score": 8,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "middle_east": 5,
+    "east_asia": 2,
+    "south_asia": 3
+   },
+   "coverage_outlets": 9,
+   "signal_terms": [
+    "Task Force Iron Gate",
+    "Iran",
+    "Caspian Sea",
+    "Strait of Hormuz"
+   ]
+  },
+  {
+   "story_title": "Heavy rain floods 70,000 tents for displaced Palestinians in Gaza",
+   "why_important": "Heavy rain flooded about 70,000 tents sheltering displaced people in Gaza on the first day of winter rains. The floods left tens of thousands of people without shelter. The Hamas-run government media office also reported collapsed walls and roofs. Some injuries were critical, and war continues to devastate the territory.",
+   "what_overlooked": "People saw hundreds of families fleeing from flooded camps. The government office said dozens of cracked walls and roofs collapsed and caused injuries.",
+   "prediction": "Whether aid agencies can deliver new tents and drainage before the next storm will determine how many families survive winter in Gaza.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.al-monitor.com/originals/2026/11/heavy-rains-leave-tens-thousands-without-shelter-gaza-local-authorities",
+    "https://www.dawn.com/news/2042961/tents-flooded-as-heavy-rain-hits-gaza",
+    "https://www.japantimes.co.jp/news/2026/11/08/world/heavy-rain-shelter-gaza/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 7,
+   "novelty_score": 6,
+   "credibility_score": 9,
+   "impact_dimension_score": 7,
+   "confidence": 0.9,
+   "region": "middle_east",
+   "actor_type": "non_state",
+   "event_type": "humanitarian",
+   "coverage_counts": {
+    "middle_east": 2,
+    "south_asia": 2,
+    "east_asia": 1
+   },
+   "coverage_outlets": 4,
+   "signal_terms": [
+    "Gaza",
+    "Hamas"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "New Zealand's election remains too close to call, with neither National nor Labour securing a clear victory and official results weeks away.",
+   "region": "indo_pacific",
+   "url": "https://www.thehindu.com/news/international/new-zealanders-wont-know-for-weeks-who-won-election-as-neither-side-secures-clear-victory/article71680680.ece"
+  },
+  {
+   "text": "Two Uyghurs facing deportation from Thailand say they would be 'like slaves' in China, as activists warn Bangkok may bow to Beijing.",
+   "region": "indo_pacific",
+   "url": "https://www.theguardian.com/global-development/2026/nov/08/uyghurs-thailand-china-forced-deportation"
+  },
+  {
+   "text": "President Trump asked UFC CEO Dana White to be White House press secretary and called for criminal probes into Democrats.",
+   "region": "americas",
+   "url": "https://www.japantimes.co.jp/news/2026/11/08/world/politics/trump-ufc-press-secretary/"
+  },
+  {
+   "text": "Japan's authorities said a magnitude 5.7 earthquake in Shizuoka Prefecture injured at least 22 people and shattered store windows.",
+   "region": "indo_pacific",
+   "url": "https://www.thehindu.com/news/international/strong-earthquake-strikes-japan/article71680450.ece"
+  }
+ ],
+ "big_number": null,
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "BBC",
+     "DW"
+    ],
+    "article_count": 2,
+    "framing": "Frames Russian strikes as coercive pressure on Ukraine's power grid before talks, holding Moscow responsible.",
+    "quote": "President Volodymyr Zelenskyy accused Moscow of trying to \"push\" Ukraine \"into a blackout\" ahead of talks in Abu Dhabi.",
+    "quote_outlet": "DW",
+    "quote_url": "https://www.dw.com/en/ukraine-russia-hits-kyiv-with-airstrikes-ahead-of-trilateral-talks/a-79883851?maca=en-rss-en-all-1573-rdf",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "The Hindu"
+    ],
+    "article_count": 1,
+    "framing": "Presents Ukraine's claim that Russia is escalating energy strikes to pressure Kyiv in talks.",
+    "quote": "Ukraine's Energy Ministry said \"a massive attack on a number of energy facilities\" had plunged five regions into darkness and significantly hampered electricity transmission",
+    "quote_outlet": "The Hindu",
+    "quote_url": "https://www.thehindu.com/news/international/ukraine-says-russia-ramps-up-strikes-to-pressure-kyiv-at-talks/article71679254.ece",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_exile",
+    "outlets": [
+     "The Moscow Times"
+    ],
+    "article_count": 1,
+    "framing": "Holds Russian forces responsible for missile and drone strikes straining Kyiv's power and heating as winter nears.",
+    "quote": "Russian forces hammered energy infrastructure around Ukraine's capital with missiles and drones overnight, straining Kyiv's power supply and heating systems as temperatures headed towards zero, officials said on Saturday.",
+    "quote_outlet": "The Moscow Times",
+    "quote_url": "https://www.themoscowtimes.com/2026/11/07/russia-pounds-power-facilities-around-kyiv-damages-major-bridge-a94198",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "ukrainian",
+    "outlets": [
+     "Ukrainska Pravda"
+    ],
+    "article_count": 1,
+    "framing": "Centers Zelenskyy's account of four Russian ballistic missiles hitting a Kyiv bridge, stressing Russian aggression.",
+    "quote": "Ukrainian President Zelenskyy has stated that four Russian ballistic missiles struck the Pivnichnyi Bridge in Kyiv overnight on 6-7 November.",
+    "quote_outlet": "Ukrainska Pravda",
+    "quote_url": "https://www.pravda.com.ua/eng/news/2026/11/07/8061738/",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 5,
+  "counts": {
+   "russian_exile": 1,
+   "south_asia": 1,
+   "ukrainian": 1,
+   "western": 2
+  },
+  "blindspot": "Iran executed three men, state media reported, after convictions over January 2026 protests and alleged operations for Israel and the US. The case highlights Tehran's use of the death penalty in protest and security cases, raising human-rights and regional-security concerns.",
+  "blindspot_url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-executes-three-men-convicted-over-january-2026-protests",
+  "blindspot_outlets": [
+   "Iran International",
+   "Middle East Eye",
+   "Punch",
+   "The Hindu",
+   "The Straits Times",
+   "Times of India"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "Peña",
+   "text": "Paraguayan prosecutors charged ousted president Santiago Peña over the Ueno Bank collapse and took him into custody Saturday.",
+   "region": "americas",
+   "url": "https://www.middleeasteye.net/live-blog/live-blog-update/paraguays-pro-israel-former-president-taken-custody-over-banking-crisis"
+  },
+  {
+   "storyline": "Houthi",
+   "text": "The Saudi-led coalition intercepted and destroyed two Houthi ballistic missiles fired toward Riyadh, with loud booms heard in the capital.",
+   "region": "middle_east",
+   "url": "https://www.straitstimes.com/world/middle-east/saudi-led-coalition-intercepts-two-houthi-missiles-fired-towards-riyadh"
+  },
+  {
+   "storyline": "Gadi Eisenkot",
+   "text": "Israel's president formally tasked Gadi Eisenkot with forming a government and gave him 28 days to build a coalition.",
+   "region": "middle_east",
+   "url": "https://www.lemonde.fr/en/international/article/2026/11/07/israeli-president-tasks-eisenkot-netanyahu-s-main-opponent-with-forming-government_6774550_4.html"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 12.01,
+   "avg_sentence_words": 22.2,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 8.39,
+   "rewrite_avg_sentence_words": 13.3,
+   "rewrite_fragment_share": 0.0,
+   "rewrite_attempts": [
+    "applied"
+   ]
+  },
+  "editorial_actions": [
+   "Quick hit moved to DEVELOPING (running storyline 'pena'): Paraguayan prosecutors charged ousted president Santiago Peña over the",
+   "Quick hit moved to DEVELOPING (running storyline 'houthi'): The Saudi-led coalition intercepted and destroyed two Houthi ballistic",
+   "Quick hit dropped (same storyline as a story today): Russia's delegation to next week's US-Ukraine talks will include Deput",
+   "Quick hit moved to DEVELOPING (running storyline 'gadi eisenkot'): Israel's president formally tasked Gadi Eisenkot with forming a govern",
+   "Big number dropped (part of a running storyline): 33 — People killed in what Houthi authorities said were Saudi air"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 12339,
+  "analysis_output_tokens": 39318,
+  "analysis_cost_usd": 0.03563,
+  "analysis_seconds": 239.8,
+  "grid_cost_usd": 0.00578,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017"
+ }
+}
