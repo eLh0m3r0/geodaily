@@ -659,6 +659,27 @@ def run_complete_pipeline() -> bool:
                 file_path = None
             else:
                 try:
+                    # Funnel counts of this run, published on the site's
+                    # how-it-works page and dashboard (real numbers on the
+                    # diagram instead of typical ones)
+                    try:
+                        from collections import Counter as _Counter
+                        issue_meta["pipeline"] = {
+                            "sources": len({a.source for a in raw_articles if getattr(a, 'source', None)}),
+                            "collected": len(raw_articles),
+                            "after_dedup": len(deduplicated_articles),
+                            "events": sum(1 for n in _Counter(
+                                a.cluster_id for a in scored_articles
+                                if getattr(a, 'cluster_id', None)).values() if n >= 2),
+                            "prompt_articles": int(issue_meta.get("prompt_articles") or 0),
+                            "stories": len(analyses),
+                            "quick_hits": len(quick_hits or []),
+                            "developing": len(developing or []),
+                            "seconds": round((datetime.now() - start_time).total_seconds()),
+                        }
+                    except Exception as e:
+                        logger.warning(f"Pipeline funnel counts not recorded: {e}")
+
                     generator = NewsletterGenerator()
                     newsletter = generator.generate_newsletter(
                         analyses, quick_hits=quick_hits, big_number=big_number,

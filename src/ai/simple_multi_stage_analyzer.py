@@ -99,6 +99,7 @@ class SimplifiedMultiStageAnalyzer:
 
         # Event-aware pre-filter: keep corroborated, perspective-diverse events
         sorted_articles = self._prefilter_articles(articles, cap=60)
+        prompt_article_count = len(sorted_articles)
 
         # Build the comprehensive prompt for single API call
         # No reserve story in the prompt: a fourth story plus extra quick hits
@@ -216,6 +217,7 @@ class SimplifiedMultiStageAnalyzer:
                 "analysis_seconds": round(elapsed, 1),
             })
             issue.meta = dict(self.meta)
+            issue.meta["prompt_articles"] = prompt_article_count
 
             if not issue.stories:
                 # Fail loudly rather than publish generic mock text as analysis.
