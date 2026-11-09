@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How it works - Geopolitical Daily</title>
+    <meta name="description" content="How Geopolitical Daily is made: the daily pipeline from sources to published issue, what is AI, what is code, and the checks every issue passes.">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="alternate" type="application/rss+xml" title="Geopolitical Daily RSS" href="feed.xml">
+    <link rel="canonical" href="https://elh0m3r0.github.io/geodaily/how-it-works.html">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a class="site-title" href="index.html">Geopolitical Daily</a>
+            <nav class="nav" aria-label="Site"><a href="index.html">Latest</a><a href="archive.html">Archive</a><a href="how-it-works.html" aria-current="page">How it works</a><a href="dashboard.html">Dashboard</a><a href="about.html">About</a><a href="feed.xml">RSS</a></nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+
+            <header class="page-head">
+                <p class="eyebrow">How it works</p>
+                <h1 class="page-title">From 87 sources to one five-minute briefing</h1>
+                <p class="page-lead">Every issue is produced by the same automated run: collect, group into events,
+                let a language model write the issue, then check its work in code. Here is each step, what is
+                AI and what is not, and what stops a bad issue from going out.</p>
+            </header>
+
+            <div class="stats"><div class="stat"><b>87</b><span>sources across 15 perspectives</span></div><div class="stat"><b>2</b><span>AI calls per issue &mdash; everything else is plain code</span></div><div class="stat"><b>$0.031</b><span>average AI cost per issue (last 10)</span></div><div class="stat"><b>5.5 min</b><span>average time the model takes to write an issue</span></div></div>
+
+            <h2 class="section-label">The daily run</h2>
+            <div class="flow-legend">
+                <span><i></i>code</span>
+                <span><i class="ai"></i>AI model call (the only paid steps)</span>
+                <span><i class="soft"></i>optional &mdash; the issue ships without it if it fails</span>
+            </div>
+            <ol class="flow">
+                <li class="flow-node">
+                    <h3>87 sources &middot; 15 perspectives</h3>
+                    <p>85 RSS feeds + 2 scraped sites; 55 are non-Western and 15 are state-affiliated (always labeled).</p>
+                </li>
+                <li class="flow-edge" aria-hidden="true">every article from the last 24&ndash;72 hours</li>
+                <li class="flow-node">
+                    <h3>Collect and enrich</h3>
+                    <p>All feeds are fetched in parallel. Short RSS summaries are replaced with the article's
+                    full text; articles readers could not read (non-Latin script) are skipped.</p>
+                </li>
+                <li class="flow-edge" aria-hidden="true">each article keeps its outlet, perspective and state-media label</li>
+                <li class="flow-node">
+                    <h3>Group articles into events</h3>
+                    <p>Sentence embeddings and density clustering put every report of the same event in one
+                    group &mdash; so a Western and a non-Western account of one event sit side by side.</p>
+                    <p class="flow-aside"><b>Fallback:</b> if the embedding model cannot load, plain
+                    title-similarity de-duplication keeps the run going.</p>
+                </li>
+                <li class="flow-edge" aria-hidden="true">articles tagged with the event they report</li>
+                <li class="flow-node">
+                    <h3>Pre-select what the model reads</h3>
+                    <p>Events are ranked by how many outlets confirm them and how many different perspectives
+                    cover them; up to four articles per event are kept, from different perspectives.</p>
+                </li>
+                <li class="flow-edge" aria-hidden="true">about 60 articles go to the model</li>
+                <li class="flow-node ai">
+                    <h3>AI call 1 &mdash; write the issue</h3>
+                    <p>One call picks and ranks the top stories, writes the quick hits and the big number.
+                    The model also sees the last issues so it can lead with fresh events.</p>
+                    <p class="flow-aside"><b>Readability gate:</b> copy above a 9.5 school-grade reading level
+                    is sent back for a rewrite (at most twice) &mdash; kept only if it reads easier without
+                    turning choppy or losing a figure.</p>
+                </li>
+                <li class="flow-edge" aria-hidden="true"><b>3</b> ranked stories, <b>4</b> quick hits, one big number</li>
+                <li class="flow-node">
+                    <h3>Editorial rules, enforced in code</h3>
+                    <p>Running storylines move to <em>Developing</em>; items that repeat recent issues are
+                    dropped; links are checked against the text they sit under; headlines are set in
+                    sentence case; off-topic items (crime, celebrity, sport) are removed.</p>
+                </li>
+                <li class="flow-edge" aria-hidden="true">every decision is logged in the issue's JSON</li>
+                <li class="flow-node ai">
+                    <h3>AI call 2 &mdash; how the world covers it</h3>
+                    <p>For the big story the model gets the event's articles grouped by perspective and returns
+                    each group's framing plus one quote. The <em>Blindspot</em> is picked by code: an event
+                    reported by at least two outlets we track, none of them Western.</p>
+                    <p class="flow-aside"><b>Quote check:</b> a quote must appear word for word in the source
+                    article, or it is dropped.</p>
+                </li>
+                <li class="flow-edge" aria-hidden="true">perspective grid + blindspot</li>
+                <li class="flow-node soft">
+                    <h3>Signals</h3>
+                    <p>Prediction-market odds and news-volume trends for the big story, added only when a
+                    market matches the story's specific names.</p>
+                </li>
+                <li class="flow-edge" aria-hidden="true">one data set, three outputs</li>
+            </ol>
+            <div class="flow-out">
+                <div class="flow-node"><h3>This website</h3><p>The issue page, a permanent page per story, archive and RSS.</p></div>
+                <div class="flow-node"><h3>Email</h3><p>Sent to daily subscribers; delivery is verified after sending.</p></div>
+                <div class="flow-node"><h3>Issue JSON</h3><p>Machine-readable copy with model, cost and decisions. Feeds the Sunday digest &mdash; no AI needed.</p></div>
+            </div>
+            <p class="fine-print" style="max-width:620px;margin-left:auto;margin-right:auto;">Per-run counts appear on the arrows once the next issue is published. Latest issue written by <code>deepseek/deepseek-v4.1-flash-1017</code>.
+               Live figures for every issue are on the <a href="dashboard.html">dashboard</a>.</p>
+
+            <h2 class="section-label">What keeps it honest</h2>
+            <ul class="checks">
+                <li><strong>Quotes are verbatim.</strong> Every quote in the perspective grid is matched against the
+                    article text. A paraphrase never appears in quotation marks.</li>
+                <li><strong>State media is data, not a source of fact.</strong> State-affiliated outlets are labeled
+                    wherever they appear and show how a government frames an event; they are never the only
+                    source for a claim.</li>
+                <li><strong>Who covered it is counted, not written.</strong> Coverage bars and the blindspot's
+                    &ldquo;reported by&rdquo; line come from the article data, so the model cannot claim
+                    coverage that is not there.</li>
+                <li><strong>No reruns.</strong> Storylines are tracked across days by their distinctive names. A
+                    story you already read comes back only as a one-line update with new facts.</li>
+                <li><strong>Plain English.</strong> Each issue is measured with the Flesch-Kincaid formula before
+                    it is published; the result is on the dashboard.</li>
+                <li><strong>Every claim links to its source,</strong> and each link is checked to be about the
+                    sentence it is attached to.</li>
+                <li><strong>A spending cap.</strong> AI calls stop when the monthly budget is used up.</li>
+            </ul>
+
+            <h2 class="section-label">When it runs</h2>
+            <div class="schedule">
+                <div class="when">Every morning (UTC)</div>
+                <div>The daily run above: publishes the issue here and emails subscribers. A second start the same
+                     day does nothing once the issue is out.</div>
+                <div class="when">Sundays</div>
+                <div>The weekly digest is assembled from the week's issue files for subscribers who chose one
+                     email a week.</div>
+                <div class="when">Mondays</div>
+                <div>Every feed is tested; dead or blocked feeds are reported.</div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p><strong>Geopolitical Daily</strong> &mdash; The world&#x27;s news from every side</p>
+            <p>Written with AI from the linked sources and published automatically.
+               <a href="how-it-works.html">How it works</a> &middot;
+               <a href="archive.html">Archive</a> &middot;
+               <a href="feed.xml">RSS</a> &middot; <a href="https://github.com/eLh0m3r0/geodaily">Source code</a></p>
+        </div>
+    </footer>
+</body>
+</html>

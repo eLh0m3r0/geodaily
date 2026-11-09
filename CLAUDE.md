@@ -84,6 +84,7 @@ python cleanup_archives.py --force           # Skip confirmation prompts
 
 # Dashboard Generation (Unified)
 python generate_unified_dashboard.py        # Generate unified dashboard to docs/dashboard.html
+python scripts/rebuild_site.py               # Re-render docs/ (issue, story, index, archive, about, how-it-works, dashboard, CSS) from the issue JSONs after a template/CSS change — no pipeline run, no AI; needs BUTTONDOWN_USERNAME for the subscribe form
 python src/cleanup.py                        # Legacy cleanup (keeps 30 days)
 python src/sitemap_generator.py             # Generate sitemap for GitHub Pages
 ```
@@ -167,6 +168,14 @@ The AI analyzer now evaluates stories across multiple dimensions:
 - **GitHub Publisher** (`src/publishers/github_publisher.py`): GitHub Pages deployment
 - **Email Notifier** (`src/notifications/email_notifier.py`): Newsletter distribution
 - **Dashboard Generator** (`src/metrics/dashboard_generator.py`): Performance visualization
+
+#### Website (GitHub Pages, `docs/`)
+- **Stylesheet**: `src/publishers/site.css` is the source of truth (copied to `docs/assets/style.css` on publish; light + dark). Archived issue/story pages keep their old markup, so classes they use must stay styled
+- **Shell**: every page goes through `site_pages.page_shell` (masthead, one `NAV_ITEMS` list, footer) — `src/publishers/site_pages.py` is stdlib-only because `generate_simple_dashboard.py` loads it by path in its own workflow step
+- **How it works** (`docs/how-it-works.html`): the pipeline as a flow diagram; the arrows carry the latest run's real counts from `meta.pipeline` in the issue JSON (collected, after_dedup, events, prompt_articles, stories, quick_hits, seconds — written by `main_pipeline.py`). With no recorded counts it prints none — never typical/estimated numbers
+- **Dashboard** (`docs/dashboard.html`): built from the issue JSONs' `meta` (billed cost, served model, model time, reading grade before/after, editorial actions, flags). Until 2026-11-09 it showed a hard-coded "$0.05" cost and "4 stories"
+- **Issue page**: date as the title, 'In this issue' anchors, tags above the headline (the old flex row squeezed compact headlines into a narrow column), previous-issue link; the RSS builder still reads `<section class="story" …>` and `<p class="newsletter-intro">` back out of the HTML — keep both
+- **Archive**: recent issues plus an index of every evergreen story page by month (they were reachable only through the sitemap)
 
 #### Configuration
 - **Config** (`src/config.py`): Centralized configuration with env variables

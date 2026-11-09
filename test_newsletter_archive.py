@@ -251,7 +251,10 @@ def test_github_pages_publisher():
         with open(docs_dir / "index.html", 'r') as f:
             index_content = f.read()
         
-        link_count = index_content.count('newsletters/newsletter-')
+        # distinct issues: the latest one is linked from its headline, its
+        # other stories and 'Read the full issue'
+        import re
+        link_count = len(set(re.findall(r'newsletters/newsletter-\d{4}-\d{2}-\d{2}\.html', index_content)))
         if link_count == 3:
             print("  ✅ Index page contains correct number of newsletter links")
         else:

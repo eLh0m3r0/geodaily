@@ -10,7 +10,9 @@ from pathlib import Path
 from typing import List, Optional
 
 from ..models import Newsletter, AIAnalysis
-from ..metrics.dashboard_generator import DashboardGenerator
+from .site_pages import (page_shell, write_css, load_issues, source_stats, latest_funnel,
+                         funnel_strip_html, build_pipeline_page, build_dashboard_page,
+                         DEFAULT_DESCRIPTION)
 from ..sitemap_generator import SitemapGenerator
 from ..config import Config
 from ..logger import get_logger
@@ -77,6 +79,7 @@ class GitHubPagesPublisher:
             self._update_index_page()
             self._update_archive_page()
             self._update_about_page()
+            self._update_pipeline_page()
 
             # Update RSS feed
             self._update_rss_feed()
@@ -101,47 +104,52 @@ class GitHubPagesPublisher:
             logger.error(f"Failed to publish newsletter: {e}")
             raise
     
+    def _shell(self, **kwargs) -> str:
+        """Shared masthead/nav/footer around a page body."""
+        return page_shell(repo_url=self.GITHUB_REPO_URL,
+                          tagline=Config.NEWSLETTER_TAGLINE, **kwargs)
+
+    @staticmethod
+    def _story_tags_html(analysis: AIAnalysis) -> str:
+        region = getattr(analysis, 'region', 'global').replace('_', ' ').title()
+        event = getattr(analysis, 'event_type', 'political').replace('_', ' ').title()
+        return (f'<div class="story-meta"><span class="geo-tag region-tag">{region}</span>'
+                f'<span class="geo-tag event-tag">{event}</span></div>')
+
     def _generate_newsletter_html(self, newsletter: Newsletter, analyses: List[AIAnalysis]) -> str:
         """Generate HTML content for newsletter."""
-        
-        # Header
-        html = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{newsletter.title} - {newsletter.date.strftime('%B %d, %Y')}</title>
-    <meta name="description" content="World news from every side: how Western, Asian, Middle Eastern, African and Latin American media cover the same stories - every source linked, state media labeled.">
-    <link rel="stylesheet" href="../assets/style.css">
-    <link rel="canonical" href="{self.SITE_BASE_URL}/newsletters/newsletter-{newsletter.date.strftime('%Y-%m-%d')}.html">
-</head>
-<body>
-    <header class="header">
-        <div class="container">
-            <h1 class="site-title">Geopolitical Daily</h1>
-            <p class="tagline">{Config.NEWSLETTER_TAGLINE}</p>
-            <nav class="nav">
-                <a href="../index.html">Home</a>
-                <a href="../archive.html">Archive</a>
-                <a href="../about.html">About</a>
-                <a href="../dashboard.html">Dashboard</a>
-                <a href="../feed.xml">RSS</a>
-            </nav>
-        </div>
-    </header>
+        from ..newsletter.source_display import dedupe_sources
+        date_str = newsletter.date.strftime('%Y-%m-%d')
 
-    <main class="main">
-        <div class="container">
-            <article class="newsletter">
+        # "In this issue": the stories, then the sections that exist today
+        grid = getattr(newsletter, 'perspective_grid', None)
+        toc_items = "".join(
+            f'<li><a href="#story-{i}">{a.story_title}</a></li>'
+            for i, a in enumerate(analyses, 1))
+        more = []
+        if getattr(newsletter, 'developing', None):
+            more.append('<a href="#developing">Developing</a>')
+        if getattr(newsletter, 'quick_hits', None):
+            more.append('<a href="#also-today">Also today</a>')
+        if grid and grid.blindspot:
+            more.append('<a href="#blindspot">The blindspot</a>')
+        if getattr(newsletter, 'big_number', None):
+            more.append('<a href="#big-number">The big number</a>')
+        toc_more = f'<div class="toc-more">{"".join(more)}</div>' if more else ""
+        toc = (f'<nav class="issue-toc" aria-label="In this issue"><h2>In this issue</h2>'
+               f'<ol>{toc_items}</ol>{toc_more}</nav>') if toc_items else ""
+
+        html = f"""            <article class="newsletter">
                 <header class="newsletter-header">
-                    <h1 class="newsletter-title">{newsletter.title}</h1>
-                    <time class="newsletter-date" datetime="{newsletter.date.isoformat()}">{newsletter.date.strftime('%B %d, %Y')}</time>
-                    <p class="newsletter-intro">{newsletter.intro_text or "Today's edition focuses on underreported geopolitical developments with significant strategic implications."}</p>
+                    <p class="eyebrow">Daily briefing</p>
+                    <h1 class="newsletter-title"><time datetime="{newsletter.date.isoformat()}">{newsletter.date.strftime('%A, %B %-d, %Y')}</time></h1>
+                    <p class="newsletter-intro">{newsletter.intro_text or "Today's edition: the stories that matter most, from every side of the world."}</p>
+                    {toc}
                 </header>
 
                 <div class="stories">
 """
-        
+
         # Stories — grid and signals render inside the big story's flow
         grid_block = self._build_grid_html(newsletter)
         signals_block = self._build_signals_html(newsletter)
@@ -152,14 +160,14 @@ class GitHubPagesPublisher:
                 html += '                    <div class="section-label">More Top Stories</div>\n'
             compact_class = "" if i == 1 else " compact"
             coverage_mini = "" if i == 1 else self._build_coverage_mini_html(analysis)
+            sources_html = "".join(
+                f'<li><a href="{url}" target="_blank" rel="noopener">{name}</a></li>'
+                for url, name in dedupe_sources(analysis.sources, limit=4))
             html += f"""
                     <section class="story{compact_class}" id="story-{i}">
                         <header class="story-header">
                             <h2 class="story-title">{analysis.story_title}</h2>
-                            <div class="story-meta">
-                                <span class="geo-tag region-tag">{getattr(analysis, 'region', 'global').replace('_', ' ').title()}</span>
-                                <span class="geo-tag event-tag">{getattr(analysis, 'event_type', 'political').replace('_', ' ').title()}</span>
-                            </div>
+                            {self._story_tags_html(analysis)}
                             {coverage_mini}
                         </header>
 
@@ -185,49 +193,50 @@ class GitHubPagesPublisher:
 
                             <div class="sources">
                                 <h4>Sources</h4>
-                                <ul>"""
-            
-            from ..newsletter.source_display import dedupe_sources
-            for url, name in dedupe_sources(analysis.sources, limit=4):
-                html += f'                                    <li><a href="{url}" target="_blank" rel="noopener">{name}</a></li>\n'
-            
-            html += """                                </ul>
+                                <ul>{sources_html}</ul>
                             </div>
                         </div>
                     </section>
 """
-        
-        # Also Today roundup + Big Number
+
+        # Developing + Also Today + Blindspot + Big Number
         html += self._build_extras_html(newsletter)
 
-        # Footer
+        # Link to the previous issue when it is still on the site
+        previous = ""
+        try:
+            older = sorted(p.stem.replace('newsletter-', '')
+                           for p in (self.output_dir / "newsletters").glob("newsletter-*.html")
+                           if p.stem.replace('newsletter-', '') < date_str)
+            if older:
+                prev_date = datetime.strptime(older[-1], '%Y-%m-%d')
+                previous = (f'<a href="newsletter-{older[-1]}.html">&larr; '
+                            f'{prev_date.strftime("%B %-d")} issue</a>')
+        except Exception:
+            previous = ""
+
         html += f"""
                 </div>
 
+                <nav class="issue-nav" aria-label="Issues">
+                    <span>{previous}</span>
+                    <a href="../archive.html">All issues &rarr;</a>
+                </nav>
+
                 <footer class="newsletter-footer">
                     <p>{newsletter.footer_text or 'Written with AI from the sources linked above and published automatically; every claim links to its source. Spotted an error? Open an issue or reply to the email — a human reads every response.'}</p>
-                    <p class="timestamp">Generated on {datetime.now().strftime('%Y-%m-%d at %H:%M UTC')}</p>
+                    <p class="timestamp">Generated on {getattr(self, 'generated_at_override', None) or datetime.now().strftime('%Y-%m-%d at %H:%M UTC')} &middot; <a href="../how-it-works.html">How this issue was made</a></p>
                     {self._build_subscribe_html()}
                 </footer>
-            </article>
-        </div>
-    </main>
+            </article>"""
 
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; {datetime.now().year} Geopolitical Daily. Strategic analysis beyond the headlines.</p>
-            <p>
-                <a href="../feed.xml">RSS Feed</a> |
-                <a href="../archive.html">Archive</a> |
-                <a href="{self.GITHUB_REPO_URL}">Source Code</a>
-            </p>
-        </div>
-    </footer>
-</body>
-</html>"""
-        
-        return html
-    
+        return self._shell(
+            title=f"{newsletter.title} - {newsletter.date.strftime('%B %d, %Y')}",
+            description=DEFAULT_DESCRIPTION,
+            body=html, depth=1,
+            canonical=f"{self.SITE_BASE_URL}/newsletters/newsletter-{date_str}.html",
+        )
+
     def _build_grid_html(self, newsletter: Newsletter) -> str:
         """How the World Covers It block (grid + blindspot) for page output."""
         grid = getattr(newsletter, 'perspective_grid', None)
@@ -273,8 +282,11 @@ class GitHubPagesPublisher:
 
     def _build_coverage_mini_html(self, analysis: AIAnalysis) -> str:
         """Coverage DNA mini-bar for stories without the full grid."""
-        counts = getattr(analysis, 'coverage_counts', None) or {}
-        outlets = getattr(analysis, 'coverage_outlets', 0) or 0
+        return self._coverage_bar_html(getattr(analysis, 'coverage_counts', None) or {},
+                                       getattr(analysis, 'coverage_outlets', 0) or 0)
+
+    def _coverage_bar_html(self, counts: dict, outlets: int) -> str:
+        """Coverage bar + 'N reports from M outlets' legend from group counts."""
         if not counts or outlets < 2:
             return ""
         from ..perspectives import GROUP_COLORS, GROUP_ORDER, label_of
@@ -301,7 +313,7 @@ class GitHubPagesPublisher:
         sources = blindspot_sources_line(getattr(grid, 'blindspot_outlets', None) or [])
         sources_html = f'<p class="blindspot-sources">{sources}</p>' if sources else ""
         return f"""
-                    <section class="blindspot-section">
+                    <section class="blindspot-section" id="blindspot">
                         <h2 class="section-label">The Blindspot</h2>
                         <p class="blindspot-note">A story covered heavily in one part of the world &mdash; and barely mentioned in the rest.</p>
                         <div class="blindspot">{grid.blindspot}{arrow}</div>
@@ -342,7 +354,7 @@ class GitHubPagesPublisher:
                 items += (f'                        <li><strong class="developing-label">{d.storyline}:</strong> '
                           f'{d.text}{arrow}</li>\n')
             html += f"""
-                    <section class="developing">
+                    <section class="developing" id="developing">
                         <h2 class="section-label">Developing</h2>
                         <p class="developing-note">What changed today in stories you have been following.</p>
                         <ul class="quick-hits">
@@ -357,7 +369,7 @@ class GitHubPagesPublisher:
                 items += (f'                        <li><span class="quick-hit-region">{region}</span> '
                           f'{hit.text}{arrow}</li>\n')
             html += f"""
-                    <section class="also-today">
+                    <section class="also-today" id="also-today">
                         <h2 class="section-label">Also Today</h2>
                         <ul class="quick-hits">
 {items}                        </ul>
@@ -367,7 +379,7 @@ class GitHubPagesPublisher:
         if big_number:
             arrow = f' <a href="{big_number.url}" target="_blank" rel="noopener" class="quick-hit-link">&rarr;</a>' if big_number.url else ""
             html += f"""
-                    <section class="big-number">
+                    <section class="big-number" id="big-number">
                         <h2 class="section-label">The Big Number</h2>
                         <div class="big-number-value">{big_number.value}</div>
                         <p class="big-number-context">{big_number.context}{arrow}</p>
@@ -395,63 +407,40 @@ class GitHubPagesPublisher:
         for i, story in enumerate(analyses):
             slug = f"{date_str}-{story_slug(story.story_title)}"
             sources_html = "".join(
-                f'<li><a href="{url}" target="_blank" rel="noopener">{name}</a></li>\n'
+                f'<li><a href="{url}" target="_blank" rel="noopener">{name}</a></li>'
                 for url, name in dedupe_sources(story.sources, limit=4)
             )
-            description = (story.why_important or "")[:155].replace('"', "'")
-            extra_block = self._build_grid_html(newsletter) if i == 0 \
-                else self._build_coverage_mini_html(story)
+            description = (story.why_important or "")[:155]
+            grid_block = self._build_grid_html(newsletter) if i == 0 else ""
+            coverage_mini = "" if i == 0 else self._build_coverage_mini_html(story)
 
-            html = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{story.story_title} - {newsletter.title}</title>
-    <meta name="description" content="{description}">
-    <link rel="stylesheet" href="../assets/style.css">
-    <link rel="canonical" href="{self.SITE_BASE_URL}/stories/{slug}.html">
-</head>
-<body>
-    <header class="header">
-        <div class="container">
-            <h1 class="site-title">{newsletter.title}</h1>
-            <p class="tagline">{Config.NEWSLETTER_TAGLINE}</p>
-            <nav class="nav">
-                <a href="../index.html">Home</a>
-                <a href="../archive.html">Archive</a>
-                <a href="../about.html">About</a>
-                <a href="../feed.xml">RSS</a>
-            </nav>
-        </div>
-    </header>
-    <main class="main">
-        <div class="container">
-            <article class="newsletter">
-                <header class="newsletter-header">
-                    <h1 class="newsletter-title">{story.story_title}</h1>
-                    <time class="newsletter-date" datetime="{newsletter.date.isoformat()}">{newsletter.date.strftime('%B %d, %Y')}</time>
-                </header>
+            body = f"""            <article class="newsletter">
                 <div class="stories">
                     <section class="story">
+                        <header class="story-header">
+                            <p class="eyebrow"><time datetime="{newsletter.date.isoformat()}">{newsletter.date.strftime('%B %-d, %Y')}</time></p>
+                            <h1 class="story-title">{story.story_title}</h1>
+                            {coverage_mini}
+                        </header>
                         <div class="story-content">
                             <div class="analysis-section"><h3>Why This Matters</h3><p>{story.why_important}</p></div>
+                            {grid_block}
                             <div class="analysis-section"><h3>What Others Are Missing</h3><p>{story.what_overlooked}</p></div>
                             <div class="analysis-section"><h3>What to Watch</h3><p>{story.prediction}</p></div>
                             <div class="sources"><h4>Sources</h4><ul>{sources_html}</ul></div>
                         </div>
                     </section>
-{extra_block}
                 </div>
                 <footer class="newsletter-footer">
-                    <p>From the <a href="../newsletters/newsletter-{date_str}.html">{newsletter.date.strftime('%B %d, %Y')} edition</a> of {newsletter.title}.</p>
+                    <p>From the <a href="../newsletters/newsletter-{date_str}.html">{newsletter.date.strftime('%B %-d, %Y')} edition</a> of {newsletter.title}.</p>
                     {self._build_subscribe_html()}
                 </footer>
-            </article>
-        </div>
-    </main>
-</body>
-</html>"""
+            </article>"""
+            html = self._shell(
+                title=f"{story.story_title} - {newsletter.title}",
+                description=description, body=body, depth=1,
+                canonical=f"{self.SITE_BASE_URL}/stories/{slug}.html",
+            )
             path = stories_dir / f"{slug}.html"
             with open(path, 'w', encoding='utf-8') as f:
                 f.write(html)
@@ -499,238 +488,206 @@ class GitHubPagesPublisher:
                     </div>"""
         return ""
     
-    def _issue_lead(self, newsletter: dict) -> str:
-        """Headline strip for an index card: the issue's story titles from its
-        JSON (every card used to carry the same filler sentence)."""
-        titles = []
+    def _issue_data(self, newsletter: dict) -> dict:
+        """The issue JSON that belongs to an archive-list entry ({} if none)."""
         try:
             json_path = (self.output_dir / "newsletters" /
                          Path(newsletter['filename']).with_suffix('.json').name)
-            data = json.loads(json_path.read_text(encoding='utf-8'))
-            titles = [s.get('story_title', '') for s in (data.get('stories') or [])
-                      if s.get('story_title')]
+            return json.loads(json_path.read_text(encoding='utf-8'))
         except Exception:
-            titles = []
+            return {}
+
+    def _issue_titles(self, newsletter: dict) -> List[str]:
+        return [s.get('story_title', '') for s in (self._issue_data(newsletter).get('stories') or [])
+                if s.get('story_title')]
+
+    def _issue_lead(self, newsletter: dict) -> str:
+        """Headline strip for an index card: the issue's story titles from its
+        JSON (every card used to carry the same filler sentence)."""
+        titles = self._issue_titles(newsletter)
         if not titles:
             return "Three stories that matter, from every side of the world."
         return " &middot; ".join(html_escape(t) for t in titles[:3])
 
+    def _issue_row_html(self, newsletter: dict) -> str:
+        """One archive row: date, the big story as the link, the rest below."""
+        titles = self._issue_titles(newsletter)
+        date_obj = newsletter['date']
+        headline = html_escape(titles[0]) if titles else f"{newsletter['formatted_date']} edition"
+        rest = " &middot; ".join(html_escape(t) for t in titles[1:3])
+        rest_html = f"<p>{rest}</p>" if rest else ""
+        return f"""
+                    <li class="issue-row">
+                        <time datetime="{date_obj.strftime('%Y-%m-%d')}">{date_obj.strftime('%b %-d, %Y')}</time>
+                        <div><h3><a href="{newsletter['relative_path']}">{headline}</a></h3>{rest_html}</div>
+                    </li>"""
+
     def _build_about_subscribe_html(self) -> str:
         """Subscribe CTA for the about page."""
-        substack_url = Config.SUBSTACK_URL
-        if substack_url:
-            return f'<a href="{substack_url}" class="cta-button" target="_blank">Subscribe on Substack</a>'
-        from .buttondown_util import resolve_buttondown_username, build_subscribe_form_html
-        username = resolve_buttondown_username()
-        if username:
-            return build_subscribe_form_html(username)
-        return '<p class="note">Email newsletter coming soon</p>'
+        return self._build_subscribe_html() or '<p class="note">Email newsletter coming soon</p>'
 
     def _update_index_page(self):
-        """Update the main index page with recent newsletters."""
-        
-        # Get list of newsletters from Archive Manager (already sorted, newest first)
-        newsletter_list = self.archive_manager.get_newsletter_list(limit=10)
-        
-        html = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geopolitical Daily - The World's News From Every Side</title>
-    <meta name="description" content="World news from every side: how Western, Asian, Middle Eastern, African and Latin American media cover the same stories - every source linked, state media labeled.">
-    <link rel="stylesheet" href="assets/style.css">
-    <link rel="alternate" type="application/rss+xml" title="Geopolitical Daily RSS" href="feed.xml">
-</head>
-<body>
-    <header class="header">
-        <div class="container">
-            <h1 class="site-title">Geopolitical Daily</h1>
-            <p class="tagline">{Config.NEWSLETTER_TAGLINE}</p>
-            <p class="description">World news from every side: how Western, Asian, Middle Eastern, African and Latin American media cover the same stories - every source linked, state media labeled.</p>
-            <nav class="nav">
-                <a href="index.html">Home</a>
-                <a href="archive.html">Archive</a>
-                <a href="about.html">About</a>
-                <a href="dashboard.html">Dashboard</a>
-                <a href="feed.xml">RSS</a>
-            </nav>
-        </div>
-    </header>
+        """Update the main index page: pitch, latest issue, how it is made, recent issues."""
 
-    <main class="main">
-        <div class="container">
-            <section class="hero">
+        newsletter_list = self.archive_manager.get_newsletter_list(limit=10)
+        sources = source_stats()
+        outlets_point = (f"{sources['total']} outlets across {sources['perspectives']} perspectives, every source linked"
+                         if sources.get('total') else "Outlets from every region, every source linked")
+
+        latest_html = ""
+        if newsletter_list:
+            latest = newsletter_list[0]
+            data = self._issue_data(latest)
+            stories = data.get('stories') or []
+            href = latest['relative_path']
+            if stories:
+                lead = stories[0]
+                grid = data.get('perspective_grid') or {}
+                coverage = self._coverage_bar_html(grid.get('counts') or {}, grid.get('total_outlets') or 0)
+                others = "".join(
+                    f'<li><a href="{href}#story-{n}">{html_escape(s.get("story_title", ""))}</a></li>'
+                    for n, s in enumerate(stories[1:3], 2))
+                others_html = f'<ul class="also-in-issue">{others}</ul>' if others else ""
+                latest_html = f"""
+            <section class="latest">
+                <h2 class="section-label">Latest issue &middot; {latest['date'].strftime('%B %-d, %Y')}</h2>
+                <h3 class="lead-story-title"><a href="{href}">{html_escape(lead.get('story_title', ''))}</a></h3>
+                <p class="lead-story-dek">{html_escape(lead.get('why_important', ''))}</p>
+                {coverage}
+                {others_html}
+                <a class="read-more" href="{href}">Read the full issue &rarr;</a>
+            </section>
+"""
+            else:
+                latest_html = f"""
+            <section class="latest">
+                <h2 class="section-label">Latest issue</h2>
+                <h3 class="lead-story-title"><a href="{href}">{latest['formatted_date']} edition</a></h3>
+            </section>
+"""
+
+        funnel = funnel_strip_html(latest_funnel(load_issues(self.output_dir)), sources)
+        if funnel:
+            made_html = f"""
+            <section class="made">
+                <h2 class="section-label">How today's issue was made</h2>
+                {funnel}
+                <p class="funnel-note">Two AI calls, the rest is code &mdash; and every step is checked.
+                   <a href="how-it-works.html">See the whole pipeline &rarr;</a></p>
+            </section>
+"""
+        else:
+            made_html = """
+            <section class="made">
+                <h2 class="section-label">How it is made</h2>
+                <div class="cards">
+                    <div class="card"><h3>Every side of the story</h3><p>How Western, Chinese, Russian, regional and Global South media frame the same event &mdash; quoted word for word, not paraphrased.</p></div>
+                    <div class="card"><h3>The blindspot</h3><p>One story a day that part of the world covers and no Western outlet we track has reported.</p></div>
+                    <div class="card"><h3>Receipts included</h3><p>Every claim links to its source; state-affiliated outlets are labeled wherever they appear.</p></div>
+                </div>
+                <p class="funnel-note">Written by AI, checked by code. <a href="how-it-works.html">See the whole pipeline &rarr;</a></p>
+            </section>
+"""
+
+        earlier = "".join(self._issue_row_html(n) for n in newsletter_list[1:])
+        earlier_html = f"""
+            <section class="recent-newsletters">
+                <h2 class="section-label">Earlier issues <span class="label-aside"><a href="archive.html">Archive &rarr;</a></span></h2>
+                <ul class="issue-list">{earlier}
+                </ul>
+            </section>
+""" if earlier else ""
+
+        body = f"""            <section class="hero">
+                <h1>{html_escape(Config.NEWSLETTER_TAGLINE)}</h1>
+                <p class="page-lead">A daily five-minute briefing that shows how Western, Asian, Middle Eastern,
+                African and Latin American media cover the same stories &mdash; and what each of them leaves out.</p>
 {self._build_subscribe_html()}
                 <ul class="hero-points">
-                    <li>60+ outlets across 14 perspectives, every source linked</li>
+                    <li>{outlets_point}</li>
                     <li>State media labeled, never the sole source of a fact</li>
-                    <li>Five minutes a day &mdash; or one Sunday digest</li>
+                    <li>Daily, or one Sunday digest</li>
                 </ul>
             </section>
+{latest_html}{made_html}{earlier_html}
+            <p class="rss-alt" style="margin-top:2rem;">Prefer a feed reader? <a href="feed.xml">Subscribe via RSS</a>.</p>"""
 
-            <section class="recent-newsletters">
-                <h2>Recent Issues</h2>
-                <div class="newsletter-list">
-"""
-        
-        # Add recent newsletters (up to 10), each with its real headlines
-        for newsletter in newsletter_list:
-            html += f"""
-                    <article class="newsletter-preview">
-                        <h3><a href="{newsletter['relative_path']}">{newsletter['formatted_date']}</a></h3>
-                        <p class="newsletter-lead">{self._issue_lead(newsletter)}</p>
-                    </article>
-"""
-        
-        html += f"""
-                </div>
-            </section>
-
-            <section class="about-section">
-                <h2>About This Newsletter</h2>
-                <p>Most world-news briefs show you one lens. Geopolitical Daily reads 60+ sources across Western, Asian, Middle Eastern, African and Latin American media every day &mdash; and shows you how each part of the world covers the same story, with every source linked and state media clearly labeled.</p>
-                
-                <h3>What Makes Us Different</h3>
-                <ul>
-                    <li><strong>Every side of the story:</strong> How Western, Chinese, Russian, regional and Global South media frame the same event &mdash; quoted, not paraphrased</li>
-                    <li><strong>Blindspots:</strong> Stories one part of the world covers heavily while the rest ignores them</li>
-                    <li><strong>Receipts included:</strong> Every claim links to its source; state-affiliated outlets are labeled</li>
-                    <li><strong>Five minutes, daily or weekly:</strong> One big story, a world roundup, and one number worth knowing</li>
-                </ul>
-                
-            </section>
-{self._build_subscribe_html()}
-            <p class="rss-alt">Prefer a feed reader? <a href="feed.xml">Subscribe via RSS</a>.</p>
-        </div>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; {datetime.now().year} Geopolitical Daily. Strategic analysis beyond the headlines.</p>
-            <p>
-                <a href="feed.xml">RSS Feed</a> |
-                <a href="archive.html">Archive</a> |
-                <a href="{self.GITHUB_REPO_URL}">Source Code</a>
-            </p>
-        </div>
-    </footer>
-</body>
-</html>"""
-        
+        html = self._shell(
+            title="Geopolitical Daily - The World's News From Every Side",
+            description=DEFAULT_DESCRIPTION, body=body, active="home",
+            canonical=f"{self.SITE_BASE_URL}/",
+        )
         with open(self.output_dir / "index.html", 'w', encoding='utf-8') as f:
             f.write(html)
 
         logger.info("Index page updated")
 
+    def _story_index(self) -> List[tuple]:
+        """(date, title, relative_path) for every evergreen story page, newest first."""
+        import re
+        entries = []
+        stories_dir = self.output_dir / "stories"
+        if not stories_dir.exists():
+            return entries
+        for path in stories_dir.glob("*.html"):
+            try:
+                date_obj = datetime.strptime(path.name[:10], '%Y-%m-%d')
+                head = path.read_text(encoding='utf-8')[:2000]
+                match = re.search(r'<title>(.*?)</title>', head, re.DOTALL)
+                if not match:
+                    continue
+                title = match.group(1).strip()
+                if " - " in title:
+                    title = title.rsplit(" - ", 1)[0]
+                entries.append((date_obj, title, f"stories/{path.name}"))
+            except Exception:
+                continue
+        entries.sort(key=lambda e: (e[0], e[2]), reverse=True)
+        return entries
+
     def _update_archive_page(self):
-        """Generate archive page with all published newsletters organized by month/year."""
+        """Archive: the issues still on the site, then every story page by month."""
 
-        # Get all newsletters from Archive Manager
         newsletter_list = self.archive_manager.get_newsletter_list()
+        issues_html = "".join(self._issue_row_html(n) for n in newsletter_list)
 
-        # Group newsletters by year and month
-        newsletters_by_period = {}
-        for newsletter in newsletter_list:
-            date_obj = newsletter['date']
-            year_month = date_obj.strftime('%Y-%m')
-            year = date_obj.strftime('%Y')
+        stories_html = ""
+        current_month = None
+        for date_obj, title, rel in self._story_index():
             month = date_obj.strftime('%B %Y')
+            if month != current_month:
+                if current_month is not None:
+                    stories_html += "\n                </ul>"
+                stories_html += f'\n                <h3 class="month-heading">{month}</h3>\n                <ul class="story-index">'
+                current_month = month
+            stories_html += (f'\n                    <li><time datetime="{date_obj.strftime("%Y-%m-%d")}">'
+                             f'{date_obj.strftime("%b %-d")}</time><a href="{rel}">{title}</a></li>')
+        if current_month is not None:
+            stories_html += "\n                </ul>"
+        stories_section = f"""
+            <section class="archive-stories">
+                <h2 class="section-label">Every story</h2>
+                <p class="developing-note">Each top story keeps its own page, with the coverage breakdown it ran with.</p>{stories_html}
+            </section>""" if stories_html else ""
 
-            if year not in newsletters_by_period:
-                newsletters_by_period[year] = {}
-            if year_month not in newsletters_by_period[year]:
-                newsletters_by_period[year][year_month] = {
-                    'month_name': month,
-                    'newsletters': []
-                }
+        body = f"""            <header class="page-head">
+                <p class="eyebrow">Archive</p>
+                <h1 class="page-title">Past issues and stories</h1>
+                <p class="page-lead">The most recent issues in full, and a permanent page for every top story we have covered.</p>
+            </header>
 
-            newsletters_by_period[year][year_month]['newsletters'].append({
-                'date': date_obj,
-                'filename': newsletter['filename'],
-                'formatted_date': newsletter['formatted_date'],
-                'relative_path': newsletter['relative_path']
-            })
-
-        html = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archive - Geopolitical Daily</title>
-    <meta name="description" content="Complete archive of Geopolitical Daily newsletters with strategic analysis">
-    <link rel="stylesheet" href="assets/style.css">
-</head>
-<body>
-    <header class="header">
-        <div class="container">
-            <h1 class="site-title">Geopolitical Daily</h1>
-            <p class="tagline">{Config.NEWSLETTER_TAGLINE}</p>
-            <nav class="nav">
-                <a href="index.html">Home</a>
-                <a href="archive.html">Archive</a>
-                <a href="about.html">About</a>
-                <a href="dashboard.html">Dashboard</a>
-                <a href="feed.xml">RSS</a>
-            </nav>
-        </div>
-    </header>
-
-    <main class="main">
-        <div class="container">
-            <h1>Newsletter Archive</h1>
-            <p class="archive-intro">Browse our complete collection of geopolitical analysis newsletters, organized chronologically.</p>
-"""
-
-        # Generate archive sections by year
-        for year in sorted(newsletters_by_period.keys(), reverse=True):
-            html += f"""
-            <section class="archive-year">
-                <h2>{year}</h2>
-"""
-
-            for year_month in sorted(newsletters_by_period[year].keys(), reverse=True):
-                month_data = newsletters_by_period[year][year_month]
-                html += f"""
-                <div class="archive-month">
-                    <h3>{month_data['month_name']}</h3>
-                    <div class="newsletter-list">
-"""
-
-                for newsletter in month_data['newsletters']:
-                    html += f"""
-                        <article class="newsletter-preview archive-item">
-                            <h4><a href="{newsletter['relative_path']}">{newsletter['formatted_date']} Edition</a></h4>
-                            <p>Strategic analysis of geopolitical developments</p>
-                        </article>
-"""
-
-                html += """
-                    </div>
-                </div>
-"""
-
-            html += """
+            <section class="archive-issues">
+                <h2 class="section-label">Recent issues</h2>
+                <ul class="issue-list">{issues_html}
+                </ul>
             </section>
-"""
+{stories_section}"""
 
-        html += f"""
-        </div>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; {datetime.now().year} Geopolitical Daily. Strategic analysis beyond the headlines.</p>
-            <p>
-                <a href="feed.xml">RSS Feed</a> |
-                <a href="index.html">Latest Newsletter</a> |
-                <a href="{self.GITHUB_REPO_URL}">Source Code</a>
-            </p>
-        </div>
-    </footer>
-</body>
-</html>"""
-
+        html = self._shell(
+            title="Archive - Geopolitical Daily",
+            description="Past issues of Geopolitical Daily and a page for every top story covered.",
+            body=body, active="archive",
+        )
         with open(self.output_dir / "archive.html", 'w', encoding='utf-8') as f:
             f.write(html)
 
@@ -738,133 +695,73 @@ class GitHubPagesPublisher:
 
     def _update_about_page(self):
         """Generate about page with project information."""
+        sources = source_stats()
+        total = sources.get('total') or 0
+        reads = (f"reads {total} news sources in {sources.get('perspectives', 0)} perspective groups"
+                 if total else "reads news sources from every region")
+        editor = (Config.NEWSLETTER_EDITOR_NAME or "").strip() if hasattr(Config, 'NEWSLETTER_EDITOR_NAME') else ""
+        written = (f"Issues are drafted with AI and curated by {html_escape(editor)}." if editor else
+                   "Issues are written by an AI model and published automatically; no person reviews an issue before it goes out.")
 
-        html = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Geopolitical Daily</title>
-    <meta name="description" content="Learn about Geopolitical Daily - AI-powered strategic intelligence beyond the headlines">
-    <link rel="stylesheet" href="assets/style.css">
-</head>
-<body>
-    <header class="header">
-        <div class="container">
-            <h1 class="site-title">Geopolitical Daily</h1>
-            <p class="tagline">{Config.NEWSLETTER_TAGLINE}</p>
-            <nav class="nav">
-                <a href="index.html">Home</a>
-                <a href="archive.html">Archive</a>
-                <a href="about.html">About</a>
-                <a href="dashboard.html">Dashboard</a>
-                <a href="feed.xml">RSS</a>
-            </nav>
-        </div>
-    </header>
+        body = f"""            <header class="page-head">
+                <p class="eyebrow">About</p>
+                <h1 class="page-title">One story, every side</h1>
+                <p class="page-lead">Most world-news briefings show you one lens. Geopolitical Daily {reads} every day
+                and shows how each part of the world covers the same event &mdash; with every source linked and
+                state media clearly labeled.</p>
+            </header>
 
-    <main class="main">
-        <div class="container">
-            <section class="about-hero">
-                <h1>About Geopolitical Daily</h1>
-                <p class="about-intro">World news from every side: how Western, Asian, Middle Eastern, African and Latin American media cover the same stories - every source linked, state media labeled.</p>
-            </section>
+            <h2 class="section-label">What is in an issue</h2>
+            <div class="cards">
+                <div class="card"><h3>The big story</h3><p>The day's most important event, why it matters, and <em>How the world covers it</em>: each region's framing with a word-for-word quote.</p></div>
+                <div class="card"><h3>More top stories</h3><p>Two more stories, each with a bar showing which parts of the world reported them.</p></div>
+                <div class="card"><h3>Developing</h3><p>One-line updates on stories you already read about &mdash; only what is new.</p></div>
+                <div class="card"><h3>Also today</h3><p>Quick hits from around the world, one sentence and one link each.</p></div>
+                <div class="card"><h3>The blindspot</h3><p>A story reported in one part of the world that no Western outlet we track has covered.</p></div>
+                <div class="card"><h3>The big number</h3><p>One figure from today's news, with the context to read it.</p></div>
+            </div>
 
-            <section class="about-content">
-                <h2>Our Mission</h2>
-                <p>Geopolitical Daily provides strategic intelligence that goes beyond headlines. We focus on underreported stories with significant geopolitical implications, using AI to analyze patterns and predict outcomes that mainstream media might overlook.</p>
+            <h2 class="section-label">How it is made</h2>
+            <div class="prose">
+                <p>{written} The model's work is then checked by code: quotes must match the source text, repeated
+                stories are held back, links must point at what they claim to. The whole process, with the numbers
+                from the latest run, is on <a href="how-it-works.html">How it works</a>; cost and quality figures for
+                every issue are on the <a href="dashboard.html">dashboard</a>.</p>
+                <p>State-affiliated outlets are part of the picture on purpose. They show how a government wants an
+                event to be seen. They are always labeled and never used as the only source for a fact.</p>
+            </div>
 
-                <h2>What Makes Us Different</h2>
-                <div class="features-grid">
-                    <div class="feature">
-                        <h3>🤖 AI-Powered Analysis</h3>
-                        <p>Advanced AI algorithms analyze thousands of sources to identify strategic patterns and implications</p>
-                    </div>
-                    <div class="feature">
-                        <h3>🎯 Underreported Focus</h3>
-                        <p>We identify stories that deserve attention but aren't getting mainstream coverage</p>
-                    </div>
-                    <div class="feature">
-                        <h3>🔍 Strategic Depth</h3>
-                        <p>Beyond headlines to second-order effects, regional power dynamics, and long-term implications</p>
-                    </div>
-                    <div class="feature">
-                        <h3>🌍 Global Sources</h3>
-                        <p>Drawing from think tanks, regional outlets, diplomatic cables, and specialized publications worldwide</p>
-                    </div>
-                    <div class="feature">
-                        <h3>⚡ Daily Updates</h3>
-                        <p>Fresh analysis delivered every day at 6:00 UTC, keeping you ahead of developing situations</p>
-                    </div>
-                    <div class="feature">
-                        <h3>📊 Impact Scoring</h3>
-                        <p>Each story is scored for strategic significance to help prioritize your attention</p>
-                    </div>
-                </div>
+            <h2 class="section-label">Subscribe</h2>
+            {self._build_about_subscribe_html()}
+            <p class="rss-alt">Prefer a feed reader? <a href="feed.xml">Subscribe via RSS</a>.</p>
 
-                <h2>How It Works</h2>
-                <div class="process">
-                    <div class="process-step">
-                        <h3>1. Data Collection</h3>
-                        <p>Our system continuously monitors geopolitical news from hundreds of sources worldwide</p>
-                    </div>
-                    <div class="process-step">
-                        <h3>2. AI Analysis</h3>
-                        <p>Claude AI analyzes articles for strategic significance, identifying underreported stories</p>
-                    </div>
-                    <div class="process-step">
-                        <h3>3. Strategic Assessment</h3>
-                        <p>Each story is evaluated for impact, overlooked aspects, and future implications</p>
-                    </div>
-                    <div class="process-step">
-                        <h3>4. Daily Publication</h3>
-                        <p>Curated analysis is published daily with clear impact scoring and source links</p>
-                    </div>
-                </div>
+            <h2 class="section-label">Corrections and feedback</h2>
+            <div class="prose">
+                <p>Spotted an error? <a href="{self.GITHUB_REPO_URL}/issues">Open an issue on GitHub</a> or reply to
+                any email. The <a href="{self.GITHUB_REPO_URL}">source code</a> is public, including the list of
+                sources and the editorial rules.</p>
+            </div>"""
 
-                <h2>Subscribe</h2>
-                <div class="subscription-options">
-                    <div class="subscription-option">
-                        <h3>RSS Feed</h3>
-                        <p>Get instant updates in your RSS reader</p>
-                        <a href="feed.xml" class="cta-button">Subscribe via RSS</a>
-                    </div>
-                    <div class="subscription-option">
-                        <h3>Email Newsletter</h3>
-                        <p>Receive daily analysis directly in your inbox</p>
-                        {self._build_about_subscribe_html()}
-                    </div>
-                </div>
-
-                <h2>Contact & Feedback</h2>
-                <p>We welcome feedback on our analysis and suggestions for improvement. You can:</p>
-                <ul>
-                    <li><a href="{self.GITHUB_REPO_URL}/issues">Open an issue on GitHub</a> for bug reports or feature requests</li>
-                    <li><a href="{self.GITHUB_REPO_URL}/discussions">Start a discussion</a> for analysis feedback</li>
-                    <li>Check our <a href="{self.GITHUB_REPO_URL}">source code</a> to understand our methodology</li>
-                </ul>
-            </section>
-        </div>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; {datetime.now().year} Geopolitical Daily. Strategic analysis beyond the headlines.</p>
-            <p>
-                <a href="feed.xml">RSS Feed</a> |
-                <a href="archive.html">Archive</a> |
-                <a href="{self.GITHUB_REPO_URL}">Source Code</a>
-            </p>
-        </div>
-    </footer>
-</body>
-</html>"""
-
+        html = self._shell(
+            title="About - Geopolitical Daily",
+            description="What Geopolitical Daily is, what is in an issue and how it is made.",
+            body=body, active="about",
+        )
         with open(self.output_dir / "about.html", 'w', encoding='utf-8') as f:
             f.write(html)
 
         logger.info("About page updated")
-    
+
+    def _update_pipeline_page(self):
+        """How it works: the pipeline diagram with the latest run's counts."""
+        try:
+            build_pipeline_page(self.output_dir, repo_url=self.GITHUB_REPO_URL,
+                                site_base_url=self.SITE_BASE_URL,
+                                tagline=Config.NEWSLETTER_TAGLINE)
+            logger.info("How-it-works page updated")
+        except Exception as e:
+            logger.error(f"Failed to update how-it-works page: {e}")
+
     def _update_rss_feed(self):
         """Generate enhanced RSS feed for subscribers with comprehensive metadata and content."""
 
@@ -1207,646 +1104,16 @@ class GitHubPagesPublisher:
             return html_text
     
     def _copy_assets(self):
-        """Copy CSS and other assets to output directory."""
-        
-        css_content = """/* Geopolitical Daily Newsletter Styles */
-
-:root {
-    --primary-color: #14181D;
-    --secondary-color: #2A323B;
-    --accent-color: #1F6FEB;
-    --text-color: #14181D;
-    --text-light: #57616B;
-    --border-color: #E6E9EC;
-    --bg-light: #F5F7F9;
-    --impact-high: #D6453A;
-    --impact-medium: #B26B00;
-    --impact-low: #3E8A5A;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background: white;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Header: ink on white with the perspective-spectrum brand stripe */
-.header {
-    background: #ffffff;
-    color: var(--text-color);
-    padding: 1.75rem 0 1.25rem 0;
-    text-align: center;
-    border-bottom: 1px solid var(--border-color);
-    position: relative;
-}
-.header::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 5px;
-    background: linear-gradient(90deg,
-        #3E6DB5 0 12.5%, #2E8B8B 0 25%, #C24C3A 0 37.5%, #B8862E 0 50%,
-        #8A6D3B 0 62.5%, #7A5AA0 0 75%, #3E8A5A 0 87.5%, #C77B3F 0 100%);
-}
-
-.site-title {
-    font-size: 1.35rem;
-    font-weight: 800;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 0.35rem;
-}
-
-.tagline {
-    font-size: 0.95rem;
-    color: var(--text-light);
-    margin-bottom: 0.5rem;
-}
-
-.description {
-    font-size: 0.95rem;
-    color: var(--text-light);
-    max-width: 620px;
-    margin: 0 auto 1rem auto;
-}
-
-.nav {
-    margin-top: 1rem;
-}
-
-.nav a {
-    color: var(--text-color);
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none;
-    margin: 0 0.75rem;
-    padding: 0.4rem 0.6rem;
-    border-radius: 4px;
-    transition: color 0.2s, background 0.2s;
-}
-
-.nav a:hover {
-    color: var(--accent-color);
-    background: var(--bg-light);
-}
-
-/* Main content */
-.main {
-    padding: 2rem 0;
-}
-
-/* Newsletter */
-.newsletter {
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.newsletter-header {
-    text-align: center;
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
-    border-bottom: 2px solid var(--border-color);
-}
-
-.newsletter-title {
-    font-size: 2rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    margin-bottom: 0.5rem;
-}
-
-.newsletter-date {
-    color: var(--text-light);
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    display: block;
-}
-
-.newsletter-intro {
-    font-size: 1.1rem;
-    color: var(--text-light);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* Stories */
-.stories {
-    display: grid;
-    gap: 2rem;
-}
-
-.story {
-    background: var(--bg-light);
-    border-radius: 8px;
-    padding: 2rem;
-    border-left: 4px solid var(--accent-color);
-}
-
-.story-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 1.5rem;
-    gap: 1rem;
-}
-
-.story-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    flex: 1;
-}
-
-.story-meta {
-    display: flex;
-    gap: 0.5rem;
-    flex-shrink: 0;
-}
-
-.impact-score {
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: white;
-}
-
-.impact-high { background: var(--impact-high); }
-.impact-medium { background: var(--impact-medium); }
-.impact-low { background: var(--impact-low); }
-
-.confidence {
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    background: var(--secondary-color);
-    color: white;
-    font-size: 0.9rem;
-}
-
-.geo-tag {
-    display: inline-block;
-    padding: 0.15rem 0.6rem;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-}
-.region-tag { background: #edf2f7; color: #2d3748; border: 1px solid #cbd5e0; }
-.event-tag  { background: #fefce8; color: #713f12; border: 1px solid #fde68a; }
-
-.subscribe-box {
-    background: var(--primary-color);
-    border-radius: 10px;
-    padding: 1.75rem 1.5rem;
-    text-align: center;
-    margin: 2rem 0;
-}
-.subscribe-box h3 { color: white; margin: 0 0 0.4rem 0; font-size: 1.1rem; }
-.subscribe-box p  { color: #a0aec0; margin: 0 0 1rem 0; font-size: 0.9rem; }
-.subscribe-form   { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-.subscribe-form input[type="email"] {
-    padding: 0.5rem 0.9rem; border: none; border-radius: 4px;
-    font-size: 0.9rem; width: 220px; max-width: 100%;
-}
-.subscribe-btn {
-    background: #e53e3e; color: white; border: none;
-    padding: 0.5rem 1.2rem; border-radius: 4px;
-    font-size: 0.9rem; font-weight: 600; cursor: pointer;
-}
-.subscribe-btn:hover { background: #c53030; }
-.perspective-grid, .signals {
-    margin: 2rem 0; padding: 1.25rem 1.5rem;
-    background: var(--bg-light); border-radius: 8px;
-}
-.coverage-bar { display: flex; height: 6px; border-radius: 3px; overflow: hidden; margin-bottom: 0.5rem; }
-.coverage-legend { font-size: 0.75rem; color: var(--text-light); margin-bottom: 1rem; }
-.persp-row { display: flex; gap: 0.6rem; align-items: flex-start; margin-bottom: 0.75rem; line-height: 1.5; }
-.persp-dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 0.4rem; flex-shrink: 0; }
-.persp-name { font-weight: 700; }
-.state-label {
-    font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.5px;
-    background: #f5e6c8; color: #8a6d1a; border-radius: 8px; padding: 1px 7px; margin-left: 4px;
-}
-.persp-quote { font-style: italic; color: var(--text-light); margin-top: 0.25rem; font-size: 0.9rem; }
-.blindspot {
-    border-left: 3px solid #B26B00; padding: 2px 0 2px 12px;
-    color: var(--primary-color); font-size: 0.95rem; line-height: 1.6;
-}
-.blindspot-note { font-size: 0.8rem; color: var(--text-light); margin: -0.25rem 0 0.75rem 0; }
-.blindspot-sources { font-size: 0.8rem; color: var(--text-light); margin: 0.4rem 0 0 0; }
-.persp-wire { font-size: 0.85rem; color: var(--text-light); margin-top: 0.25rem; line-height: 1.5; }
-.section-label {
-    font-size: 0.7rem; font-weight: 800; text-transform: uppercase;
-    letter-spacing: 2px; color: var(--primary-color);
-    border-top: 1px solid var(--border-color);
-    padding-top: 0.9rem; margin: 2.5rem 0 0.9rem 0;
-}
-.section-label::before {
-    content: ""; display: block; width: 28px; height: 3px;
-    background-color: var(--primary-color); margin-bottom: 0.45rem;
-}
-.story.compact .story-title { font-size: 1.1rem; }
-.coverage-mini { margin: 0.25rem 0 0.75rem 0; }
-.coverage-mini .coverage-bar { height: 5px; margin-bottom: 0.3rem; }
-.coverage-mini .coverage-legend { margin-bottom: 0; font-size: 0.72rem; }
-.big-number { text-align: center; }
-.signals-inline { margin: -0.5rem 0 1.25rem 0; }
-.signals-inline .quick-hits { list-style: none; padding-left: 0.25rem; }
-.developing-note { font-size: 0.8rem; color: var(--text-light); margin: -0.25rem 0 0.5rem 0; }
-.developing-label { font-weight: 700; }
-.developing, .also-today, .big-number, .blindspot-section {
-    margin: 2rem 0; padding: 1.25rem 1.5rem;
-    background: var(--bg-light); border-radius: 8px;
-}
-.section-heading {
-    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 2px; color: var(--text-light); margin: 0 0 0.75rem 0;
-}
-.quick-hits { margin: 0; padding-left: 1.1rem; }
-.quick-hits li { margin-bottom: 0.6rem; line-height: 1.5; }
-.quick-hit-region {
-    font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.5px; color: var(--accent-color); margin-right: 0.35rem;
-}
-.quick-hit-link { text-decoration: none; color: var(--accent-color); }
-.big-number-value { font-size: 2.5rem; font-weight: 700; color: var(--primary-color); line-height: 1.1; }
-.big-number-context { color: var(--text-light); margin: 0.4rem 0 0 0; }
-.subscribe-frequency {
-    display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap;
-    width: 100%; margin: 0.35rem 0; color: #cbd5e0; font-size: 0.85rem;
-}
-.subscribe-frequency label { cursor: pointer; }
-.subscribe-frequency input { margin-right: 0.3rem; }
-.rss-alt { text-align: center; font-size: 0.85rem; color: var(--text-light); margin-top: 0.75rem; }
-.hero { margin: 1.75rem 0 0.75rem 0; }
-.hero .subscribe-box { margin: 0; }
-.hero-points {
-    list-style: none; display: flex; flex-wrap: wrap; justify-content: center;
-    gap: 0.35rem 1.5rem; margin: 0.9rem 0 0 0; padding: 0;
-    font-size: 0.85rem; color: var(--text-light);
-}
-.hero-points li::before { content: "\\2713\\00a0"; color: var(--impact-low); font-weight: 700; }
-.newsletter-lead { color: var(--text-light); font-size: 0.9rem; line-height: 1.5; }
-
-.story-content {
-    display: grid;
-    gap: 1.5rem;
-}
-
-.analysis-section h3 {
-    color: var(--primary-color);
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.analysis-section p {
-    line-height: 1.7;
-}
-
-.sources h4 {
-    color: var(--primary-color);
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-.sources ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.sources a {
-    color: var(--accent-color);
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-.sources a:hover {
-    text-decoration: underline;
-}
-
-/* Newsletter footer */
-.newsletter-footer {
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 2px solid var(--border-color);
-    text-align: center;
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
-
-.timestamp {
-    margin-top: 0.5rem;
-    font-size: 0.8rem;
-    opacity: 0.7;
-}
-
-/* Site footer */
-.site-footer {
-    background: var(--secondary-color);
-    color: white;
-    padding: 2rem 0;
-    text-align: center;
-    margin-top: 3rem;
-}
-
-.site-footer a {
-    color: white;
-    text-decoration: none;
-}
-
-.site-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Home page specific */
-.recent-newsletters {
-    margin-bottom: 3rem;
-}
-
-.newsletter-list {
-    display: grid;
-    gap: 1rem;
-}
-
-.newsletter-preview {
-    background: var(--bg-light);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid var(--accent-color);
-}
-
-.newsletter-preview h3 {
-    margin-bottom: 0.5rem;
-}
-
-.newsletter-preview h3 a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.newsletter-preview h3 a:hover {
-    text-decoration: underline;
-}
-
-.newsletter-preview .newsletter-date {
-    color: var(--text-light);
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-}
-
-.about-section {
-    background: var(--bg-light);
-    padding: 2rem;
-    border-radius: 8px;
-}
-
-.about-section h2, .about-section h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.about-section ul {
-    margin: 1rem 0;
-    padding-left: 1.5rem;
-}
-
-.about-section li {
-    margin-bottom: 0.5rem;
-}
-
-.cta-button {
-    display: inline-block;
-    background: var(--accent-color);
-    color: white !important;
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    margin-top: 1rem;
-    transition: background 0.3s;
-}
-
-.cta-button:hover {
-    background: var(--primary-color);
-}
-
-/* Archive page specific */
-.archive-intro {
-    font-size: 1.1rem;
-    color: var(--text-light);
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.archive-year {
-    margin-bottom: 3rem;
-}
-
-.archive-year h2 {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 0.5rem;
-    margin-bottom: 2rem;
-}
-
-.archive-month {
-    margin-bottom: 2rem;
-}
-
-.archive-month h3 {
-    color: var(--secondary-color);
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-.archive-item {
-    padding: 1rem 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.archive-item h4 {
-    margin-bottom: 0.25rem;
-    font-size: 1rem;
-}
-
-.archive-item h4 a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.archive-item h4 a:hover {
-    text-decoration: underline;
-}
-
-.archive-item p {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    margin: 0;
-}
-
-/* About page specific */
-.about-hero {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem 0;
-}
-
-.about-hero h1 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.about-intro {
-    font-size: 1.2rem;
-    color: var(--text-light);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.about-content h2 {
-    color: var(--primary-color);
-    margin: 2rem 0 1rem 0;
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 0.5rem;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-
-.feature {
-    background: var(--bg-light);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid var(--accent-color);
-}
-
-.feature h3 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-}
-
-.feature p {
-    margin: 0;
-    line-height: 1.6;
-}
-
-.process {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-
-.process-step {
-    background: var(--bg-light);
-    padding: 1.5rem;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.process-step h3 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-}
-
-.process-step p {
-    margin: 0;
-    line-height: 1.6;
-}
-
-.subscription-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.subscription-option {
-    background: var(--bg-light);
-    padding: 2rem;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.subscription-option h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.subscription-option p {
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-.note {
-    font-style: italic;
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .container {
-        padding: 0 15px;
-    }
-    
-    .story-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .story-meta {
-        align-self: flex-end;
-    }
-    
-    .site-title {
-        font-size: 2rem;
-    }
-    
-    .sources ul {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-}"""
-        
-        assets_dir = self.output_dir / "assets"
-        with open(assets_dir / "style.css", 'w', encoding='utf-8') as f:
-            f.write(css_content)
-        
+        """Copy the stylesheet (src/publishers/site.css) to the output directory."""
+        write_css(self.output_dir)
         logger.info("Assets copied")
-    
+
     def _update_dashboard(self):
-        """Generate and update the metrics dashboard."""
+        """Dashboard from the issue JSONs: billed cost, model, timing, readability."""
         try:
-            dashboard_generator = DashboardGenerator()
-            dashboard_path = self.output_dir / "dashboard.html"
-            dashboard_generator.generate_dashboard(str(dashboard_path))
-            logger.info("Dashboard updated with latest metrics")
+            build_dashboard_page(self.output_dir, repo_url=self.GITHUB_REPO_URL,
+                                 tagline=Config.NEWSLETTER_TAGLINE)
+            logger.info("Dashboard updated from issue data")
         except Exception as e:
             logger.error(f"Failed to update dashboard: {e}")
 

@@ -31,6 +31,7 @@ class SitemapGenerator:
             "index.html": 1.0,
             "about.html": 0.8,
             "archive.html": 0.7,
+            "how-it-works.html": 0.7,
             "dashboard.html": 0.6,
             "newsletters/": 0.9,  # Base priority for newsletter pages
         }
@@ -39,6 +40,7 @@ class SitemapGenerator:
             "index.html": "daily",
             "about.html": "monthly",
             "archive.html": "weekly",
+            "how-it-works.html": "weekly",
             "dashboard.html": "daily",
             "newsletters/": "never",  # Individual newsletters don't change
         }
@@ -88,7 +90,7 @@ class SitemapGenerator:
 
         try:
             # Add main pages
-            main_pages = ["index.html", "about.html", "archive.html", "dashboard.html"]
+            main_pages = ["index.html", "about.html", "archive.html", "how-it-works.html", "dashboard.html"]
 
             for page in main_pages:
                 page_path = self.output_dir / page

@@ -4,93 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Geopolitical Daily</title>
-    <meta name="description" content="Learn about Geopolitical Daily - AI-powered strategic intelligence beyond the headlines">
+    <meta name="description" content="What Geopolitical Daily is, what is in an issue and how it is made.">
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="alternate" type="application/rss+xml" title="Geopolitical Daily RSS" href="feed.xml">
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <h1 class="site-title">Geopolitical Daily</h1>
-            <p class="tagline">The world's news from every side</p>
-            <nav class="nav">
-                <a href="index.html">Home</a>
-                <a href="archive.html">Archive</a>
-                <a href="about.html">About</a>
-                <a href="dashboard.html">Dashboard</a>
-                <a href="feed.xml">RSS</a>
-            </nav>
+            <a class="site-title" href="index.html">Geopolitical Daily</a>
+            <nav class="nav" aria-label="Site"><a href="index.html">Latest</a><a href="archive.html">Archive</a><a href="how-it-works.html">How it works</a><a href="dashboard.html">Dashboard</a><a href="about.html" aria-current="page">About</a><a href="feed.xml">RSS</a></nav>
         </div>
     </header>
 
     <main class="main">
         <div class="container">
-            <section class="about-hero">
-                <h1>About Geopolitical Daily</h1>
-                <p class="about-intro">World news from every side: how Western, Asian, Middle Eastern, African and Latin American media cover the same stories - every source linked, state media labeled.</p>
-            </section>
+            <header class="page-head">
+                <p class="eyebrow">About</p>
+                <h1 class="page-title">One story, every side</h1>
+                <p class="page-lead">Most world-news briefings show you one lens. Geopolitical Daily reads 87 news sources in 15 perspective groups every day
+                and shows how each part of the world covers the same event &mdash; with every source linked and
+                state media clearly labeled.</p>
+            </header>
 
-            <section class="about-content">
-                <h2>Our Mission</h2>
-                <p>Geopolitical Daily provides strategic intelligence that goes beyond headlines. We focus on underreported stories with significant geopolitical implications, using AI to analyze patterns and predict outcomes that mainstream media might overlook.</p>
+            <h2 class="section-label">What is in an issue</h2>
+            <div class="cards">
+                <div class="card"><h3>The big story</h3><p>The day's most important event, why it matters, and <em>How the world covers it</em>: each region's framing with a word-for-word quote.</p></div>
+                <div class="card"><h3>More top stories</h3><p>Two more stories, each with a bar showing which parts of the world reported them.</p></div>
+                <div class="card"><h3>Developing</h3><p>One-line updates on stories you already read about &mdash; only what is new.</p></div>
+                <div class="card"><h3>Also today</h3><p>Quick hits from around the world, one sentence and one link each.</p></div>
+                <div class="card"><h3>The blindspot</h3><p>A story reported in one part of the world that no Western outlet we track has covered.</p></div>
+                <div class="card"><h3>The big number</h3><p>One figure from today's news, with the context to read it.</p></div>
+            </div>
 
-                <h2>What Makes Us Different</h2>
-                <div class="features-grid">
-                    <div class="feature">
-                        <h3>🤖 AI-Powered Analysis</h3>
-                        <p>Advanced AI algorithms analyze thousands of sources to identify strategic patterns and implications</p>
-                    </div>
-                    <div class="feature">
-                        <h3>🎯 Underreported Focus</h3>
-                        <p>We identify stories that deserve attention but aren't getting mainstream coverage</p>
-                    </div>
-                    <div class="feature">
-                        <h3>🔍 Strategic Depth</h3>
-                        <p>Beyond headlines to second-order effects, regional power dynamics, and long-term implications</p>
-                    </div>
-                    <div class="feature">
-                        <h3>🌍 Global Sources</h3>
-                        <p>Drawing from think tanks, regional outlets, diplomatic cables, and specialized publications worldwide</p>
-                    </div>
-                    <div class="feature">
-                        <h3>⚡ Daily Updates</h3>
-                        <p>Fresh analysis delivered every day at 6:00 UTC, keeping you ahead of developing situations</p>
-                    </div>
-                    <div class="feature">
-                        <h3>📊 Impact Scoring</h3>
-                        <p>Each story is scored for strategic significance to help prioritize your attention</p>
-                    </div>
-                </div>
+            <h2 class="section-label">How it is made</h2>
+            <div class="prose">
+                <p>Issues are written by an AI model and published automatically; no person reviews an issue before it goes out. The model's work is then checked by code: quotes must match the source text, repeated
+                stories are held back, links must point at what they claim to. The whole process, with the numbers
+                from the latest run, is on <a href="how-it-works.html">How it works</a>; cost and quality figures for
+                every issue are on the <a href="dashboard.html">dashboard</a>.</p>
+                <p>State-affiliated outlets are part of the picture on purpose. They show how a government wants an
+                event to be seen. They are always labeled and never used as the only source for a fact.</p>
+            </div>
 
-                <h2>How It Works</h2>
-                <div class="process">
-                    <div class="process-step">
-                        <h3>1. Data Collection</h3>
-                        <p>Our system continuously monitors geopolitical news from hundreds of sources worldwide</p>
-                    </div>
-                    <div class="process-step">
-                        <h3>2. AI Analysis</h3>
-                        <p>Claude AI analyzes articles for strategic significance, identifying underreported stories</p>
-                    </div>
-                    <div class="process-step">
-                        <h3>3. Strategic Assessment</h3>
-                        <p>Each story is evaluated for impact, overlooked aspects, and future implications</p>
-                    </div>
-                    <div class="process-step">
-                        <h3>4. Daily Publication</h3>
-                        <p>Curated analysis is published daily with clear impact scoring and source links</p>
-                    </div>
-                </div>
-
-                <h2>Subscribe</h2>
-                <div class="subscription-options">
-                    <div class="subscription-option">
-                        <h3>RSS Feed</h3>
-                        <p>Get instant updates in your RSS reader</p>
-                        <a href="feed.xml" class="cta-button">Subscribe via RSS</a>
-                    </div>
-                    <div class="subscription-option">
-                        <h3>Email Newsletter</h3>
-                        <p>Receive daily analysis directly in your inbox</p>
+            <h2 class="section-label">Subscribe</h2>
+            
+                    <div class="subscribe-box">
+                        <h3>Get this briefing in your inbox</h3>
+                        <p>World news from every side — daily or once a week, your choice.</p>
                         
         <form action="https://buttondown.com/api/emails/embed-subscribe/geodaily"
               method="post"
@@ -104,27 +64,24 @@
             <input type="submit" value="Subscribe" class="subscribe-btn" />
         </form>
                     </div>
-                </div>
+            <p class="rss-alt">Prefer a feed reader? <a href="feed.xml">Subscribe via RSS</a>.</p>
 
-                <h2>Contact & Feedback</h2>
-                <p>We welcome feedback on our analysis and suggestions for improvement. You can:</p>
-                <ul>
-                    <li><a href="https://github.com/eLh0m3r0/geodaily/issues">Open an issue on GitHub</a> for bug reports or feature requests</li>
-                    <li><a href="https://github.com/eLh0m3r0/geodaily/discussions">Start a discussion</a> for analysis feedback</li>
-                    <li>Check our <a href="https://github.com/eLh0m3r0/geodaily">source code</a> to understand our methodology</li>
-                </ul>
-            </section>
+            <h2 class="section-label">Corrections and feedback</h2>
+            <div class="prose">
+                <p>Spotted an error? <a href="https://github.com/eLh0m3r0/geodaily/issues">Open an issue on GitHub</a> or reply to
+                any email. The <a href="https://github.com/eLh0m3r0/geodaily">source code</a> is public, including the list of
+                sources and the editorial rules.</p>
+            </div>
         </div>
     </main>
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2026 Geopolitical Daily. Strategic analysis beyond the headlines.</p>
-            <p>
-                <a href="feed.xml">RSS Feed</a> |
-                <a href="archive.html">Archive</a> |
-                <a href="https://github.com/eLh0m3r0/geodaily">Source Code</a>
-            </p>
+            <p><strong>Geopolitical Daily</strong> &mdash; The world&#x27;s news from every side</p>
+            <p>Written with AI from the linked sources and published automatically.
+               <a href="how-it-works.html">How it works</a> &middot;
+               <a href="archive.html">Archive</a> &middot;
+               <a href="feed.xml">RSS</a> &middot; <a href="https://github.com/eLh0m3r0/geodaily">Source code</a></p>
         </div>
     </footer>
 </body>
