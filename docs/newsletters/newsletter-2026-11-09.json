@@ -1,0 +1,271 @@
+{
+ "date": "2026-11-09",
+ "title": "Geopolitical Daily",
+ "email_subject": "Trump plans Xi-Putin talks on Iran war",
+ "preheader": "The APEC meeting is unconfirmed; Houthis damage an Aramco tower in Riyadh.",
+ "intro_text": "Good morning. It's Monday, November 09, 2026 — the 3 stories that matter most today, plus 3 updates on stories you're following and 4 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Trump says he will meet Xi and Putin in China next week",
+   "why_important": "President Trump said he expects to meet Xi Jinping and Vladimir Putin at next week's APEC summit in Shenzhen. He said the talks would discuss denuclearisation, or removing nuclear weapons, and ending the Iran war. That could be a major-power effort to settle a conflict that has disrupted oil shipments.",
+   "what_overlooked": "Trump has said he is open to three-way arms control talks with Xi and Putin. Beijing or Moscow has not confirmed any meeting, and APEC schedules can change.",
+   "prediction": "The key question is whether Beijing or Moscow confirms the three-way meeting before APEC opens. Silence would suggest the plan is still not final.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.middleeasteye.net/live-blog/live-blog-update/trump-says-he-thinks-he-will-meet-xi-putin-set-discuss-ending-war-iran",
+    "https://www.bangkokpost.com/world/3351526/us-president-says-to-hold-talks-with-chinese-russian-leaders-in-china",
+    "https://www.euronews.com/2026/11/09/donald-trump-plans-to-meet-vladimir-putin-and-xi-jinping-in-china-to-discuss-ending-iran-w",
+    "https://www.hindustantimes.com/world-news/trump-says-he-thinks-he-will-meet-with-xi-putin-at-apec-summit-in-china-101794185002081.html"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 9,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 9,
+   "confidence": 0.82,
+   "region": "global",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "middle_east": 1,
+    "east_asia": 2,
+    "western": 1,
+    "south_asia": 2
+   },
+   "coverage_outlets": 6,
+   "signal_terms": [
+    "APEC",
+    "Xi Jinping",
+    "Vladimir Putin",
+    "Shenzhen"
+   ]
+  },
+  {
+   "story_title": "Aramco tower damaged in Houthi-claimed attack in Riyadh",
+   "why_important": "Saudi Arabia said a Houthi attack damaged an Aramco skyscraper in Riyadh's financial district, with no casualties. The strike hit the capital's business core and a symbol of the oil giant. It raised risks to Saudi infrastructure and regional shipping.",
+   "what_overlooked": "Saudi Arabia called the damage minor and said it intercepted missiles. Houthis claimed responsibility, and Yemeni government forces reported a separate offensive that killed or wounded 267 Houthi fighters.",
+   "prediction": "Saudi Arabia may retaliate with new airstrikes on Houthi targets within 72 hours. Or it may limit its response to air defenses.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/11/08/saudi-capital-s-financial-district-targeted-in-attack-aramco-skyscraper-damaged_6774880_4.html",
+    "https://www.middleeasteye.net/live-blog/live-blog-update/yemeni-government-forces-claim-attacks-against-houthi-positions",
+    "https://www.dawn.com/news/2043061/aramco-skyscraper-damaged-as-houthis-target-riyadh-financial-district",
+    "https://www.aa.com.tr/en/middle-east/saudi-arabia-says-aramco-building-suffers-minor-damage-after-attempted-attack-in-riyadh/4115868"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 7,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "middle_east",
+   "actor_type": "mixed",
+   "event_type": "military",
+   "coverage_counts": {
+    "western": 3,
+    "middle_east": 3,
+    "south_asia": 5,
+    "middle_east_state": 2,
+    "russian_state": 4,
+    "chinese_state": 1
+   },
+   "coverage_outlets": 14,
+   "signal_terms": [
+    "Houthis",
+    "Aramco",
+    "Riyadh",
+    "Saudi Arabia"
+   ]
+  },
+  {
+   "story_title": "Nvidia probes whether CEO Jensen Huang was target of foreign intelligence",
+   "why_important": "Nvidia's board is investigating whether CEO Jensen Huang was the target of foreign spying. The inquiry follows his admission of an affair with a Chinese businesswoman. Nvidia makes the chips at the center of the US-China AI race. Any security breach would matter far beyond the company.",
+   "what_overlooked": "Huang apologized and said he will keep leading Nvidia. No US agency has confirmed the spying allegation, which Nvidia is still investigating.",
+   "prediction": "The question is whether Nvidia names outside investigators or US officials open a security review within 72 hours.",
+   "impact_score": 7,
+   "sources": [
+    "https://asia.nikkei.com/business/tech/semiconductors/nvidia-probes-ceo-jensen-huang-s-affair-amid-china-security-concerns",
+    "https://www.lemonde.fr/en/pixels/article/2026/11/09/nvidia-announces-probe-into-huang-after-reports-of-affair-with-alleged-chinese-spy_6775507_13.html",
+    "https://www.dawn.com/news/2043245/nvidia-probes-whether-ceo-huang-was-target-of-foreign-spying-as-he-admits-affair",
+    "https://rt-english.com/news/648583-nvidia-huang-chinese-spy-affair/?utm_source=rss&utm_medium=rss&utm_campaign=RSS"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 7,
+   "novelty_score": 8,
+   "credibility_score": 7,
+   "impact_dimension_score": 7,
+   "confidence": 0.8,
+   "region": "global",
+   "actor_type": "mixed",
+   "event_type": "informational_cyber",
+   "coverage_counts": {
+    "east_asia": 8,
+    "western": 8,
+    "south_asia": 6,
+    "russian_state": 1,
+    "middle_east_state": 1
+   },
+   "coverage_outlets": 20,
+   "signal_terms": [
+    "Nvidia",
+    "Jensen Huang",
+    "China",
+    "AI chips"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "South Africa's ANC fell to 30.76% in final local election results, its worst-ever showing, while the DA and ActionSA made gains.",
+   "region": "africa",
+   "url": "https://mg.co.za/news/south-africa/2026-11-08-anc-barely-hangs-on-as-da-and-actionsa-make-gains-in-final-iec-results/"
+  },
+  {
+   "text": "President Trump told CBS his mass deportation policy 'might have been too tough' and said Republicans lost partly because of it.",
+   "region": "americas",
+   "url": "https://www.koreatimes.co.kr/world/20261109/trump-says-his-deportation-policy-might-have-been-too-tough-for-voters-in-the-election?utm_source=rss"
+  },
+  {
+   "text": "Secretary of State Marco Rubio said the Iran war is unpopular but necessary, and Tehran's demands are 'outrageous and ridiculous'.",
+   "region": "middle_east",
+   "url": "https://www.thehindu.com/news/international/rubio-says-trumps-war-against-iran-not-necessarily-popular-but-needed-to-stop-a-nuclear-threat/article71681264.ece"
+  },
+  {
+   "text": "New Zealand's National Party appeared set to win the most seats after Saturday's election, with coalition talks likely to take weeks.",
+   "region": "indo_pacific",
+   "url": "https://asia.nikkei.com/politics/new-zealand-s-knife-edge-election-puts-coalition-talks-in-focus"
+  }
+ ],
+ "big_number": {
+  "value": "200 billion cubic feet",
+  "context": "Egypt announced a new Mediterranean gas field estimated at 200 billion cubic feet, citing higher investment and exploration.",
+  "url": "https://www.euronews.com/2026/11/08/egypt-announces-new-mediterranean-gas-field-discovery-estimated-at-200-billion-cubic-feet"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "Euronews"
+    ],
+    "article_count": 1,
+    "framing": "Presents Trump as initiating possible talks with Putin and Xi on denuclearisation and ending the Iran war.",
+    "quote": "US President Donald Trump said he would possibly meet with Vladimir Putin and Xi Jinping in China to discuss \"denuclearisation\" and how to end the Iran war.",
+    "quote_outlet": "Euronews",
+    "quote_url": "https://www.euronews.com/2026/11/09/donald-trump-plans-to-meet-vladimir-putin-and-xi-jinping-in-china-to-discuss-ending-iran-w",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "Bangkok Post",
+     "The Straits Times"
+    ],
+    "article_count": 2,
+    "framing": "Treats Trump's China trip as the occasion, stressing the China-hosted APEC summit as the setting for Xi and Putin talks.",
+    "quote": "Trump said he will travel to China for the APEC summit, set for Nov 18 to 19.",
+    "quote_outlet": "The Straits Times",
+    "quote_url": "https://www.straitstimes.com/world/united-states/trump-thinks-he-will-meet-xi-and-putin-at-china-apec-summit",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Hindustan Times",
+     "NDTV"
+    ],
+    "article_count": 2,
+    "framing": "Frames the meeting as Trump-led three-way arms control talks, stressing denuclearization over Iran or summit logistics.",
+    "quote": "Trump said in October that he was open to three-way arms control talks with Xi and Putin, which he said would focus on denuclearization.",
+    "quote_outlet": "Hindustan Times",
+    "quote_url": "https://www.hindustantimes.com/world-news/trump-says-he-thinks-he-will-meet-with-xi-putin-at-apec-summit-in-china-101794185002081.html",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Middle East Eye"
+    ],
+    "article_count": 1,
+    "framing": "Treats the Iran war as the meeting's central problem, with Trump, Xi and Putin responsible for ending it.",
+    "quote": "Trump says he thinks he will meet with Xi, Putin, set to discuss ending war on Iran",
+    "quote_outlet": "Middle East Eye",
+    "quote_url": "https://www.middleeasteye.net/live-blog/live-blog-update/trump-says-he-thinks-he-will-meet-xi-putin-set-discuss-ending-war-iran",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 6,
+  "counts": {
+   "middle_east": 1,
+   "east_asia": 2,
+   "western": 1,
+   "south_asia": 2
+  },
+  "blindspot": "Greek authorities recovered 12 bodies from a migrant boat off Crete and rescued 18 survivors, as hundreds arrive from Libya. The deaths underscore the Mediterranean migration route's humanitarian and border-policy stakes for Europe.",
+  "blindspot_url": "https://timesofindia.indiatimes.com/world/europe/12-migrants-found-dead-in-boat-off-greeces-crete-as-hundreds-arrive-from-libya/articleshow/135674468.cms",
+  "blindspot_outlets": [
+   "The Hindu",
+   "The Straits Times",
+   "Times of India"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "Ueno",
+   "text": "Police raided the home of Paraguay's detained ex-President Santiago Peña, accused of steering state deposits to the collapsed Ueno Bank.",
+   "region": "americas",
+   "url": "https://www.thehindu.com/news/international/police-raid-home-of-ex-president-of-paraguay/article71681272.ece"
+  },
+  {
+   "storyline": "Task",
+   "text": "Iran's Revolutionary Guard dismissed the new US 'Iron Gate' task force as 'wordplay' and said it cannot cripple Iran's economy.",
+   "region": "middle_east",
+   "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-mocks-us-military-initiative-disrupt-supply-routes"
+  },
+  {
+   "storyline": "Data",
+   "text": "The Financial Times reported analysts see Democratic midterm wins slowing US data-center construction, giving China a chance to catch up in AI.",
+   "region": "global",
+   "url": "https://www.ft.com/content/ff0e9974-b855-4b9a-a8c9-0782e7af16ff?syn-25a6b1a6=1"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 11.38,
+   "avg_sentence_words": 17.5,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 9.32,
+   "rewrite_avg_sentence_words": 13.2,
+   "rewrite_fragment_share": 0.0,
+   "rewrite_attempts": [
+    "applied"
+   ]
+  },
+  "editorial_actions": [
+   "Quick hit dropped (restates the 2026-11-06 story 'Israel's Eisenkot secures backing to form governme'): Gadi Eisenkot opened coalition talks with Benjamin Netanyahu's allies ",
+   "Quick hit moved to DEVELOPING (running storyline 'ueno'): Police raided the home of Paraguay's detained ex-President Santiago Pe",
+   "Quick hit moved to DEVELOPING (running storyline 'task'): Iran's Revolutionary Guard dismissed the new US 'Iron Gate' task force",
+   "Quick hit moved to DEVELOPING (running storyline 'data'): The Financial Times reported analysts see Democratic midterm wins slow"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 12266,
+  "analysis_output_tokens": 33720,
+  "analysis_cost_usd": 0.0181,
+  "analysis_seconds": 345.8,
+  "grid_cost_usd": 0.0048,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017"
+ }
+}
