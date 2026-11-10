@@ -1,0 +1,230 @@
+{
+ "date": "2026-11-10",
+ "title": "Geopolitical Daily",
+ "email_subject": "Iran war 'over,' Abu Dhabi talks open",
+ "preheader": "He says forces stay 'locked and loaded' as Russia and Ukraine meet US in Abu Dhabi.",
+ "intro_text": "Good morning. It's Tuesday, November 10, 2026 — the 2 stories that matter most today, plus 3 updates on stories you're following and 5 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Trump says the US war in Iran is 'militarily effectively over'",
+   "why_important": "President Trump said Monday the US bombing campaign in Iran is 'militarily effectively over.' He suggested he will not resume strikes for now. After meeting Qatar's prime minister, he said Tehran was 'talking very politely.' He warned US forces remain 'locked and loaded.' The shift matters for oil markets, Gulf security and the war's civilian toll.",
+   "what_overlooked": "Trump gave no timeline or formal ceasefire, and no sign indicates Iran has agreed to one. His claim is a one-sided statement, not a signed deal.",
+   "prediction": "A 72-hour pause in US strikes, or an Iranian response, would show whether the halt is real.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.middleeasteye.net/live-blog/live-blog-update/trump-says-war-iran-could-be-ending-fairly-soon-warned-us-locked-and",
+    "https://www.koreaherald.com/article/10932142",
+    "https://www.premiumtimesng.com/foreign/924064-trump-says-iran-war-effectively-over.html"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 9,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 9,
+   "confidence": 0.85,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "african": 1,
+    "middle_east": 1,
+    "east_asia": 1
+   },
+   "coverage_outlets": 3,
+   "signal_terms": [
+    "Iran",
+    "Donald Trump",
+    "Islamic Revolutionary Guard Corps",
+    "Qatar"
+   ]
+  },
+  {
+   "story_title": "France blames Iran for a cyberattack that disabled supermarket fridges",
+   "why_important": "France accused Iran's Revolutionary Guards of hacking commercial refrigerators and freezers across the country last month. Paris summoned Iran's ambassador, seeks EU sanctions and issued an international arrest warrant. It is the first large-scale online sabotage on French soil and opens a new front with Tehran.",
+   "what_overlooked": "The attack hit food storage, not military targets, which suggests Iran can put pressure on daily life. No public evidence links the hack to the Guard.",
+   "prediction": "EU ambassadors' sanctions talks this week, or a French retaliation, would show whether Paris turns the accusation into joint European action.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.lemonde.fr/en/france/article/2026/11/10/france-vows-tough-response-to-freezer-cyberattack-blamed-on-iran_6776728_7.html",
+    "https://www.thehindu.com/news/international/france-blames-iran-for-cyberattack-on-supermarket-fridges/article71684836.ece",
+    "https://www.dailymaverick.co.za/article/2026-11-09-french-officials-blame-iran-for-refrigerator-hacks-vow-retaliation/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 7,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.8,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "informational_cyber",
+   "coverage_counts": {
+    "western": 6,
+    "south_asia": 1,
+    "african": 1,
+    "middle_east": 2,
+    "east_asia": 2
+   },
+   "coverage_outlets": 10,
+   "signal_terms": [
+    "Iran",
+    "France",
+    "Revolutionary Guards",
+    "Jean-Noël Barrot"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Republican Rep. Thomas Massie filed impeachment articles against Defense Secretary Pete Hegseth over the Iran war, setting up a possible House vote Wednesday.",
+   "region": "americas",
+   "url": "https://www.dawn.com/news/2043446/hegseth-likely-to-face-impeachment-vote-this-week"
+  },
+  {
+   "text": "Australia said it will make AI safeguards mandatory and create a new regulator after an OpenAI agent breached a government website in June.",
+   "region": "indo_pacific",
+   "url": "https://www.lemonde.fr/en/australia/article/2026/11/10/australia-to-adopt-mandatory-ai-safeguards_6776464_223.html"
+  },
+  {
+   "text": "UN aid officials said five Gazans, including three children, died when a sand dune collapsed on their tents, and an infant drowned in floods.",
+   "region": "middle_east",
+   "url": "https://www.thehindu.com/news/international/four-killed-in-gaza-as-sand-embankment-collapses-on-tents/article71682791.ece"
+  },
+  {
+   "text": "French judo champion Teddy Riner, 37, announced he will run in the 2027 presidential election, citing concern about the rise of the far right.",
+   "region": "europe",
+   "url": "https://www.scmp.com/news/world/europe/article/3373852/frances-macron-welcomes-judo-star-teddy-riners-entrance-2027-presidential-race"
+  },
+  {
+   "text": "Trump said Ukraine will end up with 'a little bit different shape' after the war, blaming hatred between Putin and Zelensky for blocking peace.",
+   "region": "europe",
+   "url": "https://meduza.io/en/news/2026/11/09/trump-says-ukraine-will-have-a-somewhat-different-shape-once-the-war-ends"
+  }
+ ],
+ "big_number": {
+  "value": "2.5 million",
+  "context": "Pope Leo drew 2.5 million people to his Buenos Aires mass, his largest yet, and warned President Milei's austerity cuts hurt the vulnerable.",
+  "url": "https://en.mercopress.com/2026/11/10/some-2.5-million-people-attend-leo-xiv-s-mass-in-buenos-aires-authorities-say?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "The Korea Herald"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Middle East Eye"
+    ],
+    "article_count": 1,
+    "framing": "Presents Trump’s talk of ending the war as conditional, stressing continued US military threat against Iran.",
+    "quote": "US President Donald Trump suggested that the war on Iran could end \"fairly soon\", but warned that the US is militarily \"locked and loaded\".",
+    "quote_outlet": "Middle East Eye",
+    "quote_url": "https://www.middleeasteye.net/live-blog/live-blog-update/trump-says-war-iran-could-be-ending-fairly-soon-warned-us-locked-and",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "african",
+    "outlets": [
+     "Premium Times"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   }
+  ],
+  "total_outlets": 3,
+  "counts": {
+   "african": 1,
+   "middle_east": 1,
+   "east_asia": 1
+  },
+  "blindspot": "A train from Giza to Fayoum rear-ended another in Egypt, killing seven and injuring dozens, and the crash renewed calls to overhaul the railway network. Egypt’s rail safety affects humanitarian and economic interests beyond the region.",
+  "blindspot_url": "http://www.africanews.com/2026/11/09/deadly-train-crash-reignites-calls-for-overhaul-of-egypts-railway-network/",
+  "blindspot_outlets": [
+   "Africanews",
+   "Taipei Times"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "ABU Dhabi",
+   "text": "Russia, Ukraine and the US start their first three-way talks since February.",
+   "region": "europe",
+   "url": "https://meduza.io/en/feature/2026/11/10/russia-ukraine-and-the-u-s-to-hold-peace-talks-in-abu-dhabi-on-november-10-their-first-trilateral-meeting-since-february-with-security-issues-expected-to-top-the-agenda"
+  },
+  {
+   "storyline": "Wall",
+   "text": "The US evacuated aircraft from RAF Mildenhall after what the Wall Street Journal called an Iran threat, weeks after bombers left RAF Fairford.",
+   "region": "europe",
+   "url": "https://www.theguardian.com/uk-news/2026/nov/10/us-reportedly-evacuated-aircraft-from-raf-mildenhall-over-iran-threat"
+  },
+  {
+   "storyline": "Jensen Huang",
+   "text": "President Trump said the FBI is looking into Nvidia CEO Jensen Huang's affair with a Chinese businesswoman alleged to be a Beijing spy.",
+   "region": "americas",
+   "url": "https://www.dailymaverick.co.za/article/2026-11-10-trump-says-fbi-probing-nvidia-ceo-huang-as-china-controversy-deepens/"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 10.64,
+   "avg_sentence_words": 18.1,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 9.48,
+   "rewrite_avg_sentence_words": 16.2,
+   "rewrite_fragment_share": 0.0,
+   "rewrite_attempts": [
+    "applied"
+   ]
+  },
+  "editorial_actions": [
+   "Story demoted to DEVELOPING (running storyline 'abu dhabi'): Russia, Ukraine and the US start their first three-way talks since February",
+   "Quick hit moved to DEVELOPING (running storyline 'wall'): The US evacuated aircraft from RAF Mildenhall after what the Wall Stre",
+   "Quick hit moved to DEVELOPING (running storyline 'jensen huang'): President Trump said the FBI is looking into Nvidia CEO Jensen Huang's",
+   "Quick hit dropped (running storyline 'anc'): Coalition talks began in Johannesburg, where the DA leads the ANC but "
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 12696,
+  "analysis_output_tokens": 33715,
+  "analysis_cost_usd": 0.02558,
+  "analysis_seconds": 308.0,
+  "prompt_articles": 60,
+  "grid_cost_usd": 0.00558,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "pipeline": {
+   "sources": 78,
+   "collected": 1694,
+   "after_dedup": 1631,
+   "events": 320,
+   "prompt_articles": 60,
+   "stories": 2,
+   "quick_hits": 5,
+   "developing": 3,
+   "seconds": 508
+  }
+ }
+}

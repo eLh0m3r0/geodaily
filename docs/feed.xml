@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Mon, 09 Nov 2026 08:32:09 GMT</pubDate>
-        <lastBuildDate>Mon, 09 Nov 2026 08:32:09 GMT</lastBuildDate>
+        <pubDate>Tue, 10 Nov 2026 08:29:50 GMT</pubDate>
+        <lastBuildDate>Tue, 10 Nov 2026 08:29:50 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,19 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 10, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-10.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Tuesday, November 10, 2026 — the 2 stories that matter most today, plus 3 updates on stories you're following and 5 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump says the US war in Iran is 'militarily effectively over'</strong>: President Trump said Monday the US bombing campaign in Iran is 'militarily effectively over.' He suggested he will not resume strikes for now. After meeting Qatar's prime minister, he said Tehran was ...</li></ul><p><em>Published: November 10, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Tue, 10 Nov 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20261110</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-10.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 09, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-09.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Monday, November 09, 2026 — the 3 stories that matter most today, plus 3 updates on stories you're following and 4 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump says he will meet Xi and Putin in China next week</strong>: President Trump said he expects to meet Xi Jinping and Vladimir Putin at next week's APEC summit in Shenzhen. He said the talks would discuss denuclearisation, or removing nuclear weapons, and ending ...</li></ul><p><em>Published: November 09, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -180,18 +193,6 @@
         <category><![CDATA[Middle East]]></category>
         <category><![CDATA[United States]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-01.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - October 31, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-31.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Saturday, October 31, 2026 — the 2 stories that matter most today, plus 3 updates on stories you're following and 6 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Poland suspends constitutional court chief and deploys riot police</strong>: Poland's government suspended the head of the Constitutional Tribunal, and police sealed the building, prompting protests and coup accusations. The clash between Prime Minister Donald Tusk and conserv...</li></ul><p><em>Published: October 31, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sat, 31 Oct 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20261031</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-10-31.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
