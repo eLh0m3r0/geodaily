@@ -28,7 +28,7 @@
                 AI and what is not, and what stops a bad issue from going out.</p>
             </header>
 
-            <div class="stats"><div class="stat"><b>87</b><span>sources across 15 perspectives</span></div><div class="stat"><b>1,694</b><span>articles read for the Nov 10 issue</span></div><div class="stat"><b>2</b><span>AI calls per issue &mdash; everything else is plain code</span></div><div class="stat"><b>$0.032</b><span>average AI cost per issue (last 10)</span></div><div class="stat"><b>8 min</b><span>start to published, latest run</span></div></div>
+            <div class="stats"><div class="stat"><b>87</b><span>sources across 15 perspectives</span></div><div class="stat"><b>1,730</b><span>articles read for the Nov 11 issue</span></div><div class="stat"><b>2</b><span>AI calls per issue &mdash; everything else is plain code</span></div><div class="stat"><b>$0.033</b><span>average AI cost per issue (last 10)</span></div><div class="stat"><b>10 min</b><span>start to published, latest run</span></div></div>
 
             <h2 class="section-label">The daily run</h2>
             <div class="flow-legend">
@@ -41,7 +41,7 @@
                     <h3>87 sources &middot; 15 perspectives</h3>
                     <p>85 RSS feeds + 2 scraped sites; 55 are non-Western and 15 are state-affiliated (always labeled).</p>
                 </li>
-                <li class="flow-edge" aria-hidden="true"><b>1,694</b> articles from the last 24&ndash;72 hours</li>
+                <li class="flow-edge" aria-hidden="true"><b>1,730</b> articles from the last 24&ndash;72 hours</li>
                 <li class="flow-node">
                     <h3>Collect and enrich</h3>
                     <p>All feeds are fetched in parallel. Short RSS summaries are replaced with the article's
@@ -55,7 +55,7 @@
                     <p class="flow-aside"><b>Fallback:</b> if the embedding model cannot load, plain
                     title-similarity de-duplication keeps the run going.</p>
                 </li>
-                <li class="flow-edge" aria-hidden="true"><b>1,631</b> articles after near-duplicates are removed, grouped into <b>320</b> events</li>
+                <li class="flow-edge" aria-hidden="true"><b>1,683</b> articles after near-duplicates are removed, grouped into <b>323</b> events</li>
                 <li class="flow-node">
                     <h3>Pre-select what the model reads</h3>
                     <p>Events are ranked by how many outlets confirm them and how many different perspectives
@@ -70,7 +70,7 @@
                     is sent back for a rewrite (at most twice) &mdash; kept only if it reads easier without
                     turning choppy or losing a figure.</p>
                 </li>
-                <li class="flow-edge" aria-hidden="true"><b>2</b> ranked stories, <b>5</b> quick hits, one big number</li>
+                <li class="flow-edge" aria-hidden="true"><b>3</b> ranked stories, <b>4</b> quick hits, one big number</li>
                 <li class="flow-node">
                     <h3>Editorial rules, enforced in code</h3>
                     <p>Running storylines move to <em>Developing</em>; items that repeat recent issues are
@@ -99,7 +99,7 @@
                 <div class="flow-node"><h3>Email</h3><p>Sent to daily subscribers; delivery is verified after sending.</p></div>
                 <div class="flow-node"><h3>Issue JSON</h3><p>Machine-readable copy with model, cost and decisions. Feeds the Sunday digest &mdash; no AI needed.</p></div>
             </div>
-            <p class="fine-print" style="max-width:620px;margin-left:auto;margin-right:auto;">Numbers on the arrows are from the November 10, 2026 run. Latest issue written by <code>deepseek/deepseek-v4.1-flash-1017</code>.
+            <p class="fine-print" style="max-width:620px;margin-left:auto;margin-right:auto;">Numbers on the arrows are from the November 11, 2026 run. Latest issue written by <code>deepseek/deepseek-v4.1-flash-1017</code>.
                Live figures for every issue are on the <a href="dashboard.html">dashboard</a>.</p>
 
             <h2 class="section-label">What keeps it honest</h2>

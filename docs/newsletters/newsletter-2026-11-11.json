@@ -1,0 +1,348 @@
+{
+ "date": "2026-11-11",
+ "title": "Geopolitical Daily",
+ "email_subject": "Russia talks stall; US spy arrest in UK",
+ "preheader": "Talks end with little progress, and Iran is charged over a plot on a UK air base.",
+ "intro_text": "Good morning. It's Wednesday, November 11, 2026 — the 3 stories that matter most today, plus 3 updates on stories you're following and 4 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Russia-Ukraine talks in Abu Dhabi make little progress",
+   "why_important": "Russia, Ukraine and the US met in Abu Dhabi for their first three-way talks in about nine months. Day one focused on safety pledges for Kyiv, but Russia pushed a broader safety deal for Europe after the war. Russia gave little on a ceasefire, while the US called the meeting a step that builds momentum; Zelensky called it constructive.",
+   "what_overlooked": "Moscow wants Ukraine treated as 'one aspect' of broader European safety talks. Kyiv and its allies have long rejected that view.",
+   "prediction": "By Thursday, see whether the US names a follow-up meeting or a safety pledge draft. Either would show the talks are moving past opening statements.",
+   "impact_score": 9,
+   "sources": [
+    "https://foreignpolicy.com/2026/11/10/us-russia-ukraine-peace-talks-progress-cease-fire-donbas/",
+    "https://meduza.io/en/news/2026/11/10/russia-wants-abu-dhabi-talks-to-focus-on-postwar-european-security-with-ukraine-just-one-aspect-of-broader-discussions-reuters-reports",
+    "https://www.lemonde.fr/en/international/article/2026/11/11/russia-ukraine-talks-in-abu-dhabi-make-little-progress_6777323_4.html",
+    "https://www.japantimes.co.jp/news/2026/11/11/world/politics/us-europe-russia-ukraine-talks/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 9,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 9,
+   "confidence": 0.9,
+   "region": "europe",
+   "actor_type": "mixed",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "western": 4,
+    "russian_exile": 4,
+    "east_asia": 3,
+    "south_asia": 3,
+    "african": 1,
+    "russian_state": 8,
+    "middle_east": 1,
+    "ukrainian": 1
+   },
+   "coverage_outlets": 17,
+   "signal_terms": [
+    "Abu Dhabi",
+    "Volodymyr Zelensky",
+    "Jared Kushner",
+    "Russia-Ukraine talks"
+   ]
+  },
+  {
+   "story_title": "US charges three alleged Iranian operatives over UK air base plot",
+   "why_important": "The US Justice Department charged three men it described as Iranian agents. They are accused of plotting to attack RAF Fairford, a UK base used for US missions against Iran. Government lawyers say the men also planned a terror campaign against Jewish groups. That case ties Iran's shadow war to Europe.",
+   "what_overlooked": "Days after the September incident, the US pulled all its B-1 bombers from RAF Fairford. The move showed the threat had already changed US missions.",
+   "prediction": "A first court appearance or a US handover request within 72 hours would show whether the charges move toward trial.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.middleeasteye.net/live-blog/live-blog-update/us-charges-three-iranian-operatives-over-uk-air-base-plot",
+    "https://www.thehindu.com/news/international/us-charges-three-iranian-operatives-over-uk-airbase-plot/article71687536.ece",
+    "https://www.dw.com/en/us-charges-3-alleged-iranian-operatives-over-plots-targeting-jewish-communities-and-a-uk-airbase/a-79913543?maca=en-rss-en-all-1573-rdf",
+    "https://www.japantimes.co.jp/news/2026/11/11/world/crime-legal/us-iran-operatives-uk-airbase-plot/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 8,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "middle_east": 4,
+    "south_asia": 2,
+    "western": 2,
+    "east_asia": 2
+   },
+   "coverage_outlets": 9,
+   "signal_terms": [
+    "RAF Fairford",
+    "Iranian operatives",
+    "US Justice Department",
+    "Mohammad Baqer Saad Dawood al-Saadi"
+   ]
+  },
+  {
+   "story_title": "UK arrests senior US Army soldier suspected of spying for Russia",
+   "why_important": "British police arrested a 41-year-old senior US Army member near Gloucester on suspicion of helping Russian spies. Police are holding him in London and say they worked closely with US officials. The case raises questions about safety inside US-UK defense ties.",
+   "what_overlooked": "Police released no details of the soldier's rank, unit or what he is accused of doing. The possible damage to US and NATO secrets is still unknown.",
+   "prediction": "British lawyers must decide within days whether to charge him. A charge would name the crime he is accused of and show the case's scale.",
+   "impact_score": 7,
+   "sources": [
+    "https://meduza.io/en/news/2026/11/11/british-police-arrest-senior-u-s-army-soldier-near-gloucester-on-suspicion-of-spying-for-russia",
+    "https://www.lemonde.fr/en/international/article/2026/11/11/uk-arrests-us-soldier-suspected-of-spying-for-russia_6777455_4.html",
+    "https://www.thehindu.com/news/international/us-army-member-arrested-in-uk-for-alleged-russian-links/article71687547.ece",
+    "https://www.dailymaverick.co.za/article/2026-11-10-uk-arrests-us-army-member-suspected-of-helping-russia/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 6,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.85,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "informational_cyber",
+   "coverage_counts": {
+    "russian_exile": 1,
+    "western": 3,
+    "south_asia": 3,
+    "african": 1,
+    "east_asia": 1
+   },
+   "coverage_outlets": 9,
+   "signal_terms": [
+    "Gloucester",
+    "US Army",
+    "Russian intelligence",
+    "London"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Iran rejected France's accusations that it hacked supermarket fridges, calling the claims 'baseless and one-sided'.",
+   "region": "europe",
+   "url": "https://www.thehindu.com/news/international/iran-rejects-frances-baseless-accusations-on-cyberattack/article71686751.ece"
+  },
+  {
+   "text": "US Treasury Secretary Scott Bessent moved to a military base after reported Iranian threats to his life, the New York Times said.",
+   "region": "americas",
+   "url": "https://www.theguardian.com/us-news/2026/nov/11/us-treasury-chief-scott-bessent-moves-military-base-iran-threats"
+  },
+  {
+   "text": "An Egyptian court tries journalist Lina Attalah on Wednesday over operating Mada Masr without a license and publishing false news.",
+   "region": "africa",
+   "url": "https://www.al-monitor.com/originals/2026/11/prominent-egyptian-journalist-faces-prison-criminal-trial"
+  },
+  {
+   "text": "Pope Leo XIV celebrated Mass before an estimated 650,000 people in Córdoba, Argentina, urging them to embrace their faith.",
+   "region": "americas",
+   "url": "http://www.africanews.com/2026/11/10/argentina-pope-leo-xiv-celebrates-mass-before-650000-in-cordoba/"
+  }
+ ],
+ "big_number": {
+  "value": "$1 trillion",
+  "context": "China’s trade surplus passed $1 trillion as weak domestic demand pushed factories to sell more abroad.",
+  "url": "https://www.semafor.com/article/11/10/2026/chinas-trade-surplus-passes-1t-as-countrys-exports-grow-at-record-speed"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "Foreign Policy",
+     "France 24",
+     "Le Monde"
+    ],
+    "article_count": 4,
+    "framing": "Russia resists ceasefire while US mediation and Zelensky’s constructive stance keep talks alive.",
+    "quote": "At the end of the November 10 meeting, President Zelensky highlighted a 'constructive' debate, while the Russian delegation, resistant to the idea of a ceasefire, remained silent.",
+    "quote_outlet": "Le Monde",
+    "quote_url": "https://www.lemonde.fr/en/international/article/2026/11/11/russia-ukraine-talks-in-abu-dhabi-make-little-progress_6777323_4.html",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "Taipei Times",
+     "The Japan Times",
+     "The Korea Herald"
+    ],
+    "article_count": 3,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Dawn",
+     "Hindustan Times",
+     "The Hindu"
+    ],
+    "article_count": 3,
+    "framing": "US-pushed security framework and claims of progress are stressed as Europe fears a Trump-Moscow deal.",
+    "quote": "Europe fears US President Donald Trump plans a deal with Moscow on the continent’s future.",
+    "quote_outlet": "Dawn",
+    "quote_url": "https://www.dawn.com/news/2043580/us-calls-for-new-europe-security-framework-as-russia-ukraine-hold-first-peace-talks-in-9-months",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Egypt Independent"
+    ],
+    "article_count": 1,
+    "framing": "Trump administration’s renewed peace drive is stressed, including reported concessions to Moscow and Russia’s negotiating aims.",
+    "quote": "Trump administration renews its drive to end the nearly five-year conflict even after it announced significant concessions to Moscow.",
+    "quote_outlet": "Egypt Independent",
+    "quote_url": "https://www.egyptindependent.com/ukraine-peace-talks-restart-after-9-months-what-makes-them-different-this-time/",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "RT",
+     "TASS"
+    ],
+    "article_count": 8,
+    "framing": "Moscow-linked coverage stresses expert commentary and Washington’s changing approach while saying results are too early to judge.",
+    "quote": "Russian experts weigh in on the Abu Dhabi trilateral talks, Washington’s changing approach and the future of European security",
+    "quote_outlet": "RT",
+    "quote_url": "https://rt-english.com/news/648667-abu-dhabi-trilateral-talks/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+    "state_affiliated": true,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_exile",
+    "outlets": [
+     "Meduza",
+     "The Moscow Times"
+    ],
+    "article_count": 4,
+    "framing": "Moscow’s broader European-security demands dominate, with low expectations as Russia appears determined to keep fighting.",
+    "quote": "Russia plans to make a postwar European security agreement the central topic of trilateral talks in Abu Dhabi, a source in the Russian delegation told Reuters.",
+    "quote_outlet": "Meduza",
+    "quote_url": "https://meduza.io/en/news/2026/11/10/russia-wants-abu-dhabi-talks-to-focus-on-postwar-european-security-with-ukraine-just-one-aspect-of-broader-discussions-reuters-reports",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "ukrainian",
+    "outlets": [
+     "Ukrinform"
+    ],
+    "article_count": 1,
+    "framing": "Kyiv’s diplomatic message is foregrounded, presenting Ukraine as an active participant in US-mediated talks.",
+    "quote": "Foreign Minister Andrii Sybiha has outlined Ukraine’s key message at trilateral talks with Russia and the United States in Abu Dhabi.",
+    "quote_outlet": "Ukrinform",
+    "quote_url": "https://www.ukrinform.net/rubric-polytics/4183514-sybiha-outlines-ukraines-message-at-trilateral-talks-in-abu-dhabi.html",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "african",
+    "outlets": [
+     "Africanews"
+    ],
+    "article_count": 1,
+    "framing": "Washington’s renewed push is stressed, with Moscow’s invasion treated as the war’s cause and fresh attacks noted.",
+    "quote": "Washington renews its push to end the war that followed Moscow's all-out invasion nearly five years ago",
+    "quote_outlet": "Africanews",
+    "quote_url": "http://www.africanews.com/2026/11/10/talks-on-ending-russia-ukraine-war-begin-in-abu-dhabi/",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 17,
+  "counts": {
+   "western": 4,
+   "russian_exile": 4,
+   "east_asia": 3,
+   "south_asia": 3,
+   "african": 1,
+   "russian_state": 8,
+   "middle_east": 1,
+   "ukrainian": 1
+  },
+  "blindspot": "Mexico’s lower house approved a first budget vote cutting about US$320 million from the INE, the national election agency, ahead of the 2027 vote. The cut matters outside Mexico because it could weaken election administration in a major US partner.",
+  "blindspot_url": "https://www.riotimesonline.com/mexico-ine-budget-cut-6-billion-pesos-2027/",
+  "blindspot_outlets": [
+   "El País",
+   "Mexico News Daily",
+   "The Rio Times"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "Republicans",
+   "text": "US House Republicans voted 211-204 to shelve an impeachment resolution against Defense Secretary Pete Hegseth over the Iran war.",
+   "region": "americas",
+   "url": "https://www.bbc.co.uk/news/articles/cxly4y5jzl0qo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "storyline": "Jensen",
+   "text": "Nvidia hired a major US law firm to investigate whether CEO Jensen Huang was targeted by a Chinese spy.",
+   "region": "indo_pacific",
+   "url": "https://www.bbc.co.uk/news/articles/ck1wvwwl3x0go?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "storyline": "Openai",
+   "text": "Taiwan's TSMC set aside up to $1 billion to buy shares in AI firms Anthropic and OpenAI.",
+   "region": "indo_pacific",
+   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/tsmc-earmarks-up-to-1bn-to-buy-anthropic-and-openai-shares"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 11.03,
+   "avg_sentence_words": 18.9,
+   "fragment_share": 0.0,
+   "rewrite": "applied (2 passes)",
+   "rewrite_grade": 7.45,
+   "rewrite_avg_sentence_words": 14.0,
+   "rewrite_fragment_share": 0.0,
+   "rewrite_attempts": [
+    "applied",
+    "applied"
+   ]
+  },
+  "editorial_actions": [
+   "Quick hit dropped (restates the 2026-11-08 story 'Heavy rain floods 70,000 tents for displaced Pales'): Aid groups say 150,000 tents are stuck outside Gaza awaiting Israeli a",
+   "Quick hit moved to DEVELOPING (running storyline 'republicans'): US House Republicans voted 211-204 to shelve an impeachment resolution",
+   "Quick hit moved to DEVELOPING (running storyline 'jensen'): Nvidia hired a major US law firm to investigate whether CEO Jensen Hua",
+   "Quick hit moved to DEVELOPING (running storyline 'openai'): Taiwan's TSMC set aside up to $1 billion to buy shares in AI firms Ant"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 13314,
+  "analysis_output_tokens": 35039,
+  "analysis_cost_usd": 0.0202,
+  "analysis_seconds": 196.7,
+  "prompt_articles": 60,
+  "grid_cost_usd": 0.00983,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "pipeline": {
+   "sources": 80,
+   "collected": 1730,
+   "after_dedup": 1683,
+   "events": 323,
+   "prompt_articles": 60,
+   "stories": 3,
+   "quick_hits": 4,
+   "developing": 3,
+   "seconds": 616
+  }
+ }
+}
