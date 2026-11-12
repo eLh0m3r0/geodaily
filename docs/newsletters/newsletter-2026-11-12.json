@@ -1,0 +1,270 @@
+{
+ "date": "2026-11-12",
+ "title": "Geopolitical Daily",
+ "email_subject": "Nvidia board weighs ousting CEO Jensen Huang",
+ "preheader": "Kushner and Witkoff fly to Putin; six killed in a strike on a Gaza hospital.",
+ "intro_text": "Good morning. It's Thursday, November 12, 2026 — the 2 stories that matter most today, plus 1 update on stories you're following and 8 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Nvidia's board prepares to remove CEO Jensen Huang, reports say",
+   "why_important": "US media reported this week that Nvidia's board is weighing whether to remove CEO Jensen Huang. He has admitted an affair with a woman in business whom US spy agencies link to Beijing. Nvidia's chips drive the AI boom, so his exit would shake markets and US-China tech policy.",
+   "what_overlooked": "The reported second affair involves an Nvidia employee, giving directors a work conduct case separate from the China spying question.",
+   "prediction": "A board statement by Friday would show whether directors act on the affairs alone or on the FBI's China inquiry.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.lemonde.fr/en/economy/article/2026/11/12/nvidia-ceo-faces-allegations-of-second-affair-with-employee-after-ties-to-chinese-woman-suspected-of-espionage_6778213_19.html",
+    "https://www.dailymaverick.co.za/article/2026-11-12-nvidia-board-meets-to-decide-ceo-huangs-future-source-says/",
+    "https://www.koreaherald.com/article/10935084",
+    "https://www.euronews.com/2026/11/12/nvidia-board-weighs-jensen-huangs-future-as-reports-emerge-of-second-affair"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 9,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 9,
+   "confidence": 0.8,
+   "region": "americas",
+   "actor_type": "non_state",
+   "event_type": "economic",
+   "coverage_counts": {
+    "western": 9,
+    "african": 1,
+    "east_asia": 6,
+    "south_asia": 13,
+    "latam": 1
+   },
+   "coverage_outlets": 15,
+   "signal_terms": [
+    "Jensen Huang",
+    "Nvidia",
+    "Megaspeed",
+    "Alice Huang"
+   ]
+  },
+  {
+   "story_title": "Israeli strike on Khan Younis hospital kills six, Gaza medics say",
+   "why_important": "An airstrike hit a building at Nasser Hospital in Khan Younis before dawn Thursday. It killed at least six people, including a surgeon, and wounded about 20. Israel said it targeted a senior Hamas commander working inside the hospital.",
+   "what_overlooked": "Israel says it widened the campaign because Hamas is regrouping and rearming. The toll comes from Gaza's civil defence, not an outside count.",
+   "prediction": "Whether Nasser Hospital's remaining wards still treat patients next week will show how far the campaign is squeezing Gaza's health care.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.al-monitor.com/originals/2026/11/israeli-strike-southern-gaza-hospital-kills-six-gaza-civil-defence-says",
+    "https://www.dawn.com/news/2044030/israeli-strike-kills-6-at-southern-gaza-hospital-civil-defence",
+    "https://www.dailymaverick.co.za/article/2026-11-12-israeli-strike-on-southern-gaza-hospital-kills-five-gaza-civil-defence-says/",
+    "https://www.straitstimes.com/world/middle-east/israeli-strike-on-southern-gaza-hospital-kills-five-gaza-civil-defence-says"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 6,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.85,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "middle_east": 5,
+    "south_asia": 3,
+    "african": 2,
+    "east_asia": 1,
+    "western": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 11,
+   "signal_terms": [
+    "Nasser Hospital",
+    "Khan Younis",
+    "Hamas",
+    "Gaza civil defence"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Italy, Scotland and Ireland reported similar emailed school bomb threats, and Italy's premier said there was no concrete danger.",
+   "region": "europe",
+   "url": "https://www.thehindu.com/news/national/italy-evacuates-over-300-schools-due-to-bomb-alert-with-threats-in-scotland-and-ireland/article71690995.ece"
+  },
+  {
+   "text": "Spain's unions staged the first general strike in 14 years, drawing millions to protests over housing three weeks before a snap election.",
+   "region": "europe",
+   "url": "https://www.koreaherald.com/article/10935093"
+  },
+  {
+   "text": "Democrat Scott Colom beat Republican Cindy Hyde-Smith in Mississippi, becoming the state's first Black US senator since 1874.",
+   "region": "americas",
+   "url": "https://www.scmp.com/news/world/united-states-canada/article/3374129/democrat-colom-defeats-hyde-smith-mississippi-win-historic-senate-seat"
+  },
+  {
+   "text": "Indonesia's vice president, Gibran Rakabuming, resigned after courts ruled his overseas education papers did not meet election requirements.",
+   "region": "indo_pacific",
+   "url": "https://www.thehindu.com/news/international/indonesias-vice-president-resigns-as-eligibility-and-academic-credentials-are-questioned/article71692540.ece"
+  },
+  {
+   "text": "Russia's ambassador to Washington, Alexander Darchiev, died suddenly in Moscow at 66 from an unspecified chronic illness.",
+   "region": "europe",
+   "url": "https://www.lemonde.fr/en/international/article/2026/11/11/russia-s-ambassador-to-the-us-alexander-darchiev-dies-suddenly-in-moscow_6778081_4.html"
+  },
+  {
+   "text": "Kenya's education ministry records show some registered schools with no learners and pupils who cannot be traced to a classroom.",
+   "region": "africa",
+   "url": "https://nation.africa/kenya/news/education/ghost-students-puzzle-of-2-million-primary-school-learners-missing-from-ministry-records-5667184"
+  },
+  {
+   "text": "Haiti's prime minister praised El Salvador's military after a joint strike on a suspected home of a 400 Mawozo gang leader.",
+   "region": "americas",
+   "url": "https://www.bbc.co.uk/news/articles/cmvg2xdwnwezo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "text": "Iran's security chief said military bases from West Asia to Europe would be 'legitimate targets' if the US restarts the war.",
+   "region": "middle_east",
+   "url": "https://www.middleeasteye.net/live-blog/live-blog-update/irans-security-chief-warns-western-bases-will-be-targets-retaliation"
+  }
+ ],
+ "big_number": {
+  "value": "6,300",
+  "context": "Schools across Italy got the same emailed bomb threat on Wednesday, as Europe faced a wave of hoaxes and cyberattacks.",
+  "url": "https://www.scmp.com/news/world/europe/article/3374103/over-300-italian-schools-evacuated-after-receiving-same-emailed-bomb-alert"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW",
+     "Euronews",
+     "Le Monde"
+    ],
+    "article_count": 9,
+    "framing": "Blames Huang’s affairs and suspected Chinese espionage for the board move to oust him.",
+    "quote": "Nvidia's board is reportedly preparing to oust Jensen Huang amid reports of an affair with a suspected Chinese spy.",
+    "quote_outlet": "DW",
+    "quote_url": "https://www.dw.com/en/nvidia-board-reportedly-weighs-ousting-huang-amid-alleged-affairs-with-exec-and-suspected-chinese-spy/a-79925002?maca=en-rss-en-all-1573-rdf",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "The Korea Herald",
+     "The Straits Times"
+    ],
+    "article_count": 6,
+    "framing": "Treats Huang’s affair and FBI probe as a political and family scandal tied to Trump.",
+    "quote": "Trump’s ties to Nvidia CEO Jensen Huang are under scrutiny after revelations about Huang’s affair and an FBI probe.",
+    "quote_outlet": "The Straits Times",
+    "quote_url": "https://www.straitstimes.com/world/united-states/trumps-ties-to-nvidia-ceo-jensen-huang-in-the-spotlight",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "The Hindu"
+    ],
+    "article_count": 13,
+    "framing": "Treats Huang’s affair as triggering Washington national-security and U.S.-China AI race scrutiny.",
+    "quote": "Nvidia CEO Jensen Huang confronts a widening political and legal storm in Washington over an alleged extramarital affair",
+    "quote_outlet": "The Hindu",
+    "quote_url": "https://www.thehindu.com/news/international/how-nvidia-ceo-jensen-huangs-extramarital-affair-could-cause-collateral-damage-in-washington/article71688529.ece",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "african",
+    "outlets": [
+     "Daily Maverick"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "latam",
+    "outlets": [
+     "MercoPress"
+    ],
+    "article_count": 1,
+    "framing": "Frames Huang as target of an espionage-linked probe stressing US intelligence and FBI involvement.",
+    "quote": "President Donald Trump said on Monday that the FBI is investigating the case.",
+    "quote_outlet": "MercoPress",
+    "quote_url": "https://en.mercopress.com/2026/11/11/nvidia-investigates-founder-jensen-huang-over-his-relationship-with-an-alleged-chinese-agent?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 15,
+  "counts": {
+   "western": 9,
+   "african": 1,
+   "east_asia": 6,
+   "south_asia": 13,
+   "latam": 1
+  },
+  "blindspot": "Russia’s FSB said it arrested two people it described as Polish intelligence agents in Kaliningrad for allegedly collecting military-site information. The case raises NATO-Russia espionage tensions near a strategic Baltic exclave.",
+  "blindspot_url": "https://www.themoscowtimes.com/2026/11/11/fsb-arrests-alleged-polish-intelligence-agents-in-kaliningrad-region-a94225",
+  "blindspot_outlets": [
+   "Meduza",
+   "Novaya Gazeta Europe",
+   "RT",
+   "TASS",
+   "The Moscow Times"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "Jared Kushner",
+   "text": "Kushner and Witkoff arrive in Moscow to meet Putin after Ukraine talks end.",
+   "region": "europe",
+   "url": "https://www.thehindu.com/news/international/russia-ukraine-agree-to-prisoner-swap-at-us-brokered-talks/article71689267.ece"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 11.42,
+   "avg_sentence_words": 18.5,
+   "fragment_share": 0.0,
+   "rewrite": "applied (2 passes)",
+   "rewrite_grade": 9.51,
+   "rewrite_avg_sentence_words": 16.5,
+   "rewrite_fragment_share": 0.0,
+   "rewrite_attempts": [
+    "applied",
+    "applied"
+   ]
+  },
+  "editorial_actions": [
+   "Story demoted to DEVELOPING (running storyline 'jared kushner'): Kushner and Witkoff arrive in Moscow to meet Putin after Ukraine talks end"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 13347,
+  "analysis_output_tokens": 32081,
+  "analysis_cost_usd": 0.02369,
+  "analysis_seconds": 156.2,
+  "prompt_articles": 60,
+  "grid_cost_usd": 0.00265,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "pipeline": {
+   "sources": 79,
+   "collected": 1684,
+   "after_dedup": 1629,
+   "events": 286,
+   "prompt_articles": 60,
+   "stories": 2,
+   "quick_hits": 8,
+   "developing": 1,
+   "seconds": 487
+  }
+ }
+}
