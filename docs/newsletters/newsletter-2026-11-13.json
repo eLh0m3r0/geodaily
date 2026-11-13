@@ -1,0 +1,261 @@
+{
+ "date": "2026-11-13",
+ "title": "Geopolitical Daily",
+ "email_subject": "Iran claims hit on US radar in Bahrain",
+ "preheader": "The Revolutionary Guards call it retaliation, and the US Navy says the Strait is still contested.",
+ "intro_text": "Good morning. It's Friday, November 13, 2026 — the 2 stories that matter most today, plus 3 updates on stories you're following and 3 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Iran's Revolutionary Guards say they struck a US radar in Bahrain",
+   "why_important": "Iran's Revolutionary Guards said they hit a US early-warning radar in Bahrain, the first such claim since early September. If confirmed, the strike opens a new Gulf front and raises the risk of direct US-Iran fighting over the Strait of Hormuz.",
+   "what_overlooked": "The US Navy says it has opened a southern route for ships and still keeps an 'ironclad blockade' of Iranian ports. The radar claim may be part of a larger fight over shipping.",
+   "prediction": "Iran or the US will confirm damage to the Bahrain radar, or a third Gulf state will report new attacks on shipping.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.al-monitor.com/originals/2026/11/irans-guards-say-they-targeted-us-early-warning-radar-bahrain",
+    "https://www.thehindu.com/news/international/iran-says-it-struck-us-military-radar-in-bahrain/article71696537.ece",
+    "https://www.straitstimes.com/world/middle-east/irans-guards-say-they-targeted-a-us-early-warning-radar-in-bahrain"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 10,
+   "scope_score": 8,
+   "novelty_score": 8,
+   "credibility_score": 7,
+   "impact_dimension_score": 9,
+   "confidence": 0.8,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "middle_east": 4,
+    "south_asia": 1,
+    "east_asia": 2,
+    "middle_east_state": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 7,
+   "signal_terms": [
+    "Iran",
+    "Bahrain",
+    "Revolutionary Guards",
+    "Strait of Hormuz"
+   ]
+  },
+  {
+   "story_title": "US envoys say Europeans will join a new round of Ukraine peace talks",
+   "why_important": "US envoys Steve Witkoff and Jared Kushner met Vladimir Putin in Moscow for more than four hours. They said a new round of talks would include European representatives at the table. Europe has demanded a seat for months, but Moscow has not formally agreed.",
+   "what_overlooked": "Putin stuck to a hardline stance in the meeting, so Europe's inclusion may not change the terms Russia demands.",
+   "prediction": "Moscow will name a date or venue for the next round, or publicly reject European participation.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/11/13/us-envoys-say-europeans-will-be-included-in-upcoming-ukraine-peace-talks_6779500_4.html",
+    "https://meduza.io/en/news/2026/11/12/after-meeting-with-putin-witkoff-says-new-round-of-peace-talks-agreed-with-european-representatives-set-to-participate",
+    "https://www.thehindu.com/news/international/us-ukraine-say-europe-to-join-russia-talks-as-putin-sticks-to-hardline-stance/article71696395.ece"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "western": 4,
+    "russian_exile": 2,
+    "south_asia": 1,
+    "african": 1,
+    "middle_east": 1,
+    "ukrainian": 3,
+    "east_asia": 1,
+    "russian_state": 4,
+    "chinese_state": 1
+   },
+   "coverage_outlets": 14,
+   "signal_terms": [
+    "Vladimir Putin",
+    "Steve Witkoff",
+    "Jared Kushner",
+    "Ukraine"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Microsoft said a global Outlook outage disrupted email and Teams for users worldwide, and it found no sign of malicious activity.",
+   "region": "global",
+   "url": "https://www.lemonde.fr/en/economy/article/2026/11/13/major-outage-hits-microsoft-outlook_6779302_19.html"
+  },
+  {
+   "text": "Israeli opposition leader Gadi Eisenkot met Prime Minister Benjamin Netanyahu for a security briefing amid fears of new strikes on Iran.",
+   "region": "middle_east",
+   "url": "https://www.al-monitor.com/originals/2026/11/eisenkot-meets-netanyahu-bid-avoid-iran-strikes"
+  },
+  {
+   "text": "US Senator Chris Van Hollen said he will challenge Chuck Schumer for Senate Democratic leader after the party won a midterm majority.",
+   "region": "americas",
+   "url": "https://www.ft.com/content/1f0996cf-1f84-42ca-a574-898f8578deb7?syn-25a6b1a6=1"
+  }
+ ],
+ "big_number": null,
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "The Straits Times"
+    ],
+    "article_count": 2,
+    "framing": "",
+    "quote": "Iran's Revolutionary Guards said on Friday they targeted a US early-warning radar in Bahrain",
+    "quote_outlet": "The Straits Times",
+    "quote_url": "https://www.straitstimes.com/world/middle-east/irans-guards-say-they-targeted-a-us-early-warning-radar-in-bahrain",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "The Hindu"
+    ],
+    "article_count": 1,
+    "framing": "Contrasts Iran’s claim that it closed the Strait of Hormuz with the US Navy’s account of a blockade.",
+    "quote": "The IRGC says the strait is closed, while the U.S. Navy claims that it has opened a southern route",
+    "quote_outlet": "The Hindu",
+    "quote_url": "https://www.thehindu.com/news/international/iran-says-it-struck-us-military-radar-in-bahrain/article71696537.ece",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al-Monitor",
+     "Middle East Eye"
+    ],
+    "article_count": 4,
+    "framing": "Frames the strike as IRGC retaliation for an alleged attack on an Iranian telecom tower, stressing warnings of unlimited response.",
+    "quote": "Iran’s Islamic Revolutionary Guard Corps (IRGC) announced that its forces targeted a US early-warning radar in Bahrain in retaliation to an attack on a telecommunications tower in Iran’s Sirik.",
+    "quote_outlet": "Middle East Eye",
+    "quote_url": "https://www.middleeasteye.net/live-blog/live-blog-update/morning-update-668",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east_state",
+    "outlets": [
+     "Anadolu Agency"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "Islamic Revolutionary Guard Corps says its strike came in response to attack on telecommunications tower in Sirik",
+    "quote_outlet": "Anadolu Agency",
+    "quote_url": "https://www.aa.com.tr/en/middle-east/iran-claims-it-destroyed-us-early-warning-radar-in-bahrain/4123650",
+    "state_affiliated": true,
+    "wire_copy": true
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "RT"
+    ],
+    "article_count": 1,
+    "framing": "Links Iran’s claim of striking a US radar to stalled US-Iran talks and threats of renewed war.",
+    "quote": "Iran’s Revolutionary Guards claim to have struck a US radar in Bahrain as tensions with Washington persist amid stalled peace talks and threats of renewed war",
+    "quote_outlet": "RT",
+    "quote_url": "https://rt-english.com/news/648771-iran-claims-strike-us-radar/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+    "state_affiliated": true,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 7,
+  "counts": {
+   "middle_east": 4,
+   "south_asia": 1,
+   "east_asia": 2,
+   "middle_east_state": 1,
+   "russian_state": 1
+  },
+  "blindspot": "Nigeria’s ADC is contesting a court ruling and accusing Kaduna State of obstructing its activities, while opposition figures warn of election violence before the 2027 vote. The dispute signals risks to electoral competition in Africa’s most populous democracy.",
+  "blindspot_url": "https://www.premiumtimesng.com/news/top-news/924805-2027-politics-watch-political-violence-adcs-legal-internal-setback.html",
+  "blindspot_outlets": [
+   "AllAfrica",
+   "Premium Times",
+   "Punch",
+   "The Africa Report"
+  ]
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Strait of Hormuz traffic returns to normal by December 31?\" at 6%.",
+   "url": "https://polymarket.com/market/strait-of-hormuz-traffic-returns-to-normal-by-december-31",
+   "source": "Polymarket"
+  }
+ ],
+ "developing": [
+  {
+   "storyline": "Jensen Huang",
+   "text": "Jensen Huang resigns as Nvidia CEO after reports of affairs and a spy link.",
+   "region": "americas",
+   "url": "https://foreignpolicy.com/2026/11/12/nvidia-jensen-huang-resigns-ai-china-spy-megaspeed-extramarital-affairs/"
+  },
+  {
+   "storyline": "Guard",
+   "text": "China ruled out hosting the COP33 climate summit in 2028, the Guardian reported, leaving another Asian country to lead the UN talks.",
+   "region": "indo_pacific",
+   "url": "https://www.theguardian.com/environment/2026/nov/12/china-rules-out-hosting-cop33-climate-summit-in-2028"
+  },
+  {
+   "storyline": "Gibran Rakabuming",
+   "text": "Indonesia's President Prabowo accepted Vice President Gibran Rakabuming's resignation, saying it served the 'greater good' as Jokowi backed Prabowo.",
+   "region": "indo_pacific",
+   "url": "https://asia.nikkei.com/politics/indonesian-president-prabowo-says-vp-resignation-for-greater-good"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 10.32,
+   "avg_sentence_words": 21.0,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 8.3,
+   "rewrite_avg_sentence_words": 15.8,
+   "rewrite_fragment_share": 0.0,
+   "rewrite_attempts": [
+    "applied"
+   ]
+  },
+  "editorial_actions": [
+   "Quick hit dropped (restates the 2026-11-10 story 'Trump says the US war in Iran is 'militarily effec'): President Trump said the US does not need a deal with Iran and told Vi",
+   "Quick hit dropped (rerun of a recent issue): Schools across Italy were evacuated for a second day after emailed bom",
+   "Story demoted to DEVELOPING (running storyline 'jensen huang'): Jensen Huang resigns as Nvidia CEO after reports of affairs and a spy link",
+   "Quick hit moved to DEVELOPING (running storyline 'guard'): China ruled out hosting the COP33 climate summit in 2028, the Guardian",
+   "Quick hit moved to DEVELOPING (running storyline 'gibran rakabuming'): Indonesia's President Prabowo accepted Vice President Gibran Rakabumin",
+   "Quick hit dropped (running storyline 'nasser hospital'): The death toll from Israel's strike on Nasser Hospital in Khan Younis "
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 12511,
+  "analysis_output_tokens": 23938,
+  "analysis_cost_usd": 0.01181,
+  "analysis_seconds": 281.6,
+  "prompt_articles": 60,
+  "grid_cost_usd": 0.00507,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "pipeline": {
+   "sources": 80,
+   "collected": 1715,
+   "after_dedup": 1658,
+   "events": 297,
+   "prompt_articles": 60,
+   "stories": 2,
+   "quick_hits": 3,
+   "developing": 3,
+   "seconds": 577
+  }
+ }
+}
