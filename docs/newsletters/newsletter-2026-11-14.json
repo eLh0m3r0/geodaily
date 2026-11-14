@@ -1,0 +1,318 @@
+{
+ "date": "2026-11-14",
+ "title": "Geopolitical Daily",
+ "email_subject": "Three leaders, one table, no Ukraine",
+ "preheader": "The White House says Trump will discuss Iran and nuclear arms, but not Russia's war.",
+ "intro_text": "Good morning. It's Saturday, November 14, 2026 — the 3 stories that matter most today, plus 3 updates on stories you're following and 4 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Trump, Xi and Putin to hold first three-way summit in China",
+   "why_important": "The White House says the three leaders will meet next week in Shenzhen on APEC's sidelines. Trump plans to discuss nuclear arms and Iran, but not Russia's war in Ukraine.",
+   "what_overlooked": "The meeting is still not firmly scheduled, and the White House has not said whether Putin and Xi agreed to Trump's agenda.",
+   "prediction": "A confirmed joint statement from the three governments would show the summit is more than a photo op.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.foreignaffairs.com/united-states/case-trump-xi-putin-summit",
+    "https://www.dawn.com/news/2044481/trump-xi-putin-to-hold-historic-meeting-in-china-white-house",
+    "https://www.middleeasteye.net/live-blog/live-blog-update/trump-discuss-iran-war-not-ukraine-china-summit",
+    "https://www.pravda.com.ua/eng/news/2026/11/14/8062814/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 10,
+   "novelty_score": 9,
+   "credibility_score": 9,
+   "impact_dimension_score": 9,
+   "confidence": 0.9,
+   "region": "indo_pacific",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "western": 2,
+    "south_asia": 4,
+    "middle_east": 2,
+    "ukrainian": 2,
+    "east_asia": 3,
+    "african": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 14,
+   "signal_terms": [
+    "Trump",
+    "Xi Jinping",
+    "Vladimir Putin",
+    "Shenzhen"
+   ]
+  },
+  {
+   "story_title": "Europe names negotiators for Ukraine peace talks",
+   "why_important": "The EU, Germany, France, the UK, Italy and Poland will send national security advisers to represent Europe in any Russia-Ukraine talks. The move aims to give Europe a unified voice alongside US-led negotiations.",
+   "what_overlooked": "Ukraine has said it wants European backup, but the group has no power to negotiate without US and Russian agreement.",
+   "prediction": "The first meeting of these advisers will reveal whether Europe can speak with one voice.",
+   "impact_score": 8,
+   "sources": [
+    "https://meduza.io/en/news/2026/11/14/europe-taps-national-security-advisers-to-represent-the-continent-in-russia-ukraine-peace-talks",
+    "https://www.pravda.com.ua/eng/news/2026/11/13/8062795/",
+    "https://www.thehindu.com/news/international/europe-pushes-for-seat-at-ukraine-peace-talks-but-lacks-unified-voice/article71696911.ece",
+    "https://www.dw.com/en/ukraine-updates-europe-to-send-united-front-to-potential-peace-talks/live-79937459?maca=en-rss-en-all-1573-rdf"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "europe",
+   "actor_type": "mixed",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "russian_exile": 2,
+    "ukrainian": 4,
+    "south_asia": 2,
+    "western": 1,
+    "east_asia": 1,
+    "russian_state": 2
+   },
+   "coverage_outlets": 8,
+   "signal_terms": [
+    "European Union",
+    "Germany",
+    "France",
+    "Ukraine"
+   ]
+  },
+  {
+   "story_title": "Turkey and Qatar sign mutual defense pact",
+   "why_important": "Turkey and Qatar agreed to a unified response to any attack on either country. The pact deepens ties between two regional allies and follows a similar Turkey-Pakistan-Saudi agreement in August.",
+   "what_overlooked": "The text does not say whether either country would send troops if the other is attacked.",
+   "prediction": "Details of joint exercises or troop deployments would show whether the pact is operational.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.thehindu.com/news/international/turkiye-qatar-sign-mutual-defence-agreement-turkish-presidency-says/article71699542.ece",
+    "https://www.al-monitor.com/originals/2026/11/turkey-qatar-sign-mutual-defence-agreement",
+    "https://www.france24.com/en/middle-east/20261113-turkey-and-qatar-pledge-unified-stance-against-attacks-in-mutual-defence-pact",
+    "https://www.straitstimes.com/world/middle-east/turkey-qatar-sign-mutual-defence-agreement-turkish-presidency-says"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 7,
+   "novelty_score": 8,
+   "credibility_score": 9,
+   "impact_dimension_score": 7,
+   "confidence": 0.9,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "south_asia": 2,
+    "middle_east": 1,
+    "western": 1,
+    "east_asia": 1
+   },
+   "coverage_outlets": 5,
+   "signal_terms": [
+    "Turkey",
+    "Qatar",
+    "Erdogan",
+    "Sheikh Tamim"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "US flights resumed after a four-hour nationwide ground stop caused by communications failure, officials said, ruling out a cyberattack.",
+   "region": "americas",
+   "url": "https://www.lemonde.fr/en/international/article/2026/11/13/all-flights-across-us-grounded-amid-extraordinary-circumstances_6780358_4.html"
+  },
+  {
+   "text": "The UK led 53 countries and organizations in urging Israel's incoming government to allow rapid, unimpeded humanitarian access throughout Gaza.",
+   "region": "middle_east",
+   "url": "https://www.justsecurity.org/164307/gaza-call-to-action-joint-statement-humanitarian-access/?utm_source=rss&utm_medium=rss&utm_campaign=gaza-call-to-action-joint-statement-humanitarian-access"
+  },
+  {
+   "text": "Germany's parliament granted police and intelligence services sweeping new powers after drone sightings and cyberattacks raised security concerns.",
+   "region": "europe",
+   "url": "https://meduza.io/en/news/2026/11/14/german-counterintelligence-confirms-it-is-questioning-russians-at-berlin-airport-citing-a-high-threat-level"
+  },
+  {
+   "text": "Russian strikes killed three people in Ukraine and injured 50 in Zaporizhzhia, including eight children, local officials said.",
+   "region": "europe",
+   "url": "https://meduza.io/en/news/2026/11/13/russian-strikes-kill-three-in-ukraine-injure-several-others-including-children"
+  }
+ ],
+ "big_number": null,
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW",
+     "Foreign Affairs"
+    ],
+    "article_count": 2,
+    "framing": "Frames the summit as a US-pushed nuclear-arms gambit with uncertain prospects and no expected deal.",
+    "quote": "The White House has said President Donald Trump will urge Xi Jinping and Vladimir Putin to discuss cutting nuclear arsenals in Shenzhen next week",
+    "quote_outlet": "DW",
+    "quote_url": "https://www.dw.com/en/trump-to-meet-xi-putin-for-three-way-huddle-on-nuclear-arms-talks/a-79946408?maca=en-rss-en-all-1573-rdf",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "Bangkok Post",
+     "South China Morning Post",
+     "The Korea Herald"
+    ],
+    "article_count": 3,
+    "framing": "Stresses the confirmed, unprecedented trilateral format and China's role as host.",
+    "quote": "The White House on Friday confirmed an unprecedented meeting between leaders of the US, China and Russia",
+    "quote_outlet": "South China Morning Post",
+    "quote_url": "https://www.scmp.com/news/china/diplomacy/article/3374415/white-house-confirms-us-china-russia-trilateral-apec-sidelines",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Dawn",
+     "The Hindu"
+    ],
+    "article_count": 4,
+    "framing": "Stresses the historic first trilateral meeting while highlighting nuclear cuts and Iran.",
+    "quote": "Donald Trump, Vladimir Putin and Xi Jinping will hold the first three-way meeting between the leaders of the United States, Russia and China",
+    "quote_outlet": "Dawn",
+    "quote_url": "https://www.dawn.com/news/2044481/trump-xi-putin-to-hold-historic-meeting-in-china-white-house",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al-Monitor",
+     "Middle East Eye"
+    ],
+    "article_count": 2,
+    "framing": "Stresses Iran war and nuclear arms control as summit agenda while noting Ukraine is excluded.",
+    "quote": "US President Donald Trump will discuss the Iran war with Vladimir Putin and Xi Jinping",
+    "quote_outlet": "Middle East Eye",
+    "quote_url": "https://www.middleeasteye.net/live-blog/live-blog-update/trump-discuss-iran-war-not-ukraine-china-summit",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "RT"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": true,
+    "wire_copy": true
+   },
+   {
+    "perspective": "ukrainian",
+    "outlets": [
+     "Ukrainska Pravda",
+     "Ukrinform"
+    ],
+    "article_count": 2,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "african",
+    "outlets": [
+     "Punch"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   }
+  ],
+  "total_outlets": 14,
+  "counts": {
+   "western": 2,
+   "south_asia": 4,
+   "middle_east": 2,
+   "ukrainian": 2,
+   "east_asia": 3,
+   "african": 1,
+   "russian_state": 1
+  },
+  "blindspot": "",
+  "blindspot_url": "",
+  "blindspot_outlets": []
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "RAF",
+   "text": "US forces responded to suspected drone activity over RAF Lakenheath in Britain, the Ministry of Defence said, and the situation is now resolved.",
+   "region": "europe",
+   "url": "https://www.lemonde.fr/en/international/article/2026/11/14/us-forces-responded-to-suspected-drone-activity-over-a-military-base-in-britain_6780457_4.html"
+  },
+  {
+   "storyline": "Jensen",
+   "text": "Chinese officials called Jensen Huang's swift downfall a political hit, Nikkei Asia reported, after the Nvidia chief resigned over affairs and a spy link.",
+   "region": "indo_pacific",
+   "url": "https://asia.nikkei.com/business/tech/semiconductors/china-sees-nvidia-chief-huang-s-swift-downfall-as-political-hit"
+  },
+  {
+   "storyline": "LEO XIV",
+   "text": "Pope Leo XIV drew an estimated 1 million people along his motorcade route in Peru, the Vatican said, during a 12-day South America tour.",
+   "region": "americas",
+   "url": "https://www.lemonde.fr/en/international/article/2026/11/14/in-peru-pope-leo-receives-a-hero-s-welcome-from-massive-crowds-as-he-returns-to-his-former-diocese_6780589_4.html"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 9.2,
+   "avg_sentence_words": 16.5,
+   "fragment_share": 0.0,
+   "rewrite": "not_needed"
+  },
+  "editorial_actions": [
+   "Quick hit moved to DEVELOPING (running storyline 'raf'): US forces responded to suspected drone activity over RAF Lakenheath in",
+   "Quick hit moved to DEVELOPING (running storyline 'jensen'): Chinese officials called Jensen Huang's swift downfall a political hit",
+   "Quick hit dropped (running storyline 'jensen'): Former Nvidia CEO Jensen Huang had a relationship with a second employ",
+   "Quick hit moved to DEVELOPING (running storyline 'leo xiv'): Pope Leo XIV drew an estimated 1 million people along his motorcade ro",
+   "Big number dropped (same event as a story): 2 — A second car bomb in two days exploded in Moscow, DW reporte"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 11860,
+  "analysis_output_tokens": 22388,
+  "analysis_cost_usd": 0.03042,
+  "analysis_seconds": 74.3,
+  "prompt_articles": 60,
+  "grid_cost_usd": 0.00481,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "pipeline": {
+   "sources": 80,
+   "collected": 1541,
+   "after_dedup": 1497,
+   "events": 249,
+   "prompt_articles": 60,
+   "stories": 3,
+   "quick_hits": 4,
+   "developing": 3,
+   "seconds": 380
+  }
+ }
+}
