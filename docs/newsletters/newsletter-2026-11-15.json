@@ -1,0 +1,259 @@
+{
+ "date": "2026-11-15",
+ "title": "Geopolitical Daily",
+ "email_subject": "US floats land-for-NATO trade in Ukraine",
+ "preheader": "Zelenskiy says the idea was raised for the first time as Europe joins talks.",
+ "intro_text": "Good morning. It's Sunday, November 15, 2026 — the 3 stories that matter most today, plus 2 updates on stories you're following and 5 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Zelenskiy says US floated Ukraine leaving Donbas for NATO membership",
+   "why_important": "Ukraine's president says US negotiators raised giving up Donbas for NATO membership. He said it is the first time peace talks have linked territory to alliance membership. The idea tests whether Kyiv will trade land for security as European negotiators join the next round.",
+   "what_overlooked": "Zelenskiy did not say whether Kyiv would accept the idea, and no formal proposal has been published.",
+   "prediction": "By Nov. 17, Kyiv or Washington will confirm whether the Donbas-NATO idea was formally proposed.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.al-monitor.com/originals/2026/11/us-floated-idea-ukraine-ceding-donbas-nato-membership-zelenskiy-says",
+    "https://www.japantimes.co.jp/news/2026/11/15/world/us-ukraine-ceding-donbas-nato/",
+    "https://www.politico.eu/article/us-suggested-ukraine-could-give-up-donbas-for-nato-membership-zelenskyy-says/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 8,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 9,
+   "confidence": 0.82,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "middle_east": 1,
+    "east_asia": 2,
+    "western": 1
+   },
+   "coverage_outlets": 4,
+   "signal_terms": [
+    "Volodymyr Zelenskiy",
+    "Donbas",
+    "NATO",
+    "Abu Dhabi"
+   ]
+  },
+  {
+   "story_title": "Trump tells advisers he may hold off new Iran strikes, sources say",
+   "why_important": "Sources say Trump is leaning against new strikes on Iran unless provoked, after Saudi and Turkish leaders urged restraint. Israel still pushes for another campaign, and the war has raised fuel prices and hurt Trump's party in the midterms.",
+   "what_overlooked": "US intelligence reportedly finds new strikes would do little to change Iran's demands in talks. That weakens Israel's push for more military action.",
+   "prediction": "If no new provocation occurs, the White House will say by Nov. 17 whether the military option is formally paused.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.haaretz.com/us-news/2026-11-14/ty-article/sources-trump-tells-advisers-he-may-avoid-new-iran-strikes-unless-provoked/000001a1-d9ee-d292-abf9-fdff02d60000",
+    "https://www.thehindu.com/news/international/trump-tells-advisers-he-may-hold-off-on-iran-attacks-barring-new-provocations-sources-say/article71702671.ece",
+    "https://www.straitstimes.com/world/middle-east/trump-tells-advisers-he-may-hold-off-on-iran-attacks-barring-new-provocations-sources-say"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 7,
+   "impact_dimension_score": 8,
+   "confidence": 0.75,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "middle_east": 3,
+    "south_asia": 4,
+    "east_asia": 1
+   },
+   "coverage_outlets": 7,
+   "signal_terms": [
+    "Donald Trump",
+    "Iran",
+    "Saudi Arabia",
+    "Turkey"
+   ]
+  },
+  {
+   "story_title": "UN climate chief urges speed as COP31 enters final week",
+   "why_important": "Negotiators in Antalya have one week to reach a deal on climate. Wars and inflation have made climate a lower priority for leaders. The US is absent, and activists say the talks are failing the countries hit hardest by warming.",
+   "what_overlooked": "The United States is not sending a delegation. It has begun withdrawing from the UN climate convention, changing who can negotiate and block a deal.",
+   "prediction": "By Friday, nearly 200 nations will include a fossil-fuel phase-out in the final text or water it down.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.al-monitor.com/originals/2026/11/un-climate-chief-urges-speed-cop31-confronts-fossil-fuel-divide",
+    "https://www.dawn.com/news/2044520/thousands-rally-in-antalya-to-demand-climate-justice-as-cop31-talks-hit-midpoint",
+    "https://www.japantimes.co.jp/commentary/2026/11/15/world/cop31-disastrous-post-american-world/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 9,
+   "novelty_score": 6,
+   "credibility_score": 9,
+   "impact_dimension_score": 7,
+   "confidence": 0.85,
+   "region": "global",
+   "actor_type": "international_org",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "middle_east": 1,
+    "south_asia": 1,
+    "east_asia": 6,
+    "western": 1,
+    "global_south": 2,
+    "middle_east_state": 2
+   },
+   "coverage_outlets": 12,
+   "signal_terms": [
+    "COP31",
+    "Antalya",
+    "Turkey",
+    "UNFCCC"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "The FAA said US air travel will not return to normal until late Sunday, after airlines canceled more than 6,400 flights.",
+   "region": "americas",
+   "url": "https://www.dawn.com/news/2044632/us-air-travel-disruptions-to-persist-until-late-on-sunday-aviation-body-head-says"
+  },
+  {
+   "text": "French protesters rallied across the country for a fifth weekend against inflation and a police bill, amid claims of police brutality.",
+   "region": "europe",
+   "url": "https://www.straitstimes.com/world/europe/french-protesters-chant-against-inflation-and-police"
+  },
+  {
+   "text": "Israeli forces detained Palestinian journalist Mohammed Ateeq in Burqin and imposed a curfew on Beit Ummar, Wafa reported.",
+   "region": "middle_east",
+   "url": "https://www.middleeasteye.net/live-blog/live-blog-update/west-bank-israeli-forces-detain-palestinian-journalist-conduct-raids"
+  },
+  {
+   "text": "The Francophonie summit opened in Phnom Penh as DR Congo and Rwanda clashed over leadership and Congo threatened to quit.",
+   "region": "africa",
+   "url": "https://www.bangkokpost.com/world/3355036/francophone-summit-opens-with-dr-congo-rwandan-clash"
+  },
+  {
+   "text": "Italy fined Meta 805 million euros for letting Facebook access Android users’ photos without specific consent; Meta said it will appeal.",
+   "region": "europe",
+   "url": "https://www.straitstimes.com/world/europe/italy-fines-meta-1-14-billion-over-android-users-data-access"
+  }
+ ],
+ "big_number": null,
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "Politico Europe"
+    ],
+    "article_count": 1,
+    "framing": "Frames the US as suggesting a Donbas concession for NATO membership and stresses Zelensky’s first-time claim.",
+    "quote": "This was the first time this had been raised",
+    "quote_outlet": "Politico Europe",
+    "quote_url": "https://www.politico.eu/article/us-suggested-ukraine-could-give-up-donbas-for-nato-membership-zelenskyy-says/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "South China Morning Post",
+     "The Japan Times"
+    ],
+    "article_count": 2,
+    "framing": "",
+    "quote": "This is the first time the question of linking Nato membership to territorial concessions has been raised during the talks",
+    "quote_outlet": "South China Morning Post",
+    "quote_url": "https://www.scmp.com/news/world/europe/article/3374450/zelensky-says-us-floated-idea-ukraine-ceding-donbas-nato-membership",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al-Monitor"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "This is the first time the question of linking NATO membership to territorial concessions has been raised during the talks",
+    "quote_outlet": "Al-Monitor",
+    "quote_url": "https://www.al-monitor.com/originals/2026/11/us-floated-idea-ukraine-ceding-donbas-nato-membership-zelenskiy-says",
+    "state_affiliated": false,
+    "wire_copy": true
+   }
+  ],
+  "total_outlets": 4,
+  "counts": {
+   "middle_east": 1,
+   "east_asia": 2,
+   "western": 1
+  },
+  "blindspot": "Houthi ballistic missiles and drones were aimed at Saudi Arabia’s Eastern Region and Riyadh. The attack threatens Gulf energy sites and shipping, posing a wider Middle East security risk.",
+  "blindspot_url": "https://www.middleeasteye.net/live-blog/live-blog-update/morning-update-670",
+  "blindspot_outlets": [
+   "Al Jazeera",
+   "Al-Monitor",
+   "Middle East Eye",
+   "NDTV",
+   "The Express Tribune",
+   "The Hindu"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "Khan Younis",
+   "text": "Hamas said Israel killed Samir Abu Younis, its Rafah brigade commander and a planner of the Oct. 7, 2023 attack, in Khan Younis.",
+   "region": "middle_east",
+   "url": "https://www.middleeasteye.net/live-blog/live-blog-update/hamas-commander-samir-abu-younis-killed-israeli-strike-khan-younis"
+  },
+  {
+   "storyline": "Eisenkot",
+   "text": "Israel’s Netanyahu renewed his call for a unity government with premier-designate Eisenkot, who dismissed it as a political trick.",
+   "region": "middle_east",
+   "url": "https://www.al-monitor.com/originals/2026/11/netanyahu-calls-israeli-unity-government-eisenkot-dismisses-tricks"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 9.83,
+   "avg_sentence_words": 16.8,
+   "fragment_share": 0.07,
+   "rewrite": "applied",
+   "rewrite_grade": 8.14,
+   "rewrite_avg_sentence_words": 13.2,
+   "rewrite_fragment_share": 0.06,
+   "rewrite_attempts": [
+    "applied"
+   ]
+  },
+  "editorial_actions": [
+   "Quick hit dropped (restates the 2026-11-09 story 'Trump says he will meet Xi and Putin in China next'): The Kremlin confirmed Trump, Xi and Putin will meet in Shenzhen on Nov",
+   "Quick hit moved to DEVELOPING (running storyline 'khan younis'): Hamas said Israel killed Samir Abu Younis, its Rafah brigade commander",
+   "Quick hit moved to DEVELOPING (running storyline 'eisenkot'): Israel’s Netanyahu renewed his call for a unity government with premie"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 12020,
+  "analysis_output_tokens": 29940,
+  "analysis_cost_usd": 0.01636,
+  "analysis_seconds": 183.7,
+  "prompt_articles": 60,
+  "grid_cost_usd": 0.00448,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "pipeline": {
+   "sources": 66,
+   "collected": 1145,
+   "after_dedup": 1115,
+   "events": 209,
+   "prompt_articles": 60,
+   "stories": 3,
+   "quick_hits": 5,
+   "developing": 2,
+   "seconds": 406
+  }
+ }
+}
