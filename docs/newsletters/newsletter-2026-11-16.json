@@ -1,0 +1,301 @@
+{
+ "date": "2026-11-16",
+ "title": "Geopolitical Daily",
+ "email_subject": "Houthis close in on Aden as Iran hits Bahrain",
+ "preheader": "Saudi-backed forces quit the Bab el-Mandeb strait; Houthi lines are now 60km from Aden.",
+ "intro_text": "Good morning. It's Monday, November 16, 2026 — the 3 stories that matter most today, plus 2 updates on stories you're following and 6 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Houthis push toward Aden as Yemeni forces quit key strait",
+   "why_important": "Forces loyal to Yemen's internationally recognized government pulled back from the Bab el-Mandeb strait. Houthi fighters took two districts in Lahj province and are now about 60km from Aden, the government's temporary capital. Iran fired drones at US bases in Bahrain at the same time. Tehran is now pressing Washington and its Gulf allies on two fronts.",
+   "what_overlooked": "Losing the strait's Yemeni shore gives the Houthis a freer hand against Red Sea shipping. From Yemen, the Houthis have already hit oil sites in Saudi Arabia.",
+   "prediction": "The question now is whether Houthi units reach Aden's edge this week. If they do, Riyadh must choose street fighting or a truce push.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.thehindu.com/news/international/yemeni-government-forces-retreat-from-strait-in-major-setback-in-war-against-houthis/article71705608.ece",
+    "https://www.al-monitor.com/originals/2026/11/anti-houthi-forces-retreat-yemen-iran-strikes-bahrain",
+    "https://www.scmp.com/news/world/middle-east/article/3374549/houthis-advance-yemen-government-stronghold-aden"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 9,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 9,
+   "confidence": 0.87,
+   "region": "middle_east",
+   "actor_type": "mixed",
+   "event_type": "military",
+   "coverage_counts": {
+    "south_asia": 3,
+    "middle_east": 3,
+    "east_asia": 3,
+    "western": 3,
+    "russian_state": 1
+   },
+   "coverage_outlets": 12,
+   "signal_terms": [
+    "Houthis",
+    "Bab el-Mandeb",
+    "Aden",
+    "Bahrain"
+   ]
+  },
+  {
+   "story_title": "Estonia to close Russian border after alleged GRU arson plot",
+   "why_important": "Estonia detained eight people over an attempted arson attack on a drone maker. It blamed Russia's military intelligence, the GRU, and is now closing its Russian border crossings. That ties secret sabotage inside the EU directly to Moscow's war in Ukraine and hardens NATO's eastern edge.",
+   "what_overlooked": "Moscow's only public response so far is from its spokeswoman Maria Zakharova. She said Russia would 'check the information' and called any closure more 'Russophobia.'",
+   "prediction": "The question now is whether Estonia charges the eight detainees this week. Formal charges would show Tallinn has evidence beyond the night of the raid.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/11/15/estonia-to-close-russia-border-after-sabotage-bid_6781546_4.html",
+    "https://www.thehindu.com/news/international/estonia-to-close-russian-border-crossings-after-attempted-arson-attack/article71706831.ece",
+    "https://tass.com/politics/2218399"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 6,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.82,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "western": 2,
+    "south_asia": 1,
+    "russian_state": 1,
+    "east_asia": 1,
+    "ukrainian": 2
+   },
+   "coverage_outlets": 6,
+   "signal_terms": [
+    "Estonia",
+    "GRU",
+    "Threod Systems",
+    "Russia"
+   ]
+  },
+  {
+   "story_title": "Congo's Ebola outbreak still out of control six months on, Africa CDC says",
+   "why_important": "Africa's top public health agency says Congo's Ebola outbreak is still out of control six months after its declaration. More than 5,400 people have died, making it Congo's deadliest outbreak and one on track to exceed West Africa's 2014-16 toll.",
+   "what_overlooked": "The agency blames attacks on health workers, unpaid staff and scarce resources. These problems sit outside the outbreak itself and have no quick fix.",
+   "prediction": "The question now is whether confirmed cases will pass 12,000 this week. If they do, the response is losing ground despite vaccines and outside help.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.dailymaverick.co.za/article/2026-11-15-africa-cdc-says-ebola-outbreak-still-out-of-control-six-months-since-it-was/",
+    "https://www.thehindu.com/news/international/ebola-outbreak-remains-out-of-control-in-congo-six-months-into-response/article71704179.ece",
+    "https://www.japantimes.co.jp/news/2026/11/16/world/science-health/africa-ebola-outbreak-six-months/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 6,
+   "novelty_score": 5,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.8,
+   "region": "africa",
+   "actor_type": "mixed",
+   "event_type": "humanitarian",
+   "coverage_counts": {
+    "african": 4,
+    "south_asia": 2,
+    "east_asia": 1,
+    "middle_east_state": 1
+   },
+   "coverage_outlets": 6,
+   "signal_terms": [
+    "Ebola",
+    "DR Congo",
+    "Africa CDC"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Hundreds of thousands of Czechs rallied in Prague against Prime Minister Andrej Babiš's plan to fund public media from the state budget instead of licence fees.",
+   "region": "europe",
+   "url": "https://www.scmp.com/news/world/europe/article/3374518/czechs-stage-huge-rally-against-public-media-funding-overhaul"
+  },
+  {
+   "text": "Cape Verde's President José Maria Neves won re-election with 63.8% of the vote, provisional results showed, in one of Africa's most stable democracies.",
+   "region": "africa",
+   "url": "https://www.lemonde.fr/en/international/article/2026/11/16/cape-verde-s-president-jose-maria-neves-re-elected_6781810_4.html"
+  },
+  {
+   "text": "EU states including Austria, Greece and the Netherlands will unveil a deal with Rwanda to open a hub for returning rejected migrants, despite rights groups' objections.",
+   "region": "europe",
+   "url": "https://www.japantimes.co.jp/news/2026/11/16/world/politics/eu-migrant-return-hub-rwanda/"
+  },
+  {
+   "text": "The UN agency for Palestinian refugees, which Israel and Washington want shut down, is preparing drastic cuts to stabilize its finances.",
+   "region": "middle_east",
+   "url": "https://www.lemonde.fr/en/international/article/2026/11/15/unrwa-facing-possible-closure-keeps-low-profile-and-prepares-drastic-cuts_6781447_4.html"
+  },
+  {
+   "text": "South Korea's education ministry will inspect every candidate's glasses at this week's college entrance exam and toughen penalties after an AI cheating case.",
+   "region": "indo_pacific",
+   "url": "https://www.ft.com/content/5cf11f3d-0d22-4eb5-8279-7533e161e4d0?syn-25a6b1a6=1"
+  },
+  {
+   "text": "Rwanda welcomed Belgium's arrest of Jean-Baptiste Rutihunza, a suspect in the 1994 genocide who had been at large for nearly 32 years.",
+   "region": "africa",
+   "url": "https://allafrica.com/stories/202611160066.html"
+  }
+ ],
+ "big_number": null,
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "BBC",
+     "DW",
+     "France 24"
+    ],
+    "article_count": 3,
+    "framing": "Iran-backed Houthi advances force Saudi-backed government forces to defend Aden and the Red Sea waterway.",
+    "quote": "Forces aligned with the Yemeni government and Saudi Arabia are seeking to strengthen control over the interim capital Aden as the Iran-backed Houthis approach.",
+    "quote_outlet": "DW",
+    "quote_url": "https://www.dw.com/en/yemen-anti-houthi-forces-pull-back-as-rebels-advance/a-79953692?maca=en-rss-en-all-1573-rdf",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "South China Morning Post",
+     "The Korea Herald",
+     "The Straits Times"
+    ],
+    "article_count": 3,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Hindustan Times",
+     "The Hindu",
+     "Times of India"
+    ],
+    "article_count": 3,
+    "framing": "Houthi gains and Red Sea attacks strengthen Iran and mark a setback for Saudi-backed Yemen forces.",
+    "quote": "Houthi gains in Yemen and attacks on Saudi Arabia and ‌Red Sea shipping in recent months have strengthened the position of Iran",
+    "quote_outlet": "The Hindu",
+    "quote_url": "https://www.thehindu.com/news/international/yemeni-government-forces-retreat-from-strait-in-major-setback-in-war-against-houthis/article71705608.ece",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera",
+     "Al-Monitor"
+    ],
+    "article_count": 3,
+    "framing": "Iran-aligned Houthi gains threaten Aden and mark a major setback for Saudi-backed forces.",
+    "quote": "Iran and its allies ramped up pressure on the US and allied Gulf states on two fronts on Sunday",
+    "quote_outlet": "Al-Monitor",
+    "quote_url": "https://www.al-monitor.com/originals/2026/11/anti-houthi-forces-retreat-yemen-iran-strikes-bahrain",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "RT"
+    ],
+    "article_count": 1,
+    "framing": "Houthis tighten grip on Red Sea route as Saudi-backed Yemeni forces withdraw.",
+    "quote": "Saudi-backed Yemeni forces have withdrawn from positions near the Bab el-Mandeb Strait as Houthi advances threaten Aden",
+    "quote_outlet": "RT",
+    "quote_url": "https://rt-english.com/news/648876-houthis-tighten-grip-key-route/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+    "state_affiliated": true,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 12,
+  "counts": {
+   "south_asia": 3,
+   "middle_east": 3,
+   "east_asia": 3,
+   "western": 3,
+   "russian_state": 1
+  },
+  "blindspot": "A fire at a Phuket shophouse killed 11 people and injured 17; police said an electrical transformer near the building exploded shortly before the blaze. Phuket draws international tourists, so the fire raises safety concerns beyond Thailand.",
+  "blindspot_url": "https://www.thehindu.com/news/international/many-killed-several-injured-phuket-shophouse/article71706768.ece",
+  "blindspot_outlets": [
+   "Al Jazeera",
+   "AllAfrica",
+   "CNA",
+   "Egypt Independent",
+   "Hindustan Times",
+   "NDTV",
+   "South China Morning Post",
+   "The Hindu"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "Nvidia",
+   "text": "Singapore's Megaspeed, under scrutiny over Nvidia chips reaching China, said suspected spy Alice Huang left the company in August 2025.",
+   "region": "indo_pacific",
+   "url": "https://www.bbc.co.uk/news/articles/cmdx1vpprk9vo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "storyline": "Eisenkot",
+   "text": "Premier-designate Gadi Eisenkot said Benjamin Netanyahu cannot remain prime minister \"a minute longer\" over alleged election meddling; Likud called it incitement.",
+   "region": "middle_east",
+   "url": "https://www.ft.com/content/31e009bb-8861-4e2a-8f5e-daacd8a855f5?syn-25a6b1a6=1"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 10.1,
+   "avg_sentence_words": 18.4,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 8.18,
+   "rewrite_avg_sentence_words": 13.8,
+   "rewrite_fragment_share": 0.0,
+   "rewrite_attempts": [
+    "applied"
+   ]
+  },
+  "editorial_actions": [
+   "Quick hit moved to DEVELOPING (running storyline 'nvidia'): Singapore's Megaspeed, under scrutiny over Nvidia chips reaching China",
+   "Quick hit moved to DEVELOPING (running storyline 'eisenkot'): Premier-designate Gadi Eisenkot said Benjamin Netanyahu cannot remain ",
+   "Big number dropped (part of a running storyline): 35% — The share of world energy demand electricity should supply b"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 12089,
+  "analysis_output_tokens": 30535,
+  "analysis_cost_usd": 0.01372,
+  "analysis_seconds": 279.2,
+  "prompt_articles": 60,
+  "grid_cost_usd": 0.00158,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "pipeline": {
+   "sources": 67,
+   "collected": 1251,
+   "after_dedup": 1223,
+   "events": 228,
+   "prompt_articles": 60,
+   "stories": 3,
+   "quick_hits": 6,
+   "developing": 2,
+   "seconds": 542
+  }
+ }
+}
