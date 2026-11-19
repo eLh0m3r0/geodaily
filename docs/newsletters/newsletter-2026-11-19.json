@@ -1,0 +1,374 @@
+{
+ "date": "2026-11-19",
+ "title": "Geopolitical Daily",
+ "email_subject": "Three nuclear powers test a first summit",
+ "preheader": "Trump says Washington and Beijing should help end the Ukraine war.",
+ "intro_text": "Good morning. It's Thursday, November 19, 2026 — the 3 stories that matter most today, plus 1 update on stories you're following and 5 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Trump, Xi and Putin hold first three-way summit in Shenzhen",
+   "why_important": "The leaders of the world's three biggest nuclear powers met for the first time. Trump told Xi that Washington and Beijing should help end the Ukraine war before talks with Putin. The Kremlin said Ukraine was the main topic of the Putin-Trump meeting.",
+   "what_overlooked": "Beijing said the meeting was about 'world peace.' No joint statement or nuclear deal has been announced, and analysts expect more show than real results.",
+   "prediction": "A joint statement or follow-up nuclear talks within 72 hours would show whether the summit produced more than photos.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.al-monitor.com/originals/2026/11/chinas-xi-host-historic-summit-trump-putin",
+    "https://www.thehindu.com/news/international/donald-trump-xi-jinping-vladimir-putin-trilateral-meeting-in-shenzhen-live-updates-november-19-2026/article71718525.ece",
+    "https://www.themoscowtimes.com/2026/11/19/us-china-can-help-end-ukraine-war-trump-tells-xi-before-trilateral-with-putin-a94307",
+    "https://www.euronews.com/2026/11/19/us-and-china-want-to-help-end-ukraine-war-trump-says-ahead-of-trilateral-with-russia"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 10,
+   "novelty_score": 9,
+   "credibility_score": 9,
+   "impact_dimension_score": 9,
+   "confidence": 0.9,
+   "region": "global",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "russian_exile": 1,
+    "middle_east": 3,
+    "south_asia": 4,
+    "western": 7,
+    "ukrainian": 2,
+    "east_asia": 3,
+    "latam": 1,
+    "african": 2,
+    "middle_east_state": 1,
+    "russian_state": 5
+   },
+   "coverage_outlets": 19,
+   "signal_terms": [
+    "Shenzhen",
+    "Xi Jinping",
+    "Donald Trump",
+    "Vladimir Putin"
+   ]
+  },
+  {
+   "story_title": "UN court to rule on Myanmar genocide case against Rohingya",
+   "why_important": "The International Court of Justice will rule on whether Myanmar committed genocide against Rohingya Muslims in 2017. The verdict could set a legal standard for genocide cases. It could also affect South Africa's case against Israel over Gaza.",
+   "what_overlooked": "Le Monde reports growing US attempts to pressure the court's judges, but Washington has not confirmed this. The ruling may also shape the Gaza case.",
+   "prediction": "The court's published verdict and whether Myanmar accepts or rejects it will show how much weight the ruling carries.",
+   "impact_score": 8,
+   "sources": [
+    "https://foreignpolicy.com/2026/11/18/icj-myanmar-rohingya-genocide-case-landmark-verdict-israel-gaza/",
+    "https://www.lemonde.fr/en/international/article/2026/11/19/icj-to-deliver-highly-anticipated-ruling-on-rohingya-genocide-question_6783856_4.html",
+    "https://www.haaretz.com/world-news/asia-and-australia/2026-11-19/ty-article/top-un-court-to-rule-on-myanmars-rohingya-genocide-case/000001a1-f2a1-d175-abf5-feb508aa0000",
+    "https://www.dailymaverick.co.za/opinionista/2026-11-18-rohingya-ruling-is-no-rehearsal-for-gaza-and-navi-pillay-is-no-puppet-master/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 8,
+   "novelty_score": 8,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.9,
+   "region": "indo_pacific",
+   "actor_type": "international_org",
+   "event_type": "humanitarian",
+   "coverage_counts": {
+    "western": 6,
+    "middle_east": 4,
+    "african": 1,
+    "latam": 1,
+    "east_asia": 2,
+    "south_asia": 1
+   },
+   "coverage_outlets": 14,
+   "signal_terms": [
+    "International Court of Justice",
+    "Myanmar",
+    "Rohingya",
+    "Gaza"
+   ]
+  },
+  {
+   "story_title": "US and Venezuela sign military partnership after Maduro's ouster",
+   "why_important": "US Defense Secretary Pete Hegseth signed a defense deal in Caracas. The deal restores defense ties after US forces captured Nicolas Maduro in January. It turns Venezuela from a regional rival into a US partner on defense. It also reshapes armed forces and government ties in Latin America.",
+   "what_overlooked": "The agreement's terms are not public, so it is unclear how Venezuela's interim government or neighbors like Colombia and Brazil will respond.",
+   "prediction": "If the deal terms become public, or Colombia or Brazil reacts within 72 hours, we will see how far the partnership goes.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.thehindu.com/news/international/us-venezuela-sign-deal-to-re-establish-military-ties-hegseth/article71717506.ece",
+    "https://www.dailymaverick.co.za/article/2026-11-19-hegseth-in-caracas-announces-us-venezuela-military-partnership-agreement/",
+    "https://www.aljazeera.com/news/2026/11/19/why-is-pete-hegseth-strengthening-us-military-ties-with-venezuela?traffic_source=rss",
+    "https://www.dw.com/en/us-pentagon-chief-hegseth-signs-military-deal-in-venezuela/a-79985607?maca=en-rss-en-all-1573-rdf"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 7,
+   "novelty_score": 8,
+   "credibility_score": 9,
+   "impact_dimension_score": 7,
+   "confidence": 0.9,
+   "region": "americas",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "south_asia": 1,
+    "african": 1,
+    "middle_east": 2,
+    "western": 3,
+    "latam": 2,
+    "east_asia": 2
+   },
+   "coverage_outlets": 10,
+   "signal_terms": [
+    "Pete Hegseth",
+    "Venezuela",
+    "Caracas",
+    "Nicolas Maduro"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Russia halted trains on the Kerch Bridge after a third drone attack in a week, Ukraine's General Staff indirectly acknowledged the strike.",
+   "region": "europe",
+   "url": "https://www.pravda.com.ua/eng/news/2026/11/19/8063561/"
+  },
+  {
+   "text": "Trump envoys Steve Witkoff and Jared Kushner are expected in Berlin to meet Ukrainian and European officials on ending Russia's war.",
+   "region": "europe",
+   "url": "https://www.straitstimes.com/world/europe/trump-envoys-witkoff-and-kushner-expected-in-berlin-for-ukraine-talks-says-us"
+  },
+  {
+   "text": "The US charged Russian national Igor D'iu with spying on Palantir employees because the company supplies weapons to Ukraine.",
+   "region": "americas",
+   "url": "https://www.bbc.co.uk/news/articles/cq20xg80ly47o?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "text": "A Miami court convicted Florida pastor Christian Emmanuel Sanon over the 2021 assassination of Haitian President Jovenel Moïse.",
+   "region": "americas",
+   "url": "https://www.lemonde.fr/en/international/article/2026/11/19/florida-pastor-convicted-in-us-over-assassination-of-haitian-president-jovenel-moise_6784021_4.html"
+  },
+  {
+   "text": "US Secretary of State Marco Rubio said there is 'zero' information that the recent wave of US tech outages was linked to a malign actor.",
+   "region": "americas",
+   "url": "https://www.thehindu.com/news/international/marco-rubio-says-zero-information-that-us-outages-are-linked-or-caused-by-a-malign-actor/article71714357.ece"
+  }
+ ],
+ "big_number": {
+  "value": "$1.5 trillion",
+  "context": "Anthropic's IPO price values the AI company at $1.5 trillion, as it seeks funds for computing power and data centers.",
+  "url": "https://www.lemonde.fr/en/economy/article/2026/11/19/anthropic-prices-shares-at-83-valuing-the-ai-firm-at-1-5-trillion-on-the-eve-of-its-ipo_6783988_19.html"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "Euronews",
+     "Le Monde",
+     "War on the Rocks"
+    ],
+    "article_count": 7,
+    "framing": "Stresses symbolism and nuclear/Ukraine crisis stakes, doubting concrete breakthroughs from the three powers.",
+    "quote": "The three-president meeting at the Kylin Villa in Shenzhen, which analysts expect to be heavier in symbolism than concrete breakthroughs, comes with Russia's offensive in Ukraine approaching the five-year mark.",
+    "quote_outlet": "Euronews",
+    "quote_url": "https://www.euronews.com/2026/11/19/us-and-china-want-to-help-end-ukraine-war-trump-says-ahead-of-trilateral-with-russia",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "The Korea Times",
+     "Yonhap"
+    ],
+    "article_count": 3,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Hindustan Times",
+     "NDTV",
+     "The Hindu"
+    ],
+    "article_count": 4,
+    "framing": "Highlights Trump-Putin personal chemistry and Ukraine war as the summit’s central drama.",
+    "quote": "Ahead of their bilateral meeting on the sidelines of the Apec Summit 2026 in China's Shenzhen, Trump stated he was pleased with his relationship with Putin.",
+    "quote_outlet": "Hindustan Times",
+    "quote_url": "https://www.hindustantimes.com/world-news/my-friend-putin-trump-meets-russian-president-in-china-for-first-time-since-alaska-summit-apec-summit-2026-news-ukraine-war-101795065172507.html",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al-Monitor",
+     "Egypt Independent"
+    ],
+    "article_count": 3,
+    "framing": "Stresses China’s hosting role and Ukraine diplomacy, while analysts doubt major agreements.",
+    "quote": "The three-president meeting at the Kylin Villa in Shenzhen, which analysts expect to be heavier in symbolism than concrete breakthroughs, comes with Russia's offensive in Ukraine approaching the five-year mark.",
+    "quote_outlet": "Al-Monitor",
+    "quote_url": "https://www.al-monitor.com/originals/2026/11/chinas-xi-host-historic-summit-trump-putin",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east_state",
+    "outlets": [
+     "Anadolu Agency"
+    ],
+    "article_count": 1,
+    "framing": "Stresses US-China cooperation on Ukraine, Hormuz energy and fentanyl, highlighting Trump’s rapport with Xi.",
+    "quote": "Washington and Beijing seek to end Russia-Ukraine war, protect Strait of Hormuz energy flows, and curb fentanyl flow, US president says",
+    "quote_outlet": "Anadolu Agency",
+    "quote_url": "https://www.aa.com.tr/en/asia-pacific/trump-touts-outstanding-personal-relationship-with-xi-at-meeting-in-shenzhen-china/4129955",
+    "state_affiliated": true,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "RT",
+     "TASS"
+    ],
+    "article_count": 5,
+    "framing": "Stresses Putin’s personal diplomacy and warm ties with Trump and Xi, presenting the summit as a diplomatic win.",
+    "quote": "Trump hails ‘my friend’ Putin during key bilateral meeting: LIVE UPDATES, VIDEOS",
+    "quote_outlet": "RT",
+    "quote_url": "https://rt-english.com/news/649007-putin-trump-xi-historic-meeting/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+    "state_affiliated": true,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_exile",
+    "outlets": [
+     "The Moscow Times"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "ukrainian",
+    "outlets": [
+     "Ukrainska Pravda"
+    ],
+    "article_count": 2,
+    "framing": "Stresses Ukraine war diplomacy and Trump’s friendly greeting of Putin, implying concern for Kyiv.",
+    "quote": "Donald Trump greeted Vladimir Putin warmly during their meeting in Shenzhen on 19 November, describing him as a friend.",
+    "quote_outlet": "Ukrainska Pravda",
+    "quote_url": "https://www.pravda.com.ua/eng/news/2026/11/19/8063554/",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "african",
+    "outlets": [
+     "Africanews"
+    ],
+    "article_count": 2,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "latam",
+    "outlets": [
+     "MercoPress"
+    ],
+    "article_count": 1,
+    "framing": "Stresses Xi-Putin strategic alliance and China’s hosting role before Trump joins the trilateral.",
+    "quote": "Chinese President Xi Jinping and Russian President Vladimir Putin reaffirmed their strategic alliance in Shenzhen on Wednesday",
+    "quote_outlet": "MercoPress",
+    "quote_url": "https://en.mercopress.com/2026/11/18/xi-and-putin-reaffirm-their-alliance-on-the-eve-of-the-first-three-way-summit-with-trump?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 19,
+  "counts": {
+   "russian_exile": 1,
+   "middle_east": 3,
+   "south_asia": 4,
+   "western": 7,
+   "ukrainian": 2,
+   "east_asia": 3,
+   "latam": 1,
+   "african": 2,
+   "middle_east_state": 1,
+   "russian_state": 5
+  },
+  "blindspot": "Rival activists set fire to the ancestral home of Bangladesh’s Muhammad Yunus amid overnight political violence that also targeted Awami League leaders’ residences. The unrest threatens Bangladesh’s stability and democratic transition, with consequences for South Asia.",
+  "blindspot_url": "https://www.thehindu.com/news/international/yunuss-ancestral-home-set-ablaze-as-violence-grips-bangladesh/article71719029.ece",
+  "blindspot_outlets": [
+   "Hindustan Times",
+   "NDTV",
+   "The Hindu"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "Democrats",
+   "text": "Democrats nominated Hakeem Jeffries for US House speaker; he is set to become the first Black speaker when Congress convenes in January.",
+   "region": "americas",
+   "url": "https://www.thehindu.com/news/international/democrats-nominatehakeem-jeffries-for-next-us-house-speaker/article71717202.ece"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 11.39,
+   "avg_sentence_words": 17.6,
+   "fragment_share": 0.0,
+   "rewrite": "applied (2 passes)",
+   "rewrite_grade": 8.8,
+   "rewrite_avg_sentence_words": 15.2,
+   "rewrite_fragment_share": 0.0,
+   "rewrite_attempts": [
+    "applied",
+    "applied"
+   ]
+  },
+  "editorial_actions": [
+   "Quick hit dropped (restates the 2026-11-16 story 'Congo's Ebola outbreak still out of control six mo'): The Democratic Republic of Congo is battling an Ebola outbreak that he",
+   "Quick hit dropped (restates the 2026-11-12 story 'Nvidia's board prepares to remove CEO Jensen Huang'): Nvidia's board ruled out Jensen Huang's return as CEO and raised its s",
+   "Quick hit moved to DEVELOPING (running storyline 'democrats'): Democrats nominated Hakeem Jeffries for US House speaker; he is set to"
+  ],
+  "quality_flags": [
+   "headline_overclaims: UN court to rule on Myanmar genocide case against Rohingya"
+  ],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 13379,
+  "analysis_output_tokens": 35976,
+  "analysis_cost_usd": 0.02515,
+  "analysis_seconds": 357.3,
+  "prompt_articles": 60,
+  "grid_cost_usd": 0.02424,
+  "grid_attempts": 2,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "pipeline": {
+   "sources": 81,
+   "collected": 1776,
+   "after_dedup": 1713,
+   "events": 300,
+   "prompt_articles": 60,
+   "stories": 3,
+   "quick_hits": 5,
+   "developing": 1,
+   "seconds": 885
+  }
+ }
+}
