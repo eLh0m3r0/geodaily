@@ -1,0 +1,359 @@
+{
+ "date": "2026-11-20",
+ "title": "Geopolitical Daily",
+ "email_subject": "World Court issues first genocide verdict",
+ "preheader": "The ICJ ruled Myanmar violated the Genocide Convention in 2017 attacks on Rohingya.",
+ "intro_text": "Good morning. It's Friday, November 20, 2026 — the 3 stories that matter most today, plus 7 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "ICJ finds Myanmar committed genocide against Rohingya",
+   "why_important": "The International Court of Justice ruled that Myanmar broke the Genocide Convention in its 2017 attacks on Rohingya Muslims. This is the first time the court has found a state at fault for genocide. The ruling could shape South Africa's genocide case against Israel.",
+   "what_overlooked": "The ruling does not order payments yet, but a separate phase will decide what Myanmar owes. The Security Council decides how to enforce the ruling.",
+   "prediction": "Myanmar's junta will likely reject the ruling within days. The UN Security Council may then meet on how to enforce it.",
+   "impact_score": 9,
+   "sources": [
+    "https://foreignpolicy.com/2026/11/18/icj-myanmar-rohingya-genocide-case-landmark-verdict-israel-gaza/",
+    "https://www.lemonde.fr/en/international/article/2026/11/20/rohingya-historic-international-court-of-justice-ruling-finds-myanmar-guilty-of-genocide_6784846_4.html",
+    "https://asia.nikkei.com/politics/international-relations/myanmar-committed-genocide-against-rohingya-icj-rules-in-landmark-verdict",
+    "https://www.haaretz.com/world-news/asia-and-australia/2026-11-19/ty-article/top-un-court-rules-myanmars-actions-against-rohingya-meet-genocide-threshold/000001a1-f36d-d9ff-a7b5-f3efc1c90000"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 8,
+   "novelty_score": 8,
+   "credibility_score": 10,
+   "impact_dimension_score": 9,
+   "confidence": 0.95,
+   "region": "indo_pacific",
+   "actor_type": "international_org",
+   "event_type": "humanitarian",
+   "coverage_counts": {
+    "western": 16,
+    "east_asia": 6,
+    "middle_east": 4,
+    "african": 5,
+    "south_asia": 6,
+    "latam": 1,
+    "global_south": 2,
+    "intl_org": 1,
+    "middle_east_state": 3
+   },
+   "coverage_outlets": 29,
+   "signal_terms": [
+    "ICJ",
+    "Myanmar",
+    "Rohingya",
+    "Genocide Convention"
+   ]
+  },
+  {
+   "story_title": "COP31 draft drops call to phase out fossil fuels",
+   "why_important": "At the COP31 climate summit, negotiators removed a call to end fossil fuels faster. They took it out of a revised draft deal. Countries and activists objected loudly, saying the summit is weakening its core promise, and a final deal is expected on Friday.",
+   "what_overlooked": "The draft still mentions a broad shift in energy. But it no longer names coal, oil and gas, which scientists call the main causes of warming.",
+   "prediction": "A full session on Friday will either adopt the weakened text or send it back. The EU and exposed countries may block a final deal.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.lemonde.fr/en/environment/article/2026/11/19/cop31-outcry-as-fossil-fuels-removed-from-draft-un-climate-deal_6784648_114.html",
+    "https://www.japantimes.co.jp/environment/2026/11/20/climate-change/cop-fossil-fuel-language/",
+    "https://www.thehindu.com/sci-tech/energy-and-environment/cop-31-nations-still-seeking-deeper-fossil-fuel-cuts-as-climate-summit-enters-final-day/article71722951.ece",
+    "https://theconversation.com/fossil-fuel-lobbyists-are-trying-to-derail-climate-action-once-again-at-cop31-can-they-be-stopped-294668"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 9,
+   "novelty_score": 6,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.9,
+   "region": "global",
+   "actor_type": "international_org",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "western": 3,
+    "east_asia": 2,
+    "south_asia": 3,
+    "global_south": 1,
+    "intl_org": 1,
+    "african": 2
+   },
+   "coverage_outlets": 11,
+   "signal_terms": [
+    "COP31",
+    "Antalya",
+    "fossil fuels",
+    "UN climate summit"
+   ]
+  },
+  {
+   "story_title": "White House fires cyber chief after widespread tech outages",
+   "why_important": "President Trump removed National Cyber Director Sean Cairncross after a week of outages that disrupted air travel, banking and classified messages. The White House named a Defense Department official to the post on a temporary basis. Lawmakers are demanding answers about the outages that disrupted air travel and banking.",
+   "what_overlooked": "The outages hit Microsoft users worldwide and halted US air travel. The government has not published a timeline of what failed.",
+   "prediction": "Senate committees may call Cairncross or the temporary director to testify. They may also demand a public timeline of the outages.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/11/20/white-house-taps-kirsten-davies-as-cyber-chief-after-widespread-outages-in-the-us_6784945_4.html",
+    "https://www.dawn.com/news/2045884/trump-ousts-cyber-director-after-tech-outages-spark-criticism-sources",
+    "https://www.aljazeera.com/video/newsfeed/2026/11/20/trump-bows-to-pressure-replaces-us-cyber-security-director?traffic_source=rss",
+    "https://www.scmp.com/news/world/united-states-canada/article/3375152/white-house-fires-cybersecurity-chief-after-tech-chaos-rattles-us"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 6,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 7,
+   "confidence": 0.9,
+   "region": "americas",
+   "actor_type": "state",
+   "event_type": "informational_cyber",
+   "coverage_counts": {
+    "western": 4,
+    "south_asia": 8,
+    "middle_east": 1,
+    "east_asia": 2,
+    "african": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 14,
+   "signal_terms": [
+    "Sean Cairncross",
+    "National Cyber Director",
+    "Kirsten Davies",
+    "Microsoft outage"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Haiti's police killed at least 34 suspected gang members in an operation to retake the Martissant corridor in Port-au-Prince.",
+   "region": "americas",
+   "url": "https://www.dailymaverick.co.za/article/2026-11-20-haiti-police-operation-kills-34-suspected-gang-members-in-capital/"
+  },
+  {
+   "text": "A Pentagon official told the Senate the US war on Iran has cost $48.3 billion, excluding damage to US bases.",
+   "region": "middle_east",
+   "url": "https://www.middleeasteye.net/live-blog/live-blog-update/pentagon-official-says-us-war-iran-cost-483b"
+  },
+  {
+   "text": "Saudi Arabia's coalition said it intercepted and destroyed a Houthi ballistic missile aimed at the kingdom's southern region.",
+   "region": "middle_east",
+   "url": "https://www.straitstimes.com/world/middle-east/saudi-led-coalition-says-it-intercepted-houthi-missile-targeting-southern-region"
+  },
+  {
+   "text": "Bangladesh Prime Minister Tarique Rahman blamed India for escalating violence as Sheikh Hasina's supporters vandalized the ruling party office.",
+   "region": "indo_pacific",
+   "url": "https://www.scmp.com/news/asia/south-asia/article/3375123/violence-rises-bangladesh-ex-pm-hasinas-supporters-escalate-protests"
+  },
+  {
+   "text": "The US, China and Russia signed a 'peace declaration' after their summit, pledging nuclear risk talks but no arms control.",
+   "region": "global",
+   "url": "https://www.dawn.com/news/2045630/us-china-russia-sign-peace-declaration-after-historic-trump-xi-putin-meeting"
+  },
+  {
+   "text": "Trump left China without meeting Kim Jong-un, saying a meeting could still happen at some point.",
+   "region": "indo_pacific",
+   "url": "https://www.hindustantimes.com/world-news/trump-to-meet-north-koreas-kim-jong-un-at-some-point-after-historic-3-way-talks-with-putin-and-xi-101795116889829.html"
+  },
+  {
+   "text": "Pew Research projects Muslims will outnumber Christians by 2035, with Islam becoming the world's largest religion.",
+   "region": "global",
+   "url": "https://www.euronews.com/2026/11/19/islam-to-become-worlds-largest-religion-by-2035-as-christianity-also-grows-study-says"
+  }
+ ],
+ "big_number": {
+  "value": "$2 trillion",
+  "context": "Anthropic briefly reached that valuation on its first trading day before closing 17% above its IPO price.",
+  "url": "https://www.thehindu.com/business/markets/ai-firm-anthropic-shares-wall-streets-nasdaq-debut/article71721723.ece"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "Foreign Policy",
+     "Le Monde",
+     "The Diplomat"
+    ],
+    "article_count": 16,
+    "framing": "Frames ruling as historic legal accountability for Myanmar military genocide, stressing global precedent and victim justice.",
+    "quote": "This marks the first time in history that a state has been convicted for the 'crime of crimes.'",
+    "quote_outlet": "Le Monde",
+    "quote_url": "https://www.lemonde.fr/en/international/article/2026/11/20/rohingya-historic-international-court-of-justice-ruling-finds-myanmar-guilty-of-genocide_6784846_4.html",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "Nikkei Asia",
+     "The Japan Times",
+     "The Straits Times"
+    ],
+    "article_count": 6,
+    "framing": "Treats the ruling as a diplomatic and humanitarian challenge, stressing unresolved displacement and US burden-sharing demands.",
+    "quote": "More than 1.3 million Rohingya remain displaced across South and Southeast Asia, including 1.2 million in refugee camps in Bangladesh.",
+    "quote_outlet": "The Japan Times",
+    "quote_url": "https://www.japantimes.co.jp/news/2026/11/20/asia-pacific/politics/rohingya-crisis-icj-myanmar/",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "The Hindu"
+    ],
+    "article_count": 6,
+    "framing": "Stresses the ICJ’s first state genocide finding and justice for Rohingya victims, highlighting their desire to return home.",
+    "quote": "The ruling by the top UN court was the first time in its 80-year history that ICJ judges have determined that a state committed genocide",
+    "quote_outlet": "The Hindu",
+    "quote_url": "https://www.thehindu.com/news/international/icj-verdict-on-rohingya-crackdown-killings-in-myanmar/article71719604.ece",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera",
+     "Haaretz"
+    ],
+    "article_count": 4,
+    "framing": "Stresses Rohingya refugee vindication and the ruling’s precedent for other genocide cases, including Israel.",
+    "quote": "The ruling could also offer clues to how judges will approach South Africa's case against Israel",
+    "quote_outlet": "Haaretz",
+    "quote_url": "https://www.haaretz.com/world-news/asia-and-australia/2026-11-19/ty-article/top-un-court-rules-myanmars-actions-against-rohingya-meet-genocide-threshold/000001a1-f36d-d9ff-a7b5-f3efc1c90000",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east_state",
+    "outlets": [
+     "Anadolu Agency"
+    ],
+    "article_count": 3,
+    "framing": "Highlights Türkiye, EU and Swiss welcomes or demands, treating the ruling as recognition of persecution and requiring compliance.",
+    "quote": "Bloc says 'landmark ruling underscores the imperative of justice for victims and the necessity of upholding international law'",
+    "quote_outlet": "Anadolu Agency",
+    "quote_url": "https://www.aa.com.tr/en/europe/eu-urges-myanmar-to-fully-implement-icjs-genocide-ruling-without-delay/4131605",
+    "state_affiliated": true,
+    "wire_copy": false
+   },
+   {
+    "perspective": "african",
+    "outlets": [
+     "Africanews",
+     "Mail & Guardian",
+     "Premium Times"
+    ],
+    "article_count": 5,
+    "framing": "Stresses Gambia’s initiative and African-led accountability in the first state genocide ruling against Myanmar.",
+    "quote": "Gambia on Thursday welcomed the landmark judgement of the International Court of Justice that Myanmar committed genocide against the Rohingya minority.",
+    "quote_outlet": "Africanews",
+    "quote_url": "http://www.africanews.com/2026/11/19/gambia-pays-tribute-to-rohingya-after-icj-genocide-ruling-against-myanmar/",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "latam",
+    "outlets": [
+     "El País"
+    ],
+    "article_count": 1,
+    "framing": "Frames the ruling as an unprecedented legal first by the UN’s highest court holding a state responsible for genocide.",
+    "quote": "The ruling marks the first time in its history that the United Nations’ highest court has held a state responsible for this crime",
+    "quote_outlet": "El País",
+    "quote_url": "https://english.elpais.com/international/2026-11-19/the-uns-top-court-finds-myanmars-military-killed-thousands-of-rohingya-and-subjected-them-to-extreme-violence.html",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "global_south",
+    "outlets": [
+     "Inter Press Service"
+    ],
+    "article_count": 2,
+    "framing": "Treats the ruling as a moral victory and focuses on Rohingya celebration and next steps for Bangladesh.",
+    "quote": "The world’s highest court has delivered a historic legal and moral victory.",
+    "quote_outlet": "Inter Press Service",
+    "quote_url": "https://www.ipsnews.net/2026/11/after-the-icj-verdict-what-for-dhaka/",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "intl_org",
+    "outlets": [
+     "UN News"
+    ],
+    "article_count": 1,
+    "framing": "Presents the ruling as the UN court’s first state genocide finding, emphasizing the Genocide Convention and Gambia v. Myanmar case.",
+    "quote": "The International Court of Justice, the principal judicial organ of the UN, delivered its judgment on Thursday",
+    "quote_outlet": "UN News",
+    "quote_url": "https://news.un.org/feed/view/en/story/2026/11/1168836",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 29,
+  "counts": {
+   "western": 16,
+   "east_asia": 6,
+   "middle_east": 4,
+   "african": 5,
+   "south_asia": 6,
+   "latam": 1,
+   "global_south": 2,
+   "intl_org": 1,
+   "middle_east_state": 3
+  },
+  "blindspot": "Police in Nasarawa State arrested nine suspected armed robbers and rescued three kidnap victims in separate operations. The case shows continuing insecurity in central Nigeria, where kidnapping and banditry affect residents and travelers.",
+  "blindspot_url": "https://www.premiumtimesng.com/regional/north-central/926663-nasarawa-police-arrest-nine-suspected-robbers-rescue-three-kidnap-victims.html",
+  "blindspot_outlets": [
+   "AllAfrica",
+   "Mail & Guardian",
+   "Premium Times",
+   "Punch"
+  ]
+ },
+ "signals": [],
+ "developing": [],
+ "meta": {
+  "readability": {
+   "grade": 11.2,
+   "avg_sentence_words": 17.7,
+   "fragment_share": 0.0,
+   "rewrite": "applied (2 passes)",
+   "rewrite_grade": 8.27,
+   "rewrite_avg_sentence_words": 13.1,
+   "rewrite_fragment_share": 0.0,
+   "rewrite_attempts": [
+    "applied",
+    "applied"
+   ]
+  },
+  "editorial_actions": [
+   "Quick hit dropped (restates the 2026-11-17 story 'Ukraine hits Crimea bridge in record drone attack '): Russian missiles damaged three Kyiv bridges overnight, closing traffic"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 13488,
+  "analysis_output_tokens": 35070,
+  "analysis_cost_usd": 0.02316,
+  "analysis_seconds": 188.3,
+  "prompt_articles": 60,
+  "grid_cost_usd": 0.00807,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "pipeline": {
+   "sources": 81,
+   "collected": 1823,
+   "after_dedup": 1756,
+   "events": 330,
+   "prompt_articles": 60,
+   "stories": 3,
+   "quick_hits": 7,
+   "developing": 0,
+   "seconds": 653
+  }
+ }
+}
