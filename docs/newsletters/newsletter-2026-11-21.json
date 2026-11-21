@@ -1,0 +1,283 @@
+{
+ "date": "2026-11-21",
+ "title": "Geopolitical Daily",
+ "email_subject": "Russian missile lands in Poland",
+ "preheader": "Strikes on Ukraine killed at least eight and brought the war to NATO's border.",
+ "intro_text": "Good morning. It's Saturday, November 21, 2026 — the 3 stories that matter most today, plus 3 updates on stories you're following and 4 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Russian strikes kill at least 8 in Ukraine as Poland reports missile landing",
+   "why_important": "Russia fired missiles and drones at Kyiv, Lviv and Kryvyi Rih, killing at least eight people; some reports said 11. Poland said at least one missile landed on its territory during NATO exercises, raising the risk of a wider war.",
+   "what_overlooked": "The strikes came hours after Putin promised a 'painful' response to Ukraine's attack on the Kerch Bridge. That showed top-level talks did not restrain Moscow.",
+   "prediction": "NATO will meet within 72 hours over the missile landing. Whether it invokes Article 4 will show if allies see a deliberate attack.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/11/20/russian-strikes-on-kyiv-kill-at-least-six_6785275_4.html",
+    "https://meduza.io/en/feature/2026/11/21/russia-launches-massive-attack-on-ukraine-a-day-after-putin-s-meeting-with-trump-and-xi",
+    "https://www.taipeitimes.com/News/front/archives/2026/11/21/2003868121",
+    "https://www.ndtv.com/world-news/8-ukrainians-killed-in-russian-strikes-after-crimea-bridge-attack-12356896#publisher=newsstand"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 9,
+   "confidence": 0.87,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "western": 1,
+    "russian_exile": 1,
+    "east_asia": 1,
+    "south_asia": 1
+   },
+   "coverage_outlets": 4,
+   "signal_terms": [
+    "Kyiv",
+    "Poland",
+    "NATO",
+    "Kerch Bridge"
+   ]
+  },
+  {
+   "story_title": "EU and UK sign post-Brexit deal on food, carbon and youth mobility",
+   "why_important": "Ten years after Brexit, the UK and EU signed their biggest package since Britain left. It covers food trade, permits for carbon emissions and movement of young people. Prime Minister Andy Burnham said this is as close as the UK can get to the EU until 2029.",
+   "what_overlooked": "The deal does not bring back free movement or single-market membership. It eases specific barriers but keeps most Brexit trade rules.",
+   "prediction": "The UK Parliament will publish the deal's legal text within 72 hours. Opposition amendments would show whether Burnham can sell it at home.",
+   "impact_score": 8,
+   "sources": [
+    "https://foreignpolicy.com/2026/11/20/brexit-reset-deal-eu-uk-summit-burnham-trade-economy/",
+    "https://www.dw.com/en/eu-and-uk-strike-landmark-deal-to-strengthen-ties-after-brexit/a-80001076?maca=en-rss-en-all-1573-rdf",
+    "https://www.thehindu.com/news/international/uk-european-union-summit-meeting-on-november-20-2026/article71723782.ece",
+    "https://en.mercopress.com/2026/11/20/uk-and-eu-sign-their-biggest-deal-since-brexit-in-brussels?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 7,
+   "novelty_score": 8,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.9,
+   "region": "europe",
+   "actor_type": "mixed",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "western": 8,
+    "south_asia": 1,
+    "latam": 1,
+    "east_asia": 2,
+    "middle_east_state": 1
+   },
+   "coverage_outlets": 12,
+   "signal_terms": [
+    "Andy Burnham",
+    "Brexit",
+    "European Union",
+    "Ursula von der Leyen"
+   ]
+  },
+  {
+   "story_title": "Iran says it wants diplomacy to end US war as Trump rejects its terms",
+   "why_important": "Iran's foreign minister said Tehran still hopes diplomacy can end its war with the US. He said Iran wants guarantees that Washington is serious. Trump said Iran wants a deal but not one he finds acceptable.",
+   "what_overlooked": "Iran and the US are still exchanging messages through mediators, Araqchi said. That suggests private talks continue despite public rejection.",
+   "prediction": "Mediators will announce a new round of indirect talks within 72 hours. Silence would mean the war continues with no clear way out.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.al-monitor.com/originals/2026/11/araqchi-says-iran-wants-diplomacy-end-war-trump-says-terms-unacceptable",
+    "https://www.japantimes.co.jp/news/2026/11/21/world/politics/iran-diplomacy-terms-unacceptable/",
+    "https://www.hindustantimes.com/world-news/us-news/trump-says-iran-deal-will-be-on-terms-that-are-acceptable-to-him-we-want-a-real-deal-101795197642756.html",
+    "https://news.cgtn.com/news/2026-11-21/Iran-signals-openness-to-diplomacy-as-Trump-rejects-its-terms-1SfbQV8Myxq/p.html?UTM_Source=cgtn&UTM_Medium=rss&UTM_Campaign=World"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 7,
+   "novelty_score": 6,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.82,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "middle_east": 1,
+    "east_asia": 1,
+    "south_asia": 1,
+    "chinese_state": 1,
+    "middle_east_state": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 6,
+   "signal_terms": [
+    "Abbas Araqchi",
+    "Donald Trump",
+    "Iran",
+    "Tehran"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Trump threatened a 'tremendous tax' on US tech firms that build AI data centres abroad, saying China would otherwise take them.",
+   "region": "americas",
+   "url": "https://www.ft.com/content/ae564e09-eb0d-42c6-b61f-50a4e61d0240?syn-25a6b1a6=1"
+  },
+  {
+   "text": "Denmark expelled Russia's military attaché after accusing Moscow of plotting to kill Ukrainian rapper Kyivstoner; Russia denied the charge.",
+   "region": "europe",
+   "url": "https://meduza.io/en/news/2026/11/20/denmark-to-expel-russia-s-military-attache-after-arrests-in-alleged-plot-to-kill-ukrainian-rapper"
+  },
+  {
+   "text": "UN talks on 'killer robots' ended with a pledge to draft rules by 2028, but no binding commitment to rein them in.",
+   "region": "global",
+   "url": "https://www.npr.org/2026/11/21/g-s1-154914/nations-at-un-talks-on-ai-killer-robots-agree-to-more-talks-but-no-firm-commitment-to-rein-them-in"
+  },
+  {
+   "text": "Hackers breached the US Agriculture Department and the FBI, US media reported, amid a wave of tech outages at American institutions.",
+   "region": "americas",
+   "url": "https://www.japantimes.co.jp/news/2026/11/21/world/crime-legal/us-fbi-usda-cyberattacks/"
+  }
+ ],
+ "big_number": {
+  "value": "19 years",
+  "context": "A US court sentenced Indian national Nikhil Gupta to more than 19 years for plotting to kill a Sikh separatist on American soil.",
+  "url": "https://www.dawn.com/news/2045944/indian-man-jailed-over-us-murder-plot-against-sikh-separatist"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "Le Monde"
+    ],
+    "article_count": 1,
+    "framing": "Frames Russia's strikes as Putin's retaliation for the Crimea bridge attack, stressing civilian deaths and NATO spillover.",
+    "quote": "Russian President Vladimir Putin vowed a 'painful' response to Ukraine's earlier bombing of the Crimea bridge.",
+    "quote_outlet": "Le Monde",
+    "quote_url": "https://www.lemonde.fr/en/international/article/2026/11/20/russian-strikes-on-kyiv-kill-at-least-six_6785275_4.html",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "Taipei Times"
+    ],
+    "article_count": 1,
+    "framing": "Sees Moscow's strikes as following Putin's threat, highlighting Poland's accusation of provocation near NATO territory.",
+    "quote": "Moscow yesterday pounded Ukraine with massive strikes, with Kyiv saying at least six people were killed in the capital",
+    "quote_outlet": "Taipei Times",
+    "quote_url": "https://www.taipeitimes.com/News/front/archives/2026/11/21/2003868121",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "NDTV"
+    ],
+    "article_count": 1,
+    "framing": "Portrays Russian strikes as patterned retaliation for Ukraine's Crimea bridge attack, stressing Moscow's response to symbolic attacks.",
+    "quote": "The attack fit the pattern of Moscow's heavy responses to eye-catching Ukrainian attacks.",
+    "quote_outlet": "NDTV",
+    "quote_url": "https://www.ndtv.com/world-news/8-ukrainians-killed-in-russian-strikes-after-crimea-bridge-attack-12356896#publisher=newsstand",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_exile",
+    "outlets": [
+     "Meduza"
+    ],
+    "article_count": 1,
+    "framing": "Holds Russian forces responsible for Kyiv attack, stressing bridge damage and timing after Putin met Trump and Xi.",
+    "quote": "Russian forces attacked Kyiv with missiles and drones overnight November 19–20.",
+    "quote_outlet": "Meduza",
+    "quote_url": "https://meduza.io/en/feature/2026/11/21/russia-launches-massive-attack-on-ukraine-a-day-after-putin-s-meeting-with-trump-and-xi",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 4,
+  "counts": {
+   "western": 1,
+   "russian_exile": 1,
+   "east_asia": 1,
+   "south_asia": 1
+  },
+  "blindspot": "A fire at a power station in southern Iraq killed at least four people and injured 30, security officials said. Damage to Iraq's fragile grid can deepen power shortages and instability in a major oil producer.",
+  "blindspot_url": "https://www.middleeasteye.net/live-blog/live-blog-update/fire-iraqi-power-station-leaves-four-dead-30-injured",
+  "blindspot_outlets": [
+   "Al Jazeera",
+   "Middle East Eye",
+   "The Express Tribune",
+   "The Hindu",
+   "The Straits Times"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "Houthi",
+   "text": "Saudi Arabia's coalition said it intercepted three Houthi missiles aimed at Riyadh, the second attack on the capital in days.",
+   "region": "middle_east",
+   "url": "https://www.straitstimes.com/world/middle-east/saudi-arabia-says-it-intercepts-three-houthi-missiles-targeting-riyadh"
+  },
+  {
+   "storyline": "Rohingya",
+   "text": "Malaysia said it will resettle 10,000 Rohingya in Turkiye, a day after the ICJ found Myanmar committed genocide against them.",
+   "region": "indo_pacific",
+   "url": "https://www.thehindu.com/news/international/malaysia-plans-to-resettle-10000-rohingya-in-turkiye/article71723939.ece"
+  },
+  {
+   "storyline": "Cop31",
+   "text": "COP31 talks ran into overtime after nations failed to agree on fossil fuels, with the EU warning of a 'fossil summit'.",
+   "region": "global",
+   "url": "https://www.lemonde.fr/en/environment/article/2026/11/20/cop31-fossil-fuels-and-climate-funding-take-center-stage-in-final-stretch-of-negotiations_6785737_114.html"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 11.2,
+   "avg_sentence_words": 20.1,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 7.48,
+   "rewrite_avg_sentence_words": 12.6,
+   "rewrite_fragment_share": 0.0,
+   "rewrite_attempts": [
+    "applied"
+   ]
+  },
+  "editorial_actions": [
+   "Quick hit dropped (restates the 2026-11-16 story 'Congo's Ebola outbreak still out of control six mo'): Kenya discharged its last Ebola patient 37 days after its first case, ",
+   "Quick hit moved to DEVELOPING (running storyline 'houthi'): Saudi Arabia's coalition said it intercepted three Houthi missiles aim",
+   "Quick hit moved to DEVELOPING (running storyline 'rohingya'): Malaysia said it will resettle 10,000 Rohingya in Turkiye, a day after",
+   "Quick hit moved to DEVELOPING (running storyline 'cop31'): COP31 talks ran into overtime after nations failed to agree on fossil "
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 12405,
+  "analysis_output_tokens": 24081,
+  "analysis_cost_usd": 0.00963,
+  "analysis_seconds": 140.0,
+  "prompt_articles": 60,
+  "grid_cost_usd": 0.00778,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "pipeline": {
+   "sources": 76,
+   "collected": 1559,
+   "after_dedup": 1501,
+   "events": 264,
+   "prompt_articles": 60,
+   "stories": 3,
+   "quick_hits": 4,
+   "developing": 3,
+   "seconds": 477
+  }
+ }
+}
