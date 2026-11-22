@@ -1,0 +1,293 @@
+{
+ "date": "2026-11-22",
+ "title": "Geopolitical Daily",
+ "email_subject": "Bahrain: Iran hit site; Hormuz tankers struck",
+ "preheader": "Two tankers were hit in the Strait of Hormuz; Iran says it shot down a US drone.",
+ "intro_text": "Good morning. It's Sunday, November 22, 2026 — the 3 stories that matter most today, plus 1 update on stories you're following and 7 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Bahrain says Iran struck industrial site as tankers hit in Strait of Hormuz",
+   "why_important": "Bahrain said Iran hit a civilian industrial site, and two tankers took hits in the Strait of Hormuz. Iran's Revolutionary Guard said it targeted US bases in Bahrain and shot down a US drone. The attacks end a lull in the US-Israel-Iran war and threaten a key oil route.",
+   "what_overlooked": "Iran's Revolutionary Guard said it targeted US bases at al-Riffa and Awali. It said the targets were not just a civilian site, and Bahrain reported no casualties.",
+   "prediction": "A third tanker strike within 72 hours would show Iran is targeting shipping, not just bases.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.al-monitor.com/originals/2026/11/bahrain-says-iran-struck-industrial-site-tankers-hit-hormuz",
+    "https://www.thehindu.com/news/international/bahrain-says-iran-struck-industrial-site-as-tankers-hit-in-hormuz/article71730497.ece",
+    "https://www.japantimes.co.jp/news/2026/11/22/world/bahrain-iran-attack-hormuz/",
+    "https://www.france24.com/en/middle-east/20261122-bahrain-accuses-iran-of-striking-industrial-site-as-tankers-hit-in-hormuz",
+    "https://www.aljazeera.com/news/2026/11/21/bahrain-says-iranian-attack-causes-fire-at-industrial-facility?traffic_source=rss",
+    "https://www.hindustantimes.com/world-news/bahrain-alleges-iranian-attack-behind-fire-at-civilian-industrial-facility-no-injuries-101795290348274.html",
+    "https://www.straitstimes.com/world/middle-east/bahrain-says-iranian-attack-hits-industrial-facility-causes-fire"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 9,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 9,
+   "confidence": 0.85,
+   "region": "middle_east",
+   "actor_type": "mixed",
+   "event_type": "military",
+   "coverage_counts": {
+    "middle_east": 2,
+    "south_asia": 2,
+    "east_asia": 2,
+    "western": 1
+   },
+   "coverage_outlets": 7,
+   "signal_terms": [
+    "Strait of Hormuz",
+    "Bahrain",
+    "Iran",
+    "Revolutionary Guard"
+   ]
+  },
+  {
+   "story_title": "Russian cargo ship hit by drones in Gulf of Finland, Finland tightens security",
+   "why_important": "Drones hit a cargo ship bound for Kaliningrad in open waters in the Gulf of Finland. Finland brought back air and sea restrictions and suspects a Russian chopper violated its airspace. The strike brings the Ukraine war into a NATO member's waters.",
+   "what_overlooked": "Finnish officials said Sparta II is on a US sanctions list and has ties to Russia's forces. That makes it a target in the war, not a random cargo ship.",
+   "prediction": "Finland will report on the suspected Russian chopper incursion within 72 hours; confirmation would raise NATO tensions.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.themoscowtimes.com/2026/11/21/russia-says-cargo-vessel-struck-by-drones-in-gulf-of-finland-a94342",
+    "https://www.pravda.com.ua/eng/news/2026/11/21/8063980/",
+    "https://www.thehindu.com/news/international/cargo-ship-bound-for-russias-kaliningrad-hit-by-drones-finland-tightens-security/article71729285.ece",
+    "https://www.dw.com/en/russian-helicopter-suspected-of-violating-finnish-airspace/a-80010133?maca=en-rss-en-all-1573-rdf"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 7,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.8,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "russian_exile": 1,
+    "ukrainian": 2,
+    "south_asia": 1,
+    "western": 1,
+    "east_asia": 1
+   },
+   "coverage_outlets": 5,
+   "signal_terms": [
+    "Gulf of Finland",
+    "Sparta II",
+    "Finland",
+    "Kaliningrad"
+   ]
+  },
+  {
+   "story_title": "Eisenkot invites Netanyahu's Likud to Israeli coalition talks",
+   "why_important": "Gadi Eisenkot, set to form Israel's next government, invited Benjamin Netanyahu's Likud to power-sharing talks starting Sunday. October's vote left no clear winner, so a broad government could change policy on Iran and the Palestinians.",
+   "what_overlooked": "Eisenkot's centrist Yashar party said the talks aim at the 'broadest possible government'. Likud has not yet agreed to join, and the offer alone does not guarantee a power-sharing deal.",
+   "prediction": "Likud's response by Monday will show whether Netanyahu accepts a junior role in an Eisenkot-led government.",
+   "impact_score": 7,
+   "sources": [
+    "https://www.middleeasteye.net/live-blog/live-blog-update/eisenkot-invites-netanyahus-party-israeli-coalition-talks",
+    "https://www.thehindu.com/news/international/eisenkot-invites-netanyahus-party-for-israeli-coalition-talks/article71729470.ece",
+    "https://www.france24.com/en/middle-east/20261121-eisenkot-invites-netanyahu-s-party-for-marathon-israeli-coalition-talks",
+    "https://www.straitstimes.com/world/middle-east/gadi-eisenkot-invites-netanyahus-party-for-israeli-coalition-talks"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 7,
+   "novelty_score": 7,
+   "credibility_score": 9,
+   "impact_dimension_score": 7,
+   "confidence": 0.9,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "political",
+   "coverage_counts": {
+    "middle_east": 3,
+    "south_asia": 3,
+    "western": 2,
+    "east_asia": 1
+   },
+   "coverage_outlets": 8,
+   "signal_terms": [
+    "Gadi Eisenkot",
+    "Benjamin Netanyahu",
+    "Likud",
+    "Yashar"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Mexico captured Fausto Isidro Meza Flores, known as El Chapo Isidro, in Sinaloa; 11 people died in the raid and shootout.",
+   "region": "americas",
+   "url": "https://www.thehindu.com/news/international/11-killed-in-burst-of-violence-in-northern-mexico-after-capture-of-cartel-leader-meza-flores/article71729468.ece"
+  },
+  {
+   "text": "The FBI is investigating a breach of its National Crime Information Center, a database of criminal records; Trump downplayed the hack.",
+   "region": "americas",
+   "url": "https://www.koreatimes.co.kr/world/20261122/trump-downplays-fbi-data-breach-of-ncic-adds-positive-spin?utm_source=rss"
+  },
+  {
+   "text": "Myanmar's army-backed government called ASEAN's decision to deny it full representation at summits 'unfair and imbalanced'.",
+   "region": "indo_pacific",
+   "url": "https://www.bangkokpost.com/world/3359285/myanmars-armybacked-government-calls-asean-decision-unfair-and-imbalanced"
+  },
+  {
+   "text": "French protesters marched for a sixth weekend against high living costs, weak public services and police brutality.",
+   "region": "europe",
+   "url": "https://www.japantimes.co.jp/news/2026/11/22/world/french-protesters-living-costs-public-services/"
+  },
+  {
+   "text": "The US Commerce Department barred data centers abroad with advanced American AI chips from serving customers in China, Iran and Russia.",
+   "region": "global",
+   "url": "https://www.thehindu.com/sci-tech/technology/how-us-controls-flow-of-advanced-tech-chip-and-compute-to-china-explained/article71721133.ece"
+  },
+  {
+   "text": "Vice President JD Vance declined to endorse Trump's claim that Iran was close to a nuclear weapon before the US went to war.",
+   "region": "middle_east",
+   "url": "https://www.theguardian.com/us-news/2026/nov/21/vance-trump-iran-nuclear-weapon"
+  },
+  {
+   "text": "US-Iran talks are deadlocked over uranium enrichment, TASS reported, citing Al Arabiya, with both sides holding firm despite mediators' proposals.",
+   "region": "middle_east",
+   "url": "https://www.thehindu.com/news/international/iran-wants-diplomacy-to-end-war-says-araghchi-as-us-rejects-terms/article71729396.ece"
+  }
+ ],
+ "big_number": {
+  "value": "€204 billion",
+  "context": "The EU proposed cutting €204 billion from its earlier budget plan while adding a 3% tax on major digital companies.",
+  "url": "https://www.scmp.com/news/world/europe/article/3375333/eu-eyes-tax-big-tech-boost-budget"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "France 24"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "The Japan Times",
+     "The Straits Times"
+    ],
+    "article_count": 2,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Hindustan Times",
+     "The Hindu"
+    ],
+    "article_count": 2,
+    "framing": "Balances Bahrain’s allegation with Iran’s condition that Hormuz talks depend on unmet demands, stressing diplomatic deadlock.",
+    "quote": "Our position is clear: as long as Iran's demands are not met, the discussion on the Strait of Hormuz and its opening is pointless,” Foreign Minister Abbas Araghchi said",
+    "quote_outlet": "The Hindu",
+    "quote_url": "https://www.thehindu.com/news/international/bahrain-says-iran-struck-industrial-site-as-tankers-hit-in-hormuz/article71730497.ece",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera",
+     "Al-Monitor"
+    ],
+    "article_count": 2,
+    "framing": "Balances Bahrain’s accusation with Iran’s IRGC claim of targeting U.S. bases, stressing regional retaliation and conflict origins.",
+    "quote": "Bahrain reports no injuries, as Iran's IRGC says it targeted US military positions at two bases in al-Riffa and Awali.",
+    "quote_outlet": "Al Jazeera",
+    "quote_url": "https://www.aljazeera.com/news/2026/11/21/bahrain-says-iranian-attack-causes-fire-at-industrial-facility?traffic_source=rss",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 7,
+  "counts": {
+   "middle_east": 2,
+   "south_asia": 2,
+   "east_asia": 2,
+   "western": 1
+  },
+  "blindspot": "A severe storm in Tupancireta, Brazil, killed at least three people and damaged about 5,000 homes, with authorities investigating a possible fourth death. The disaster shows the danger extreme weather poses to communities outside the region.",
+  "blindspot_url": "https://timesofindia.indiatimes.com/world/rest-of-world/brazil-supercell-storm-3-killed-thousands-of-homes-damaged-as-114-kmph-winds-batter-town/articleshow/136067257.cms",
+  "blindspot_outlets": [
+   "Bangkok Post",
+   "The Korea Herald",
+   "The Straits Times",
+   "Times of India"
+  ]
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Strait of Hormuz traffic returns to normal by December 31?\" at 3%.",
+   "url": "https://polymarket.com/market/strait-of-hormuz-traffic-returns-to-normal-by-december-31",
+   "source": "Polymarket"
+  }
+ ],
+ "developing": [
+  {
+   "storyline": "Cop31",
+   "text": "The latest COP31 draft keeps a goal of 35% electricity use by 2035 but still omits any mention of fossil fuels.",
+   "region": "global",
+   "url": "https://www.lemonde.fr/en/environment/article/2026/11/22/fossil-fuels-still-missing-from-latest-cop31-draft-deal_6786496_114.html"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 10.62,
+   "avg_sentence_words": 14.6,
+   "fragment_share": 0.06,
+   "rewrite": "applied (2 passes)",
+   "rewrite_grade": 9.28,
+   "rewrite_avg_sentence_words": 15.3,
+   "rewrite_fragment_share": 0.0,
+   "rewrite_attempts": [
+    "applied",
+    "applied"
+   ]
+  },
+  "editorial_actions": [
+   "Quick hit moved to DEVELOPING (running storyline 'cop31'): The latest COP31 draft keeps a goal of 35% electricity use by 2035 but"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 12876,
+  "analysis_output_tokens": 37305,
+  "analysis_cost_usd": 0.01089,
+  "analysis_seconds": 174.3,
+  "prompt_articles": 60,
+  "grid_cost_usd": 0.00714,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "pipeline": {
+   "sources": 69,
+   "collected": 1164,
+   "after_dedup": 1134,
+   "events": 214,
+   "prompt_articles": 60,
+   "stories": 3,
+   "quick_hits": 7,
+   "developing": 1,
+   "seconds": 381
+  }
+ }
+}
