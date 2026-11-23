@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Sun, 22 Nov 2026 08:28:48 GMT</pubDate>
-        <lastBuildDate>Sun, 22 Nov 2026 08:28:48 GMT</lastBuildDate>
+        <pubDate>Mon, 23 Nov 2026 08:31:10 GMT</pubDate>
+        <lastBuildDate>Mon, 23 Nov 2026 08:31:10 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,19 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 23, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-23.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Monday, November 23, 2026 — the 3 stories that matter most today, plus 2 updates on stories you're following and 4 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine's sea drones hit Russian warship at Libyan base</strong>: Ukrainian sea drones hit the Russian corvette Merkury at Benghazi in eastern Libya. The attack badly damaged the ship and set the base on fire. Zelensky confirmed the attack and said it also hit a car...</li></ul><p><em>Published: November 23, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Mon, 23 Nov 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20261123</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Russia]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-23.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 22, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-22.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Sunday, November 22, 2026 — the 3 stories that matter most today, plus 1 update on stories you're following and 7 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Bahrain says Iran struck industrial site as tankers hit in Strait of Hormuz</strong>: Bahrain said Iran hit a civilian industrial site, and two tankers took hits in the Strait of Hormuz. Iran's Revolutionary Guard said it targeted US bases in Bahrain and shot down a US drone. The attac...</li></ul><p><em>Published: November 22, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -181,19 +194,6 @@
         <category><![CDATA[Russia]]></category>
         <category><![CDATA[Middle East]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-14.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - November 13, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-13.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Friday, November 13, 2026 — the 2 stories that matter most today, plus 3 updates on stories you're following and 3 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Iran's Revolutionary Guards say they struck a US radar in Bahrain</strong>: Iran's Revolutionary Guards said they hit a US early-warning radar in Bahrain, the first such claim since early September. If confirmed, the strike opens a new Gulf front and raises the risk of direct...</li></ul><p><em>Published: November 13, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Fri, 13 Nov 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20261113</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-13.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
