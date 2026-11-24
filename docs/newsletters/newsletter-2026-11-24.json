@@ -1,0 +1,348 @@
+{
+ "date": "2026-11-24",
+ "title": "Geopolitical Daily",
+ "email_subject": "Trump's Nvidia deal draws bipartisan anger",
+ "preheader": "Lawmakers want China chip rules tightened as NATO tracks a Russian nuclear satellite.",
+ "intro_text": "Good morning. It's Tuesday, November 24, 2026 — the 3 stories that matter most today, plus 2 updates on stories you're following and 6 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Nvidia reinstates Jensen Huang as CEO after Trump intervenes, lawmakers criticize",
+   "why_important": "Nvidia brought back CEO Jensen Huang 11 days after he resigned over alleged affairs and claims he broke China export rules. President Trump said he assured the board that Huang was no security risk. Lawmakers from both parties want Congress to tighten China chip rules. The case tests whether a president can override security concerns for a key AI company.",
+   "what_overlooked": "On the same day, the US added Megaspeed to its trade blacklist. Megaspeed is the Singapore cloud firm at the heart of the scandal over diverted Nvidia chips.",
+   "prediction": "A congressional committee will announce a hearing or bill on Nvidia's China exports within 72 hours. That move will show whether lawmakers challenge Trump.",
+   "impact_score": 9,
+   "sources": [
+    "https://foreignpolicy.com/2026/11/23/nvidia-reinstates-jensen-huang-ceo-trump-board/",
+    "https://asia.nikkei.com/business/tech/semiconductors/huang-s-nvidia-return-sets-up-clash-with-china-hawks-in-congress",
+    "https://www.dailymaverick.co.za/article/2026-11-24-update-6-us-lawmakers-criticize-nvidia-decision-to-reinstate-huang-as-ceo/",
+    "https://www.dw.com/en/us-adds-megaspeed-at-center-of-nvidia-scandal-to-a-trade-blacklist/a-80026849?maca=en-rss-en-all-1573-rdf",
+    "https://www.semafor.com/article/11/23/2026/huangs-return-scrambles-congress-oversight-plans"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 8,
+   "novelty_score": 9,
+   "credibility_score": 9,
+   "impact_dimension_score": 9,
+   "confidence": 0.9,
+   "region": "americas",
+   "actor_type": "mixed",
+   "event_type": "economic",
+   "coverage_counts": {
+    "western": 10,
+    "east_asia": 17,
+    "african": 4,
+    "south_asia": 34,
+    "middle_east": 4,
+    "latam": 2,
+    "russian_state": 3,
+    "chinese_state": 1
+   },
+   "coverage_outlets": 29,
+   "signal_terms": [
+    "Jensen Huang",
+    "Nvidia",
+    "Megaspeed",
+    "Trump"
+   ]
+  },
+  {
+   "story_title": "NATO says it will defend space after reports of a Russian nuclear-armed satellite",
+   "why_important": "German media, quoting military and intelligence sources, said Russia may put a nuclear explosive device into orbit within months. NATO chief Mark Rutte said the alliance will defend space, while Russia called the reports baseless. Such a weapon could threaten satellites used by troops, ships and global communications.",
+   "what_overlooked": "The reports do not say whether the satellite is already built. They also do not say when a decision would be made, and Russia denies the claim.",
+   "prediction": "Germany or NATO will publish more evidence from satellite tracking within 72 hours. That release would show whether shared intelligence backs the alarm.",
+   "impact_score": 9,
+   "sources": [
+    "https://meduza.io/en/feature/2026/11/23/western-intelligence-services-say-russia-could-put-satellite-with-nuclear-warhead-into-orbit-in-coming-months",
+    "https://www.pravda.com.ua/eng/news/2026/11/24/8064317/",
+    "https://www.scmp.com/news/world/russia-central-asia/article/3375522/nato-vows-space-defence-after-russia-nuclear-satellite-report",
+    "https://www.france24.com/en/nato-vows-space-defence-after-russia-nuclear-satellite-report"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 9,
+   "novelty_score": 8,
+   "credibility_score": 6,
+   "impact_dimension_score": 9,
+   "confidence": 0.75,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "russian_exile": 1,
+    "ukrainian": 1,
+    "east_asia": 1,
+    "western": 1
+   },
+   "coverage_outlets": 4,
+   "signal_terms": [
+    "NATO",
+    "Mark Rutte",
+    "Bundeswehr",
+    "BND"
+   ]
+  },
+  {
+   "story_title": "EU proposes new Russia sanctions, including SWIFT ban for 60 banks",
+   "why_important": "The European Commission proposed its 22nd set of Russia sanctions, including removing 60 banks from SWIFT. It targets crypto and payment networks, energy services and other countries that help Russia avoid sanctions. It would also deny visas to Russians who fought in Ukraine and ban Russian athletes from European events.",
+   "what_overlooked": "The package is only a proposal; all 27 EU governments must approve it, and talks could weaken some measures.",
+   "prediction": "EU governments will debate the package within 72 hours. Objections from any member state would show which parts governments may weaken.",
+   "impact_score": 8,
+   "sources": [
+    "https://meduza.io/en/news/2026/11/23/european-commission-proposes-denying-visas-to-russians-who-fought-in-war-against-ukraine",
+    "https://www.lemonde.fr/en/sports/article/2026/11/23/eu-proposes-banning-russian-athletes-from-competing-in-sports-events_6787339_9.html",
+    "https://www.koreatimes.co.kr/world/20261124/eu-unveils-22nd-russia-sanctions-package-as-war-nears-sixth-year?utm_source=rss"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 8,
+   "novelty_score": 5,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "europe",
+   "actor_type": "international_org",
+   "event_type": "economic",
+   "coverage_counts": {
+    "russian_exile": 1,
+    "western": 1,
+    "east_asia": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 4,
+   "signal_terms": [
+    "European Commission",
+    "Ursula von der Leyen",
+    "SWIFT",
+    "22nd sanctions package"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Ousted Bangladeshi leader Sheikh Hasina plans to return from exile in India on December 16, though Dhaka says she must be extradited.",
+   "region": "indo_pacific",
+   "url": "https://www.dawn.com/news/2046735/sheikh-hasina-seeks-to-return-to-bangladesh-on-december-16-on-state-carrier"
+  },
+  {
+   "text": "Russian forces struck Zaporizhzhia overnight, killing two people and wounding about 40, including four children, the regional governor said.",
+   "region": "europe",
+   "url": "https://www.thehindu.com/news/international/russian-attack-kills-two-people-wounds-22-in-ukraines-zaporizhzhia-official-says/article71737237.ece"
+  },
+  {
+   "text": "Israeli airstrikes killed three people in Gaza, including UNRWA worker Adel al-Helo, and wounded three others, the agency and medics said.",
+   "region": "middle_east",
+   "url": "https://www.dawn.com/news/2046683/israeli-strikes-kill-unrwa-worker-two-others-in-gaza"
+  },
+  {
+   "text": "China criticized the ruling DPP's Taipei candidate before Taiwan's local elections, accusing him of playing up the China threat to win votes.",
+   "region": "indo_pacific",
+   "url": "https://www.japantimes.co.jp/news/2026/11/24/asia-pacific/politics/taiwan-elections-china-beijing/"
+  },
+  {
+   "text": "NATO will send an AWACS early-warning aircraft to Poland after three Russian X-101 cruise missiles fell in the country last week.",
+   "region": "europe",
+   "url": "https://www.dailymaverick.co.za/article/2026-11-23-nato-to-send-early-warning-system-aircraft-to-poland-after-missiles-incident/"
+  },
+  {
+   "text": "Japan held a second consular meeting with a reporter detained by Russia, and PM Sanae Takaichi demanded his release.",
+   "region": "indo_pacific",
+   "url": "https://www.japantimes.co.jp/news/2026/11/24/japan/society/russia-reporter-second-meeting/"
+  }
+ ],
+ "big_number": {
+  "value": "699",
+  "context": "Russia said its air defenses shot down 699 Ukrainian drones overnight, including 355 headed for the Moscow region.",
+  "url": "https://www.hindustantimes.com/world-news/russia-says-it-shot-down-699-ukrainian-drones-overnight-including-355-targeting-moscow-region-101795505024950.html"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW",
+     "Foreign Policy",
+     "Semafor"
+    ],
+    "article_count": 10,
+    "framing": "Frames Huang's return as a Washington national-security controversy, stressing bipartisan scrutiny and the Megaspeed blacklist.",
+    "quote": "The Trump administration has added Megaspeed to a trade blacklist after tensions over its failure to do so raised questions.",
+    "quote_outlet": "DW",
+    "quote_url": "https://www.dw.com/en/us-adds-megaspeed-at-center-of-nvidia-scandal-to-a-trade-blacklist/a-80026849?maca=en-rss-en-all-1573-rdf",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "Nikkei Asia"
+    ],
+    "article_count": 17,
+    "framing": "Frames Huang's return as a US-China tech and congressional fight, with Asian suppliers watching warily.",
+    "quote": "Jensen Huang's stunning comeback as Nvidia's CEO, after direct intervention by U.S. President Donald Trump, has exposed a widen",
+    "quote_outlet": "Nikkei Asia",
+    "quote_url": "https://asia.nikkei.com/business/tech/semiconductors/huang-s-nvidia-return-sets-up-clash-with-china-hawks-in-congress",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "chinese_state",
+    "outlets": [
+     "CGTN"
+    ],
+    "article_count": 1,
+    "framing": "Frames Huang’s reinstatement as a corporate board reversal, not a U.S. security or spy controversy.",
+    "quote": "Nvidia reinstates Jensen Huang as CEO after board reversal",
+    "quote_outlet": "CGTN",
+    "quote_url": "https://news.cgtn.com/news/2026-11-23/news-1SjqPxGC9MI/p.html?UTM_Source=cgtn&UTM_Medium=rss&UTM_Campaign=World",
+    "state_affiliated": true,
+    "wire_copy": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "Dawn",
+     "The Hindu"
+    ],
+    "article_count": 34,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera",
+     "Haaretz"
+    ],
+    "article_count": 4,
+    "framing": "Frames Huang's return as an AI market rebound and diplomatic/global news, stressing Netanyahu's praise and U.S. blacklist.",
+    "quote": "Huang's reinstatement breathes new life into an AI market rally days after shares in the tech giant were dumped.",
+    "quote_outlet": "Al Jazeera",
+    "quote_url": "https://www.aljazeera.com/news/liveblog/2026/11/24/nvidia-live-markets-surge-as-jensen-huang-returns-as-ceo?traffic_source=rss",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "russian_state",
+    "outlets": [
+     "RT",
+     "TASS"
+    ],
+    "article_count": 3,
+    "framing": "Frames Huang's return as a stock surge and a Trump-endorsed board decision, centering market and presidential approval.",
+    "quote": "Nvidia’s stock price jumped by 36% after the company reinstated Jensen Huang, who was ousted due to an extramarital affair, as its CEO",
+    "quote_outlet": "RT",
+    "quote_url": "https://rt-english.com/news/649258-jensen-huang-returns-nvidia/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+    "state_affiliated": true,
+    "wire_copy": false
+   },
+   {
+    "perspective": "african",
+    "outlets": [
+     "Africanews",
+     "Daily Maverick"
+    ],
+    "article_count": 4,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "latam",
+    "outlets": [
+     "El País",
+     "MercoPress"
+    ],
+    "article_count": 2,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   }
+  ],
+  "total_outlets": 29,
+  "counts": {
+   "western": 10,
+   "east_asia": 17,
+   "african": 4,
+   "south_asia": 34,
+   "middle_east": 4,
+   "latam": 2,
+   "russian_state": 3,
+   "chinese_state": 1
+  },
+  "blindspot": "The Trump administration imposed sanctions on dozens of people and entities tied to Iran's shadow banking networks. The move escalates pressure over Iran's financial networks and could affect global banks, oil trade, and regional security.",
+  "blindspot_url": "https://www.al-monitor.com/originals/2026/11/us-imposes-sanctions-dozens-linked-irans-shadow-banking-networks",
+  "blindspot_outlets": [
+   "Al-Monitor",
+   "Hindustan Times",
+   "Iran International",
+   "The Straits Times"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "Tass",
+   "text": "Tajikistan notified the UN it is withdrawing from the International Criminal Court, Russian state news agency TASS reported.",
+   "region": "central_asia",
+   "url": "https://meduza.io/en/news/2026/11/23/on-day-of-putin-s-visit-tajikistan-notifies-un-of-withdrawal-from-international-criminal-court"
+  },
+  {
+   "storyline": "EL Chapo Isidro",
+   "text": "Mexico said it will try Fausto Meza Flores, known as El Chapo Isidro, on drug and weapons charges despite a US extradition request.",
+   "region": "americas",
+   "url": "https://www.premiumtimesng.com/regional/ssouth-east/927554-police-%e2%81%a0%e2%81%a0%e2%81%a0detain-man-for-alleged-unlawful-possession-of-fir.html"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 11.28,
+   "avg_sentence_words": 18.7,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 9.01,
+   "rewrite_avg_sentence_words": 14.0,
+   "rewrite_fragment_share": 0.0,
+   "rewrite_attempts": [
+    "applied"
+   ]
+  },
+  "editorial_actions": [
+   "Quick hit moved to DEVELOPING (running storyline 'tass'): Tajikistan notified the UN it is withdrawing from the International Cr",
+   "Quick hit moved to DEVELOPING (running storyline 'el chapo isidro'): Mexico said it will try Fausto Meza Flores, known as El Chapo Isidro, "
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 12323,
+  "analysis_output_tokens": 32635,
+  "analysis_cost_usd": 0.02582,
+  "analysis_seconds": 332.3,
+  "prompt_articles": 60,
+  "grid_cost_usd": 0.01143,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "pipeline": {
+   "sources": 78,
+   "collected": 1586,
+   "after_dedup": 1536,
+   "events": 287,
+   "prompt_articles": 60,
+   "stories": 3,
+   "quick_hits": 6,
+   "developing": 2,
+   "seconds": 632
+  }
+ }
+}

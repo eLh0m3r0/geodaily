@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Mon, 23 Nov 2026 08:31:10 GMT</pubDate>
-        <lastBuildDate>Mon, 23 Nov 2026 08:31:10 GMT</lastBuildDate>
+        <pubDate>Tue, 24 Nov 2026 08:32:31 GMT</pubDate>
+        <lastBuildDate>Tue, 24 Nov 2026 08:32:31 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,20 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 24, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-24.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Tuesday, November 24, 2026 — the 3 stories that matter most today, plus 2 updates on stories you're following and 6 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Nvidia reinstates Jensen Huang as CEO after Trump intervenes, lawmakers criticize</strong>: Nvidia brought back CEO Jensen Huang 11 days after he resigned over alleged affairs and claims he broke China export rules. President Trump said he assured the board that Huang was no security risk. L...</li></ul><p><em>Published: November 24, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Tue, 24 Nov 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20261124</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[China]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-24.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 23, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-23.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Monday, November 23, 2026 — the 3 stories that matter most today, plus 2 updates on stories you're following and 4 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Ukraine's sea drones hit Russian warship at Libyan base</strong>: Ukrainian sea drones hit the Russian corvette Merkury at Benghazi in eastern Libya. The attack badly damaged the ship and set the base on fire. Zelensky confirmed the attack and said it also hit a car...</li></ul><p><em>Published: November 23, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -179,21 +193,6 @@
         <category><![CDATA[Russia]]></category>
         <category><![CDATA[Europe]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-15.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - November 14, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-14.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Saturday, November 14, 2026 — the 3 stories that matter most today, plus 3 updates on stories you're following and 4 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Trump, Xi and Putin to hold first three-way summit in China</strong>: The White House says the three leaders will meet next week in Shenzhen on APEC's sidelines. Trump plans to discuss nuclear arms and Iran, but not Russia's war in Ukraine.</li></ul><p><em>Published: November 14, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sat, 14 Nov 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20261114</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Middle East]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-14.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
