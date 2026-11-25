@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Tue, 24 Nov 2026 08:32:31 GMT</pubDate>
-        <lastBuildDate>Tue, 24 Nov 2026 08:32:31 GMT</lastBuildDate>
+        <pubDate>Wed, 25 Nov 2026 08:33:22 GMT</pubDate>
+        <lastBuildDate>Wed, 25 Nov 2026 08:33:22 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,21 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 25, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-25.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Wednesday, November 25, 2026 — the 3 stories that matter most today, plus 2 updates on stories you're following and 6 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>US jury convicts Huawei of Iran sanctions violations and stealing trade secrets</strong>: A New York jury found Huawei guilty of 10 of 12 charges. The charges include lying to banks about its Iran business and plotting to steal US trade secrets. The verdict increases Washington's pressure ...</li></ul><p><em>Published: November 25, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Wed, 25 Nov 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20261125</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[United States]]></category>
+        <category><![CDATA[Economy]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-25.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 24, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-24.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Tuesday, November 24, 2026 — the 3 stories that matter most today, plus 2 updates on stories you're following and 6 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Nvidia reinstates Jensen Huang as CEO after Trump intervenes, lawmakers criticize</strong>: Nvidia brought back CEO Jensen Huang 11 days after he resigned over alleged affairs and claims he broke China export rules. President Trump said he assured the board that Huang was no security risk. L...</li></ul><p><em>Published: November 24, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -179,20 +194,6 @@
         <category><![CDATA[Strategic Analysis]]></category>
         <category><![CDATA[International Relations]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-16.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - November 15, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-15.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Sunday, November 15, 2026 — the 3 stories that matter most today, plus 2 updates on stories you're following and 5 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Zelenskiy says US floated Ukraine leaving Donbas for NATO membership</strong>: Ukraine's president says US negotiators raised giving up Donbas for NATO membership. He said it is the first time peace talks have linked territory to alliance membership. The idea tests whether Kyiv ...</li></ul><p><em>Published: November 15, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Sun, 15 Nov 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20261115</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[Russia]]></category>
-        <category><![CDATA[Europe]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-15.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>
