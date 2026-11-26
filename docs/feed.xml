@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Wed, 25 Nov 2026 08:33:22 GMT</pubDate>
-        <lastBuildDate>Wed, 25 Nov 2026 08:33:22 GMT</lastBuildDate>
+        <pubDate>Thu, 26 Nov 2026 08:28:44 GMT</pubDate>
+        <lastBuildDate>Thu, 26 Nov 2026 08:28:44 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,20 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 26, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-26.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Thursday, November 26, 2026 — the 3 stories that matter most today, plus 2 updates on stories you're following and 6 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Israel says it is ready to attack Iran without US backing as US tells citizens to leave</strong>: An Israeli military spokesman said Israel can attack Iran “with force” without US help. Iran warned of a destructive response if key sites are hit. The US told citizens to leave Iran, warning that Teh...</li></ul><p><em>Published: November 26, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Thu, 26 Nov 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20261126</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-26.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 25, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-25.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Wednesday, November 25, 2026 — the 3 stories that matter most today, plus 2 updates on stories you're following and 6 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>US jury convicts Huawei of Iran sanctions violations and stealing trade secrets</strong>: A New York jury found Huawei guilty of 10 of 12 charges. The charges include lying to banks about its Iran business and plotting to steal US trade secrets. The verdict increases Washington's pressure ...</li></ul><p><em>Published: November 25, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -182,18 +196,6 @@
         <category><![CDATA[Russia]]></category>
         <category><![CDATA[Security]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-17.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - November 16, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-16.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Monday, November 16, 2026 — the 3 stories that matter most today, plus 2 updates on stories you're following and 6 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Houthis push toward Aden as Yemeni forces quit key strait</strong>: Forces loyal to Yemen's internationally recognized government pulled back from the Bab el-Mandeb strait. Houthi fighters took two districts in Lahj province and are now about 60km from Aden, the gover...</li></ul><p><em>Published: November 16, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Mon, 16 Nov 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20261116</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-16.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>

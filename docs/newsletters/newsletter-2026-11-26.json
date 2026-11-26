@@ -1,0 +1,263 @@
+{
+ "date": "2026-11-26",
+ "title": "Geopolitical Daily",
+ "email_subject": "Israel says it can strike Iran alone",
+ "preheader": "The US urged citizens to leave as Iran warned of a destructive response to any attack.",
+ "intro_text": "Good morning. It's Thursday, November 26, 2026 — the 3 stories that matter most today, plus 2 updates on stories you're following and 6 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Israel says it is ready to attack Iran without US backing as US tells citizens to leave",
+   "why_important": "An Israeli military spokesman said Israel can attack Iran “with force” without US help. Iran warned of a destructive response if key sites are hit. The US told citizens to leave Iran, warning that Tehran, the Houthis and allied groups may target US interests. This could turn a shadow war into a direct regional conflict.",
+   "what_overlooked": "The US alert followed Iranian attacks on US assets in Bahrain and Kuwait. A Houthi strike on Riyadh injured 11 people, Euronews reported.",
+   "prediction": "A US evacuation order for Gulf embassies within 72 hours would show Washington expects retaliation soon.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.middleeasteye.net/live-blog/live-blog-update/israel-army-spokesperson-says-its-ready-attack-iran-force-without-us",
+    "http://www.africanews.com/2026/11/25/iran-warns-of-destructive-response-if-key-facilities-are-attacked/",
+    "https://www.euronews.com/2026/11/25/us-tells-citizens-to-leave-iran-warns-hostilities-could-escalate-fast"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 9,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 9,
+   "confidence": 0.85,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "middle_east": 1,
+    "african": 1,
+    "western": 1
+   },
+   "coverage_outlets": 3,
+   "signal_terms": [
+    "Israel",
+    "Iran",
+    "Houthis",
+    "Bahrain"
+   ]
+  },
+  {
+   "story_title": "Europe seeks its own talks with Putin as Trump and NATO warn Russia",
+   "why_important": "European leaders are preparing to talk with Putin so any US deal does not leave them out. That deal would cover Russia’s relationship with NATO and the EU. Trump and NATO chief Mark Rutte warned Moscow against widening the Ukraine war. The push shows allies competing over peace terms.",
+   "what_overlooked": "Le Monde reports Europeans do not expect talks to bring peace soon. Their aim is to secure a seat in negotiations Washington and Moscow could dominate.",
+   "prediction": "An EU or NATO statement naming a special envoy for Russia talks within 72 hours would show Europe is moving from debate to action.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/11/26/war-in-ukraine-europeans-ready-to-talk-to-vladimir-putin-to-advance-their-vision-for-europe-s-security-architecture_6788806_4.html",
+    "https://www.al-monitor.com/originals/2026/11/trump-and-nato-chief-urge-russia-avoid-actions-widen-ukraine-war",
+    "https://www.pravda.com.ua/eng/news/2026/11/26/8064729/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 8,
+   "novelty_score": 6,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.8,
+   "region": "europe",
+   "actor_type": "mixed",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "western": 2,
+    "middle_east": 1,
+    "ukrainian": 2,
+    "east_asia": 3,
+    "south_asia": 1,
+    "middle_east_state": 1
+   },
+   "coverage_outlets": 8,
+   "signal_terms": [
+    "Putin",
+    "Mark Rutte",
+    "Ukraine",
+    "NATO"
+   ]
+  },
+  {
+   "story_title": "Bangladesh raises garment wages 36% after protests as unrest spreads",
+   "why_important": "Bangladesh approved a 36% minimum wage rise for garment workers after weeks of protests, testing its low-cost export model. At the same time, the government faces strikes and Awami League protests over Sheikh Hasina’s planned return. The garment industry is one of the country’s main sources of foreign currency.",
+   "what_overlooked": "The wage deal may not calm workers, and The Diplomat reports garment factory workers are still on strike. Awami League activists are protesting the government’s refusal to give Hasina a passport.",
+   "prediction": "Major brands or Bangladesh’s export association reporting order delays within 72 hours would show the wage unrest is hitting supply chains.",
+   "impact_score": 6,
+   "sources": [
+    "https://thediplomat.com/2026/11/bangladeshs-government-battles-unrest-on-multiple-fronts/",
+    "https://asia.nikkei.com/spotlight/work/36-minimum-wage-hike-tests-bangladesh-garment-sector-s-low-cost-model"
+   ],
+   "content_type": "trend",
+   "urgency_score": 6,
+   "scope_score": 6,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 6,
+   "confidence": 0.8,
+   "region": "indo_pacific",
+   "actor_type": "state",
+   "event_type": "economic",
+   "coverage_counts": {
+    "western": 1,
+    "east_asia": 1,
+    "south_asia": 3
+   },
+   "coverage_outlets": 3,
+   "signal_terms": [
+    "Bangladesh",
+    "Sheikh Hasina",
+    "Awami League",
+    "garment workers"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "A fuel truck fire on Cairo’s Ring Road killed at least 31 people and injured 25, Egyptian prosecutors said.",
+   "region": "middle_east",
+   "url": "https://www.thehindu.com/news/international/fuel-tanker-crash-ignites-massive-fire-on-highway-surrounding-cairo/article71744262.ece"
+  },
+  {
+   "text": "South Africa’s High Court set aside the Phala Phala report, halting an impeachment process against President Cyril Ramaphosa.",
+   "region": "africa",
+   "url": "https://mg.co.za/news/south-africa/2026-11-25-phala-phala-report-set-aside-and-impeachment-process-halted/"
+  },
+  {
+   "text": "Israeli judges recommended prosecutors drop one bribery case against Prime Minister Benjamin Netanyahu and reconsider another.",
+   "region": "middle_east",
+   "url": "https://www.bbc.co.uk/news/articles/cxj05mv723r2o?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "text": "Hong Kong marked one year since the Wang Fuk Court fire killed 168 people, with families still waiting for justice.",
+   "region": "indo_pacific",
+   "url": "https://www.bbc.co.uk/news/articles/cqx2wrkyrdn8o?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "text": "Japan’s space agency JAXA unveiled a test rover for a joint moon mission with India to search for water.",
+   "region": "indo_pacific",
+   "url": "https://www.japantimes.co.jp/news/2026/11/26/japan/science-health/jaxa-moon-rover/"
+  },
+  {
+   "text": "A king tide and strong surf flooded parts of California’s coast, soaking San Francisco and prompting evacuations and travel warnings.",
+   "region": "americas",
+   "url": "https://www.lemonde.fr/en/environment/article/2026/11/26/king-tide-waves-batter-california-coast-soaking-san-francisco_6788774_114.html"
+  }
+ ],
+ "big_number": {
+  "value": "0",
+  "context": "The US Army and EPA said monitors found zero airborne lead after the controlled detonation of unstable explosives in Iowa.",
+  "url": "https://www.thehindu.com/news/international/us-army-declares-success-in-detonation-of-lead-based-explosives-stockpile-in-iowa/article71745045.ece"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "Euronews"
+    ],
+    "article_count": 1,
+    "framing": "Centers US warnings to citizens, treating Iran and aligned groups as the threat behind regional escalation.",
+    "quote": "The US Virtual Embassy in Iran said Tehran, Yemen's Houthis and other aligned groups may target US interests and citizens in the region, including companies and institutions.",
+    "quote_outlet": "Euronews",
+    "quote_url": "https://www.euronews.com/2026/11/25/us-tells-citizens-to-leave-iran-warns-hostilities-could-escalate-fast",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Middle East Eye"
+    ],
+    "article_count": 1,
+    "framing": "Emphasizes Israel’s willingness to attack Iran without US support, while framing Iran’s threat as an Israeli claim.",
+    "quote": "Defrin claimed that Iran still poses a threat, saying that it \"vision of destroying\" Israel has not \"expired\".",
+    "quote_outlet": "Middle East Eye",
+    "quote_url": "https://www.middleeasteye.net/live-blog/live-blog-update/israel-army-spokesperson-says-its-ready-attack-iran-force-without-us",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "african",
+    "outlets": [
+     "Africanews"
+    ],
+    "article_count": 1,
+    "framing": "Stresses Iran’s military warning that attacks on key facilities could bring consequences beyond Iran’s borders.",
+    "quote": "Izadi's latest comments signal a hardening of that position, with the Iranian military warning that any strike against key national facilities could carry consequences extending well beyond Iran's borders.",
+    "quote_outlet": "Africanews",
+    "quote_url": "http://www.africanews.com/2026/11/25/iran-warns-of-destructive-response-if-key-facilities-are-attacked/",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 3,
+  "counts": {
+   "middle_east": 1,
+   "african": 1,
+   "western": 1
+  },
+  "blindspot": "Two homeless Albanian men broke into Prince William and Princess Catherine’s country home and stole cufflinks and a clock; police arrested them. The break-in highlights security risks at high-profile royal residences in Britain.",
+  "blindspot_url": "https://www.scmp.com/news/world/europe/article/3375831/pair-stole-cufflinks-and-clock-break-home-british-royals",
+  "blindspot_outlets": [
+   "Egypt Independent",
+   "Hindustan Times",
+   "South China Morning Post",
+   "The Hindu"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "Cop31",
+   "text": "OPEC’s secretary-general blamed the EU for the COP31 collapse, rejecting claims that Saudi Arabia and Russia sank the talks.",
+   "region": "global",
+   "url": "https://www.japantimes.co.jp/environment/2026/11/26/climate-change/opec-eu-cop31-collapse/"
+  },
+  {
+   "storyline": "Jensen Huang",
+   "text": "US officials told Congress that intelligence found no evidence China orchestrated an affair involving Nvidia’s Jensen Huang.",
+   "region": "americas",
+   "url": "https://www.hindustantimes.com/world-news/no-evidence-china-orchestrated-jensen-huang-s-affair-officials-brief-congress-101795663081321.html"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 10.88,
+   "avg_sentence_words": 19.2,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 8.96,
+   "rewrite_avg_sentence_words": 14.4,
+   "rewrite_fragment_share": 0.0,
+   "rewrite_attempts": [
+    "applied"
+   ]
+  },
+  "editorial_actions": [
+   "Quick hit moved to DEVELOPING (running storyline 'cop31'): OPEC’s secretary-general blamed the EU for the COP31 collapse, rejecti",
+   "Quick hit moved to DEVELOPING (running storyline 'jensen huang'): US officials told Congress that intelligence found no evidence China o"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 12112,
+  "analysis_output_tokens": 27795,
+  "analysis_cost_usd": 0.01191,
+  "analysis_seconds": 144.0,
+  "prompt_articles": 60,
+  "grid_cost_usd": 0.00529,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "pipeline": {
+   "sources": 79,
+   "collected": 1696,
+   "after_dedup": 1645,
+   "events": 307,
+   "prompt_articles": 60,
+   "stories": 3,
+   "quick_hits": 6,
+   "developing": 2,
+   "seconds": 398
+  }
+ }
+}
