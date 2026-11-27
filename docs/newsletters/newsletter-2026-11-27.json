@@ -1,0 +1,283 @@
+{
+ "date": "2026-11-27",
+ "title": "Geopolitical Daily",
+ "email_subject": "Italians killed in Kuwait; Iran denies role",
+ "preheader": "Two Rheinmetall technicians died; Iran denies responsibility as Gulf attacks widen.",
+ "intro_text": "Good morning. It's Friday, November 27, 2026 — the 3 stories that matter most today, plus 1 update on stories you're following and 7 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "Kuwait drone strike kills two Italian technicians; Iran denies role",
+   "why_important": "A drone attack on a Kuwaiti air-defence site killed two Italian technicians and injured Kuwaiti and Pakistani workers. Italy and Kuwait blamed Iran, which denied involvement. It is the first fatal Iranian attack on Kuwaiti soil since July and raises the risk of a wider Gulf war.",
+   "what_overlooked": "The technicians worked for Rheinmetall, a German arms maker, so a European defense contractor now has direct exposure in the Gulf.",
+   "prediction": "Italy will decide within 72 hours whether to pull Rheinmetall staff from Kuwait or join U.S.-led patrols.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.thehindu.com/news/international/drone-attack-kuwait-us-iran-war-death-november-27-2026/article71748337.ece",
+    "https://www.al-monitor.com/originals/2026/11/iranian-drone-attack-kuwait-leaves-two-italians-dead",
+    "https://www.dw.com/en/iranian-drone-kills-2-italian-workers-in-kuwait-meloni-says/a-80064974?maca=en-rss-en-all-1573-rdf",
+    "https://www.scmp.com/news/world/middle-east/article/3375970/iran-denies-launching-drone-attack-killed-italians-kuwait"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 9,
+   "scope_score": 8,
+   "novelty_score": 8,
+   "credibility_score": 8,
+   "impact_dimension_score": 9,
+   "confidence": 0.86,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "south_asia": 1,
+    "middle_east": 1,
+    "western": 2,
+    "east_asia": 1
+   },
+   "coverage_outlets": 5,
+   "signal_terms": [
+    "Kuwait",
+    "Rheinmetall",
+    "Iran",
+    "Gulf"
+   ]
+  },
+  {
+   "story_title": "Trump says he asked Putin to pull back military aggression across Europe",
+   "why_important": "Trump said he told Putin last week he wants Russia to pull back military aggression across Europe. Trump is hoping for a quick Ukraine settlement. The remark marks a shift in tone toward Putin, whom Trump called a friend days earlier.",
+   "what_overlooked": "Trump said the exchange happened at their meeting in China last week. That places a U.S.-Russia diplomatic move on Chinese soil.",
+   "prediction": "The Kremlin will respond publicly to Trump's account within 72 hours; silence would suggest no real pullback offer.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.lemonde.fr/en/international/article/2026/11/27/trump-urges-putin-to-end-military-aggression-in-europe_6789697_4.html",
+    "https://www.dailymaverick.co.za/article/2026-11-27-trump-says-he-asked-putin-to-pull-back-military-aggression-throughout-europe/",
+    "https://www.thehindu.com/news/international/donald-trump-urges-vladimir-putin-to-end-military-aggression-in-europe/article71749343.ece",
+    "https://www.japantimes.co.jp/news/2026/11/27/world/trump-putin-military-aggression/"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 8,
+   "confidence": 0.82,
+   "region": "europe",
+   "actor_type": "state",
+   "event_type": "diplomatic",
+   "coverage_counts": {
+    "western": 4,
+    "african": 1,
+    "south_asia": 2,
+    "east_asia": 4,
+    "middle_east": 1,
+    "middle_east_state": 1,
+    "russian_state": 1
+   },
+   "coverage_outlets": 14,
+   "signal_terms": [
+    "Trump",
+    "Putin",
+    "Ukraine",
+    "China"
+   ]
+  },
+  {
+   "story_title": "Myanmar says it will not fully comply with ICJ genocide ruling",
+   "why_important": "The International Court of Justice found Myanmar committed genocide against the Rohingya. It is the first time the UN court has held a state responsible for genocide. Myanmar says it will not fully comply, and the court has little power to enforce the ruling. Legal experts say the precedent could strengthen South Africa's genocide case against Israel.",
+   "what_overlooked": "The ruling linked not having a nationality to genocide but did not require citizenship for all Rohingya. The court left that limit open in its ruling.",
+   "prediction": "The UN Security Council will issue a statement on the ruling within 72 hours; silence would show the court's lack of enforcement power.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.justsecurity.org/165883/gambia-v-myanmar-statelessness-genocide-citizenship/?utm_source=rss&utm_medium=rss&utm_campaign=gambia-v-myanmar-statelessness-genocide-citizenship",
+    "https://www.thehindu.com/news/international/myanmar-says-it-will-not-fully-comply-with-icj-genocide-orders/article71747952.ece",
+    "https://www.taipeitimes.com/News/editorials/archives/2026/11/27/2003868466",
+    "https://www.bbc.co.uk/news/articles/c61wr87wyg5wo?at_medium=RSS&at_campaign=rss"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 6,
+   "scope_score": 8,
+   "novelty_score": 9,
+   "credibility_score": 9,
+   "impact_dimension_score": 8,
+   "confidence": 0.85,
+   "region": "indo_pacific",
+   "actor_type": "state",
+   "event_type": "humanitarian",
+   "coverage_counts": {
+    "western": 3,
+    "south_asia": 1,
+    "east_asia": 2
+   },
+   "coverage_outlets": 5,
+   "signal_terms": [
+    "Myanmar",
+    "ICJ",
+    "Rohingya",
+    "Gambia"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "New Zealand’s ruling coalition lost its majority in final election results and needs the centrist Opportunity Party to stay in power.",
+   "region": "indo_pacific",
+   "url": "https://www.dailymaverick.co.za/article/2026-11-27-new-zealands-ruling-coalition-falls-short-of-majority-in-election-final-count/"
+  },
+  {
+   "text": "Israel’s Gadi Eisenkot agreed a coalition deal with the left-wing Democrats, bringing the opposition closer to forming a government.",
+   "region": "middle_east",
+   "url": "https://www.thehindu.com/news/international/israels-gadi-eisenkot-reaches-deal-with-left-wing-parties/article71747775.ece"
+  },
+  {
+   "text": "Ukraine’s President Zelensky warned Russia is preparing a major strike on energy, logistics and essential infrastructure in coming days.",
+   "region": "europe",
+   "url": "https://www.pravda.com.ua/eng/news/2026/11/26/8064871/"
+  },
+  {
+   "text": "Eurozone leaders picked Spain’s Pablo Hernandez de Cos to lead the European Central Bank, succeeding Christine Lagarde.",
+   "region": "europe",
+   "url": "https://www.scmp.com/news/world/europe/article/3375963/spains-pablo-hernandez-de-cos-succeed-lagarde-european-central-bank-chief"
+  },
+  {
+   "text": "Costa Rica barred UN Palestinian territories rapporteur Francesca Albanese, citing an international alert over alleged terrorist links.",
+   "region": "americas",
+   "url": "https://www.lemonde.fr/en/international/article/2026/11/27/costa-rica-bars-entry-to-un-rapporteur-over-links-to-terrorist-acts_6789763_4.html"
+  },
+  {
+   "text": "Japan’s draft AI law would allow on-site inspections of companies with poor safety safeguards, Nikkei Asia reported.",
+   "region": "indo_pacific",
+   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/ai-firms-with-poor-safeguards-face-inspections-under-japan-draft-law"
+  },
+  {
+   "text": "The US government approved SpaceX to deploy up to one million satellites for data centers in space.",
+   "region": "americas",
+   "url": "https://www.koreatimes.co.kr/world/20261127/musk-pledges-two-spacex-shares-for-every-us-child-in-18-bil-ai-charm-offensive?utm_source=rss"
+  }
+ ],
+ "big_number": {
+  "value": "900,000",
+  "context": "Almost 900,000 US homes and businesses lost power as a Thanksgiving storm disrupted travel and forced New York’s Macy’s parade to be postponed.",
+  "url": "https://www.scmp.com/news/world/united-states-canada/article/3375968/major-storm-batters-us-thanksgiving-holiday-disrupting-flights-and-power"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "BBC",
+     "DW"
+    ],
+    "article_count": 2,
+    "framing": "Stresses Italian Rheinmetall technicians killed while treating Iran as suspected attacker and noting its denial.",
+    "quote": "The pair were technicians for German company Rheinmetall, according to Italy's foreign ministry.",
+    "quote_outlet": "BBC",
+    "quote_url": "https://www.bbc.co.uk/news/articles/c39w9y5dx4k5o?at_medium=RSS&at_campaign=rss",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "South China Morning Post"
+    ],
+    "article_count": 1,
+    "framing": "Highlights Iran’s denial while noting Italy and Kuwait blame Tehran for a deadly Gulf strike.",
+    "quote": "Tehran’s foreign minister Abbas Araghchi insisted in calls to his Kuwaiti and Italian counterparts that it was not behind the deadly strike.",
+    "quote_outlet": "South China Morning Post",
+    "quote_url": "https://www.scmp.com/news/world/middle-east/article/3375970/iran-denies-launching-drone-attack-killed-italians-kuwait",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "The Hindu"
+    ],
+    "article_count": 1,
+    "framing": "Attributes the attack to Iranian-made drones targeting Kuwaiti military sites, citing Italy’s foreign minister.",
+    "quote": "Around 2:00 p.m. today, several Iranian-made drones targeted Kuwaiti military installations, including an air-defence detection station where two Italian technicians from Rheinmetall were working,",
+    "quote_outlet": "The Hindu",
+    "quote_url": "https://www.thehindu.com/news/international/drone-attack-kuwait-us-iran-war-death-november-27-2026/article71748337.ece",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al-Monitor"
+    ],
+    "article_count": 1,
+    "framing": "Asserts an Iranian drone attack on Kuwaiti territory, stressing the first fatal strike since July.",
+    "quote": "An Iranian drone attack killed two Italian technicians in Kuwait on Thursday, marking the first fatal Iranian attack on Kuwaiti territory since July.",
+    "quote_outlet": "Al-Monitor",
+    "quote_url": "https://www.al-monitor.com/originals/2026/11/iranian-drone-attack-kuwait-leaves-two-italians-dead",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 5,
+  "counts": {
+   "south_asia": 1,
+   "middle_east": 1,
+   "western": 2,
+   "east_asia": 1
+  },
+  "blindspot": "South Korea repatriated six North Koreans found on a drifting boat near Ulleungdo; the boat had initially carried seven. The case matters outside the region because it shows how cross-border incidents and North Korean returns are handled amid security tensions.",
+  "blindspot_url": "https://www.japantimes.co.jp/news/2026/11/27/asia-pacific/south-korea-north-fishing-boat/",
+  "blindspot_outlets": [
+   "CNA",
+   "Hindustan Times",
+   "The Hindu",
+   "The Japan Times",
+   "The Korea Herald"
+  ]
+ },
+ "signals": [],
+ "developing": [
+  {
+   "storyline": "Cop31",
+   "text": "The Maldives’ climate chief said COP31 left small island states short-changed on climate finance and renewables.",
+   "region": "indo_pacific",
+   "url": "https://asia.nikkei.com/editor-s-picks/interview/renewables-key-for-economic-national-security-maldives-climate-chief"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 10.4,
+   "avg_sentence_words": 18.5,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 8.95,
+   "rewrite_avg_sentence_words": 15.1,
+   "rewrite_fragment_share": 0.0,
+   "rewrite_attempts": [
+    "applied"
+   ]
+  },
+  "editorial_actions": [
+   "Quick hit moved to DEVELOPING (running storyline 'cop31'): The Maldives’ climate chief said COP31 left small island states short-"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 12114,
+  "analysis_output_tokens": 27372,
+  "analysis_cost_usd": 0.02171,
+  "analysis_seconds": 158.3,
+  "prompt_articles": 60,
+  "grid_cost_usd": 0.00442,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "pipeline": {
+   "sources": 77,
+   "collected": 1568,
+   "after_dedup": 1524,
+   "events": 288,
+   "prompt_articles": 60,
+   "stories": 3,
+   "quick_hits": 7,
+   "developing": 1,
+   "seconds": 342
+  }
+ }
+}
