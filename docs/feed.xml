@@ -8,8 +8,8 @@
         <language>en-us</language>
         <managingEditor>editor@geodaily.example.com (Geopolitical Daily Editorial Team)</managingEditor>
         <webMaster>tech@geodaily.example.com (Geopolitical Daily Tech Team)</webMaster>
-        <pubDate>Fri, 27 Nov 2026 08:28:18 GMT</pubDate>
-        <lastBuildDate>Fri, 27 Nov 2026 08:28:18 GMT</lastBuildDate>
+        <pubDate>Sat, 28 Nov 2026 08:28:02 GMT</pubDate>
+        <lastBuildDate>Sat, 28 Nov 2026 08:28:02 GMT</lastBuildDate>
         <generator>Geopolitical Daily Newsletter System v2.0</generator>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>60</ttl>
@@ -60,6 +60,20 @@
         </image>
 
         <item>
+        <title><![CDATA[Geopolitical Daily - November 28, 2026]]></title>
+        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-28.html</link>
+        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Saturday, November 28, 2026 — the 3 stories that matter most today, plus 2 updates on stories you're following and 5 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>US disables ship trying to break Iran blockade</strong>: The US military disabled a commercial ship as it tried to leave Iran through a blockade. An adviser to Iran's supreme leader said Tehran would keep the Strait of Hormuz shut. The standoff risks a wide...</li></ul><p><em>Published: November 28, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
+        <pubDate>Sat, 28 Nov 2026 06:00:00 GMT</pubDate>
+        <guid isPermaLink="false">geodaily-20261128</guid>
+        <author>Geopolitical Daily Editorial Team</author>
+        <category><![CDATA[Geopolitics]]></category>
+        <category><![CDATA[Strategic Analysis]]></category>
+        <category><![CDATA[International Relations]]></category>
+        <category><![CDATA[Middle East]]></category>
+        <category><![CDATA[Security]]></category>
+        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-28.html#comments</comments>
+        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
+        </item><item>
         <title><![CDATA[Geopolitical Daily - November 27, 2026]]></title>
         <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-27.html</link>
         <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Friday, November 27, 2026 — the 3 stories that matter most today, plus 1 update on stories you're following and 7 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Kuwait drone strike kills two Italian technicians; Iran denies role</strong>: A drone attack on a Kuwaiti air-defence site killed two Italian technicians and injured Kuwaiti and Pakistani workers. Italy and Kuwait blamed Iran, which denied involvement. It is the first fatal Ira...</li></ul><p><em>Published: November 27, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
@@ -181,20 +195,6 @@
         <category><![CDATA[Russia]]></category>
         <category><![CDATA[United States]]></category>
         <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-19.html#comments</comments>
-        <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
-        </item><item>
-        <title><![CDATA[Geopolitical Daily - November 18, 2026]]></title>
-        <link>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-18.html</link>
-        <description><![CDATA[<p><strong>Daily Briefing:</strong> Good morning. It's Wednesday, November 18, 2026 — the 3 stories that matter most today, plus 1 update on stories you're following and 6 quick items from around the world.</p><h3>Today's Key Stories:</h3><ul><li><strong>Xi and Putin meet in Shenzhen before Trump three-way summit</strong>: Chinese leader Xi Jinping met Vladimir Putin in Shenzhen and called Russia ties 'firm as a mountain,' one day before a three-way summit with Donald Trump. The meeting puts China at the center of diplo...</li></ul><p><em>Published: November 18, 2026</em></p><p>Strategic analysis of underreported geopolitical developments with significant implications.</p>]]></description>
-        <pubDate>Wed, 18 Nov 2026 06:00:00 GMT</pubDate>
-        <guid isPermaLink="false">geodaily-20261118</guid>
-        <author>Geopolitical Daily Editorial Team</author>
-        <category><![CDATA[Geopolitics]]></category>
-        <category><![CDATA[Strategic Analysis]]></category>
-        <category><![CDATA[International Relations]]></category>
-        <category><![CDATA[China]]></category>
-        <category><![CDATA[Russia]]></category>
-        <comments>https://elh0m3r0.github.io/geodaily/newsletters/newsletter-2026-11-18.html#comments</comments>
         <source url="https://elh0m3r0.github.io/geodaily/feed.xml">Geopolitical Daily</source>
         </item>
     </channel>

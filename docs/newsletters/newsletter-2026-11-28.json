@@ -1,0 +1,289 @@
+{
+ "date": "2026-11-28",
+ "title": "Geopolitical Daily",
+ "email_subject": "US disables ship defying Iran blockade",
+ "preheader": "Tehran vows to keep the Strait of Hormuz shut and break the US embargo.",
+ "intro_text": "Good morning. It's Saturday, November 28, 2026 — the 3 stories that matter most today, plus 2 updates on stories you're following and 5 quick items from around the world.",
+ "stories": [
+  {
+   "story_title": "US disables ship trying to break Iran blockade",
+   "why_important": "The US military disabled a commercial ship as it tried to leave Iran through a blockade. An adviser to Iran's supreme leader said Tehran would keep the Strait of Hormuz shut. The standoff risks a wider Gulf conflict and threatens global oil shipping.",
+   "what_overlooked": "The ship was disabled in the Gulf of Oman, outside the Strait of Hormuz itself. That shows the US blockade now reaches beyond the narrow waterway of Hormuz.",
+   "prediction": "Check whether Iran's navy escorts a second ship through the blockade, as success would show Tehran can challenge US enforcement.",
+   "impact_score": 9,
+   "sources": [
+    "https://www.al-monitor.com/originals/2026/11/us-disables-ship-trying-leave-iran-tehran-vows-confront-blockade",
+    "https://www.thehindu.com/news/international/us-military-says-it-disabled-commercial-ship-trying-to-run-iran-blockade/article71752214.ece",
+    "https://www.dw.com/en/us-disables-ship-in-gulf-of-oman-under-iran-blockade/a-80082950?maca=en-rss-en-all-1573-rdf",
+    "https://www.straitstimes.com/world/middle-east/us-disables-ship-trying-to-leave-iran-as-tehran-vows-to-confront-blockade"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 8,
+   "scope_score": 8,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 9,
+   "confidence": 0.8,
+   "region": "middle_east",
+   "actor_type": "state",
+   "event_type": "military",
+   "coverage_counts": {
+    "middle_east": 3,
+    "south_asia": 3,
+    "western": 1,
+    "east_asia": 1
+   },
+   "coverage_outlets": 8,
+   "signal_terms": [
+    "Iran",
+    "Strait of Hormuz",
+    "Gulf of Oman",
+    "Tehran"
+   ]
+  },
+  {
+   "story_title": "Hackers breach US Air Force Cloud One platform",
+   "why_important": "Hackers reportedly broke into Cloud One, the Air Force's main cloud system, and reached air-defense radar and munitions tracking data. The Pentagon says its networks are secure but did not deny the breach, and that raises questions about US military cyber defenses.",
+   "what_overlooked": "Cloud One gathers data from more than 200 Air Force sites worldwide. The reported breach could expose supply and personnel records, not just radar feeds.",
+   "prediction": "See whether the Pentagon confirms the breach or names the hackers, since formal naming would turn this into a major cyber-diplomacy fight.",
+   "impact_score": 8,
+   "sources": [
+    "https://www.dawn.com/news/2047651/us-military-says-cyber-systems-secure-after-reports-of-air-force-hack",
+    "https://www.haaretz.com/us-news/2026-11-27/ty-article/hackers-breach-one-of-pentagons-top-systems-access-u-s-air-force-data-radars/000001a2-1ce1-d0a2-afb7-5efbaab20000",
+    "https://www.japantimes.co.jp/news/2026/11/28/world/hackers-us-air-force-computing-platform/",
+    "https://www.france24.com/en/americas/20261128-us-military-cloud-platform-reportedly-hacked-as-pentagon-insists-systems-are-secure"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 8,
+   "novelty_score": 8,
+   "credibility_score": 7,
+   "impact_dimension_score": 8,
+   "confidence": 0.75,
+   "region": "americas",
+   "actor_type": "mixed",
+   "event_type": "informational_cyber",
+   "coverage_counts": {
+    "south_asia": 5,
+    "middle_east": 1,
+    "east_asia": 4,
+    "western": 1,
+    "latam": 1
+   },
+   "coverage_outlets": 11,
+   "signal_terms": [
+    "Cloud One",
+    "US Air Force",
+    "Pentagon",
+    "radar data"
+   ]
+  },
+  {
+   "story_title": "Taiwan votes in local elections as China sends warplanes",
+   "why_important": "Taiwan holds local elections on Saturday, and the Taipei mayor's race is the main contest. China has sent warplanes and criticized a Taipei candidate, while local campaigns have focused on transport and childcare. The results will test support for parties before the 2028 presidential vote.",
+   "what_overlooked": "Daily Maverick says the China issue has not played a big part in campaigns. Beijing's warplanes may be trying to sway a race where voters focus elsewhere.",
+   "prediction": "Track Taipei's mayoral result and whether China sends more warplanes around the island after polls close; a close race could reshape 2028.",
+   "impact_score": 7,
+   "sources": [
+    "https://asia.nikkei.com/politics/taiwan-elections-5-things-to-know-about-city-races-eyed-by-china-and-us",
+    "https://www.dailymaverick.co.za/article/2026-11-27-taiwan-candidates-campaign-for-key-local-elections-on-final-day/",
+    "https://www.thehindu.com/news/international/taiwan-votes-in-key-local-elections-as-china-looks-on/article71753506.ece",
+    "https://www.dw.com/en/polls-open-in-taiwan-s-closely-watched-local-elections/a-80083086?maca=en-rss-en-all-1573-rdf"
+   ],
+   "content_type": "breaking_news",
+   "urgency_score": 7,
+   "scope_score": 7,
+   "novelty_score": 7,
+   "credibility_score": 8,
+   "impact_dimension_score": 7,
+   "confidence": 0.8,
+   "region": "indo_pacific",
+   "actor_type": "mixed",
+   "event_type": "political",
+   "coverage_counts": {
+    "east_asia": 8,
+    "african": 1,
+    "south_asia": 2,
+    "western": 3,
+    "middle_east": 2
+   },
+   "coverage_outlets": 12,
+   "signal_terms": [
+    "Taiwan",
+    "Taipei",
+    "China",
+    "2028 presidential vote"
+   ]
+  }
+ ],
+ "quick_hits": [
+  {
+   "text": "Spain holds a snap general election this weekend, with polls suggesting Pedro Sánchez's Socialists may lose to a PP-Vox right-wing bloc.",
+   "region": "europe",
+   "url": "https://english.elpais.com/spain/2026-11-28/a-left-wing-victory-and-other-possible-surprises-in-spains-election-according-to-the-polls.html"
+  },
+  {
+   "text": "Russia's Putin commissioned the nuclear submarine Perm into the Pacific Fleet, calling it a major event for Russia's nuclear deterrent.",
+   "region": "europe",
+   "url": "https://www.thehindu.com/news/international/putin-unveils-new-nuclear-submarine/article71753555.ece"
+  },
+  {
+   "text": "Thomas Lubanga, the ICC's first convicted child-soldier recruiter, is leading a new rebel offensive toward Bunia in eastern Congo.",
+   "region": "africa",
+   "url": "https://www.lemonde.fr/en/le-monde-africa/article/2026/11/28/in-the-democratic-republic-of-congo-veteran-rebel-leader-thomas-lubanga-launches-a-new-offensive_6790390_124.html"
+  },
+  {
+   "text": "Zelensky said Trump calling Putin a 'friend' was like calling Hitler a friend in World War II.",
+   "region": "europe",
+   "url": "https://www.bbc.co.uk/news/articles/c820q9wgrpyyo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "text": "The US military used counter-drone technology to repel about six drones swarming RAF Lakenheath this month, with Iran suspected, the FT reported.",
+   "region": "europe",
+   "url": "https://www.ft.com/content/57795d58-2b9e-45cb-81e3-6c63aee434a4?syn-25a6b1a6=1"
+  }
+ ],
+ "big_number": {
+  "value": "13%",
+  "context": "A Sberbank study says AI could replace 13% of Russian workers, mainly office and retail staff, saving wages and making managers more productive.",
+  "url": "https://meduza.io/en/news/2026/11/27/ai-could-replace-13-of-russian-workers-according-to-sberbank-study"
+ },
+ "perspective_grid": {
+  "views": [
+   {
+    "perspective": "western",
+    "outlets": [
+     "DW"
+    ],
+    "article_count": 1,
+    "framing": "Treats Iran as responsible for escalation, stressing US blockade enforcement and Kuwait’s diplomatic protest over a deadly strike.",
+    "quote": "The United States said it was continuing \"to strictly enforce the blockade\" of Iran's ports.",
+    "quote_outlet": "DW",
+    "quote_url": "https://www.dw.com/en/us-disables-ship-in-gulf-of-oman-under-iran-blockade/a-80082950?maca=en-rss-en-all-1573-rdf",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "east_asia",
+    "outlets": [
+     "The Straits Times"
+    ],
+    "article_count": 1,
+    "framing": "",
+    "quote": "",
+    "quote_outlet": "",
+    "quote_url": "",
+    "state_affiliated": false,
+    "wire_copy": true
+   },
+   {
+    "perspective": "south_asia",
+    "outlets": [
+     "NDTV",
+     "The Express Tribune",
+     "The Hindu"
+    ],
+    "article_count": 3,
+    "framing": "Stresses US-Iran tensions over the maritime blockade, with Tehran threatening countermeasures after Washington disables a vessel.",
+    "quote": "Washington disables commercial vessel as Tehran threatens countermeasures",
+    "quote_outlet": "The Express Tribune",
+    "quote_url": "https://tribune.com.pk/story/2642725/us-iran-tensions-flare-over-maritime-blockade",
+    "state_affiliated": false,
+    "wire_copy": false
+   },
+   {
+    "perspective": "middle_east",
+    "outlets": [
+     "Al Jazeera",
+     "Al-Monitor",
+     "Iran International"
+    ],
+    "article_count": 3,
+    "framing": "Stresses US military action against a ship running the Iran blockade and Tehran’s vow to break it.",
+    "quote": "The US military says it disabled a commercial ship after it left an Iranian port and ignored warnings to stop.",
+    "quote_outlet": "Al Jazeera",
+    "quote_url": "https://www.aljazeera.com/video/newsfeed/2026/11/27/us-disables-ship-attempting-to-breach-iran-blockade?traffic_source=rss",
+    "state_affiliated": false,
+    "wire_copy": false
+   }
+  ],
+  "total_outlets": 8,
+  "counts": {
+   "middle_east": 3,
+   "south_asia": 3,
+   "western": 1,
+   "east_asia": 1
+  },
+  "blindspot": "Armed men killed at least 17 villagers in Nigeria’s Plateau state, police said. The attack points to persistent communal violence and civilian protection gaps in central Nigeria.",
+  "blindspot_url": "https://www.straitstimes.com/world/armed-men-kill-17-villagers-in-nigerias-plateau-state-police-say",
+  "blindspot_outlets": [
+   "Africanews",
+   "AllAfrica",
+   "The Rio Times",
+   "The Straits Times"
+  ]
+ },
+ "signals": [
+  {
+   "text": "Polymarket puts \"Strait of Hormuz traffic returns to normal by December 31?\" at 3%.",
+   "url": "https://polymarket.com/market/strait-of-hormuz-traffic-returns-to-normal-by-december-31",
+   "source": "Polymarket"
+  }
+ ],
+ "developing": [
+  {
+   "storyline": "Hamas",
+   "text": "MSF says an Israeli strike killed two of its staff at a Gaza clinic; Israel says the men were Hamas fighters.",
+   "region": "middle_east",
+   "url": "https://www.dawn.com/news/2047658/israeli-strike-kills-two-doctors-without-borders-staff-in-gaza"
+  },
+  {
+   "storyline": "Francesca Albanese",
+   "text": "Francesca Albanese says Costa Rican immigration police are holding her at the airport despite a Constitutional Court order to let her rest in a hotel.",
+   "region": "americas",
+   "url": "https://www.middleeasteye.net/live-blog/live-blog-update/albanese-says-costa-rican-police-refuse-release-her-despite-court-order"
+  }
+ ],
+ "meta": {
+  "readability": {
+   "grade": 11.66,
+   "avg_sentence_words": 20.7,
+   "fragment_share": 0.0,
+   "rewrite": "applied",
+   "rewrite_grade": 8.91,
+   "rewrite_avg_sentence_words": 15.9,
+   "rewrite_fragment_share": 0.0,
+   "rewrite_attempts": [
+    "applied"
+   ]
+  },
+  "editorial_actions": [
+   "Quick hit dropped (restates the 2026-11-22 story 'Eisenkot invites Netanyahu's Likud to Israeli coal'): Netanyahu is reportedly ready to offer Gadi Eisenkot a rotating premie",
+   "Quick hit moved to DEVELOPING (running storyline 'hamas'): MSF says an Israeli strike killed two of its staff at a Gaza clinic; I",
+   "Quick hit moved to DEVELOPING (running storyline 'francesca albanese'): Francesca Albanese says Costa Rican immigration police are holding her"
+  ],
+  "quality_flags": [],
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "analysis_input_tokens": 12277,
+  "analysis_output_tokens": 29660,
+  "analysis_cost_usd": 0.01702,
+  "analysis_seconds": 148.6,
+  "prompt_articles": 60,
+  "grid_cost_usd": 0.00832,
+  "grid_attempts": 1,
+  "grid_served_model": "deepseek/deepseek-v4.1-flash-1017",
+  "pipeline": {
+   "sources": 76,
+   "collected": 1349,
+   "after_dedup": 1314,
+   "events": 263,
+   "prompt_articles": 60,
+   "stories": 3,
+   "quick_hits": 5,
+   "developing": 2,
+   "seconds": 357
+  }
+ }
+}
